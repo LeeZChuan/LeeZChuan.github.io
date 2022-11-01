@@ -6,9 +6,9 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: '不如怀念',
+  title: 'LeeZChuan',
   tagline: '记录 分享 交流 思考',
-  url: 'https://lzc.github.io',
+  url: 'https://LeeZChuan.github.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -16,8 +16,8 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'lzc', // Usually your GitHub org/user name.
-  projectName: 'lzc.github.io', // Usually your repo name.
+  organizationName: 'LeeZChuan', // Usually your GitHub org/user name.
+  projectName: 'LeeZChuan.github.io', // Usually your repo name.
   deploymentBranch: 'gh-pages',
   trailingSlash: false,
 
