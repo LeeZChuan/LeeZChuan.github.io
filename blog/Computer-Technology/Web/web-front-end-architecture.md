@@ -2,7 +2,7 @@
 title: Web 前端架构设计
 date: 2018-03-28 14:01:00
 update: 2018-07-01 01:29:00
-authors: wang1212
+authors: LeeZChuan
 tags: &ref_0
   - 计算机技术
   - Web

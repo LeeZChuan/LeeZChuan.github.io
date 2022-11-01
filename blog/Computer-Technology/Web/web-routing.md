@@ -2,7 +2,7 @@
 title: Web 应用：单页面应用与路由
 date: 2017-10-25 00:51:00
 update: 2017-10-25 21:56:00
-authors: wang1212
+authors: LeeZChuan
 tags: &ref_0
   - 计算机技术
   - Web

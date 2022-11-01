@@ -2,7 +2,7 @@
 title: 前端工程化：对于构建工具链的简单思考
 date: 2022-08-01 21:07:00
 update: 2022-08-06 00:21:00
-authors: wang1212
+authors: LeeZChuan
 tags: &ref_0
   - 计算机技术
   - 工具

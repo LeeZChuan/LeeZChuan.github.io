@@ -2,7 +2,7 @@
 title: 浏览器对象模型（BOM）
 date: 2016-05-15 12:02:00
 update: 2016-05-15 12:02:00
-authors: wang1212
+authors: LeeZChuan
 tags: &ref_0
   - 计算机技术
   - Web
@@ -183,8 +183,8 @@ Location 对象包含有关页面 URL 的信息。
     search     // 设置/获取？后的URL部分
 
     // 下面两个等价
-    location.href = "http://wang1212.github.io/";
-    location = "http://wang1212.github.io/";
+    location.href = "http://LeeZChuan.github.io/";
+    location = "http://LeeZChuan.github.io/";
 
 ### 方法
 
@@ -195,7 +195,7 @@ Location 对象也仅仅只有三个方法，但很重要。
     replace()    // 替换当前页面，但不留历史记录
 
     // 例如，导航栏没有历史记录
-    location.replace("http://wang1212.github.io/");
+    location.replace("http://LeeZChuan.github.io/");
 
 ## 结语
 

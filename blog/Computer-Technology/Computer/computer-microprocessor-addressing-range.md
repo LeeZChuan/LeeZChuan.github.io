@@ -2,7 +2,7 @@
 title: 微处理器寻址范围
 date: 2016-04-28 01:42:00
 update: 2016-04-28 01:42:00
-authors: wang1212
+authors: LeeZChuan
 tags: &ref_0
   - 计算机技术
   - 计算机

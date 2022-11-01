@@ -2,7 +2,7 @@
 title: 初识经济学
 date: 2018-03-05 02:16:00
 update: 2022-01-18 22:58:00
-authors: wang1212
+authors: LeeZChuan
 tags: &ref_0
   - 金融与经济
 keywords: *ref_0

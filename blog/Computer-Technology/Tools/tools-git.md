@@ -2,7 +2,7 @@
 title: 使用 Git
 date: 2016-12-31 13:49:00
 update: 2022-05-03 17:03:00
-authors: wang1212
+authors: LeeZChuan
 tags: &ref_0
   - 计算机技术
   - 工具
@@ -42,8 +42,8 @@ Git 在 Windows 下提供了图形用户界面（Git GUI）和命令行（Git Ba
 进行用户名和邮箱的全局配置：
 
 ```bash
-git config --global user.name "wang1212"
-git config --global user.email "mrwang1212@126.com"
+git config --global user.name "LeeZChuan"
+git config --global user.email "mrLeeZChuan@126.com"
 ```
 
 查看配置信息：

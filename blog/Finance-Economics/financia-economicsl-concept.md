@@ -2,7 +2,7 @@
 title: 金融与经济中的一些常用概念
 date: 2018-01-05 02:05:00
 update: 2022-03-12 00:50:00
-authors: wang1212
+authors: LeeZChuan
 tags: &ref_0
   - 金融与经济
 keywords: *ref_0

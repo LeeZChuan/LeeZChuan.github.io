@@ -2,7 +2,7 @@
 title: Web 应用：轻量级状态管理工具 zustand
 date: 2021-11-18 00:14:00
 update: 2021-11-18 00:14:00
-authors: wang1212
+authors: LeeZChuan
 tags: &ref_0
   - 计算机技术
   - Web

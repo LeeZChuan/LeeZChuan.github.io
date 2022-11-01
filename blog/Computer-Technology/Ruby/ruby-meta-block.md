@@ -2,7 +2,7 @@
 title: Ruby-元编程之代码块
 date: 2016-12-05 15:33:00
 update: 2016-12-05 15:33:00
-authors: wang1212
+authors: LeeZChuan
 tags: &ref_0
   - 计算机技术
   - Ruby

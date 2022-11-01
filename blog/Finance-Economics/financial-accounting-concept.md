@@ -2,7 +2,7 @@
 title: 财务与会计中的一些常用概念
 date: 2022-02-21 23:43:00
 update: 2022-02-21 23:43:00
-authors: wang1212
+authors: LeeZChuan
 tags: &ref_0
   - 财务与会计
 keywords: *ref_0

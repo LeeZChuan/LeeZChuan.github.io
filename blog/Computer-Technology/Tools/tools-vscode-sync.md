@@ -2,7 +2,7 @@
 title: IDE：VS Code 配置同步
 date: 2018-08-15 16:42:00
 update: 2018-08-15 16:42:00
-authors: wang1212
+authors: LeeZChuan
 tags: &ref_0
   - 计算机技术
   - 工具

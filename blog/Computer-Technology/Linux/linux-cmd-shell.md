@@ -2,7 +2,7 @@
 title: Linux-常用 Shell 命令
 date: 2016-10-21 21:02:00
 update: 2018-10-14 13:00:00
-authors: wang1212
+authors: LeeZChuan
 tags: &ref_0
   - 计算机技术
   - 操作系统

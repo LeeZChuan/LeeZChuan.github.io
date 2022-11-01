@@ -2,7 +2,7 @@
 title: 从贝塞尔曲线的计算感受数学建模的魅力
 date: 2022-04-30 22:49:00
 update: 2022-05-03 20:38:00
-authors: wang1212
+authors: LeeZChuan
 tags: &ref_0
   - 工具
   - 动画
@@ -45,7 +45,7 @@ F(t) = (x1 - x0)*t + x0 (0 <= t <= 1)
 
 贝塞尔曲线从概念上来看是很难理解的，如何转化为数学公式来计算贝塞尔曲线，而这个过程是什么样的，刚开始理解起来也是比较抽象的。先来看看其（二次贝塞尔曲线）数学定义：
 
-> ![Quadratic Bezier Curve Formula](https://raw.githubusercontent.com/wang1212/static-resources/dd604c85291dcdcc1ac677e8ad4c85d0aebcde12/images/Quadratic-Bezier-Curve-Formula.svg 'Quadratic Bezier Curve Formula')
+> ![Quadratic Bezier Curve Formula](https://raw.githubusercontent.com/LeeZChuan/static-resources/dd604c85291dcdcc1ac677e8ad4c85d0aebcde12/images/Quadratic-Bezier-Curve-Formula.svg 'Quadratic Bezier Curve Formula')
 
 其中 **P0**、**P1**、**P2** 分别为起点、控制点、终点。
 

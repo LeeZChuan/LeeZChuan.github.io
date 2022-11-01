@@ -2,7 +2,7 @@
 title: Web 前端性能优化：批量 DOM 操作 - FastDOM
 date: 2021-10-04 00:06:00
 update: 2022-03-10 00:28:00
-authors: wang1212
+authors: LeeZChuan
 tags: &ref_0
   - 计算机技术
   - Web

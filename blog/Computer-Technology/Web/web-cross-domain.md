@@ -2,7 +2,7 @@
 title: Web 前端跨域访问
 date: 2016-08-10 15:18:00
 update: 2016-08-10 15:18:00
-authors: wang1212
+authors: LeeZChuan
 tags: &ref_0
   - 计算机技术
   - Web

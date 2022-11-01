@@ -2,7 +2,7 @@
 title: 内存的 3 种刷新方式
 date: 2016-05-03 01:59:00
 update: 2016-05-03 01:59:00
-authors: wang1212
+authors: LeeZChuan
 tags: &ref_0
   - 计算机技术
   - 计算机

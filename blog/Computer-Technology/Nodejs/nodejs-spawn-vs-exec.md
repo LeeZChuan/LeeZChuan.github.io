@@ -2,7 +2,7 @@
 title: 'Child process API: spawn vs exec'
 date: 2021-08-25 00:21:00
 update: 2022-07-09 15:38:00
-authors: wang1212
+authors: LeeZChuan
 tags: &ref_0
   - 计算机技术
   - Node.js

@@ -2,7 +2,7 @@
 title: 解析基于 core-js 与 ESLint 的 Web 兼容方案
 date: 2021-12-07 01:13:00
 update: 2021-12-08 21:12:00
-authors: wang1212
+authors: LeeZChuan
 tags: &ref_0
   - 计算机技术
   - 工具
