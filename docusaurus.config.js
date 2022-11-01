@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: '不如怀念',
   tagline: '记录 分享 交流 思考',
-  url: 'https://wang1212.github.io',
+  url: 'https://lzc.github.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -16,8 +16,8 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'wang1212', // Usually your GitHub org/user name.
-  projectName: 'wang1212.github.io', // Usually your repo name.
+  organizationName: 'lzc', // Usually your GitHub org/user name.
+  projectName: 'lzc.github.io', // Usually your repo name.
   deploymentBranch: 'gh-pages',
   trailingSlash: false,
 
@@ -50,7 +50,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/wang1212/wang1212.github.io/tree/master/',
+            'https://github.com/LeeZChuan/LeeZChuan.github.io/tree/master/',
           blogSidebarCount: 'ALL',
           blogSidebarTitle: '所有文章',
           // postsPerPage: 10,
@@ -66,7 +66,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: '不如怀念',
+        title: '点点滴滴',
         // logo: {
         //   alt: 'My Site Logo',
         //   src: 'img/logo.svg',
@@ -81,7 +81,7 @@ const config = {
           { to: '/archive', label: '文章归档', position: 'left' },
           { to: '/tags', label: '标签分类', position: 'left' },
           {
-            href: 'https://github.com/wang1212/wang1212.github.io',
+            href: 'https://github.com/LeeZChuan/LeeZChuan.github.io',
             label: 'Source',
             position: 'right',
           },
@@ -96,23 +96,23 @@ const config = {
           //   items: [
           {
             label: '收藏列表',
-            href: 'https://github.com/wang1212/awesome-favorites-list',
+            href: 'https://github.com/LeeZChuan/awesome-favorites-list',
           },
           {
             label: 'The Book Of Ruby(zh)',
-            href: 'https://wang1212.github.io/the-book-of-ruby/',
+            href: 'https://LeeZChuan.github.io/the-book-of-ruby/',
           },
           {
             label: 'Email',
-            href: 'mailto:mrwang1212@126.com',
+            href: 'mailto:@126.com',
           },
           {
             label: 'GitHub',
-            href: 'https://github.com/wang1212',
+            href: 'https://github.com/LeeZChuan',
           },
           {
             label: 'Gitee',
-            href: 'https://gitee.com/i_wang1212',
+            href: 'https://gitee.com/LeeZChuan',
           },
           // ],
           // },
