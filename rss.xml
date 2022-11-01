@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
-        <title>不如怀念 Blog</title>
-        <link>https://lzc.github.io/</link>
-        <description>不如怀念 Blog</description>
+        <title>LeeZChuan Blog</title>
+        <link>https://LeeZChuan.github.io/</link>
+        <description>LeeZChuan Blog</description>
         <lastBuildDate>Sun, 16 Oct 2022 23:49:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>zh-Hans</language>
         <item>
             <title><![CDATA[Web 字体加载对 DOM 位置的影响]]></title>
-            <link>https://lzc.github.io/Computer-Technology/Web/web-tips-fonts</link>
+            <link>https://LeeZChuan.github.io/Computer-Technology/Web/web-tips-fonts</link>
             <guid>/Computer-Technology/Web/web-tips-fonts</guid>
             <pubDate>Sun, 16 Oct 2022 23:49:00 GMT</pubDate>
             <description><![CDATA[由于使用了第三方 Web 字体，产生了一个潜在的线上问题，苦于调试过程中一直没有考虑字体加载会对 DOM 位置产生影响，浪费了大量时间和精力。]]></description>
@@ -21,7 +21,7 @@
         </item>
         <item>
             <title><![CDATA[旅游]]></title>
-            <link>https://lzc.github.io/Life/tourism/tourism-yanan</link>
+            <link>https://LeeZChuan.github.io/Life/tourism/tourism-yanan</link>
             <guid>/Life/tourism/tourism-yanan</guid>
             <pubDate>Sat, 01 Oct 2022 21:55:00 GMT</pubDate>
             <description><![CDATA[原以为国庆将会七天呆在房间里看书玩游戏度过，却未曾想过能去延安这个“革命圣地”看看。]]></description>
@@ -32,7 +32,7 @@
         </item>
         <item>
             <title><![CDATA[利用脚本执行 `tsc` 忽略类型检查错误]]></title>
-            <link>https://lzc.github.io/Computer-Technology/TypeScript/tools-typescript-use-script-to-ts-types</link>
+            <link>https://LeeZChuan.github.io/Computer-Technology/TypeScript/tools-typescript-use-script-to-ts-types</link>
             <guid>/Computer-Technology/TypeScript/tools-typescript-use-script-to-ts-types</guid>
             <pubDate>Sat, 06 Aug 2022 17:33:00 GMT</pubDate>
             <description><![CDATA[TypeScript 作为一个强类型的语言，增强了 JavaScript 编程开发体验，类型定义文件为一个第三方模块的使用体验增色不少，现如今很多 npm 包的发布都内置了对类型定义文件的支持。]]></description>
@@ -44,7 +44,7 @@
         </item>
         <item>
             <title><![CDATA[前端工程化：对于构建工具链的简单思考]]></title>
-            <link>https://lzc.github.io/Computer-Technology/Web/tools-web-fee-toolchain</link>
+            <link>https://LeeZChuan.github.io/Computer-Technology/Web/tools-web-fee-toolchain</link>
             <guid>/Computer-Technology/Web/tools-web-fee-toolchain</guid>
             <pubDate>Mon, 01 Aug 2022 21:07:00 GMT</pubDate>
             <description><![CDATA[前端工程化是一个值得了解的方向，从软件开发、测试到部署上线整个环节的深入，可以对软件工程有一个更深刻的理解，对于前端来说，构建工具链是工程化中重要的一环，这里对这么多年接触过得工具做一个简单的总结思考。]]></description>
@@ -57,7 +57,7 @@
         </item>
         <item>
             <title><![CDATA[桥接模式：跨平台的事件机制设计]]></title>
-            <link>https://lzc.github.io/Computer-Technology/Program-Architecture-Design/bridge-mode-design-of-cross-platform-event-mechanism</link>
+            <link>https://LeeZChuan.github.io/Computer-Technology/Program-Architecture-Design/bridge-mode-design-of-cross-platform-event-mechanism</link>
             <guid>/Computer-Technology/Program-Architecture-Design/bridge-mode-design-of-cross-platform-event-mechanism</guid>
             <pubDate>Sun, 12 Jun 2022 22:22:00 GMT</pubDate>
             <description><![CDATA[最近在做图表组件库的技术调研的架构方案设计，参考了很多开源库的源码，发现其中跨平台的事件机制设计很值得学习，如果要用软件设计模式来解释，那大概就是桥接模式了。]]></description>
@@ -67,7 +67,7 @@
         </item>
         <item>
             <title><![CDATA[从贝塞尔曲线的计算感受数学建模的魅力]]></title>
-            <link>https://lzc.github.io/Tools/tools-animation-math</link>
+            <link>https://LeeZChuan.github.io/Tools/tools-animation-math</link>
             <guid>/Tools/tools-animation-math</guid>
             <pubDate>Sat, 30 Apr 2022 22:49:00 GMT</pubDate>
             <description><![CDATA[最近在做可视化相关的东西，需要计算贝塞尔曲线上一点的坐标位置，从这个解决过程中感受到了数学建模的魅力。]]></description>
@@ -78,7 +78,7 @@
         </item>
         <item>
             <title><![CDATA[如何更好的维护开源项目]]></title>
-            <link>https://lzc.github.io/Computer-Technology/Tools/tools-maintain-open-source-projects-with-tools</link>
+            <link>https://LeeZChuan.github.io/Computer-Technology/Tools/tools-maintain-open-source-projects-with-tools</link>
             <guid>/Computer-Technology/Tools/tools-maintain-open-source-projects-with-tools</guid>
             <pubDate>Fri, 22 Apr 2022 22:53:00 GMT</pubDate>
             <description><![CDATA[一直以来开源精神被开发者所推崇，维护开源项目需要注意什么，有哪些工具可以帮助我们解决通用的复杂问题，值得学习了解。]]></description>
@@ -90,7 +90,7 @@
         </item>
         <item>
             <title><![CDATA[了解一些互联网名词]]></title>
-            <link>https://lzc.github.io/Business/business-noun</link>
+            <link>https://LeeZChuan.github.io/Business/business-noun</link>
             <guid>/Business/business-noun</guid>
             <pubDate>Sun, 13 Mar 2022 18:12:00 GMT</pubDate>
             <description><![CDATA[互联网时代创造了诸多名词，而这些与商业活动紧密相关，了解一下还是挺有趣的。]]></description>
@@ -100,7 +100,7 @@
         </item>
         <item>
             <title><![CDATA[财务与会计中的一些常用概念]]></title>
-            <link>https://lzc.github.io/Finance-Economics/financial-accounting-concept</link>
+            <link>https://LeeZChuan.github.io/Finance-Economics/financial-accounting-concept</link>
             <guid>/Finance-Economics/financial-accounting-concept</guid>
             <pubDate>Mon, 21 Feb 2022 23:43:00 GMT</pubDate>
             <description><![CDATA[一些在生活中应该了解的财务与会计常用概念。]]></description>
@@ -109,7 +109,7 @@
         </item>
         <item>
             <title><![CDATA[xxxx年工作记录]]></title>
-            <link>https://lzc.github.io/Life/2022-work-record</link>
+            <link>https://LeeZChuan.github.io/Life/2022-work-record</link>
             <guid>/Life/2022-work-record</guid>
             <pubDate>Tue, 18 Jan 2022 14:47:00 GMT</pubDate>
             <description><![CDATA[现在已经 2022 年了，回过头去看看刚参加工作第一年也就是 2021 年的工作历程以及参与的项目，总结一下遇到的问题，解决方法以及自己的成果，做个简单的总结。]]></description>
@@ -120,7 +120,7 @@
         </item>
         <item>
             <title><![CDATA[TypeScript：扩展第三方库的类型定义]]></title>
-            <link>https://lzc.github.io/Computer-Technology/TypeScript/tools-typescript-type-extend</link>
+            <link>https://LeeZChuan.github.io/Computer-Technology/TypeScript/tools-typescript-type-extend</link>
             <guid>/Computer-Technology/TypeScript/tools-typescript-type-extend</guid>
             <pubDate>Sun, 09 Jan 2022 17:36:00 GMT</pubDate>
             <description><![CDATA[TypeScript 作为 JavaScript 的超集，为 Web 开发带来了强类型语言和类似代码智能提示这种良好的开发体验，如何对第三方依赖库的类型定义进行扩展呢？]]></description>
@@ -132,7 +132,7 @@
         </item>
         <item>
             <title><![CDATA[解析基于 core-js 与 ESLint 的 Web 兼容方案]]></title>
-            <link>https://lzc.github.io/Computer-Technology/Web/tools-web-fee-polyfill-corejs-eslint</link>
+            <link>https://LeeZChuan.github.io/Computer-Technology/Web/tools-web-fee-polyfill-corejs-eslint</link>
             <guid>/Computer-Technology/Web/tools-web-fee-polyfill-corejs-eslint</guid>
             <pubDate>Tue, 07 Dec 2021 01:13:00 GMT</pubDate>
             <description><![CDATA[Web 网页为了保证在多个平台和低中高端设备上的体验稳定性和一致性，通常会做 Polyfill 以保证兼容性，当下社区的主流方案则是基于 core-js，而 ESLint 则可作为自动检测的辅助工具。]]></description>
@@ -144,7 +144,7 @@
         </item>
         <item>
             <title><![CDATA[UNIX传奇：历史与回忆]]></title>
-            <link>https://lzc.github.io/2021/12/05/Life/reading/reading-</link>
+            <link>https://LeeZChuan.github.io/2021/12/05/Life/reading/reading-</link>
             <guid>/2021/12/05/Life/reading/reading-</guid>
             <pubDate>Sun, 05 Dec 2021 16:47:00 GMT</pubDate>
             <description><![CDATA[有幸通过该书了解 UNIX 诞生的历史和一些故事，略有枯燥，却不乏精彩之处。]]></description>
@@ -157,7 +157,7 @@
         </item>
         <item>
             <title><![CDATA[Web 前端调试工具：SourceMap 文件]]></title>
-            <link>https://lzc.github.io/Computer-Technology/Web/tools-web-fee-debug-with-source-map</link>
+            <link>https://LeeZChuan.github.io/Computer-Technology/Web/tools-web-fee-debug-with-source-map</link>
             <guid>/Computer-Technology/Web/tools-web-fee-debug-with-source-map</guid>
             <pubDate>Sun, 28 Nov 2021 22:31:00 GMT</pubDate>
             <description><![CDATA[Web 前端项目在生产环境发布的代码是经过混淆和压缩的，如何调试则成为了一个难题，SourceMap 文件则是一个解决该问题时可以利用的很好的工具。]]></description>
@@ -171,7 +171,7 @@
         </item>
         <item>
             <title><![CDATA[Web 应用：轻量级状态管理工具 zustand]]></title>
-            <link>https://lzc.github.io/Computer-Technology/Web/web-app-model-zustand</link>
+            <link>https://LeeZChuan.github.io/Computer-Technology/Web/web-app-model-zustand</link>
             <guid>/Computer-Technology/Web/web-app-model-zustand</guid>
             <pubDate>Thu, 18 Nov 2021 00:14:00 GMT</pubDate>
             <description><![CDATA[Web 网页向 Web 应用发展的过程中，势必会出现 Web 项目的复杂化问题，而在移动端场景，基于 React.js 的应用中如何管理状态？zustand 也许值得一试。]]></description>
@@ -184,7 +184,7 @@
         </item>
         <item>
             <title><![CDATA[Web 前端性能优化：批量 DOM 操作 - FastDOM]]></title>
-            <link>https://lzc.github.io/Computer-Technology/Web/web-performance-fastdom</link>
+            <link>https://LeeZChuan.github.io/Computer-Technology/Web/web-performance-fastdom</link>
             <guid>/Computer-Technology/Web/web-performance-fastdom</guid>
             <pubDate>Mon, 04 Oct 2021 00:06:00 GMT</pubDate>
             <description><![CDATA[原生应用时代，DOM 操作一般借助类似 jQuery 的工具库手动完成，而在框架/库应用时代 DOM 操作退居幕后自动完成，原生应用与框架应用性能孰高孰低？DOM 批量操作对于性能有何影响？利用 FastDOM 库来解决这些性能问题。]]></description>
@@ -199,7 +199,7 @@
         </item>
         <item>
             <title><![CDATA[Web 前端性能优化：案例分析 1]]></title>
-            <link>https://lzc.github.io/Computer-Technology/Web/web-performance-case-1</link>
+            <link>https://LeeZChuan.github.io/Computer-Technology/Web/web-performance-case-1</link>
             <guid>/Computer-Technology/Web/web-performance-case-1</guid>
             <pubDate>Fri, 24 Sep 2021 00:51:00 GMT</pubDate>
             <description><![CDATA[Web 性能相关的概念很多，但如何落地在真实业务场景中，其实是一个比较难的事情，或者说机会鲜有，在这里记录一下真实业务案例做性能优化的过程。]]></description>
@@ -212,7 +212,7 @@
         </item>
         <item>
             <title><![CDATA[Child process API: spawn vs exec]]></title>
-            <link>https://lzc.github.io/Computer-Technology/Nodejs/nodejs-spawn-vs-exec</link>
+            <link>https://LeeZChuan.github.io/Computer-Technology/Nodejs/nodejs-spawn-vs-exec</link>
             <guid>/Computer-Technology/Nodejs/nodejs-spawn-vs-exec</guid>
             <pubDate>Wed, 25 Aug 2021 00:21:00 GMT</pubDate>
             <description><![CDATA[使用 Node.js 编写一些脚本工具是非常方便的，而常用的 spawn 与 exec API 有什么不同呢？]]></description>
@@ -225,7 +225,7 @@
         </item>
         <item>
             <title><![CDATA[使用 Jest 和 Puppeteer 构建 Web 自动化测试平台]]></title>
-            <link>https://lzc.github.io/Computer-Technology/Web/tools-web-fee-test-with-jest-puppeteer</link>
+            <link>https://LeeZChuan.github.io/Computer-Technology/Web/tools-web-fee-test-with-jest-puppeteer</link>
             <guid>/Computer-Technology/Web/tools-web-fee-test-with-jest-puppeteer</guid>
             <pubDate>Sun, 15 Aug 2021 14:54:00 GMT</pubDate>
             <description><![CDATA[谷歌发布的 Puppeteer 工具和脸书发布的 Jest 测试工具为 Web 端到端测试提供了极大的便利，这里记录了如何使用它们构建一个 Web 自动化测试平台。]]></description>
@@ -241,7 +241,7 @@ Web 端到端自动化测试平台系统技术架构</p><h2 class="anchor anchor
         </item>
         <item>
             <title><![CDATA[Web 前端性能优化：核心概念与指标]]></title>
-            <link>https://lzc.github.io/Computer-Technology/Web/web-performance-core-concepts</link>
+            <link>https://LeeZChuan.github.io/Computer-Technology/Web/web-performance-core-concepts</link>
             <guid>/Computer-Technology/Web/web-performance-core-concepts</guid>
             <pubDate>Mon, 19 Jul 2021 00:51:00 GMT</pubDate>
             <description><![CDATA[在一些较为复杂的 Web 应用中可能会出现性能瓶颈，导致用户体验急剧下降，做优化之前更应该了解一下相关的核心概念，从而在出问题时确定优化路径。]]></description>
@@ -254,7 +254,7 @@ Web 端到端自动化测试平台系统技术架构</p><h2 class="anchor anchor
         </item>
         <item>
             <title><![CDATA[Fastify - 专注于性能和低内存消耗]]></title>
-            <link>https://lzc.github.io/Computer-Technology/Nodejs/nodejs-fastify</link>
+            <link>https://LeeZChuan.github.io/Computer-Technology/Nodejs/nodejs-fastify</link>
             <guid>/Computer-Technology/Nodejs/nodejs-fastify</guid>
             <pubDate>Sun, 27 Jun 2021 16:28:00 GMT</pubDate>
             <description><![CDATA[Fastify 作为一个 Node.js Web 框架，是如何实现高性能和低内存消耗的呢？]]></description>
@@ -270,7 +270,7 @@ Web 端到端自动化测试平台系统技术架构</p><h2 class="anchor anchor
         </item>
         <item>
             <title><![CDATA[理解编程语言的设计与实现]]></title>
-            <link>https://lzc.github.io/Computer-Technology/Tools/tools-programming-language</link>
+            <link>https://LeeZChuan.github.io/Computer-Technology/Tools/tools-programming-language</link>
             <guid>/Computer-Technology/Tools/tools-programming-language</guid>
             <pubDate>Sun, 02 May 2021 17:03:00 GMT</pubDate>
             <description><![CDATA[编程语言为开发者提供了诸多便利，那么它是如何被发明的，不同的语言设计理念有什么不同呢？]]></description>
@@ -281,7 +281,7 @@ Web 端到端自动化测试平台系统技术架构</p><h2 class="anchor anchor
         </item>
         <item>
             <title><![CDATA[Web 前端性能优化：解析函数节流与防抖的实现]]></title>
-            <link>https://lzc.github.io/Computer-Technology/Web/JavaScript/debouncing-and-throttling</link>
+            <link>https://LeeZChuan.github.io/Computer-Technology/Web/JavaScript/debouncing-and-throttling</link>
             <guid>/Computer-Technology/Web/JavaScript/debouncing-and-throttling</guid>
             <pubDate>Sun, 25 Apr 2021 22:56:00 GMT</pubDate>
             <description><![CDATA[前端开发中广泛采用的优化技巧，函数节流与防抖。]]></description>
@@ -295,7 +295,7 @@ Web 端到端自动化测试平台系统技术架构</p><h2 class="anchor anchor
         </item>
         <item>
             <title><![CDATA[使用 npm]]></title>
-            <link>https://lzc.github.io/Computer-Technology/Nodejs/tools-npm</link>
+            <link>https://LeeZChuan.github.io/Computer-Technology/Nodejs/tools-npm</link>
             <guid>/Computer-Technology/Nodejs/tools-npm</guid>
             <pubDate>Sat, 06 Jul 2019 15:43:00 GMT</pubDate>
             <description><![CDATA[npm 是 Node.js 的一个包管理器，Web 前端工程师也经常利用它构建前端工作流，来看看如何愉快的使用 npm。]]></description>
@@ -310,7 +310,7 @@ Web 端到端自动化测试平台系统技术架构</p><h2 class="anchor anchor
         </item>
         <item>
             <title><![CDATA[IDE：VS Code 配置同步]]></title>
-            <link>https://lzc.github.io/Computer-Technology/Tools/tools-vscode-sync</link>
+            <link>https://LeeZChuan.github.io/Computer-Technology/Tools/tools-vscode-sync</link>
             <guid>/Computer-Technology/Tools/tools-vscode-sync</guid>
             <pubDate>Wed, 15 Aug 2018 16:42:00 GMT</pubDate>
             <description><![CDATA[利用一款插件来同步 VS Code 的配置到 GitHub 的 gist 上，实现多个设备间共享一套配置。]]></description>
@@ -324,7 +324,7 @@ Web 端到端自动化测试平台系统技术架构</p><h2 class="anchor anchor
         </item>
         <item>
             <title><![CDATA[Web 前端架构设计]]></title>
-            <link>https://lzc.github.io/Computer-Technology/Web/web-front-end-architecture</link>
+            <link>https://LeeZChuan.github.io/Computer-Technology/Web/web-front-end-architecture</link>
             <guid>/Computer-Technology/Web/web-front-end-architecture</guid>
             <pubDate>Wed, 28 Mar 2018 14:01:00 GMT</pubDate>
             <description><![CDATA[Web 前端开发是一个零散化的过程，基本上没有专业的 IDE 来为我们提供一整套的自动化流程解决方案，如何从需求到实现一步步快速推进形成完整的工作流，在后期如何高效的进行测试和优化，让前端开发可持续化、可扩展显得极为重要。]]></description>
@@ -342,7 +342,7 @@ Web 端到端自动化测试平台系统技术架构</p><h2 class="anchor anchor
         </item>
         <item>
             <title><![CDATA[Nginx 配置]]></title>
-            <link>https://lzc.github.io/Computer-Technology/Nginx/nginx-config</link>
+            <link>https://LeeZChuan.github.io/Computer-Technology/Nginx/nginx-config</link>
             <guid>/Computer-Technology/Nginx/nginx-config</guid>
             <pubDate>Thu, 15 Mar 2018 12:38:00 GMT</pubDate>
             <description><![CDATA[Nginx 作为一个轻量、高性能的服务器，近年来颇受欢迎，无论是生产环境还是开发环境都有其发挥作用的地方，其配置文件相对来说还是较为简单的。而且，现在 nginx 也支持 Windows 环境了，利用不同的配置可以满足我们不同的需求。]]></description>
@@ -354,7 +354,7 @@ Web 端到端自动化测试平台系统技术架构</p><h2 class="anchor anchor
         </item>
         <item>
             <title><![CDATA[初识经济学]]></title>
-            <link>https://lzc.github.io/Finance-Economics/economics-preliminary-understanding</link>
+            <link>https://LeeZChuan.github.io/Finance-Economics/economics-preliminary-understanding</link>
             <guid>/Finance-Economics/economics-preliminary-understanding</guid>
             <pubDate>Mon, 05 Mar 2018 02:16:00 GMT</pubDate>
             <description><![CDATA[刚开始学习经济学，在这里记录下学习过程中的点滴。]]></description>
@@ -363,7 +363,7 @@ Web 端到端自动化测试平台系统技术架构</p><h2 class="anchor anchor
         </item>
         <item>
             <title><![CDATA[金融与经济中的一些常用概念]]></title>
-            <link>https://lzc.github.io/Finance-Economics/financia-economicsl-concept</link>
+            <link>https://LeeZChuan.github.io/Finance-Economics/financia-economicsl-concept</link>
             <guid>/Finance-Economics/financia-economicsl-concept</guid>
             <pubDate>Fri, 05 Jan 2018 02:05:00 GMT</pubDate>
             <description><![CDATA[一些与日常生活相关的金融与经济常用概念。]]></description>
@@ -372,7 +372,7 @@ Web 端到端自动化测试平台系统技术架构</p><h2 class="anchor anchor
         </item>
         <item>
             <title><![CDATA[Web 应用：单页面应用与路由]]></title>
-            <link>https://lzc.github.io/Computer-Technology/Web/web-routing</link>
+            <link>https://LeeZChuan.github.io/Computer-Technology/Web/web-routing</link>
             <guid>/Computer-Technology/Web/web-routing</guid>
             <pubDate>Wed, 25 Oct 2017 00:51:00 GMT</pubDate>
             <description><![CDATA[现在，Web 技术不仅仅是局限于页面的开发技术，在应用的开发方面也是一种潮流，B/S 架构的技术是一种趋势。而像一般的管理型 Web 应用，不注重 SEO，非常适合单页面应用（SPA）的实现方式，而路由功能则是单页面应用的核心技术。]]></description>
@@ -385,7 +385,7 @@ Web 端到端自动化测试平台系统技术架构</p><h2 class="anchor anchor
         </item>
         <item>
             <title><![CDATA[监听器、过滤器、Servlet]]></title>
-            <link>https://lzc.github.io/Computer-Technology/Java-Web/web-java-l-f-s</link>
+            <link>https://LeeZChuan.github.io/Computer-Technology/Java-Web/web-java-l-f-s</link>
             <guid>/Computer-Technology/Java-Web/web-java-l-f-s</guid>
             <pubDate>Thu, 31 Aug 2017 11:52:00 GMT</pubDate>
             <description><![CDATA[在 Java Web 开发过程中，监听器、过滤器、Servlet 这三大内容是很重要的组件，也是实现很多功能的根本所在。]]></description>
@@ -400,7 +400,7 @@ Web 端到端自动化测试平台系统技术架构</p><h2 class="anchor anchor
         </item>
         <item>
             <title><![CDATA[单元测试工具：Junit]]></title>
-            <link>https://lzc.github.io/Computer-Technology/Tools/tools-junit</link>
+            <link>https://LeeZChuan.github.io/Computer-Technology/Tools/tools-junit</link>
             <guid>/Computer-Technology/Tools/tools-junit</guid>
             <pubDate>Wed, 30 Aug 2017 23:42:00 GMT</pubDate>
             <description><![CDATA[通常一个项目的代码量是比较大的，而且其中逻辑也较为复杂，在开发完成后再进行项目测试其实是比较耗费时间和精力的，因此边开发边测试是个很好的选择，而 JUnit 则为我们提供了这样的便利。]]></description>
@@ -414,7 +414,7 @@ Web 端到端自动化测试平台系统技术架构</p><h2 class="anchor anchor
         </item>
         <item>
             <title><![CDATA[JSP 内置对象、指令与动作]]></title>
-            <link>https://lzc.github.io/Computer-Technology/Java-Web/web-java-jsp</link>
+            <link>https://LeeZChuan.github.io/Computer-Technology/Java-Web/web-java-jsp</link>
             <guid>/Computer-Technology/Java-Web/web-java-jsp</guid>
             <pubDate>Fri, 11 Aug 2017 11:07:00 GMT</pubDate>
             <description><![CDATA[JSP 全称为 Java Server Page，即 Java 服务器页面，基于简化的 Servlet 设计，是一种建立动态网页的技术标准。JSP 有九个内置对象，可以不加声明和创建就可以在 JSP 页面脚本中直接使用，同时还提供了动作与指令元素，为开发提供了极大地便利。]]></description>
@@ -429,7 +429,7 @@ Web 端到端自动化测试平台系统技术架构</p><h2 class="anchor anchor
         </item>
         <item>
             <title><![CDATA[JavaScript 异步编程]]></title>
-            <link>https://lzc.github.io/Computer-Technology/Web/JavaScript/web-js-async</link>
+            <link>https://LeeZChuan.github.io/Computer-Technology/Web/JavaScript/web-js-async</link>
             <guid>/Computer-Technology/Web/JavaScript/web-js-async</guid>
             <pubDate>Wed, 22 Mar 2017 15:48:00 GMT</pubDate>
             <description><![CDATA[JavaScript 作为一门在 Web 开发中的主流语言，常常涉及到交互事件方面的应用，这不可避免的用到了异步编程的方法，而它本身则是单线程运行的。在以往的开发中，异步编程正变得越来越难管理，新的 Promise 标准 API 将使得异步编程更加方便、安全。]]></description>
@@ -442,7 +442,7 @@ Web 端到端自动化测试平台系统技术架构</p><h2 class="anchor anchor
         </item>
         <item>
             <title><![CDATA[使用 Git]]></title>
-            <link>https://lzc.github.io/Computer-Technology/Tools/tools-git</link>
+            <link>https://LeeZChuan.github.io/Computer-Technology/Tools/tools-git</link>
             <guid>/Computer-Technology/Tools/tools-git</guid>
             <pubDate>Sat, 31 Dec 2016 13:49:00 GMT</pubDate>
             <description><![CDATA[Git 是一个分布式的版本控制工具，类似的版本控制工具还有 SVN ；由于 GitHub 平台的盛行，也使得 git 更加受欢迎，在 Windows 平台使用 git 也是非常方便的。]]></description>
@@ -453,7 +453,7 @@ Web 端到端自动化测试平台系统技术架构</p><h2 class="anchor anchor
         </item>
         <item>
             <title><![CDATA[Ruby-元编程之类]]></title>
-            <link>https://lzc.github.io/Computer-Technology/Ruby/ruby-meta-class</link>
+            <link>https://LeeZChuan.github.io/Computer-Technology/Ruby/ruby-meta-class</link>
             <guid>/Computer-Technology/Ruby/ruby-meta-class</guid>
             <pubDate>Thu, 08 Dec 2016 21:07:00 GMT</pubDate>
             <description><![CDATA[这篇文章讲述关于 Ruby 中类相关的知识，这也是面向对象语言的核心。事实上，有很多编程语言都具备元编程的能力，而 Ruby 则是将元编程发挥到极致的语言。元编程这个概念是模糊的，很多人都说是用代码生成代码的方式，不过我们不用去纠结这个概念。元编程最具有魅力的地方就是，原来我们还可以在程序运行时去操控代码。]]></description>
@@ -465,7 +465,7 @@ Web 端到端自动化测试平台系统技术架构</p><h2 class="anchor anchor
         </item>
         <item>
             <title><![CDATA[Ruby-元编程之代码块]]></title>
-            <link>https://lzc.github.io/Computer-Technology/Ruby/ruby-meta-block</link>
+            <link>https://LeeZChuan.github.io/Computer-Technology/Ruby/ruby-meta-block</link>
             <guid>/Computer-Technology/Ruby/ruby-meta-block</guid>
             <pubDate>Mon, 05 Dec 2016 15:33:00 GMT</pubDate>
             <description><![CDATA[这篇文章讲述关于 Ruby 中代码块相关的知识，这也是 Ruby 的特色。事实上，有很多编程语言都具备元编程的能力，而 Ruby 则是将元编程发挥到极致的语言。元编程这个概念是模糊的，很多人都说是用代码生成代码的方式，不过我们不用去纠结这个概念。元编程最具有魅力的地方就是，原来我们还可以在程序运行时去操控代码。]]></description>
@@ -477,7 +477,7 @@ Web 端到端自动化测试平台系统技术架构</p><h2 class="anchor anchor
         </item>
         <item>
             <title><![CDATA[Linux-Vim 编辑器]]></title>
-            <link>https://lzc.github.io/Computer-Technology/Linux/linux-cmd-vim</link>
+            <link>https://LeeZChuan.github.io/Computer-Technology/Linux/linux-cmd-vim</link>
             <guid>/Computer-Technology/Linux/linux-cmd-vim</guid>
             <pubDate>Fri, 28 Oct 2016 21:02:00 GMT</pubDate>
             <description><![CDATA[在 Linux 这样的命令行操作系统中，必须有一款功能强大的编辑器支持我们快速完成文本编辑，这就是 Vi 编辑器；通过对其加强和升级，Vim 编辑器比前者更为强大，拥有更多的功能和颜色高亮的特性，是程序员在 Linux 下编码的利器。]]></description>
@@ -489,7 +489,7 @@ Web 端到端自动化测试平台系统技术架构</p><h2 class="anchor anchor
         </item>
         <item>
             <title><![CDATA[Linux-常用 Shell 命令]]></title>
-            <link>https://lzc.github.io/Computer-Technology/Linux/linux-cmd-shell</link>
+            <link>https://LeeZChuan.github.io/Computer-Technology/Linux/linux-cmd-shell</link>
             <guid>/Computer-Technology/Linux/linux-cmd-shell</guid>
             <pubDate>Fri, 21 Oct 2016 21:02:00 GMT</pubDate>
             <description><![CDATA[Linux 是一个优秀的开发环境，大多数服务器都在上面部署。作为一个程序员，熟悉Linux 系统的常用操作也是很必要的。在 linux 内核外，shell 提供了我们程序员（用户）与内核之间的交互媒介，shell 可以说是一个命令解释器，当然它也负责将内核输出信息翻译给程序员。]]></description>
@@ -501,7 +501,7 @@ Web 端到端自动化测试平台系统技术架构</p><h2 class="anchor anchor
         </item>
         <item>
             <title><![CDATA[Web 前端性能优化：工具与技巧]]></title>
-            <link>https://lzc.github.io/Computer-Technology/Web/web-performance-optimize-skill</link>
+            <link>https://LeeZChuan.github.io/Computer-Technology/Web/web-performance-optimize-skill</link>
             <guid>/Computer-Technology/Web/web-performance-optimize-skill</guid>
             <pubDate>Sat, 20 Aug 2016 19:06:00 GMT</pubDate>
             <description><![CDATA[Web 前端的性能优化是非常迫切的，客户端的资源非常有限，而且层次不齐，很容易造成一些性能问题从而影响到最终给用户所呈现的数据信息结构的不完整。为了增强用户体验，我们必须在各个方面进行优化，同时也可以节省服务器成本。]]></description>
@@ -514,7 +514,7 @@ Web 端到端自动化测试平台系统技术架构</p><h2 class="anchor anchor
         </item>
         <item>
             <title><![CDATA[Web 前端跨域访问]]></title>
-            <link>https://lzc.github.io/Computer-Technology/Web/web-cross-domain</link>
+            <link>https://LeeZChuan.github.io/Computer-Technology/Web/web-cross-domain</link>
             <guid>/Computer-Technology/Web/web-cross-domain</guid>
             <pubDate>Wed, 10 Aug 2016 15:18:00 GMT</pubDate>
             <description><![CDATA[为了用户的安全，浏览器通常都会限制跨域（Cross-domain）访问，也就是默认不允许不同域名下页面之间进行资源的传递和信息交互，但很多时候我们又有跨域请求资源的需求。]]></description>
@@ -527,7 +527,7 @@ Web 端到端自动化测试平台系统技术架构</p><h2 class="anchor anchor
         </item>
         <item>
             <title><![CDATA[Ruby-元编程之方法]]></title>
-            <link>https://lzc.github.io/Computer-Technology/Ruby/ruby-meta-method</link>
+            <link>https://LeeZChuan.github.io/Computer-Technology/Ruby/ruby-meta-method</link>
             <guid>/Computer-Technology/Ruby/ruby-meta-method</guid>
             <pubDate>Mon, 08 Aug 2016 12:56:00 GMT</pubDate>
             <description><![CDATA[这篇文章讲述关于 Ruby 中方法相关的知识。事实上，有很多编程语言都具备元编程的能力，而 Ruby 则是将元编程发挥到极致的语言。元编程这个概念是模糊的，很多人都说是用代码生成代码的方式，不过我们不用去纠结这个概念。元编程最具有魅力的地方就是，原来我们还可以在程序运行时去操控代码。]]></description>
@@ -539,7 +539,7 @@ Web 端到端自动化测试平台系统技术架构</p><h2 class="anchor anchor
         </item>
         <item>
             <title><![CDATA[Ruby-元编程之对象模型]]></title>
-            <link>https://lzc.github.io/Computer-Technology/Ruby/ruby-meta-object</link>
+            <link>https://LeeZChuan.github.io/Computer-Technology/Ruby/ruby-meta-object</link>
             <guid>/Computer-Technology/Ruby/ruby-meta-object</guid>
             <pubDate>Mon, 01 Aug 2016 18:39:00 GMT</pubDate>
             <description><![CDATA[这篇文章讲述关于 Ruby 中对象模型相关的知识。事实上，有很多编程语言都具备元编程的能力，而 Ruby 则是将元编程发挥到极致的语言。元编程这个概念是模糊的，很多人都说是用代码生成代码的方式，不过我们不用去纠结这个概念。元编程最具有魅力的地方就是，原来我们还可以在程序运行时去操控代码。]]></description>
@@ -552,7 +552,7 @@ Web 端到端自动化测试平台系统技术架构</p><h2 class="anchor anchor
         </item>
         <item>
             <title><![CDATA[块级格式化上下文（BFC）]]></title>
-            <link>https://lzc.github.io/Computer-Technology/Web/CSS/css-bfc</link>
+            <link>https://LeeZChuan.github.io/Computer-Technology/Web/CSS/css-bfc</link>
             <guid>/Computer-Technology/Web/CSS/css-bfc</guid>
             <pubDate>Fri, 22 Jul 2016 16:35:00 GMT</pubDate>
             <description><![CDATA[在进行页面布局时，通常有流式布局、定位布局、浮动布局这三种形式。而在布局过程中，各元素之间的影响却是一个很关键的问题。]]></description>
@@ -565,7 +565,7 @@ Web 端到端自动化测试平台系统技术架构</p><h2 class="anchor anchor
         </item>
         <item>
             <title><![CDATA[HTTP 协议]]></title>
-            <link>https://lzc.github.io/Computer-Technology/Protocol/protocol-http</link>
+            <link>https://LeeZChuan.github.io/Computer-Technology/Protocol/protocol-http</link>
             <guid>/Computer-Technology/Protocol/protocol-http</guid>
             <pubDate>Fri, 24 Jun 2016 14:59:00 GMT</pubDate>
             <description><![CDATA[随着 Internet 的发展，使用 Web 浏览器获取网络数据信息已经成为一种习惯标准，而 HTTP 协议也因此成为了网络体系中最重要的应用层协议。]]></description>
@@ -576,7 +576,7 @@ Web 端到端自动化测试平台系统技术架构</p><h2 class="anchor anchor
         </item>
         <item>
             <title><![CDATA[IP 协议]]></title>
-            <link>https://lzc.github.io/Computer-Technology/Protocol/protocol-ip</link>
+            <link>https://LeeZChuan.github.io/Computer-Technology/Protocol/protocol-ip</link>
             <guid>/Computer-Technology/Protocol/protocol-ip</guid>
             <pubDate>Thu, 23 Jun 2016 18:02:00 GMT</pubDate>
             <description><![CDATA[作为 TCP/IP 协议栈中最核心的协议，IP 协议为网络数据传输和网络互联提供最基本的服务。IP 协议有 IPv4 和 IPv6 两个版本，我们只讨论 TPv4 版本的 IP 协议。]]></description>
@@ -587,7 +587,7 @@ Web 端到端自动化测试平台系统技术架构</p><h2 class="anchor anchor
         </item>
         <item>
             <title><![CDATA[TCP 与 UDP 协议]]></title>
-            <link>https://lzc.github.io/Computer-Technology/Protocol/protocol-tcp-udp</link>
+            <link>https://LeeZChuan.github.io/Computer-Technology/Protocol/protocol-tcp-udp</link>
             <guid>/Computer-Technology/Protocol/protocol-tcp-udp</guid>
             <pubDate>Mon, 20 Jun 2016 17:21:00 GMT</pubDate>
             <description><![CDATA[传输层是网络分层模型中举足轻重的层，它是底层通信子网与高层资源子网的接口与桥梁，提供了面向连接的传输控制协议（Transmission Control Protocol，TCP）和无连接的用户数据报协议（User Datagram Protocol，UDP），负责提供端到端的数据传输服务。]]></description>
@@ -599,7 +599,7 @@ Web 端到端自动化测试平台系统技术架构</p><h2 class="anchor anchor
         </item>
         <item>
             <title><![CDATA[局域网（LAN）与广域网（WAN）]]></title>
-            <link>https://lzc.github.io/Computer-Technology/Protocol/protocol-lan-wan</link>
+            <link>https://LeeZChuan.github.io/Computer-Technology/Protocol/protocol-lan-wan</link>
             <guid>/Computer-Technology/Protocol/protocol-lan-wan</guid>
             <pubDate>Sat, 18 Jun 2016 18:22:00 GMT</pubDate>
             <description><![CDATA[TCP/IP 的网络接口层包括物理层和数据链路层，既是局域网（LAN）技术起作用的分层，又是广域网（WAN）技术和连接管理协议发挥作用的层次。]]></description>
@@ -611,7 +611,7 @@ Web 端到端自动化测试平台系统技术架构</p><h2 class="anchor anchor
         </item>
         <item>
             <title><![CDATA[网络通信关键概念]]></title>
-            <link>https://lzc.github.io/Computer-Technology/Protocol/protocol-base</link>
+            <link>https://LeeZChuan.github.io/Computer-Technology/Protocol/protocol-base</link>
             <guid>/Computer-Technology/Protocol/protocol-base</guid>
             <pubDate>Sat, 18 Jun 2016 16:17:00 GMT</pubDate>
             <description><![CDATA[计算机网络是通过通信设备与线路将地理上分散并且具有独立功能的计算机系统连接在一起，并由功能完善的软件来控制，进而实现资源共享的系统。从物理组成上来看，计算机网络包括硬件、软件和协议三大部分。计算机网络中结点间相互通信是由控制信息传送的网络协议及其他相应的网络软件共同实现的。在计算机网络通信中，有部分关键性概念需要理解透彻，在此做一总结。]]></description>
@@ -623,7 +623,7 @@ Web 端到端自动化测试平台系统技术架构</p><h2 class="anchor anchor
         </item>
         <item>
             <title><![CDATA[OSI 与 TCP/IP 参考模型]]></title>
-            <link>https://lzc.github.io/Computer-Technology/Protocol/protocol-osi</link>
+            <link>https://LeeZChuan.github.io/Computer-Technology/Protocol/protocol-osi</link>
             <guid>/Computer-Technology/Protocol/protocol-osi</guid>
             <pubDate>Fri, 17 Jun 2016 17:39:00 GMT</pubDate>
             <description><![CDATA[目前流行的两大网络体系结构是 OSI/RM 和 TCP/IP 参考模型，他们均是分层结构。分层是为了简化问题，降低网络设计复杂性，而且各层次结构相互独立，实现的功能也相对独立。层与层之间只在层间接口处关联，层间耦合最小。]]></description>
@@ -635,7 +635,7 @@ Web 端到端自动化测试平台系统技术架构</p><h2 class="anchor anchor
         </item>
         <item>
             <title><![CDATA[Web 本地存储]]></title>
-            <link>https://lzc.github.io/Computer-Technology/Web/web-local-storage</link>
+            <link>https://LeeZChuan.github.io/Computer-Technology/Web/web-local-storage</link>
             <guid>/Computer-Technology/Web/web-local-storage</guid>
             <pubDate>Wed, 01 Jun 2016 01:00:00 GMT</pubDate>
             <description><![CDATA[为了达到某些需求，我们通常需要在本地存储一些数据，方便我们进行用户个性化定制服务。]]></description>
@@ -649,7 +649,7 @@ Web 端到端自动化测试平台系统技术架构</p><h2 class="anchor anchor
         </item>
         <item>
             <title><![CDATA[Linux-基础]]></title>
-            <link>https://lzc.github.io/Computer-Technology/Linux/linux-base</link>
+            <link>https://LeeZChuan.github.io/Computer-Technology/Linux/linux-base</link>
             <guid>/Computer-Technology/Linux/linux-base</guid>
             <pubDate>Sun, 29 May 2016 15:34:00 GMT</pubDate>
             <description><![CDATA[Linux 是在做一些较为底层的开发工作时的必要开发环境，了解 Linux 也对操作系统概念的理解有很大的帮助，这篇文章是对 Linux 的一些基础概念的阐述。]]></description>
@@ -662,7 +662,7 @@ Web 端到端自动化测试平台系统技术架构</p><h2 class="anchor anchor
         </item>
         <item>
             <title><![CDATA[DOM-加载 JavaScript]]></title>
-            <link>https://lzc.github.io/Computer-Technology/Web/DOM/dom-js</link>
+            <link>https://LeeZChuan.github.io/Computer-Technology/Web/DOM/dom-js</link>
             <guid>/Computer-Technology/Web/DOM/dom-js</guid>
             <pubDate>Tue, 24 May 2016 22:49:00 GMT</pubDate>
             <description><![CDATA[页面的动态交互离不开 Javascript，将 js 脚本引入页面时会阻塞页面加载，在某些时候我们则可以选择异步加载 js 脚本。]]></description>
@@ -675,7 +675,7 @@ Web 端到端自动化测试平台系统技术架构</p><h2 class="anchor anchor
         </item>
         <item>
             <title><![CDATA[DOM-文本节点]]></title>
-            <link>https://lzc.github.io/Computer-Technology/Web/DOM/dom-textnode</link>
+            <link>https://LeeZChuan.github.io/Computer-Technology/Web/DOM/dom-textnode</link>
             <guid>/Computer-Technology/Web/DOM/dom-textnode</guid>
             <pubDate>Tue, 24 May 2016 21:50:00 GMT</pubDate>
             <description><![CDATA[文本（Text）节点虽然很多时候我们直接用 innerHTML 去赋值替换，但当我们进行一些细微的修改时，了解一下 DOM 操作还是非常有用的。]]></description>
@@ -688,7 +688,7 @@ Web 端到端自动化测试平台系统技术架构</p><h2 class="anchor anchor
         </item>
         <item>
             <title><![CDATA[DOM-文档片段]]></title>
-            <link>https://lzc.github.io/Computer-Technology/Web/DOM/dom-fragment</link>
+            <link>https://LeeZChuan.github.io/Computer-Technology/Web/DOM/dom-fragment</link>
             <guid>/Computer-Technology/Web/DOM/dom-fragment</guid>
             <pubDate>Mon, 23 May 2016 13:10:00 GMT</pubDate>
             <description><![CDATA[DOM 操作是非常消耗性能的，如果要进行大量的 DOM 操作，我们可以选择在内存中先构建一个文档片段然后一次性插入 DOM 树。]]></description>
@@ -701,7 +701,7 @@ Web 端到端自动化测试平台系统技术架构</p><h2 class="anchor anchor
         </item>
         <item>
             <title><![CDATA[DOM-事件]]></title>
-            <link>https://lzc.github.io/Computer-Technology/Web/DOM/dom-event</link>
+            <link>https://LeeZChuan.github.io/Computer-Technology/Web/DOM/dom-event</link>
             <guid>/Computer-Technology/Web/DOM/dom-event</guid>
             <pubDate>Mon, 23 May 2016 12:18:00 GMT</pubDate>
             <description><![CDATA[JavaScript 的作用就是让 html 静态页面具备动态效果，而这些基本都是利用 DOM 事件来实现的。]]></description>
@@ -714,7 +714,7 @@ Web 端到端自动化测试平台系统技术架构</p><h2 class="anchor anchor
         </item>
         <item>
             <title><![CDATA[DOM-元素节点属性]]></title>
-            <link>https://lzc.github.io/Computer-Technology/Web/DOM/dom-attribute</link>
+            <link>https://LeeZChuan.github.io/Computer-Technology/Web/DOM/dom-attribute</link>
             <guid>/Computer-Technology/Web/DOM/dom-attribute</guid>
             <pubDate>Sat, 21 May 2016 21:00:00 GMT</pubDate>
             <description><![CDATA[元素节点上具有很多属性，这些属性我们通常可以很方便的获取，并进行简单的操作。]]></description>
@@ -727,7 +727,7 @@ Web 端到端自动化测试平台系统技术架构</p><h2 class="anchor anchor
         </item>
         <item>
             <title><![CDATA[CSS 清除浮动]]></title>
-            <link>https://lzc.github.io/Computer-Technology/Web/CSS/css-clear-float</link>
+            <link>https://LeeZChuan.github.io/Computer-Technology/Web/CSS/css-clear-float</link>
             <guid>/Computer-Technology/Web/CSS/css-clear-float</guid>
             <pubDate>Sat, 21 May 2016 18:25:00 GMT</pubDate>
             <description><![CDATA[在浮动布局中，有时候会因为父元素没有设置高度而子元素浮动导致父元素坍塌，我们就需要清除浮动撑起父元素的高度，在这里总结一下常用方法。]]></description>
@@ -740,7 +740,7 @@ Web 端到端自动化测试平台系统技术架构</p><h2 class="anchor anchor
         </item>
         <item>
             <title><![CDATA[DOM-元素节点几何量]]></title>
-            <link>https://lzc.github.io/Computer-Technology/Web/DOM/dom-rule</link>
+            <link>https://LeeZChuan.github.io/Computer-Technology/Web/DOM/dom-rule</link>
             <guid>/Computer-Technology/Web/DOM/dom-rule</guid>
             <pubDate>Thu, 19 May 2016 14:54:00 GMT</pubDate>
             <description><![CDATA[当我们在查看 HTML 文档时，每个元素节点被解析后，都画成了可视形状。我们可以获取每个元素节点的几何量（宽、高、偏移量）以及页面滚动距离。]]></description>
@@ -753,7 +753,7 @@ Web 端到端自动化测试平台系统技术架构</p><h2 class="anchor anchor
         </item>
         <item>
             <title><![CDATA[编辑器：Sublime Text 常用插件]]></title>
-            <link>https://lzc.github.io/Computer-Technology/Tools/tools-sublime</link>
+            <link>https://LeeZChuan.github.io/Computer-Technology/Tools/tools-sublime</link>
             <guid>/Computer-Technology/Tools/tools-sublime</guid>
             <pubDate>Thu, 19 May 2016 13:38:00 GMT</pubDate>
             <description><![CDATA[Sumblime Text 是一个具有漂亮的界面和强大功能的文本编辑器，而且也支持许多丰富的插件。它是一个收费软件，但是允许开发人员无限期的免费试用。这篇文章介绍一下常用的插件。]]></description>
@@ -766,7 +766,7 @@ Web 端到端自动化测试平台系统技术架构</p><h2 class="anchor anchor
         </item>
         <item>
             <title><![CDATA[编辑器：Sublime Text - Vim 插件]]></title>
-            <link>https://lzc.github.io/Computer-Technology/Tools/tools-sublime-vim</link>
+            <link>https://LeeZChuan.github.io/Computer-Technology/Tools/tools-sublime-vim</link>
             <guid>/Computer-Technology/Tools/tools-sublime-vim</guid>
             <pubDate>Wed, 18 May 2016 12:55:00 GMT</pubDate>
             <description><![CDATA[Sumblime Text 是一个具有漂亮的界面和强大功能的文本编辑器，而且也支持许多丰富的插件。它是一个收费软件，但是允许开发人员无限期的免费试用。]]></description>
@@ -780,7 +780,7 @@ Web 端到端自动化测试平台系统技术架构</p><h2 class="anchor anchor
         </item>
         <item>
             <title><![CDATA[DOM-节点集合]]></title>
-            <link>https://lzc.github.io/Computer-Technology/Web/DOM/dom-nodelist</link>
+            <link>https://LeeZChuan.github.io/Computer-Technology/Web/DOM/dom-nodelist</link>
             <guid>/Computer-Technology/Web/DOM/dom-nodelist</guid>
             <pubDate>Tue, 17 May 2016 22:30:00 GMT</pubDate>
             <description><![CDATA[当从文档树中选取成组的节点或者使用预定义的节点集合时，这些节点都是放在 NodeList 或者一个 HTMLCollecton 之中，而不是一个数组（Array）中。]]></description>
@@ -793,7 +793,7 @@ Web 端到端自动化测试平台系统技术架构</p><h2 class="anchor anchor
         </item>
         <item>
             <title><![CDATA[DOM-选取元素节点]]></title>
-            <link>https://lzc.github.io/Computer-Technology/Web/DOM/dom-select</link>
+            <link>https://LeeZChuan.github.io/Computer-Technology/Web/DOM/dom-select</link>
             <guid>/Computer-Technology/Web/DOM/dom-select</guid>
             <pubDate>Tue, 17 May 2016 22:10:00 GMT</pubDate>
             <description><![CDATA[DOM 操作都是通过对文档树中节点的访问来实现的，如何选取特定的元素节点是关键，进而才能访问该元素节点实现修改、查看、移除、替换等操作。]]></description>
@@ -806,7 +806,7 @@ Web 端到端自动化测试平台系统技术架构</p><h2 class="anchor anchor
         </item>
         <item>
             <title><![CDATA[DOM-元素节点]]></title>
-            <link>https://lzc.github.io/Computer-Technology/Web/DOM/dom-elementnode</link>
+            <link>https://LeeZChuan.github.io/Computer-Technology/Web/DOM/dom-elementnode</link>
             <guid>/Computer-Technology/Web/DOM/dom-elementnode</guid>
             <pubDate>Tue, 17 May 2016 13:19:00 GMT</pubDate>
             <description><![CDATA[可以说，元素节点是 DOM 树中的核心部分，我们进行文档的操作通常都是建立在元素节点上的。]]></description>
@@ -819,7 +819,7 @@ Web 端到端自动化测试平台系统技术架构</p><h2 class="anchor anchor
         </item>
         <item>
             <title><![CDATA[文档对象模型（DOM）]]></title>
-            <link>https://lzc.github.io/Computer-Technology/Web/DOM/dom</link>
+            <link>https://LeeZChuan.github.io/Computer-Technology/Web/DOM/dom</link>
             <guid>/Computer-Technology/Web/DOM/dom</guid>
             <pubDate>Mon, 16 May 2016 14:04:00 GMT</pubDate>
             <description><![CDATA[在网页设计中，有一个很重要的角色需要我们了解，DOM 帮助我们对页面元素进行增、删、改等全方位的操作，而且让 JavaScript 在客户端修改 HTML 文档成为一个很简单的事情，可以说 DOM 为我们操作 HTML 文档提供了强大的编程接口。]]></description>
@@ -831,7 +831,7 @@ Web 端到端自动化测试平台系统技术架构</p><h2 class="anchor anchor
         </item>
         <item>
             <title><![CDATA[浏览器对象模型（BOM）]]></title>
-            <link>https://lzc.github.io/Computer-Technology/Web/DOM/dom-bom</link>
+            <link>https://LeeZChuan.github.io/Computer-Technology/Web/DOM/dom-bom</link>
             <guid>/Computer-Technology/Web/DOM/dom-bom</guid>
             <pubDate>Sun, 15 May 2016 12:02:00 GMT</pubDate>
             <description><![CDATA[在网页开发中，我们通常专注于内容的设计，而有些时候我们需要进行不同窗口之间的交互，这时候我们就需要学习如何运用 BOM 中的许多核心对象，及其属性、方法。]]></description>
@@ -844,7 +844,7 @@ Web 端到端自动化测试平台系统技术架构</p><h2 class="anchor anchor
         </item>
         <item>
             <title><![CDATA[CPU 的七种寻址方式]]></title>
-            <link>https://lzc.github.io/Computer-Technology/Computer/computer-cpu-addressing-mode</link>
+            <link>https://LeeZChuan.github.io/Computer-Technology/Computer/computer-cpu-addressing-mode</link>
             <guid>/Computer-Technology/Computer/computer-cpu-addressing-mode</guid>
             <pubDate>Thu, 05 May 2016 01:53:00 GMT</pubDate>
             <description><![CDATA[CPU 获取数据的方式不仅仅一种，多种方式也为不同数据的获取提供了不同的效率考量，保证了寻址效率与指令的灵活性。]]></description>
@@ -855,7 +855,7 @@ Web 端到端自动化测试平台系统技术架构</p><h2 class="anchor anchor
         </item>
         <item>
             <title><![CDATA[内存的 3 种刷新方式]]></title>
-            <link>https://lzc.github.io/Computer-Technology/Computer/computer-memory-refresh</link>
+            <link>https://LeeZChuan.github.io/Computer-Technology/Computer/computer-memory-refresh</link>
             <guid>/Computer-Technology/Computer/computer-memory-refresh</guid>
             <pubDate>Tue, 03 May 2016 01:59:00 GMT</pubDate>
             <description><![CDATA[内存为我们提供了一个数据快速交换的缓冲区，但同时会在掉电的情况下数据丢失，来看看内存是如何在带电情况下刷新数据的。]]></description>
@@ -866,7 +866,7 @@ Web 端到端自动化测试平台系统技术架构</p><h2 class="anchor anchor
         </item>
         <item>
             <title><![CDATA[微处理器寻址范围]]></title>
-            <link>https://lzc.github.io/Computer-Technology/Computer/computer-microprocessor-addressing-range</link>
+            <link>https://LeeZChuan.github.io/Computer-Technology/Computer/computer-microprocessor-addressing-range</link>
             <guid>/Computer-Technology/Computer/computer-microprocessor-addressing-range</guid>
             <pubDate>Thu, 28 Apr 2016 01:42:00 GMT</pubDate>
             <description><![CDATA[为什么内存不是越大越好，内存的大小受限于处理器的寻址范围。]]></description>
