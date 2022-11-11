@@ -2,7 +2,7 @@
 title: Linux-基础
 date: 2016-05-29 15:34:00
 update: 2018-10-13 14:11:00
-authors: wang
+authors: 
 tags: &ref_0
   - 计算机技术
   - 操作系统

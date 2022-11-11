@@ -2,7 +2,7 @@
 title: Linux-Vim 编辑器
 date: 2016-10-28 21:02:00
 update: 2016-10-28 21:02:00
-authors: LeeZChuan
+authors: 
 tags: &ref_0
   - 计算机技术
   - 操作系统

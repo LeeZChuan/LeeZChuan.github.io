@@ -6,11 +6,6 @@ authors: LeeZChuan
 tags: &ref_0
   - 计算机技术
   - Web
-  - Web 后端
-  - Java
-  - Listener
-  - Filter
-  - Servlet
 keywords: *ref_0
 description: 微信小程序开发与钉钉小程序开发的移动端兼容上有很多需要注意的点。
 ---
