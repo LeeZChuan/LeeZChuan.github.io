@@ -99,10 +99,6 @@ const config = {
             href: 'https://github.com/LeeZChuan/awesome-favorites-list',
           },
           {
-            label: 'The Book Of Ruby(zh)',
-            href: 'https://LeeZChuan.github.io/the-book-of-ruby/',
-          },
-          {
             label: 'Email',
             href: 'mailto:@126.com',
           },

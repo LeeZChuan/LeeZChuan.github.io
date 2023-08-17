@@ -2,7 +2,7 @@
 title: Nginx 配置
 date: 2018-03-15 12:38:00
 update: 2020-12-02 01:19:00
-authors: 
+authors: LeeZChuan 
 tags: &ref_0
   - 计算机技术
   - 服务器
