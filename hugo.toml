@@ -1,6 +1,7 @@
 ######################## default configuration ####################
 # The base URL of your site (required). This will be prepended to all relative URLs.
 # baseURL = "/"
+
 baseURL = "https://leezchuan.github.io/"
 # Title of your website (required).
 title = "技术之心"
@@ -18,6 +19,9 @@ hasCJKLanguage = false #  If hasCJKLanguage true, auto-detect Chinese/Japanese/K
 defaultContentLanguage = 'en'
 # defaultContentLanguageInSubdir need to be true if you want to use the language code as a subdirectory and language specific 404 page
 defaultContentLanguageInSubdir = false
+
+# 发布目录配置
+publishDir = "docs"  # Hugo 静态站点生成目录（默认是 public，你也可以修改为 docs）
 
 ########################### Services #############################
 [services]
