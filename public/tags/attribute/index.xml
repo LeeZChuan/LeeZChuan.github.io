@@ -1,10 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Attribute on 技术之心</title><link>http:/tags/attribute/</link><description>Recent content in Attribute on 技术之心</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sat, 21 May 2016 21:00:00 -0400</lastBuildDate><atom:link href="http:/tags/attribute/index.xml" rel="self" type="application/rss+xml"/><item><title>DOM-元素节点属性</title><link>http:/blog/computer-technology/web/dom/dom-attribute/</link><pubDate>Sat, 21 May 2016 21:00:00 -0400</pubDate><guid>http:/blog/computer-technology/web/dom/dom-attribute/</guid><description>&lt;p>元素节点上具有很多属性，这些属性我们通常可以很方便的获取，并进行简单的操作。&lt;/p>
-&lt;!-- truncate -->
-&lt;h3 id="节点属性常用操作">节点属性常用操作&lt;/h3>
-&lt;p>每个 HTML 元素都有很多属性，例如（id、class、name、url、src、href）等等，元素节点上定义了一些方法供我们使用，来对这些属性进行设置、获取、移除操作。&lt;/p>
-&lt;ul>
-&lt;li>setAttribute()&lt;/li>
-&lt;li>getAttribute()&lt;/li>
-&lt;li>removeAttribute()&lt;/li>
-&lt;/ul>
-&lt;p>exp:&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Attribute on 技术之心</title>
+    <link>http:/tags/attribute/</link>
+    <description>Recent content in Attribute on 技术之心</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 21 May 2016 21:00:00 -0400</lastBuildDate>
+    <atom:link href="http:/tags/attribute/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DOM-元素节点属性</title>
+      <link>http:/blog/computer-technology/web/dom/dom-attribute/</link>
+      <pubDate>Sat, 21 May 2016 21:00:00 -0400</pubDate>
+      <guid>http:/blog/computer-technology/web/dom/dom-attribute/</guid>
+      <description>&lt;p&gt;元素节点上具有很多属性，这些属性我们通常可以很方便的获取，并进行简单的操作。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;节点属性常用操作&#34;&gt;节点属性常用操作&lt;/h3&gt;&#xA;&lt;p&gt;每个 HTML 元素都有很多属性，例如（id、class、name、url、src、href）等等，元素节点上定义了一些方法供我们使用，来对这些属性进行设置、获取、移除操作。&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;setAttribute()&lt;/li&gt;&#xA;&lt;li&gt;getAttribute()&lt;/li&gt;&#xA;&lt;li&gt;removeAttribute()&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;exp:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
