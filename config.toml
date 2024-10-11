@@ -1,0 +1,21 @@
+# Hugo 基本配置
+baseURL = "https://leezchuan.github.io/"  # 将 'username' 和 'repository-name' 替换为你的 GitHub 用户名和仓库名
+languageCode = "en-us"
+title = "My Hugo Site"
+theme = "your-theme"  # 替换为你正在使用的 Hugo 主题名
+enableRobotsTXT = true
+
+# 发布目录配置
+publishDir = "public"  # Hugo 静态站点生成目录（默认是 public，你也可以修改为 docs）
+
+# Hugo SEO 和布局配置
+paginate = 10  # 分页数
+
+# 资源目录配置
+relativeURLs = true  # 生成相对路径以便在子目录中工作
+canonifyURLs = true  # 使用完整的 URL
+
+# 站点参数（可以根据需要修改）
+[params]
+  description = "这是一个使用 Hugo 构建的网站"
+  author = "你的名字"

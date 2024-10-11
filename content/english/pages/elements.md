@@ -10,23 +10,23 @@ draft: false
 
 {{< toc >}}
 
-Here is an example of headings. You can use this heading by the following markdown rules. For example: use `#` for heading 1 and use `####################################` for heading 6.
+Here is an example of headings. You can use this heading by the following markdown rules. For example: use `#` for heading 1 and use `######` for heading 6.
 
 # Heading 1
 
-###### Heading 2
+## Heading 2
 
-############### Heading 3
+### Heading 3
 
-######################## Heading 4
+#### Heading 4
 
-################################# Heading 5
+##### Heading 5
 
-#################################### Heading 6
+###### Heading 6
 
 <hr>
 
-############### Emphasis
+### Emphasis
 
 The emphasis, aka italics, with _asterisks_ or _underscores_.
 
@@ -38,13 +38,13 @@ Strike through uses two tildes. ~~Scratch this.~~
 
 <hr>
 
-############### Button
+### Button
 
 {{< button label="Button" link="/" style="solid" >}}
 
 <hr>
 
-############### Link
+### Link
 
 [I'm an inline-style link](https://www.google.com)
 
@@ -70,13 +70,13 @@ Some text to show that the reference links can follow later.
 
 <hr>
 
-############### Paragraph
+### Paragraph
 
 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam nihil enim maxime corporis cumque totam aliquid nam sint inventore optio modi neque laborum officiis necessitatibus, facilis placeat pariatur! Voluptatem, sed harum pariatur adipisci voluptates voluptatum cumque, porro sint minima similique magni perferendis fuga! Optio vel ipsum excepturi tempore reiciendis id quidem? Vel in, doloribus debitis nesciunt fugit sequi magnam accusantium modi neque quis, vitae velit, pariatur harum autem a! Velit impedit atque maiores animi possimus asperiores natus repellendus excepturi sint architecto eligendi non, omnis nihil. Facilis, doloremque illum. Fugit optio laborum minus debitis natus illo perspiciatis corporis voluptatum rerum laboriosam.
 
 <hr>
 
-############### Ordered List
+### Ordered List
 
 1. List item
 2. List item
@@ -86,7 +86,7 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam nihil enim maxime 
 
 <hr>
 
-############### Unordered List
+### Unordered List
 
 - List item
 - List item
@@ -96,7 +96,7 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam nihil enim maxime 
 
 <hr>
 
-############### Notice
+### Notice
 
 {{< notice "note" >}}
 This is a simple note.
@@ -116,12 +116,12 @@ This is a simple warning.
 
 <hr>
 
-############### Tab
+### Tab
 
 {{< tabs >}}
 {{< tab "Tab 1" >}}
 
-######################## Hey There, I am a tab
+#### Hey There, I am a tab
 
 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
 
@@ -129,7 +129,7 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
 
 {{< tab "Tab 2" >}}
 
-######################## I wanna talk about the assassination attempt
+#### I wanna talk about the assassination attempt
 
 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
 
@@ -139,7 +139,7 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
 
 {{< tab "Tab 3" >}}
 
-######################## We know you’re dealing in stolen ore
+#### We know you’re dealing in stolen ore
 
 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
 
@@ -150,7 +150,7 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
 
 <hr>
 
-############### Accordions
+### Accordions
 
 {{< accordion "Why should you need to do this?" >}}
 
@@ -178,7 +178,7 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
 
 <hr>
 
-############### Code and Syntax Highlighting
+### Code and Syntax Highlighting
 
 This is an `Inline code` sample.
 
@@ -203,13 +203,13 @@ flowchart TD
 
 <hr>
 
-############### Blockquote
+### Blockquote
 
 > Did you come here for something in particular or just general Riker-bashing? And blowing into maximum warp speed, you appeared for an instant to be in two places at once.
 
 <hr>
 
-############### Tables
+### Tables
 
 | Tables        |      Are      |  Cool |
 | ------------- | :-----------: | ----: |
@@ -219,30 +219,30 @@ flowchart TD
 
 <hr>
 
-############### Image
+### Image
 
 {{< image src="images/image-placeholder.png" caption="" alt="alter-text" height="" width="" position="center" command="fill" option="q100" class="img-fluid" title="image title"  webp="false" >}}
 
 <hr>
 
-############### Gallery
+### Gallery
 
 {{< gallery dir="images/gallery" class="" height="400" width="400" webp="true" command="Fit" option="" zoomable="true" >}}
 
 <hr>
 
-############### Slider
+### Slider
 
 {{< slider dir="images/gallery" class="max-w-[600px] ml-0" height="400" width="400" webp="true" command="Fit" option="" zoomable="true" >}}
 
 <hr>
 
-############### Youtube video
+### Youtube video
 
 {{< youtube ResipmZmpDU >}}
 
 <hr>
 
-############### Custom video
+### Custom video
 
 {{< video src="https://www.w3schools.com/html/mov_bbb.mp4" width="100%" height="auto" autoplay="false" loop="false" muted="false" controls="true" class="rounded-lg" >}}
