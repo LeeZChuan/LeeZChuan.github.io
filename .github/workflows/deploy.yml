@@ -16,7 +16,7 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '16'  # 安装最新版本的 Node.js
+          node-version: '16'  # 安装 Node.js
 
       - name: Install PostCSS and other dependencies
         run: |
@@ -34,4 +34,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public  # 将 Hugo 的静态文件发布到 ./public
+          publish_dir: ./public  # 让 GitHub Actions 使用 Hugo 生成的 ./public 文件夹内容
+          destination_dir: /    # 将生成的文件部署到根目录，而不是子目录
