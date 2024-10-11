@@ -24,4 +24,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: /  # 确保你将 Hugo 生成的静态文件输出到 ./public 目录
+          publish_dir: ./docs  # 确保你将 Hugo 生成的静态文件输出到 ./docs 目录
