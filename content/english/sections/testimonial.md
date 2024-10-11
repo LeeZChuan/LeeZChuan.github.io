@@ -1,29 +1,25 @@
 ---
 enable: true
-title: "What Users Are Saying About Hugoplate"
-description: "Don't just take our word for it - hear from some of our satisfied users!  Check out some of our testimonials below to see what others are saying about Hugoplate."
+title: "同事与领导对我的评价"
+description: "在多个项目中，我致力于为团队和客户提供高效、创新的解决方案。以下是我在与团队合作和项目实施中的一些真实反馈，来自我的同事和领导的评价展示了我的技术能力和协作精神。"
 
 # Testimonials
 testimonials:
-  - name: "Marvin McKinney"
-    designation: "Web Designer"
-    avatar: "/images/avatar-sm.png"
-    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui iusto illo molestias, assumenda expedita commodi inventore non itaque molestiae voluptatum dolore, facilis sapiente, repellat veniam."
 
-  - name: "Marvin McKinney"
-    designation: "Web Designer"
-    avatar: "/images/avatar-sm.png"
-    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui iusto illo molestias, assumenda expedita commodi inventore non itaque molestiae voluptatum dolore, facilis sapiente, repellat veniam."
+  - name: "李*鹏"
+    designation: "后端开发工程师"
+    avatar: "/images/avatar-sm2.png"
+    content: "作为后端开发同事，与他合作的过程中让我受益良多。他不仅在 Node.js 和 Java 上表现出色，还能够在项目架构设计上提出实用的改进建议。每当我们遇到后端服务或 API 设计上的挑战，他总能带来创新的解决方案，确保系统的性能和稳定性。他的代码风格清晰简洁，极大地促进了团队协作。"
 
-  - name: "Marvin McKinney"
-    designation: "Web Designer"
-    avatar: "/images/avatar-sm.png"
-    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui iusto illo molestias, assumenda expedita commodi inventore non itaque molestiae voluptatum dolore, facilis sapiente, repellat veniam."
+  - name: "黄*柳"
+    designation: "技术总监"
+    avatar: "/images/avatar-sm3.png"
+    content: "他在多个项目中的表现证明了他是一位全能型开发者，能很好地在前后端开发之间进行切换。他不仅具备优秀的技术能力，还能够理解业务需求，并结合技术做出合理的架构决策。在项目推进中，他为我们团队的技术选择提供了重要的支持，并确保了整个开发流程的顺利进行。他对细节的关注和解决复杂问题的能力让我非常放心。"
 
-  - name: "Marvin McKinney"
-    designation: "Web Designer"
-    avatar: "/images/avatar-sm.png"
-    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui iusto illo molestias, assumenda expedita commodi inventore non itaque molestiae voluptatum dolore, facilis sapiente, repellat veniam."
+  - name: "韩*阳"
+    designation: "项目负责人"
+    avatar: "/images/avatar-sm4.png"
+    content: "作为项目负责人，与他合作让我深感放心。他总是能深入理解项目需求，并在短时间内提出高效的技术解决方案。在项目实施过程中，他的技术建议不仅提升了系统的可扩展性，还减少了开发中的潜在问题。无论是在关键决策上，还是在团队协作上，他都展示了出色的领导力与技术执行力。"
 
 # don't create a separate page
 _build:
