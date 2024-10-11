@@ -2,23 +2,25 @@
 
 # main menu
 [[main]]
-name = "Home"
+name = "主页"
 url = "/"
 weight = 1
 
 [[main]]
-name = "About"
+name = "关于我"
 url = "/about"
 weight = 2
 
-[[main]]
-name = "Elements"
-url = "/elements"
-weight = 3
 
 [[main]]
+weight = 3
+name = "学习记录"
+
+[[main]]
+name = "Md编写说明"
+url = "/elements"
 weight = 4
-name = "Pages"
+
 
 [[main]]
 parent = "Pages"
@@ -47,17 +49,17 @@ url = "/404"
 
 
 # footer menu
-[[footer]]
-name = "About"
-url = "/about"
-weight = 1
+# [[footer]]
+# name = "About"
+# url = "/about"
+# weight = 1
 
 [[footer]]
-name = "Elements"
-url = "/elements"
-weight = 2
+# name = "Elements"
+# url = "/elements"
+# weight = 2
 
 [[footer]]
-name = "Privacy Policy"
-url = "/privacy-policy"
-weight = 3
+# name = "Privacy Policy"
+# url = "/privacy-policy"
+# weight = 3

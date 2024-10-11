@@ -2179,9 +2179,6 @@ input#nav-toggle:checked ~ #nav-menu {
 .rounded-2xl {
   border-radius: 1rem;
 }
-.rounded-full {
-  border-radius: 9999px;
-}
 .rounded-lg {
   border-radius: 0.5rem;
 }
