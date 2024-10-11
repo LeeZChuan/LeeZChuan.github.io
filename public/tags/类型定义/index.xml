@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>类型定义 on 技术之心</title>
+    <link>//localhost:1313/tags/%E7%B1%BB%E5%9E%8B%E5%AE%9A%E4%B9%89/</link>
+    <description>Recent content in 类型定义 on 技术之心</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 06 Aug 2022 17:33:00 -0400</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/%E7%B1%BB%E5%9E%8B%E5%AE%9A%E4%B9%89/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>利用脚本执行 `tsc` 忽略类型检查错误</title>
+      <link>//localhost:1313/blog/computer-technology/typescript/tools-typescript-use-script-to-ts-types/</link>
+      <pubDate>Sat, 06 Aug 2022 17:33:00 -0400</pubDate>
+      <guid>//localhost:1313/blog/computer-technology/typescript/tools-typescript-use-script-to-ts-types/</guid>
+      <description>&lt;p&gt;在发布 npm 包时添加对 TypeScript 类型定义文件的支持会让用户的使用体验增色不少，TypeScript 官方提供了 &lt;code&gt;tsc --emitDeclarationOnly&lt;/code&gt; 命令用来生成类型定义文件（&lt;code&gt;.d.ts&lt;/code&gt;）。但是，该命令会同时执行类型检查，遇到错误时会报错中断命令行进程，这就使其无法直接集成在 CI 环节在发布 npm 包时自动执行生成类型定义文件的操作。当然，一个解决办法就是解决掉代码中所有的类型检查错误即可，既然讨论到这个问题，必然不会花费额外精力去解决一些历史遗留问题。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>TypeScript：扩展第三方库的类型定义</title>
+      <link>//localhost:1313/blog/computer-technology/typescript/tools-typescript-type-extend/</link>
+      <pubDate>Sun, 09 Jan 2022 17:36:00 -0500</pubDate>
+      <guid>//localhost:1313/blog/computer-technology/typescript/tools-typescript-type-extend/</guid>
+      <description>&lt;p&gt;TypeScript 作为 JavaScript 的超集，为 Web 开发带来了强类型语言和类似代码智能提示这种良好的开发体验，而代码提示依赖于类型定义文件。类型定义文件的发展也经历了一个逐步演变的过程，从最初基于 JavaScript 编写的 npm 包，通过&lt;a href=&#34;https://github.com/DefinitelyTyped/DefinitelyTyped&#34;&#xA;&#xA;&#xA;&#xA;&#xA; target=&#34;_blank&#34;&#xA; &#xA;&#xA;&#xA;&gt;社区方案&lt;/a&gt;来引入类型定义包，再到目前多数模块基于 TypeScript 编写并在发布时带上类型定义文件这种最佳方案，开发者体验得到进一步的提升。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,1658 @@
+<!doctype html>
+<html
+  itemscope
+  class=""
+  lang="en-us"
+  itemtype="http://schema.org/WebPage">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+    <meta charset="utf-8" />
+
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, maximum-scale=5" />
+
+
+<meta name="theme-name" content="hugoplate" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="/images/favicon_hu9880217891310920762.png" type="image/x-icon">
+<link rel="icon" href="/images/favicon_hu9880217891310920762.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu11285212527156944795.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu9880217891310920762.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu290619398646655712.png">
+
+
+
+
+
+
+
+
+<link rel="manifest" href="/manifest.webmanifest" />
+<meta
+  name="msapplication-TileColor"
+  content="#ddd" />
+<meta
+  name="theme-color"
+  content="#ffffff" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <base href="//localhost:1313/blog/computer-technology/linux/linux-cmd-vim/" />
+
+
+
+
+
+
+
+  
+
+
+<title>Linux-Vim 编辑器</title>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <meta
+    name="keywords"
+    content="Boilerplate, Hugo" />
+
+
+
+
+<meta
+  name="description"
+  content="在 Linux 这样的命令行操作系统中，必须有一款功能强大的编辑器支持我们快速完成文本编辑，这就是 Vi 编辑器；通过对其加强和升级，Vim 编辑器比前者更为强大，拥有更多的功能和颜色高亮的特性，是程序员在 Linux 下编码的利器。" />
+
+
+
+  <meta name="author" content="zeon.studio" />
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+      
+        <meta property="og:image" content="//localhost:1313/images/og-image.png" />
+        <meta name="twitter:image" content="//localhost:1313/images/og-image.png" />
+        <meta
+          name="twitter:card"
+          content="summary_large_image" />
+      
+      
+      <meta property="og:image:width" content="900" />
+      <meta property="og:image:height" content="600" />
+    
+
+
+    
+    <meta
+      property="og:image:type"
+      content="image/.png" />
+  
+
+
+  
+
+
+
+
+
+<meta property="og:title" content="Linux-Vim 编辑器" />
+<meta property="og:description" content="在 Linux 这样的命令行操作系统中，必须有一款功能强大的编辑器支持我们快速完成文本编辑，这就是 Vi 编辑器；通过对其加强和升级，Vim 编辑器比前者更为强大，拥有更多的功能和颜色高亮的特性，是程序员在 Linux 下编码的利器。" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="//localhost:1313/blog/computer-technology/linux/linux-cmd-vim/" />
+
+
+<meta name="twitter:title" content="Linux-Vim 编辑器" />
+<meta name="twitter:description" content="在 Linux 这样的命令行操作系统中，必须有一款功能强大的编辑器支持我们快速完成文本编辑，这就是 Vi 编辑器；通过对其加强和升级，Vim 编辑器比前者更为强大，拥有更多的功能和颜色高亮的特性，是程序员在 Linux 下编码的利器。" />
+
+
+  <meta name="twitter:site" content="@zeon_studio" />
+
+
+  <meta name="twitter:creator" content="@zeon.studio" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  let indexURL = "//localhost:1313/searchindex.json";
+  let includeSectionsInSearch = ["blog"];
+  let search_no_results = "No results for";
+  let search_initial_message = "Type something to search..";
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+<meta http-equiv="x-dns-prefetch-control" content="on" />
+<link rel="preconnect" href="https://use.fontawesome.com" crossorigin />
+<link rel="preconnect" href="//cdnjs.cloudflare.com" />
+<link rel="preconnect" href="//www.googletagmanager.com" />
+<link rel="preconnect" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="https://use.fontawesome.com" />
+<link rel="dns-prefetch" href="//ajax.googleapis.com" />
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+<link rel="dns-prefetch" href="//www.googletagmanager.com" />
+<link rel="dns-prefetch" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link rel="dns-prefetch" href="//connect.facebook.net" />
+<link rel="dns-prefetch" href="//platform.linkedin.com" />
+<link rel="dns-prefetch" href="//platform.twitter.com" />
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script>
+  (function () {
+    const googleFont = document.createElement("link");
+    googleFont.href = "https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&family=Signika:wght@500;700&display=swap";
+    googleFont.type = "text/css";
+    googleFont.rel = "stylesheet";
+    document.head.appendChild(googleFont);
+  })();
+</script>
+
+
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+<link
+  href="/css/style.css"
+  integrity=""
+  rel="stylesheet" />
+
+
+<link
+  defer
+  async
+  rel="stylesheet"
+  href="/css/style-lazy.css"
+  integrity=""
+  media="print"
+  onload="this.media='all'; this.onload=null;" />
+
+
+  </head>
+
+  <body>
+    
+    
+      
+
+
+
+
+
+      
+      <div
+  class="fixed left-0 top-0 z-50 flex w-[30px] items-center justify-center bg-gray-200 py-[2.5px] text-[12px] uppercase text-black sm:bg-red-200 md:bg-yellow-200 lg:bg-green-200 xl:bg-blue-200 2xl:bg-pink-200">
+  <span class="block sm:hidden">all</span>
+  <span class="hidden sm:block md:hidden">sm</span>
+  <span class="hidden md:block lg:hidden">md</span>
+  <span class="hidden lg:block xl:hidden">lg</span>
+  <span class="hidden xl:block 2xl:hidden">xl</span>
+  <span class="hidden 2xl:block">2xl</span>
+</div>
+
+    
+
+
+    
+    
+
+
+  <div id="announcement" class="announcement announcement-hide">
+    You must replace the <strong>baseURL</strong> in <strong>hugo.toml</strong> file when deploying, you can manage this announcement from the <strong>params.toml</strong> file.
+    <button id="announcement-button" class="announcement-button">
+      &times;
+    </button>
+  </div>
+
+  
+  <style>
+    .announcement {
+      position: relative;
+      z-index: 999;
+      padding: 1rem;
+      padding-right: 2.8rem;
+      background-color: #fff;
+      box-shadow: 1px 0px 10px 7px rgba(154, 154, 154, 0.11);
+      font-size: 1.1rem;
+    }
+    .announcement-button {
+      cursor: pointer;
+      padding: 0 0.5rem;
+      border: 0;
+      font-size: 1.3rem;
+      position: absolute;
+      top: 50%;
+      right: 1rem;
+      transform: translateY(-50%);
+      border: 1px solid;
+      border-radius: 50%;
+      height: 1.1em;
+      width: 1.1em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .announcement-hide {
+      display: none;
+    }
+    .dark .announcement {
+      background-color: #222;
+    }
+  </style>
+
+
+
+
+    
+    <header
+  class="header sticky top-0 z-30">
+  <nav class="navbar container">
+    
+    <div class="order-0">
+      
+      <a class="navbar-brand block" href="/">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+    
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu4114262549785978686.webp"
+      alt="Hugoplate"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu7137767845088484273.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu8742296558546396051.webp"
+      alt="Hugoplate"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu4471933895487503573.png';" />
+  
+  
+
+
+      </a>
+    </div>
+    
+    <input id="nav-toggle" type="checkbox" class="hidden" />
+    <label
+      for="nav-toggle"
+      class="order-3 cursor-pointer flex items-center lg:hidden text-dark dark:text-white lg:order-1">
+      <svg id="show-button" class="h-6 fill-current block" viewBox="0 0 20 20">
+        <title>Menu Open</title>
+        <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z"></path>
+      </svg>
+      <svg id="hide-button" class="h-6 fill-current hidden" viewBox="0 0 20 20">
+        <title>Menu Close</title>
+        <polygon
+          points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
+          transform="rotate(45 10 10)"></polygon>
+      </svg>
+    </label>
+    
+
+    
+    <ul
+      id="nav-menu"
+      class="navbar-nav order-3 hidden lg:flex w-full pb-6 lg:order-1 lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8">
+      
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/"
+              >主页</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/about"
+              >关于我</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/"
+              >学习记录</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/elements"
+              >Md编写说明</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item nav-dropdown group relative">
+            <span
+              class="nav-link 
+                
+                
+                
+              
+                
+                
+                
+              
+                
+                
+                
+              
+                
+                
+                
+               inline-flex items-center">
+              其他
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+                <path
+                  d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+              </svg>
+            </span>
+            <ul
+              class="nav-dropdown-list lg:group-hover:visible lg:group-hover:opacity-100">
+              
+                
+                
+                <li class="nav-dropdown-item">
+                  <a
+                    class="nav-dropdown-link "
+                    
+                    href="/404">
+                    404 Page
+                  </a>
+                </li>
+              
+                
+                
+                <li class="nav-dropdown-item">
+                  <a
+                    class="nav-dropdown-link "
+                    
+                    href="/authors">
+                    Authors
+                  </a>
+                </li>
+              
+                
+                
+                <li class="nav-dropdown-item">
+                  <a
+                    class="nav-dropdown-link "
+                    
+                    href="/blog">
+                    Blog
+                  </a>
+                </li>
+              
+                
+                
+                <li class="nav-dropdown-item">
+                  <a
+                    class="nav-dropdown-link "
+                    
+                    href="/categories">
+                    Categories
+                  </a>
+                </li>
+              
+            </ul>
+          </li>
+        
+      
+      
+    </ul>
+
+    <div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
+      
+        
+          <button
+            aria-label="search"
+            
+            class="border-border text-dark hover:text-primary dark:border-darkmode-border mr-5 inline-block border-r pr-5 text-xl dark:text-white dark:hover:text-darkmode-primary"
+            
+            data-target="search-modal">
+            <i class="fa-solid fa-search"></i>
+          </button>
+        
+      
+
+      
+
+
+
+
+
+
+
+
+
+      
+
+
+  <div class="theme-switcher mr-5 hidden">
+    <input id="theme-switcher" data-theme-switcher type="checkbox" />
+    <label for="theme-switcher">
+      <span class="sr-only">theme switcher</span>
+      <span>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-100 dark:opacity-0"
+          viewBox="0 0 56 56"
+          fill="#fff"
+          height="16"
+          width="16">
+          <path
+            d="M30 4.6c0-1-.9-2-2-2a2 2 0 0 0-2 2v5c0 1 .9 2 2 2s2-1 2-2Zm9.6 9a2 2 0 0 0 0 2.8c.8.8 2 .8 2.9 0L46 13a2 2 0 0 0 0-2.9 2 2 0 0 0-3 0Zm-26 2.8c.7.8 2 .8 2.8 0 .8-.7.8-2 0-2.9L13 10c-.7-.7-2-.8-2.9 0-.7.8-.7 2.1 0 3ZM28 16a12 12 0 0 0-12 12 12 12 0 0 0 12 12 12 12 0 0 0 12-12 12 12 0 0 0-12-12Zm23.3 14c1.1 0 2-.9 2-2s-.9-2-2-2h-4.9a2 2 0 0 0-2 2c0 1.1 1 2 2 2ZM4.7 26a2 2 0 0 0-2 2c0 1.1.9 2 2 2h4.9c1 0 2-.9 2-2s-1-2-2-2Zm37.8 13.6a2 2 0 0 0-3 0 2 2 0 0 0 0 2.9l3.6 3.5a2 2 0 0 0 2.9 0c.8-.8.8-2.1 0-3ZM10 43.1a2 2 0 0 0 0 2.9c.8.7 2.1.8 3 0l3.4-3.5c.8-.8.8-2.1 0-2.9-.8-.8-2-.8-2.9 0Zm20 3.4c0-1.1-.9-2-2-2a2 2 0 0 0-2 2v4.9c0 1 .9 2 2 2s2-1 2-2Z" />
+        </svg>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-0 dark:opacity-100"
+          viewBox="0 0 24 24"
+          fill="none"
+          height="16"
+          width="16">
+          <path
+            fill="#000"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M8.2 2.2c1-.4 2 .6 1.6 1.5-1 3-.4 6.4 1.8 8.7a8.4 8.4 0 0 0 8.7 1.8c1-.3 2 .5 1.5 1.5v.1a10.3 10.3 0 0 1-9.4 6.2A10.3 10.3 0 0 1 3.2 6.7c1-2 2.9-3.5 4.9-4.4Z" />
+        </svg>
+      </span>
+    </label>
+  </div>
+
+  
+  <script>
+    var darkMode = false;
+
+    
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches){darkMode = true}
+    
+
+    if (localStorage.getItem("theme") === "dark"){darkMode = true}
+    else if (localStorage.getItem("theme") === "light"){darkMode = false}
+
+    if (darkMode){document.documentElement.classList.add("dark")}
+    else {document.documentElement.classList.remove("dark")}
+
+    
+    document.addEventListener("DOMContentLoaded", () => {
+      var themeSwitch = document.querySelectorAll("[data-theme-switcher]");
+      var themeSwitcherContainer = document.querySelector('.theme-switcher');
+
+      [].forEach.call(themeSwitch, function (ts) {
+        ts.checked = darkMode;
+        ts.addEventListener("click", () => {
+          document.documentElement.classList.toggle("dark");
+          localStorage.setItem(
+            "theme",
+            document.documentElement.classList.contains("dark") ? "dark" : "light"
+          );
+        });
+      });
+
+      
+      themeSwitcherContainer.classList.remove('hidden');
+    });
+  </script>
+
+
+
+
+      
+      
+    </div>
+  </nav>
+</header>
+
+    
+
+
+
+
+  
+    <div
+      class="search-modal "
+      aria-hidden="true"
+      style="--color-primary: #121212">
+      <div data-target="close-search-modal" class="search-modal-overlay"></div>
+      <div
+        class="search-wrapper"
+        data-image="true"
+        data-description="true"
+        data-tags="true"
+        data-categories="true">
+        <div class="search-wrapper-header">
+          <label for="search-modal-input" style="margin-top:-1px">
+            <span class="sr-only">search icon</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-icon"
+              data-type="search">
+              <path
+                fill="currentColor"
+                d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-reset"
+              data-type="reset">
+              <path
+                fill="currentColor"
+                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z" />
+            </svg>
+          </label>
+          <input
+            id="search-modal-input"
+            type="text"
+            data-search-input
+            autocomplete="off"
+            aria-label="Search"
+            placeholder="Search Post..." />
+        </div>
+        <div class="search-wrapper-body">
+          <div class="search-result" data-search-result></div>
+          <span class="search-result-empty">
+            Type something to search..
+          </span>
+        </div>
+        <div class="search-wrapper-footer">
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 11h9.592L8 5.519 3.204 11zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659z" />
+              </svg>
+            </kbd>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                style="margin-top:1px;"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z" />
+              </svg>
+            </kbd>
+            to navigate
+          </span>
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="12"
+                fill="currentColor"
+                style="display:inline-block;"
+                viewBox="0 0 16 16">
+                <path
+                  fill-rule="evenodd"
+                  d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z" />
+              </svg>
+            </kbd>
+            to select
+          </span>
+          <span class="search-result-info"></span>
+          <span data-target="close-search-modal">
+            <kbd>ESC</kbd> to close
+          </span>
+        </div>
+      </div>
+    </div>
+  
+
+
+
+
+    <main>
+      
+  <section class="section pt-7">
+    <div class="container">
+      <div class="row justify-center">
+        <article class="lg:col-10">
+          
+          
+          <h1 class="h2 mb-4">
+            Linux-Vim 编辑器
+          </h1>
+          <ul class="mb-4">
+            <li class="mr-4 inline-block">
+              <a
+                href="/authors//">
+                <i class="fa-regular fa-circle-user mr-2"></i
+                >
+              </a>
+            </li>
+            
+            
+              <li class="mr-4 inline-block">
+                <i class="fa-regular fa-folder mr-2"></i>
+                
+                  <a
+                    href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/"
+                    class=""
+                    >计算机技术
+                      ,
+                    
+                  </a>
+                
+                  <a
+                    href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba/"
+                    class=""
+                    >计算机
+                      ,
+                    
+                  </a>
+                
+                  <a
+                    href="/categories/linux/"
+                    class=""
+                    >Linux
+                  </a>
+                
+              </li>
+            
+            <li class="mr-4 inline-block">
+              <i class="fa-regular fa-clock mr-2"></i>
+              October 28, 2016
+            </li>
+          </ul>
+          <div class="content mb-10">
+            
+
+ 
+  
+
+<details open class="table-of-content blog">
+  <summary>
+    
+      Table of Contents
+    
+  </summary>
+  <nav id="TableOfContents">
+  <ol>
+    <li>
+      <ol>
+        <li><a href="#vim">Vim</a></li>
+        <li><a href="#常用命令">常用命令</a>
+          <ol>
+            <li>
+              <ol>
+                <li></li>
+              </ol>
+            </li>
+          </ol>
+        </li>
+        <li><a href="#配置">配置</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+</details>
+
+            <p>在 Linux 这样的命令行操作系统中，必须有一款功能强大的编辑器支持我们快速完成文本编辑，这就是 Vi 编辑器；通过对其加强和升级，Vim 编辑器比前者更为强大，拥有更多的功能和颜色高亮的特性，是程序员在 Linux 下编码的利器。</p>
+<!-- truncate -->
+<h3 id="vim">Vim</h3>
+<p>Vim 是基于 Linux 下 Vi 编辑器的升级版，经过多年来的不断更新，功能也越来越强大，Vim 除过具备常用文本编辑器的编辑操作以及颜色高亮特性外，还支持自动补全、多行批量操作、指定跳转等等功能，其中代码颜色高亮特性更利于我们在命令行中进行信息的阅览和查看。而且，Vim 支持大多数操作系统，只是我们经常在 Linux 下使用它而已。当然，在 Linux 下还有一款很著名的编辑器 Emacs 。</p>
+<p>Vim 太过强大，导致学习曲线也是非常陡峭的，不过作为一个工具，我们首先只要掌握它的基本操作就行了，至于其他功能待我们在使用过程中去发掘就行了。首先，我们应该知道 Vim 有三种模式，即<strong>命令模式</strong>、<strong>插入模式</strong>、<strong>EX 模式</strong>。</p>
+<ul>
+<li>
+<p>命令模式</p>
+<p>此模式是 Vim 的默认模式，我们可以做一些非输入操作，例如删除、复制等等，在此模式下可以进入插入模式和 EX 模式。</p>
+</li>
+<li>
+<p>插入模式</p>
+<p>此模式就是编辑模式，我们主要进行输入操作。</p>
+</li>
+<li>
+<p>EX 模式</p>
+<p>此模式则是当我们完成编辑后，可以进行退出、保存等操作。</p>
+</li>
+</ul>
+<h3 id="常用命令">常用命令</h3>
+<p>接下来，就介绍一些常用的命令，通过这些命令我们可以很方便的快速完成大多数常用操作。</p>
+<h6 id="模式切换">模式切换</h6>
+<pre><code># 命令模式进入插入模式
+i  // 在当前字符前开始编辑
+a  // 在当前字符后开始编辑
+I  // 在当前行首开始编辑（Shift + I ，或者开启大写）
+A  // 在当前行尾开始编辑（Shift + A ，或者开启大写）
+o  // 在当前行下添加新行开始编辑
+O  // 在当前行上添加新行开始编辑（Shift + O ，或者开启大写）
+
+# 命令模式进入EX模式
+:  // （Shift + ;）
+
+# 插入模式或EX模式返回到命令模式
+Esc  // 至少按一次 Esc 即可返回命令模式
+</code></pre>
+<h6 id="命令模式">命令模式</h6>
+<p>命令模式是 Vim 的核心模式，大多数强大的功能命令都需要在此模式下完成，常用的命令则有复制、删除、粘贴、移动等等。<strong>而且，只有在命令模式下才能进入插入模式或者 EX 模式。</strong></p>
+<p>######### 移动光标</p>
+<pre><code>h  // 光标左移
+j  // 光标下移
+k  // 光标上移
+l  // 光标右移
+
+fx  // 移动光标到当前行的下一个 x（任意字母）处（; 重复上一个f命令）
+Fx  // 移动光标到当前行的上一个 x（任意字母）处（; 重复上一个F命令）
+tx  // 移动光标到当前行的下一个 x（任意字母）左边（; 重复上一个t命令）
+Tx  // 移动光标到当前行的上一个 x（任意字母）左边（; 重复上一个T命令）
+
+
+w  // 光标后移一个单词到词首（W 也行）
+e  // 光标后移一个单词到词尾（E 也行）
+b  // 光标前移一个单词到词首（B 也行）
+
+*  // 向下匹配当前光标所在字符串
+#  // 向上匹配当前光标所在字符串
+
+^  // 光标移动到行首（数字 0 也行）
+$  // 光标移动到行尾
+
+gg  // 光标移动到文件首行行首（ngg 第n行行首）
+G   // 光标移动到文件末行行首（nG 第n行行首）（Shift + G ，或者开启大写）
+
+`.  // 光标返回到上次编辑的位置
+`a  // 光标移动到书签a处
+
+%  // 光标在 ()、[]、{} 等符号之间左右移动
+
+H  // 光标移动到当前屏顶端行首
+M  // 光标移动到当前屏中部行首
+L  // 光标移动到当前屏底部行首
+
+Ctrl + F  // 向下移动一屏
+Ctrl + D  // 向下滚动半屏
+Ctrl + B  // 向上滚动一屏
+Ctrl + U  // 向上滚动半屏
+</code></pre>
+<p>######### 复制、粘贴、剪切/删除</p>
+<pre><code># 复制
+yy  // 复制光标所在整行
+nyy // 复制光标所在行开始向下 n 行，例如 2yy
+
+# 粘贴
+p   // 光标所在行下方添加一行并粘贴剪贴板或该行
+np  // 光标所在行下方添加 n 行并粘贴剪贴板或该行，例如 2p
+P   // 光标所在行上方添加一行并粘贴剪贴板或该行
+nP  // 光标所在行上方添加 n 行并粘贴剪贴板或该行，例如 2P
+
+# 删除/剪切
+dd  // 删除/剪切光标所在整行，D 亦可
+ndd // 删除/剪切光标所在行开始向下 n 行，nD 亦可，例如 2dd
+
+dgg // 光标所在行到文档开头之间全部删除/剪切
+dG  // 光标所在行到文档结尾之间全部删除/剪切
+
+dngg    // 光标所在行到第 n 行之间全部删除/剪切，dnG 亦可，例如 d2gg
+
+d+^ // 光标所在字符到行首之间全部删除/剪切
+d+$ // 光标所在字符到行尾之间全部删除/剪切，D 亦可
+
+dw  // 删除光标所在处一个单词、符号
+
+x   // 删除光标所在字符
+nx  // 删除光标所在字符开始向后 n 个字符，例如 2x
+nX  // 删除光标所在字符开始向前 n 个字符，例如 2X
+</code></pre>
+<p>######### 撤销、恢复</p>
+<pre><code>u   // 撤销
+
+Ctrl+r   // 恢复
+</code></pre>
+<h6 id="插入模式">插入模式</h6>
+<p>插入模式其实就是我们所说的编辑模式，输入模式，进行字符输入操作。在该模式下，可以按 <kbd>Esc</kbd> 即可退回到命令模式。</p>
+<h6 id="ex-模式">EX 模式</h6>
+<p>EX 模式可以在我们编辑完之后，进行一些保存、退出操作；也可以在我们编辑中途进行一些额外的操作。</p>
+<pre><code>:w  // 保存当前修改
+:q  // 退出
+:q!  // 强制退出，不保存修改
+:x  // 保存并退出（等价 :wq）
+:set nu // 显示行号（全写 :set_number）
+:set nonu // 隐藏行号（全写 :set_nonumber）
+:! [命令]  // 执行一个命令并显示结果
+:sh  // 切换到命令行，使用 Ctrl+D 切换回 vim
+</code></pre>
+<h3 id="配置">配置</h3>
+
+          </div>
+          <div class="row items-start justify-between">
+            
+            
+            <div class="lg:col-4 flex items-center">
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="share-icons">
+  <h5 class="share-title">Share :</h5>
+
+
+  
+  
+    <a
+      class="share-link share-facebook"
+      href="https://facebook.com/sharer/sharer.php?u=%2f%2flocalhost%3a1313%2fblog%2fcomputer-technology%2flinux%2flinux-cmd-vim%2f"
+      target="_blank"
+      rel="noopener"
+      aria-label="share facebook">
+      <span class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-twitter"
+      href="https://twitter.com/intent/tweet/?text=Share&amp;url=%2f%2flocalhost%3a1313%2fblog%2fcomputer-technology%2flinux%2flinux-cmd-vim%2f"
+      target="_blank"
+      rel="noopener"
+      aria-label="share twitter">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path 
+            d="M8 2H1l8.26 11.015L1.45 22H4.1l6.388-7.349L16 22h7l-8.608-11.478L21.8 2h-2.65l-5.986 6.886zm9 18L5 4h2l12 16z"/>
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-email"
+      href="mailto:?subject=Share&amp;body=%2f%2flocalhost%3a1313%2fblog%2fcomputer-technology%2flinux%2flinux-cmd-vim%2f"
+      target="_self"
+      rel="noopener"
+      aria-label="share email">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M22 4H2C.9 4 0 4.9 0 6v12c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7.25 14.43l-3.5 2c-.08.05-.17.07-.25.07-.17 0-.34-.1-.43-.25-.14-.24-.06-.55.18-.68l3.5-2c.24-.14.55-.06.68.18.14.24.06.55-.18.68zm4.75.07c-.1 0-.2-.03-.27-.08l-8.5-5.5c-.23-.15-.3-.46-.15-.7.15-.22.46-.3.7-.14L12 13.4l8.23-5.32c.23-.15.54-.08.7.15.14.23.07.54-.16.7l-8.5 5.5c-.08.04-.17.07-.27.07zm8.93 1.75c-.1.16-.26.25-.43.25-.08 0-.17-.02-.25-.07l-3.5-2c-.24-.13-.32-.44-.18-.68s.44-.32.68-.18l3.5 2c.24.13.32.44.18.68z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-reddit"
+      href="https://reddit.com/submit/?url=%2f%2flocalhost%3a1313%2fblog%2fcomputer-technology%2flinux%2flinux-cmd-vim%2f&amp;resubmit=true&amp;title=Share"
+      target="_blank"
+      rel="noopener"
+      aria-label="share reddit">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M24 11.5c0-1.65-1.35-3-3-3-.96 0-1.86.48-2.42 1.24-1.64-1-3.75-1.64-6.07-1.72.08-1.1.4-3.05 1.52-3.7.72-.4 1.73-.24 3 .5C17.2 6.3 18.46 7.5 20 7.5c1.65 0 3-1.35 3-3s-1.35-3-3-3c-1.38 0-2.54.94-2.88 2.22-1.43-.72-2.64-.8-3.6-.25-1.64.94-1.95 3.47-2 4.55-2.33.08-4.45.7-6.1 1.72C4.86 8.98 3.96 8.5 3 8.5c-1.65 0-3 1.35-3 3 0 1.32.84 2.44 2.05 2.84-.03.22-.05.44-.05.66 0 3.86 4.5 7 10 7s10-3.14 10-7c0-.22-.02-.44-.05-.66 1.2-.4 2.05-1.54 2.05-2.84zM2.3 13.37C1.5 13.07 1 12.35 1 11.5c0-1.1.9-2 2-2 .64 0 1.22.32 1.6.82-1.1.85-1.92 1.9-2.3 3.05zm3.7.13c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9.8 4.8c-1.08.63-2.42.96-3.8.96-1.4 0-2.74-.34-3.8-.95-.24-.13-.32-.44-.2-.68.15-.24.46-.32.7-.18 1.83 1.06 4.76 1.06 6.6 0 .23-.13.53-.05.67.2.14.23.06.54-.18.67zm.2-2.8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm5.7-2.13c-.38-1.16-1.2-2.2-2.3-3.05.38-.5.97-.82 1.6-.82 1.1 0 2 .9 2 2 0 .84-.53 1.57-1.3 1.87z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+</div>
+
+            </div>
+          </div>
+          
+          
+            <div class="mt-20">
+              <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "themefisher-template" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+          
+        </article>
+      </div>
+
+      
+      
+      
+      
+        <div class="section pb-0">
+          <h2 class="h3 mb-12">Related Posts</h2>
+          <div class="row">
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/computer-technology/web/web-cross-domain/">
+      Web 前端跨域访问
+    </a>
+  </h4>
+  
+  
+  <p class="mb-6"><p>为了用户的安全，浏览器通常都会限制跨域（Cross-domain）访问，也就是默认不允许不同域名下页面之间进行资源的传递和信息交互，但很多时候我们又有跨域请求资源的需求。</p>
+<!-- truncate -->
+<h3 id="同源策略">同源策略</h3>
+<p>我们要在地址栏中正确输入“协议”、“域名”、“端口”、“文件路径”才能访问一个页面，其中任意一个不正确就不会达到我们期望的结果。所谓的跨域就是当<strong>协议</strong>、<strong>域名</strong>、<strong>端口</strong>这三者有一个不同时即称为跨域访问，这时候浏览器为了用户安全就会限制 JavaScript 的跨域行为，这也叫做同源策略（由网景公司提出）。</p>
+<p>通常一个公司（组织、团队）会申请一个主域名，然后根据服务类型分出多个二级域名，在某些涉及到敏感信息的页面又会采用 HTTPS 协议加密，或许还有更多的类似需求，这些需求大多都需要跨域共享资源才能实现用户的定制服务。所以，跨域访问不是个能避免的问题，在不破坏浏览器安全性的前提下我们需要去解决它。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/web-cross-domain/">
+    Read More
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/computer-technology/web/web-local-storage/">
+      Web 本地存储
+    </a>
+  </h4>
+  
+  
+  <p class="mb-6"><p>为了达到某些需求，我们通常需要在本地存储一些数据，方便我们进行用户个性化定制服务。</p>
+<!-- truncate -->
+<h3 id="web-存储">Web 存储</h3>
+<p>在互联网上，许多网站提供用户注册功能，因为 http 协议是个无状态的协议（无法记录客户端与服务器端状态），所以我们注册登录后每一次跳转网页都需要重新登陆。为了增强用户体验，我们不得不将状态信息保存下来，而 Web 存储技术则实现了该需求。Cookie 最多可在本地存储 4K 数据，出于安全性考虑， Cookie 中并非直接存储的是用户敏感数据（帐号、密码、个人信息等），而是一个状态 ID，该 ID 是服务器端利用 session 存储一个会话状态并分配给客户端用来进行状态识别的。因此，每一次的 http 请求都会带上 Cookie 数据发送给服务器端进行状态识别，从而达到状态保持的目的。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/web-local-storage/">
+    Read More
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/computer-technology/web/dom/dom-attribute/">
+      DOM-元素节点属性
+    </a>
+  </h4>
+  
+  
+  <p class="mb-6"><p>元素节点上具有很多属性，这些属性我们通常可以很方便的获取，并进行简单的操作。</p>
+<!-- truncate -->
+<h3 id="节点属性常用操作">节点属性常用操作</h3>
+<p>每个 HTML 元素都有很多属性，例如（id、class、name、url、src、href）等等，元素节点上定义了一些方法供我们使用，来对这些属性进行设置、获取、移除操作。</p>
+<ul>
+<li>setAttribute()</li>
+<li>getAttribute()</li>
+<li>removeAttribute()</li>
+</ul>
+<p>exp:</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-attribute/">
+    Read More
+  </a>
+</div>
+
+              </div>
+            
+          </div>
+        </div>
+      
+    </div>
+  </section>
+
+    </main>
+
+    
+    <footer class="bg-theme-light dark:bg-darkmode-theme-light">
+  <div class="container">
+    <div class="row items-center py-10">
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:text-left">
+        
+        <a
+          class="navbar-brand inline-block"
+          href="/">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+    
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu4114262549785978686.webp"
+      alt="Hugoplate"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu7137767845088484273.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu8742296558546396051.webp"
+      alt="Hugoplate"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu4471933895487503573.png';" />
+  
+  
+
+
+        </a>
+      </div>
+      <div class="lg:col-6 mb-8 text-center lg:mb-0">
+        <ul>
+          
+            <li class="m-3 inline-block">
+              <a
+                
+                href="
+                  /
+                "
+                ></a
+              >
+            </li>
+          
+        </ul>
+      </div>
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:mt-0 lg:text-right">
+        <ul class="social-icons">
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="facebook"
+                rel="nofollow noopener"
+                href="https://www.facebook.com/profile.php?id=100083154937436">
+                <i class="fab fa-facebook"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="github"
+                rel="nofollow noopener"
+                href="https://github.com/LeeZChuan">
+                <i class="fab fa-github"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="linkedin"
+                rel="nofollow noopener"
+                href="https://www.linkedin.com/in/zchuan-lee-89214a1a3/">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="border-border dark:border-darkmode-border border-t py-7">
+    <div class="text-light dark:text-darkmode-light container text-center">
+      <p>
+        
+      </p>
+    </div>
+  </div>
+</footer>
+
+
+
+    
+    
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<script
+  crossorigin="anonymous"
+  integrity=""
+  src="/js/script.js"></script>
+
+
+<script
+  defer
+  async
+  crossorigin="anonymous"
+  integrity=""
+  src="/js/script-lazy.js"></script>
+
+
+
+<script>
+  if ('serviceWorker' in navigator){navigator.serviceWorker.register("/service-worker.js");}
+</script>
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <script type="application/javascript">
+      const announcementBox = document.getElementById('announcement');
+      const announcementButton = document.getElementById('announcement-button');
+      if (!Cookies.get('announcement-close')) {
+        announcementBox.classList.remove('announcement-hide');
+        announcementButton.onclick = function () {
+          Cookies.set('announcement-close', true, {
+            expires:  7 
+          });
+          announcementBox.classList.add('announcement-hide');
+        };
+      }
+    </script>
+  
+
+
+
+  </body>
+</html>

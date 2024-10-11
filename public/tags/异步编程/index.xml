@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>异步编程 on 技术之心</title>
+    <link>//localhost:1313/tags/%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/</link>
+    <description>Recent content in 异步编程 on 技术之心</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 22 Mar 2017 15:48:00 -0400</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JavaScript 异步编程</title>
+      <link>//localhost:1313/blog/computer-technology/web/javascript/web-js-async/</link>
+      <pubDate>Wed, 22 Mar 2017 15:48:00 -0400</pubDate>
+      <guid>//localhost:1313/blog/computer-technology/web/javascript/web-js-async/</guid>
+      <description>&lt;p&gt;JavaScript 作为一门在 Web 开发中的主流语言，常常涉及到交互事件方面的应用，这不可避免的用到了异步编程的方法，而它本身则是单线程运行的。在以往的开发中，异步编程正变得越来越难管理，新的 Promise 标准 API 将使得异步编程更加方便、安全。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;异步与并行&#34;&gt;异步与并行&lt;/h3&gt;&#xA;&lt;p&gt;作为 Web 前端开发中的主流语言，JavaScript 需要实现诸多的交互动作，但是在宿主环境（例如 v8）中 JS 引擎只有一个主线程，所以多线程并行处理是不可能的。因此，异步编程显得尤为重要。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

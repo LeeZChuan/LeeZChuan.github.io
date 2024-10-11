@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>跨域 on 技术之心</title>
+    <link>//localhost:1313/tags/%E8%B7%A8%E5%9F%9F/</link>
+    <description>Recent content in 跨域 on 技术之心</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 10 Aug 2016 15:18:00 -0400</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/%E8%B7%A8%E5%9F%9F/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Web 前端跨域访问</title>
+      <link>//localhost:1313/blog/computer-technology/web/web-cross-domain/</link>
+      <pubDate>Wed, 10 Aug 2016 15:18:00 -0400</pubDate>
+      <guid>//localhost:1313/blog/computer-technology/web/web-cross-domain/</guid>
+      <description>&lt;p&gt;为了用户的安全，浏览器通常都会限制跨域（Cross-domain）访问，也就是默认不允许不同域名下页面之间进行资源的传递和信息交互，但很多时候我们又有跨域请求资源的需求。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;同源策略&#34;&gt;同源策略&lt;/h3&gt;&#xA;&lt;p&gt;我们要在地址栏中正确输入“协议”、“域名”、“端口”、“文件路径”才能访问一个页面，其中任意一个不正确就不会达到我们期望的结果。所谓的跨域就是当&lt;strong&gt;协议&lt;/strong&gt;、&lt;strong&gt;域名&lt;/strong&gt;、&lt;strong&gt;端口&lt;/strong&gt;这三者有一个不同时即称为跨域访问，这时候浏览器为了用户安全就会限制 JavaScript 的跨域行为，这也叫做同源策略（由网景公司提出）。&lt;/p&gt;&#xA;&lt;p&gt;通常一个公司（组织、团队）会申请一个主域名，然后根据服务类型分出多个二级域名，在某些涉及到敏感信息的页面又会采用 HTTPS 协议加密，或许还有更多的类似需求，这些需求大多都需要跨域共享资源才能实现用户的定制服务。所以，跨域访问不是个能避免的问题，在不破坏浏览器安全性的前提下我们需要去解决它。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
