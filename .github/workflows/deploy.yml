@@ -12,6 +12,16 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      # 安装 Node.js 和 PostCSS
+      - name: Install Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'  # 安装最新版本的 Node.js
+
+      - name: Install PostCSS and other dependencies
+        run: |
+          npm install postcss postcss-cli autoprefixer
+
       - name: Set up Hugo
         uses: peaceiris/actions-hugo@v2
         with:
@@ -24,4 +34,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs  # 确保你将 Hugo 生成的静态文件输出到 ./docs 目录
+          publish_dir: ./docs  # 将 Hugo 的静态文件发布到 ./docs
