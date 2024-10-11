@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>程序架构设计 on 技术之心</title><link>http:/tags/%E7%A8%8B%E5%BA%8F%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/</link><description>Recent content in 程序架构设计 on 技术之心</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sun, 12 Jun 2022 22:22:00 -0400</lastBuildDate><atom:link href="http:/tags/%E7%A8%8B%E5%BA%8F%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/index.xml" rel="self" type="application/rss+xml"/><item><title>桥接模式：跨平台的事件机制设计</title><link>http:/blog/computer-technology/program-architecture-design/bridge-mode-design-of-cross-platform-event-mechanism/</link><pubDate>Sun, 12 Jun 2022 22:22:00 -0400</pubDate><guid>http:/blog/computer-technology/program-architecture-design/bridge-mode-design-of-cross-platform-event-mechanism/</guid><description>&lt;p>对于 Web 的图表组件库来说，一些功能比较强大的开源库，渲染层可以支持 DOM、SVG、Canvas、WebGL 等多个平台的环境，而图表库的很多功能的实现都和渲染层紧密相关。&lt;/p>
+&lt;p>最近，在参考学习一些开源的图表组件库时，发现在跨平台设计中，事件机制的实现很有意思，所以在这里以最简化的代码来解释和记录一下这个方案。如果要用经典的软件设计模式来解释，大概就是&lt;strong>桥接模式&lt;/strong>了。&lt;/p>
+&lt;p>&lt;strong>桥接模式（Bridge Pattern）&lt;/strong> 将一个功能的实现拆分为抽象（Abstraction）和实现（Implementor），让其相互独立的扩展和定义，借助该模式可以设计一种平台无关的软件架构。&lt;/p>
+&lt;!-- truncate -->
+&lt;h3 id="事件机制">事件机制&lt;/h3>
+&lt;p>事件机制是软件设计中最基础、最为常见的一种设计，对于 Web 图表组件库来说要提供一些处理用户交互（例如点击、拖动、右键点击等）的机制。一个典型的事件模型类如下：&lt;/p></description></item><item><title>Web 前端架构设计</title><link>http:/blog/computer-technology/web/web-front-end-architecture/</link><pubDate>Wed, 28 Mar 2018 14:01:00 -0400</pubDate><guid>http:/blog/computer-technology/web/web-front-end-architecture/</guid><description>&lt;p>让 Web 前端开发可持续化、可扩展，关注四个核心&lt;strong>代码&lt;/strong>、&lt;strong>流程&lt;/strong>、&lt;strong>测试&lt;/strong>、&lt;strong>文档&lt;/strong>。&lt;/p>
+&lt;!-- truncate -->
+&lt;h3 id="代码">代码&lt;/h3>
+&lt;h6 id="html">HTML&lt;/h6>
+&lt;p>######### 模块化标记&lt;/p></description></item></channel></rss>
