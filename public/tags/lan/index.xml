@@ -1,19 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>LAN on 技术之心</title>
-    <link>//localhost:1313/tags/lan/</link>
-    <description>Recent content in LAN on 技术之心</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sat, 18 Jun 2016 18:22:00 -0400</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/lan/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>局域网（LAN）与广域网（WAN）</title>
-      <link>//localhost:1313/blog/computer-technology/protocol/protocol-lan-wan/</link>
-      <pubDate>Sat, 18 Jun 2016 18:22:00 -0400</pubDate>
-      <guid>//localhost:1313/blog/computer-technology/protocol/protocol-lan-wan/</guid>
-      <description>&lt;p&gt;TCP/IP 的网络接口层包括物理层和数据链路层，既是局域网（LAN）技术起作用的分层，又是广域网（WAN）技术和连接管理协议发挥作用的层次。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;局域网lan&#34;&gt;局域网（LAN）&lt;/h3&gt;&#xA;&lt;p&gt;局域网（Local Area Network，LAN）是指一个局部的地理范围内（如一个学校、公司、单位），将各种计算机、外部设备和数据库等互相连接起来组成的计算机通信网。局域网通常是封闭的，但它可以通过数据通信网或专用数据电路，与远方的局域网、数据库或处理中心相连接，构成一个大范围的信息处理系统。局域网可以实现硬件资源（如服务器、打印机、扫描仪等）共享和软件资源（应用软件、文件管理等）共享，还可以实现办公自动化（如工作组内的日程安排、电子邮件和传真通信服务）等。&lt;/p&gt;&#xA;&lt;h6 id=&#34;局域网协议标准&#34;&gt;局域网协议标准&lt;/h6&gt;&#xA;&lt;p&gt;IEEE 802 是为了规范随着局域网技术进步而产生的种类繁多的局域网产品而制定的标准，有时也称为局域网参考模型。它包括 CSDM/CD、令牌总线和令牌环网等底层（物理层和数据链路层）网络协议。&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>LAN on 技术之心</title><link>http:/tags/lan/</link><description>Recent content in LAN on 技术之心</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sat, 18 Jun 2016 18:22:00 -0400</lastBuildDate><atom:link href="http:/tags/lan/index.xml" rel="self" type="application/rss+xml"/><item><title>局域网（LAN）与广域网（WAN）</title><link>http:/blog/computer-technology/protocol/protocol-lan-wan/</link><pubDate>Sat, 18 Jun 2016 18:22:00 -0400</pubDate><guid>http:/blog/computer-technology/protocol/protocol-lan-wan/</guid><description>&lt;p>TCP/IP 的网络接口层包括物理层和数据链路层，既是局域网（LAN）技术起作用的分层，又是广域网（WAN）技术和连接管理协议发挥作用的层次。&lt;/p>
+&lt;!-- truncate -->
+&lt;h3 id="局域网lan">局域网（LAN）&lt;/h3>
+&lt;p>局域网（Local Area Network，LAN）是指一个局部的地理范围内（如一个学校、公司、单位），将各种计算机、外部设备和数据库等互相连接起来组成的计算机通信网。局域网通常是封闭的，但它可以通过数据通信网或专用数据电路，与远方的局域网、数据库或处理中心相连接，构成一个大范围的信息处理系统。局域网可以实现硬件资源（如服务器、打印机、扫描仪等）共享和软件资源（应用软件、文件管理等）共享，还可以实现办公自动化（如工作组内的日程安排、电子邮件和传真通信服务）等。&lt;/p>
+&lt;h6 id="局域网协议标准">局域网协议标准&lt;/h6>
+&lt;p>IEEE 802 是为了规范随着局域网技术进步而产生的种类繁多的局域网产品而制定的标准，有时也称为局域网参考模型。它包括 CSDM/CD、令牌总线和令牌环网等底层（物理层和数据链路层）网络协议。&lt;/p></description></item></channel></rss>

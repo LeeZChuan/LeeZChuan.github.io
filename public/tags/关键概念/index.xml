@@ -1,19 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>关键概念 on 技术之心</title>
-    <link>//localhost:1313/tags/%E5%85%B3%E9%94%AE%E6%A6%82%E5%BF%B5/</link>
-    <description>Recent content in 关键概念 on 技术之心</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sat, 18 Jun 2016 16:17:00 -0400</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/%E5%85%B3%E9%94%AE%E6%A6%82%E5%BF%B5/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>网络通信关键概念</title>
-      <link>//localhost:1313/blog/computer-technology/protocol/protocol-base/</link>
-      <pubDate>Sat, 18 Jun 2016 16:17:00 -0400</pubDate>
-      <guid>//localhost:1313/blog/computer-technology/protocol/protocol-base/</guid>
-      <description>&lt;p&gt;计算机网络是通过通信设备与线路将地理上分散并且具有独立功能的计算机系统连接在一起，并由功能完善的软件来控制，进而实现资源共享的系统。从物理组成上来看，计算机网络包括硬件、软件和协议三大部分。计算机网络中结点间相互通信是由控制信息传送的网络协议及其他相应的网络软件共同实现的。在计算机网络通信中，有部分关键性概念需要理解透彻，在此做一总结。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;网络通信协议&#34;&gt;网络通信协议&lt;/h3&gt;&#xA;&lt;p&gt;**网络通信协议简称网络协议（Poctocol），是指为了能在计算机网络中进行数据交换，实现资源共享而建立的通信规则、标准或约定的集合。**在计算机网络中，只有采用相同网络协议的计算机才能进行信息的交流与沟通。网络协议有以下三个基本要素：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;语义（Semantics）&lt;/p&gt;&#xA;&lt;p&gt;规定双方完成通信需要的控制信息及应执行的动作。&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;语法（Syntax）&lt;/p&gt;&#xA;&lt;p&gt;规定通信双方交换的数据或控制信息的格式和结构。&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>关键概念 on 技术之心</title><link>http:/tags/%E5%85%B3%E9%94%AE%E6%A6%82%E5%BF%B5/</link><description>Recent content in 关键概念 on 技术之心</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sat, 18 Jun 2016 16:17:00 -0400</lastBuildDate><atom:link href="http:/tags/%E5%85%B3%E9%94%AE%E6%A6%82%E5%BF%B5/index.xml" rel="self" type="application/rss+xml"/><item><title>网络通信关键概念</title><link>http:/blog/computer-technology/protocol/protocol-base/</link><pubDate>Sat, 18 Jun 2016 16:17:00 -0400</pubDate><guid>http:/blog/computer-technology/protocol/protocol-base/</guid><description>&lt;p>计算机网络是通过通信设备与线路将地理上分散并且具有独立功能的计算机系统连接在一起，并由功能完善的软件来控制，进而实现资源共享的系统。从物理组成上来看，计算机网络包括硬件、软件和协议三大部分。计算机网络中结点间相互通信是由控制信息传送的网络协议及其他相应的网络软件共同实现的。在计算机网络通信中，有部分关键性概念需要理解透彻，在此做一总结。&lt;/p>
+&lt;!-- truncate -->
+&lt;h3 id="网络通信协议">网络通信协议&lt;/h3>
+&lt;p>**网络通信协议简称网络协议（Poctocol），是指为了能在计算机网络中进行数据交换，实现资源共享而建立的通信规则、标准或约定的集合。**在计算机网络中，只有采用相同网络协议的计算机才能进行信息的交流与沟通。网络协议有以下三个基本要素：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>语义（Semantics）&lt;/p>
+&lt;p>规定双方完成通信需要的控制信息及应执行的动作。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>语法（Syntax）&lt;/p>
+&lt;p>规定通信双方交换的数据或控制信息的格式和结构。&lt;/p></description></item></channel></rss>
