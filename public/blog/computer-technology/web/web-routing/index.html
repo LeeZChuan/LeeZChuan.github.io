@@ -1365,6 +1365,34 @@
   
   
   <h4 class="mb-3">
+    <a href="/blog/computer-technology/web/dom/dom-attribute/">
+      DOM-元素节点属性
+    </a>
+  </h4>
+  
+  
+  <p class="mb-6"><p>元素节点上具有很多属性，这些属性我们通常可以很方便的获取，并进行简单的操作。</p>
+<!-- truncate -->
+<h3 id="节点属性常用操作">节点属性常用操作</h3>
+<p>每个 HTML 元素都有很多属性，例如（id、class、name、url、src、href）等等，元素节点上定义了一些方法供我们使用，来对这些属性进行设置、获取、移除操作。</p>
+<ul>
+<li>setAttribute()</li>
+<li>getAttribute()</li>
+<li>removeAttribute()</li>
+</ul>
+<p>exp:</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-attribute/">
+    Read More
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
     <a href="/blog/computer-technology/web/web-app-model-zustand/">
       Web 应用：轻量级状态管理工具 zustand
     </a>
@@ -1384,96 +1412,17 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/computer/computer-microprocessor-addressing-range/">
-      微处理器寻址范围
+    <a href="/blog/computer-technology/tools/tools-sublime/">
+      编辑器：Sublime Text 常用插件
     </a>
   </h4>
   
   
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors//">
-          <i class="fa-regular fa-circle-user mr-2"></i>
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/"
-            class="ms-1"
-            >计算机技术
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba/"
-            class="ms-1"
-            >计算机
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/mpu/"
-            class="ms-1"
-            >Mpu
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6"><p>在此之前，让我们带着下面这个问题来看这篇文章：<strong>64 位处理器所支持的最大内存(寻址范围)为多少？</strong></p>
+  <p class="mb-6"><p>Sumblime Text 是一个具有漂亮的界面和强大功能的文本编辑器，而且也支持许多丰富的插件。它是一个收费软件，但是允许开发人员无限期的免费试用。这篇文章介绍一下常用的插件。</p>
 <!-- truncate -->
-<h3 id="处理器">处理器</h3>
-<p>处理器（CPU）担负着整个计算机系统的核心任务执行责任，所以我们经常关心它的运算处理能力，也就是 CPU 的性能。</p>
-<h6 id="微处理器">微处理器</h6>
-<p>我们经常所说的 Inter、AMD 两大常见品牌厂商出售的桌面端的处理器称为处理器（CPU），而把移动端嵌入式系统中 ARM 架构的处理器称为微处理器（MPU）。事实上，几乎电子设备上均有微型处理器，例如路由器、智能家电等等，只不过以上所提到的离我们最近而且我们也最熟悉。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/computer/computer-microprocessor-addressing-range/">
-    Read More
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/css/css-clear-float/">
-      CSS 清除浮动
-    </a>
-  </h4>
-  
-  
-  <p class="mb-6"><p>在浮动布局中，有时候会因为父元素没有设置高度而子元素浮动导致父元素坍塌，我们就需要清除浮动撑起父元素的高度，在这里总结一下常用方法。</p>
-<!-- truncate -->
-<h3 id="浮动">浮动</h3>
-<p>我们通常为了将块级（block）子元素水平排列，就将其浮动（<code>float: left|right</code>）起来而达到我们的目的，当然这会带来一些问题。所以，我们应尽可能清除浮动所带来的副作用，以免影响其它元素的布局。</p>
-<pre><code>&lt;style&gt;
-	#container{
-		background-color: grey;
-	}
-	.inner {
-		margin: 15px;
-		width: 200px;
-		height: 200px;
-		background-color: blue;
-		float: left;
-	}
-&lt;/style&gt;
-&lt;body&gt;
-	&lt;div id=&quot;container&quot;&gt;
-		&lt;div class=&quot;inner&quot;&gt;1&lt;/div&gt;
-		&lt;div class=&quot;inner&quot;&gt;2&lt;/div&gt;
-		&lt;div class=&quot;inner&quot;&gt;3&lt;/div&gt;
-	&lt;/div&gt;
-&lt;/body&gt;
-</code></pre>
-<p>此时，我们并看不到外层 div 的灰色背景，打开调试工具会发现外层 div 的 <code>height: 0</code>。当我们没有设置父元素高度，恰巧所有子元素浮动时，父元素的高度会成为 <code>0</code>，而没有被子元素撑起来。这是因为，子元素浮动之后脱离了文档流。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/css/css-clear-float/">
+<h3 id="安装-sublime-text">安装 Sublime Text</h3>
+<p>Sublime Text 编辑器，我们直接去官网下载相应版本安装即可，2 或 3 版本官网均有链接。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/tools/tools-sublime/">
     Read More
   </a>
 </div>

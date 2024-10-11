@@ -2318,25 +2318,14 @@ var a = new Array(3); // [undefined, undefined, undefined]
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/web-tips-fonts/">
-      Web 字体加载对 DOM 位置的影响
+    <a href="/blog/computer-technology/web/tools-web-fee-toolchain/">
+      前端工程化：对于构建工具链的简单思考
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>由于公司的业务会用到自己设计师定制的 Web 字体，所以一般在组件开发过程中会利用 CSS 引用该字体（<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face"
-
-
-
-
- target="_blank"
- 
-
-
->@font-face</a>），前段时间发现一个线上问题：在部分 iOS 机型上，DOM 元素的位置发生了错位。</p>
-<!-- truncate -->
-<p>首先，对于问题复现的必要条件做了分析，为以下几个方面</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/web-tips-fonts/">
+  <p class="mb-6"><p>前端工程化是在做与业务开发完全不同的事情，旨在解决软件工程领域与开发者密切相关的问题，通常会将其与基建开发、DevOps 放在一起讨论。前端开发是复杂的，其结合了 HTML/CSS/JavaScript 3 种语言，甚至还有很多其超集，没有开箱即用的工具链，不像 Java Web 开发、Android 开发等等有官方或者商业领域非常成熟的工具可以利用，一切都源于开源社区的从 0 开始构建。正因如此，前端工程化领域百花齐放，开放与创新展现的淋漓尽致，这也是前端开发者了解学习软件工程的机会。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/tools-web-fee-toolchain/">
     Read More
   </a>
 </div>
@@ -2348,17 +2337,14 @@ var a = new Array(3); // [undefined, undefined, undefined]
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/dom/dom-fragment/">
-      DOM-文档片段
+    <a href="/blog/computer-technology/tools/tools-git/">
+      使用 Git
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>DOM 操作是非常消耗性能的，如果要进行大量的 DOM 操作，我们可以选择在内存中先构建一个文档片段然后一次性插入 DOM 树。</p>
-<!-- truncate -->
-<h3 id="文档片段">文档片段</h3>
-<p>文档片段（DocumentFragment）也就是 DOM 树的部分节点组合而成的局部。频繁的 DOM 操作对性能的影响是显著的，如果我们要进行大量的相似的 DOM 操作，建议在内存中创建一个文档片段并对其修饰，然后一次性插入 DOM 树。这么做的对性能的影响是最小的，同时也更灵活一些。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-fragment/">
+  <p class="mb-6"><p>Git 是一个分布式的版本控制工具，类似的版本控制工具还有 SVN ；由于 GitHub 平台的盛行，也使得 git 更加受欢迎，在 Windows 平台使用 git 也是非常方便的。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/tools/tools-git/">
     Read More
   </a>
 </div>
@@ -2370,14 +2356,17 @@ var a = new Array(3); // [undefined, undefined, undefined]
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/dom/dom/">
-      文档对象模型（DOM）
+    <a href="/blog/computer-technology/web/dom/dom-nodelist/">
+      DOM-节点集合
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>在网页设计中，有一个很重要的角色需要我们了解，DOM 帮助我们对页面元素进行增、删、改等全方位的操作，而且让 JavaScript 在客户端修改 HTML 文档成为一个很简单的事情，可以说 DOM 为我们操作 HTML 文档提供了强大的编程接口。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom/">
+  <p class="mb-6"><p>当从文档树中选取成组的节点或者使用预定义的节点集合时，这些节点都是放在 NodeList 或者一个 HTMLCollecton 之中，而不是一个数组（Array）中。</p>
+<!-- truncate -->
+<h3 id="节点集合">节点集合</h3>
+<p>我们将一个 <code>NodeList</code> 或者 <code>HTMLCollecton</code> 称为节点集合，也就是类数组的节点对象集合。节点集合一般有以下特征：</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-nodelist/">
     Read More
   </a>
 </div>

@@ -1264,19 +1264,14 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/dom/dom-rule/">
-      DOM-元素节点几何量
+    <a href="/blog/computer-technology/web/web-app-model-zustand/">
+      Web 应用：轻量级状态管理工具 zustand
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>当我们在查看 HTML 文档时，每个元素节点被解析后，都画成了可视形状。我们可以获取每个元素节点的几何量（宽、高、偏移量）以及页面滚动距离。</p>
-<!-- truncate -->
-<h3 id="元素节点几何量">元素节点几何量</h3>
-<p>通常我们将一个元素抽象成一个盒子模型，具有 content（内容）、padding（填充、内边距）、border（边框）、margin（外边距）这些尺寸属性。</p>
-<h6 id="定位偏移量">定位偏移量</h6>
-<p>使用元素节点的 <code>offsetTop</code> 与 <code>offsetLeft</code> 属性，我们可以分别获取该元素节点<strong>顶部与左侧外边框</strong>相对于 <code>offsetParent</code> 的<strong>顶部与左侧内边框</strong>的偏移像素量。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-rule/">
+  <p class="mb-6"><p>基于 React.js 的 Web 应用如何完成状态管理？社区主流方案是 <strong>react-redux</strong>，其本质上基于 React 的 <code>Context</code> 特性实现，如果应用足够简单，实际上用 <code>Context</code> 手写一个简单的状态管理工具倒也并不难。不过，考虑到工具的完善性、项目的健壮性，通常采用较好的、成熟的社区方案。在移动端场景下，<strong>react-redux</strong> 略显臃肿，轻量级状态管理工具 <strong>zustand</strong> 倒是一个不错的替代方案。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/web-app-model-zustand/">
     Read More
   </a>
 </div>
@@ -1288,23 +1283,43 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/dom/dom-attribute/">
-      DOM-元素节点属性
+    <a href="/blog/computer-technology/computer/computer-cpu-addressing-mode/">
+      CPU 的七种寻址方式
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>元素节点上具有很多属性，这些属性我们通常可以很方便的获取，并进行简单的操作。</p>
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors//">
+          <i class="fa-regular fa-circle-user mr-2"></i>
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/"
+            class="ms-1"
+            >计算机技术
+              ,
+            
+          </a>
+        
+          <a
+            href="/categories/cpu/"
+            class="ms-1"
+            >CPU
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>CPU 获取数据的方式不仅仅一种，多种方式也为不同数据的获取提供了不同的效率考量，保证了寻址效率与指令的灵活性。</p>
 <!-- truncate -->
-<h3 id="节点属性常用操作">节点属性常用操作</h3>
-<p>每个 HTML 元素都有很多属性，例如（id、class、name、url、src、href）等等，元素节点上定义了一些方法供我们使用，来对这些属性进行设置、获取、移除操作。</p>
-<ul>
-<li>setAttribute()</li>
-<li>getAttribute()</li>
-<li>removeAttribute()</li>
-</ul>
-<p>exp:</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-attribute/">
+<h3 id="cpu-寻址方式">CPU 寻址方式</h3>
+<p>数据一般均存储在外存(硬盘)中，在需要的时候，会将数据先从外存读入内存(存储器)中，然后 CPU 再直接从内存(缓存)中获取。获取的数据有时候会直接使用；而有时候会先存入 CPU 内部寄存器，稍后再从寄存器中获取。所以，CPU 获取数据的方式是多样化的。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/computer/computer-cpu-addressing-mode/">
     Read More
   </a>
 </div>
@@ -1316,17 +1331,17 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/dom/dom-textnode/">
-      DOM-文本节点
+    <a href="/blog/computer-technology/protocol/protocol-osi/">
+      OSI 与 TCP/IP 参考模型
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>文本（Text）节点虽然很多时候我们直接用 innerHTML 去赋值替换，但当我们进行一些细微的修改时，了解一下 DOM 操作还是非常有用的。</p>
+  <p class="mb-6"><p>目前流行的两大网络体系结构是 OSI/RM 和 TCP/IP 参考模型，他们均是分层结构。分层是为了简化问题，降低网络设计复杂性，而且各层次结构相互独立，实现的功能也相对独立。层与层之间只在层间接口处关联，层间耦合最小。</p>
 <!-- truncate -->
-<h3 id="文本节点">文本节点</h3>
-<p>文本节点的 DOM 操作是不常用的，我们通常直接用元素节点的 <code>innerHTML</code> 属性直接替换其所有文本节点，但当我们要对文本节点进行局部操作时 DOM 操作却是很有用的。下面列举一些文本节点常用的属性及方法：</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-textnode/">
+<h3 id="osiopen-system-interconnect">OSI（Open System Interconnect）</h3>
+<p>OSI/RM（Open System Interconnection Reference Module，简称 OSI）即开放系统互联参考模型。为了解决不同网络体系结构的互联、互操作问题，ISO（国际标准化组织）制定了 OSI 模型。OSI 模型把网络通信的工作分为七层，自上而下依次为：</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/protocol/protocol-osi/">
     Read More
   </a>
 </div>

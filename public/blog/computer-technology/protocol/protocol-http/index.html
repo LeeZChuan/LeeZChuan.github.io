@@ -1236,19 +1236,18 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/protocol/protocol-lan-wan/">
-      局域网（LAN）与广域网（WAN）
+    <a href="/blog/computer-technology/web/web-front-end-architecture/">
+      Web 前端架构设计
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>TCP/IP 的网络接口层包括物理层和数据链路层，既是局域网（LAN）技术起作用的分层，又是广域网（WAN）技术和连接管理协议发挥作用的层次。</p>
+  <p class="mb-6"><p>让 Web 前端开发可持续化、可扩展，关注四个核心<strong>代码</strong>、<strong>流程</strong>、<strong>测试</strong>、<strong>文档</strong>。</p>
 <!-- truncate -->
-<h3 id="局域网lan">局域网（LAN）</h3>
-<p>局域网（Local Area Network，LAN）是指一个局部的地理范围内（如一个学校、公司、单位），将各种计算机、外部设备和数据库等互相连接起来组成的计算机通信网。局域网通常是封闭的，但它可以通过数据通信网或专用数据电路，与远方的局域网、数据库或处理中心相连接，构成一个大范围的信息处理系统。局域网可以实现硬件资源（如服务器、打印机、扫描仪等）共享和软件资源（应用软件、文件管理等）共享，还可以实现办公自动化（如工作组内的日程安排、电子邮件和传真通信服务）等。</p>
-<h6 id="局域网协议标准">局域网协议标准</h6>
-<p>IEEE 802 是为了规范随着局域网技术进步而产生的种类繁多的局域网产品而制定的标准，有时也称为局域网参考模型。它包括 CSDM/CD、令牌总线和令牌环网等底层（物理层和数据链路层）网络协议。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/protocol/protocol-lan-wan/">
+<h3 id="代码">代码</h3>
+<h6 id="html">HTML</h6>
+<p>######### 模块化标记</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/web-front-end-architecture/">
     Read More
   </a>
 </div>
@@ -1260,17 +1259,14 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/dom/dom-js/">
-      DOM-加载 JavaScript
+    <a href="/blog/computer-technology/nodejs/nodejs-fastify/">
+      Fastify - 专注于性能和低内存消耗
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>页面的动态交互离不开 Javascript，将 js 脚本引入页面时会阻塞页面加载，在某些时候我们则可以选择异步加载 js 脚本。</p>
-<!-- truncate -->
-<h3 id="引入-js-代码">引入 js 代码</h3>
-<p>通常我们会将 JavaScript 代码写在一个单独的文件中，这样做的好处是页面整洁、结构更清晰，页面更小加载速度更快，同时也易维护。实际上在页面中引入 js 代码的方法有多种，我们按需选择即可。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-js/">
+  <p class="mb-6"><p>最近在做 Node.js 技术相关的调研，需要选定一个 Web 框架作为基础来构建业务。一般来说，首选开源方案，对于我来说，比较关注框架背后的开发团队情况、项目活跃度、是否有足够多的商业案例、文档是否完整可读、框架的设计理念、技术架构是否灵活可扩展、技术社区生态是否完整等方面。目前，我比较倾心的是 Fastify 这个新兴框架，根据官网介绍，其专注于高性能和低消耗，并且公开的基准测试表现相当不错，项目足够活跃，更重要的是属于 OpenJS 基金会的孵化项目。本文主要介绍 Fastify 的设计理念和探究其是如何提高性能和降低内存消耗的。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/nodejs/nodejs-fastify/">
     Read More
   </a>
 </div>
@@ -1282,23 +1278,14 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/dom/dom-attribute/">
-      DOM-元素节点属性
+    <a href="/blog/computer-technology/typescript/tools-typescript-use-script-to-ts-types/">
+      利用脚本执行 `tsc` 忽略类型检查错误
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>元素节点上具有很多属性，这些属性我们通常可以很方便的获取，并进行简单的操作。</p>
-<!-- truncate -->
-<h3 id="节点属性常用操作">节点属性常用操作</h3>
-<p>每个 HTML 元素都有很多属性，例如（id、class、name、url、src、href）等等，元素节点上定义了一些方法供我们使用，来对这些属性进行设置、获取、移除操作。</p>
-<ul>
-<li>setAttribute()</li>
-<li>getAttribute()</li>
-<li>removeAttribute()</li>
-</ul>
-<p>exp:</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-attribute/">
+  <p class="mb-6"><p>在发布 npm 包时添加对 TypeScript 类型定义文件的支持会让用户的使用体验增色不少，TypeScript 官方提供了 <code>tsc --emitDeclarationOnly</code> 命令用来生成类型定义文件（<code>.d.ts</code>）。但是，该命令会同时执行类型检查，遇到错误时会报错中断命令行进程，这就使其无法直接集成在 CI 环节在发布 npm 包时自动执行生成类型定义文件的操作。当然，一个解决办法就是解决掉代码中所有的类型检查错误即可，既然讨论到这个问题，必然不会花费额外精力去解决一些历史遗留问题。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/typescript/tools-typescript-use-script-to-ts-types/">
     Read More
   </a>
 </div>

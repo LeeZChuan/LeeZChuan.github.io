@@ -1402,6 +1402,59 @@ float ---&gt; cssFloat
   
   
   <h4 class="mb-3">
+    <a href="/blog/computer-technology/web/web-tips-fonts/">
+      Web 字体加载对 DOM 位置的影响
+    </a>
+  </h4>
+  
+  
+  <p class="mb-6"><p>由于公司的业务会用到自己设计师定制的 Web 字体，所以一般在组件开发过程中会利用 CSS 引用该字体（<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face"
+
+
+
+
+ target="_blank"
+ 
+
+
+>@font-face</a>），前段时间发现一个线上问题：在部分 iOS 机型上，DOM 元素的位置发生了错位。</p>
+<!-- truncate -->
+<p>首先，对于问题复现的必要条件做了分析，为以下几个方面</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/web-tips-fonts/">
+    Read More
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/computer-technology/web/dom/dom-elementnode/">
+      DOM-元素节点
+    </a>
+  </h4>
+  
+  
+  <p class="mb-6"><p>可以说，元素节点是 DOM 树中的核心部分，我们进行文档的操作通常都是建立在元素节点上的。</p>
+<!-- truncate -->
+<h3 id="元素节点">元素节点</h3>
+<blockquote>
+<p>元素节点（Element Node）是我们最常用的 DOM 节点，不同类型的节点都有其自己的构造方法，并且它们身上还有许多属性和方法（包括继承的）来帮助我们完成 DOM 操作。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-elementnode/">
+    Read More
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
     <a href="/blog/computer-technology/computer/computer-memory-refresh/">
       内存的 3 种刷新方式
     </a>
@@ -1439,50 +1492,6 @@ float ---&gt; cssFloat
 <h3 id="原因">原因</h3>
 <p>由于内存（Memory）以及缓存（Cache）都由相应的存储单元芯片<strong>DRAM</strong>和<strong>SRAM</strong>构成存储阵列，是一种半导体存储器件。并且，所有的数据都是逻辑 <code>1</code> 和 <code>0</code> 的组合。</p></p>
   <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/computer/computer-memory-refresh/">
-    Read More
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/web-local-storage/">
-      Web 本地存储
-    </a>
-  </h4>
-  
-  
-  <p class="mb-6"><p>为了达到某些需求，我们通常需要在本地存储一些数据，方便我们进行用户个性化定制服务。</p>
-<!-- truncate -->
-<h3 id="web-存储">Web 存储</h3>
-<p>在互联网上，许多网站提供用户注册功能，因为 http 协议是个无状态的协议（无法记录客户端与服务器端状态），所以我们注册登录后每一次跳转网页都需要重新登陆。为了增强用户体验，我们不得不将状态信息保存下来，而 Web 存储技术则实现了该需求。Cookie 最多可在本地存储 4K 数据，出于安全性考虑， Cookie 中并非直接存储的是用户敏感数据（帐号、密码、个人信息等），而是一个状态 ID，该 ID 是服务器端利用 session 存储一个会话状态并分配给客户端用来进行状态识别的。因此，每一次的 http 请求都会带上 Cookie 数据发送给服务器端进行状态识别，从而达到状态保持的目的。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/web-local-storage/">
-    Read More
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/computer-technology/tools/tools-junit/">
-      单元测试工具：Junit
-    </a>
-  </h4>
-  
-  
-  <p class="mb-6"><p>通常一个项目的代码量是比较大的，而且其中逻辑也较为复杂，在开发完成后再进行项目测试其实是比较耗费时间和精力的，因此边开发边测试是个很好的选择，而 JUnit 则为我们提供了这样的便利。</p>
-<!-- truncate -->
-<h3 id="junit">JUnit</h3>
-<p>JUnit 是一个用来对 Java 代码进行单元测试的框架，是 XUnit （一套基于测试驱动开发的测试框架）的一个子集，类似的还有 PythonUnit、CppUnit。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/tools/tools-junit/">
     Read More
   </a>
 </div>

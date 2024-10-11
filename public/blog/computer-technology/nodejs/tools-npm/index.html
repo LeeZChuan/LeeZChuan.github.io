@@ -1577,25 +1577,17 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/web-tips-fonts/">
-      Web 字体加载对 DOM 位置的影响
+    <a href="/blog/computer-technology/web/dom/dom-event/">
+      DOM-事件
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>由于公司的业务会用到自己设计师定制的 Web 字体，所以一般在组件开发过程中会利用 CSS 引用该字体（<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face"
-
-
-
-
- target="_blank"
- 
-
-
->@font-face</a>），前段时间发现一个线上问题：在部分 iOS 机型上，DOM 元素的位置发生了错位。</p>
+  <p class="mb-6"><p>JavaScript 的作用就是让 html 静态页面具备动态效果，而这些基本都是利用 DOM 事件来实现的。</p>
 <!-- truncate -->
-<p>首先，对于问题复现的必要条件做了分析，为以下几个方面</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/web-tips-fonts/">
+<h3 id="注册-dom-事件">注册 DOM 事件</h3>
+<p>事件就是给目标 DOM 节点提前注册一个相应类型的事件方法，在合适的时机进行回调执行该方法的过程。接下来就来看看如何给目标 DOM 节点注册事件：</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-event/">
     Read More
   </a>
 </div>
@@ -1607,17 +1599,19 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/tools/tools-junit/">
-      单元测试工具：Junit
+    <a href="/blog/computer-technology/web/dom/dom-rule/">
+      DOM-元素节点几何量
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>通常一个项目的代码量是比较大的，而且其中逻辑也较为复杂，在开发完成后再进行项目测试其实是比较耗费时间和精力的，因此边开发边测试是个很好的选择，而 JUnit 则为我们提供了这样的便利。</p>
+  <p class="mb-6"><p>当我们在查看 HTML 文档时，每个元素节点被解析后，都画成了可视形状。我们可以获取每个元素节点的几何量（宽、高、偏移量）以及页面滚动距离。</p>
 <!-- truncate -->
-<h3 id="junit">JUnit</h3>
-<p>JUnit 是一个用来对 Java 代码进行单元测试的框架，是 XUnit （一套基于测试驱动开发的测试框架）的一个子集，类似的还有 PythonUnit、CppUnit。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/tools/tools-junit/">
+<h3 id="元素节点几何量">元素节点几何量</h3>
+<p>通常我们将一个元素抽象成一个盒子模型，具有 content（内容）、padding（填充、内边距）、border（边框）、margin（外边距）这些尺寸属性。</p>
+<h6 id="定位偏移量">定位偏移量</h6>
+<p>使用元素节点的 <code>offsetTop</code> 与 <code>offsetLeft</code> 属性，我们可以分别获取该元素节点<strong>顶部与左侧外边框</strong>相对于 <code>offsetParent</code> 的<strong>顶部与左侧内边框</strong>的偏移像素量。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-rule/">
     Read More
   </a>
 </div>
@@ -1629,18 +1623,14 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/dom/dom-elementnode/">
-      DOM-元素节点
+    <a href="/blog/computer-technology/web/tools-web-fee-toolchain/">
+      前端工程化：对于构建工具链的简单思考
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>可以说，元素节点是 DOM 树中的核心部分，我们进行文档的操作通常都是建立在元素节点上的。</p>
-<!-- truncate -->
-<h3 id="元素节点">元素节点</h3>
-<blockquote>
-<p>元素节点（Element Node）是我们最常用的 DOM 节点，不同类型的节点都有其自己的构造方法，并且它们身上还有许多属性和方法（包括继承的）来帮助我们完成 DOM 操作。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-elementnode/">
+  <p class="mb-6"><p>前端工程化是在做与业务开发完全不同的事情，旨在解决软件工程领域与开发者密切相关的问题，通常会将其与基建开发、DevOps 放在一起讨论。前端开发是复杂的，其结合了 HTML/CSS/JavaScript 3 种语言，甚至还有很多其超集，没有开箱即用的工具链，不像 Java Web 开发、Android 开发等等有官方或者商业领域非常成熟的工具可以利用，一切都源于开源社区的从 0 开始构建。正因如此，前端工程化领域百花齐放，开放与创新展现的淋漓尽致，这也是前端开发者了解学习软件工程的机会。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/tools-web-fee-toolchain/">
     Read More
   </a>
 </div>

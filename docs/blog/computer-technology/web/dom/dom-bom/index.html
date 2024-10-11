@@ -1,30 +1,1027 @@
-<!doctype html><html itemscope lang=en-us itemtype=http://schema.org/WebPage><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=5"><meta name=theme-name content="hugoplate"><link rel="shortcut icon" href=/images/favicon_hu9880217891310920762.png type=image/x-icon><link rel=icon href=/images/favicon_hu9880217891310920762.png type=image/x-icon><link rel=icon type=image/png sizes=48x48 href=/images/favicon_hu11285212527156944795.png><link rel=icon type=image/png sizes=96x96 href=/images/favicon_hu9880217891310920762.png><link rel=apple-touch-icon sizes=144x144 href=/images/favicon_hu290619398646655712.png><link rel=manifest href=/manifest.webmanifest><meta name=msapplication-TileColor content="#ddd"><meta name=theme-color content="#ffffff"><base href=http:/blog/computer-technology/web/dom/dom-bom/><title>浏览器对象模型（BOM）</title>
-<meta name=keywords content="计算机技术,Web,Web 前端,DOM,BOM"><meta name=description content="在网页开发中，我们通常专注于内容的设计，而有些时候我们需要进行不同窗口之间的交互，这时候我们就需要学习如何运用 BOM 中的许多核心对象，及其属性、方法。"><meta name=author content="zeon.studio"><meta property="og:image" content="http:/images/og-image.png"><meta name=twitter:image content="http:/images/og-image.png"><meta name=twitter:card content="summary_large_image"><meta property="og:image:width" content="900"><meta property="og:image:height" content="600"><meta property="og:image:type" content="image/.png"><meta property="og:title" content="浏览器对象模型（BOM）"><meta property="og:description" content="在网页开发中，我们通常专注于内容的设计，而有些时候我们需要进行不同窗口之间的交互，这时候我们就需要学习如何运用 BOM 中的许多核心对象，及其属性、方法。"><meta property="og:type" content="website"><meta property="og:url" content="http:/blog/computer-technology/web/dom/dom-bom/"><meta name=twitter:title content="浏览器对象模型（BOM）"><meta name=twitter:description content="在网页开发中，我们通常专注于内容的设计，而有些时候我们需要进行不同窗口之间的交互，这时候我们就需要学习如何运用 BOM 中的许多核心对象，及其属性、方法。"><meta name=twitter:site content="@zeon_studio"><meta name=twitter:creator content="@zeon.studio"><script>let indexURL="http:/searchindex.json",includeSectionsInSearch=["blog"],search_no_results="No results for",search_initial_message="Type something to search.."</script><meta http-equiv=x-dns-prefetch-control content="on"><link rel=preconnect href=https://use.fontawesome.com crossorigin><link rel=preconnect href=//cdnjs.cloudflare.com><link rel=preconnect href=//www.googletagmanager.com><link rel=preconnect href=//www.google-analytics.com><link rel=dns-prefetch href=https://use.fontawesome.com><link rel=dns-prefetch href=//ajax.googleapis.com><link rel=dns-prefetch href=//cdnjs.cloudflare.com><link rel=dns-prefetch href=//www.googletagmanager.com><link rel=dns-prefetch href=//www.google-analytics.com><link rel=dns-prefetch href=//fonts.googleapis.com><link rel=dns-prefetch href=//connect.facebook.net><link rel=dns-prefetch href=//platform.linkedin.com><link rel=dns-prefetch href=//platform.twitter.com><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><script>(function(){const e=document.createElement("link");e.href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&family=Signika:wght@500;700&display=swap",e.type="text/css",e.rel="stylesheet",document.head.appendChild(e)})()</script><link href="/css/style.min.1eaa00232a07c3abdb80b2e0bde2b6c2e7f39c2f092b03aac326041ed60ebc29.css" integrity="sha256-HqoAIyoHw6vbgLLgveK2wufznC8JKwOqwyYEHtYOvCk=" rel=stylesheet><link defer async rel=stylesheet href="/css/style-lazy.min.5d85e889fd5f5b28f9387aeade847fcb0a66d76a99a985ab4cdae3d37cf21557.css" integrity="sha256-XYXoif1fWyj5OHrq3oR/ywpm12qZqYWrTNrj03zyFVc=" media=print onload='this.media="all",this.onload=null'></head><body><div id=announcement class="announcement announcement-hide">You must replace the <strong>baseURL</strong> in <strong>hugo.toml</strong> file when deploying, you can manage this announcement from the <strong>params.toml</strong> file.
-<button id=announcement-button class=announcement-button>
-&#215;</button></div><style>.announcement{position:relative;z-index:999;padding:1rem;padding-right:2.8rem;background-color:#fff;box-shadow:1px 0 10px 7px rgba(154,154,154,.11);font-size:1.1rem}.announcement-button{cursor:pointer;padding:0 .5rem;border:0;font-size:1.3rem;position:absolute;top:50%;right:1rem;transform:translateY(-50%);border:1px solid;border-radius:50%;height:1.1em;width:1.1em;display:flex;justify-content:center;align-items:center}.announcement-hide{display:none}.dark .announcement{background-color:#222}</style><header class="header sticky top-0 z-30"><nav class="navbar container"><div class=order-0><a class="navbar-brand block" href=/><img fetchpriority=high decoding=async class="img img-light" width=160 height=32 src=/images/logo_hu4114262549785978686.webp alt=Hugoplate onerror='this.onerror=null,this.src="/images/logo_hu7137767845088484273.png"'>
-<img fetchpriority=high decoding=async class="img img-dark" width=160 height=32 src=/images/logo-darkmode_hu8742296558546396051.webp alt=Hugoplate onerror='this.onerror=null,this.src="/images/logo-darkmode_hu4471933895487503573.png"'></a></div><input id=nav-toggle type=checkbox class=hidden>
-<label for=nav-toggle class="order-3 cursor-pointer flex items-center lg:hidden text-dark dark:text-white lg:order-1"><svg id="show-button" class="h-6 fill-current block" viewBox="0 0 20 20"><title>Menu Open</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0V0z"/></svg><svg id="hide-button" class="h-6 fill-current hidden" viewBox="0 0 20 20"><title>Menu Close</title><polygon points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2" transform="rotate(45 10 10)"/></svg></label><ul id=nav-menu class="navbar-nav order-3 hidden lg:flex w-full pb-6 lg:order-1 lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8"><li class=nav-item><a class=nav-link href=/>主页</a></li><li class=nav-item><a class=nav-link href=/about>关于我</a></li><li class=nav-item><a class=nav-link href=/>学习记录</a></li><li class=nav-item><a class=nav-link href=/elements>Md编写说明</a></li><li class="nav-item nav-dropdown group relative"><span class="nav-link
-inline-flex items-center">其他<svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg></span><ul class="nav-dropdown-list lg:group-hover:visible lg:group-hover:opacity-100"><li class=nav-dropdown-item><a class=nav-dropdown-link href=/404>404 Page</a></li><li class=nav-dropdown-item><a class=nav-dropdown-link href=/authors>Authors</a></li><li class=nav-dropdown-item><a class=nav-dropdown-link href=/blog>Blog</a></li><li class=nav-dropdown-item><a class=nav-dropdown-link href=/categories>Categories</a></li></ul></li></ul><div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0"><button aria-label=search class="border-border text-dark hover:text-primary dark:border-darkmode-border mr-5 inline-block border-r pr-5 text-xl dark:text-white dark:hover:text-darkmode-primary" data-target=search-modal>
-<i class="fa-solid fa-search"></i></button><div class="theme-switcher mr-5 hidden"><input id=theme-switcher data-theme-switcher type=checkbox>
-<label for=theme-switcher><span class=sr-only>theme switcher</span>
-<span><svg class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-100 dark:opacity-0" viewBox="0 0 56 56" fill="#fff" height="16" width="16"><path d="M30 4.6c0-1-.9-2-2-2a2 2 0 00-2 2v5c0 1 .9 2 2 2s2-1 2-2zm9.6 9a2 2 0 000 2.8c.8.8 2 .8 2.9.0L46 13a2 2 0 000-2.9 2 2 0 00-3 0zm-26 2.8c.7.8 2 .8 2.8.0.8-.7.8-2 0-2.9L13 10c-.7-.7-2-.8-2.9.0-.7.8-.7 2.1.0 3zM28 16A12 12 0 0016 28a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0028 16zm23.3 14c1.1.0 2-.9 2-2s-.9-2-2-2h-4.9a2 2 0 00-2 2c0 1.1 1 2 2 2zM4.7 26a2 2 0 00-2 2c0 1.1.9 2 2 2h4.9c1 0 2-.9 2-2s-1-2-2-2zm37.8 13.6a2 2 0 00-3 0 2 2 0 000 2.9l3.6 3.5a2 2 0 002.9.0c.8-.8.8-2.1.0-3zM10 43.1a2 2 0 000 2.9c.8.7 2.1.8 3 0l3.4-3.5c.8-.8.8-2.1.0-2.9s-2-.8-2.9.0zm20 3.4c0-1.1-.9-2-2-2a2 2 0 00-2 2v4.9c0 1 .9 2 2 2s2-1 2-2z"/></svg><svg class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-0 dark:opacity-100" viewBox="0 0 24 24" fill="none" height="16" width="16"><path fill="#000" fill-rule="evenodd" clip-rule="evenodd" d="M8.2 2.2c1-.4 2 .6 1.6 1.5-1 3-.4 6.4 1.8 8.7a8.4 8.4.0 008.7 1.8c1-.3 2 .5 1.5 1.5v.1A10.3 10.3.0 0112.4 22 10.3 10.3.0 013.2 6.7c1-2 2.9-3.5 4.9-4.4z"/></svg></span></label></div><script>var darkMode=!1;window.matchMedia("(prefers-color-scheme: dark)").matches&&(darkMode=!0),localStorage.getItem("theme")==="dark"?darkMode=!0:localStorage.getItem("theme")==="light"&&(darkMode=!1),darkMode?document.documentElement.classList.add("dark"):document.documentElement.classList.remove("dark"),document.addEventListener("DOMContentLoaded",()=>{var e=document.querySelectorAll("[data-theme-switcher]"),t=document.querySelector(".theme-switcher");[].forEach.call(e,function(e){e.checked=darkMode,e.addEventListener("click",()=>{document.documentElement.classList.toggle("dark"),localStorage.setItem("theme",document.documentElement.classList.contains("dark")?"dark":"light")})}),t.classList.remove("hidden")})</script></div></nav></header><div class=search-modal aria-hidden=true style=--color-primary:#121212><div data-target=close-search-modal class=search-modal-overlay></div><div class=search-wrapper data-image=true data-description=true data-tags=true data-categories=true><div class=search-wrapper-header><label for=search-modal-input style=margin-top:-1px><span class=sr-only>search icon</span>
-<svg viewBox="0 0 512 512" height="18" width="18" class="search-icon" data-type="search"><path fill="currentcolor" d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8.0 45.3s-32.8 12.5-45.3.0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9.0 208S93.1.0 208 0 416 93.1 416 208zM208 352a144 144 0 100-288 144 144 0 100 288z"/></svg>
-<svg viewBox="0 0 512 512" height="18" width="18" class="search-reset" data-type="reset"><path fill="currentcolor" d="M256 512A256 256 0 10256 0a256 256 0 100 512zM175 175c9.4-9.4 24.6-9.4 33.9.0l47 47 47-47c9.4-9.4 24.6-9.4 33.9.0s9.4 24.6.0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6.0 33.9s-24.6 9.4-33.9.0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9.0s-9.4-24.6.0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6.0-33.9z"/></svg>
-</label><input id=search-modal-input type=text data-search-input autocomplete=off aria-label=Search placeholder="Search Post..."></div><div class=search-wrapper-body><div class=search-result data-search-result></div><span class=search-result-empty>Type something to search..</span></div><div class=search-wrapper-footer><span><kbd><svg width="14" height="14" fill="currentcolor" viewBox="0 0 16 16"><path d="M3.204 11h9.592L8 5.519 3.204 11zm-.753-.659 4.796-5.48a1 1 0 011.506.0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 01-.753-1.659z"/></svg>
-</kbd><kbd><svg width="14" height="14" fill="currentcolor" style="margin-top:1px" viewBox="0 0 16 16"><path d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 001.506.0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 00-.753 1.659z"/></svg>
-</kbd>to navigate
-</span><span><kbd><svg width="12" height="12" fill="currentcolor" style="display:inline-block" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M14.5 1.5a.5.5.0 01.5.5v4.8a2.5 2.5.0 01-2.5 2.5H2.707l3.347 3.346a.5.5.0 01-.708.708l-4.2-4.2a.5.5.0 010-.708l4-4a.5.5.0 11.708.708L2.707 8.3H12.5A1.5 1.5.0 0014 6.8V2a.5.5.0 01.5-.5z"/></svg>
-</kbd>to select
-</span><span class=search-result-info></span>
-<span data-target=close-search-modal><kbd>ESC</kbd> to close</span></div></div></div><main><section class="section pt-7"><div class=container><div class="row justify-center"><article class=lg:col-10><h1 class="h2 mb-4">浏览器对象模型（BOM）</h1><ul class=mb-4><li class="mr-4 inline-block"><a href=/authors//><i class="fa-regular fa-circle-user mr-2"></i></a></li><li class="mr-4 inline-block"><i class="fa-regular fa-clock mr-2"></i>
-May 15, 2016</li></ul><div class="content mb-10"><details open class="table-of-content blog"><summary>Table of Contents</summary><nav id=TableOfContents><ol><li><ol><li><a href=#浏览器对象模型>浏览器对象模型</a><ol><li><ol><li></li></ol></li></ol></li><li><a href=#window>Window</a><ol><li><ol><li></li></ol></li></ol></li><li><a href=#navigator>Navigator</a><ol><li><ol><li></li></ol></li></ol></li><li><a href=#screen>Screen</a><ol><li><ol><li></li></ol></li></ol></li><li><a href=#history>History</a><ol><li><ol><li></li></ol></li></ol></li><li><a href=#location>Location</a><ol><li><ol><li></li></ol></li></ol></li><li><a href=#结语>结语</a></li></ol></li></ol></nav></details><p>在网页开发中，我们通常专注于内容的设计，而有些时候我们需要进行不同窗口之间的交互，这时候我们就需要学习如何运用 BOM 中的许多核心对象，及其属性、方法。</p><h3 id=浏览器对象模型>浏览器对象模型</h3><p>BOM（Browser Object Model）即浏览器对象模型，我们熟知的另一个对象模型为 DOM（Document Object Model），也就是文档对象模型。这两个都是网页设计中非常重要的概念，我们可以简单的理解为 BOM 注重的是不同网页（框架、窗口）之间的交互（浏览器层面），而 DOM 注重的是同一网页下的内容设计（网页层面）。</p><h6 id=bom-中的对象>BOM 中的对象</h6><p>我们首先要了解的就是 BOM 中的对象，然后再对各个对象中的属性、方法进行探究。BOM 中有以下几个对象：</p><ul><li>Window</li><li>Navigator</li><li>Screen</li><li>History</li><li>Location</li><li>Document（DOM）</li></ul><p>其中最核心就是 <code>Document</code> 对象，也就是我们所说的 DOM，它本身很复杂，在此我们对它不做过多讨论。剩下的几个对象中，我们常用的并且比较重要的就是 <code>Window</code> 和 <code>Location</code> 对象了，后面将会详细讨论。</p><h3 id=window>Window</h3><p>Window 对象表示的就是我们的浏览器窗口。如果 html 文档中包含框架（frame/iframe 标签），那么每一个框架也都对应一个 Window 对象，<code>frames[]</code> 数组存放不同窗口的 <code>Window</code> 对象。Window 对象是我们很常用也很重要的 BOM 对象。</p><h6 id=常用属性>常用属性</h6><pre><code>frames[]      // 窗口数组
+<!doctype html>
+<html
+  itemscope
+  class=""
+  lang="en-us"
+  itemtype="http://schema.org/WebPage">
+  <head>
+    
+    <meta charset="utf-8" />
+
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, maximum-scale=5" />
+
+
+<meta name="theme-name" content="hugoplate" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="/images/favicon_hu9880217891310920762.png" type="image/x-icon">
+<link rel="icon" href="/images/favicon_hu9880217891310920762.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu11285212527156944795.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu9880217891310920762.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu290619398646655712.png">
+
+
+
+
+
+
+
+
+<link rel="manifest" href="/manifest.webmanifest" />
+<meta
+  name="msapplication-TileColor"
+  content="#ddd" />
+<meta
+  name="theme-color"
+  content="#ffffff" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <base href="http:/blog/computer-technology/web/dom/dom-bom/" />
+
+
+
+
+
+
+
+  
+
+
+<title>浏览器对象模型（BOM）</title>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <meta name="keywords" content="计算机技术, Web, Web 前端, DOM, BOM" />
+
+
+
+
+<meta
+  name="description"
+  content="在网页开发中，我们通常专注于内容的设计，而有些时候我们需要进行不同窗口之间的交互，这时候我们就需要学习如何运用 BOM 中的许多核心对象，及其属性、方法。" />
+
+
+
+  <meta name="author" content="zeon.studio" />
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+      
+        <meta property="og:image" content="http:/images/og-image.png" />
+        <meta name="twitter:image" content="http:/images/og-image.png" />
+        <meta
+          name="twitter:card"
+          content="summary_large_image" />
+      
+      
+      <meta property="og:image:width" content="900" />
+      <meta property="og:image:height" content="600" />
+    
+
+
+    
+    <meta
+      property="og:image:type"
+      content="image/.png" />
+  
+
+
+  
+
+
+
+
+
+<meta property="og:title" content="浏览器对象模型（BOM）" />
+<meta property="og:description" content="在网页开发中，我们通常专注于内容的设计，而有些时候我们需要进行不同窗口之间的交互，这时候我们就需要学习如何运用 BOM 中的许多核心对象，及其属性、方法。" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http:/blog/computer-technology/web/dom/dom-bom/" />
+
+
+<meta name="twitter:title" content="浏览器对象模型（BOM）" />
+<meta name="twitter:description" content="在网页开发中，我们通常专注于内容的设计，而有些时候我们需要进行不同窗口之间的交互，这时候我们就需要学习如何运用 BOM 中的许多核心对象，及其属性、方法。" />
+
+
+  <meta name="twitter:site" content="@zeon_studio" />
+
+
+  <meta name="twitter:creator" content="@zeon.studio" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  let indexURL = "http:/searchindex.json";
+  let includeSectionsInSearch = ["blog"];
+  let search_no_results = "No results for";
+  let search_initial_message = "Type something to search..";
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+<meta http-equiv="x-dns-prefetch-control" content="on" />
+<link rel="preconnect" href="https://use.fontawesome.com" crossorigin />
+<link rel="preconnect" href="//cdnjs.cloudflare.com" />
+<link rel="preconnect" href="//www.googletagmanager.com" />
+<link rel="preconnect" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="https://use.fontawesome.com" />
+<link rel="dns-prefetch" href="//ajax.googleapis.com" />
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+<link rel="dns-prefetch" href="//www.googletagmanager.com" />
+<link rel="dns-prefetch" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link rel="dns-prefetch" href="//connect.facebook.net" />
+<link rel="dns-prefetch" href="//platform.linkedin.com" />
+<link rel="dns-prefetch" href="//platform.twitter.com" />
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script>
+  (function () {
+    const googleFont = document.createElement("link");
+    googleFont.href = "https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&family=Signika:wght@500;700&display=swap";
+    googleFont.type = "text/css";
+    googleFont.rel = "stylesheet";
+    document.head.appendChild(googleFont);
+  })();
+</script>
+
+
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+<link
+  href="/css/style.min.1eaa00232a07c3abdb80b2e0bde2b6c2e7f39c2f092b03aac326041ed60ebc29.css"
+  integrity="sha256-HqoAIyoHw6vbgLLgveK2wufznC8JKwOqwyYEHtYOvCk="
+  rel="stylesheet" />
+
+
+<link
+  defer
+  async
+  rel="stylesheet"
+  href="/css/style-lazy.min.5d85e889fd5f5b28f9387aeade847fcb0a66d76a99a985ab4cdae3d37cf21557.css"
+  integrity="sha256-XYXoif1fWyj5OHrq3oR/ywpm12qZqYWrTNrj03zyFVc="
+  media="print"
+  onload="this.media='all'; this.onload=null;" />
+
+
+  </head>
+
+  <body>
+    
+    
+      
+
+
+
+      
+
+    
+
+
+    
+    
+
+
+  <div id="announcement" class="announcement announcement-hide">
+    You must replace the <strong>baseURL</strong> in <strong>hugo.toml</strong> file when deploying, you can manage this announcement from the <strong>params.toml</strong> file.
+    <button id="announcement-button" class="announcement-button">
+      &times;
+    </button>
+  </div>
+
+  
+  <style>
+    .announcement {
+      position: relative;
+      z-index: 999;
+      padding: 1rem;
+      padding-right: 2.8rem;
+      background-color: #fff;
+      box-shadow: 1px 0px 10px 7px rgba(154, 154, 154, 0.11);
+      font-size: 1.1rem;
+    }
+    .announcement-button {
+      cursor: pointer;
+      padding: 0 0.5rem;
+      border: 0;
+      font-size: 1.3rem;
+      position: absolute;
+      top: 50%;
+      right: 1rem;
+      transform: translateY(-50%);
+      border: 1px solid;
+      border-radius: 50%;
+      height: 1.1em;
+      width: 1.1em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .announcement-hide {
+      display: none;
+    }
+    .dark .announcement {
+      background-color: #222;
+    }
+  </style>
+
+
+
+
+    
+    <header
+  class="header sticky top-0 z-30">
+  <nav class="navbar container">
+    
+    <div class="order-0">
+      
+      <a class="navbar-brand block" href="/">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+    
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu4114262549785978686.webp"
+      alt="Hugoplate"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu7137767845088484273.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu8742296558546396051.webp"
+      alt="Hugoplate"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu4471933895487503573.png';" />
+  
+  
+
+
+      </a>
+    </div>
+    
+    <input id="nav-toggle" type="checkbox" class="hidden" />
+    <label
+      for="nav-toggle"
+      class="order-3 cursor-pointer flex items-center lg:hidden text-dark dark:text-white lg:order-1">
+      <svg id="show-button" class="h-6 fill-current block" viewBox="0 0 20 20">
+        <title>Menu Open</title>
+        <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z"></path>
+      </svg>
+      <svg id="hide-button" class="h-6 fill-current hidden" viewBox="0 0 20 20">
+        <title>Menu Close</title>
+        <polygon
+          points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
+          transform="rotate(45 10 10)"></polygon>
+      </svg>
+    </label>
+    
+
+    
+    <ul
+      id="nav-menu"
+      class="navbar-nav order-3 hidden lg:flex w-full pb-6 lg:order-1 lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8">
+      
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/"
+              >主页</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/about"
+              >关于我</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/"
+              >学习记录</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/elements"
+              >Md编写说明</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item nav-dropdown group relative">
+            <span
+              class="nav-link 
+                
+                
+                
+              
+                
+                
+                
+              
+                
+                
+                
+              
+                
+                
+                
+               inline-flex items-center">
+              其他
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+                <path
+                  d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+              </svg>
+            </span>
+            <ul
+              class="nav-dropdown-list lg:group-hover:visible lg:group-hover:opacity-100">
+              
+                
+                
+                <li class="nav-dropdown-item">
+                  <a
+                    class="nav-dropdown-link "
+                    
+                    href="/404">
+                    404 Page
+                  </a>
+                </li>
+              
+                
+                
+                <li class="nav-dropdown-item">
+                  <a
+                    class="nav-dropdown-link "
+                    
+                    href="/authors">
+                    Authors
+                  </a>
+                </li>
+              
+                
+                
+                <li class="nav-dropdown-item">
+                  <a
+                    class="nav-dropdown-link "
+                    
+                    href="/blog">
+                    Blog
+                  </a>
+                </li>
+              
+                
+                
+                <li class="nav-dropdown-item">
+                  <a
+                    class="nav-dropdown-link "
+                    
+                    href="/categories">
+                    Categories
+                  </a>
+                </li>
+              
+            </ul>
+          </li>
+        
+      
+      
+    </ul>
+
+    <div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
+      
+        
+          <button
+            aria-label="search"
+            
+            class="border-border text-dark hover:text-primary dark:border-darkmode-border mr-5 inline-block border-r pr-5 text-xl dark:text-white dark:hover:text-darkmode-primary"
+            
+            data-target="search-modal">
+            <i class="fa-solid fa-search"></i>
+          </button>
+        
+      
+
+      
+
+
+
+
+
+
+
+
+
+      
+
+
+  <div class="theme-switcher mr-5 hidden">
+    <input id="theme-switcher" data-theme-switcher type="checkbox" />
+    <label for="theme-switcher">
+      <span class="sr-only">theme switcher</span>
+      <span>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-100 dark:opacity-0"
+          viewBox="0 0 56 56"
+          fill="#fff"
+          height="16"
+          width="16">
+          <path
+            d="M30 4.6c0-1-.9-2-2-2a2 2 0 0 0-2 2v5c0 1 .9 2 2 2s2-1 2-2Zm9.6 9a2 2 0 0 0 0 2.8c.8.8 2 .8 2.9 0L46 13a2 2 0 0 0 0-2.9 2 2 0 0 0-3 0Zm-26 2.8c.7.8 2 .8 2.8 0 .8-.7.8-2 0-2.9L13 10c-.7-.7-2-.8-2.9 0-.7.8-.7 2.1 0 3ZM28 16a12 12 0 0 0-12 12 12 12 0 0 0 12 12 12 12 0 0 0 12-12 12 12 0 0 0-12-12Zm23.3 14c1.1 0 2-.9 2-2s-.9-2-2-2h-4.9a2 2 0 0 0-2 2c0 1.1 1 2 2 2ZM4.7 26a2 2 0 0 0-2 2c0 1.1.9 2 2 2h4.9c1 0 2-.9 2-2s-1-2-2-2Zm37.8 13.6a2 2 0 0 0-3 0 2 2 0 0 0 0 2.9l3.6 3.5a2 2 0 0 0 2.9 0c.8-.8.8-2.1 0-3ZM10 43.1a2 2 0 0 0 0 2.9c.8.7 2.1.8 3 0l3.4-3.5c.8-.8.8-2.1 0-2.9-.8-.8-2-.8-2.9 0Zm20 3.4c0-1.1-.9-2-2-2a2 2 0 0 0-2 2v4.9c0 1 .9 2 2 2s2-1 2-2Z" />
+        </svg>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-0 dark:opacity-100"
+          viewBox="0 0 24 24"
+          fill="none"
+          height="16"
+          width="16">
+          <path
+            fill="#000"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M8.2 2.2c1-.4 2 .6 1.6 1.5-1 3-.4 6.4 1.8 8.7a8.4 8.4 0 0 0 8.7 1.8c1-.3 2 .5 1.5 1.5v.1a10.3 10.3 0 0 1-9.4 6.2A10.3 10.3 0 0 1 3.2 6.7c1-2 2.9-3.5 4.9-4.4Z" />
+        </svg>
+      </span>
+    </label>
+  </div>
+
+  
+  <script>
+    var darkMode = false;
+
+    
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches){darkMode = true}
+    
+
+    if (localStorage.getItem("theme") === "dark"){darkMode = true}
+    else if (localStorage.getItem("theme") === "light"){darkMode = false}
+
+    if (darkMode){document.documentElement.classList.add("dark")}
+    else {document.documentElement.classList.remove("dark")}
+
+    
+    document.addEventListener("DOMContentLoaded", () => {
+      var themeSwitch = document.querySelectorAll("[data-theme-switcher]");
+      var themeSwitcherContainer = document.querySelector('.theme-switcher');
+
+      [].forEach.call(themeSwitch, function (ts) {
+        ts.checked = darkMode;
+        ts.addEventListener("click", () => {
+          document.documentElement.classList.toggle("dark");
+          localStorage.setItem(
+            "theme",
+            document.documentElement.classList.contains("dark") ? "dark" : "light"
+          );
+        });
+      });
+
+      
+      themeSwitcherContainer.classList.remove('hidden');
+    });
+  </script>
+
+
+
+
+      
+      
+    </div>
+  </nav>
+</header>
+
+    
+
+
+
+
+  
+    <div
+      class="search-modal "
+      aria-hidden="true"
+      style="--color-primary: #121212">
+      <div data-target="close-search-modal" class="search-modal-overlay"></div>
+      <div
+        class="search-wrapper"
+        data-image="true"
+        data-description="true"
+        data-tags="true"
+        data-categories="true">
+        <div class="search-wrapper-header">
+          <label for="search-modal-input" style="margin-top:-1px">
+            <span class="sr-only">search icon</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-icon"
+              data-type="search">
+              <path
+                fill="currentColor"
+                d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-reset"
+              data-type="reset">
+              <path
+                fill="currentColor"
+                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z" />
+            </svg>
+          </label>
+          <input
+            id="search-modal-input"
+            type="text"
+            data-search-input
+            autocomplete="off"
+            aria-label="Search"
+            placeholder="Search Post..." />
+        </div>
+        <div class="search-wrapper-body">
+          <div class="search-result" data-search-result></div>
+          <span class="search-result-empty">
+            Type something to search..
+          </span>
+        </div>
+        <div class="search-wrapper-footer">
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 11h9.592L8 5.519 3.204 11zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659z" />
+              </svg>
+            </kbd>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                style="margin-top:1px;"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z" />
+              </svg>
+            </kbd>
+            to navigate
+          </span>
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="12"
+                fill="currentColor"
+                style="display:inline-block;"
+                viewBox="0 0 16 16">
+                <path
+                  fill-rule="evenodd"
+                  d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z" />
+              </svg>
+            </kbd>
+            to select
+          </span>
+          <span class="search-result-info"></span>
+          <span data-target="close-search-modal">
+            <kbd>ESC</kbd> to close
+          </span>
+        </div>
+      </div>
+    </div>
+  
+
+
+
+
+    <main>
+      
+  <section class="section pt-7">
+    <div class="container">
+      <div class="row justify-center">
+        <article class="lg:col-10">
+          
+          
+          <h1 class="h2 mb-4">
+            浏览器对象模型（BOM）
+          </h1>
+          <ul class="mb-4">
+            <li class="mr-4 inline-block">
+              <a
+                href="/authors//">
+                <i class="fa-regular fa-circle-user mr-2"></i
+                >
+              </a>
+            </li>
+            
+            
+            <li class="mr-4 inline-block">
+              <i class="fa-regular fa-clock mr-2"></i>
+              May 15, 2016
+            </li>
+          </ul>
+          <div class="content mb-10">
+            
+
+ 
+  
+
+<details open class="table-of-content blog">
+  <summary>
+    
+      Table of Contents
+    
+  </summary>
+  <nav id="TableOfContents">
+  <ol>
+    <li>
+      <ol>
+        <li><a href="#浏览器对象模型">浏览器对象模型</a>
+          <ol>
+            <li>
+              <ol>
+                <li></li>
+              </ol>
+            </li>
+          </ol>
+        </li>
+        <li><a href="#window">Window</a>
+          <ol>
+            <li>
+              <ol>
+                <li></li>
+              </ol>
+            </li>
+          </ol>
+        </li>
+        <li><a href="#navigator">Navigator</a>
+          <ol>
+            <li>
+              <ol>
+                <li></li>
+              </ol>
+            </li>
+          </ol>
+        </li>
+        <li><a href="#screen">Screen</a>
+          <ol>
+            <li>
+              <ol>
+                <li></li>
+              </ol>
+            </li>
+          </ol>
+        </li>
+        <li><a href="#history">History</a>
+          <ol>
+            <li>
+              <ol>
+                <li></li>
+              </ol>
+            </li>
+          </ol>
+        </li>
+        <li><a href="#location">Location</a>
+          <ol>
+            <li>
+              <ol>
+                <li></li>
+              </ol>
+            </li>
+          </ol>
+        </li>
+        <li><a href="#结语">结语</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+</details>
+
+            <p>在网页开发中，我们通常专注于内容的设计，而有些时候我们需要进行不同窗口之间的交互，这时候我们就需要学习如何运用 BOM 中的许多核心对象，及其属性、方法。</p>
+<!-- truncate -->
+<h3 id="浏览器对象模型">浏览器对象模型</h3>
+<p>BOM（Browser Object Model）即浏览器对象模型，我们熟知的另一个对象模型为 DOM（Document Object Model），也就是文档对象模型。这两个都是网页设计中非常重要的概念，我们可以简单的理解为 BOM 注重的是不同网页（框架、窗口）之间的交互（浏览器层面），而 DOM 注重的是同一网页下的内容设计（网页层面）。</p>
+<h6 id="bom-中的对象">BOM 中的对象</h6>
+<p>我们首先要了解的就是 BOM 中的对象，然后再对各个对象中的属性、方法进行探究。BOM 中有以下几个对象：</p>
+<ul>
+<li>Window</li>
+<li>Navigator</li>
+<li>Screen</li>
+<li>History</li>
+<li>Location</li>
+<li>Document（DOM）</li>
+</ul>
+<p>其中最核心就是 <code>Document</code> 对象，也就是我们所说的 DOM，它本身很复杂，在此我们对它不做过多讨论。剩下的几个对象中，我们常用的并且比较重要的就是 <code>Window</code> 和 <code>Location</code> 对象了，后面将会详细讨论。</p>
+<h3 id="window">Window</h3>
+<p>Window 对象表示的就是我们的浏览器窗口。如果 html 文档中包含框架（frame/iframe 标签），那么每一个框架也都对应一个 Window 对象，<code>frames[]</code> 数组存放不同窗口的 <code>Window</code> 对象。Window 对象是我们很常用也很重要的 BOM 对象。</p>
+<h6 id="常用属性">常用属性</h6>
+<pre><code>frames[]      // 窗口数组
 length        // 获取frame个数
 name          // 获取/设置窗口名称
 opener        // 获取窗口的打开/创建者
 parent        // 获取窗口的父窗口
 top           // 获取顶级窗口
 closed        // 测试窗口是否已关闭
-</code></pre><p>上面这些属性大多都是与框架有关的，并且也是比较常用的，主要作用就如注释所写都简单易懂。**除此之外，我们还需要知道的是，其他的 BOM 对象的引用均需要 <code>window</code> 才能获取，所以 Window 对象的属性中包括其他 BOM 对象的引用属性。**如下所示：</p><pre><code>navigator   // Navigator对象引用
+</code></pre>
+<p>上面这些属性大多都是与框架有关的，并且也是比较常用的，主要作用就如注释所写都简单易懂。**除此之外，我们还需要知道的是，其他的 BOM 对象的引用均需要 <code>window</code> 才能获取，所以 Window 对象的属性中包括其他 BOM 对象的引用属性。**如下所示：</p>
+<pre><code>navigator   // Navigator对象引用
 screen      // Screen对象引用
 history     // History对象引用
 location    // Location对象引用
@@ -33,9 +1030,14 @@ document    // Document对象引用
 // 例如
 window.document.title;
 window.location;
-</code></pre><h6 id=常用方法>常用方法</h6><p>Window 对象有很多常用的内建方法，下面我们来分类介绍。首先介绍两个方法：</p><pre><code>open();    // 打开一个窗口
+</code></pre>
+<h6 id="常用方法">常用方法</h6>
+<p>Window 对象有很多常用的内建方法，下面我们来分类介绍。首先介绍两个方法：</p>
+<pre><code>open();    // 打开一个窗口
 close();   // 关闭一个窗口
-</code></pre><p>需要说明的是，目前这两个方法基本不会用到，而且各个浏览器对 <code>open()</code> 方法的支持是越来越差了，打开新的网页我们通常用 <code>&lt;a></code> 去完成。</p><pre><code>alert()    // 警告对话框
+</code></pre>
+<p>需要说明的是，目前这两个方法基本不会用到，而且各个浏览器对 <code>open()</code> 方法的支持是越来越差了，打开新的网页我们通常用 <code>&lt;a&gt;</code> 去完成。</p>
+<pre><code>alert()    // 警告对话框
 prompt()   // 输入对话框
 confirm()  // 确认对话框
 
@@ -43,27 +1045,41 @@ confirm()  // 确认对话框
 window.alert(location);
 window.prompt(&quot;验证码&quot;,&quot;默认文本&quot;);
 window.confirm(&quot;要关闭当前页面吗？&quot;);
-</code></pre><p>以上三个方法均实现的是弹出式的对话框。</p><pre><code>setInterval()    // 创建计时器
+</code></pre>
+<p>以上三个方法均实现的是弹出式的对话框。</p>
+<pre><code>setInterval()    // 创建计时器
 clearInterval()  // 清除计时器
 setTimeout()     // 创建超时器
 clearTimeout()    // 清除计时器
 
 // 例如
 setInterval(&quot;update()&quot;,1000);
-</code></pre><p>以上方法通常用来实现一些特效，均接受两个参数：执行代码（回调函数）和时间(ms)。计时器就是按指定时间间隔反复执行代码，超时器则是按指定时间到时后执行一次代码即可完成。</p><pre><code>moveBy()      // 相对于浏览器原左上角坐标的移动坐标
+</code></pre>
+<p>以上方法通常用来实现一些特效，均接受两个参数：执行代码（回调函数）和时间(ms)。计时器就是按指定时间间隔反复执行代码，超时器则是按指定时间到时后执行一次代码即可完成。</p>
+<pre><code>moveBy()      // 相对于浏览器原左上角坐标的移动坐标
 moveTo()      // 直接设置浏览器左上角坐标
 resizeBy()    // 相对于浏览器原窗口大小的调整像素
 resizeTo()    // 直接设置浏览器窗口大小
 scrollBy()    // 相对于浏览器原窗口滚动位置的滚动距离
 scrollTo()    // 直接设置窗口滚动距离
-</code></pre><p>以上方法，都是对浏览器窗口进行的一些操作，<code>By()</code> 方法设置的都是相对参数，而 <code>To()</code> 方法设置的是绝对参数。</p><p>**最后，我们需要知道的是 Window 对象在 javascript 中是全局对象（浏览器环境），所以在使用的时候我们通常可以不写 <code>window</code>。**如下所示：</p><pre><code>// 下面三种用法等价
+</code></pre>
+<p>以上方法，都是对浏览器窗口进行的一些操作，<code>By()</code> 方法设置的都是相对参数，而 <code>To()</code> 方法设置的是绝对参数。</p>
+<p>**最后，我们需要知道的是 Window 对象在 javascript 中是全局对象（浏览器环境），所以在使用的时候我们通常可以不写 <code>window</code>。**如下所示：</p>
+<pre><code>// 下面三种用法等价
 window.document.title;
 self.document.title;
 document.title;
-</code></pre><h3 id=navigator>Navigator</h3><p>Navigator 对象包含浏览器有关的信息，如浏览器版本号、内核等等。这个对象我们通常用来精准（直接）判断浏览器为 IE、FireFox、Chrome 等等。</p><h6 id=常用属性-1>常用属性</h6><p>Navigator 对象中我们需要注意的属性有三个。</p><pre><code>appName    // 浏览器名称
+</code></pre>
+<h3 id="navigator">Navigator</h3>
+<p>Navigator 对象包含浏览器有关的信息，如浏览器版本号、内核等等。这个对象我们通常用来精准（直接）判断浏览器为 IE、FireFox、Chrome 等等。</p>
+<h6 id="常用属性-1">常用属性</h6>
+<p>Navigator 对象中我们需要注意的属性有三个。</p>
+<pre><code>appName    // 浏览器名称
 appVersion // 使用浏览器的平台系统和版本信息
 userAgent  // 浏览器客户端代理
-</code></pre><p>这里需要注意的是 <code>appName</code> 属性返回的并不是真正的浏览器名称，FireFox、Chrome 等非 IE 浏览器返回的均是 Netscape(网景)，网景浏览器是第一代浏览器。我们想要获知浏览器的真正名称则需要用到 <code>userAgent</code> 属性。</p><pre><code>// 直接（精准）判断浏览器名称
+</code></pre>
+<p>这里需要注意的是 <code>appName</code> 属性返回的并不是真正的浏览器名称，FireFox、Chrome 等非 IE 浏览器返回的均是 Netscape(网景)，网景浏览器是第一代浏览器。我们想要获知浏览器的真正名称则需要用到 <code>userAgent</code> 属性。</p>
+<pre><code>// 直接（精准）判断浏览器名称
 var ua = window.navigator.userAgent;
 
 if (ua.search(/msie/i) &gt;= 0){
@@ -77,38 +1093,629 @@ if (ua.search(/msie/i) &gt;= 0){
         }
     }
 }
-</code></pre><h3 id=screen>Screen</h3><p>Screen 对象包含客户端显示器屏幕的一些信息，例如分辨率、颜色深度、刷新率等等。</p><h6 id=常用属性-2>常用属性</h6><p>我们通常关心的是分辨率和浏览器窗口大小的问题，与之有关的 Screen 对象属性有四个。</p><pre><code>width       // 显示器分辨率的宽
+</code></pre>
+<h3 id="screen">Screen</h3>
+<p>Screen 对象包含客户端显示器屏幕的一些信息，例如分辨率、颜色深度、刷新率等等。</p>
+<h6 id="常用属性-2">常用属性</h6>
+<p>我们通常关心的是分辨率和浏览器窗口大小的问题，与之有关的 Screen 对象属性有四个。</p>
+<pre><code>width       // 显示器分辨率的宽
 height      // 显示器分辨率的高
 availWidth  // 显示屏幕除任务栏以外的有效宽
 availHeight // 显示屏幕除任务栏以外的有效高
-</code></pre><h3 id=history>History</h3><p>History 对象包含浏览器的访问历史信息。</p><h6 id=属性>属性</h6><pre><code>length      // 访问历史记录列表的URL数量
-</code></pre><h6 id=方法>方法</h6><p>History 对象有三个方法，是用来控制页面前进、后退、跳转的。</p><pre><code>back()     // 后退一个网页
+</code></pre>
+<h3 id="history">History</h3>
+<p>History 对象包含浏览器的访问历史信息。</p>
+<h6 id="属性">属性</h6>
+<pre><code>length      // 访问历史记录列表的URL数量
+</code></pre>
+<h6 id="方法">方法</h6>
+<p>History 对象有三个方法，是用来控制页面前进、后退、跳转的。</p>
+<pre><code>back()     // 后退一个网页
 forward()  // 前进一个网页
 go()       // 按参数进行跳转
 
 // 下面两个等价
 back();
 go(-1);
-</code></pre><p>这些我们通常不会用到，浏览器自身已经具备这些能力。</p><h3 id=location>Location</h3><p>Location 对象包含有关页面 URL 的信息。</p><h6 id=常用属性-3>常用属性</h6><pre><code>hash       // 页面的锚(#)
+</code></pre>
+<p>这些我们通常不会用到，浏览器自身已经具备这些能力。</p>
+<h3 id="location">Location</h3>
+<p>Location 对象包含有关页面 URL 的信息。</p>
+<h6 id="常用属性-3">常用属性</h6>
+<pre><code>hash       // 页面的锚(#)
 href       // 设置/获取完整URL
 search     // 设置/获取？后的URL部分
 
 // 下面两个等价
 location.href = &quot;http://LeeZChuan.github.io/&quot;;
 location = &quot;http://LeeZChuan.github.io/&quot;;
-</code></pre><h6 id=方法-1>方法</h6><p>Location 对象也仅仅只有三个方法，但很重要。</p><pre><code>assign()     // 加载新页面
+</code></pre>
+<h6 id="方法-1">方法</h6>
+<p>Location 对象也仅仅只有三个方法，但很重要。</p>
+<pre><code>assign()     // 加载新页面
 reload()     // 页面重载/刷新
 replace()    // 替换当前页面，但不留历史记录
 
 // 例如，导航栏没有历史记录
 location.replace(&quot;http://LeeZChuan.github.io/&quot;);
-</code></pre><h3 id=结语>结语</h3><p>至此，我们对 BOM 对象有了一个简单全面的认识，了解了各个对象中一些常用的属性、方法。在这里我们没有探讨 <code>Document</code> 对象，这是因为它其实就是 DOM，是一个比 BOM 还庞大的体系，需要单独去讨论。</p></div><div class="row items-start justify-between"><div class="lg:col-5 mb-10 flex items-center lg:mb-0"><h5 class=mr-3>Tags :</h5><ul><li class=inline-block><a class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white" href=/tags/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/>计算机技术</a></li><li class=inline-block><a class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white" href=/tags/web/>Web</a></li><li class=inline-block><a class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white" href=/tags/web-%e5%89%8d%e7%ab%af/>Web 前端</a></li><li class=inline-block><a class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white" href=/tags/dom/>Dom</a></li><li class=inline-block><a class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white" href=/tags/bom/>Bom</a></li></ul></div><div class="lg:col-4 flex items-center"><div class=share-icons><h5 class=share-title>Share :</h5><a class="share-link share-facebook" href="https://facebook.com/sharer/sharer.php?u=http%3a%2fblog%2fcomputer-technology%2fweb%2fdom%2fdom-bom%2f" target=_blank rel=noopener aria-label="share facebook"><span class=share-icon><svg viewBox="0 0 24 24"><path d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z"/></svg>
-</span></a><a class="share-link share-twitter" href="https://twitter.com/intent/tweet/?text=Share&amp;url=http%3a%2fblog%2fcomputer-technology%2fweb%2fdom%2fdom-bom%2f" target=_blank rel=noopener aria-label="share twitter"><span aria-hidden=true class=share-icon><svg viewBox="0 0 24 24"><path d="M8 2H1l8.26 11.015L1.45 22H4.1l6.388-7.349L16 22h7l-8.608-11.478L21.8 2h-2.65l-5.986 6.886zm9 18L5 4h2l12 16z"/></svg>
-</span></a><a class="share-link share-email" href="mailto:?subject=Share&amp;body=http%3a%2fblog%2fcomputer-technology%2fweb%2fdom%2fdom-bom%2f" target=_self rel=noopener aria-label="share email"><span aria-hidden=true class=share-icon><svg viewBox="0 0 24 24"><path d="M22 4H2C.9 4 0 4.9.0 6v12c0 1.1.9 2 2 2h20c1.1.0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7.25 14.43l-3.5 2c-.08.05-.17.07-.25.07-.17.0-.34-.1-.43-.25-.14-.24-.06-.55.18-.68l3.5-2c.24-.14.55-.06.68.18.14.24.06.55-.18.68zm4.75.07c-.1.0-.2-.03-.27-.08l-8.5-5.5c-.23-.15-.3-.46-.15-.7.15-.22.46-.3.7-.14L12 13.4l8.23-5.32c.23-.15.54-.08.7.15.14.23.07.54-.16.7l-8.5 5.5c-.08.04-.17.07-.27.07zm8.93 1.75c-.1.16-.26.25-.43.25-.08.0-.17-.02-.25-.07l-3.5-2c-.24-.13-.32-.44-.18-.68s.44-.32.68-.18l3.5 2c.24.13.32.44.18.68z"/></svg>
-</span></a><a class="share-link share-reddit" href="https://reddit.com/submit/?url=http%3a%2fblog%2fcomputer-technology%2fweb%2fdom%2fdom-bom%2f&amp;resubmit=true&amp;title=Share" target=_blank rel=noopener aria-label="share reddit"><span aria-hidden=true class=share-icon><svg viewBox="0 0 24 24"><path d="M24 11.5c0-1.65-1.35-3-3-3-.96.0-1.86.48-2.42 1.24-1.64-1-3.75-1.64-6.07-1.72.08-1.1.4-3.05 1.52-3.7.72-.4 1.73-.24 3 .5C17.2 6.3 18.46 7.5 20 7.5c1.65.0 3-1.35 3-3s-1.35-3-3-3c-1.38.0-2.54.94-2.88 2.22-1.43-.72-2.64-.8-3.6-.25-1.64.94-1.95 3.47-2 4.55-2.33.08-4.45.7-6.1 1.72C4.86 8.98 3.96 8.5 3 8.5c-1.65.0-3 1.35-3 3 0 1.32.84 2.44 2.05 2.84-.03.22-.05.44-.05.66.0 3.86 4.5 7 10 7s10-3.14 10-7c0-.22-.02-.44-.05-.66 1.2-.4 2.05-1.54 2.05-2.84zM2.3 13.37C1.5 13.07 1 12.35 1 11.5c0-1.1.9-2 2-2 .64.0 1.22.32 1.6.82-1.1.85-1.92 1.9-2.3 3.05zm3.7.13c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9.8 4.8c-1.08.63-2.42.96-3.8.96-1.4.0-2.74-.34-3.8-.95-.24-.13-.32-.44-.2-.68.15-.24.46-.32.7-.18 1.83 1.06 4.76 1.06 6.6.0.23-.13.53-.05.67.2.14.23.06.54-.18.67zm.2-2.8c-1.1.0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm5.7-2.13c-.38-1.16-1.2-2.2-2.3-3.05.38-.5.97-.82 1.6-.82 1.1.0 2 .9 2 2 0 .84-.53 1.57-1.3 1.87z"/></svg></span></a></div></div></div><div class=mt-20><div id=disqus_thread></div><script>window.disqus_config=function(){},function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById("disqus_thread").innerHTML="Disqus comments not available by default when the website is previewed locally.";return}var t=document,e=t.createElement("script");e.async=!0,e.src="//themefisher-template.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}()</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></div></article></div><div class="section pb-0"><h2 class="h3 mb-12">Related Posts</h2><div class=row><div class="lg:col-4 md:col-6 mb-14"><div class="bg-body dark:bg-darkmode-body"><h4 class=mb-3><a href=/blog/computer-technology/computer/computer-microprocessor-addressing-range/>微处理器寻址范围</a></h4><ul class=mb-4><li class="mr-4 inline-block"><a href=/authors//><i class="fa-regular fa-circle-user mr-2"></i></a></li><li class="mr-4 inline-block"><i class="fa-regular fa-folder mr-1"></i>
-<a href=/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/ class=ms-1>计算机技术
-,
-</a><a href=/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba/ class=ms-1>计算机
-,
-</a><a href=/categories/mpu/ class=ms-1>Mpu</a></li></ul><p class=mb-6><p>在此之前，让我们带着下面这个问题来看这篇文章：<strong>64 位处理器所支持的最大内存(寻址范围)为多少？</strong></p><h3 id=处理器>处理器</h3><p>处理器（CPU）担负着整个计算机系统的核心任务执行责任，所以我们经常关心它的运算处理能力，也就是 CPU 的性能。</p><h6 id=微处理器>微处理器</h6><p>我们经常所说的 Inter、AMD 两大常见品牌厂商出售的桌面端的处理器称为处理器（CPU），而把移动端嵌入式系统中 ARM 架构的处理器称为微处理器（MPU）。事实上，几乎电子设备上均有微型处理器，例如路由器、智能家电等等，只不过以上所提到的离我们最近而且我们也最熟悉。</p></p><a class="btn btn-outline-primary btn-sm" href=/blog/computer-technology/computer/computer-microprocessor-addressing-range/>Read More</a></div></div><div class="lg:col-4 md:col-6 mb-14"><div class="bg-body dark:bg-darkmode-body"><h4 class=mb-3><a href=/blog/computer-technology/web/tools-web-fee-polyfill-corejs-eslint/>解析基于 core-js 与 ESLint 的 Web 兼容方案</a></h4><p class=mb-6><p>Web 网页为了保证在多个平台和低中高端设备上的体验稳定性和一致性，通常会做 Polyfill 以保证兼容性。</p><p>然而，兼容性问题本身是个难题，Polyfill 也并非很好处理，所以在技术演变的过程中，社区达成了一致，有一个主流的方案，大家共同来使用和维护。当下社区的主流方案则是基于 <code>core-js</code>，另一方面， 利用 ESLint 插件则可以做到自动检测代码中需要添加 Polyfill 的 API。</p></p><a class="btn btn-outline-primary btn-sm" href=/blog/computer-technology/web/tools-web-fee-polyfill-corejs-eslint/>Read More</a></div></div><div class="lg:col-4 md:col-6 mb-14"><div class="bg-body dark:bg-darkmode-body"><h4 class=mb-3><a href=/blog/computer-technology/web/dom/dom-rule/>DOM-元素节点几何量</a></h4><p class=mb-6><p>当我们在查看 HTML 文档时，每个元素节点被解析后，都画成了可视形状。我们可以获取每个元素节点的几何量（宽、高、偏移量）以及页面滚动距离。</p><h3 id=元素节点几何量>元素节点几何量</h3><p>通常我们将一个元素抽象成一个盒子模型，具有 content（内容）、padding（填充、内边距）、border（边框）、margin（外边距）这些尺寸属性。</p><h6 id=定位偏移量>定位偏移量</h6><p>使用元素节点的 <code>offsetTop</code> 与 <code>offsetLeft</code> 属性，我们可以分别获取该元素节点<strong>顶部与左侧外边框</strong>相对于 <code>offsetParent</code> 的<strong>顶部与左侧内边框</strong>的偏移像素量。</p></p><a class="btn btn-outline-primary btn-sm" href=/blog/computer-technology/web/dom/dom-rule/>Read More</a></div></div></div></div></div></section></main><footer class="bg-theme-light dark:bg-darkmode-theme-light"><div class=container><div class="row items-center py-10"><div class="lg:col-3 mb-8 text-center lg:mb-0 lg:text-left"><a class="navbar-brand inline-block" href=/><img fetchpriority=high decoding=async class="img img-light" width=160 height=32 src=/images/logo_hu4114262549785978686.webp alt=Hugoplate onerror='this.onerror=null,this.src="/images/logo_hu7137767845088484273.png"'>
-<img fetchpriority=high decoding=async class="img img-dark" width=160 height=32 src=/images/logo-darkmode_hu8742296558546396051.webp alt=Hugoplate onerror='this.onerror=null,this.src="/images/logo-darkmode_hu4471933895487503573.png"'></a></div><div class="lg:col-6 mb-8 text-center lg:mb-0"><ul><li class="m-3 inline-block"><a href=/></a></li></ul></div><div class="lg:col-3 mb-8 text-center lg:mb-0 lg:mt-0 lg:text-right"><ul class=social-icons><li><a target=_blank aria-label=facebook rel="nofollow noopener" href="https://www.facebook.com/profile.php?id=100083154937436"><i class="fab fa-facebook"></i></a></li><li><a target=_blank aria-label=github rel="nofollow noopener" href=https://github.com/LeeZChuan><i class="fab fa-github"></i></a></li><li><a target=_blank aria-label=linkedin rel="nofollow noopener" href=https://www.linkedin.com/in/zchuan-lee-89214a1a3/><i class="fab fa-linkedin"></i></a></li></ul></div></div></div><div class="border-border dark:border-darkmode-border border-t py-7"><div class="text-light dark:text-darkmode-light container text-center"><p></p></div></div></footer><script crossorigin=anonymous integrity="sha256-LO9JECYLqyMcpGlrtxZcpUn0I8AvhO6oIIibJZv4zbk=" src=/js/script.min.2cef4910260bab231ca4696bb7165ca549f423c02f84eea820889b259bf8cdb9.js></script><script defer async crossorigin=anonymous integrity="sha256-w+aS42D2+B+Jix+joZ7pAua1vbu/pRK/IhoP55b8n3w=" src=/js/script-lazy.min.c3e692e360f6f81f898b1fa3a19ee902e6b5bdbbbfa512bf221a0fe796fc9f7c.js></script><script>"serviceWorker"in navigator&&navigator.serviceWorker.register("/service-worker.js")</script><script type=application/javascript>const announcementBox=document.getElementById("announcement"),announcementButton=document.getElementById("announcement-button");Cookies.get("announcement-close")||(announcementBox.classList.remove("announcement-hide"),announcementButton.onclick=function(){Cookies.set("announcement-close",!0,{expires:7}),announcementBox.classList.add("announcement-hide")})</script></body></html>
+</code></pre>
+<h3 id="结语">结语</h3>
+<p>至此，我们对 BOM 对象有了一个简单全面的认识，了解了各个对象中一些常用的属性、方法。在这里我们没有探讨 <code>Document</code> 对象，这是因为它其实就是 DOM，是一个比 BOM 还庞大的体系，需要单独去讨论。</p>
+
+          </div>
+          <div class="row items-start justify-between">
+            
+            
+              <div class="lg:col-5 mb-10 flex items-center lg:mb-0">
+                <h5 class="mr-3">Tags :</h5>
+                <ul>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/">
+                        计算机技术
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/web/">
+                        Web
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/web-%e5%89%8d%e7%ab%af/">
+                        Web 前端
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/dom/">
+                        Dom
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/bom/">
+                        Bom
+                      </a>
+                    </li>
+                  
+                </ul>
+              </div>
+            
+            <div class="lg:col-4 flex items-center">
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="share-icons">
+  <h5 class="share-title">Share :</h5>
+
+
+  
+  
+    <a
+      class="share-link share-facebook"
+      href="https://facebook.com/sharer/sharer.php?u=http%3a%2fblog%2fcomputer-technology%2fweb%2fdom%2fdom-bom%2f"
+      target="_blank"
+      rel="noopener"
+      aria-label="share facebook">
+      <span class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-twitter"
+      href="https://twitter.com/intent/tweet/?text=Share&amp;url=http%3a%2fblog%2fcomputer-technology%2fweb%2fdom%2fdom-bom%2f"
+      target="_blank"
+      rel="noopener"
+      aria-label="share twitter">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path 
+            d="M8 2H1l8.26 11.015L1.45 22H4.1l6.388-7.349L16 22h7l-8.608-11.478L21.8 2h-2.65l-5.986 6.886zm9 18L5 4h2l12 16z"/>
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-email"
+      href="mailto:?subject=Share&amp;body=http%3a%2fblog%2fcomputer-technology%2fweb%2fdom%2fdom-bom%2f"
+      target="_self"
+      rel="noopener"
+      aria-label="share email">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M22 4H2C.9 4 0 4.9 0 6v12c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7.25 14.43l-3.5 2c-.08.05-.17.07-.25.07-.17 0-.34-.1-.43-.25-.14-.24-.06-.55.18-.68l3.5-2c.24-.14.55-.06.68.18.14.24.06.55-.18.68zm4.75.07c-.1 0-.2-.03-.27-.08l-8.5-5.5c-.23-.15-.3-.46-.15-.7.15-.22.46-.3.7-.14L12 13.4l8.23-5.32c.23-.15.54-.08.7.15.14.23.07.54-.16.7l-8.5 5.5c-.08.04-.17.07-.27.07zm8.93 1.75c-.1.16-.26.25-.43.25-.08 0-.17-.02-.25-.07l-3.5-2c-.24-.13-.32-.44-.18-.68s.44-.32.68-.18l3.5 2c.24.13.32.44.18.68z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-reddit"
+      href="https://reddit.com/submit/?url=http%3a%2fblog%2fcomputer-technology%2fweb%2fdom%2fdom-bom%2f&amp;resubmit=true&amp;title=Share"
+      target="_blank"
+      rel="noopener"
+      aria-label="share reddit">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M24 11.5c0-1.65-1.35-3-3-3-.96 0-1.86.48-2.42 1.24-1.64-1-3.75-1.64-6.07-1.72.08-1.1.4-3.05 1.52-3.7.72-.4 1.73-.24 3 .5C17.2 6.3 18.46 7.5 20 7.5c1.65 0 3-1.35 3-3s-1.35-3-3-3c-1.38 0-2.54.94-2.88 2.22-1.43-.72-2.64-.8-3.6-.25-1.64.94-1.95 3.47-2 4.55-2.33.08-4.45.7-6.1 1.72C4.86 8.98 3.96 8.5 3 8.5c-1.65 0-3 1.35-3 3 0 1.32.84 2.44 2.05 2.84-.03.22-.05.44-.05.66 0 3.86 4.5 7 10 7s10-3.14 10-7c0-.22-.02-.44-.05-.66 1.2-.4 2.05-1.54 2.05-2.84zM2.3 13.37C1.5 13.07 1 12.35 1 11.5c0-1.1.9-2 2-2 .64 0 1.22.32 1.6.82-1.1.85-1.92 1.9-2.3 3.05zm3.7.13c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9.8 4.8c-1.08.63-2.42.96-3.8.96-1.4 0-2.74-.34-3.8-.95-.24-.13-.32-.44-.2-.68.15-.24.46-.32.7-.18 1.83 1.06 4.76 1.06 6.6 0 .23-.13.53-.05.67.2.14.23.06.54-.18.67zm.2-2.8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm5.7-2.13c-.38-1.16-1.2-2.2-2.3-3.05.38-.5.97-.82 1.6-.82 1.1 0 2 .9 2 2 0 .84-.53 1.57-1.3 1.87z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+</div>
+
+            </div>
+          </div>
+          
+          
+            <div class="mt-20">
+              <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "themefisher-template" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+          
+        </article>
+      </div>
+
+      
+      
+      
+      
+        <div class="section pb-0">
+          <h2 class="h3 mb-12">Related Posts</h2>
+          <div class="row">
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/computer-technology/web/tools-web-fee-test-with-jest-puppeteer/">
+      使用 Jest 和 Puppeteer 构建 Web 自动化测试平台
+    </a>
+  </h4>
+  
+  
+  <p class="mb-6"><p>测试为软件的稳定和完善提供了必要的支持，Web 前端开发领域相比于做单元测试，端到端测试更有意义和价值。谷歌发布的 Puppeteer 工具和脸书发布的 Jest 测试工具为 Web 端到端测试提供了极大的便利，这里记录了如何使用它们构建一个 Web 自动化测试平台。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/tools-web-fee-test-with-jest-puppeteer/">
+    Read More
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/computer-technology/protocol/protocol-http/">
+      HTTP 协议
+    </a>
+  </h4>
+  
+  
+  <p class="mb-6"><p>随着 Internet 的发展，使用 Web 浏览器获取网络数据信息已经成为一种习惯标准，而 HTTP 协议也因此成为了网络体系中最重要的应用层协议。</p>
+<!-- truncate -->
+<h3 id="http">HTTP</h3>
+<p>HTTP（HyperText Transfer Protocol，超文本传输协议）是一种通用的、无状态（Stateless）的、与传输数据无关的，应用于分布式、协同式、超媒体信息系统的应用层协议。除了应用于 WWW（World Wide Web，万维网）服务器与 Web 浏览器之间的超文本传输外，它也可以应用于像名称服务器和分布对象管理系统这样的系统。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/protocol/protocol-http/">
+    Read More
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/computer-technology/web/dom/dom/">
+      文档对象模型（DOM）
+    </a>
+  </h4>
+  
+  
+  <p class="mb-6"><p>在网页设计中，有一个很重要的角色需要我们了解，DOM 帮助我们对页面元素进行增、删、改等全方位的操作，而且让 JavaScript 在客户端修改 HTML 文档成为一个很简单的事情，可以说 DOM 为我们操作 HTML 文档提供了强大的编程接口。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom/">
+    Read More
+  </a>
+</div>
+
+              </div>
+            
+          </div>
+        </div>
+      
+    </div>
+  </section>
+
+    </main>
+
+    
+    <footer class="bg-theme-light dark:bg-darkmode-theme-light">
+  <div class="container">
+    <div class="row items-center py-10">
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:text-left">
+        
+        <a
+          class="navbar-brand inline-block"
+          href="/">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+    
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu4114262549785978686.webp"
+      alt="Hugoplate"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu7137767845088484273.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu8742296558546396051.webp"
+      alt="Hugoplate"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu4471933895487503573.png';" />
+  
+  
+
+
+        </a>
+      </div>
+      <div class="lg:col-6 mb-8 text-center lg:mb-0">
+        <ul>
+          
+            <li class="m-3 inline-block">
+              <a
+                
+                href="
+                  /
+                "
+                ></a
+              >
+            </li>
+          
+        </ul>
+      </div>
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:mt-0 lg:text-right">
+        <ul class="social-icons">
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="facebook"
+                rel="nofollow noopener"
+                href="https://www.facebook.com/profile.php?id=100083154937436">
+                <i class="fab fa-facebook"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="github"
+                rel="nofollow noopener"
+                href="https://github.com/LeeZChuan">
+                <i class="fab fa-github"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="linkedin"
+                rel="nofollow noopener"
+                href="https://www.linkedin.com/in/zchuan-lee-89214a1a3/">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="border-border dark:border-darkmode-border border-t py-7">
+    <div class="text-light dark:text-darkmode-light container text-center">
+      <p>
+        
+      </p>
+    </div>
+  </div>
+</footer>
+
+
+
+    
+    
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+<script
+  crossorigin="anonymous"
+  integrity="sha256-LO9JECYLqyMcpGlrtxZcpUn0I8AvhO6oIIibJZv4zbk="
+  src="/js/script.min.2cef4910260bab231ca4696bb7165ca549f423c02f84eea820889b259bf8cdb9.js"></script>
+
+
+<script
+  defer
+  async
+  crossorigin="anonymous"
+  integrity="sha256-w&#43;aS42D2&#43;B&#43;Jix&#43;joZ7pAua1vbu/pRK/IhoP55b8n3w="
+  src="/js/script-lazy.min.c3e692e360f6f81f898b1fa3a19ee902e6b5bdbbbfa512bf221a0fe796fc9f7c.js"></script>
+
+
+
+<script>
+  if ('serviceWorker' in navigator){navigator.serviceWorker.register("/service-worker.js");}
+</script>
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <script type="application/javascript">
+      const announcementBox = document.getElementById('announcement');
+      const announcementButton = document.getElementById('announcement-button');
+      if (!Cookies.get('announcement-close')) {
+        announcementBox.classList.remove('announcement-hide');
+        announcementButton.onclick = function () {
+          Cookies.set('announcement-close', true, {
+            expires:  7 
+          });
+          announcementBox.classList.add('announcement-hide');
+        };
+      }
+    </script>
+  
+
+
+
+  </body>
+</html>

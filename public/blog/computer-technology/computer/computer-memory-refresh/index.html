@@ -1174,25 +1174,17 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/web-tips-fonts/">
-      Web 字体加载对 DOM 位置的影响
+    <a href="/blog/computer-technology/web/dom/dom-event/">
+      DOM-事件
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>由于公司的业务会用到自己设计师定制的 Web 字体，所以一般在组件开发过程中会利用 CSS 引用该字体（<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face"
-
-
-
-
- target="_blank"
- 
-
-
->@font-face</a>），前段时间发现一个线上问题：在部分 iOS 机型上，DOM 元素的位置发生了错位。</p>
+  <p class="mb-6"><p>JavaScript 的作用就是让 html 静态页面具备动态效果，而这些基本都是利用 DOM 事件来实现的。</p>
 <!-- truncate -->
-<p>首先，对于问题复现的必要条件做了分析，为以下几个方面</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/web-tips-fonts/">
+<h3 id="注册-dom-事件">注册 DOM 事件</h3>
+<p>事件就是给目标 DOM 节点提前注册一个相应类型的事件方法，在合适的时机进行回调执行该方法的过程。接下来就来看看如何给目标 DOM 节点注册事件：</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-event/">
     Read More
   </a>
 </div>
@@ -1204,17 +1196,18 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/css/css-bfc/">
-      块级格式化上下文（BFC）
+    <a href="/blog/computer-technology/tools/tools-maintain-open-source-projects-with-tools/">
+      如何更好的维护开源项目
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>在进行页面布局时，通常有流式布局、定位布局、浮动布局这三种形式。而在布局过程中，各元素之间的影响却是一个很关键的问题。</p>
+  <p class="mb-6"><p>一直以来，开源精神被开发者所推崇，开源项目为开发者提供了不用付出除时间以外任何成本就可以学习前沿技术的最佳途径，另一方面，我们应该思考开源为何会成功，在全球开发者参与协作的情况下代码仓库为何能保持整洁、不出现大规模冲突而奔溃，上下游依赖如何管理，这背后有既定的规范进行强约束，也有一系列社区工具来完成复杂而有价值的工作。所以，从参与或者维护开源项目的角度来看，这些<strong>社区公认的最佳实践</strong>值得我们了解，学习这些东西也能在一定程度上提高我们管理项目的能力。</p>
 <!-- truncate -->
-<h3 id="bfc">BFC</h3>
-<p>BFC（Block Formatting Context，块级格式化上下文）是 CSS 2.1 中的一个规范，在 CSS 3 中也称为 Flow Root。首先，BFC 是<strong>块级元素</strong>身上的一个特性，通常它是隐藏不生效的，但某些情况下它会显现出来：</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/css/css-bfc/">
+<p>以下内容属于经验积累，持续更新，仅供参考。</p>
+<h3 id="许可证license">许可证（License）</h3>
+<p>代码本质上是开发者的创作成果，具有<strong>专利权</strong>，所以开发者应该意识到自己所享有的权利，同时在使用其他人所提供的代码时避免侵权。作为开源项目，有必要在开源之前选择一个合适的<strong>许可证</strong>，提前<strong>声明权利和义务</strong>（一般作为单独的 <em>LICENSE</em> 文本文件保存），避免在后期陷入麻烦之中，GitHub 官方为我们提供了一个简单的工具站点：</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/tools/tools-maintain-open-source-projects-with-tools/">
     Read More
   </a>
 </div>
@@ -1226,17 +1219,14 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/protocol/protocol-tcp-udp/">
-      TCP 与 UDP 协议
+    <a href="/blog/computer-technology/nodejs/nodejs-fastify/">
+      Fastify - 专注于性能和低内存消耗
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>传输层是网络分层模型中举足轻重的层，它是底层通信子网与高层资源子网的接口与桥梁，提供了面向连接的传输控制协议（Transmission Control Protocol，TCP）和无连接的用户数据报协议（User Datagram Protocol，UDP），负责提供端到端的数据传输服务。</p>
-<!-- truncate -->
-<h3 id="传输层协议">传输层协议</h3>
-<p>传输层在两个应用实体之间实现可靠的、透明的、有效的端到端数据传输服务，其主要的功能为以下几个方面：</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/protocol/protocol-tcp-udp/">
+  <p class="mb-6"><p>最近在做 Node.js 技术相关的调研，需要选定一个 Web 框架作为基础来构建业务。一般来说，首选开源方案，对于我来说，比较关注框架背后的开发团队情况、项目活跃度、是否有足够多的商业案例、文档是否完整可读、框架的设计理念、技术架构是否灵活可扩展、技术社区生态是否完整等方面。目前，我比较倾心的是 Fastify 这个新兴框架，根据官网介绍，其专注于高性能和低消耗，并且公开的基准测试表现相当不错，项目足够活跃，更重要的是属于 OpenJS 基金会的孵化项目。本文主要介绍 Fastify 的设计理念和探究其是如何提高性能和降低内存消耗的。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/nodejs/nodejs-fastify/">
     Read More
   </a>
 </div>

@@ -1308,175 +1308,14 @@ public class ParameterTest {
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/tools-web-fee-toolchain/">
-      前端工程化：对于构建工具链的简单思考
+    <a href="/blog/computer-technology/web/web-performance-fastdom/">
+      Web 前端性能优化：批量 DOM 操作 - FastDOM
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>前端工程化是在做与业务开发完全不同的事情，旨在解决软件工程领域与开发者密切相关的问题，通常会将其与基建开发、DevOps 放在一起讨论。前端开发是复杂的，其结合了 HTML/CSS/JavaScript 3 种语言，甚至还有很多其超集，没有开箱即用的工具链，不像 Java Web 开发、Android 开发等等有官方或者商业领域非常成熟的工具可以利用，一切都源于开源社区的从 0 开始构建。正因如此，前端工程化领域百花齐放，开放与创新展现的淋漓尽致，这也是前端开发者了解学习软件工程的机会。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/tools-web-fee-toolchain/">
-    Read More
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-  
-    
-      
-    
-
-
-    
-    
-
-
-    
-    
-      
-      
-    
-    
-    
-
-
-    
-    
-      
-      
-        
-
-        
-        
-        
-        
-        
-        
-        
-
-
-        
-        
-
-
-        <picture>
-          <source
-            
-              srcset="/images/image-placeholder_hu14898866438330350576.webp"
-            
-            media="(max-width: 575px)" />
-          <source
-            
-              srcset="/images/image-placeholder_hu3366426647807776041.webp"
-            
-            media="(max-width: 767px)" />
-          <source
-            
-              srcset="/images/image-placeholder_hu15761394040035298493.webp"
-            
-            media="(max-width: 991px)" />
-          <source
-            
-              srcset="/images/image-placeholder_hu9923120856516670921.webp"
-             />
-          <img
-            
-              loading="lazy" decoding="async"
-              src="/images/image-placeholder_hu10538127647789974651.png"
-            class=" mb-6 w-full rounded img"
-            alt="How to build an Application with modern Technology"
-            width="1096"
-            height="480" />
-        </picture>
-      
-      
-    
-    
-  
-
-
-  
-
-
-  
-  <h4 class="mb-3">
-    <a href="/blog/post-1/">
-      How to build an Application with modern Technology
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/john-doe/">
-          <i class="fa-regular fa-circle-user mr-2"></i>John Doe
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/application/"
-            class="ms-1"
-            >Application
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/data/"
-            class="ms-1"
-            >Data
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6"><p>Nemo vel ad consectetur namut rutrum ex, venenatis sollicitudin urna. Aliquam erat volutpat. Integer eu ipsum sem. Ut bibendum lacus vestibulum maximus suscipit. Quisque vitae nibh iaculis neque blandit euismod.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/post-1/">
+  <p class="mb-6"><p>利用 JS 开发的原生应用与依赖于 React.js/Vue 开发的框架/库应用，性能孰高孰低？这两者最显著的区别在于原生应用需要手动操作 DOM 完成业务，而框架/库应用是基于数据变化响应式的应用，后者只需要关注数据如何变化，至于体现在 DOM 上的变化皆由框架/库内部自动完成。所以，要搞清楚两者的性能优劣，可能<strong>批量</strong>的 DOM 操作是一个不可忽略的核心因素。从代码执行的角度分析，框架/库也是基于原生 API 进行的封装抽象，因此代码执行时的路径更长、堆栈更深，由此可见原生 API 的操作性能应该是最高的。但是，现实情况是业务通常来说是复杂的，代码实现中 DOM 操作的逻辑分散在各处，那么多个 DOM 操作之间是否会产生影响从而不利于性能？这个时候就要关注宿主浏览器的渲染机制是如何理解批量的 DOM 操作的，这里引入的概念就是<strong>关键渲染路径（Critical rendering path）</strong>。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/web-performance-fastdom/">
     Read More
   </a>
 </div>
@@ -1488,19 +1327,39 @@ public class ParameterTest {
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/dom/dom-rule/">
-      DOM-元素节点几何量
+    <a href="/blog/computer-technology/web/web-local-storage/">
+      Web 本地存储
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>当我们在查看 HTML 文档时，每个元素节点被解析后，都画成了可视形状。我们可以获取每个元素节点的几何量（宽、高、偏移量）以及页面滚动距离。</p>
+  <p class="mb-6"><p>为了达到某些需求，我们通常需要在本地存储一些数据，方便我们进行用户个性化定制服务。</p>
 <!-- truncate -->
-<h3 id="元素节点几何量">元素节点几何量</h3>
-<p>通常我们将一个元素抽象成一个盒子模型，具有 content（内容）、padding（填充、内边距）、border（边框）、margin（外边距）这些尺寸属性。</p>
-<h6 id="定位偏移量">定位偏移量</h6>
-<p>使用元素节点的 <code>offsetTop</code> 与 <code>offsetLeft</code> 属性，我们可以分别获取该元素节点<strong>顶部与左侧外边框</strong>相对于 <code>offsetParent</code> 的<strong>顶部与左侧内边框</strong>的偏移像素量。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-rule/">
+<h3 id="web-存储">Web 存储</h3>
+<p>在互联网上，许多网站提供用户注册功能，因为 http 协议是个无状态的协议（无法记录客户端与服务器端状态），所以我们注册登录后每一次跳转网页都需要重新登陆。为了增强用户体验，我们不得不将状态信息保存下来，而 Web 存储技术则实现了该需求。Cookie 最多可在本地存储 4K 数据，出于安全性考虑， Cookie 中并非直接存储的是用户敏感数据（帐号、密码、个人信息等），而是一个状态 ID，该 ID 是服务器端利用 session 存储一个会话状态并分配给客户端用来进行状态识别的。因此，每一次的 http 请求都会带上 Cookie 数据发送给服务器端进行状态识别，从而达到状态保持的目的。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/web-local-storage/">
+    Read More
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/computer-technology/tools/tools-sublime-vim/">
+      编辑器：Sublime Text - Vim 插件
+    </a>
+  </h4>
+  
+  
+  <p class="mb-6"><p>Sumblime Text 是一个具有漂亮的界面和强大功能的文本编辑器，而且也支持许多丰富的插件。它是一个收费软件，但是允许开发人员无限期的免费试用。</p>
+<!-- truncate -->
+<h3 id="vim">Vim</h3>
+<p>Vim 是 Linux 操作系统下类 Vi 编辑器，是一款被开发者广泛使用，并且功能强大的文本编辑器。而 Sublime Text 最初的设计初衷也是基于 Vim 的设计思想，被设计为一个跨平台的具有丰富扩展功能的 Vim。随着后来的发展，它已经不仅仅是单纯的模仿 Vim，而是支持越来越多的插件和强大的功能。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/tools/tools-sublime-vim/">
     Read More
   </a>
 </div>

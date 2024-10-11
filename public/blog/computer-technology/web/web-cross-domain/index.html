@@ -1296,53 +1296,17 @@ header('Access-Control-Allow-Origin: http://www.163.com');
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/computer/computer-microprocessor-addressing-range/">
-      微处理器寻址范围
+    <a href="/blog/computer-technology/protocol/protocol-osi/">
+      OSI 与 TCP/IP 参考模型
     </a>
   </h4>
   
   
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors//">
-          <i class="fa-regular fa-circle-user mr-2"></i>
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/"
-            class="ms-1"
-            >计算机技术
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba/"
-            class="ms-1"
-            >计算机
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/mpu/"
-            class="ms-1"
-            >Mpu
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6"><p>在此之前，让我们带着下面这个问题来看这篇文章：<strong>64 位处理器所支持的最大内存(寻址范围)为多少？</strong></p>
+  <p class="mb-6"><p>目前流行的两大网络体系结构是 OSI/RM 和 TCP/IP 参考模型，他们均是分层结构。分层是为了简化问题，降低网络设计复杂性，而且各层次结构相互独立，实现的功能也相对独立。层与层之间只在层间接口处关联，层间耦合最小。</p>
 <!-- truncate -->
-<h3 id="处理器">处理器</h3>
-<p>处理器（CPU）担负着整个计算机系统的核心任务执行责任，所以我们经常关心它的运算处理能力，也就是 CPU 的性能。</p>
-<h6 id="微处理器">微处理器</h6>
-<p>我们经常所说的 Inter、AMD 两大常见品牌厂商出售的桌面端的处理器称为处理器（CPU），而把移动端嵌入式系统中 ARM 架构的处理器称为微处理器（MPU）。事实上，几乎电子设备上均有微型处理器，例如路由器、智能家电等等，只不过以上所提到的离我们最近而且我们也最熟悉。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/computer/computer-microprocessor-addressing-range/">
+<h3 id="osiopen-system-interconnect">OSI（Open System Interconnect）</h3>
+<p>OSI/RM（Open System Interconnection Reference Module，简称 OSI）即开放系统互联参考模型。为了解决不同网络体系结构的互联、互操作问题，ISO（国际标准化组织）制定了 OSI 模型。OSI 模型把网络通信的工作分为七层，自上而下依次为：</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/protocol/protocol-osi/">
     Read More
   </a>
 </div>
@@ -1507,16 +1471,17 @@ header('Access-Control-Allow-Origin: http://www.163.com');
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/tools/tools-programming-language/">
-      理解编程语言的设计与实现
+    <a href="/blog/computer-technology/web/dom/dom-js/">
+      DOM-加载 JavaScript
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>编程语言本质上是给开发者使用的工具，不同的业务领域使用不同的编程语言去实现具体的业务，是基于语言本身的设计理念与实现方式来做选择，那么作为开发者应该了解一下编程语言是如何被发明的，且其设计理念是什么。</p>
+  <p class="mb-6"><p>页面的动态交互离不开 Javascript，将 js 脚本引入页面时会阻塞页面加载，在某些时候我们则可以选择异步加载 js 脚本。</p>
 <!-- truncate -->
-<p>Ruby 是我大学期间课余接触且实际使用过的一门语言，目前我甚是喜爱，其作者松本行弘设计 Ruby 的初心是：为开发者服务，注重简洁和效率。这篇文章主要也是为了记录在拜读了松本行弘先生新书《编程语言的设计与实现》之后掌握的一些相关的关键知识点和其它收获。由于该书主要是围绕作者在设计 Ruby 和新语言 Streem 过程中的一些思考和经验，有些东西可能不太具备普适性，而我在这里主要还是关注一些通用性的知识点和概念。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/tools/tools-programming-language/">
+<h3 id="引入-js-代码">引入 js 代码</h3>
+<p>通常我们会将 JavaScript 代码写在一个单独的文件中，这样做的好处是页面整洁、结构更清晰，页面更小加载速度更快，同时也易维护。实际上在页面中引入 js 代码的方法有多种，我们按需选择即可。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-js/">
     Read More
   </a>
 </div>

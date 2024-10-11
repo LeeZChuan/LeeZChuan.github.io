@@ -1264,17 +1264,14 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/protocol/protocol-tcp-udp/">
-      TCP 与 UDP 协议
+    <a href="/blog/computer-technology/typescript/tools-typescript-use-script-to-ts-types/">
+      利用脚本执行 `tsc` 忽略类型检查错误
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>传输层是网络分层模型中举足轻重的层，它是底层通信子网与高层资源子网的接口与桥梁，提供了面向连接的传输控制协议（Transmission Control Protocol，TCP）和无连接的用户数据报协议（User Datagram Protocol，UDP），负责提供端到端的数据传输服务。</p>
-<!-- truncate -->
-<h3 id="传输层协议">传输层协议</h3>
-<p>传输层在两个应用实体之间实现可靠的、透明的、有效的端到端数据传输服务，其主要的功能为以下几个方面：</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/protocol/protocol-tcp-udp/">
+  <p class="mb-6"><p>在发布 npm 包时添加对 TypeScript 类型定义文件的支持会让用户的使用体验增色不少，TypeScript 官方提供了 <code>tsc --emitDeclarationOnly</code> 命令用来生成类型定义文件（<code>.d.ts</code>）。但是，该命令会同时执行类型检查，遇到错误时会报错中断命令行进程，这就使其无法直接集成在 CI 环节在发布 npm 包时自动执行生成类型定义文件的操作。当然，一个解决办法就是解决掉代码中所有的类型检查错误即可，既然讨论到这个问题，必然不会花费额外精力去解决一些历史遗留问题。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/typescript/tools-typescript-use-script-to-ts-types/">
     Read More
   </a>
 </div>
@@ -1286,19 +1283,25 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/dom/dom-rule/">
-      DOM-元素节点几何量
+    <a href="/blog/computer-technology/protocol/protocol-base/">
+      网络通信关键概念
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>当我们在查看 HTML 文档时，每个元素节点被解析后，都画成了可视形状。我们可以获取每个元素节点的几何量（宽、高、偏移量）以及页面滚动距离。</p>
+  <p class="mb-6"><p>计算机网络是通过通信设备与线路将地理上分散并且具有独立功能的计算机系统连接在一起，并由功能完善的软件来控制，进而实现资源共享的系统。从物理组成上来看，计算机网络包括硬件、软件和协议三大部分。计算机网络中结点间相互通信是由控制信息传送的网络协议及其他相应的网络软件共同实现的。在计算机网络通信中，有部分关键性概念需要理解透彻，在此做一总结。</p>
 <!-- truncate -->
-<h3 id="元素节点几何量">元素节点几何量</h3>
-<p>通常我们将一个元素抽象成一个盒子模型，具有 content（内容）、padding（填充、内边距）、border（边框）、margin（外边距）这些尺寸属性。</p>
-<h6 id="定位偏移量">定位偏移量</h6>
-<p>使用元素节点的 <code>offsetTop</code> 与 <code>offsetLeft</code> 属性，我们可以分别获取该元素节点<strong>顶部与左侧外边框</strong>相对于 <code>offsetParent</code> 的<strong>顶部与左侧内边框</strong>的偏移像素量。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-rule/">
+<h3 id="网络通信协议">网络通信协议</h3>
+<p>**网络通信协议简称网络协议（Poctocol），是指为了能在计算机网络中进行数据交换，实现资源共享而建立的通信规则、标准或约定的集合。**在计算机网络中，只有采用相同网络协议的计算机才能进行信息的交流与沟通。网络协议有以下三个基本要素：</p>
+<ul>
+<li>
+<p>语义（Semantics）</p>
+<p>规定双方完成通信需要的控制信息及应执行的动作。</p>
+</li>
+<li>
+<p>语法（Syntax）</p>
+<p>规定通信双方交换的数据或控制信息的格式和结构。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/protocol/protocol-base/">
     Read More
   </a>
 </div>
@@ -1310,15 +1313,17 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/tools-web-fee-polyfill-corejs-eslint/">
-      解析基于 core-js 与 ESLint 的 Web 兼容方案
+    <a href="/blog/computer-technology/tools/tools-sublime/">
+      编辑器：Sublime Text 常用插件
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>Web 网页为了保证在多个平台和低中高端设备上的体验稳定性和一致性，通常会做 Polyfill 以保证兼容性。</p>
-<p>然而，兼容性问题本身是个难题，Polyfill 也并非很好处理，所以在技术演变的过程中，社区达成了一致，有一个主流的方案，大家共同来使用和维护。当下社区的主流方案则是基于 <code>core-js</code>，另一方面， 利用 ESLint 插件则可以做到自动检测代码中需要添加 Polyfill 的 API。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/tools-web-fee-polyfill-corejs-eslint/">
+  <p class="mb-6"><p>Sumblime Text 是一个具有漂亮的界面和强大功能的文本编辑器，而且也支持许多丰富的插件。它是一个收费软件，但是允许开发人员无限期的免费试用。这篇文章介绍一下常用的插件。</p>
+<!-- truncate -->
+<h3 id="安装-sublime-text">安装 Sublime Text</h3>
+<p>Sublime Text 编辑器，我们直接去官网下载相应版本安装即可，2 或 3 版本官网均有链接。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/tools/tools-sublime/">
     Read More
   </a>
 </div>

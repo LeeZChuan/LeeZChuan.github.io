@@ -1557,17 +1557,19 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/dom/dom-event/">
-      DOM-事件
+    <a href="/blog/computer-technology/web/dom/dom-rule/">
+      DOM-元素节点几何量
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>JavaScript 的作用就是让 html 静态页面具备动态效果，而这些基本都是利用 DOM 事件来实现的。</p>
+  <p class="mb-6"><p>当我们在查看 HTML 文档时，每个元素节点被解析后，都画成了可视形状。我们可以获取每个元素节点的几何量（宽、高、偏移量）以及页面滚动距离。</p>
 <!-- truncate -->
-<h3 id="注册-dom-事件">注册 DOM 事件</h3>
-<p>事件就是给目标 DOM 节点提前注册一个相应类型的事件方法，在合适的时机进行回调执行该方法的过程。接下来就来看看如何给目标 DOM 节点注册事件：</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-event/">
+<h3 id="元素节点几何量">元素节点几何量</h3>
+<p>通常我们将一个元素抽象成一个盒子模型，具有 content（内容）、padding（填充、内边距）、border（边框）、margin（外边距）这些尺寸属性。</p>
+<h6 id="定位偏移量">定位偏移量</h6>
+<p>使用元素节点的 <code>offsetTop</code> 与 <code>offsetLeft</code> 属性，我们可以分别获取该元素节点<strong>顶部与左侧外边框</strong>相对于 <code>offsetParent</code> 的<strong>顶部与左侧内边框</strong>的偏移像素量。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-rule/">
     Read More
   </a>
 </div>
@@ -1579,17 +1581,14 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/tools/tools-vscode-sync/">
-      IDE：VS Code 配置同步
+    <a href="/blog/computer-technology/nodejs/nodejs-spawn-vs-exec/">
+      Child process API: spawn vs exec
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>利用一款插件来同步 VS Code 的配置到 GitHub 的 gist 上，实现多个设备间共享一套配置。</p>
-<!-- truncate -->
-<h3 id="vs-code">VS Code</h3>
-<p>Visual Studio Code 是由微软出品的一款轻量级编辑器，兼有部分 IDE 功能。在之前，Sublime Text 是最受欢迎的编辑器（开源），也为多数前端开发者所推崇，当然说到底它依然是个编辑器。随着时间的推移，GitHub 打造了自家的编辑器 Atom，微软的 VS Code 也横空出世，更有其它优秀的轻量级编辑器在市场上展开角逐。不过，到现在来看，VS Code 可能胜出了，已成为前端开发的利器。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/tools/tools-vscode-sync/">
+  <p class="mb-6"><p>利用 Node.js 编写一些命令行工具、一次性脚本是很方便的，而在这类场景下 child_process API 的 <code>spawn</code> 和 <code>exec</code> 方法的应用则非常常见。在我使用它们时，却不知道该如何进行选择，遂对此进行了探究。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/nodejs/nodejs-spawn-vs-exec/">
     Read More
   </a>
 </div>
@@ -1601,17 +1600,43 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/dom/dom-nodelist/">
-      DOM-节点集合
+    <a href="/blog/computer-technology/computer/computer-memory-refresh/">
+      内存的 3 种刷新方式
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>当从文档树中选取成组的节点或者使用预定义的节点集合时，这些节点都是放在 NodeList 或者一个 HTMLCollecton 之中，而不是一个数组（Array）中。</p>
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors//">
+          <i class="fa-regular fa-circle-user mr-2"></i>
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/"
+            class="ms-1"
+            >计算机技术
+              ,
+            
+          </a>
+        
+          <a
+            href="/categories/%e5%86%85%e5%ad%98/"
+            class="ms-1"
+            >内存
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p><strong>众所周知，内存（Memory）是带电存储的，掉电就会丢失数据，所以需要刷新来保持数据。</strong></p>
 <!-- truncate -->
-<h3 id="节点集合">节点集合</h3>
-<p>我们将一个 <code>NodeList</code> 或者 <code>HTMLCollecton</code> 称为节点集合，也就是类数组的节点对象集合。节点集合一般有以下特征：</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-nodelist/">
+<h3 id="原因">原因</h3>
+<p>由于内存（Memory）以及缓存（Cache）都由相应的存储单元芯片<strong>DRAM</strong>和<strong>SRAM</strong>构成存储阵列，是一种半导体存储器件。并且，所有的数据都是逻辑 <code>1</code> 和 <code>0</code> 的组合。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/computer/computer-memory-refresh/">
     Read More
   </a>
 </div>

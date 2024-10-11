@@ -1506,17 +1506,36 @@ fetch('/api/postData', {
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/protocol/protocol-tcp-udp/">
-      TCP 与 UDP 协议
+    <a href="/blog/computer-technology/protocol/protocol-ip/">
+      IP 协议
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>传输层是网络分层模型中举足轻重的层，它是底层通信子网与高层资源子网的接口与桥梁，提供了面向连接的传输控制协议（Transmission Control Protocol，TCP）和无连接的用户数据报协议（User Datagram Protocol，UDP），负责提供端到端的数据传输服务。</p>
+  <p class="mb-6"><p>作为 TCP/IP 协议栈中最核心的协议，IP 协议为网络数据传输和网络互联提供最基本的服务。IP 协议有 IPv4 和 IPv6 两个版本，我们只讨论 TPv4 版本的 IP 协议。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/protocol/protocol-ip/">
+    Read More
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/computer-technology/web/dom/dom-nodelist/">
+      DOM-节点集合
+    </a>
+  </h4>
+  
+  
+  <p class="mb-6"><p>当从文档树中选取成组的节点或者使用预定义的节点集合时，这些节点都是放在 NodeList 或者一个 HTMLCollecton 之中，而不是一个数组（Array）中。</p>
 <!-- truncate -->
-<h3 id="传输层协议">传输层协议</h3>
-<p>传输层在两个应用实体之间实现可靠的、透明的、有效的端到端数据传输服务，其主要的功能为以下几个方面：</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/protocol/protocol-tcp-udp/">
+<h3 id="节点集合">节点集合</h3>
+<p>我们将一个 <code>NodeList</code> 或者 <code>HTMLCollecton</code> 称为节点集合，也就是类数组的节点对象集合。节点集合一般有以下特征：</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-nodelist/">
     Read More
   </a>
 </div>
@@ -1528,42 +1547,14 @@ fetch('/api/postData', {
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/tools/tools-git/">
-      使用 Git
+    <a href="/blog/computer-technology/nodejs/nodejs-fastify/">
+      Fastify - 专注于性能和低内存消耗
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>Git 是一个分布式的版本控制工具，类似的版本控制工具还有 SVN ；由于 GitHub 平台的盛行，也使得 git 更加受欢迎，在 Windows 平台使用 git 也是非常方便的。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/tools/tools-git/">
-    Read More
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/computer-technology/typescript/tools-typescript-type-extend/">
-      TypeScript：扩展第三方库的类型定义
-    </a>
-  </h4>
-  
-  
-  <p class="mb-6"><p>TypeScript 作为 JavaScript 的超集，为 Web 开发带来了强类型语言和类似代码智能提示这种良好的开发体验，而代码提示依赖于类型定义文件。类型定义文件的发展也经历了一个逐步演变的过程，从最初基于 JavaScript 编写的 npm 包，通过<a href="https://github.com/DefinitelyTyped/DefinitelyTyped"
-
-
-
-
- target="_blank"
- 
-
-
->社区方案</a>来引入类型定义包，再到目前多数模块基于 TypeScript 编写并在发布时带上类型定义文件这种最佳方案，开发者体验得到进一步的提升。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/typescript/tools-typescript-type-extend/">
+  <p class="mb-6"><p>最近在做 Node.js 技术相关的调研，需要选定一个 Web 框架作为基础来构建业务。一般来说，首选开源方案，对于我来说，比较关注框架背后的开发团队情况、项目活跃度、是否有足够多的商业案例、文档是否完整可读、框架的设计理念、技术架构是否灵活可扩展、技术社区生态是否完整等方面。目前，我比较倾心的是 Fastify 这个新兴框架，根据官网介绍，其专注于高性能和低消耗，并且公开的基准测试表现相当不错，项目足够活跃，更重要的是属于 OpenJS 基金会的孵化项目。本文主要介绍 Fastify 的设计理念和探究其是如何提高性能和降低内存消耗的。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/nodejs/nodejs-fastify/">
     Read More
   </a>
 </div>

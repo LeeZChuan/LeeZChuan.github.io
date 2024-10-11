@@ -1407,14 +1407,14 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/dom/dom/">
-      文档对象模型（DOM）
+    <a href="/blog/computer-technology/web/web-performance-fastdom/">
+      Web 前端性能优化：批量 DOM 操作 - FastDOM
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>在网页设计中，有一个很重要的角色需要我们了解，DOM 帮助我们对页面元素进行增、删、改等全方位的操作，而且让 JavaScript 在客户端修改 HTML 文档成为一个很简单的事情，可以说 DOM 为我们操作 HTML 文档提供了强大的编程接口。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom/">
+  <p class="mb-6"><p>利用 JS 开发的原生应用与依赖于 React.js/Vue 开发的框架/库应用，性能孰高孰低？这两者最显著的区别在于原生应用需要手动操作 DOM 完成业务，而框架/库应用是基于数据变化响应式的应用，后者只需要关注数据如何变化，至于体现在 DOM 上的变化皆由框架/库内部自动完成。所以，要搞清楚两者的性能优劣，可能<strong>批量</strong>的 DOM 操作是一个不可忽略的核心因素。从代码执行的角度分析，框架/库也是基于原生 API 进行的封装抽象，因此代码执行时的路径更长、堆栈更深，由此可见原生 API 的操作性能应该是最高的。但是，现实情况是业务通常来说是复杂的，代码实现中 DOM 操作的逻辑分散在各处，那么多个 DOM 操作之间是否会产生影响从而不利于性能？这个时候就要关注宿主浏览器的渲染机制是如何理解批量的 DOM 操作的，这里引入的概念就是<strong>关键渲染路径（Critical rendering path）</strong>。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/web-performance-fastdom/">
     Read More
   </a>
 </div>
@@ -1426,17 +1426,17 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/protocol/protocol-tcp-udp/">
-      TCP 与 UDP 协议
+    <a href="/blog/computer-technology/web/web-local-storage/">
+      Web 本地存储
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>传输层是网络分层模型中举足轻重的层，它是底层通信子网与高层资源子网的接口与桥梁，提供了面向连接的传输控制协议（Transmission Control Protocol，TCP）和无连接的用户数据报协议（User Datagram Protocol，UDP），负责提供端到端的数据传输服务。</p>
+  <p class="mb-6"><p>为了达到某些需求，我们通常需要在本地存储一些数据，方便我们进行用户个性化定制服务。</p>
 <!-- truncate -->
-<h3 id="传输层协议">传输层协议</h3>
-<p>传输层在两个应用实体之间实现可靠的、透明的、有效的端到端数据传输服务，其主要的功能为以下几个方面：</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/protocol/protocol-tcp-udp/">
+<h3 id="web-存储">Web 存储</h3>
+<p>在互联网上，许多网站提供用户注册功能，因为 http 协议是个无状态的协议（无法记录客户端与服务器端状态），所以我们注册登录后每一次跳转网页都需要重新登陆。为了增强用户体验，我们不得不将状态信息保存下来，而 Web 存储技术则实现了该需求。Cookie 最多可在本地存储 4K 数据，出于安全性考虑， Cookie 中并非直接存储的是用户敏感数据（帐号、密码、个人信息等），而是一个状态 ID，该 ID 是服务器端利用 session 存储一个会话状态并分配给客户端用来进行状态识别的。因此，每一次的 http 请求都会带上 Cookie 数据发送给服务器端进行状态识别，从而达到状态保持的目的。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/web-local-storage/">
     Read More
   </a>
 </div>
@@ -1448,15 +1448,22 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/tools-web-fee-polyfill-corejs-eslint/">
-      解析基于 core-js 与 ESLint 的 Web 兼容方案
+    <a href="/blog/computer-technology/web/dom/dom-select/">
+      DOM-选取元素节点
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>Web 网页为了保证在多个平台和低中高端设备上的体验稳定性和一致性，通常会做 Polyfill 以保证兼容性。</p>
-<p>然而，兼容性问题本身是个难题，Polyfill 也并非很好处理，所以在技术演变的过程中，社区达成了一致，有一个主流的方案，大家共同来使用和维护。当下社区的主流方案则是基于 <code>core-js</code>，另一方面， 利用 ESLint 插件则可以做到自动检测代码中需要添加 Polyfill 的 API。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/tools-web-fee-polyfill-corejs-eslint/">
+  <p class="mb-6"><p>DOM 操作都是通过对文档树中节点的访问来实现的，如何选取特定的元素节点是关键，进而才能访问该元素节点实现修改、查看、移除、替换等操作。</p>
+<!-- truncate -->
+<h3 id="选取特定单一元素节点">选取特定单一元素节点</h3>
+<p>取得某一特定单一元素节点的引用最常用的方式如下：</p>
+<ul>
+<li>querySelector()</li>
+<li>getElementById()</li>
+</ul>
+<p>exp：</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-select/">
     Read More
   </a>
 </div>

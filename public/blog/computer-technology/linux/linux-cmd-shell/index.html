@@ -1605,17 +1605,23 @@ dpkg --get-selections | grep [应用名称]  # 查看已安装应用相关所有
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/protocol/protocol-tcp-udp/">
-      TCP 与 UDP 协议
+    <a href="/blog/computer-technology/web/dom/dom-attribute/">
+      DOM-元素节点属性
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>传输层是网络分层模型中举足轻重的层，它是底层通信子网与高层资源子网的接口与桥梁，提供了面向连接的传输控制协议（Transmission Control Protocol，TCP）和无连接的用户数据报协议（User Datagram Protocol，UDP），负责提供端到端的数据传输服务。</p>
+  <p class="mb-6"><p>元素节点上具有很多属性，这些属性我们通常可以很方便的获取，并进行简单的操作。</p>
 <!-- truncate -->
-<h3 id="传输层协议">传输层协议</h3>
-<p>传输层在两个应用实体之间实现可靠的、透明的、有效的端到端数据传输服务，其主要的功能为以下几个方面：</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/protocol/protocol-tcp-udp/">
+<h3 id="节点属性常用操作">节点属性常用操作</h3>
+<p>每个 HTML 元素都有很多属性，例如（id、class、name、url、src、href）等等，元素节点上定义了一些方法供我们使用，来对这些属性进行设置、获取、移除操作。</p>
+<ul>
+<li>setAttribute()</li>
+<li>getAttribute()</li>
+<li>removeAttribute()</li>
+</ul>
+<p>exp:</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-attribute/">
     Read More
   </a>
 </div>
@@ -1627,49 +1633,42 @@ dpkg --get-selections | grep [应用名称]  # 查看已安装应用相关所有
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/dom/dom-event/">
-      DOM-事件
+    <a href="/blog/computer-technology/web/dom/dom-elementnode/">
+      DOM-元素节点
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>JavaScript 的作用就是让 html 静态页面具备动态效果，而这些基本都是利用 DOM 事件来实现的。</p>
+  <p class="mb-6"><p>可以说，元素节点是 DOM 树中的核心部分，我们进行文档的操作通常都是建立在元素节点上的。</p>
 <!-- truncate -->
-<h3 id="注册-dom-事件">注册 DOM 事件</h3>
-<p>事件就是给目标 DOM 节点提前注册一个相应类型的事件方法，在合适的时机进行回调执行该方法的过程。接下来就来看看如何给目标 DOM 节点注册事件：</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-event/">
-    Read More
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/tools-web-fee-debug-with-source-map/">
-      Web 前端调试工具：SourceMap 文件
-    </a>
-  </h4>
-  
-  
-  <p class="mb-6"><p>Web 前端项目出于加载性能优化和安全考虑，在生产环境部署的代码是经过混淆和压缩的，对于利用生产环境收集到的错误堆栈信息要进行调试是非常具有挑战性的。理想情况下，应该在生产环境收集错误堆栈信息，然后映射到源码进行调试。恰好，<strong>SourceMap 文件</strong>提供了这个机制，可以将编译（压缩）后的代码映射到源代码中。</p>
-<!-- truncate -->
-<p>以下是其规范：</p>
+<h3 id="元素节点">元素节点</h3>
 <blockquote>
-<p><a href="https://sourcemaps.info/spec.html"
+<p>元素节点（Element Node）是我们最常用的 DOM 节点，不同类型的节点都有其自己的构造方法，并且它们身上还有许多属性和方法（包括继承的）来帮助我们完成 DOM 操作。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-elementnode/">
+    Read More
+  </a>
+</div>
 
-
-
-
- target="_blank"
- 
-
-
->Source Map Revision 3 Proposal</a></p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/tools-web-fee-debug-with-source-map/">
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/computer-technology/web/dom/dom-rule/">
+      DOM-元素节点几何量
+    </a>
+  </h4>
+  
+  
+  <p class="mb-6"><p>当我们在查看 HTML 文档时，每个元素节点被解析后，都画成了可视形状。我们可以获取每个元素节点的几何量（宽、高、偏移量）以及页面滚动距离。</p>
+<!-- truncate -->
+<h3 id="元素节点几何量">元素节点几何量</h3>
+<p>通常我们将一个元素抽象成一个盒子模型，具有 content（内容）、padding（填充、内边距）、border（边框）、margin（外边距）这些尺寸属性。</p>
+<h6 id="定位偏移量">定位偏移量</h6>
+<p>使用元素节点的 <code>offsetTop</code> 与 <code>offsetLeft</code> 属性，我们可以分别获取该元素节点<strong>顶部与左侧外边框</strong>相对于 <code>offsetParent</code> 的<strong>顶部与左侧内边框</strong>的偏移像素量。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-rule/">
     Read More
   </a>
 </div>

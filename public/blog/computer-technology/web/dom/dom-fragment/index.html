@@ -1236,75 +1236,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/web-performance-optimize-skill/">
-      Web 前端性能优化：工具与技巧
-    </a>
-  </h4>
-  
-  
-  <p class="mb-6"><p>Web 前端的性能优化是非常迫切的，客户端的资源非常有限，而且层次不齐，很容易造成一些性能问题从而影响到最终给用户所呈现的数据信息结构的不完整。为了增强用户体验，我们必须在各个方面进行优化，同时也可以节省服务器成本。</p>
-<!-- truncate -->
-<h3 id="页面优化">页面优化</h3>
-<p>首先，也是最重要的我们需要关注页面级的优化。</p>
-<h6 id="减少-http-请求数">减少 HTTP 请求数</h6>
-<p>HTTP 协议是基于 TCP 连接的，我们都知道 TCP 连接要经过三次握手、四次挥手的过程才能完成数据信息的传输，所以过多的 HTTP 请求会导致网页响应过慢。虽然浏览器是支持 HTTP 请求并发的，但并发数量也是有限的。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/web-performance-optimize-skill/">
-    Read More
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/css/css-clear-float/">
-      CSS 清除浮动
-    </a>
-  </h4>
-  
-  
-  <p class="mb-6"><p>在浮动布局中，有时候会因为父元素没有设置高度而子元素浮动导致父元素坍塌，我们就需要清除浮动撑起父元素的高度，在这里总结一下常用方法。</p>
-<!-- truncate -->
-<h3 id="浮动">浮动</h3>
-<p>我们通常为了将块级（block）子元素水平排列，就将其浮动（<code>float: left|right</code>）起来而达到我们的目的，当然这会带来一些问题。所以，我们应尽可能清除浮动所带来的副作用，以免影响其它元素的布局。</p>
-<pre><code>&lt;style&gt;
-	#container{
-		background-color: grey;
-	}
-	.inner {
-		margin: 15px;
-		width: 200px;
-		height: 200px;
-		background-color: blue;
-		float: left;
-	}
-&lt;/style&gt;
-&lt;body&gt;
-	&lt;div id=&quot;container&quot;&gt;
-		&lt;div class=&quot;inner&quot;&gt;1&lt;/div&gt;
-		&lt;div class=&quot;inner&quot;&gt;2&lt;/div&gt;
-		&lt;div class=&quot;inner&quot;&gt;3&lt;/div&gt;
-	&lt;/div&gt;
-&lt;/body&gt;
-</code></pre>
-<p>此时，我们并看不到外层 div 的灰色背景，打开调试工具会发现外层 div 的 <code>height: 0</code>。当我们没有设置父元素高度，恰巧所有子元素浮动时，父元素的高度会成为 <code>0</code>，而没有被子元素撑起来。这是因为，子元素浮动之后脱离了文档流。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/css/css-clear-float/">
-    Read More
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/computer-technology/linux/linux-base/">
-      Linux-基础
+    <a href="/blog/computer-technology/linux/linux-cmd-shell/">
+      Linux-常用 Shell 命令
     </a>
   </h4>
   
@@ -1343,11 +1276,186 @@
       </li>
     </ul>
   
-  <p class="mb-6"><p>Linux 是在做一些较为底层的开发工作时的必要开发环境，了解 Linux 也对操作系统概念的理解有很大的帮助，这篇文章是对 Linux 的一些基础概念的阐述。</p>
+  <p class="mb-6"><p>Linux 是一个优秀的开发环境，大多数服务器都在上面部署。作为一个程序员，熟悉Linux 系统的常用操作也是很必要的。在 linux 内核外，shell 提供了我们程序员（用户）与内核之间的交互媒介，shell 可以说是一个命令解释器，当然它也负责将内核输出信息翻译给程序员。</p>
 <!-- truncate -->
-<h3 id="linux">Linux</h3>
-<p>Linux 的诞生是在上世纪 90 年代，距离现在也就二十年左右，是一种优秀的开发环境，大多时候应用在嵌入式系统开发当中。<strong>Linux 是一个开源的基于 POSIX 和 UNIX，支持多用户、多任务、多线程和多 CPU 的操作系统。事实上，linux 指的是其操作系统的内核。</strong></p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/linux/linux-base/">
+<h3 id="shell">Shell</h3>
+<p>Linux 是一个基于命令行的操作系统，提供了一个命令解释器，即 Shell（壳）。Shell 是一个软件，是操作系统的用户界面，用户通过在 Shell 中输入命令，然后命令解释器解释完成后将指令送往内核中执行，来实现对 Linux 系统的操作。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/linux/linux-cmd-shell/">
+    Read More
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/computer-technology/protocol/protocol-osi/">
+      OSI 与 TCP/IP 参考模型
+    </a>
+  </h4>
+  
+  
+  <p class="mb-6"><p>目前流行的两大网络体系结构是 OSI/RM 和 TCP/IP 参考模型，他们均是分层结构。分层是为了简化问题，降低网络设计复杂性，而且各层次结构相互独立，实现的功能也相对独立。层与层之间只在层间接口处关联，层间耦合最小。</p>
+<!-- truncate -->
+<h3 id="osiopen-system-interconnect">OSI（Open System Interconnect）</h3>
+<p>OSI/RM（Open System Interconnection Reference Module，简称 OSI）即开放系统互联参考模型。为了解决不同网络体系结构的互联、互操作问题，ISO（国际标准化组织）制定了 OSI 模型。OSI 模型把网络通信的工作分为七层，自上而下依次为：</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/protocol/protocol-osi/">
+    Read More
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  
+    
+      
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+    
+    
+    
+
+
+    
+    
+      
+      
+        
+
+        
+        
+        
+        
+        
+        
+        
+
+
+        
+        
+
+
+        <picture>
+          <source
+            
+              srcset="/images/image-placeholder_hu14898866438330350576.webp"
+            
+            media="(max-width: 575px)" />
+          <source
+            
+              srcset="/images/image-placeholder_hu3366426647807776041.webp"
+            
+            media="(max-width: 767px)" />
+          <source
+            
+              srcset="/images/image-placeholder_hu15761394040035298493.webp"
+            
+            media="(max-width: 991px)" />
+          <source
+            
+              srcset="/images/image-placeholder_hu9923120856516670921.webp"
+             />
+          <img
+            
+              loading="lazy" decoding="async"
+              src="/images/image-placeholder_hu10538127647789974651.png"
+            class=" mb-6 w-full rounded img"
+            alt="How to build an Application with modern Technology"
+            width="1096"
+            height="480" />
+        </picture>
+      
+      
+    
+    
+  
+
+
+  
+
+
+  
+  <h4 class="mb-3">
+    <a href="/blog/post-3/">
+      How to build an Application with modern Technology
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/john-doe/">
+          <i class="fa-regular fa-circle-user mr-2"></i>John Doe
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/software/"
+            class="ms-1"
+            >Software
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>Nemo vel ad consectetur namut rutrum ex, venenatis sollicitudin urna. Aliquam erat volutpat. Integer eu ipsum sem. Ut bibendum lacus vestibulum maximus suscipit. Quisque vitae nibh iaculis neque blandit euismod.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/post-3/">
     Read More
   </a>
 </div>

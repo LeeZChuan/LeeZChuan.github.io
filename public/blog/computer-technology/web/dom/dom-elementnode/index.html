@@ -1350,189 +1350,131 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/typescript/tools-typescript-use-script-to-ts-types/">
-      利用脚本执行 `tsc` 忽略类型检查错误
-    </a>
-  </h4>
-  
-  
-  <p class="mb-6"><p>在发布 npm 包时添加对 TypeScript 类型定义文件的支持会让用户的使用体验增色不少，TypeScript 官方提供了 <code>tsc --emitDeclarationOnly</code> 命令用来生成类型定义文件（<code>.d.ts</code>）。但是，该命令会同时执行类型检查，遇到错误时会报错中断命令行进程，这就使其无法直接集成在 CI 环节在发布 npm 包时自动执行生成类型定义文件的操作。当然，一个解决办法就是解决掉代码中所有的类型检查错误即可，既然讨论到这个问题，必然不会花费额外精力去解决一些历史遗留问题。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/typescript/tools-typescript-use-script-to-ts-types/">
-    Read More
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/web-local-storage/">
-      Web 本地存储
-    </a>
-  </h4>
-  
-  
-  <p class="mb-6"><p>为了达到某些需求，我们通常需要在本地存储一些数据，方便我们进行用户个性化定制服务。</p>
-<!-- truncate -->
-<h3 id="web-存储">Web 存储</h3>
-<p>在互联网上，许多网站提供用户注册功能，因为 http 协议是个无状态的协议（无法记录客户端与服务器端状态），所以我们注册登录后每一次跳转网页都需要重新登陆。为了增强用户体验，我们不得不将状态信息保存下来，而 Web 存储技术则实现了该需求。Cookie 最多可在本地存储 4K 数据，出于安全性考虑， Cookie 中并非直接存储的是用户敏感数据（帐号、密码、个人信息等），而是一个状态 ID，该 ID 是服务器端利用 session 存储一个会话状态并分配给客户端用来进行状态识别的。因此，每一次的 http 请求都会带上 Cookie 数据发送给服务器端进行状态识别，从而达到状态保持的目的。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/web-local-storage/">
-    Read More
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-  
-    
-      
-    
-
-
-    
-    
-
-
-    
-    
-      
-      
-    
-    
-    
-
-
-    
-    
-      
-      
-        
-
-        
-        
-        
-        
-        
-        
-        
-
-
-        
-        
-
-
-        <picture>
-          <source
-            
-              srcset="/images/image-placeholder_hu14898866438330350576.webp"
-            
-            media="(max-width: 575px)" />
-          <source
-            
-              srcset="/images/image-placeholder_hu3366426647807776041.webp"
-            
-            media="(max-width: 767px)" />
-          <source
-            
-              srcset="/images/image-placeholder_hu15761394040035298493.webp"
-            
-            media="(max-width: 991px)" />
-          <source
-            
-              srcset="/images/image-placeholder_hu9923120856516670921.webp"
-             />
-          <img
-            
-              loading="lazy" decoding="async"
-              src="/images/image-placeholder_hu10538127647789974651.png"
-            class=" mb-6 w-full rounded img"
-            alt="How to build an Application with modern Technology"
-            width="1096"
-            height="480" />
-        </picture>
-      
-      
-    
-    
-  
-
-
-  
-
-
-  
-  <h4 class="mb-3">
-    <a href="/blog/post-3/">
-      How to build an Application with modern Technology
+    <a href="/blog/computer-technology/mobile-web/wx-dingding/">
+      微信小程序与钉钉小程序开发流程
     </a>
   </h4>
   
   
     <ul class="mb-4">
       <li class="mr-4 inline-block">
-        <a href="/authors/john-doe/">
-          <i class="fa-regular fa-circle-user mr-2"></i>John Doe
+        <a href="/authors//">
+          <i class="fa-regular fa-circle-user mr-2"></i>
         </a>
       </li>
       <li class="mr-4 inline-block">
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/software/"
+            href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/"
             class="ms-1"
-            >Software
+            >计算机技术
+              ,
+            
+          </a>
+        
+          <a
+            href="/categories/web/"
+            class="ms-1"
+            >Web
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>Nemo vel ad consectetur namut rutrum ex, venenatis sollicitudin urna. Aliquam erat volutpat. Integer eu ipsum sem. Ut bibendum lacus vestibulum maximus suscipit. Quisque vitae nibh iaculis neque blandit euismod.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/post-3/">
+  <p class="mb-6"><p>开发小程序有很多问题特此记录～～～</p>
+<p>小程序开发（移动端开发）兼容注意事项：</p>
+<ol>
+<li>
+<p>ios不兼容yyyy-MM-dd HH:mm:ss这种时间格式，需要将-替换成/，在安卓下两种格式都支持。</p>
+</li>
+<li>
+<p>使用window.location.reload()方法刷新页面，在安卓下无效。</p>
+</li>
+<li>
+<p>正常情况下使用window.location.replace()方法跳转页面时会覆盖当前页面而不会生成新的history记录，但是在安卓下依然会生成history记录。</p>
+</li>
+<li>
+<p>ios中，父元素设置border-radius和overflow:hidden实现圆角。如果此时子元素使用了transform属性会导致父元素的圆角失效。</p>
+</li>
+<li>
+<p>小程序中使用web-view打开pdf, IOS 可以正常打开，Android 打开为空白；</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/mobile-web/wx-dingding/">
+    Read More
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/computer-technology/linux/linux-cmd-vim/">
+      Linux-Vim 编辑器
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors//">
+          <i class="fa-regular fa-circle-user mr-2"></i>
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/"
+            class="ms-1"
+            >计算机技术
+              ,
+            
+          </a>
+        
+          <a
+            href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba/"
+            class="ms-1"
+            >计算机
+              ,
+            
+          </a>
+        
+          <a
+            href="/categories/linux/"
+            class="ms-1"
+            >Linux
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>在 Linux 这样的命令行操作系统中，必须有一款功能强大的编辑器支持我们快速完成文本编辑，这就是 Vi 编辑器；通过对其加强和升级，Vim 编辑器比前者更为强大，拥有更多的功能和颜色高亮的特性，是程序员在 Linux 下编码的利器。</p>
+<!-- truncate -->
+<h3 id="vim">Vim</h3>
+<p>Vim 是基于 Linux 下 Vi 编辑器的升级版，经过多年来的不断更新，功能也越来越强大，Vim 除过具备常用文本编辑器的编辑操作以及颜色高亮特性外，还支持自动补全、多行批量操作、指定跳转等等功能，其中代码颜色高亮特性更利于我们在命令行中进行信息的阅览和查看。而且，Vim 支持大多数操作系统，只是我们经常在 Linux 下使用它而已。当然，在 Linux 下还有一款很著名的编辑器 Emacs 。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/linux/linux-cmd-vim/">
+    Read More
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/computer-technology/tools/tools-git/">
+      使用 Git
+    </a>
+  </h4>
+  
+  
+  <p class="mb-6"><p>Git 是一个分布式的版本控制工具，类似的版本控制工具还有 SVN ；由于 GitHub 平台的盛行，也使得 git 更加受欢迎，在 Windows 平台使用 git 也是非常方便的。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/tools/tools-git/">
     Read More
   </a>
 </div>

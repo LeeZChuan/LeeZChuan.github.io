@@ -1188,38 +1188,14 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/css/css-clear-float/">
-      CSS 清除浮动
+    <a href="/blog/computer-technology/nodejs/nodejs-spawn-vs-exec/">
+      Child process API: spawn vs exec
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>在浮动布局中，有时候会因为父元素没有设置高度而子元素浮动导致父元素坍塌，我们就需要清除浮动撑起父元素的高度，在这里总结一下常用方法。</p>
-<!-- truncate -->
-<h3 id="浮动">浮动</h3>
-<p>我们通常为了将块级（block）子元素水平排列，就将其浮动（<code>float: left|right</code>）起来而达到我们的目的，当然这会带来一些问题。所以，我们应尽可能清除浮动所带来的副作用，以免影响其它元素的布局。</p>
-<pre><code>&lt;style&gt;
-	#container{
-		background-color: grey;
-	}
-	.inner {
-		margin: 15px;
-		width: 200px;
-		height: 200px;
-		background-color: blue;
-		float: left;
-	}
-&lt;/style&gt;
-&lt;body&gt;
-	&lt;div id=&quot;container&quot;&gt;
-		&lt;div class=&quot;inner&quot;&gt;1&lt;/div&gt;
-		&lt;div class=&quot;inner&quot;&gt;2&lt;/div&gt;
-		&lt;div class=&quot;inner&quot;&gt;3&lt;/div&gt;
-	&lt;/div&gt;
-&lt;/body&gt;
-</code></pre>
-<p>此时，我们并看不到外层 div 的灰色背景，打开调试工具会发现外层 div 的 <code>height: 0</code>。当我们没有设置父元素高度，恰巧所有子元素浮动时，父元素的高度会成为 <code>0</code>，而没有被子元素撑起来。这是因为，子元素浮动之后脱离了文档流。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/css/css-clear-float/">
+  <p class="mb-6"><p>利用 Node.js 编写一些命令行工具、一次性脚本是很方便的，而在这类场景下 child_process API 的 <code>spawn</code> 和 <code>exec</code> 方法的应用则非常常见。在我使用它们时，却不知道该如何进行选择，遂对此进行了探究。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/nodejs/nodejs-spawn-vs-exec/">
     Read More
   </a>
 </div>
@@ -1231,17 +1207,56 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/tools/tools-junit/">
-      单元测试工具：Junit
+    <a href="/blog/computer-technology/mobile-web/wx-dingding/">
+      微信小程序与钉钉小程序开发流程
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>通常一个项目的代码量是比较大的，而且其中逻辑也较为复杂，在开发完成后再进行项目测试其实是比较耗费时间和精力的，因此边开发边测试是个很好的选择，而 JUnit 则为我们提供了这样的便利。</p>
-<!-- truncate -->
-<h3 id="junit">JUnit</h3>
-<p>JUnit 是一个用来对 Java 代码进行单元测试的框架，是 XUnit （一套基于测试驱动开发的测试框架）的一个子集，类似的还有 PythonUnit、CppUnit。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/tools/tools-junit/">
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors//">
+          <i class="fa-regular fa-circle-user mr-2"></i>
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/"
+            class="ms-1"
+            >计算机技术
+              ,
+            
+          </a>
+        
+          <a
+            href="/categories/web/"
+            class="ms-1"
+            >Web
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>开发小程序有很多问题特此记录～～～</p>
+<p>小程序开发（移动端开发）兼容注意事项：</p>
+<ol>
+<li>
+<p>ios不兼容yyyy-MM-dd HH:mm:ss这种时间格式，需要将-替换成/，在安卓下两种格式都支持。</p>
+</li>
+<li>
+<p>使用window.location.reload()方法刷新页面，在安卓下无效。</p>
+</li>
+<li>
+<p>正常情况下使用window.location.replace()方法跳转页面时会覆盖当前页面而不会生成新的history记录，但是在安卓下依然会生成history记录。</p>
+</li>
+<li>
+<p>ios中，父元素设置border-radius和overflow:hidden实现圆角。如果此时子元素使用了transform属性会导致父元素的圆角失效。</p>
+</li>
+<li>
+<p>小程序中使用web-view打开pdf, IOS 可以正常打开，Android 打开为空白；</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/mobile-web/wx-dingding/">
     Read More
   </a>
 </div>
@@ -1253,17 +1268,17 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/javascript/web-js-async/">
-      JavaScript 异步编程
+    <a href="/blog/computer-technology/tools/tools-sublime-vim/">
+      编辑器：Sublime Text - Vim 插件
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>JavaScript 作为一门在 Web 开发中的主流语言，常常涉及到交互事件方面的应用，这不可避免的用到了异步编程的方法，而它本身则是单线程运行的。在以往的开发中，异步编程正变得越来越难管理，新的 Promise 标准 API 将使得异步编程更加方便、安全。</p>
+  <p class="mb-6"><p>Sumblime Text 是一个具有漂亮的界面和强大功能的文本编辑器，而且也支持许多丰富的插件。它是一个收费软件，但是允许开发人员无限期的免费试用。</p>
 <!-- truncate -->
-<h3 id="异步与并行">异步与并行</h3>
-<p>作为 Web 前端开发中的主流语言，JavaScript 需要实现诸多的交互动作，但是在宿主环境（例如 v8）中 JS 引擎只有一个主线程，所以多线程并行处理是不可能的。因此，异步编程显得尤为重要。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/javascript/web-js-async/">
+<h3 id="vim">Vim</h3>
+<p>Vim 是 Linux 操作系统下类 Vi 编辑器，是一款被开发者广泛使用，并且功能强大的文本编辑器。而 Sublime Text 最初的设计初衷也是基于 Vim 的设计思想，被设计为一个跨平台的具有丰富扩展功能的 Vim。随着后来的发展，它已经不仅仅是单纯的模仿 Vim，而是支持越来越多的插件和强大的功能。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/tools/tools-sublime-vim/">
     Read More
   </a>
 </div>

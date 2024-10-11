@@ -1,44 +1,68 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>计算机技术 on 技术之心</title><link>http:/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/</link><description>Recent content in 计算机技术 on 技术之心</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Fri, 11 Nov 2022 11:52:00 -0500</lastBuildDate><atom:link href="http:/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml"/><item><title>微信小程序与钉钉小程序开发流程</title><link>http:/blog/computer-technology/mobile-web/wx-dingding/</link><pubDate>Fri, 11 Nov 2022 11:52:00 -0500</pubDate><guid>http:/blog/computer-technology/mobile-web/wx-dingding/</guid><description>&lt;p>开发小程序有很多问题特此记录～～～&lt;/p>
-&lt;p>小程序开发（移动端开发）兼容注意事项：&lt;/p>
-&lt;ol>
-&lt;li>
-&lt;p>ios不兼容yyyy-MM-dd HH:mm:ss这种时间格式，需要将-替换成/，在安卓下两种格式都支持。&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>使用window.location.reload()方法刷新页面，在安卓下无效。&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>正常情况下使用window.location.replace()方法跳转页面时会覆盖当前页面而不会生成新的history记录，但是在安卓下依然会生成history记录。&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>ios中，父元素设置border-radius和overflow:hidden实现圆角。如果此时子元素使用了transform属性会导致父元素的圆角失效。&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>小程序中使用web-view打开pdf, IOS 可以正常打开，Android 打开为空白；&lt;/p></description></item><item><title>Nginx 配置</title><link>http:/blog/computer-technology/nginx/nginx-config/</link><pubDate>Thu, 15 Mar 2018 12:38:00 -0400</pubDate><guid>http:/blog/computer-technology/nginx/nginx-config/</guid><description>&lt;p>&lt;strong>&lt;u>建议主要参考官网英文文档。&lt;/u>&lt;/strong>&lt;/p>
-&lt;p>具体指令直接可以在官网文档的 Alphabetical index of directives（按字母顺序排列的指令索引）中搜索即可。&lt;/p>
-&lt;blockquote>
-&lt;p>官方文档：http://nginx.org/en/docs/&lt;/p>
-&lt;/blockquote>
-&lt;!-- truncate -->
-&lt;h3 id="nginx">Nginx&lt;/h3>
-&lt;p>Nginx 是一位俄罗斯开发者（伊戈尔·赛索耶夫）开发的服务器，于 2004 年 10 月 4 日公开发布。Nginx 的优势在于轻量级和高性能，尤其是高并发的场景下，相对其它服务器来说表现比较好，因此现在颇受欢迎。Nginx 通常运行在 Unix/Linux 环境下，当然现在官方也发布了 Windows 环境下的应用，不过性能有所降低，这是受限于系统环境的影响。&lt;/p></description></item><item><title>Linux-Vim 编辑器</title><link>http:/blog/computer-technology/linux/linux-cmd-vim/</link><pubDate>Fri, 28 Oct 2016 21:02:00 -0400</pubDate><guid>http:/blog/computer-technology/linux/linux-cmd-vim/</guid><description>&lt;p>在 Linux 这样的命令行操作系统中，必须有一款功能强大的编辑器支持我们快速完成文本编辑，这就是 Vi 编辑器；通过对其加强和升级，Vim 编辑器比前者更为强大，拥有更多的功能和颜色高亮的特性，是程序员在 Linux 下编码的利器。&lt;/p>
-&lt;!-- truncate -->
-&lt;h3 id="vim">Vim&lt;/h3>
-&lt;p>Vim 是基于 Linux 下 Vi 编辑器的升级版，经过多年来的不断更新，功能也越来越强大，Vim 除过具备常用文本编辑器的编辑操作以及颜色高亮特性外，还支持自动补全、多行批量操作、指定跳转等等功能，其中代码颜色高亮特性更利于我们在命令行中进行信息的阅览和查看。而且，Vim 支持大多数操作系统，只是我们经常在 Linux 下使用它而已。当然，在 Linux 下还有一款很著名的编辑器 Emacs 。&lt;/p></description></item><item><title>Linux-常用 Shell 命令</title><link>http:/blog/computer-technology/linux/linux-cmd-shell/</link><pubDate>Fri, 21 Oct 2016 21:02:00 -0400</pubDate><guid>http:/blog/computer-technology/linux/linux-cmd-shell/</guid><description>&lt;p>Linux 是一个优秀的开发环境，大多数服务器都在上面部署。作为一个程序员，熟悉Linux 系统的常用操作也是很必要的。在 linux 内核外，shell 提供了我们程序员（用户）与内核之间的交互媒介，shell 可以说是一个命令解释器，当然它也负责将内核输出信息翻译给程序员。&lt;/p>
-&lt;!-- truncate -->
-&lt;h3 id="shell">Shell&lt;/h3>
-&lt;p>Linux 是一个基于命令行的操作系统，提供了一个命令解释器，即 Shell（壳）。Shell 是一个软件，是操作系统的用户界面，用户通过在 Shell 中输入命令，然后命令解释器解释完成后将指令送往内核中执行，来实现对 Linux 系统的操作。&lt;/p></description></item><item><title>Linux-基础</title><link>http:/blog/computer-technology/linux/linux-base/</link><pubDate>Sun, 29 May 2016 15:34:00 -0400</pubDate><guid>http:/blog/computer-technology/linux/linux-base/</guid><description>&lt;p>Linux 是在做一些较为底层的开发工作时的必要开发环境，了解 Linux 也对操作系统概念的理解有很大的帮助，这篇文章是对 Linux 的一些基础概念的阐述。&lt;/p>
-&lt;!-- truncate -->
-&lt;h3 id="linux">Linux&lt;/h3>
-&lt;p>Linux 的诞生是在上世纪 90 年代，距离现在也就二十年左右，是一种优秀的开发环境，大多时候应用在嵌入式系统开发当中。&lt;strong>Linux 是一个开源的基于 POSIX 和 UNIX，支持多用户、多任务、多线程和多 CPU 的操作系统。事实上，linux 指的是其操作系统的内核。&lt;/strong>&lt;/p></description></item><item><title>CPU 的七种寻址方式</title><link>http:/blog/computer-technology/computer/computer-cpu-addressing-mode/</link><pubDate>Thu, 05 May 2016 01:53:00 -0400</pubDate><guid>http:/blog/computer-technology/computer/computer-cpu-addressing-mode/</guid><description>&lt;p>CPU 获取数据的方式不仅仅一种，多种方式也为不同数据的获取提供了不同的效率考量，保证了寻址效率与指令的灵活性。&lt;/p>
-&lt;!-- truncate -->
-&lt;h3 id="cpu-寻址方式">CPU 寻址方式&lt;/h3>
-&lt;p>数据一般均存储在外存(硬盘)中，在需要的时候，会将数据先从外存读入内存(存储器)中，然后 CPU 再直接从内存(缓存)中获取。获取的数据有时候会直接使用；而有时候会先存入 CPU 内部寄存器，稍后再从寄存器中获取。所以，CPU 获取数据的方式是多样化的。&lt;/p></description></item><item><title>内存的 3 种刷新方式</title><link>http:/blog/computer-technology/computer/computer-memory-refresh/</link><pubDate>Tue, 03 May 2016 01:59:00 -0400</pubDate><guid>http:/blog/computer-technology/computer/computer-memory-refresh/</guid><description>&lt;p>&lt;strong>众所周知，内存（Memory）是带电存储的，掉电就会丢失数据，所以需要刷新来保持数据。&lt;/strong>&lt;/p>
-&lt;!-- truncate -->
-&lt;h3 id="原因">原因&lt;/h3>
-&lt;p>由于内存（Memory）以及缓存（Cache）都由相应的存储单元芯片&lt;strong>DRAM&lt;/strong>和&lt;strong>SRAM&lt;/strong>构成存储阵列，是一种半导体存储器件。并且，所有的数据都是逻辑 &lt;code>1&lt;/code> 和 &lt;code>0&lt;/code> 的组合。&lt;/p></description></item><item><title>微处理器寻址范围</title><link>http:/blog/computer-technology/computer/computer-microprocessor-addressing-range/</link><pubDate>Thu, 28 Apr 2016 01:42:00 -0400</pubDate><guid>http:/blog/computer-technology/computer/computer-microprocessor-addressing-range/</guid><description>&lt;p>在此之前，让我们带着下面这个问题来看这篇文章：&lt;strong>64 位处理器所支持的最大内存(寻址范围)为多少？&lt;/strong>&lt;/p>
-&lt;!-- truncate -->
-&lt;h3 id="处理器">处理器&lt;/h3>
-&lt;p>处理器（CPU）担负着整个计算机系统的核心任务执行责任，所以我们经常关心它的运算处理能力，也就是 CPU 的性能。&lt;/p>
-&lt;h6 id="微处理器">微处理器&lt;/h6>
-&lt;p>我们经常所说的 Inter、AMD 两大常见品牌厂商出售的桌面端的处理器称为处理器（CPU），而把移动端嵌入式系统中 ARM 架构的处理器称为微处理器（MPU）。事实上，几乎电子设备上均有微型处理器，例如路由器、智能家电等等，只不过以上所提到的离我们最近而且我们也最熟悉。&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>计算机技术 on 技术之心</title>
+    <link>http:/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/</link>
+    <description>Recent content in 计算机技术 on 技术之心</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 11 Nov 2022 11:52:00 -0500</lastBuildDate>
+    <atom:link href="http:/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>微信小程序与钉钉小程序开发流程</title>
+      <link>http:/blog/computer-technology/mobile-web/wx-dingding/</link>
+      <pubDate>Fri, 11 Nov 2022 11:52:00 -0500</pubDate>
+      <guid>http:/blog/computer-technology/mobile-web/wx-dingding/</guid>
+      <description>&lt;p&gt;开发小程序有很多问题特此记录～～～&lt;/p&gt;&#xA;&lt;p&gt;小程序开发（移动端开发）兼容注意事项：&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;ios不兼容yyyy-MM-dd HH:mm:ss这种时间格式，需要将-替换成/，在安卓下两种格式都支持。&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;使用window.location.reload()方法刷新页面，在安卓下无效。&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;正常情况下使用window.location.replace()方法跳转页面时会覆盖当前页面而不会生成新的history记录，但是在安卓下依然会生成history记录。&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;ios中，父元素设置border-radius和overflow:hidden实现圆角。如果此时子元素使用了transform属性会导致父元素的圆角失效。&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;小程序中使用web-view打开pdf, IOS 可以正常打开，Android 打开为空白；&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Nginx 配置</title>
+      <link>http:/blog/computer-technology/nginx/nginx-config/</link>
+      <pubDate>Thu, 15 Mar 2018 12:38:00 -0400</pubDate>
+      <guid>http:/blog/computer-technology/nginx/nginx-config/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;&lt;u&gt;建议主要参考官网英文文档。&lt;/u&gt;&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;具体指令直接可以在官网文档的 Alphabetical index of directives（按字母顺序排列的指令索引）中搜索即可。&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;官方文档：http://nginx.org/en/docs/&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;nginx&#34;&gt;Nginx&lt;/h3&gt;&#xA;&lt;p&gt;Nginx 是一位俄罗斯开发者（伊戈尔·赛索耶夫）开发的服务器，于 2004 年 10 月 4 日公开发布。Nginx 的优势在于轻量级和高性能，尤其是高并发的场景下，相对其它服务器来说表现比较好，因此现在颇受欢迎。Nginx 通常运行在 Unix/Linux 环境下，当然现在官方也发布了 Windows 环境下的应用，不过性能有所降低，这是受限于系统环境的影响。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Linux-Vim 编辑器</title>
+      <link>http:/blog/computer-technology/linux/linux-cmd-vim/</link>
+      <pubDate>Fri, 28 Oct 2016 21:02:00 -0400</pubDate>
+      <guid>http:/blog/computer-technology/linux/linux-cmd-vim/</guid>
+      <description>&lt;p&gt;在 Linux 这样的命令行操作系统中，必须有一款功能强大的编辑器支持我们快速完成文本编辑，这就是 Vi 编辑器；通过对其加强和升级，Vim 编辑器比前者更为强大，拥有更多的功能和颜色高亮的特性，是程序员在 Linux 下编码的利器。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;vim&#34;&gt;Vim&lt;/h3&gt;&#xA;&lt;p&gt;Vim 是基于 Linux 下 Vi 编辑器的升级版，经过多年来的不断更新，功能也越来越强大，Vim 除过具备常用文本编辑器的编辑操作以及颜色高亮特性外，还支持自动补全、多行批量操作、指定跳转等等功能，其中代码颜色高亮特性更利于我们在命令行中进行信息的阅览和查看。而且，Vim 支持大多数操作系统，只是我们经常在 Linux 下使用它而已。当然，在 Linux 下还有一款很著名的编辑器 Emacs 。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Linux-常用 Shell 命令</title>
+      <link>http:/blog/computer-technology/linux/linux-cmd-shell/</link>
+      <pubDate>Fri, 21 Oct 2016 21:02:00 -0400</pubDate>
+      <guid>http:/blog/computer-technology/linux/linux-cmd-shell/</guid>
+      <description>&lt;p&gt;Linux 是一个优秀的开发环境，大多数服务器都在上面部署。作为一个程序员，熟悉Linux 系统的常用操作也是很必要的。在 linux 内核外，shell 提供了我们程序员（用户）与内核之间的交互媒介，shell 可以说是一个命令解释器，当然它也负责将内核输出信息翻译给程序员。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;shell&#34;&gt;Shell&lt;/h3&gt;&#xA;&lt;p&gt;Linux 是一个基于命令行的操作系统，提供了一个命令解释器，即 Shell（壳）。Shell 是一个软件，是操作系统的用户界面，用户通过在 Shell 中输入命令，然后命令解释器解释完成后将指令送往内核中执行，来实现对 Linux 系统的操作。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Linux-基础</title>
+      <link>http:/blog/computer-technology/linux/linux-base/</link>
+      <pubDate>Sun, 29 May 2016 15:34:00 -0400</pubDate>
+      <guid>http:/blog/computer-technology/linux/linux-base/</guid>
+      <description>&lt;p&gt;Linux 是在做一些较为底层的开发工作时的必要开发环境，了解 Linux 也对操作系统概念的理解有很大的帮助，这篇文章是对 Linux 的一些基础概念的阐述。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;linux&#34;&gt;Linux&lt;/h3&gt;&#xA;&lt;p&gt;Linux 的诞生是在上世纪 90 年代，距离现在也就二十年左右，是一种优秀的开发环境，大多时候应用在嵌入式系统开发当中。&lt;strong&gt;Linux 是一个开源的基于 POSIX 和 UNIX，支持多用户、多任务、多线程和多 CPU 的操作系统。事实上，linux 指的是其操作系统的内核。&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>CPU 的七种寻址方式</title>
+      <link>http:/blog/computer-technology/computer/computer-cpu-addressing-mode/</link>
+      <pubDate>Thu, 05 May 2016 01:53:00 -0400</pubDate>
+      <guid>http:/blog/computer-technology/computer/computer-cpu-addressing-mode/</guid>
+      <description>&lt;p&gt;CPU 获取数据的方式不仅仅一种，多种方式也为不同数据的获取提供了不同的效率考量，保证了寻址效率与指令的灵活性。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;cpu-寻址方式&#34;&gt;CPU 寻址方式&lt;/h3&gt;&#xA;&lt;p&gt;数据一般均存储在外存(硬盘)中，在需要的时候，会将数据先从外存读入内存(存储器)中，然后 CPU 再直接从内存(缓存)中获取。获取的数据有时候会直接使用；而有时候会先存入 CPU 内部寄存器，稍后再从寄存器中获取。所以，CPU 获取数据的方式是多样化的。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>内存的 3 种刷新方式</title>
+      <link>http:/blog/computer-technology/computer/computer-memory-refresh/</link>
+      <pubDate>Tue, 03 May 2016 01:59:00 -0400</pubDate>
+      <guid>http:/blog/computer-technology/computer/computer-memory-refresh/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;众所周知，内存（Memory）是带电存储的，掉电就会丢失数据，所以需要刷新来保持数据。&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;原因&#34;&gt;原因&lt;/h3&gt;&#xA;&lt;p&gt;由于内存（Memory）以及缓存（Cache）都由相应的存储单元芯片&lt;strong&gt;DRAM&lt;/strong&gt;和&lt;strong&gt;SRAM&lt;/strong&gt;构成存储阵列，是一种半导体存储器件。并且，所有的数据都是逻辑 &lt;code&gt;1&lt;/code&gt; 和 &lt;code&gt;0&lt;/code&gt; 的组合。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>微处理器寻址范围</title>
+      <link>http:/blog/computer-technology/computer/computer-microprocessor-addressing-range/</link>
+      <pubDate>Thu, 28 Apr 2016 01:42:00 -0400</pubDate>
+      <guid>http:/blog/computer-technology/computer/computer-microprocessor-addressing-range/</guid>
+      <description>&lt;p&gt;在此之前，让我们带着下面这个问题来看这篇文章：&lt;strong&gt;64 位处理器所支持的最大内存(寻址范围)为多少？&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;处理器&#34;&gt;处理器&lt;/h3&gt;&#xA;&lt;p&gt;处理器（CPU）担负着整个计算机系统的核心任务执行责任，所以我们经常关心它的运算处理能力，也就是 CPU 的性能。&lt;/p&gt;&#xA;&lt;h6 id=&#34;微处理器&#34;&gt;微处理器&lt;/h6&gt;&#xA;&lt;p&gt;我们经常所说的 Inter、AMD 两大常见品牌厂商出售的桌面端的处理器称为处理器（CPU），而把移动端嵌入式系统中 ARM 架构的处理器称为微处理器（MPU）。事实上，几乎电子设备上均有微型处理器，例如路由器、智能家电等等，只不过以上所提到的离我们最近而且我们也最熟悉。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

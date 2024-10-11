@@ -1308,17 +1308,56 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/javascript/web-js-async/">
-      JavaScript 异步编程
+    <a href="/blog/computer-technology/mobile-web/wx-dingding/">
+      微信小程序与钉钉小程序开发流程
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>JavaScript 作为一门在 Web 开发中的主流语言，常常涉及到交互事件方面的应用，这不可避免的用到了异步编程的方法，而它本身则是单线程运行的。在以往的开发中，异步编程正变得越来越难管理，新的 Promise 标准 API 将使得异步编程更加方便、安全。</p>
-<!-- truncate -->
-<h3 id="异步与并行">异步与并行</h3>
-<p>作为 Web 前端开发中的主流语言，JavaScript 需要实现诸多的交互动作，但是在宿主环境（例如 v8）中 JS 引擎只有一个主线程，所以多线程并行处理是不可能的。因此，异步编程显得尤为重要。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/javascript/web-js-async/">
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors//">
+          <i class="fa-regular fa-circle-user mr-2"></i>
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/"
+            class="ms-1"
+            >计算机技术
+              ,
+            
+          </a>
+        
+          <a
+            href="/categories/web/"
+            class="ms-1"
+            >Web
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>开发小程序有很多问题特此记录～～～</p>
+<p>小程序开发（移动端开发）兼容注意事项：</p>
+<ol>
+<li>
+<p>ios不兼容yyyy-MM-dd HH:mm:ss这种时间格式，需要将-替换成/，在安卓下两种格式都支持。</p>
+</li>
+<li>
+<p>使用window.location.reload()方法刷新页面，在安卓下无效。</p>
+</li>
+<li>
+<p>正常情况下使用window.location.replace()方法跳转页面时会覆盖当前页面而不会生成新的history记录，但是在安卓下依然会生成history记录。</p>
+</li>
+<li>
+<p>ios中，父元素设置border-radius和overflow:hidden实现圆角。如果此时子元素使用了transform属性会导致父元素的圆角失效。</p>
+</li>
+<li>
+<p>小程序中使用web-view打开pdf, IOS 可以正常打开，Android 打开为空白；</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/mobile-web/wx-dingding/">
     Read More
   </a>
 </div>
@@ -1330,14 +1369,17 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/tools-web-fee-test-with-jest-puppeteer/">
-      使用 Jest 和 Puppeteer 构建 Web 自动化测试平台
+    <a href="/blog/computer-technology/tools/tools-sublime/">
+      编辑器：Sublime Text 常用插件
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>测试为软件的稳定和完善提供了必要的支持，Web 前端开发领域相比于做单元测试，端到端测试更有意义和价值。谷歌发布的 Puppeteer 工具和脸书发布的 Jest 测试工具为 Web 端到端测试提供了极大的便利，这里记录了如何使用它们构建一个 Web 自动化测试平台。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/tools-web-fee-test-with-jest-puppeteer/">
+  <p class="mb-6"><p>Sumblime Text 是一个具有漂亮的界面和强大功能的文本编辑器，而且也支持许多丰富的插件。它是一个收费软件，但是允许开发人员无限期的免费试用。这篇文章介绍一下常用的插件。</p>
+<!-- truncate -->
+<h3 id="安装-sublime-text">安装 Sublime Text</h3>
+<p>Sublime Text 编辑器，我们直接去官网下载相应版本安装即可，2 或 3 版本官网均有链接。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/tools/tools-sublime/">
     Read More
   </a>
 </div>
@@ -1349,17 +1391,27 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/protocol/protocol-http/">
-      HTTP 协议
+    <a href="/blog/computer-technology/nodejs/tools-npm/">
+      使用 npm
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>随着 Internet 的发展，使用 Web 浏览器获取网络数据信息已经成为一种习惯标准，而 HTTP 协议也因此成为了网络体系中最重要的应用层协议。</p>
+  <p class="mb-6"><p>npm 是 Node.js 的一个包管理器，Web 前端工程师也经常利用它来简化开发流程，看看如何愉快的使用 npm ，并且发布自己的包，让 npm 成为我们的开发利器。</p>
 <!-- truncate -->
-<h3 id="http">HTTP</h3>
-<p>HTTP（HyperText Transfer Protocol，超文本传输协议）是一种通用的、无状态（Stateless）的、与传输数据无关的，应用于分布式、协同式、超媒体信息系统的应用层协议。除了应用于 WWW（World Wide Web，万维网）服务器与 Web 浏览器之间的超文本传输外，它也可以应用于像名称服务器和分布对象管理系统这样的系统。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/protocol/protocol-http/">
+<h3 id="npm">npm</h3>
+<blockquote>
+<p>**Node.js：**<a href="https://www.npmjs.com/"
+
+
+
+
+ target="_blank"
+ 
+
+
+>https://www.npmjs.com/</a></p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/nodejs/tools-npm/">
     Read More
   </a>
 </div>

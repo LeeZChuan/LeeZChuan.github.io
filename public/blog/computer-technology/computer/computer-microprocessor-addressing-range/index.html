@@ -1198,16 +1198,14 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/tools/tools-programming-language/">
-      理解编程语言的设计与实现
+    <a href="/blog/computer-technology/web/web-performance-fastdom/">
+      Web 前端性能优化：批量 DOM 操作 - FastDOM
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>编程语言本质上是给开发者使用的工具，不同的业务领域使用不同的编程语言去实现具体的业务，是基于语言本身的设计理念与实现方式来做选择，那么作为开发者应该了解一下编程语言是如何被发明的，且其设计理念是什么。</p>
-<!-- truncate -->
-<p>Ruby 是我大学期间课余接触且实际使用过的一门语言，目前我甚是喜爱，其作者松本行弘设计 Ruby 的初心是：为开发者服务，注重简洁和效率。这篇文章主要也是为了记录在拜读了松本行弘先生新书《编程语言的设计与实现》之后掌握的一些相关的关键知识点和其它收获。由于该书主要是围绕作者在设计 Ruby 和新语言 Streem 过程中的一些思考和经验，有些东西可能不太具备普适性，而我在这里主要还是关注一些通用性的知识点和概念。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/tools/tools-programming-language/">
+  <p class="mb-6"><p>利用 JS 开发的原生应用与依赖于 React.js/Vue 开发的框架/库应用，性能孰高孰低？这两者最显著的区别在于原生应用需要手动操作 DOM 完成业务，而框架/库应用是基于数据变化响应式的应用，后者只需要关注数据如何变化，至于体现在 DOM 上的变化皆由框架/库内部自动完成。所以，要搞清楚两者的性能优劣，可能<strong>批量</strong>的 DOM 操作是一个不可忽略的核心因素。从代码执行的角度分析，框架/库也是基于原生 API 进行的封装抽象，因此代码执行时的路径更长、堆栈更深，由此可见原生 API 的操作性能应该是最高的。但是，现实情况是业务通常来说是复杂的，代码实现中 DOM 操作的逻辑分散在各处，那么多个 DOM 操作之间是否会产生影响从而不利于性能？这个时候就要关注宿主浏览器的渲染机制是如何理解批量的 DOM 操作的，这里引入的概念就是<strong>关键渲染路径（Critical rendering path）</strong>。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/web-performance-fastdom/">
     Read More
   </a>
 </div>
@@ -1219,19 +1217,17 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/dom/dom-rule/">
-      DOM-元素节点几何量
+    <a href="/blog/computer-technology/web/dom/dom-textnode/">
+      DOM-文本节点
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>当我们在查看 HTML 文档时，每个元素节点被解析后，都画成了可视形状。我们可以获取每个元素节点的几何量（宽、高、偏移量）以及页面滚动距离。</p>
+  <p class="mb-6"><p>文本（Text）节点虽然很多时候我们直接用 innerHTML 去赋值替换，但当我们进行一些细微的修改时，了解一下 DOM 操作还是非常有用的。</p>
 <!-- truncate -->
-<h3 id="元素节点几何量">元素节点几何量</h3>
-<p>通常我们将一个元素抽象成一个盒子模型，具有 content（内容）、padding（填充、内边距）、border（边框）、margin（外边距）这些尺寸属性。</p>
-<h6 id="定位偏移量">定位偏移量</h6>
-<p>使用元素节点的 <code>offsetTop</code> 与 <code>offsetLeft</code> 属性，我们可以分别获取该元素节点<strong>顶部与左侧外边框</strong>相对于 <code>offsetParent</code> 的<strong>顶部与左侧内边框</strong>的偏移像素量。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-rule/">
+<h3 id="文本节点">文本节点</h3>
+<p>文本节点的 DOM 操作是不常用的，我们通常直接用元素节点的 <code>innerHTML</code> 属性直接替换其所有文本节点，但当我们要对文本节点进行局部操作时 DOM 操作却是很有用的。下面列举一些文本节点常用的属性及方法：</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-textnode/">
     Read More
   </a>
 </div>
@@ -1243,17 +1239,25 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/web-routing/">
-      Web 应用：单页面应用与路由
+    <a href="/blog/computer-technology/web/web-tips-fonts/">
+      Web 字体加载对 DOM 位置的影响
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>现在，Web 技术不仅仅是局限于页面的开发技术，在应用的开发方面也是一种潮流，B/S 架构的技术是一种趋势。而像一般的管理型 Web 应用，不注重 SEO，非常适合单页面应用（SPA）的实现方式，而路由功能则是单页面应用的核心技术。</p>
+  <p class="mb-6"><p>由于公司的业务会用到自己设计师定制的 Web 字体，所以一般在组件开发过程中会利用 CSS 引用该字体（<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face"
+
+
+
+
+ target="_blank"
+ 
+
+
+>@font-face</a>），前段时间发现一个线上问题：在部分 iOS 机型上，DOM 元素的位置发生了错位。</p>
 <!-- truncate -->
-<h3 id="spa">SPA</h3>
-<p>单页面应用（Single page application, SPA）已经是目前实现 Web 应用的主流技术了，尤其是移动端的 Web 应用。SPA 使用 Ajax 技术异步加载页面内容，使用户能够在同一个页面流畅的进行交互，并将多个页面的内容根据需要在同一个页面在适当的时候进行展示。当然，SPA 技术采用动态加载 DOM 的方法，随之而来的就是 SEO 优化问题，搜索引擎不执行 JS 代码，页面内容无法被引擎检索到，也就不利于页面的排名和检索量提升。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/web-routing/">
+<p>首先，对于问题复现的必要条件做了分析，为以下几个方面</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/web-tips-fonts/">
     Read More
   </a>
 </div>

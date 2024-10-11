@@ -1231,149 +1231,26 @@ MOV AX, [BX]
                 <div class="bg-body dark:bg-darkmode-body">
   
   
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-  
-    
-      
-    
-
-
-    
-    
-
-
-    
-    
-      
-      
-    
-    
-    
-
-
-    
-    
-      
-      
-        
-
-        
-        
-        
-        
-        
-        
-        
-
-
-        
-        
-
-
-        <picture>
-          <source
-            
-              srcset="/images/image-placeholder_hu14898866438330350576.webp"
-            
-            media="(max-width: 575px)" />
-          <source
-            
-              srcset="/images/image-placeholder_hu3366426647807776041.webp"
-            
-            media="(max-width: 767px)" />
-          <source
-            
-              srcset="/images/image-placeholder_hu15761394040035298493.webp"
-            
-            media="(max-width: 991px)" />
-          <source
-            
-              srcset="/images/image-placeholder_hu9923120856516670921.webp"
-             />
-          <img
-            
-              loading="lazy" decoding="async"
-              src="/images/image-placeholder_hu10538127647789974651.png"
-            class=" mb-6 w-full rounded img"
-            alt="How to build an Application with modern Technology"
-            width="1096"
-            height="480" />
-        </picture>
-      
-      
-    
-    
-  
-
-
-  
-
-
-  
   <h4 class="mb-3">
-    <a href="/blog/post-4/">
-      How to build an Application with modern Technology
+    <a href="/blog/computer-technology/web/web-tips-fonts/">
+      Web 字体加载对 DOM 位置的影响
     </a>
   </h4>
   
   
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/john-doe/">
-          <i class="fa-regular fa-circle-user mr-2"></i>John Doe
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/architecture/"
-            class="ms-1"
-            >Architecture
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6"><p>Nemo vel ad consectetur namut rutrum ex, venenatis sollicitudin urna. Aliquam erat volutpat. Integer eu ipsum sem. Ut bibendum lacus vestibulum maximus suscipit. Quisque vitae nibh iaculis neque blandit euismod.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/post-4/">
+  <p class="mb-6"><p>由于公司的业务会用到自己设计师定制的 Web 字体，所以一般在组件开发过程中会利用 CSS 引用该字体（<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face"
+
+
+
+
+ target="_blank"
+ 
+
+
+>@font-face</a>），前段时间发现一个线上问题：在部分 iOS 机型上，DOM 元素的位置发生了错位。</p>
+<!-- truncate -->
+<p>首先，对于问题复现的必要条件做了分析，为以下几个方面</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/web-tips-fonts/">
     Read More
   </a>
 </div>
@@ -1404,17 +1281,19 @@ MOV AX, [BX]
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/dom/dom-event/">
-      DOM-事件
+    <a href="/blog/computer-technology/web/dom/dom-rule/">
+      DOM-元素节点几何量
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>JavaScript 的作用就是让 html 静态页面具备动态效果，而这些基本都是利用 DOM 事件来实现的。</p>
+  <p class="mb-6"><p>当我们在查看 HTML 文档时，每个元素节点被解析后，都画成了可视形状。我们可以获取每个元素节点的几何量（宽、高、偏移量）以及页面滚动距离。</p>
 <!-- truncate -->
-<h3 id="注册-dom-事件">注册 DOM 事件</h3>
-<p>事件就是给目标 DOM 节点提前注册一个相应类型的事件方法，在合适的时机进行回调执行该方法的过程。接下来就来看看如何给目标 DOM 节点注册事件：</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-event/">
+<h3 id="元素节点几何量">元素节点几何量</h3>
+<p>通常我们将一个元素抽象成一个盒子模型，具有 content（内容）、padding（填充、内边距）、border（边框）、margin（外边距）这些尺寸属性。</p>
+<h6 id="定位偏移量">定位偏移量</h6>
+<p>使用元素节点的 <code>offsetTop</code> 与 <code>offsetLeft</code> 属性，我们可以分别获取该元素节点<strong>顶部与左侧外边框</strong>相对于 <code>offsetParent</code> 的<strong>顶部与左侧内边框</strong>的偏移像素量。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-rule/">
     Read More
   </a>
 </div>
