@@ -27,10 +27,6 @@ parent = "Pages"
 name = "Blog"
 url = "/blog"
 
-[[main]]
-parent = "Pages"
-name = "Contact"
-url = "/contact"
 
 [[main]]
 parent = "Pages"

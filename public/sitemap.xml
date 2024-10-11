@@ -11,9 +11,6 @@
     <loc>//localhost:1313/categories/architecture/</loc>
     <lastmod>2022-04-04T05:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/blog/</loc>
-    <lastmod>2022-04-04T05:00:00+00:00</lastmod>
-  </url><url>
     <loc>//localhost:1313/categories/</loc>
     <lastmod>2022-04-04T05:00:00+00:00</lastmod>
   </url><url>
@@ -54,6 +51,9 @@
     <lastmod>2022-04-04T05:00:00+00:00</lastmod>
   </url><url>
     <loc>//localhost:1313/categories/technology/</loc>
+    <lastmod>2022-04-04T05:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/blog/</loc>
     <lastmod>2022-04-04T05:00:00+00:00</lastmod>
   </url><url>
     <loc>//localhost:1313/authors/</loc>
