@@ -23,23 +23,23 @@ weight = 4
 
 
 [[main]]
-parent = "Pages"
+parent = "其他"
 name = "Blog"
 url = "/blog"
 
 
 [[main]]
-parent = "Pages"
+parent = "其他"
 name = "Authors"
 url = "/authors"
 
 [[main]]
-parent = "Pages"
+parent = "其他"
 name = "Categories"
 url = "/categories"
 
 [[main]]
-parent = "Pages"
+parent = "其他"
 name = "404 Page"
 url = "/404"
 
