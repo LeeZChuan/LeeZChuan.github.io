@@ -72,7 +72,6 @@
 
 
 
-  <base href="http:/blog/computer-technology/tools/tools-junit/" />
 
 
 
@@ -157,8 +156,8 @@
       
       
       
-        <meta property="og:image" content="http:/images/og-image.png" />
-        <meta name="twitter:image" content="http:/images/og-image.png" />
+        <meta property="og:image" content="/images/og-image.png" />
+        <meta name="twitter:image" content="/images/og-image.png" />
         <meta
           name="twitter:card"
           content="summary_large_image" />
@@ -185,7 +184,7 @@
 <meta property="og:title" content="单元测试工具：Junit" />
 <meta property="og:description" content="通常一个项目的代码量是比较大的，而且其中逻辑也较为复杂，在开发完成后再进行项目测试其实是比较耗费时间和精力的，因此边开发边测试是个很好的选择，而 JUnit 则为我们提供了这样的便利。" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="http:/blog/computer-technology/tools/tools-junit/" />
+<meta property="og:url" content="/blog/computer-technology/tools/tools-junit/" />
 
 
 <meta name="twitter:title" content="单元测试工具：Junit" />
@@ -216,7 +215,7 @@
 
 
 <script>
-  let indexURL = "http:/searchindex.json";
+  let indexURL = "/searchindex.json";
   let includeSectionsInSearch = ["blog"];
   let search_no_results = "No results for";
   let search_initial_message = "Type something to search..";
@@ -1173,7 +1172,7 @@ public class ParameterTest {
   
     <a
       class="share-link share-facebook"
-      href="https://facebook.com/sharer/sharer.php?u=http%3a%2fblog%2fcomputer-technology%2ftools%2ftools-junit%2f"
+      href="https://facebook.com/sharer/sharer.php?u=%2fblog%2fcomputer-technology%2ftools%2ftools-junit%2f"
       target="_blank"
       rel="noopener"
       aria-label="share facebook">
@@ -1191,7 +1190,7 @@ public class ParameterTest {
   
     <a
       class="share-link share-twitter"
-      href="https://twitter.com/intent/tweet/?text=Share&amp;url=http%3a%2fblog%2fcomputer-technology%2ftools%2ftools-junit%2f"
+      href="https://twitter.com/intent/tweet/?text=Share&amp;url=%2fblog%2fcomputer-technology%2ftools%2ftools-junit%2f"
       target="_blank"
       rel="noopener"
       aria-label="share twitter">
@@ -1209,7 +1208,7 @@ public class ParameterTest {
   
     <a
       class="share-link share-email"
-      href="mailto:?subject=Share&amp;body=http%3a%2fblog%2fcomputer-technology%2ftools%2ftools-junit%2f"
+      href="mailto:?subject=Share&amp;body=%2fblog%2fcomputer-technology%2ftools%2ftools-junit%2f"
       target="_self"
       rel="noopener"
       aria-label="share email">
@@ -1227,7 +1226,7 @@ public class ParameterTest {
   
     <a
       class="share-link share-reddit"
-      href="https://reddit.com/submit/?url=http%3a%2fblog%2fcomputer-technology%2ftools%2ftools-junit%2f&amp;resubmit=true&amp;title=Share"
+      href="https://reddit.com/submit/?url=%2fblog%2fcomputer-technology%2ftools%2ftools-junit%2f&amp;resubmit=true&amp;title=Share"
       target="_blank"
       rel="noopener"
       aria-label="share reddit">
@@ -1327,17 +1326,17 @@ public class ParameterTest {
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/web-local-storage/">
-      Web 本地存储
+    <a href="/blog/computer-technology/web/web-performance-case-1/">
+      Web 前端性能优化：案例分析 1
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>为了达到某些需求，我们通常需要在本地存储一些数据，方便我们进行用户个性化定制服务。</p>
+  <p class="mb-6"><p>能在真实业务场景中落地 Web 性能优化方案的机会鲜有，大多数时候业务是较为简单而且要求不高的，前段时间恰好有一个比较核心的业务，对稳定性和性能有一定的要求，在这个过程中也算是做了很多尝试和实践，在此作为案例记录一下分析的过程和最终解决的方案。</p>
 <!-- truncate -->
-<h3 id="web-存储">Web 存储</h3>
-<p>在互联网上，许多网站提供用户注册功能，因为 http 协议是个无状态的协议（无法记录客户端与服务器端状态），所以我们注册登录后每一次跳转网页都需要重新登陆。为了增强用户体验，我们不得不将状态信息保存下来，而 Web 存储技术则实现了该需求。Cookie 最多可在本地存储 4K 数据，出于安全性考虑， Cookie 中并非直接存储的是用户敏感数据（帐号、密码、个人信息等），而是一个状态 ID，该 ID 是服务器端利用 session 存储一个会话状态并分配给客户端用来进行状态识别的。因此，每一次的 http 请求都会带上 Cookie 数据发送给服务器端进行状态识别，从而达到状态保持的目的。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/web-local-storage/">
+<h3 id="业务情况与技术难点">业务情况与技术难点</h3>
+<p>首先，介绍一下业务的具体情况和存在的技术难点。这是一个移动端 WebView 渲染的页面，属于 App 的二级核心页面，用户量数十万，日均 UV 万人，金融资产相关，所以可以看得出来对页面的稳定性要求是比较高的；其次，页面布局分为上中下三部分，中部是一个长列表，<strong>页面整体</strong>可以竖向滚动。以 DOM 结构说明：</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/web-performance-case-1/">
     Read More
   </a>
 </div>
@@ -1349,17 +1348,38 @@ public class ParameterTest {
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/tools/tools-sublime-vim/">
-      编辑器：Sublime Text - Vim 插件
+    <a href="/blog/computer-technology/web/css/css-clear-float/">
+      CSS 清除浮动
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>Sumblime Text 是一个具有漂亮的界面和强大功能的文本编辑器，而且也支持许多丰富的插件。它是一个收费软件，但是允许开发人员无限期的免费试用。</p>
+  <p class="mb-6"><p>在浮动布局中，有时候会因为父元素没有设置高度而子元素浮动导致父元素坍塌，我们就需要清除浮动撑起父元素的高度，在这里总结一下常用方法。</p>
 <!-- truncate -->
-<h3 id="vim">Vim</h3>
-<p>Vim 是 Linux 操作系统下类 Vi 编辑器，是一款被开发者广泛使用，并且功能强大的文本编辑器。而 Sublime Text 最初的设计初衷也是基于 Vim 的设计思想，被设计为一个跨平台的具有丰富扩展功能的 Vim。随着后来的发展，它已经不仅仅是单纯的模仿 Vim，而是支持越来越多的插件和强大的功能。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/tools/tools-sublime-vim/">
+<h3 id="浮动">浮动</h3>
+<p>我们通常为了将块级（block）子元素水平排列，就将其浮动（<code>float: left|right</code>）起来而达到我们的目的，当然这会带来一些问题。所以，我们应尽可能清除浮动所带来的副作用，以免影响其它元素的布局。</p>
+<pre><code>&lt;style&gt;
+	#container{
+		background-color: grey;
+	}
+	.inner {
+		margin: 15px;
+		width: 200px;
+		height: 200px;
+		background-color: blue;
+		float: left;
+	}
+&lt;/style&gt;
+&lt;body&gt;
+	&lt;div id=&quot;container&quot;&gt;
+		&lt;div class=&quot;inner&quot;&gt;1&lt;/div&gt;
+		&lt;div class=&quot;inner&quot;&gt;2&lt;/div&gt;
+		&lt;div class=&quot;inner&quot;&gt;3&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/body&gt;
+</code></pre>
+<p>此时，我们并看不到外层 div 的灰色背景，打开调试工具会发现外层 div 的 <code>height: 0</code>。当我们没有设置父元素高度，恰巧所有子元素浮动时，父元素的高度会成为 <code>0</code>，而没有被子元素撑起来。这是因为，子元素浮动之后脱离了文档流。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/css/css-clear-float/">
     Read More
   </a>
 </div>

@@ -72,7 +72,6 @@
 
 
 
-  <base href="http:/blog/computer-technology/web/web-routing/" />
 
 
 
@@ -157,8 +156,8 @@
       
       
       
-        <meta property="og:image" content="http:/images/og-image.png" />
-        <meta name="twitter:image" content="http:/images/og-image.png" />
+        <meta property="og:image" content="/images/og-image.png" />
+        <meta name="twitter:image" content="/images/og-image.png" />
         <meta
           name="twitter:card"
           content="summary_large_image" />
@@ -185,7 +184,7 @@
 <meta property="og:title" content="Web 应用：单页面应用与路由" />
 <meta property="og:description" content="现在，Web 技术不仅仅是局限于页面的开发技术，在应用的开发方面也是一种潮流，B/S 架构的技术是一种趋势。而像一般的管理型 Web 应用，不注重 SEO，非常适合单页面应用（SPA）的实现方式，而路由功能则是单页面应用的核心技术。" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="http:/blog/computer-technology/web/web-routing/" />
+<meta property="og:url" content="/blog/computer-technology/web/web-routing/" />
 
 
 <meta name="twitter:title" content="Web 应用：单页面应用与路由" />
@@ -216,7 +215,7 @@
 
 
 <script>
-  let indexURL = "http:/searchindex.json";
+  let indexURL = "/searchindex.json";
   let includeSectionsInSearch = ["blog"];
   let search_no_results = "No results for";
   let search_initial_message = "Type something to search..";
@@ -1230,7 +1229,7 @@
   
     <a
       class="share-link share-facebook"
-      href="https://facebook.com/sharer/sharer.php?u=http%3a%2fblog%2fcomputer-technology%2fweb%2fweb-routing%2f"
+      href="https://facebook.com/sharer/sharer.php?u=%2fblog%2fcomputer-technology%2fweb%2fweb-routing%2f"
       target="_blank"
       rel="noopener"
       aria-label="share facebook">
@@ -1248,7 +1247,7 @@
   
     <a
       class="share-link share-twitter"
-      href="https://twitter.com/intent/tweet/?text=Share&amp;url=http%3a%2fblog%2fcomputer-technology%2fweb%2fweb-routing%2f"
+      href="https://twitter.com/intent/tweet/?text=Share&amp;url=%2fblog%2fcomputer-technology%2fweb%2fweb-routing%2f"
       target="_blank"
       rel="noopener"
       aria-label="share twitter">
@@ -1266,7 +1265,7 @@
   
     <a
       class="share-link share-email"
-      href="mailto:?subject=Share&amp;body=http%3a%2fblog%2fcomputer-technology%2fweb%2fweb-routing%2f"
+      href="mailto:?subject=Share&amp;body=%2fblog%2fcomputer-technology%2fweb%2fweb-routing%2f"
       target="_self"
       rel="noopener"
       aria-label="share email">
@@ -1284,7 +1283,7 @@
   
     <a
       class="share-link share-reddit"
-      href="https://reddit.com/submit/?url=http%3a%2fblog%2fcomputer-technology%2fweb%2fweb-routing%2f&amp;resubmit=true&amp;title=Share"
+      href="https://reddit.com/submit/?url=%2fblog%2fcomputer-technology%2fweb%2fweb-routing%2f&amp;resubmit=true&amp;title=Share"
       target="_blank"
       rel="noopener"
       aria-label="share reddit">
@@ -1365,23 +1364,18 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/dom/dom-attribute/">
-      DOM-元素节点属性
+    <a href="/blog/computer-technology/tools/tools-maintain-open-source-projects-with-tools/">
+      如何更好的维护开源项目
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>元素节点上具有很多属性，这些属性我们通常可以很方便的获取，并进行简单的操作。</p>
+  <p class="mb-6"><p>一直以来，开源精神被开发者所推崇，开源项目为开发者提供了不用付出除时间以外任何成本就可以学习前沿技术的最佳途径，另一方面，我们应该思考开源为何会成功，在全球开发者参与协作的情况下代码仓库为何能保持整洁、不出现大规模冲突而奔溃，上下游依赖如何管理，这背后有既定的规范进行强约束，也有一系列社区工具来完成复杂而有价值的工作。所以，从参与或者维护开源项目的角度来看，这些<strong>社区公认的最佳实践</strong>值得我们了解，学习这些东西也能在一定程度上提高我们管理项目的能力。</p>
 <!-- truncate -->
-<h3 id="节点属性常用操作">节点属性常用操作</h3>
-<p>每个 HTML 元素都有很多属性，例如（id、class、name、url、src、href）等等，元素节点上定义了一些方法供我们使用，来对这些属性进行设置、获取、移除操作。</p>
-<ul>
-<li>setAttribute()</li>
-<li>getAttribute()</li>
-<li>removeAttribute()</li>
-</ul>
-<p>exp:</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-attribute/">
+<p>以下内容属于经验积累，持续更新，仅供参考。</p>
+<h3 id="许可证license">许可证（License）</h3>
+<p>代码本质上是开发者的创作成果，具有<strong>专利权</strong>，所以开发者应该意识到自己所享有的权利，同时在使用其他人所提供的代码时避免侵权。作为开源项目，有必要在开源之前选择一个合适的<strong>许可证</strong>，提前<strong>声明权利和义务</strong>（一般作为单独的 <em>LICENSE</em> 文本文件保存），避免在后期陷入麻烦之中，GitHub 官方为我们提供了一个简单的工具站点：</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/tools/tools-maintain-open-source-projects-with-tools/">
     Read More
   </a>
 </div>
@@ -1393,14 +1387,43 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/web-app-model-zustand/">
-      Web 应用：轻量级状态管理工具 zustand
+    <a href="/blog/computer-technology/computer/computer-memory-refresh/">
+      内存的 3 种刷新方式
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>基于 React.js 的 Web 应用如何完成状态管理？社区主流方案是 <strong>react-redux</strong>，其本质上基于 React 的 <code>Context</code> 特性实现，如果应用足够简单，实际上用 <code>Context</code> 手写一个简单的状态管理工具倒也并不难。不过，考虑到工具的完善性、项目的健壮性，通常采用较好的、成熟的社区方案。在移动端场景下，<strong>react-redux</strong> 略显臃肿，轻量级状态管理工具 <strong>zustand</strong> 倒是一个不错的替代方案。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/web-app-model-zustand/">
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors//">
+          <i class="fa-regular fa-circle-user mr-2"></i>
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/"
+            class="ms-1"
+            >计算机技术
+              ,
+            
+          </a>
+        
+          <a
+            href="/categories/%e5%86%85%e5%ad%98/"
+            class="ms-1"
+            >内存
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p><strong>众所周知，内存（Memory）是带电存储的，掉电就会丢失数据，所以需要刷新来保持数据。</strong></p>
+<!-- truncate -->
+<h3 id="原因">原因</h3>
+<p>由于内存（Memory）以及缓存（Cache）都由相应的存储单元芯片<strong>DRAM</strong>和<strong>SRAM</strong>构成存储阵列，是一种半导体存储器件。并且，所有的数据都是逻辑 <code>1</code> 和 <code>0</code> 的组合。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/computer/computer-memory-refresh/">
     Read More
   </a>
 </div>
@@ -1412,17 +1435,53 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/tools/tools-sublime/">
-      编辑器：Sublime Text 常用插件
+    <a href="/blog/computer-technology/computer/computer-microprocessor-addressing-range/">
+      微处理器寻址范围
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>Sumblime Text 是一个具有漂亮的界面和强大功能的文本编辑器，而且也支持许多丰富的插件。它是一个收费软件，但是允许开发人员无限期的免费试用。这篇文章介绍一下常用的插件。</p>
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors//">
+          <i class="fa-regular fa-circle-user mr-2"></i>
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/"
+            class="ms-1"
+            >计算机技术
+              ,
+            
+          </a>
+        
+          <a
+            href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba/"
+            class="ms-1"
+            >计算机
+              ,
+            
+          </a>
+        
+          <a
+            href="/categories/mpu/"
+            class="ms-1"
+            >Mpu
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>在此之前，让我们带着下面这个问题来看这篇文章：<strong>64 位处理器所支持的最大内存(寻址范围)为多少？</strong></p>
 <!-- truncate -->
-<h3 id="安装-sublime-text">安装 Sublime Text</h3>
-<p>Sublime Text 编辑器，我们直接去官网下载相应版本安装即可，2 或 3 版本官网均有链接。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/tools/tools-sublime/">
+<h3 id="处理器">处理器</h3>
+<p>处理器（CPU）担负着整个计算机系统的核心任务执行责任，所以我们经常关心它的运算处理能力，也就是 CPU 的性能。</p>
+<h6 id="微处理器">微处理器</h6>
+<p>我们经常所说的 Inter、AMD 两大常见品牌厂商出售的桌面端的处理器称为处理器（CPU），而把移动端嵌入式系统中 ARM 架构的处理器称为微处理器（MPU）。事实上，几乎电子设备上均有微型处理器，例如路由器、智能家电等等，只不过以上所提到的离我们最近而且我们也最熟悉。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/computer/computer-microprocessor-addressing-range/">
     Read More
   </a>
 </div>

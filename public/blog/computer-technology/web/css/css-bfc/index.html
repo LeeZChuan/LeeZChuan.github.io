@@ -72,7 +72,6 @@
 
 
 
-  <base href="http:/blog/computer-technology/web/css/css-bfc/" />
 
 
 
@@ -157,8 +156,8 @@
       
       
       
-        <meta property="og:image" content="http:/images/og-image.png" />
-        <meta name="twitter:image" content="http:/images/og-image.png" />
+        <meta property="og:image" content="/images/og-image.png" />
+        <meta name="twitter:image" content="/images/og-image.png" />
         <meta
           name="twitter:card"
           content="summary_large_image" />
@@ -185,7 +184,7 @@
 <meta property="og:title" content="块级格式化上下文（BFC）" />
 <meta property="og:description" content="在进行页面布局时，通常有流式布局、定位布局、浮动布局这三种形式。而在布局过程中，各元素之间的影响却是一个很关键的问题。" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="http:/blog/computer-technology/web/css/css-bfc/" />
+<meta property="og:url" content="/blog/computer-technology/web/css/css-bfc/" />
 
 
 <meta name="twitter:title" content="块级格式化上下文（BFC）" />
@@ -216,7 +215,7 @@
 
 
 <script>
-  let indexURL = "http:/searchindex.json";
+  let indexURL = "/searchindex.json";
   let includeSectionsInSearch = ["blog"];
   let search_no_results = "No results for";
   let search_initial_message = "Type something to search..";
@@ -1051,7 +1050,7 @@
   
     <a
       class="share-link share-facebook"
-      href="https://facebook.com/sharer/sharer.php?u=http%3a%2fblog%2fcomputer-technology%2fweb%2fcss%2fcss-bfc%2f"
+      href="https://facebook.com/sharer/sharer.php?u=%2fblog%2fcomputer-technology%2fweb%2fcss%2fcss-bfc%2f"
       target="_blank"
       rel="noopener"
       aria-label="share facebook">
@@ -1069,7 +1068,7 @@
   
     <a
       class="share-link share-twitter"
-      href="https://twitter.com/intent/tweet/?text=Share&amp;url=http%3a%2fblog%2fcomputer-technology%2fweb%2fcss%2fcss-bfc%2f"
+      href="https://twitter.com/intent/tweet/?text=Share&amp;url=%2fblog%2fcomputer-technology%2fweb%2fcss%2fcss-bfc%2f"
       target="_blank"
       rel="noopener"
       aria-label="share twitter">
@@ -1087,7 +1086,7 @@
   
     <a
       class="share-link share-email"
-      href="mailto:?subject=Share&amp;body=http%3a%2fblog%2fcomputer-technology%2fweb%2fcss%2fcss-bfc%2f"
+      href="mailto:?subject=Share&amp;body=%2fblog%2fcomputer-technology%2fweb%2fcss%2fcss-bfc%2f"
       target="_self"
       rel="noopener"
       aria-label="share email">
@@ -1105,7 +1104,7 @@
   
     <a
       class="share-link share-reddit"
-      href="https://reddit.com/submit/?url=http%3a%2fblog%2fcomputer-technology%2fweb%2fcss%2fcss-bfc%2f&amp;resubmit=true&amp;title=Share"
+      href="https://reddit.com/submit/?url=%2fblog%2fcomputer-technology%2fweb%2fcss%2fcss-bfc%2f&amp;resubmit=true&amp;title=Share"
       target="_blank"
       rel="noopener"
       aria-label="share reddit">
@@ -1186,17 +1185,14 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/dom/dom-js/">
-      DOM-加载 JavaScript
+    <a href="/blog/computer-technology/protocol/protocol-ip/">
+      IP 协议
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>页面的动态交互离不开 Javascript，将 js 脚本引入页面时会阻塞页面加载，在某些时候我们则可以选择异步加载 js 脚本。</p>
-<!-- truncate -->
-<h3 id="引入-js-代码">引入 js 代码</h3>
-<p>通常我们会将 JavaScript 代码写在一个单独的文件中，这样做的好处是页面整洁、结构更清晰，页面更小加载速度更快，同时也易维护。实际上在页面中引入 js 代码的方法有多种，我们按需选择即可。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-js/">
+  <p class="mb-6"><p>作为 TCP/IP 协议栈中最核心的协议，IP 协议为网络数据传输和网络互联提供最基本的服务。IP 协议有 IPv4 和 IPv6 两个版本，我们只讨论 TPv4 版本的 IP 协议。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/protocol/protocol-ip/">
     Read More
   </a>
 </div>
@@ -1208,17 +1204,16 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/tools/tools-sublime/">
-      编辑器：Sublime Text 常用插件
+    <a href="/blog/computer-technology/web/javascript/debouncing-and-throttling/">
+      Web 前端性能优化：解析函数节流与防抖的实现
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>Sumblime Text 是一个具有漂亮的界面和强大功能的文本编辑器，而且也支持许多丰富的插件。它是一个收费软件，但是允许开发人员无限期的免费试用。这篇文章介绍一下常用的插件。</p>
+  <p class="mb-6"><p>前端开发中，有一个使用较为普遍的性能优化技巧，即函数节流（Throttle）和防抖（Debounce），其主要作用是根据时间对函数调用做以限制。最常见的业务场景是监听页面的 <code>scroll</code> 事件，浏览器可以在 1s 内触发该事件数次（甚至达数十次），如果事件处理程序在这 1s 内多次执行，必然会造成一定的性能问题，影响用户体验。</p>
 <!-- truncate -->
-<h3 id="安装-sublime-text">安装 Sublime Text</h3>
-<p>Sublime Text 编辑器，我们直接去官网下载相应版本安装即可，2 或 3 版本官网均有链接。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/tools/tools-sublime/">
+<p>本质上，函数节流和防抖并不是控制事件源的触发次数，而是在事件短时间内连续多次触发之后控制相应事件处理程序的调用频率。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/javascript/debouncing-and-throttling/">
     Read More
   </a>
 </div>
@@ -1230,17 +1225,43 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/web-performance-case-1/">
-      Web 前端性能优化：案例分析 1
+    <a href="/blog/computer-technology/computer/computer-cpu-addressing-mode/">
+      CPU 的七种寻址方式
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>能在真实业务场景中落地 Web 性能优化方案的机会鲜有，大多数时候业务是较为简单而且要求不高的，前段时间恰好有一个比较核心的业务，对稳定性和性能有一定的要求，在这个过程中也算是做了很多尝试和实践，在此作为案例记录一下分析的过程和最终解决的方案。</p>
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors//">
+          <i class="fa-regular fa-circle-user mr-2"></i>
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/"
+            class="ms-1"
+            >计算机技术
+              ,
+            
+          </a>
+        
+          <a
+            href="/categories/cpu/"
+            class="ms-1"
+            >CPU
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>CPU 获取数据的方式不仅仅一种，多种方式也为不同数据的获取提供了不同的效率考量，保证了寻址效率与指令的灵活性。</p>
 <!-- truncate -->
-<h3 id="业务情况与技术难点">业务情况与技术难点</h3>
-<p>首先，介绍一下业务的具体情况和存在的技术难点。这是一个移动端 WebView 渲染的页面，属于 App 的二级核心页面，用户量数十万，日均 UV 万人，金融资产相关，所以可以看得出来对页面的稳定性要求是比较高的；其次，页面布局分为上中下三部分，中部是一个长列表，<strong>页面整体</strong>可以竖向滚动。以 DOM 结构说明：</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/web-performance-case-1/">
+<h3 id="cpu-寻址方式">CPU 寻址方式</h3>
+<p>数据一般均存储在外存(硬盘)中，在需要的时候，会将数据先从外存读入内存(存储器)中，然后 CPU 再直接从内存(缓存)中获取。获取的数据有时候会直接使用；而有时候会先存入 CPU 内部寄存器，稍后再从寄存器中获取。所以，CPU 获取数据的方式是多样化的。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/computer/computer-cpu-addressing-mode/">
     Read More
   </a>
 </div>

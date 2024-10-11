@@ -72,7 +72,6 @@
 
 
 
-  <base href="http:/blog/computer-technology/web/web-performance-optimize-skill/" />
 
 
 
@@ -157,8 +156,8 @@
       
       
       
-        <meta property="og:image" content="http:/images/og-image.png" />
-        <meta name="twitter:image" content="http:/images/og-image.png" />
+        <meta property="og:image" content="/images/og-image.png" />
+        <meta name="twitter:image" content="/images/og-image.png" />
         <meta
           name="twitter:card"
           content="summary_large_image" />
@@ -185,7 +184,7 @@
 <meta property="og:title" content="Web 前端性能优化：工具与技巧" />
 <meta property="og:description" content="Web 前端的性能优化是非常迫切的，客户端的资源非常有限，而且层次不齐，很容易造成一些性能问题从而影响到最终给用户所呈现的数据信息结构的不完整。为了增强用户体验，我们必须在各个方面进行优化，同时也可以节省服务器成本。" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="http:/blog/computer-technology/web/web-performance-optimize-skill/" />
+<meta property="og:url" content="/blog/computer-technology/web/web-performance-optimize-skill/" />
 
 
 <meta name="twitter:title" content="Web 前端性能优化：工具与技巧" />
@@ -216,7 +215,7 @@
 
 
 <script>
-  let indexURL = "http:/searchindex.json";
+  let indexURL = "/searchindex.json";
   let includeSectionsInSearch = ["blog"];
   let search_no_results = "No results for";
   let search_initial_message = "Type something to search..";
@@ -1122,7 +1121,7 @@
   
     <a
       class="share-link share-facebook"
-      href="https://facebook.com/sharer/sharer.php?u=http%3a%2fblog%2fcomputer-technology%2fweb%2fweb-performance-optimize-skill%2f"
+      href="https://facebook.com/sharer/sharer.php?u=%2fblog%2fcomputer-technology%2fweb%2fweb-performance-optimize-skill%2f"
       target="_blank"
       rel="noopener"
       aria-label="share facebook">
@@ -1140,7 +1139,7 @@
   
     <a
       class="share-link share-twitter"
-      href="https://twitter.com/intent/tweet/?text=Share&amp;url=http%3a%2fblog%2fcomputer-technology%2fweb%2fweb-performance-optimize-skill%2f"
+      href="https://twitter.com/intent/tweet/?text=Share&amp;url=%2fblog%2fcomputer-technology%2fweb%2fweb-performance-optimize-skill%2f"
       target="_blank"
       rel="noopener"
       aria-label="share twitter">
@@ -1158,7 +1157,7 @@
   
     <a
       class="share-link share-email"
-      href="mailto:?subject=Share&amp;body=http%3a%2fblog%2fcomputer-technology%2fweb%2fweb-performance-optimize-skill%2f"
+      href="mailto:?subject=Share&amp;body=%2fblog%2fcomputer-technology%2fweb%2fweb-performance-optimize-skill%2f"
       target="_self"
       rel="noopener"
       aria-label="share email">
@@ -1176,7 +1175,7 @@
   
     <a
       class="share-link share-reddit"
-      href="https://reddit.com/submit/?url=http%3a%2fblog%2fcomputer-technology%2fweb%2fweb-performance-optimize-skill%2f&amp;resubmit=true&amp;title=Share"
+      href="https://reddit.com/submit/?url=%2fblog%2fcomputer-technology%2fweb%2fweb-performance-optimize-skill%2f&amp;resubmit=true&amp;title=Share"
       target="_blank"
       rel="noopener"
       aria-label="share reddit">
@@ -1257,6 +1256,29 @@
   
   
   <h4 class="mb-3">
+    <a href="/blog/computer-technology/web/dom/dom-elementnode/">
+      DOM-元素节点
+    </a>
+  </h4>
+  
+  
+  <p class="mb-6"><p>可以说，元素节点是 DOM 树中的核心部分，我们进行文档的操作通常都是建立在元素节点上的。</p>
+<!-- truncate -->
+<h3 id="元素节点">元素节点</h3>
+<blockquote>
+<p>元素节点（Element Node）是我们最常用的 DOM 节点，不同类型的节点都有其自己的构造方法，并且它们身上还有许多属性和方法（包括继承的）来帮助我们完成 DOM 操作。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-elementnode/">
+    Read More
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
     <a href="/blog/computer-technology/linux/linux-cmd-vim/">
       Linux-Vim 编辑器
     </a>
@@ -1313,36 +1335,15 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/dom/dom-fragment/">
-      DOM-文档片段
+    <a href="/blog/computer-technology/web/tools-web-fee-polyfill-corejs-eslint/">
+      解析基于 core-js 与 ESLint 的 Web 兼容方案
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>DOM 操作是非常消耗性能的，如果要进行大量的 DOM 操作，我们可以选择在内存中先构建一个文档片段然后一次性插入 DOM 树。</p>
-<!-- truncate -->
-<h3 id="文档片段">文档片段</h3>
-<p>文档片段（DocumentFragment）也就是 DOM 树的部分节点组合而成的局部。频繁的 DOM 操作对性能的影响是显著的，如果我们要进行大量的相似的 DOM 操作，建议在内存中创建一个文档片段并对其修饰，然后一次性插入 DOM 树。这么做的对性能的影响是最小的，同时也更灵活一些。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-fragment/">
-    Read More
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/computer-technology/nodejs/nodejs-fastify/">
-      Fastify - 专注于性能和低内存消耗
-    </a>
-  </h4>
-  
-  
-  <p class="mb-6"><p>最近在做 Node.js 技术相关的调研，需要选定一个 Web 框架作为基础来构建业务。一般来说，首选开源方案，对于我来说，比较关注框架背后的开发团队情况、项目活跃度、是否有足够多的商业案例、文档是否完整可读、框架的设计理念、技术架构是否灵活可扩展、技术社区生态是否完整等方面。目前，我比较倾心的是 Fastify 这个新兴框架，根据官网介绍，其专注于高性能和低消耗，并且公开的基准测试表现相当不错，项目足够活跃，更重要的是属于 OpenJS 基金会的孵化项目。本文主要介绍 Fastify 的设计理念和探究其是如何提高性能和降低内存消耗的。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/nodejs/nodejs-fastify/">
+  <p class="mb-6"><p>Web 网页为了保证在多个平台和低中高端设备上的体验稳定性和一致性，通常会做 Polyfill 以保证兼容性。</p>
+<p>然而，兼容性问题本身是个难题，Polyfill 也并非很好处理，所以在技术演变的过程中，社区达成了一致，有一个主流的方案，大家共同来使用和维护。当下社区的主流方案则是基于 <code>core-js</code>，另一方面， 利用 ESLint 插件则可以做到自动检测代码中需要添加 Polyfill 的 API。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/tools-web-fee-polyfill-corejs-eslint/">
     Read More
   </a>
 </div>

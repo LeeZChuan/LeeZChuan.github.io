@@ -72,7 +72,6 @@
 
 
 
-  <base href="http:/blog/computer-technology/web/dom/dom-rule/" />
 
 
 
@@ -157,8 +156,8 @@
       
       
       
-        <meta property="og:image" content="http:/images/og-image.png" />
-        <meta name="twitter:image" content="http:/images/og-image.png" />
+        <meta property="og:image" content="/images/og-image.png" />
+        <meta name="twitter:image" content="/images/og-image.png" />
         <meta
           name="twitter:card"
           content="summary_large_image" />
@@ -185,7 +184,7 @@
 <meta property="og:title" content="DOM-元素节点几何量" />
 <meta property="og:description" content="当我们在查看 HTML 文档时，每个元素节点被解析后，都画成了可视形状。我们可以获取每个元素节点的几何量（宽、高、偏移量）以及页面滚动距离。" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="http:/blog/computer-technology/web/dom/dom-rule/" />
+<meta property="og:url" content="/blog/computer-technology/web/dom/dom-rule/" />
 
 
 <meta name="twitter:title" content="DOM-元素节点几何量" />
@@ -216,7 +215,7 @@
 
 
 <script>
-  let indexURL = "http:/searchindex.json";
+  let indexURL = "/searchindex.json";
   let includeSectionsInSearch = ["blog"];
   let search_no_results = "No results for";
   let search_initial_message = "Type something to search..";
@@ -1272,7 +1271,7 @@
   
     <a
       class="share-link share-facebook"
-      href="https://facebook.com/sharer/sharer.php?u=http%3a%2fblog%2fcomputer-technology%2fweb%2fdom%2fdom-rule%2f"
+      href="https://facebook.com/sharer/sharer.php?u=%2fblog%2fcomputer-technology%2fweb%2fdom%2fdom-rule%2f"
       target="_blank"
       rel="noopener"
       aria-label="share facebook">
@@ -1290,7 +1289,7 @@
   
     <a
       class="share-link share-twitter"
-      href="https://twitter.com/intent/tweet/?text=Share&amp;url=http%3a%2fblog%2fcomputer-technology%2fweb%2fdom%2fdom-rule%2f"
+      href="https://twitter.com/intent/tweet/?text=Share&amp;url=%2fblog%2fcomputer-technology%2fweb%2fdom%2fdom-rule%2f"
       target="_blank"
       rel="noopener"
       aria-label="share twitter">
@@ -1308,7 +1307,7 @@
   
     <a
       class="share-link share-email"
-      href="mailto:?subject=Share&amp;body=http%3a%2fblog%2fcomputer-technology%2fweb%2fdom%2fdom-rule%2f"
+      href="mailto:?subject=Share&amp;body=%2fblog%2fcomputer-technology%2fweb%2fdom%2fdom-rule%2f"
       target="_self"
       rel="noopener"
       aria-label="share email">
@@ -1326,7 +1325,7 @@
   
     <a
       class="share-link share-reddit"
-      href="https://reddit.com/submit/?url=http%3a%2fblog%2fcomputer-technology%2fweb%2fdom%2fdom-rule%2f&amp;resubmit=true&amp;title=Share"
+      href="https://reddit.com/submit/?url=%2fblog%2fcomputer-technology%2fweb%2fdom%2fdom-rule%2f&amp;resubmit=true&amp;title=Share"
       target="_blank"
       rel="noopener"
       aria-label="share reddit">
@@ -1407,14 +1406,19 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/web-performance-fastdom/">
-      Web 前端性能优化：批量 DOM 操作 - FastDOM
+    <a href="/blog/computer-technology/protocol/protocol-lan-wan/">
+      局域网（LAN）与广域网（WAN）
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>利用 JS 开发的原生应用与依赖于 React.js/Vue 开发的框架/库应用，性能孰高孰低？这两者最显著的区别在于原生应用需要手动操作 DOM 完成业务，而框架/库应用是基于数据变化响应式的应用，后者只需要关注数据如何变化，至于体现在 DOM 上的变化皆由框架/库内部自动完成。所以，要搞清楚两者的性能优劣，可能<strong>批量</strong>的 DOM 操作是一个不可忽略的核心因素。从代码执行的角度分析，框架/库也是基于原生 API 进行的封装抽象，因此代码执行时的路径更长、堆栈更深，由此可见原生 API 的操作性能应该是最高的。但是，现实情况是业务通常来说是复杂的，代码实现中 DOM 操作的逻辑分散在各处，那么多个 DOM 操作之间是否会产生影响从而不利于性能？这个时候就要关注宿主浏览器的渲染机制是如何理解批量的 DOM 操作的，这里引入的概念就是<strong>关键渲染路径（Critical rendering path）</strong>。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/web-performance-fastdom/">
+  <p class="mb-6"><p>TCP/IP 的网络接口层包括物理层和数据链路层，既是局域网（LAN）技术起作用的分层，又是广域网（WAN）技术和连接管理协议发挥作用的层次。</p>
+<!-- truncate -->
+<h3 id="局域网lan">局域网（LAN）</h3>
+<p>局域网（Local Area Network，LAN）是指一个局部的地理范围内（如一个学校、公司、单位），将各种计算机、外部设备和数据库等互相连接起来组成的计算机通信网。局域网通常是封闭的，但它可以通过数据通信网或专用数据电路，与远方的局域网、数据库或处理中心相连接，构成一个大范围的信息处理系统。局域网可以实现硬件资源（如服务器、打印机、扫描仪等）共享和软件资源（应用软件、文件管理等）共享，还可以实现办公自动化（如工作组内的日程安排、电子邮件和传真通信服务）等。</p>
+<h6 id="局域网协议标准">局域网协议标准</h6>
+<p>IEEE 802 是为了规范随着局域网技术进步而产生的种类繁多的局域网产品而制定的标准，有时也称为局域网参考模型。它包括 CSDM/CD、令牌总线和令牌环网等底层（物理层和数据链路层）网络协议。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/protocol/protocol-lan-wan/">
     Read More
   </a>
 </div>
@@ -1426,17 +1430,14 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/web-local-storage/">
-      Web 本地存储
+    <a href="/blog/computer-technology/nodejs/nodejs-spawn-vs-exec/">
+      Child process API: spawn vs exec
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>为了达到某些需求，我们通常需要在本地存储一些数据，方便我们进行用户个性化定制服务。</p>
-<!-- truncate -->
-<h3 id="web-存储">Web 存储</h3>
-<p>在互联网上，许多网站提供用户注册功能，因为 http 协议是个无状态的协议（无法记录客户端与服务器端状态），所以我们注册登录后每一次跳转网页都需要重新登陆。为了增强用户体验，我们不得不将状态信息保存下来，而 Web 存储技术则实现了该需求。Cookie 最多可在本地存储 4K 数据，出于安全性考虑， Cookie 中并非直接存储的是用户敏感数据（帐号、密码、个人信息等），而是一个状态 ID，该 ID 是服务器端利用 session 存储一个会话状态并分配给客户端用来进行状态识别的。因此，每一次的 http 请求都会带上 Cookie 数据发送给服务器端进行状态识别，从而达到状态保持的目的。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/web-local-storage/">
+  <p class="mb-6"><p>利用 Node.js 编写一些命令行工具、一次性脚本是很方便的，而在这类场景下 child_process API 的 <code>spawn</code> 和 <code>exec</code> 方法的应用则非常常见。在我使用它们时，却不知道该如何进行选择，遂对此进行了探究。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/nodejs/nodejs-spawn-vs-exec/">
     Read More
   </a>
 </div>
@@ -1448,22 +1449,43 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/dom/dom-select/">
-      DOM-选取元素节点
+    <a href="/blog/computer-technology/computer/computer-cpu-addressing-mode/">
+      CPU 的七种寻址方式
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>DOM 操作都是通过对文档树中节点的访问来实现的，如何选取特定的元素节点是关键，进而才能访问该元素节点实现修改、查看、移除、替换等操作。</p>
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors//">
+          <i class="fa-regular fa-circle-user mr-2"></i>
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/"
+            class="ms-1"
+            >计算机技术
+              ,
+            
+          </a>
+        
+          <a
+            href="/categories/cpu/"
+            class="ms-1"
+            >CPU
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>CPU 获取数据的方式不仅仅一种，多种方式也为不同数据的获取提供了不同的效率考量，保证了寻址效率与指令的灵活性。</p>
 <!-- truncate -->
-<h3 id="选取特定单一元素节点">选取特定单一元素节点</h3>
-<p>取得某一特定单一元素节点的引用最常用的方式如下：</p>
-<ul>
-<li>querySelector()</li>
-<li>getElementById()</li>
-</ul>
-<p>exp：</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-select/">
+<h3 id="cpu-寻址方式">CPU 寻址方式</h3>
+<p>数据一般均存储在外存(硬盘)中，在需要的时候，会将数据先从外存读入内存(存储器)中，然后 CPU 再直接从内存(缓存)中获取。获取的数据有时候会直接使用；而有时候会先存入 CPU 内部寄存器，稍后再从寄存器中获取。所以，CPU 获取数据的方式是多样化的。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/computer/computer-cpu-addressing-mode/">
     Read More
   </a>
 </div>

@@ -72,7 +72,6 @@
 
 
 
-  <base href="http:/blog/post-1/" />
 
 
 
@@ -161,8 +160,8 @@
       
       
       
-        <meta property="og:image" content="http:/images/image-placeholder.png" />
-        <meta name="twitter:image" content="http:/images/image-placeholder.png" />
+        <meta property="og:image" content="/images/image-placeholder.png" />
+        <meta name="twitter:image" content="/images/image-placeholder.png" />
         <meta
           name="twitter:card"
           content="summary_large_image" />
@@ -189,7 +188,7 @@
 <meta property="og:title" content="How to build an Application with modern Technology" />
 <meta property="og:description" content="this is meta description" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="http:/blog/post-1/" />
+<meta property="og:url" content="/blog/post-1/" />
 
 
 <meta name="twitter:title" content="How to build an Application with modern Technology" />
@@ -220,7 +219,7 @@
 
 
 <script>
-  let indexURL = "http:/searchindex.json";
+  let indexURL = "/searchindex.json";
   let includeSectionsInSearch = ["blog"];
   let search_no_results = "No results for";
   let search_initial_message = "Type something to search..";
@@ -1151,7 +1150,7 @@
   
     <a
       class="share-link share-facebook"
-      href="https://facebook.com/sharer/sharer.php?u=http%3a%2fblog%2fpost-1%2f"
+      href="https://facebook.com/sharer/sharer.php?u=%2fblog%2fpost-1%2f"
       target="_blank"
       rel="noopener"
       aria-label="share facebook">
@@ -1169,7 +1168,7 @@
   
     <a
       class="share-link share-twitter"
-      href="https://twitter.com/intent/tweet/?text=Share&amp;url=http%3a%2fblog%2fpost-1%2f"
+      href="https://twitter.com/intent/tweet/?text=Share&amp;url=%2fblog%2fpost-1%2f"
       target="_blank"
       rel="noopener"
       aria-label="share twitter">
@@ -1187,7 +1186,7 @@
   
     <a
       class="share-link share-email"
-      href="mailto:?subject=Share&amp;body=http%3a%2fblog%2fpost-1%2f"
+      href="mailto:?subject=Share&amp;body=%2fblog%2fpost-1%2f"
       target="_self"
       rel="noopener"
       aria-label="share email">
@@ -1205,7 +1204,7 @@
   
     <a
       class="share-link share-reddit"
-      href="https://reddit.com/submit/?url=http%3a%2fblog%2fpost-1%2f&amp;resubmit=true&amp;title=Share"
+      href="https://reddit.com/submit/?url=%2fblog%2fpost-1%2f&amp;resubmit=true&amp;title=Share"
       target="_blank"
       rel="noopener"
       aria-label="share reddit">
@@ -1286,8 +1285,27 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/computer/computer-cpu-addressing-mode/">
-      CPU 的七种寻址方式
+    <a href="/blog/computer-technology/nodejs/nodejs-fastify/">
+      Fastify - 专注于性能和低内存消耗
+    </a>
+  </h4>
+  
+  
+  <p class="mb-6"><p>最近在做 Node.js 技术相关的调研，需要选定一个 Web 框架作为基础来构建业务。一般来说，首选开源方案，对于我来说，比较关注框架背后的开发团队情况、项目活跃度、是否有足够多的商业案例、文档是否完整可读、框架的设计理念、技术架构是否灵活可扩展、技术社区生态是否完整等方面。目前，我比较倾心的是 Fastify 这个新兴框架，根据官网介绍，其专注于高性能和低消耗，并且公开的基准测试表现相当不错，项目足够活跃，更重要的是属于 OpenJS 基金会的孵化项目。本文主要介绍 Fastify 的设计理念和探究其是如何提高性能和降低内存消耗的。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/nodejs/nodejs-fastify/">
+    Read More
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/computer-technology/computer/computer-microprocessor-addressing-range/">
+      微处理器寻址范围
     </a>
   </h4>
   
@@ -1310,19 +1328,29 @@
           </a>
         
           <a
-            href="/categories/cpu/"
+            href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba/"
             class="ms-1"
-            >CPU
+            >计算机
+              ,
+            
+          </a>
+        
+          <a
+            href="/categories/mpu/"
+            class="ms-1"
+            >Mpu
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>CPU 获取数据的方式不仅仅一种，多种方式也为不同数据的获取提供了不同的效率考量，保证了寻址效率与指令的灵活性。</p>
+  <p class="mb-6"><p>在此之前，让我们带着下面这个问题来看这篇文章：<strong>64 位处理器所支持的最大内存(寻址范围)为多少？</strong></p>
 <!-- truncate -->
-<h3 id="cpu-寻址方式">CPU 寻址方式</h3>
-<p>数据一般均存储在外存(硬盘)中，在需要的时候，会将数据先从外存读入内存(存储器)中，然后 CPU 再直接从内存(缓存)中获取。获取的数据有时候会直接使用；而有时候会先存入 CPU 内部寄存器，稍后再从寄存器中获取。所以，CPU 获取数据的方式是多样化的。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/computer/computer-cpu-addressing-mode/">
+<h3 id="处理器">处理器</h3>
+<p>处理器（CPU）担负着整个计算机系统的核心任务执行责任，所以我们经常关心它的运算处理能力，也就是 CPU 的性能。</p>
+<h6 id="微处理器">微处理器</h6>
+<p>我们经常所说的 Inter、AMD 两大常见品牌厂商出售的桌面端的处理器称为处理器（CPU），而把移动端嵌入式系统中 ARM 架构的处理器称为微处理器（MPU）。事实上，几乎电子设备上均有微型处理器，例如路由器、智能家电等等，只不过以上所提到的离我们最近而且我们也最熟悉。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/computer/computer-microprocessor-addressing-range/">
     Read More
   </a>
 </div>
@@ -1334,36 +1362,18 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/tools/tools-vscode-sync/">
-      IDE：VS Code 配置同步
+    <a href="/blog/computer-technology/web/web-cross-domain/">
+      Web 前端跨域访问
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>利用一款插件来同步 VS Code 的配置到 GitHub 的 gist 上，实现多个设备间共享一套配置。</p>
+  <p class="mb-6"><p>为了用户的安全，浏览器通常都会限制跨域（Cross-domain）访问，也就是默认不允许不同域名下页面之间进行资源的传递和信息交互，但很多时候我们又有跨域请求资源的需求。</p>
 <!-- truncate -->
-<h3 id="vs-code">VS Code</h3>
-<p>Visual Studio Code 是由微软出品的一款轻量级编辑器，兼有部分 IDE 功能。在之前，Sublime Text 是最受欢迎的编辑器（开源），也为多数前端开发者所推崇，当然说到底它依然是个编辑器。随着时间的推移，GitHub 打造了自家的编辑器 Atom，微软的 VS Code 也横空出世，更有其它优秀的轻量级编辑器在市场上展开角逐。不过，到现在来看，VS Code 可能胜出了，已成为前端开发的利器。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/tools/tools-vscode-sync/">
-    Read More
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/computer-technology/tools/tools-git/">
-      使用 Git
-    </a>
-  </h4>
-  
-  
-  <p class="mb-6"><p>Git 是一个分布式的版本控制工具，类似的版本控制工具还有 SVN ；由于 GitHub 平台的盛行，也使得 git 更加受欢迎，在 Windows 平台使用 git 也是非常方便的。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/tools/tools-git/">
+<h3 id="同源策略">同源策略</h3>
+<p>我们要在地址栏中正确输入“协议”、“域名”、“端口”、“文件路径”才能访问一个页面，其中任意一个不正确就不会达到我们期望的结果。所谓的跨域就是当<strong>协议</strong>、<strong>域名</strong>、<strong>端口</strong>这三者有一个不同时即称为跨域访问，这时候浏览器为了用户安全就会限制 JavaScript 的跨域行为，这也叫做同源策略（由网景公司提出）。</p>
+<p>通常一个公司（组织、团队）会申请一个主域名，然后根据服务类型分出多个二级域名，在某些涉及到敏感信息的页面又会采用 HTTPS 协议加密，或许还有更多的类似需求，这些需求大多都需要跨域共享资源才能实现用户的定制服务。所以，跨域访问不是个能避免的问题，在不破坏浏览器安全性的前提下我们需要去解决它。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/web-cross-domain/">
     Read More
   </a>
 </div>

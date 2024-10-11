@@ -2,23 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Pages on 技术之心</title>
-    <link>http:/pages/</link>
+    <link>/pages/</link>
     <description>Recent content in Pages on 技术之心</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http:/pages/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/pages/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Elements</title>
-      <link>http:/elements/</link>
+      <link>/elements/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http:/elements/</guid>
+      <guid>/elements/</guid>
       <description>&lt;details class=&#34;table-of-content &#34;&gt;&#xA;  &lt;summary&gt;&#xA;    &#xA;      Table of Contents&#xA;    &#xA;  &lt;/summary&gt;&#xA;  &lt;nav id=&#34;TableOfContents&#34;&gt;&#xA;  &lt;ol&gt;&#xA;    &lt;li&gt;&#xA;      &lt;ol&gt;&#xA;        &lt;li&gt;&#xA;          &lt;ol&gt;&#xA;            &lt;li&gt;&#xA;              &lt;ol&gt;&#xA;                &lt;li&gt;&lt;/li&gt;&#xA;              &lt;/ol&gt;&#xA;            &lt;/li&gt;&#xA;          &lt;/ol&gt;&#xA;        &lt;/li&gt;&#xA;      &lt;/ol&gt;&#xA;    &lt;/li&gt;&#xA;  &lt;/ol&gt;&#xA;&lt;/nav&gt;&#xA;&lt;/details&gt;&#xA;&#xA;&lt;p&gt;Here is an example of headings. You can use this heading by the following markdown rules. For example: use &lt;code&gt;#&lt;/code&gt; for heading 1 and use &lt;code&gt;####################################&lt;/code&gt; for heading 6.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Privacy</title>
-      <link>http:/privacy-policy/</link>
+      <link>/privacy-policy/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http:/privacy-policy/</guid>
+      <guid>/privacy-policy/</guid>
       <description>&lt;p&gt;######################## Responsibility of Contributors&lt;/p&gt;&#xA;&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus, donec nunc eros, ullamcorper id feugiat quisque aliquam sagittis. Sem turpis sed viverra massa gravida pharetra. Non dui dolor potenti eu dignissim fusce. Ultrices amet, in curabitur a arcu a lectus morbi id. Iaculis erat sagittis in tortor cursus. Molestie urna eu tortor, erat scelerisque eget. Nunc hendrerit sed interdum lacus. Lorem quis viverra sed&lt;/p&gt;</description>
     </item>
   </channel>

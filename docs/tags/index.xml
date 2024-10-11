@@ -2,570 +2,570 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on 技术之心</title>
-    <link>http:/tags/</link>
+    <link>/tags/</link>
     <description>Recent content in Tags on 技术之心</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 16 Oct 2022 23:49:00 -0400</lastBuildDate>
-    <atom:link href="http:/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Web</title>
-      <link>http:/tags/web/</link>
+      <link>/tags/web/</link>
       <pubDate>Sun, 16 Oct 2022 23:49:00 -0400</pubDate>
-      <guid>http:/tags/web/</guid>
+      <guid>/tags/web/</guid>
       <description></description>
     </item>
     <item>
       <title>Web 前端</title>
-      <link>http:/tags/web-%E5%89%8D%E7%AB%AF/</link>
+      <link>/tags/web-%E5%89%8D%E7%AB%AF/</link>
       <pubDate>Sun, 16 Oct 2022 23:49:00 -0400</pubDate>
-      <guid>http:/tags/web-%E5%89%8D%E7%AB%AF/</guid>
+      <guid>/tags/web-%E5%89%8D%E7%AB%AF/</guid>
       <description></description>
     </item>
     <item>
       <title>计算机技术</title>
-      <link>http:/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/</link>
+      <link>/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/</link>
       <pubDate>Sun, 16 Oct 2022 23:49:00 -0400</pubDate>
-      <guid>http:/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/</guid>
+      <guid>/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/</guid>
       <description></description>
     </item>
     <item>
       <title>TypeScript</title>
-      <link>http:/tags/typescript/</link>
+      <link>/tags/typescript/</link>
       <pubDate>Sat, 06 Aug 2022 17:33:00 -0400</pubDate>
-      <guid>http:/tags/typescript/</guid>
+      <guid>/tags/typescript/</guid>
       <description></description>
     </item>
     <item>
       <title>工具</title>
-      <link>http:/tags/%E5%B7%A5%E5%85%B7/</link>
+      <link>/tags/%E5%B7%A5%E5%85%B7/</link>
       <pubDate>Sat, 06 Aug 2022 17:33:00 -0400</pubDate>
-      <guid>http:/tags/%E5%B7%A5%E5%85%B7/</guid>
+      <guid>/tags/%E5%B7%A5%E5%85%B7/</guid>
       <description></description>
     </item>
     <item>
       <title>类型定义</title>
-      <link>http:/tags/%E7%B1%BB%E5%9E%8B%E5%AE%9A%E4%B9%89/</link>
+      <link>/tags/%E7%B1%BB%E5%9E%8B%E5%AE%9A%E4%B9%89/</link>
       <pubDate>Sat, 06 Aug 2022 17:33:00 -0400</pubDate>
-      <guid>http:/tags/%E7%B1%BB%E5%9E%8B%E5%AE%9A%E4%B9%89/</guid>
+      <guid>/tags/%E7%B1%BB%E5%9E%8B%E5%AE%9A%E4%B9%89/</guid>
       <description></description>
     </item>
     <item>
       <title>构建工具链</title>
-      <link>http:/tags/%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7%E9%93%BE/</link>
+      <link>/tags/%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7%E9%93%BE/</link>
       <pubDate>Mon, 01 Aug 2022 21:07:00 -0400</pubDate>
-      <guid>http:/tags/%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7%E9%93%BE/</guid>
+      <guid>/tags/%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7%E9%93%BE/</guid>
       <description></description>
     </item>
     <item>
       <title>程序架构设计</title>
-      <link>http:/tags/%E7%A8%8B%E5%BA%8F%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/</link>
+      <link>/tags/%E7%A8%8B%E5%BA%8F%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/</link>
       <pubDate>Sun, 12 Jun 2022 22:22:00 -0400</pubDate>
-      <guid>http:/tags/%E7%A8%8B%E5%BA%8F%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/</guid>
+      <guid>/tags/%E7%A8%8B%E5%BA%8F%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/</guid>
       <description></description>
     </item>
     <item>
       <title>开源</title>
-      <link>http:/tags/%E5%BC%80%E6%BA%90/</link>
+      <link>/tags/%E5%BC%80%E6%BA%90/</link>
       <pubDate>Fri, 22 Apr 2022 22:53:00 -0400</pubDate>
-      <guid>http:/tags/%E5%BC%80%E6%BA%90/</guid>
+      <guid>/tags/%E5%BC%80%E6%BA%90/</guid>
       <description></description>
     </item>
     <item>
       <title>项目管理</title>
-      <link>http:/tags/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/</link>
+      <link>/tags/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/</link>
       <pubDate>Fri, 22 Apr 2022 22:53:00 -0400</pubDate>
-      <guid>http:/tags/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/</guid>
+      <guid>/tags/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/</guid>
       <description></description>
     </item>
     <item>
       <title>Nextjs</title>
-      <link>http:/tags/nextjs/</link>
+      <link>/tags/nextjs/</link>
       <pubDate>Mon, 04 Apr 2022 05:00:00 +0000</pubDate>
-      <guid>http:/tags/nextjs/</guid>
+      <guid>/tags/nextjs/</guid>
       <description></description>
     </item>
     <item>
       <title>Silicon</title>
-      <link>http:/tags/silicon/</link>
+      <link>/tags/silicon/</link>
       <pubDate>Mon, 04 Apr 2022 05:00:00 +0000</pubDate>
-      <guid>http:/tags/silicon/</guid>
+      <guid>/tags/silicon/</guid>
       <description></description>
     </item>
     <item>
       <title>Software</title>
-      <link>http:/tags/software/</link>
+      <link>/tags/software/</link>
       <pubDate>Mon, 04 Apr 2022 05:00:00 +0000</pubDate>
-      <guid>http:/tags/software/</guid>
+      <guid>/tags/software/</guid>
       <description></description>
     </item>
     <item>
       <title>Tailwind</title>
-      <link>http:/tags/tailwind/</link>
+      <link>/tags/tailwind/</link>
       <pubDate>Mon, 04 Apr 2022 05:00:00 +0000</pubDate>
-      <guid>http:/tags/tailwind/</guid>
+      <guid>/tags/tailwind/</guid>
       <description></description>
     </item>
     <item>
       <title>Technology</title>
-      <link>http:/tags/technology/</link>
+      <link>/tags/technology/</link>
       <pubDate>Mon, 04 Apr 2022 05:00:00 +0000</pubDate>
-      <guid>http:/tags/technology/</guid>
+      <guid>/tags/technology/</guid>
       <description></description>
     </item>
     <item>
       <title>Polyfill</title>
-      <link>http:/tags/polyfill/</link>
+      <link>/tags/polyfill/</link>
       <pubDate>Tue, 07 Dec 2021 01:13:00 -0500</pubDate>
-      <guid>http:/tags/polyfill/</guid>
+      <guid>/tags/polyfill/</guid>
       <description></description>
     </item>
     <item>
       <title>Debug</title>
-      <link>http:/tags/debug/</link>
+      <link>/tags/debug/</link>
       <pubDate>Sun, 28 Nov 2021 22:31:00 -0500</pubDate>
-      <guid>http:/tags/debug/</guid>
+      <guid>/tags/debug/</guid>
       <description></description>
     </item>
     <item>
       <title>SourceMap</title>
-      <link>http:/tags/sourcemap/</link>
+      <link>/tags/sourcemap/</link>
       <pubDate>Sun, 28 Nov 2021 22:31:00 -0500</pubDate>
-      <guid>http:/tags/sourcemap/</guid>
+      <guid>/tags/sourcemap/</guid>
       <description></description>
     </item>
     <item>
       <title>React.js</title>
-      <link>http:/tags/react.js/</link>
+      <link>/tags/react.js/</link>
       <pubDate>Thu, 18 Nov 2021 00:14:00 -0500</pubDate>
-      <guid>http:/tags/react.js/</guid>
+      <guid>/tags/react.js/</guid>
       <description></description>
     </item>
     <item>
       <title>应用状态管理</title>
-      <link>http:/tags/%E5%BA%94%E7%94%A8%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86/</link>
+      <link>/tags/%E5%BA%94%E7%94%A8%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86/</link>
       <pubDate>Thu, 18 Nov 2021 00:14:00 -0500</pubDate>
-      <guid>http:/tags/%E5%BA%94%E7%94%A8%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86/</guid>
+      <guid>/tags/%E5%BA%94%E7%94%A8%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86/</guid>
       <description></description>
     </item>
     <item>
       <title>DOM</title>
-      <link>http:/tags/dom/</link>
+      <link>/tags/dom/</link>
       <pubDate>Mon, 04 Oct 2021 00:06:00 -0400</pubDate>
-      <guid>http:/tags/dom/</guid>
+      <guid>/tags/dom/</guid>
       <description></description>
     </item>
     <item>
       <title>FastDOM</title>
-      <link>http:/tags/fastdom/</link>
+      <link>/tags/fastdom/</link>
       <pubDate>Mon, 04 Oct 2021 00:06:00 -0400</pubDate>
-      <guid>http:/tags/fastdom/</guid>
+      <guid>/tags/fastdom/</guid>
       <description></description>
     </item>
     <item>
       <title>性能优化</title>
-      <link>http:/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/</link>
+      <link>/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/</link>
       <pubDate>Mon, 04 Oct 2021 00:06:00 -0400</pubDate>
-      <guid>http:/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/</guid>
+      <guid>/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/</guid>
       <description></description>
     </item>
     <item>
       <title>案例分析</title>
-      <link>http:/tags/%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90/</link>
+      <link>/tags/%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90/</link>
       <pubDate>Fri, 24 Sep 2021 00:51:00 -0400</pubDate>
-      <guid>http:/tags/%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90/</guid>
+      <guid>/tags/%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90/</guid>
       <description></description>
     </item>
     <item>
       <title>Child_process</title>
-      <link>http:/tags/child_process/</link>
+      <link>/tags/child_process/</link>
       <pubDate>Wed, 25 Aug 2021 00:21:00 -0400</pubDate>
-      <guid>http:/tags/child_process/</guid>
+      <guid>/tags/child_process/</guid>
       <description></description>
     </item>
     <item>
       <title>Exec</title>
-      <link>http:/tags/exec/</link>
+      <link>/tags/exec/</link>
       <pubDate>Wed, 25 Aug 2021 00:21:00 -0400</pubDate>
-      <guid>http:/tags/exec/</guid>
+      <guid>/tags/exec/</guid>
       <description></description>
     </item>
     <item>
       <title>Node.js</title>
-      <link>http:/tags/node.js/</link>
+      <link>/tags/node.js/</link>
       <pubDate>Wed, 25 Aug 2021 00:21:00 -0400</pubDate>
-      <guid>http:/tags/node.js/</guid>
+      <guid>/tags/node.js/</guid>
       <description></description>
     </item>
     <item>
       <title>Spawn</title>
-      <link>http:/tags/spawn/</link>
+      <link>/tags/spawn/</link>
       <pubDate>Wed, 25 Aug 2021 00:21:00 -0400</pubDate>
-      <guid>http:/tags/spawn/</guid>
+      <guid>/tags/spawn/</guid>
       <description></description>
     </item>
     <item>
       <title>Jest</title>
-      <link>http:/tags/jest/</link>
+      <link>/tags/jest/</link>
       <pubDate>Sun, 15 Aug 2021 14:54:00 -0400</pubDate>
-      <guid>http:/tags/jest/</guid>
+      <guid>/tags/jest/</guid>
       <description></description>
     </item>
     <item>
       <title>Puppeteer</title>
-      <link>http:/tags/puppeteer/</link>
+      <link>/tags/puppeteer/</link>
       <pubDate>Sun, 15 Aug 2021 14:54:00 -0400</pubDate>
-      <guid>http:/tags/puppeteer/</guid>
+      <guid>/tags/puppeteer/</guid>
       <description></description>
     </item>
     <item>
       <title>测试</title>
-      <link>http:/tags/%E6%B5%8B%E8%AF%95/</link>
+      <link>/tags/%E6%B5%8B%E8%AF%95/</link>
       <pubDate>Sun, 15 Aug 2021 14:54:00 -0400</pubDate>
-      <guid>http:/tags/%E6%B5%8B%E8%AF%95/</guid>
+      <guid>/tags/%E6%B5%8B%E8%AF%95/</guid>
       <description></description>
     </item>
     <item>
       <title>核心概念</title>
-      <link>http:/tags/%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5/</link>
+      <link>/tags/%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5/</link>
       <pubDate>Mon, 19 Jul 2021 00:51:00 -0400</pubDate>
-      <guid>http:/tags/%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5/</guid>
+      <guid>/tags/%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5/</guid>
       <description></description>
     </item>
     <item>
       <title>Fastify</title>
-      <link>http:/tags/fastify/</link>
+      <link>/tags/fastify/</link>
       <pubDate>Sun, 27 Jun 2021 16:28:00 -0400</pubDate>
-      <guid>http:/tags/fastify/</guid>
+      <guid>/tags/fastify/</guid>
       <description></description>
     </item>
     <item>
       <title>JavaScript</title>
-      <link>http:/tags/javascript/</link>
+      <link>/tags/javascript/</link>
       <pubDate>Sun, 27 Jun 2021 16:28:00 -0400</pubDate>
-      <guid>http:/tags/javascript/</guid>
+      <guid>/tags/javascript/</guid>
       <description></description>
     </item>
     <item>
       <title>Web 后端</title>
-      <link>http:/tags/web-%E5%90%8E%E7%AB%AF/</link>
+      <link>/tags/web-%E5%90%8E%E7%AB%AF/</link>
       <pubDate>Sun, 27 Jun 2021 16:28:00 -0400</pubDate>
-      <guid>http:/tags/web-%E5%90%8E%E7%AB%AF/</guid>
+      <guid>/tags/web-%E5%90%8E%E7%AB%AF/</guid>
       <description></description>
     </item>
     <item>
       <title>编程语言</title>
-      <link>http:/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/</link>
+      <link>/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/</link>
       <pubDate>Sun, 02 May 2021 17:03:00 -0400</pubDate>
-      <guid>http:/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/</guid>
+      <guid>/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/</guid>
       <description></description>
     </item>
     <item>
       <title>节流与防抖</title>
-      <link>http:/tags/%E8%8A%82%E6%B5%81%E4%B8%8E%E9%98%B2%E6%8A%96/</link>
+      <link>/tags/%E8%8A%82%E6%B5%81%E4%B8%8E%E9%98%B2%E6%8A%96/</link>
       <pubDate>Sun, 25 Apr 2021 22:56:00 -0400</pubDate>
-      <guid>http:/tags/%E8%8A%82%E6%B5%81%E4%B8%8E%E9%98%B2%E6%8A%96/</guid>
+      <guid>/tags/%E8%8A%82%E6%B5%81%E4%B8%8E%E9%98%B2%E6%8A%96/</guid>
       <description></description>
     </item>
     <item>
       <title>Npm</title>
-      <link>http:/tags/npm/</link>
+      <link>/tags/npm/</link>
       <pubDate>Sat, 06 Jul 2019 15:43:00 -0400</pubDate>
-      <guid>http:/tags/npm/</guid>
+      <guid>/tags/npm/</guid>
       <description></description>
     </item>
     <item>
       <title>IDE</title>
-      <link>http:/tags/ide/</link>
+      <link>/tags/ide/</link>
       <pubDate>Wed, 15 Aug 2018 16:42:00 -0400</pubDate>
-      <guid>http:/tags/ide/</guid>
+      <guid>/tags/ide/</guid>
       <description></description>
     </item>
     <item>
       <title>VS Code</title>
-      <link>http:/tags/vs-code/</link>
+      <link>/tags/vs-code/</link>
       <pubDate>Wed, 15 Aug 2018 16:42:00 -0400</pubDate>
-      <guid>http:/tags/vs-code/</guid>
+      <guid>/tags/vs-code/</guid>
       <description></description>
     </item>
     <item>
       <title>编辑器</title>
-      <link>http:/tags/%E7%BC%96%E8%BE%91%E5%99%A8/</link>
+      <link>/tags/%E7%BC%96%E8%BE%91%E5%99%A8/</link>
       <pubDate>Wed, 15 Aug 2018 16:42:00 -0400</pubDate>
-      <guid>http:/tags/%E7%BC%96%E8%BE%91%E5%99%A8/</guid>
+      <guid>/tags/%E7%BC%96%E8%BE%91%E5%99%A8/</guid>
       <description></description>
     </item>
     <item>
       <title>配置同步</title>
-      <link>http:/tags/%E9%85%8D%E7%BD%AE%E5%90%8C%E6%AD%A5/</link>
+      <link>/tags/%E9%85%8D%E7%BD%AE%E5%90%8C%E6%AD%A5/</link>
       <pubDate>Wed, 15 Aug 2018 16:42:00 -0400</pubDate>
-      <guid>http:/tags/%E9%85%8D%E7%BD%AE%E5%90%8C%E6%AD%A5/</guid>
+      <guid>/tags/%E9%85%8D%E7%BD%AE%E5%90%8C%E6%AD%A5/</guid>
       <description></description>
     </item>
     <item>
       <title>SPA</title>
-      <link>http:/tags/spa/</link>
+      <link>/tags/spa/</link>
       <pubDate>Wed, 25 Oct 2017 00:51:00 -0400</pubDate>
-      <guid>http:/tags/spa/</guid>
+      <guid>/tags/spa/</guid>
       <description></description>
     </item>
     <item>
       <title>路由</title>
-      <link>http:/tags/%E8%B7%AF%E7%94%B1/</link>
+      <link>/tags/%E8%B7%AF%E7%94%B1/</link>
       <pubDate>Wed, 25 Oct 2017 00:51:00 -0400</pubDate>
-      <guid>http:/tags/%E8%B7%AF%E7%94%B1/</guid>
+      <guid>/tags/%E8%B7%AF%E7%94%B1/</guid>
       <description></description>
     </item>
     <item>
       <title>Java</title>
-      <link>http:/tags/java/</link>
+      <link>/tags/java/</link>
       <pubDate>Wed, 30 Aug 2017 23:42:00 -0400</pubDate>
-      <guid>http:/tags/java/</guid>
+      <guid>/tags/java/</guid>
       <description></description>
     </item>
     <item>
       <title>JUnit4</title>
-      <link>http:/tags/junit4/</link>
+      <link>/tags/junit4/</link>
       <pubDate>Wed, 30 Aug 2017 23:42:00 -0400</pubDate>
-      <guid>http:/tags/junit4/</guid>
+      <guid>/tags/junit4/</guid>
       <description></description>
     </item>
     <item>
       <title>单元测试</title>
-      <link>http:/tags/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</link>
+      <link>/tags/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</link>
       <pubDate>Wed, 30 Aug 2017 23:42:00 -0400</pubDate>
-      <guid>http:/tags/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</guid>
+      <guid>/tags/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</guid>
       <description></description>
     </item>
     <item>
       <title>异步编程</title>
-      <link>http:/tags/%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/</link>
+      <link>/tags/%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/</link>
       <pubDate>Wed, 22 Mar 2017 15:48:00 -0400</pubDate>
-      <guid>http:/tags/%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/</guid>
+      <guid>/tags/%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/</guid>
       <description></description>
     </item>
     <item>
       <title>Git</title>
-      <link>http:/tags/git/</link>
+      <link>/tags/git/</link>
       <pubDate>Sat, 31 Dec 2016 13:49:00 -0500</pubDate>
-      <guid>http:/tags/git/</guid>
+      <guid>/tags/git/</guid>
       <description></description>
     </item>
     <item>
       <title>技巧</title>
-      <link>http:/tags/%E6%8A%80%E5%B7%A7/</link>
+      <link>/tags/%E6%8A%80%E5%B7%A7/</link>
       <pubDate>Sat, 20 Aug 2016 19:06:00 -0400</pubDate>
-      <guid>http:/tags/%E6%8A%80%E5%B7%A7/</guid>
+      <guid>/tags/%E6%8A%80%E5%B7%A7/</guid>
       <description></description>
     </item>
     <item>
       <title>安全</title>
-      <link>http:/tags/%E5%AE%89%E5%85%A8/</link>
+      <link>/tags/%E5%AE%89%E5%85%A8/</link>
       <pubDate>Wed, 10 Aug 2016 15:18:00 -0400</pubDate>
-      <guid>http:/tags/%E5%AE%89%E5%85%A8/</guid>
+      <guid>/tags/%E5%AE%89%E5%85%A8/</guid>
       <description></description>
     </item>
     <item>
       <title>跨域</title>
-      <link>http:/tags/%E8%B7%A8%E5%9F%9F/</link>
+      <link>/tags/%E8%B7%A8%E5%9F%9F/</link>
       <pubDate>Wed, 10 Aug 2016 15:18:00 -0400</pubDate>
-      <guid>http:/tags/%E8%B7%A8%E5%9F%9F/</guid>
+      <guid>/tags/%E8%B7%A8%E5%9F%9F/</guid>
       <description></description>
     </item>
     <item>
       <title>BFC</title>
-      <link>http:/tags/bfc/</link>
+      <link>/tags/bfc/</link>
       <pubDate>Fri, 22 Jul 2016 16:35:00 -0400</pubDate>
-      <guid>http:/tags/bfc/</guid>
+      <guid>/tags/bfc/</guid>
       <description></description>
     </item>
     <item>
       <title>CSS</title>
-      <link>http:/tags/css/</link>
+      <link>/tags/css/</link>
       <pubDate>Fri, 22 Jul 2016 16:35:00 -0400</pubDate>
-      <guid>http:/tags/css/</guid>
+      <guid>/tags/css/</guid>
       <description></description>
     </item>
     <item>
       <title>HTTP</title>
-      <link>http:/tags/http/</link>
+      <link>/tags/http/</link>
       <pubDate>Fri, 24 Jun 2016 14:59:00 -0400</pubDate>
-      <guid>http:/tags/http/</guid>
+      <guid>/tags/http/</guid>
       <description></description>
     </item>
     <item>
       <title>协议</title>
-      <link>http:/tags/%E5%8D%8F%E8%AE%AE/</link>
+      <link>/tags/%E5%8D%8F%E8%AE%AE/</link>
       <pubDate>Fri, 24 Jun 2016 14:59:00 -0400</pubDate>
-      <guid>http:/tags/%E5%8D%8F%E8%AE%AE/</guid>
+      <guid>/tags/%E5%8D%8F%E8%AE%AE/</guid>
       <description></description>
     </item>
     <item>
       <title>IP</title>
-      <link>http:/tags/ip/</link>
+      <link>/tags/ip/</link>
       <pubDate>Thu, 23 Jun 2016 18:02:00 -0400</pubDate>
-      <guid>http:/tags/ip/</guid>
+      <guid>/tags/ip/</guid>
       <description></description>
     </item>
     <item>
       <title>TCP</title>
-      <link>http:/tags/tcp/</link>
+      <link>/tags/tcp/</link>
       <pubDate>Mon, 20 Jun 2016 17:21:00 -0400</pubDate>
-      <guid>http:/tags/tcp/</guid>
+      <guid>/tags/tcp/</guid>
       <description></description>
     </item>
     <item>
       <title>UDP</title>
-      <link>http:/tags/udp/</link>
+      <link>/tags/udp/</link>
       <pubDate>Mon, 20 Jun 2016 17:21:00 -0400</pubDate>
-      <guid>http:/tags/udp/</guid>
+      <guid>/tags/udp/</guid>
       <description></description>
     </item>
     <item>
       <title>LAN</title>
-      <link>http:/tags/lan/</link>
+      <link>/tags/lan/</link>
       <pubDate>Sat, 18 Jun 2016 18:22:00 -0400</pubDate>
-      <guid>http:/tags/lan/</guid>
+      <guid>/tags/lan/</guid>
       <description></description>
     </item>
     <item>
       <title>WAN</title>
-      <link>http:/tags/wan/</link>
+      <link>/tags/wan/</link>
       <pubDate>Sat, 18 Jun 2016 18:22:00 -0400</pubDate>
-      <guid>http:/tags/wan/</guid>
+      <guid>/tags/wan/</guid>
       <description></description>
     </item>
     <item>
       <title>关键概念</title>
-      <link>http:/tags/%E5%85%B3%E9%94%AE%E6%A6%82%E5%BF%B5/</link>
+      <link>/tags/%E5%85%B3%E9%94%AE%E6%A6%82%E5%BF%B5/</link>
       <pubDate>Sat, 18 Jun 2016 16:17:00 -0400</pubDate>
-      <guid>http:/tags/%E5%85%B3%E9%94%AE%E6%A6%82%E5%BF%B5/</guid>
+      <guid>/tags/%E5%85%B3%E9%94%AE%E6%A6%82%E5%BF%B5/</guid>
       <description></description>
     </item>
     <item>
       <title>OSI</title>
-      <link>http:/tags/osi/</link>
+      <link>/tags/osi/</link>
       <pubDate>Fri, 17 Jun 2016 17:39:00 -0400</pubDate>
-      <guid>http:/tags/osi/</guid>
+      <guid>/tags/osi/</guid>
       <description></description>
     </item>
     <item>
       <title>TCP/IP</title>
-      <link>http:/tags/tcp/ip/</link>
+      <link>/tags/tcp/ip/</link>
       <pubDate>Fri, 17 Jun 2016 17:39:00 -0400</pubDate>
-      <guid>http:/tags/tcp/ip/</guid>
+      <guid>/tags/tcp/ip/</guid>
       <description></description>
     </item>
     <item>
       <title>Cookie</title>
-      <link>http:/tags/cookie/</link>
+      <link>/tags/cookie/</link>
       <pubDate>Wed, 01 Jun 2016 01:00:00 -0400</pubDate>
-      <guid>http:/tags/cookie/</guid>
+      <guid>/tags/cookie/</guid>
       <description></description>
     </item>
     <item>
       <title>LocalStorage</title>
-      <link>http:/tags/localstorage/</link>
+      <link>/tags/localstorage/</link>
       <pubDate>Wed, 01 Jun 2016 01:00:00 -0400</pubDate>
-      <guid>http:/tags/localstorage/</guid>
+      <guid>/tags/localstorage/</guid>
       <description></description>
     </item>
     <item>
       <title>SessionStorage</title>
-      <link>http:/tags/sessionstorage/</link>
+      <link>/tags/sessionstorage/</link>
       <pubDate>Wed, 01 Jun 2016 01:00:00 -0400</pubDate>
-      <guid>http:/tags/sessionstorage/</guid>
+      <guid>/tags/sessionstorage/</guid>
       <description></description>
     </item>
     <item>
       <title>Text Node</title>
-      <link>http:/tags/text-node/</link>
+      <link>/tags/text-node/</link>
       <pubDate>Tue, 24 May 2016 21:50:00 -0400</pubDate>
-      <guid>http:/tags/text-node/</guid>
+      <guid>/tags/text-node/</guid>
       <description></description>
     </item>
     <item>
       <title>Fragment</title>
-      <link>http:/tags/fragment/</link>
+      <link>/tags/fragment/</link>
       <pubDate>Mon, 23 May 2016 13:10:00 -0400</pubDate>
-      <guid>http:/tags/fragment/</guid>
+      <guid>/tags/fragment/</guid>
       <description></description>
     </item>
     <item>
       <title>Event</title>
-      <link>http:/tags/event/</link>
+      <link>/tags/event/</link>
       <pubDate>Mon, 23 May 2016 12:18:00 -0400</pubDate>
-      <guid>http:/tags/event/</guid>
+      <guid>/tags/event/</guid>
       <description></description>
     </item>
     <item>
       <title>Attribute</title>
-      <link>http:/tags/attribute/</link>
+      <link>/tags/attribute/</link>
       <pubDate>Sat, 21 May 2016 21:00:00 -0400</pubDate>
-      <guid>http:/tags/attribute/</guid>
+      <guid>/tags/attribute/</guid>
       <description></description>
     </item>
     <item>
       <title>Float</title>
-      <link>http:/tags/float/</link>
+      <link>/tags/float/</link>
       <pubDate>Sat, 21 May 2016 18:25:00 -0400</pubDate>
-      <guid>http:/tags/float/</guid>
+      <guid>/tags/float/</guid>
       <description></description>
     </item>
     <item>
       <title>Rule</title>
-      <link>http:/tags/rule/</link>
+      <link>/tags/rule/</link>
       <pubDate>Thu, 19 May 2016 14:54:00 -0400</pubDate>
-      <guid>http:/tags/rule/</guid>
+      <guid>/tags/rule/</guid>
       <description></description>
     </item>
     <item>
       <title>Sublime Text</title>
-      <link>http:/tags/sublime-text/</link>
+      <link>/tags/sublime-text/</link>
       <pubDate>Thu, 19 May 2016 13:38:00 -0400</pubDate>
-      <guid>http:/tags/sublime-text/</guid>
+      <guid>/tags/sublime-text/</guid>
       <description></description>
     </item>
     <item>
       <title>插件</title>
-      <link>http:/tags/%E6%8F%92%E4%BB%B6/</link>
+      <link>/tags/%E6%8F%92%E4%BB%B6/</link>
       <pubDate>Thu, 19 May 2016 13:38:00 -0400</pubDate>
-      <guid>http:/tags/%E6%8F%92%E4%BB%B6/</guid>
+      <guid>/tags/%E6%8F%92%E4%BB%B6/</guid>
       <description></description>
     </item>
     <item>
       <title>Vim</title>
-      <link>http:/tags/vim/</link>
+      <link>/tags/vim/</link>
       <pubDate>Wed, 18 May 2016 12:55:00 -0400</pubDate>
-      <guid>http:/tags/vim/</guid>
+      <guid>/tags/vim/</guid>
       <description></description>
     </item>
     <item>
       <title>NodeList</title>
-      <link>http:/tags/nodelist/</link>
+      <link>/tags/nodelist/</link>
       <pubDate>Tue, 17 May 2016 22:30:00 -0400</pubDate>
-      <guid>http:/tags/nodelist/</guid>
+      <guid>/tags/nodelist/</guid>
       <description></description>
     </item>
     <item>
       <title>Selector</title>
-      <link>http:/tags/selector/</link>
+      <link>/tags/selector/</link>
       <pubDate>Tue, 17 May 2016 22:10:00 -0400</pubDate>
-      <guid>http:/tags/selector/</guid>
+      <guid>/tags/selector/</guid>
       <description></description>
     </item>
     <item>
       <title>Element Node</title>
-      <link>http:/tags/element-node/</link>
+      <link>/tags/element-node/</link>
       <pubDate>Tue, 17 May 2016 13:19:00 -0400</pubDate>
-      <guid>http:/tags/element-node/</guid>
+      <guid>/tags/element-node/</guid>
       <description></description>
     </item>
     <item>
       <title>BOM</title>
-      <link>http:/tags/bom/</link>
+      <link>/tags/bom/</link>
       <pubDate>Sun, 15 May 2016 12:02:00 -0400</pubDate>
-      <guid>http:/tags/bom/</guid>
+      <guid>/tags/bom/</guid>
       <description></description>
     </item>
   </channel>

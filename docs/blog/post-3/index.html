@@ -72,7 +72,6 @@
 
 
 
-  <base href="http:/blog/post-3/" />
 
 
 
@@ -161,8 +160,8 @@
       
       
       
-        <meta property="og:image" content="http:/images/image-placeholder.png" />
-        <meta name="twitter:image" content="http:/images/image-placeholder.png" />
+        <meta property="og:image" content="/images/image-placeholder.png" />
+        <meta name="twitter:image" content="/images/image-placeholder.png" />
         <meta
           name="twitter:card"
           content="summary_large_image" />
@@ -189,7 +188,7 @@
 <meta property="og:title" content="How to build an Application with modern Technology" />
 <meta property="og:description" content="this is meta description" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="http:/blog/post-3/" />
+<meta property="og:url" content="/blog/post-3/" />
 
 
 <meta name="twitter:title" content="How to build an Application with modern Technology" />
@@ -220,7 +219,7 @@
 
 
 <script>
-  let indexURL = "http:/searchindex.json";
+  let indexURL = "/searchindex.json";
   let includeSectionsInSearch = ["blog"];
   let search_no_results = "No results for";
   let search_initial_message = "Type something to search..";
@@ -1143,7 +1142,7 @@
   
     <a
       class="share-link share-facebook"
-      href="https://facebook.com/sharer/sharer.php?u=http%3a%2fblog%2fpost-3%2f"
+      href="https://facebook.com/sharer/sharer.php?u=%2fblog%2fpost-3%2f"
       target="_blank"
       rel="noopener"
       aria-label="share facebook">
@@ -1161,7 +1160,7 @@
   
     <a
       class="share-link share-twitter"
-      href="https://twitter.com/intent/tweet/?text=Share&amp;url=http%3a%2fblog%2fpost-3%2f"
+      href="https://twitter.com/intent/tweet/?text=Share&amp;url=%2fblog%2fpost-3%2f"
       target="_blank"
       rel="noopener"
       aria-label="share twitter">
@@ -1179,7 +1178,7 @@
   
     <a
       class="share-link share-email"
-      href="mailto:?subject=Share&amp;body=http%3a%2fblog%2fpost-3%2f"
+      href="mailto:?subject=Share&amp;body=%2fblog%2fpost-3%2f"
       target="_self"
       rel="noopener"
       aria-label="share email">
@@ -1197,7 +1196,7 @@
   
     <a
       class="share-link share-reddit"
-      href="https://reddit.com/submit/?url=http%3a%2fblog%2fpost-3%2f&amp;resubmit=true&amp;title=Share"
+      href="https://reddit.com/submit/?url=%2fblog%2fpost-3%2f&amp;resubmit=true&amp;title=Share"
       target="_blank"
       rel="noopener"
       aria-label="share reddit">
@@ -1278,14 +1277,19 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/tools/tools-git/">
-      使用 Git
+    <a href="/blog/computer-technology/protocol/protocol-lan-wan/">
+      局域网（LAN）与广域网（WAN）
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>Git 是一个分布式的版本控制工具，类似的版本控制工具还有 SVN ；由于 GitHub 平台的盛行，也使得 git 更加受欢迎，在 Windows 平台使用 git 也是非常方便的。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/tools/tools-git/">
+  <p class="mb-6"><p>TCP/IP 的网络接口层包括物理层和数据链路层，既是局域网（LAN）技术起作用的分层，又是广域网（WAN）技术和连接管理协议发挥作用的层次。</p>
+<!-- truncate -->
+<h3 id="局域网lan">局域网（LAN）</h3>
+<p>局域网（Local Area Network，LAN）是指一个局部的地理范围内（如一个学校、公司、单位），将各种计算机、外部设备和数据库等互相连接起来组成的计算机通信网。局域网通常是封闭的，但它可以通过数据通信网或专用数据电路，与远方的局域网、数据库或处理中心相连接，构成一个大范围的信息处理系统。局域网可以实现硬件资源（如服务器、打印机、扫描仪等）共享和软件资源（应用软件、文件管理等）共享，还可以实现办公自动化（如工作组内的日程安排、电子邮件和传真通信服务）等。</p>
+<h6 id="局域网协议标准">局域网协议标准</h6>
+<p>IEEE 802 是为了规范随着局域网技术进步而产生的种类繁多的局域网产品而制定的标准，有时也称为局域网参考模型。它包括 CSDM/CD、令牌总线和令牌环网等底层（物理层和数据链路层）网络协议。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/protocol/protocol-lan-wan/">
     Read More
   </a>
 </div>
@@ -1297,17 +1301,22 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/dom/dom-nodelist/">
-      DOM-节点集合
+    <a href="/blog/computer-technology/web/dom/dom-select/">
+      DOM-选取元素节点
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>当从文档树中选取成组的节点或者使用预定义的节点集合时，这些节点都是放在 NodeList 或者一个 HTMLCollecton 之中，而不是一个数组（Array）中。</p>
+  <p class="mb-6"><p>DOM 操作都是通过对文档树中节点的访问来实现的，如何选取特定的元素节点是关键，进而才能访问该元素节点实现修改、查看、移除、替换等操作。</p>
 <!-- truncate -->
-<h3 id="节点集合">节点集合</h3>
-<p>我们将一个 <code>NodeList</code> 或者 <code>HTMLCollecton</code> 称为节点集合，也就是类数组的节点对象集合。节点集合一般有以下特征：</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-nodelist/">
+<h3 id="选取特定单一元素节点">选取特定单一元素节点</h3>
+<p>取得某一特定单一元素节点的引用最常用的方式如下：</p>
+<ul>
+<li>querySelector()</li>
+<li>getElementById()</li>
+</ul>
+<p>exp：</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-select/">
     Read More
   </a>
 </div>
@@ -1319,27 +1328,14 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/nodejs/tools-npm/">
-      使用 npm
+    <a href="/blog/computer-technology/web/tools-web-fee-test-with-jest-puppeteer/">
+      使用 Jest 和 Puppeteer 构建 Web 自动化测试平台
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>npm 是 Node.js 的一个包管理器，Web 前端工程师也经常利用它来简化开发流程，看看如何愉快的使用 npm ，并且发布自己的包，让 npm 成为我们的开发利器。</p>
-<!-- truncate -->
-<h3 id="npm">npm</h3>
-<blockquote>
-<p>**Node.js：**<a href="https://www.npmjs.com/"
-
-
-
-
- target="_blank"
- 
-
-
->https://www.npmjs.com/</a></p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/nodejs/tools-npm/">
+  <p class="mb-6"><p>测试为软件的稳定和完善提供了必要的支持，Web 前端开发领域相比于做单元测试，端到端测试更有意义和价值。谷歌发布的 Puppeteer 工具和脸书发布的 Jest 测试工具为 Web 端到端测试提供了极大的便利，这里记录了如何使用它们构建一个 Web 自动化测试平台。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/tools-web-fee-test-with-jest-puppeteer/">
     Read More
   </a>
 </div>

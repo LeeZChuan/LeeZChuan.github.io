@@ -72,7 +72,6 @@
 
 
 
-  <base href="http:/blog/computer-technology/web/dom/dom-fragment/" />
 
 
 
@@ -157,8 +156,8 @@
       
       
       
-        <meta property="og:image" content="http:/images/og-image.png" />
-        <meta name="twitter:image" content="http:/images/og-image.png" />
+        <meta property="og:image" content="/images/og-image.png" />
+        <meta name="twitter:image" content="/images/og-image.png" />
         <meta
           name="twitter:card"
           content="summary_large_image" />
@@ -185,7 +184,7 @@
 <meta property="og:title" content="DOM-文档片段" />
 <meta property="og:description" content="DOM 操作是非常消耗性能的，如果要进行大量的 DOM 操作，我们可以选择在内存中先构建一个文档片段然后一次性插入 DOM 树。" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="http:/blog/computer-technology/web/dom/dom-fragment/" />
+<meta property="og:url" content="/blog/computer-technology/web/dom/dom-fragment/" />
 
 
 <meta name="twitter:title" content="DOM-文档片段" />
@@ -216,7 +215,7 @@
 
 
 <script>
-  let indexURL = "http:/searchindex.json";
+  let indexURL = "/searchindex.json";
   let includeSectionsInSearch = ["blog"];
   let search_no_results = "No results for";
   let search_initial_message = "Type something to search..";
@@ -1101,7 +1100,7 @@
   
     <a
       class="share-link share-facebook"
-      href="https://facebook.com/sharer/sharer.php?u=http%3a%2fblog%2fcomputer-technology%2fweb%2fdom%2fdom-fragment%2f"
+      href="https://facebook.com/sharer/sharer.php?u=%2fblog%2fcomputer-technology%2fweb%2fdom%2fdom-fragment%2f"
       target="_blank"
       rel="noopener"
       aria-label="share facebook">
@@ -1119,7 +1118,7 @@
   
     <a
       class="share-link share-twitter"
-      href="https://twitter.com/intent/tweet/?text=Share&amp;url=http%3a%2fblog%2fcomputer-technology%2fweb%2fdom%2fdom-fragment%2f"
+      href="https://twitter.com/intent/tweet/?text=Share&amp;url=%2fblog%2fcomputer-technology%2fweb%2fdom%2fdom-fragment%2f"
       target="_blank"
       rel="noopener"
       aria-label="share twitter">
@@ -1137,7 +1136,7 @@
   
     <a
       class="share-link share-email"
-      href="mailto:?subject=Share&amp;body=http%3a%2fblog%2fcomputer-technology%2fweb%2fdom%2fdom-fragment%2f"
+      href="mailto:?subject=Share&amp;body=%2fblog%2fcomputer-technology%2fweb%2fdom%2fdom-fragment%2f"
       target="_self"
       rel="noopener"
       aria-label="share email">
@@ -1155,7 +1154,7 @@
   
     <a
       class="share-link share-reddit"
-      href="https://reddit.com/submit/?url=http%3a%2fblog%2fcomputer-technology%2fweb%2fdom%2fdom-fragment%2f&amp;resubmit=true&amp;title=Share"
+      href="https://reddit.com/submit/?url=%2fblog%2fcomputer-technology%2fweb%2fdom%2fdom-fragment%2f&amp;resubmit=true&amp;title=Share"
       target="_blank"
       rel="noopener"
       aria-label="share reddit">
@@ -1236,8 +1235,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/linux/linux-cmd-shell/">
-      Linux-常用 Shell 命令
+    <a href="/blog/computer-technology/computer/computer-memory-refresh/">
+      内存的 3 种刷新方式
     </a>
   </h4>
   
@@ -1260,27 +1259,19 @@
           </a>
         
           <a
-            href="/categories/%e6%93%8d%e4%bd%9c%e7%b3%bb%e7%bb%9f/"
+            href="/categories/%e5%86%85%e5%ad%98/"
             class="ms-1"
-            >操作系统
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/linux/"
-            class="ms-1"
-            >Linux
+            >内存
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>Linux 是一个优秀的开发环境，大多数服务器都在上面部署。作为一个程序员，熟悉Linux 系统的常用操作也是很必要的。在 linux 内核外，shell 提供了我们程序员（用户）与内核之间的交互媒介，shell 可以说是一个命令解释器，当然它也负责将内核输出信息翻译给程序员。</p>
+  <p class="mb-6"><p><strong>众所周知，内存（Memory）是带电存储的，掉电就会丢失数据，所以需要刷新来保持数据。</strong></p>
 <!-- truncate -->
-<h3 id="shell">Shell</h3>
-<p>Linux 是一个基于命令行的操作系统，提供了一个命令解释器，即 Shell（壳）。Shell 是一个软件，是操作系统的用户界面，用户通过在 Shell 中输入命令，然后命令解释器解释完成后将指令送往内核中执行，来实现对 Linux 系统的操作。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/linux/linux-cmd-shell/">
+<h3 id="原因">原因</h3>
+<p>由于内存（Memory）以及缓存（Cache）都由相应的存储单元芯片<strong>DRAM</strong>和<strong>SRAM</strong>构成存储阵列，是一种半导体存储器件。并且，所有的数据都是逻辑 <code>1</code> 和 <code>0</code> 的组合。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/computer/computer-memory-refresh/">
     Read More
   </a>
 </div>
@@ -1292,17 +1283,19 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/protocol/protocol-osi/">
-      OSI 与 TCP/IP 参考模型
+    <a href="/blog/computer-technology/web/dom/dom-rule/">
+      DOM-元素节点几何量
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>目前流行的两大网络体系结构是 OSI/RM 和 TCP/IP 参考模型，他们均是分层结构。分层是为了简化问题，降低网络设计复杂性，而且各层次结构相互独立，实现的功能也相对独立。层与层之间只在层间接口处关联，层间耦合最小。</p>
+  <p class="mb-6"><p>当我们在查看 HTML 文档时，每个元素节点被解析后，都画成了可视形状。我们可以获取每个元素节点的几何量（宽、高、偏移量）以及页面滚动距离。</p>
 <!-- truncate -->
-<h3 id="osiopen-system-interconnect">OSI（Open System Interconnect）</h3>
-<p>OSI/RM（Open System Interconnection Reference Module，简称 OSI）即开放系统互联参考模型。为了解决不同网络体系结构的互联、互操作问题，ISO（国际标准化组织）制定了 OSI 模型。OSI 模型把网络通信的工作分为七层，自上而下依次为：</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/protocol/protocol-osi/">
+<h3 id="元素节点几何量">元素节点几何量</h3>
+<p>通常我们将一个元素抽象成一个盒子模型，具有 content（内容）、padding（填充、内边距）、border（边框）、margin（外边距）这些尺寸属性。</p>
+<h6 id="定位偏移量">定位偏移量</h6>
+<p>使用元素节点的 <code>offsetTop</code> 与 <code>offsetLeft</code> 属性，我们可以分别获取该元素节点<strong>顶部与左侧外边框</strong>相对于 <code>offsetParent</code> 的<strong>顶部与左侧内边框</strong>的偏移像素量。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-rule/">
     Read More
   </a>
 </div>
@@ -1313,149 +1306,18 @@
                 <div class="bg-body dark:bg-darkmode-body">
   
   
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-  
-    
-      
-    
-
-
-    
-    
-
-
-    
-    
-      
-      
-    
-    
-    
-
-
-    
-    
-      
-      
-        
-
-        
-        
-        
-        
-        
-        
-        
-
-
-        
-        
-
-
-        <picture>
-          <source
-            
-              srcset="/images/image-placeholder_hu14898866438330350576.webp"
-            
-            media="(max-width: 575px)" />
-          <source
-            
-              srcset="/images/image-placeholder_hu3366426647807776041.webp"
-            
-            media="(max-width: 767px)" />
-          <source
-            
-              srcset="/images/image-placeholder_hu15761394040035298493.webp"
-            
-            media="(max-width: 991px)" />
-          <source
-            
-              srcset="/images/image-placeholder_hu9923120856516670921.webp"
-             />
-          <img
-            
-              loading="lazy" decoding="async"
-              src="/images/image-placeholder_hu10538127647789974651.png"
-            class=" mb-6 w-full rounded img"
-            alt="How to build an Application with modern Technology"
-            width="1096"
-            height="480" />
-        </picture>
-      
-      
-    
-    
-  
-
-
-  
-
-
-  
   <h4 class="mb-3">
-    <a href="/blog/post-3/">
-      How to build an Application with modern Technology
+    <a href="/blog/computer-technology/protocol/protocol-tcp-udp/">
+      TCP 与 UDP 协议
     </a>
   </h4>
   
   
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/john-doe/">
-          <i class="fa-regular fa-circle-user mr-2"></i>John Doe
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/software/"
-            class="ms-1"
-            >Software
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6"><p>Nemo vel ad consectetur namut rutrum ex, venenatis sollicitudin urna. Aliquam erat volutpat. Integer eu ipsum sem. Ut bibendum lacus vestibulum maximus suscipit. Quisque vitae nibh iaculis neque blandit euismod.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/post-3/">
+  <p class="mb-6"><p>传输层是网络分层模型中举足轻重的层，它是底层通信子网与高层资源子网的接口与桥梁，提供了面向连接的传输控制协议（Transmission Control Protocol，TCP）和无连接的用户数据报协议（User Datagram Protocol，UDP），负责提供端到端的数据传输服务。</p>
+<!-- truncate -->
+<h3 id="传输层协议">传输层协议</h3>
+<p>传输层在两个应用实体之间实现可靠的、透明的、有效的端到端数据传输服务，其主要的功能为以下几个方面：</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/protocol/protocol-tcp-udp/">
     Read More
   </a>
 </div>

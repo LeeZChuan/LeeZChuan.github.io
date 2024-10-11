@@ -72,7 +72,6 @@
 
 
 
-  <base href="http:/blog/computer-technology/web/dom/dom-select/" />
 
 
 
@@ -157,8 +156,8 @@
       
       
       
-        <meta property="og:image" content="http:/images/og-image.png" />
-        <meta name="twitter:image" content="http:/images/og-image.png" />
+        <meta property="og:image" content="/images/og-image.png" />
+        <meta name="twitter:image" content="/images/og-image.png" />
         <meta
           name="twitter:card"
           content="summary_large_image" />
@@ -185,7 +184,7 @@
 <meta property="og:title" content="DOM-选取元素节点" />
 <meta property="og:description" content="DOM 操作都是通过对文档树中节点的访问来实现的，如何选取特定的元素节点是关键，进而才能访问该元素节点实现修改、查看、移除、替换等操作。" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="http:/blog/computer-technology/web/dom/dom-select/" />
+<meta property="og:url" content="/blog/computer-technology/web/dom/dom-select/" />
 
 
 <meta name="twitter:title" content="DOM-选取元素节点" />
@@ -216,7 +215,7 @@
 
 
 <script>
-  let indexURL = "http:/searchindex.json";
+  let indexURL = "/searchindex.json";
   let includeSectionsInSearch = ["blog"];
   let search_no_results = "No results for";
   let search_initial_message = "Type something to search..";
@@ -1187,7 +1186,7 @@
   
     <a
       class="share-link share-facebook"
-      href="https://facebook.com/sharer/sharer.php?u=http%3a%2fblog%2fcomputer-technology%2fweb%2fdom%2fdom-select%2f"
+      href="https://facebook.com/sharer/sharer.php?u=%2fblog%2fcomputer-technology%2fweb%2fdom%2fdom-select%2f"
       target="_blank"
       rel="noopener"
       aria-label="share facebook">
@@ -1205,7 +1204,7 @@
   
     <a
       class="share-link share-twitter"
-      href="https://twitter.com/intent/tweet/?text=Share&amp;url=http%3a%2fblog%2fcomputer-technology%2fweb%2fdom%2fdom-select%2f"
+      href="https://twitter.com/intent/tweet/?text=Share&amp;url=%2fblog%2fcomputer-technology%2fweb%2fdom%2fdom-select%2f"
       target="_blank"
       rel="noopener"
       aria-label="share twitter">
@@ -1223,7 +1222,7 @@
   
     <a
       class="share-link share-email"
-      href="mailto:?subject=Share&amp;body=http%3a%2fblog%2fcomputer-technology%2fweb%2fdom%2fdom-select%2f"
+      href="mailto:?subject=Share&amp;body=%2fblog%2fcomputer-technology%2fweb%2fdom%2fdom-select%2f"
       target="_self"
       rel="noopener"
       aria-label="share email">
@@ -1241,7 +1240,7 @@
   
     <a
       class="share-link share-reddit"
-      href="https://reddit.com/submit/?url=http%3a%2fblog%2fcomputer-technology%2fweb%2fdom%2fdom-select%2f&amp;resubmit=true&amp;title=Share"
+      href="https://reddit.com/submit/?url=%2fblog%2fcomputer-technology%2fweb%2fdom%2fdom-select%2f&amp;resubmit=true&amp;title=Share"
       target="_blank"
       rel="noopener"
       aria-label="share reddit">
@@ -1322,56 +1321,16 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/mobile-web/wx-dingding/">
-      微信小程序与钉钉小程序开发流程
+    <a href="/blog/computer-technology/web/web-performance-core-concepts/">
+      Web 前端性能优化：核心概念与指标
     </a>
   </h4>
   
   
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors//">
-          <i class="fa-regular fa-circle-user mr-2"></i>
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/"
-            class="ms-1"
-            >计算机技术
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/web/"
-            class="ms-1"
-            >Web
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6"><p>开发小程序有很多问题特此记录～～～</p>
-<p>小程序开发（移动端开发）兼容注意事项：</p>
-<ol>
-<li>
-<p>ios不兼容yyyy-MM-dd HH:mm:ss这种时间格式，需要将-替换成/，在安卓下两种格式都支持。</p>
-</li>
-<li>
-<p>使用window.location.reload()方法刷新页面，在安卓下无效。</p>
-</li>
-<li>
-<p>正常情况下使用window.location.replace()方法跳转页面时会覆盖当前页面而不会生成新的history记录，但是在安卓下依然会生成history记录。</p>
-</li>
-<li>
-<p>ios中，父元素设置border-radius和overflow:hidden实现圆角。如果此时子元素使用了transform属性会导致父元素的圆角失效。</p>
-</li>
-<li>
-<p>小程序中使用web-view打开pdf, IOS 可以正常打开，Android 打开为空白；</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/mobile-web/wx-dingding/">
+  <p class="mb-6"><p>说到 Web 的性能优化，可能很多时候我们采取了一些措施，看到了肉眼可见的改进，如果我们可以对其进行测量，确定我们改进的效率（百分比）是不是会更有意义？换句话说，如果我们了解性能瓶颈可能发生的位置，衡量用户体验好坏的指标，做到实时追踪性能变化，我们是不是可以更迅速的采取优化措施？在应用上线前，我们就可以做一些低成本而有高收益的优化工作，进一步提升用户体验。</p>
+<p>所以，这里主要介绍一下 Web 性能相关的核心概念和相关指标。</p>
+<p>谷歌作为力推 Web 技术的科技巨头，不仅提供了出色的 Chrome DevTools，更是贡献了高质量的开发文档，为业界引进了众多先进的理念，先来拜读一下下面这篇文章，搞明白为何我们需要对 Web 网站做极致的优化？</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/web-performance-core-concepts/">
     Read More
   </a>
 </div>
@@ -1383,36 +1342,49 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/typescript/tools-typescript-use-script-to-ts-types/">
-      利用脚本执行 `tsc` 忽略类型检查错误
+    <a href="/blog/computer-technology/protocol/protocol-osi/">
+      OSI 与 TCP/IP 参考模型
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>在发布 npm 包时添加对 TypeScript 类型定义文件的支持会让用户的使用体验增色不少，TypeScript 官方提供了 <code>tsc --emitDeclarationOnly</code> 命令用来生成类型定义文件（<code>.d.ts</code>）。但是，该命令会同时执行类型检查，遇到错误时会报错中断命令行进程，这就使其无法直接集成在 CI 环节在发布 npm 包时自动执行生成类型定义文件的操作。当然，一个解决办法就是解决掉代码中所有的类型检查错误即可，既然讨论到这个问题，必然不会花费额外精力去解决一些历史遗留问题。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/typescript/tools-typescript-use-script-to-ts-types/">
-    Read More
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/dom/dom-bom/">
-      浏览器对象模型（BOM）
-    </a>
-  </h4>
-  
-  
-  <p class="mb-6"><p>在网页开发中，我们通常专注于内容的设计，而有些时候我们需要进行不同窗口之间的交互，这时候我们就需要学习如何运用 BOM 中的许多核心对象，及其属性、方法。</p>
+  <p class="mb-6"><p>目前流行的两大网络体系结构是 OSI/RM 和 TCP/IP 参考模型，他们均是分层结构。分层是为了简化问题，降低网络设计复杂性，而且各层次结构相互独立，实现的功能也相对独立。层与层之间只在层间接口处关联，层间耦合最小。</p>
 <!-- truncate -->
-<h3 id="浏览器对象模型">浏览器对象模型</h3>
-<p>BOM（Browser Object Model）即浏览器对象模型，我们熟知的另一个对象模型为 DOM（Document Object Model），也就是文档对象模型。这两个都是网页设计中非常重要的概念，我们可以简单的理解为 BOM 注重的是不同网页（框架、窗口）之间的交互（浏览器层面），而 DOM 注重的是同一网页下的内容设计（网页层面）。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-bom/">
+<h3 id="osiopen-system-interconnect">OSI（Open System Interconnect）</h3>
+<p>OSI/RM（Open System Interconnection Reference Module，简称 OSI）即开放系统互联参考模型。为了解决不同网络体系结构的互联、互操作问题，ISO（国际标准化组织）制定了 OSI 模型。OSI 模型把网络通信的工作分为七层，自上而下依次为：</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/protocol/protocol-osi/">
+    Read More
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/computer-technology/nodejs/tools-npm/">
+      使用 npm
+    </a>
+  </h4>
+  
+  
+  <p class="mb-6"><p>npm 是 Node.js 的一个包管理器，Web 前端工程师也经常利用它来简化开发流程，看看如何愉快的使用 npm ，并且发布自己的包，让 npm 成为我们的开发利器。</p>
+<!-- truncate -->
+<h3 id="npm">npm</h3>
+<blockquote>
+<p>**Node.js：**<a href="https://www.npmjs.com/"
+
+
+
+
+ target="_blank"
+ 
+
+
+>https://www.npmjs.com/</a></p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/nodejs/tools-npm/">
     Read More
   </a>
 </div>

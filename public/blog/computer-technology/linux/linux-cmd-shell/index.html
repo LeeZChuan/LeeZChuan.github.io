@@ -72,7 +72,6 @@
 
 
 
-  <base href="http:/blog/computer-technology/linux/linux-cmd-shell/" />
 
 
 
@@ -159,8 +158,8 @@
       
       
       
-        <meta property="og:image" content="http:/images/og-image.png" />
-        <meta name="twitter:image" content="http:/images/og-image.png" />
+        <meta property="og:image" content="/images/og-image.png" />
+        <meta name="twitter:image" content="/images/og-image.png" />
         <meta
           name="twitter:card"
           content="summary_large_image" />
@@ -187,7 +186,7 @@
 <meta property="og:title" content="Linux-常用 Shell 命令" />
 <meta property="og:description" content="Linux 是一个优秀的开发环境，大多数服务器都在上面部署。作为一个程序员，熟悉Linux 系统的常用操作也是很必要的。在 linux 内核外，shell 提供了我们程序员（用户）与内核之间的交互媒介，shell 可以说是一个命令解释器，当然它也负责将内核输出信息翻译给程序员。" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="http:/blog/computer-technology/linux/linux-cmd-shell/" />
+<meta property="og:url" content="/blog/computer-technology/linux/linux-cmd-shell/" />
 
 
 <meta name="twitter:title" content="Linux-常用 Shell 命令" />
@@ -218,7 +217,7 @@
 
 
 <script>
-  let indexURL = "http:/searchindex.json";
+  let indexURL = "/searchindex.json";
   let includeSectionsInSearch = ["blog"];
   let search_no_results = "No results for";
   let search_initial_message = "Type something to search..";
@@ -1470,7 +1469,7 @@ dpkg --get-selections | grep [应用名称]  # 查看已安装应用相关所有
   
     <a
       class="share-link share-facebook"
-      href="https://facebook.com/sharer/sharer.php?u=http%3a%2fblog%2fcomputer-technology%2flinux%2flinux-cmd-shell%2f"
+      href="https://facebook.com/sharer/sharer.php?u=%2fblog%2fcomputer-technology%2flinux%2flinux-cmd-shell%2f"
       target="_blank"
       rel="noopener"
       aria-label="share facebook">
@@ -1488,7 +1487,7 @@ dpkg --get-selections | grep [应用名称]  # 查看已安装应用相关所有
   
     <a
       class="share-link share-twitter"
-      href="https://twitter.com/intent/tweet/?text=Share&amp;url=http%3a%2fblog%2fcomputer-technology%2flinux%2flinux-cmd-shell%2f"
+      href="https://twitter.com/intent/tweet/?text=Share&amp;url=%2fblog%2fcomputer-technology%2flinux%2flinux-cmd-shell%2f"
       target="_blank"
       rel="noopener"
       aria-label="share twitter">
@@ -1506,7 +1505,7 @@ dpkg --get-selections | grep [应用名称]  # 查看已安装应用相关所有
   
     <a
       class="share-link share-email"
-      href="mailto:?subject=Share&amp;body=http%3a%2fblog%2fcomputer-technology%2flinux%2flinux-cmd-shell%2f"
+      href="mailto:?subject=Share&amp;body=%2fblog%2fcomputer-technology%2flinux%2flinux-cmd-shell%2f"
       target="_self"
       rel="noopener"
       aria-label="share email">
@@ -1524,7 +1523,7 @@ dpkg --get-selections | grep [应用名称]  # 查看已安装应用相关所有
   
     <a
       class="share-link share-reddit"
-      href="https://reddit.com/submit/?url=http%3a%2fblog%2fcomputer-technology%2flinux%2flinux-cmd-shell%2f&amp;resubmit=true&amp;title=Share"
+      href="https://reddit.com/submit/?url=%2fblog%2fcomputer-technology%2flinux%2flinux-cmd-shell%2f&amp;resubmit=true&amp;title=Share"
       target="_blank"
       rel="noopener"
       aria-label="share reddit">
@@ -1605,23 +1604,22 @@ dpkg --get-selections | grep [应用名称]  # 查看已安装应用相关所有
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/dom/dom-attribute/">
-      DOM-元素节点属性
+    <a href="/blog/computer-technology/web/dom/dom-select/">
+      DOM-选取元素节点
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>元素节点上具有很多属性，这些属性我们通常可以很方便的获取，并进行简单的操作。</p>
+  <p class="mb-6"><p>DOM 操作都是通过对文档树中节点的访问来实现的，如何选取特定的元素节点是关键，进而才能访问该元素节点实现修改、查看、移除、替换等操作。</p>
 <!-- truncate -->
-<h3 id="节点属性常用操作">节点属性常用操作</h3>
-<p>每个 HTML 元素都有很多属性，例如（id、class、name、url、src、href）等等，元素节点上定义了一些方法供我们使用，来对这些属性进行设置、获取、移除操作。</p>
+<h3 id="选取特定单一元素节点">选取特定单一元素节点</h3>
+<p>取得某一特定单一元素节点的引用最常用的方式如下：</p>
 <ul>
-<li>setAttribute()</li>
-<li>getAttribute()</li>
-<li>removeAttribute()</li>
+<li>querySelector()</li>
+<li>getElementById()</li>
 </ul>
-<p>exp:</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-attribute/">
+<p>exp：</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-select/">
     Read More
   </a>
 </div>
@@ -1633,18 +1631,43 @@ dpkg --get-selections | grep [应用名称]  # 查看已安装应用相关所有
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/dom/dom-elementnode/">
-      DOM-元素节点
+    <a href="/blog/computer-technology/computer/computer-cpu-addressing-mode/">
+      CPU 的七种寻址方式
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>可以说，元素节点是 DOM 树中的核心部分，我们进行文档的操作通常都是建立在元素节点上的。</p>
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors//">
+          <i class="fa-regular fa-circle-user mr-2"></i>
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/"
+            class="ms-1"
+            >计算机技术
+              ,
+            
+          </a>
+        
+          <a
+            href="/categories/cpu/"
+            class="ms-1"
+            >CPU
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>CPU 获取数据的方式不仅仅一种，多种方式也为不同数据的获取提供了不同的效率考量，保证了寻址效率与指令的灵活性。</p>
 <!-- truncate -->
-<h3 id="元素节点">元素节点</h3>
-<blockquote>
-<p>元素节点（Element Node）是我们最常用的 DOM 节点，不同类型的节点都有其自己的构造方法，并且它们身上还有许多属性和方法（包括继承的）来帮助我们完成 DOM 操作。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-elementnode/">
+<h3 id="cpu-寻址方式">CPU 寻址方式</h3>
+<p>数据一般均存储在外存(硬盘)中，在需要的时候，会将数据先从外存读入内存(存储器)中，然后 CPU 再直接从内存(缓存)中获取。获取的数据有时候会直接使用；而有时候会先存入 CPU 内部寄存器，稍后再从寄存器中获取。所以，CPU 获取数据的方式是多样化的。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/computer/computer-cpu-addressing-mode/">
     Read More
   </a>
 </div>
@@ -1656,19 +1679,15 @@ dpkg --get-selections | grep [应用名称]  # 查看已安装应用相关所有
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/dom/dom-rule/">
-      DOM-元素节点几何量
+    <a href="/blog/computer-technology/web/tools-web-fee-polyfill-corejs-eslint/">
+      解析基于 core-js 与 ESLint 的 Web 兼容方案
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>当我们在查看 HTML 文档时，每个元素节点被解析后，都画成了可视形状。我们可以获取每个元素节点的几何量（宽、高、偏移量）以及页面滚动距离。</p>
-<!-- truncate -->
-<h3 id="元素节点几何量">元素节点几何量</h3>
-<p>通常我们将一个元素抽象成一个盒子模型，具有 content（内容）、padding（填充、内边距）、border（边框）、margin（外边距）这些尺寸属性。</p>
-<h6 id="定位偏移量">定位偏移量</h6>
-<p>使用元素节点的 <code>offsetTop</code> 与 <code>offsetLeft</code> 属性，我们可以分别获取该元素节点<strong>顶部与左侧外边框</strong>相对于 <code>offsetParent</code> 的<strong>顶部与左侧内边框</strong>的偏移像素量。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-rule/">
+  <p class="mb-6"><p>Web 网页为了保证在多个平台和低中高端设备上的体验稳定性和一致性，通常会做 Polyfill 以保证兼容性。</p>
+<p>然而，兼容性问题本身是个难题，Polyfill 也并非很好处理，所以在技术演变的过程中，社区达成了一致，有一个主流的方案，大家共同来使用和维护。当下社区的主流方案则是基于 <code>core-js</code>，另一方面， 利用 ESLint 插件则可以做到自动检测代码中需要添加 Polyfill 的 API。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/tools-web-fee-polyfill-corejs-eslint/">
     Read More
   </a>
 </div>

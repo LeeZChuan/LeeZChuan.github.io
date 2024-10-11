@@ -72,7 +72,6 @@
 
 
 
-  <base href="http:/blog/computer-technology/typescript/tools-typescript-use-script-to-ts-types/" />
 
 
 
@@ -157,8 +156,8 @@
       
       
       
-        <meta property="og:image" content="http:/images/og-image.png" />
-        <meta name="twitter:image" content="http:/images/og-image.png" />
+        <meta property="og:image" content="/images/og-image.png" />
+        <meta name="twitter:image" content="/images/og-image.png" />
         <meta
           name="twitter:card"
           content="summary_large_image" />
@@ -185,7 +184,7 @@
 <meta property="og:title" content="利用脚本执行 `tsc` 忽略类型检查错误" />
 <meta property="og:description" content="TypeScript 作为一个强类型的语言，增强了 JavaScript 编程开发体验，类型定义文件为一个第三方模块的使用体验增色不少，现如今很多 npm 包的发布都内置了对类型定义文件的支持。" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="http:/blog/computer-technology/typescript/tools-typescript-use-script-to-ts-types/" />
+<meta property="og:url" content="/blog/computer-technology/typescript/tools-typescript-use-script-to-ts-types/" />
 
 
 <meta name="twitter:title" content="利用脚本执行 `tsc` 忽略类型检查错误" />
@@ -216,7 +215,7 @@
 
 
 <script>
-  let indexURL = "http:/searchindex.json";
+  let indexURL = "/searchindex.json";
   let includeSectionsInSearch = ["blog"];
   let search_no_results = "No results for";
   let search_initial_message = "Type something to search..";
@@ -1066,7 +1065,7 @@
   
     <a
       class="share-link share-facebook"
-      href="https://facebook.com/sharer/sharer.php?u=http%3a%2fblog%2fcomputer-technology%2ftypescript%2ftools-typescript-use-script-to-ts-types%2f"
+      href="https://facebook.com/sharer/sharer.php?u=%2fblog%2fcomputer-technology%2ftypescript%2ftools-typescript-use-script-to-ts-types%2f"
       target="_blank"
       rel="noopener"
       aria-label="share facebook">
@@ -1084,7 +1083,7 @@
   
     <a
       class="share-link share-twitter"
-      href="https://twitter.com/intent/tweet/?text=Share&amp;url=http%3a%2fblog%2fcomputer-technology%2ftypescript%2ftools-typescript-use-script-to-ts-types%2f"
+      href="https://twitter.com/intent/tweet/?text=Share&amp;url=%2fblog%2fcomputer-technology%2ftypescript%2ftools-typescript-use-script-to-ts-types%2f"
       target="_blank"
       rel="noopener"
       aria-label="share twitter">
@@ -1102,7 +1101,7 @@
   
     <a
       class="share-link share-email"
-      href="mailto:?subject=Share&amp;body=http%3a%2fblog%2fcomputer-technology%2ftypescript%2ftools-typescript-use-script-to-ts-types%2f"
+      href="mailto:?subject=Share&amp;body=%2fblog%2fcomputer-technology%2ftypescript%2ftools-typescript-use-script-to-ts-types%2f"
       target="_self"
       rel="noopener"
       aria-label="share email">
@@ -1120,7 +1119,7 @@
   
     <a
       class="share-link share-reddit"
-      href="https://reddit.com/submit/?url=http%3a%2fblog%2fcomputer-technology%2ftypescript%2ftools-typescript-use-script-to-ts-types%2f&amp;resubmit=true&amp;title=Share"
+      href="https://reddit.com/submit/?url=%2fblog%2fcomputer-technology%2ftypescript%2ftools-typescript-use-script-to-ts-types%2f&amp;resubmit=true&amp;title=Share"
       target="_blank"
       rel="noopener"
       aria-label="share reddit">
@@ -1201,14 +1200,17 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/tools-web-fee-toolchain/">
-      前端工程化：对于构建工具链的简单思考
+    <a href="/blog/computer-technology/web/dom/dom-nodelist/">
+      DOM-节点集合
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>前端工程化是在做与业务开发完全不同的事情，旨在解决软件工程领域与开发者密切相关的问题，通常会将其与基建开发、DevOps 放在一起讨论。前端开发是复杂的，其结合了 HTML/CSS/JavaScript 3 种语言，甚至还有很多其超集，没有开箱即用的工具链，不像 Java Web 开发、Android 开发等等有官方或者商业领域非常成熟的工具可以利用，一切都源于开源社区的从 0 开始构建。正因如此，前端工程化领域百花齐放，开放与创新展现的淋漓尽致，这也是前端开发者了解学习软件工程的机会。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/tools-web-fee-toolchain/">
+  <p class="mb-6"><p>当从文档树中选取成组的节点或者使用预定义的节点集合时，这些节点都是放在 NodeList 或者一个 HTMLCollecton 之中，而不是一个数组（Array）中。</p>
+<!-- truncate -->
+<h3 id="节点集合">节点集合</h3>
+<p>我们将一个 <code>NodeList</code> 或者 <code>HTMLCollecton</code> 称为节点集合，也就是类数组的节点对象集合。节点集合一般有以下特征：</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-nodelist/">
     Read More
   </a>
 </div>
@@ -1220,18 +1222,18 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/web-cross-domain/">
-      Web 前端跨域访问
+    <a href="/blog/computer-technology/web/web-front-end-architecture/">
+      Web 前端架构设计
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>为了用户的安全，浏览器通常都会限制跨域（Cross-domain）访问，也就是默认不允许不同域名下页面之间进行资源的传递和信息交互，但很多时候我们又有跨域请求资源的需求。</p>
+  <p class="mb-6"><p>让 Web 前端开发可持续化、可扩展，关注四个核心<strong>代码</strong>、<strong>流程</strong>、<strong>测试</strong>、<strong>文档</strong>。</p>
 <!-- truncate -->
-<h3 id="同源策略">同源策略</h3>
-<p>我们要在地址栏中正确输入“协议”、“域名”、“端口”、“文件路径”才能访问一个页面，其中任意一个不正确就不会达到我们期望的结果。所谓的跨域就是当<strong>协议</strong>、<strong>域名</strong>、<strong>端口</strong>这三者有一个不同时即称为跨域访问，这时候浏览器为了用户安全就会限制 JavaScript 的跨域行为，这也叫做同源策略（由网景公司提出）。</p>
-<p>通常一个公司（组织、团队）会申请一个主域名，然后根据服务类型分出多个二级域名，在某些涉及到敏感信息的页面又会采用 HTTPS 协议加密，或许还有更多的类似需求，这些需求大多都需要跨域共享资源才能实现用户的定制服务。所以，跨域访问不是个能避免的问题，在不破坏浏览器安全性的前提下我们需要去解决它。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/web-cross-domain/">
+<h3 id="代码">代码</h3>
+<h6 id="html">HTML</h6>
+<p>######### 模块化标记</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/web-front-end-architecture/">
     Read More
   </a>
 </div>
@@ -1243,23 +1245,17 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/dom/dom-attribute/">
-      DOM-元素节点属性
+    <a href="/blog/computer-technology/tools/tools-junit/">
+      单元测试工具：Junit
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>元素节点上具有很多属性，这些属性我们通常可以很方便的获取，并进行简单的操作。</p>
+  <p class="mb-6"><p>通常一个项目的代码量是比较大的，而且其中逻辑也较为复杂，在开发完成后再进行项目测试其实是比较耗费时间和精力的，因此边开发边测试是个很好的选择，而 JUnit 则为我们提供了这样的便利。</p>
 <!-- truncate -->
-<h3 id="节点属性常用操作">节点属性常用操作</h3>
-<p>每个 HTML 元素都有很多属性，例如（id、class、name、url、src、href）等等，元素节点上定义了一些方法供我们使用，来对这些属性进行设置、获取、移除操作。</p>
-<ul>
-<li>setAttribute()</li>
-<li>getAttribute()</li>
-<li>removeAttribute()</li>
-</ul>
-<p>exp:</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-attribute/">
+<h3 id="junit">JUnit</h3>
+<p>JUnit 是一个用来对 Java 代码进行单元测试的框架，是 XUnit （一套基于测试驱动开发的测试框架）的一个子集，类似的还有 PythonUnit、CppUnit。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/tools/tools-junit/">
     Read More
   </a>
 </div>

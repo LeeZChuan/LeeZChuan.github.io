@@ -72,7 +72,6 @@
 
 
 
-  <base href="http:/blog/computer-technology/web/web-performance-core-concepts/" />
 
 
 
@@ -157,8 +156,8 @@
       
       
       
-        <meta property="og:image" content="http:/images/og-image.png" />
-        <meta name="twitter:image" content="http:/images/og-image.png" />
+        <meta property="og:image" content="/images/og-image.png" />
+        <meta name="twitter:image" content="/images/og-image.png" />
         <meta
           name="twitter:card"
           content="summary_large_image" />
@@ -185,7 +184,7 @@
 <meta property="og:title" content="Web 前端性能优化：核心概念与指标" />
 <meta property="og:description" content="在一些较为复杂的 Web 应用中可能会出现性能瓶颈，导致用户体验急剧下降，做优化之前更应该了解一下相关的核心概念，从而在出问题时确定优化路径。" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="http:/blog/computer-technology/web/web-performance-core-concepts/" />
+<meta property="og:url" content="/blog/computer-technology/web/web-performance-core-concepts/" />
 
 
 <meta name="twitter:title" content="Web 前端性能优化：核心概念与指标" />
@@ -216,7 +215,7 @@
 
 
 <script>
-  let indexURL = "http:/searchindex.json";
+  let indexURL = "/searchindex.json";
   let includeSectionsInSearch = ["blog"];
   let search_no_results = "No results for";
   let search_initial_message = "Type something to search..";
@@ -1422,7 +1421,7 @@
   
     <a
       class="share-link share-facebook"
-      href="https://facebook.com/sharer/sharer.php?u=http%3a%2fblog%2fcomputer-technology%2fweb%2fweb-performance-core-concepts%2f"
+      href="https://facebook.com/sharer/sharer.php?u=%2fblog%2fcomputer-technology%2fweb%2fweb-performance-core-concepts%2f"
       target="_blank"
       rel="noopener"
       aria-label="share facebook">
@@ -1440,7 +1439,7 @@
   
     <a
       class="share-link share-twitter"
-      href="https://twitter.com/intent/tweet/?text=Share&amp;url=http%3a%2fblog%2fcomputer-technology%2fweb%2fweb-performance-core-concepts%2f"
+      href="https://twitter.com/intent/tweet/?text=Share&amp;url=%2fblog%2fcomputer-technology%2fweb%2fweb-performance-core-concepts%2f"
       target="_blank"
       rel="noopener"
       aria-label="share twitter">
@@ -1458,7 +1457,7 @@
   
     <a
       class="share-link share-email"
-      href="mailto:?subject=Share&amp;body=http%3a%2fblog%2fcomputer-technology%2fweb%2fweb-performance-core-concepts%2f"
+      href="mailto:?subject=Share&amp;body=%2fblog%2fcomputer-technology%2fweb%2fweb-performance-core-concepts%2f"
       target="_self"
       rel="noopener"
       aria-label="share email">
@@ -1476,7 +1475,7 @@
   
     <a
       class="share-link share-reddit"
-      href="https://reddit.com/submit/?url=http%3a%2fblog%2fcomputer-technology%2fweb%2fweb-performance-core-concepts%2f&amp;resubmit=true&amp;title=Share"
+      href="https://reddit.com/submit/?url=%2fblog%2fcomputer-technology%2fweb%2fweb-performance-core-concepts%2f&amp;resubmit=true&amp;title=Share"
       target="_blank"
       rel="noopener"
       aria-label="share reddit">
@@ -1557,19 +1556,19 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/dom/dom-rule/">
-      DOM-元素节点几何量
+    <a href="/blog/computer-technology/program-architecture-design/bridge-mode-design-of-cross-platform-event-mechanism/">
+      桥接模式：跨平台的事件机制设计
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>当我们在查看 HTML 文档时，每个元素节点被解析后，都画成了可视形状。我们可以获取每个元素节点的几何量（宽、高、偏移量）以及页面滚动距离。</p>
+  <p class="mb-6"><p>对于 Web 的图表组件库来说，一些功能比较强大的开源库，渲染层可以支持 DOM、SVG、Canvas、WebGL 等多个平台的环境，而图表库的很多功能的实现都和渲染层紧密相关。</p>
+<p>最近，在参考学习一些开源的图表组件库时，发现在跨平台设计中，事件机制的实现很有意思，所以在这里以最简化的代码来解释和记录一下这个方案。如果要用经典的软件设计模式来解释，大概就是<strong>桥接模式</strong>了。</p>
+<p><strong>桥接模式（Bridge Pattern）</strong> 将一个功能的实现拆分为抽象（Abstraction）和实现（Implementor），让其相互独立的扩展和定义，借助该模式可以设计一种平台无关的软件架构。</p>
 <!-- truncate -->
-<h3 id="元素节点几何量">元素节点几何量</h3>
-<p>通常我们将一个元素抽象成一个盒子模型，具有 content（内容）、padding（填充、内边距）、border（边框）、margin（外边距）这些尺寸属性。</p>
-<h6 id="定位偏移量">定位偏移量</h6>
-<p>使用元素节点的 <code>offsetTop</code> 与 <code>offsetLeft</code> 属性，我们可以分别获取该元素节点<strong>顶部与左侧外边框</strong>相对于 <code>offsetParent</code> 的<strong>顶部与左侧内边框</strong>的偏移像素量。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-rule/">
+<h3 id="事件机制">事件机制</h3>
+<p>事件机制是软件设计中最基础、最为常见的一种设计，对于 Web 图表组件库来说要提供一些处理用户交互（例如点击、拖动、右键点击等）的机制。一个典型的事件模型类如下：</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/program-architecture-design/bridge-mode-design-of-cross-platform-event-mechanism/">
     Read More
   </a>
 </div>
@@ -1581,14 +1580,18 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/nodejs/nodejs-spawn-vs-exec/">
-      Child process API: spawn vs exec
+    <a href="/blog/computer-technology/web/web-cross-domain/">
+      Web 前端跨域访问
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>利用 Node.js 编写一些命令行工具、一次性脚本是很方便的，而在这类场景下 child_process API 的 <code>spawn</code> 和 <code>exec</code> 方法的应用则非常常见。在我使用它们时，却不知道该如何进行选择，遂对此进行了探究。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/nodejs/nodejs-spawn-vs-exec/">
+  <p class="mb-6"><p>为了用户的安全，浏览器通常都会限制跨域（Cross-domain）访问，也就是默认不允许不同域名下页面之间进行资源的传递和信息交互，但很多时候我们又有跨域请求资源的需求。</p>
+<!-- truncate -->
+<h3 id="同源策略">同源策略</h3>
+<p>我们要在地址栏中正确输入“协议”、“域名”、“端口”、“文件路径”才能访问一个页面，其中任意一个不正确就不会达到我们期望的结果。所谓的跨域就是当<strong>协议</strong>、<strong>域名</strong>、<strong>端口</strong>这三者有一个不同时即称为跨域访问，这时候浏览器为了用户安全就会限制 JavaScript 的跨域行为，这也叫做同源策略（由网景公司提出）。</p>
+<p>通常一个公司（组织、团队）会申请一个主域名，然后根据服务类型分出多个二级域名，在某些涉及到敏感信息的页面又会采用 HTTPS 协议加密，或许还有更多的类似需求，这些需求大多都需要跨域共享资源才能实现用户的定制服务。所以，跨域访问不是个能避免的问题，在不破坏浏览器安全性的前提下我们需要去解决它。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/web-cross-domain/">
     Read More
   </a>
 </div>
@@ -1600,8 +1603,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/computer/computer-memory-refresh/">
-      内存的 3 种刷新方式
+    <a href="/blog/computer-technology/linux/linux-cmd-shell/">
+      Linux-常用 Shell 命令
     </a>
   </h4>
   
@@ -1624,19 +1627,27 @@
           </a>
         
           <a
-            href="/categories/%e5%86%85%e5%ad%98/"
+            href="/categories/%e6%93%8d%e4%bd%9c%e7%b3%bb%e7%bb%9f/"
             class="ms-1"
-            >内存
+            >操作系统
+              ,
+            
+          </a>
+        
+          <a
+            href="/categories/linux/"
+            class="ms-1"
+            >Linux
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p><strong>众所周知，内存（Memory）是带电存储的，掉电就会丢失数据，所以需要刷新来保持数据。</strong></p>
+  <p class="mb-6"><p>Linux 是一个优秀的开发环境，大多数服务器都在上面部署。作为一个程序员，熟悉Linux 系统的常用操作也是很必要的。在 linux 内核外，shell 提供了我们程序员（用户）与内核之间的交互媒介，shell 可以说是一个命令解释器，当然它也负责将内核输出信息翻译给程序员。</p>
 <!-- truncate -->
-<h3 id="原因">原因</h3>
-<p>由于内存（Memory）以及缓存（Cache）都由相应的存储单元芯片<strong>DRAM</strong>和<strong>SRAM</strong>构成存储阵列，是一种半导体存储器件。并且，所有的数据都是逻辑 <code>1</code> 和 <code>0</code> 的组合。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/computer/computer-memory-refresh/">
+<h3 id="shell">Shell</h3>
+<p>Linux 是一个基于命令行的操作系统，提供了一个命令解释器，即 Shell（壳）。Shell 是一个软件，是操作系统的用户界面，用户通过在 Shell 中输入命令，然后命令解释器解释完成后将指令送往内核中执行，来实现对 Linux 系统的操作。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/linux/linux-cmd-shell/">
     Read More
   </a>
 </div>

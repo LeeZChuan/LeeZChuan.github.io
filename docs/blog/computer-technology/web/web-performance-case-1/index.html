@@ -72,7 +72,6 @@
 
 
 
-  <base href="http:/blog/computer-technology/web/web-performance-case-1/" />
 
 
 
@@ -157,8 +156,8 @@
       
       
       
-        <meta property="og:image" content="http:/images/og-image.png" />
-        <meta name="twitter:image" content="http:/images/og-image.png" />
+        <meta property="og:image" content="/images/og-image.png" />
+        <meta name="twitter:image" content="/images/og-image.png" />
         <meta
           name="twitter:card"
           content="summary_large_image" />
@@ -185,7 +184,7 @@
 <meta property="og:title" content="Web 前端性能优化：案例分析 1" />
 <meta property="og:description" content="Web 性能相关的概念很多，但如何落地在真实业务场景中，其实是一个比较难的事情，或者说机会鲜有，在这里记录一下真实业务案例做性能优化的过程。" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="http:/blog/computer-technology/web/web-performance-case-1/" />
+<meta property="og:url" content="/blog/computer-technology/web/web-performance-case-1/" />
 
 
 <meta name="twitter:title" content="Web 前端性能优化：案例分析 1" />
@@ -216,7 +215,7 @@
 
 
 <script>
-  let indexURL = "http:/searchindex.json";
+  let indexURL = "/searchindex.json";
   let includeSectionsInSearch = ["blog"];
   let search_no_results = "No results for";
   let search_initial_message = "Type something to search..";
@@ -1423,7 +1422,7 @@
   
     <a
       class="share-link share-facebook"
-      href="https://facebook.com/sharer/sharer.php?u=http%3a%2fblog%2fcomputer-technology%2fweb%2fweb-performance-case-1%2f"
+      href="https://facebook.com/sharer/sharer.php?u=%2fblog%2fcomputer-technology%2fweb%2fweb-performance-case-1%2f"
       target="_blank"
       rel="noopener"
       aria-label="share facebook">
@@ -1441,7 +1440,7 @@
   
     <a
       class="share-link share-twitter"
-      href="https://twitter.com/intent/tweet/?text=Share&amp;url=http%3a%2fblog%2fcomputer-technology%2fweb%2fweb-performance-case-1%2f"
+      href="https://twitter.com/intent/tweet/?text=Share&amp;url=%2fblog%2fcomputer-technology%2fweb%2fweb-performance-case-1%2f"
       target="_blank"
       rel="noopener"
       aria-label="share twitter">
@@ -1459,7 +1458,7 @@
   
     <a
       class="share-link share-email"
-      href="mailto:?subject=Share&amp;body=http%3a%2fblog%2fcomputer-technology%2fweb%2fweb-performance-case-1%2f"
+      href="mailto:?subject=Share&amp;body=%2fblog%2fcomputer-technology%2fweb%2fweb-performance-case-1%2f"
       target="_self"
       rel="noopener"
       aria-label="share email">
@@ -1477,7 +1476,7 @@
   
     <a
       class="share-link share-reddit"
-      href="https://reddit.com/submit/?url=http%3a%2fblog%2fcomputer-technology%2fweb%2fweb-performance-case-1%2f&amp;resubmit=true&amp;title=Share"
+      href="https://reddit.com/submit/?url=%2fblog%2fcomputer-technology%2fweb%2fweb-performance-case-1%2f&amp;resubmit=true&amp;title=Share"
       target="_blank"
       rel="noopener"
       aria-label="share reddit">
@@ -1558,17 +1557,17 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/dom/dom-nodelist/">
-      DOM-节点集合
+    <a href="/blog/computer-technology/tools/tools-sublime/">
+      编辑器：Sublime Text 常用插件
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>当从文档树中选取成组的节点或者使用预定义的节点集合时，这些节点都是放在 NodeList 或者一个 HTMLCollecton 之中，而不是一个数组（Array）中。</p>
+  <p class="mb-6"><p>Sumblime Text 是一个具有漂亮的界面和强大功能的文本编辑器，而且也支持许多丰富的插件。它是一个收费软件，但是允许开发人员无限期的免费试用。这篇文章介绍一下常用的插件。</p>
 <!-- truncate -->
-<h3 id="节点集合">节点集合</h3>
-<p>我们将一个 <code>NodeList</code> 或者 <code>HTMLCollecton</code> 称为节点集合，也就是类数组的节点对象集合。节点集合一般有以下特征：</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-nodelist/">
+<h3 id="安装-sublime-text">安装 Sublime Text</h3>
+<p>Sublime Text 编辑器，我们直接去官网下载相应版本安装即可，2 或 3 版本官网均有链接。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/tools/tools-sublime/">
     Read More
   </a>
 </div>
@@ -1580,14 +1579,27 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/web-app-model-zustand/">
-      Web 应用：轻量级状态管理工具 zustand
+    <a href="/blog/computer-technology/nodejs/tools-npm/">
+      使用 npm
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>基于 React.js 的 Web 应用如何完成状态管理？社区主流方案是 <strong>react-redux</strong>，其本质上基于 React 的 <code>Context</code> 特性实现，如果应用足够简单，实际上用 <code>Context</code> 手写一个简单的状态管理工具倒也并不难。不过，考虑到工具的完善性、项目的健壮性，通常采用较好的、成熟的社区方案。在移动端场景下，<strong>react-redux</strong> 略显臃肿，轻量级状态管理工具 <strong>zustand</strong> 倒是一个不错的替代方案。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/web-app-model-zustand/">
+  <p class="mb-6"><p>npm 是 Node.js 的一个包管理器，Web 前端工程师也经常利用它来简化开发流程，看看如何愉快的使用 npm ，并且发布自己的包，让 npm 成为我们的开发利器。</p>
+<!-- truncate -->
+<h3 id="npm">npm</h3>
+<blockquote>
+<p>**Node.js：**<a href="https://www.npmjs.com/"
+
+
+
+
+ target="_blank"
+ 
+
+
+>https://www.npmjs.com/</a></p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/nodejs/tools-npm/">
     Read More
   </a>
 </div>
@@ -1599,8 +1611,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/linux/linux-cmd-vim/">
-      Linux-Vim 编辑器
+    <a href="/blog/computer-technology/computer/computer-cpu-addressing-mode/">
+      CPU 的七种寻址方式
     </a>
   </h4>
   
@@ -1623,27 +1635,19 @@
           </a>
         
           <a
-            href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba/"
+            href="/categories/cpu/"
             class="ms-1"
-            >计算机
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/linux/"
-            class="ms-1"
-            >Linux
+            >CPU
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>在 Linux 这样的命令行操作系统中，必须有一款功能强大的编辑器支持我们快速完成文本编辑，这就是 Vi 编辑器；通过对其加强和升级，Vim 编辑器比前者更为强大，拥有更多的功能和颜色高亮的特性，是程序员在 Linux 下编码的利器。</p>
+  <p class="mb-6"><p>CPU 获取数据的方式不仅仅一种，多种方式也为不同数据的获取提供了不同的效率考量，保证了寻址效率与指令的灵活性。</p>
 <!-- truncate -->
-<h3 id="vim">Vim</h3>
-<p>Vim 是基于 Linux 下 Vi 编辑器的升级版，经过多年来的不断更新，功能也越来越强大，Vim 除过具备常用文本编辑器的编辑操作以及颜色高亮特性外，还支持自动补全、多行批量操作、指定跳转等等功能，其中代码颜色高亮特性更利于我们在命令行中进行信息的阅览和查看。而且，Vim 支持大多数操作系统，只是我们经常在 Linux 下使用它而已。当然，在 Linux 下还有一款很著名的编辑器 Emacs 。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/linux/linux-cmd-vim/">
+<h3 id="cpu-寻址方式">CPU 寻址方式</h3>
+<p>数据一般均存储在外存(硬盘)中，在需要的时候，会将数据先从外存读入内存(存储器)中，然后 CPU 再直接从内存(缓存)中获取。获取的数据有时候会直接使用；而有时候会先存入 CPU 内部寄存器，稍后再从寄存器中获取。所以，CPU 获取数据的方式是多样化的。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/computer/computer-cpu-addressing-mode/">
     Read More
   </a>
 </div>

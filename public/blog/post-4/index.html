@@ -72,7 +72,6 @@
 
 
 
-  <base href="http:/blog/post-4/" />
 
 
 
@@ -161,8 +160,8 @@
       
       
       
-        <meta property="og:image" content="http:/images/image-placeholder.png" />
-        <meta name="twitter:image" content="http:/images/image-placeholder.png" />
+        <meta property="og:image" content="/images/image-placeholder.png" />
+        <meta name="twitter:image" content="/images/image-placeholder.png" />
         <meta
           name="twitter:card"
           content="summary_large_image" />
@@ -189,7 +188,7 @@
 <meta property="og:title" content="How to build an Application with modern Technology" />
 <meta property="og:description" content="this is meta description" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="http:/blog/post-4/" />
+<meta property="og:url" content="/blog/post-4/" />
 
 
 <meta name="twitter:title" content="How to build an Application with modern Technology" />
@@ -220,7 +219,7 @@
 
 
 <script>
-  let indexURL = "http:/searchindex.json";
+  let indexURL = "/searchindex.json";
   let includeSectionsInSearch = ["blog"];
   let search_no_results = "No results for";
   let search_initial_message = "Type something to search..";
@@ -1143,7 +1142,7 @@
   
     <a
       class="share-link share-facebook"
-      href="https://facebook.com/sharer/sharer.php?u=http%3a%2fblog%2fpost-4%2f"
+      href="https://facebook.com/sharer/sharer.php?u=%2fblog%2fpost-4%2f"
       target="_blank"
       rel="noopener"
       aria-label="share facebook">
@@ -1161,7 +1160,7 @@
   
     <a
       class="share-link share-twitter"
-      href="https://twitter.com/intent/tweet/?text=Share&amp;url=http%3a%2fblog%2fpost-4%2f"
+      href="https://twitter.com/intent/tweet/?text=Share&amp;url=%2fblog%2fpost-4%2f"
       target="_blank"
       rel="noopener"
       aria-label="share twitter">
@@ -1179,7 +1178,7 @@
   
     <a
       class="share-link share-email"
-      href="mailto:?subject=Share&amp;body=http%3a%2fblog%2fpost-4%2f"
+      href="mailto:?subject=Share&amp;body=%2fblog%2fpost-4%2f"
       target="_self"
       rel="noopener"
       aria-label="share email">
@@ -1197,7 +1196,7 @@
   
     <a
       class="share-link share-reddit"
-      href="https://reddit.com/submit/?url=http%3a%2fblog%2fpost-4%2f&amp;resubmit=true&amp;title=Share"
+      href="https://reddit.com/submit/?url=%2fblog%2fpost-4%2f&amp;resubmit=true&amp;title=Share"
       target="_blank"
       rel="noopener"
       aria-label="share reddit">
@@ -1278,17 +1277,38 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/tools/tools-sublime-vim/">
-      编辑器：Sublime Text - Vim 插件
+    <a href="/blog/computer-technology/web/web-performance-core-concepts/">
+      Web 前端性能优化：核心概念与指标
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>Sumblime Text 是一个具有漂亮的界面和强大功能的文本编辑器，而且也支持许多丰富的插件。它是一个收费软件，但是允许开发人员无限期的免费试用。</p>
+  <p class="mb-6"><p>说到 Web 的性能优化，可能很多时候我们采取了一些措施，看到了肉眼可见的改进，如果我们可以对其进行测量，确定我们改进的效率（百分比）是不是会更有意义？换句话说，如果我们了解性能瓶颈可能发生的位置，衡量用户体验好坏的指标，做到实时追踪性能变化，我们是不是可以更迅速的采取优化措施？在应用上线前，我们就可以做一些低成本而有高收益的优化工作，进一步提升用户体验。</p>
+<p>所以，这里主要介绍一下 Web 性能相关的核心概念和相关指标。</p>
+<p>谷歌作为力推 Web 技术的科技巨头，不仅提供了出色的 Chrome DevTools，更是贡献了高质量的开发文档，为业界引进了众多先进的理念，先来拜读一下下面这篇文章，搞明白为何我们需要对 Web 网站做极致的优化？</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/web-performance-core-concepts/">
+    Read More
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/computer-technology/web/dom/dom-bom/">
+      浏览器对象模型（BOM）
+    </a>
+  </h4>
+  
+  
+  <p class="mb-6"><p>在网页开发中，我们通常专注于内容的设计，而有些时候我们需要进行不同窗口之间的交互，这时候我们就需要学习如何运用 BOM 中的许多核心对象，及其属性、方法。</p>
 <!-- truncate -->
-<h3 id="vim">Vim</h3>
-<p>Vim 是 Linux 操作系统下类 Vi 编辑器，是一款被开发者广泛使用，并且功能强大的文本编辑器。而 Sublime Text 最初的设计初衷也是基于 Vim 的设计思想，被设计为一个跨平台的具有丰富扩展功能的 Vim。随着后来的发展，它已经不仅仅是单纯的模仿 Vim，而是支持越来越多的插件和强大的功能。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/tools/tools-sublime-vim/">
+<h3 id="浏览器对象模型">浏览器对象模型</h3>
+<p>BOM（Browser Object Model）即浏览器对象模型，我们熟知的另一个对象模型为 DOM（Document Object Model），也就是文档对象模型。这两个都是网页设计中非常重要的概念，我们可以简单的理解为 BOM 注重的是不同网页（框架、窗口）之间的交互（浏览器层面），而 DOM 注重的是同一网页下的内容设计（网页层面）。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-bom/">
     Read More
   </a>
 </div>
@@ -1319,34 +1339,6 @@
 <!-- truncate -->
 <p>首先，对于问题复现的必要条件做了分析，为以下几个方面</p></p>
   <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/web-tips-fonts/">
-    Read More
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/computer-technology/typescript/tools-typescript-type-extend/">
-      TypeScript：扩展第三方库的类型定义
-    </a>
-  </h4>
-  
-  
-  <p class="mb-6"><p>TypeScript 作为 JavaScript 的超集，为 Web 开发带来了强类型语言和类似代码智能提示这种良好的开发体验，而代码提示依赖于类型定义文件。类型定义文件的发展也经历了一个逐步演变的过程，从最初基于 JavaScript 编写的 npm 包，通过<a href="https://github.com/DefinitelyTyped/DefinitelyTyped"
-
-
-
-
- target="_blank"
- 
-
-
->社区方案</a>来引入类型定义包，再到目前多数模块基于 TypeScript 编写并在发布时带上类型定义文件这种最佳方案，开发者体验得到进一步的提升。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/typescript/tools-typescript-type-extend/">
     Read More
   </a>
 </div>

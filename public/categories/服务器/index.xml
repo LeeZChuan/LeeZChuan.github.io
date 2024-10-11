@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>服务器 on 技术之心</title>
-    <link>http:/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+    <link>/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
     <description>Recent content in 服务器 on 技术之心</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 15 Mar 2018 12:38:00 -0400</lastBuildDate>
-    <atom:link href="http:/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Nginx 配置</title>
-      <link>http:/blog/computer-technology/nginx/nginx-config/</link>
+      <link>/blog/computer-technology/nginx/nginx-config/</link>
       <pubDate>Thu, 15 Mar 2018 12:38:00 -0400</pubDate>
-      <guid>http:/blog/computer-technology/nginx/nginx-config/</guid>
+      <guid>/blog/computer-technology/nginx/nginx-config/</guid>
       <description>&lt;p&gt;&lt;strong&gt;&lt;u&gt;建议主要参考官网英文文档。&lt;/u&gt;&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;具体指令直接可以在官网文档的 Alphabetical index of directives（按字母顺序排列的指令索引）中搜索即可。&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;官方文档：http://nginx.org/en/docs/&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;nginx&#34;&gt;Nginx&lt;/h3&gt;&#xA;&lt;p&gt;Nginx 是一位俄罗斯开发者（伊戈尔·赛索耶夫）开发的服务器，于 2004 年 10 月 4 日公开发布。Nginx 的优势在于轻量级和高性能，尤其是高并发的场景下，相对其它服务器来说表现比较好，因此现在颇受欢迎。Nginx 通常运行在 Unix/Linux 环境下，当然现在官方也发布了 Windows 环境下的应用，不过性能有所降低，这是受限于系统环境的影响。&lt;/p&gt;</description>
     </item>
   </channel>

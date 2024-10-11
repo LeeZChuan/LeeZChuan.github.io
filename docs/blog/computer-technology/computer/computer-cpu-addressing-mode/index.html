@@ -72,7 +72,6 @@
 
 
 
-  <base href="http:/blog/computer-technology/computer/computer-cpu-addressing-mode/" />
 
 
 
@@ -159,8 +158,8 @@
       
       
       
-        <meta property="og:image" content="http:/images/og-image.png" />
-        <meta name="twitter:image" content="http:/images/og-image.png" />
+        <meta property="og:image" content="/images/og-image.png" />
+        <meta name="twitter:image" content="/images/og-image.png" />
         <meta
           name="twitter:card"
           content="summary_large_image" />
@@ -187,7 +186,7 @@
 <meta property="og:title" content="CPU 的七种寻址方式" />
 <meta property="og:description" content="CPU 获取数据的方式不仅仅一种，多种方式也为不同数据的获取提供了不同的效率考量，保证了寻址效率与指令的灵活性。" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="http:/blog/computer-technology/computer/computer-cpu-addressing-mode/" />
+<meta property="og:url" content="/blog/computer-technology/computer/computer-cpu-addressing-mode/" />
 
 
 <meta name="twitter:title" content="CPU 的七种寻址方式" />
@@ -218,7 +217,7 @@
 
 
 <script>
-  let indexURL = "http:/searchindex.json";
+  let indexURL = "/searchindex.json";
   let includeSectionsInSearch = ["blog"];
   let search_no_results = "No results for";
   let search_initial_message = "Type something to search..";
@@ -1097,7 +1096,7 @@ MOV AX, [BX]
   
     <a
       class="share-link share-facebook"
-      href="https://facebook.com/sharer/sharer.php?u=http%3a%2fblog%2fcomputer-technology%2fcomputer%2fcomputer-cpu-addressing-mode%2f"
+      href="https://facebook.com/sharer/sharer.php?u=%2fblog%2fcomputer-technology%2fcomputer%2fcomputer-cpu-addressing-mode%2f"
       target="_blank"
       rel="noopener"
       aria-label="share facebook">
@@ -1115,7 +1114,7 @@ MOV AX, [BX]
   
     <a
       class="share-link share-twitter"
-      href="https://twitter.com/intent/tweet/?text=Share&amp;url=http%3a%2fblog%2fcomputer-technology%2fcomputer%2fcomputer-cpu-addressing-mode%2f"
+      href="https://twitter.com/intent/tweet/?text=Share&amp;url=%2fblog%2fcomputer-technology%2fcomputer%2fcomputer-cpu-addressing-mode%2f"
       target="_blank"
       rel="noopener"
       aria-label="share twitter">
@@ -1133,7 +1132,7 @@ MOV AX, [BX]
   
     <a
       class="share-link share-email"
-      href="mailto:?subject=Share&amp;body=http%3a%2fblog%2fcomputer-technology%2fcomputer%2fcomputer-cpu-addressing-mode%2f"
+      href="mailto:?subject=Share&amp;body=%2fblog%2fcomputer-technology%2fcomputer%2fcomputer-cpu-addressing-mode%2f"
       target="_self"
       rel="noopener"
       aria-label="share email">
@@ -1151,7 +1150,7 @@ MOV AX, [BX]
   
     <a
       class="share-link share-reddit"
-      href="https://reddit.com/submit/?url=http%3a%2fblog%2fcomputer-technology%2fcomputer%2fcomputer-cpu-addressing-mode%2f&amp;resubmit=true&amp;title=Share"
+      href="https://reddit.com/submit/?url=%2fblog%2fcomputer-technology%2fcomputer%2fcomputer-cpu-addressing-mode%2f&amp;resubmit=true&amp;title=Share"
       target="_blank"
       rel="noopener"
       aria-label="share reddit">
@@ -1232,55 +1231,6 @@ MOV AX, [BX]
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/web-tips-fonts/">
-      Web 字体加载对 DOM 位置的影响
-    </a>
-  </h4>
-  
-  
-  <p class="mb-6"><p>由于公司的业务会用到自己设计师定制的 Web 字体，所以一般在组件开发过程中会利用 CSS 引用该字体（<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face"
-
-
-
-
- target="_blank"
- 
-
-
->@font-face</a>），前段时间发现一个线上问题：在部分 iOS 机型上，DOM 元素的位置发生了错位。</p>
-<!-- truncate -->
-<p>首先，对于问题复现的必要条件做了分析，为以下几个方面</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/web-tips-fonts/">
-    Read More
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/computer-technology/protocol/protocol-ip/">
-      IP 协议
-    </a>
-  </h4>
-  
-  
-  <p class="mb-6"><p>作为 TCP/IP 协议栈中最核心的协议，IP 协议为网络数据传输和网络互联提供最基本的服务。IP 协议有 IPv4 和 IPv6 两个版本，我们只讨论 TPv4 版本的 IP 协议。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/protocol/protocol-ip/">
-    Read More
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
     <a href="/blog/computer-technology/web/dom/dom-rule/">
       DOM-元素节点几何量
     </a>
@@ -1294,6 +1244,47 @@ MOV AX, [BX]
 <h6 id="定位偏移量">定位偏移量</h6>
 <p>使用元素节点的 <code>offsetTop</code> 与 <code>offsetLeft</code> 属性，我们可以分别获取该元素节点<strong>顶部与左侧外边框</strong>相对于 <code>offsetParent</code> 的<strong>顶部与左侧内边框</strong>的偏移像素量。</p></p>
   <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-rule/">
+    Read More
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/computer-technology/web/tools-web-fee-toolchain/">
+      前端工程化：对于构建工具链的简单思考
+    </a>
+  </h4>
+  
+  
+  <p class="mb-6"><p>前端工程化是在做与业务开发完全不同的事情，旨在解决软件工程领域与开发者密切相关的问题，通常会将其与基建开发、DevOps 放在一起讨论。前端开发是复杂的，其结合了 HTML/CSS/JavaScript 3 种语言，甚至还有很多其超集，没有开箱即用的工具链，不像 Java Web 开发、Android 开发等等有官方或者商业领域非常成熟的工具可以利用，一切都源于开源社区的从 0 开始构建。正因如此，前端工程化领域百花齐放，开放与创新展现的淋漓尽致，这也是前端开发者了解学习软件工程的机会。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/tools-web-fee-toolchain/">
+    Read More
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/computer-technology/web/dom/dom-js/">
+      DOM-加载 JavaScript
+    </a>
+  </h4>
+  
+  
+  <p class="mb-6"><p>页面的动态交互离不开 Javascript，将 js 脚本引入页面时会阻塞页面加载，在某些时候我们则可以选择异步加载 js 脚本。</p>
+<!-- truncate -->
+<h3 id="引入-js-代码">引入 js 代码</h3>
+<p>通常我们会将 JavaScript 代码写在一个单独的文件中，这样做的好处是页面整洁、结构更清晰，页面更小加载速度更快，同时也易维护。实际上在页面中引入 js 代码的方法有多种，我们按需选择即可。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-js/">
     Read More
   </a>
 </div>

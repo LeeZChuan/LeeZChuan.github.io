@@ -72,7 +72,6 @@
 
 
 
-  <base href="http:/blog/computer-technology/program-architecture-design/bridge-mode-design-of-cross-platform-event-mechanism/" />
 
 
 
@@ -157,8 +156,8 @@
       
       
       
-        <meta property="og:image" content="http:/images/og-image.png" />
-        <meta name="twitter:image" content="http:/images/og-image.png" />
+        <meta property="og:image" content="/images/og-image.png" />
+        <meta name="twitter:image" content="/images/og-image.png" />
         <meta
           name="twitter:card"
           content="summary_large_image" />
@@ -185,7 +184,7 @@
 <meta property="og:title" content="桥接模式：跨平台的事件机制设计" />
 <meta property="og:description" content="最近在做图表组件库的技术调研的架构方案设计，参考了很多开源库的源码，发现其中跨平台的事件机制设计很值得学习，如果要用软件设计模式来解释，那大概就是桥接模式了。" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="http:/blog/computer-technology/program-architecture-design/bridge-mode-design-of-cross-platform-event-mechanism/" />
+<meta property="og:url" content="/blog/computer-technology/program-architecture-design/bridge-mode-design-of-cross-platform-event-mechanism/" />
 
 
 <meta name="twitter:title" content="桥接模式：跨平台的事件机制设计" />
@@ -216,7 +215,7 @@
 
 
 <script>
-  let indexURL = "http:/searchindex.json";
+  let indexURL = "/searchindex.json";
   let includeSectionsInSearch = ["blog"];
   let search_no_results = "No results for";
   let search_initial_message = "Type something to search..";
@@ -1112,7 +1111,7 @@
   
     <a
       class="share-link share-facebook"
-      href="https://facebook.com/sharer/sharer.php?u=http%3a%2fblog%2fcomputer-technology%2fprogram-architecture-design%2fbridge-mode-design-of-cross-platform-event-mechanism%2f"
+      href="https://facebook.com/sharer/sharer.php?u=%2fblog%2fcomputer-technology%2fprogram-architecture-design%2fbridge-mode-design-of-cross-platform-event-mechanism%2f"
       target="_blank"
       rel="noopener"
       aria-label="share facebook">
@@ -1130,7 +1129,7 @@
   
     <a
       class="share-link share-twitter"
-      href="https://twitter.com/intent/tweet/?text=Share&amp;url=http%3a%2fblog%2fcomputer-technology%2fprogram-architecture-design%2fbridge-mode-design-of-cross-platform-event-mechanism%2f"
+      href="https://twitter.com/intent/tweet/?text=Share&amp;url=%2fblog%2fcomputer-technology%2fprogram-architecture-design%2fbridge-mode-design-of-cross-platform-event-mechanism%2f"
       target="_blank"
       rel="noopener"
       aria-label="share twitter">
@@ -1148,7 +1147,7 @@
   
     <a
       class="share-link share-email"
-      href="mailto:?subject=Share&amp;body=http%3a%2fblog%2fcomputer-technology%2fprogram-architecture-design%2fbridge-mode-design-of-cross-platform-event-mechanism%2f"
+      href="mailto:?subject=Share&amp;body=%2fblog%2fcomputer-technology%2fprogram-architecture-design%2fbridge-mode-design-of-cross-platform-event-mechanism%2f"
       target="_self"
       rel="noopener"
       aria-label="share email">
@@ -1166,7 +1165,7 @@
   
     <a
       class="share-link share-reddit"
-      href="https://reddit.com/submit/?url=http%3a%2fblog%2fcomputer-technology%2fprogram-architecture-design%2fbridge-mode-design-of-cross-platform-event-mechanism%2f&amp;resubmit=true&amp;title=Share"
+      href="https://reddit.com/submit/?url=%2fblog%2fcomputer-technology%2fprogram-architecture-design%2fbridge-mode-design-of-cross-platform-event-mechanism%2f&amp;resubmit=true&amp;title=Share"
       target="_blank"
       rel="noopener"
       aria-label="share reddit">
@@ -1247,8 +1246,51 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/computer/computer-memory-refresh/">
-      内存的 3 种刷新方式
+    <a href="/blog/computer-technology/web/css/css-clear-float/">
+      CSS 清除浮动
+    </a>
+  </h4>
+  
+  
+  <p class="mb-6"><p>在浮动布局中，有时候会因为父元素没有设置高度而子元素浮动导致父元素坍塌，我们就需要清除浮动撑起父元素的高度，在这里总结一下常用方法。</p>
+<!-- truncate -->
+<h3 id="浮动">浮动</h3>
+<p>我们通常为了将块级（block）子元素水平排列，就将其浮动（<code>float: left|right</code>）起来而达到我们的目的，当然这会带来一些问题。所以，我们应尽可能清除浮动所带来的副作用，以免影响其它元素的布局。</p>
+<pre><code>&lt;style&gt;
+	#container{
+		background-color: grey;
+	}
+	.inner {
+		margin: 15px;
+		width: 200px;
+		height: 200px;
+		background-color: blue;
+		float: left;
+	}
+&lt;/style&gt;
+&lt;body&gt;
+	&lt;div id=&quot;container&quot;&gt;
+		&lt;div class=&quot;inner&quot;&gt;1&lt;/div&gt;
+		&lt;div class=&quot;inner&quot;&gt;2&lt;/div&gt;
+		&lt;div class=&quot;inner&quot;&gt;3&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/body&gt;
+</code></pre>
+<p>此时，我们并看不到外层 div 的灰色背景，打开调试工具会发现外层 div 的 <code>height: 0</code>。当我们没有设置父元素高度，恰巧所有子元素浮动时，父元素的高度会成为 <code>0</code>，而没有被子元素撑起来。这是因为，子元素浮动之后脱离了文档流。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/css/css-clear-float/">
+    Read More
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/computer-technology/linux/linux-base/">
+      Linux-基础
     </a>
   </h4>
   
@@ -1271,202 +1313,46 @@
           </a>
         
           <a
-            href="/categories/%e5%86%85%e5%ad%98/"
+            href="/categories/%e6%93%8d%e4%bd%9c%e7%b3%bb%e7%bb%9f/"
             class="ms-1"
-            >内存
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6"><p><strong>众所周知，内存（Memory）是带电存储的，掉电就会丢失数据，所以需要刷新来保持数据。</strong></p>
-<!-- truncate -->
-<h3 id="原因">原因</h3>
-<p>由于内存（Memory）以及缓存（Cache）都由相应的存储单元芯片<strong>DRAM</strong>和<strong>SRAM</strong>构成存储阵列，是一种半导体存储器件。并且，所有的数据都是逻辑 <code>1</code> 和 <code>0</code> 的组合。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/computer/computer-memory-refresh/">
-    Read More
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/computer-technology/protocol/protocol-osi/">
-      OSI 与 TCP/IP 参考模型
-    </a>
-  </h4>
-  
-  
-  <p class="mb-6"><p>目前流行的两大网络体系结构是 OSI/RM 和 TCP/IP 参考模型，他们均是分层结构。分层是为了简化问题，降低网络设计复杂性，而且各层次结构相互独立，实现的功能也相对独立。层与层之间只在层间接口处关联，层间耦合最小。</p>
-<!-- truncate -->
-<h3 id="osiopen-system-interconnect">OSI（Open System Interconnect）</h3>
-<p>OSI/RM（Open System Interconnection Reference Module，简称 OSI）即开放系统互联参考模型。为了解决不同网络体系结构的互联、互操作问题，ISO（国际标准化组织）制定了 OSI 模型。OSI 模型把网络通信的工作分为七层，自上而下依次为：</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/protocol/protocol-osi/">
-    Read More
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-  
-    
-      
-    
-
-
-    
-    
-
-
-    
-    
-      
-      
-    
-    
-    
-
-
-    
-    
-      
-      
-        
-
-        
-        
-        
-        
-        
-        
-        
-
-
-        
-        
-
-
-        <picture>
-          <source
-            
-              srcset="/images/image-placeholder_hu14898866438330350576.webp"
-            
-            media="(max-width: 575px)" />
-          <source
-            
-              srcset="/images/image-placeholder_hu3366426647807776041.webp"
-            
-            media="(max-width: 767px)" />
-          <source
-            
-              srcset="/images/image-placeholder_hu15761394040035298493.webp"
-            
-            media="(max-width: 991px)" />
-          <source
-            
-              srcset="/images/image-placeholder_hu9923120856516670921.webp"
-             />
-          <img
-            
-              loading="lazy" decoding="async"
-              src="/images/image-placeholder_hu10538127647789974651.png"
-            class=" mb-6 w-full rounded img"
-            alt="How to build an Application with modern Technology"
-            width="1096"
-            height="480" />
-        </picture>
-      
-      
-    
-    
-  
-
-
-  
-
-
-  
-  <h4 class="mb-3">
-    <a href="/blog/post-1/">
-      How to build an Application with modern Technology
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/john-doe/">
-          <i class="fa-regular fa-circle-user mr-2"></i>John Doe
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/application/"
-            class="ms-1"
-            >Application
+            >操作系统
               ,
             
           </a>
         
           <a
-            href="/categories/data/"
+            href="/categories/linux/"
             class="ms-1"
-            >Data
+            >Linux
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>Nemo vel ad consectetur namut rutrum ex, venenatis sollicitudin urna. Aliquam erat volutpat. Integer eu ipsum sem. Ut bibendum lacus vestibulum maximus suscipit. Quisque vitae nibh iaculis neque blandit euismod.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/post-1/">
+  <p class="mb-6"><p>Linux 是在做一些较为底层的开发工作时的必要开发环境，了解 Linux 也对操作系统概念的理解有很大的帮助，这篇文章是对 Linux 的一些基础概念的阐述。</p>
+<!-- truncate -->
+<h3 id="linux">Linux</h3>
+<p>Linux 的诞生是在上世纪 90 年代，距离现在也就二十年左右，是一种优秀的开发环境，大多时候应用在嵌入式系统开发当中。<strong>Linux 是一个开源的基于 POSIX 和 UNIX，支持多用户、多任务、多线程和多 CPU 的操作系统。事实上，linux 指的是其操作系统的内核。</strong></p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/linux/linux-base/">
+    Read More
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/computer-technology/web/dom/dom/">
+      文档对象模型（DOM）
+    </a>
+  </h4>
+  
+  
+  <p class="mb-6"><p>在网页设计中，有一个很重要的角色需要我们了解，DOM 帮助我们对页面元素进行增、删、改等全方位的操作，而且让 JavaScript 在客户端修改 HTML 文档成为一个很简单的事情，可以说 DOM 为我们操作 HTML 文档提供了强大的编程接口。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom/">
     Read More
   </a>
 </div>

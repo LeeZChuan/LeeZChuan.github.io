@@ -72,7 +72,6 @@
 
 
 
-  <base href="http:/blog/computer-technology/web/dom/dom/" />
 
 
 
@@ -157,8 +156,8 @@
       
       
       
-        <meta property="og:image" content="http:/images/og-image.png" />
-        <meta name="twitter:image" content="http:/images/og-image.png" />
+        <meta property="og:image" content="/images/og-image.png" />
+        <meta name="twitter:image" content="/images/og-image.png" />
         <meta
           name="twitter:card"
           content="summary_large_image" />
@@ -185,7 +184,7 @@
 <meta property="og:title" content="文档对象模型（DOM）" />
 <meta property="og:description" content="在网页设计中，有一个很重要的角色需要我们了解，DOM 帮助我们对页面元素进行增、删、改等全方位的操作，而且让 JavaScript 在客户端修改 HTML 文档成为一个很简单的事情，可以说 DOM 为我们操作 HTML 文档提供了强大的编程接口。" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="http:/blog/computer-technology/web/dom/dom/" />
+<meta property="og:url" content="/blog/computer-technology/web/dom/dom/" />
 
 
 <meta name="twitter:title" content="文档对象模型（DOM）" />
@@ -216,7 +215,7 @@
 
 
 <script>
-  let indexURL = "http:/searchindex.json";
+  let indexURL = "/searchindex.json";
   let includeSectionsInSearch = ["blog"];
   let search_no_results = "No results for";
   let search_initial_message = "Type something to search..";
@@ -1471,7 +1470,7 @@ alert(document.documentElement.textContent);
   
     <a
       class="share-link share-facebook"
-      href="https://facebook.com/sharer/sharer.php?u=http%3a%2fblog%2fcomputer-technology%2fweb%2fdom%2fdom%2f"
+      href="https://facebook.com/sharer/sharer.php?u=%2fblog%2fcomputer-technology%2fweb%2fdom%2fdom%2f"
       target="_blank"
       rel="noopener"
       aria-label="share facebook">
@@ -1489,7 +1488,7 @@ alert(document.documentElement.textContent);
   
     <a
       class="share-link share-twitter"
-      href="https://twitter.com/intent/tweet/?text=Share&amp;url=http%3a%2fblog%2fcomputer-technology%2fweb%2fdom%2fdom%2f"
+      href="https://twitter.com/intent/tweet/?text=Share&amp;url=%2fblog%2fcomputer-technology%2fweb%2fdom%2fdom%2f"
       target="_blank"
       rel="noopener"
       aria-label="share twitter">
@@ -1507,7 +1506,7 @@ alert(document.documentElement.textContent);
   
     <a
       class="share-link share-email"
-      href="mailto:?subject=Share&amp;body=http%3a%2fblog%2fcomputer-technology%2fweb%2fdom%2fdom%2f"
+      href="mailto:?subject=Share&amp;body=%2fblog%2fcomputer-technology%2fweb%2fdom%2fdom%2f"
       target="_self"
       rel="noopener"
       aria-label="share email">
@@ -1525,7 +1524,7 @@ alert(document.documentElement.textContent);
   
     <a
       class="share-link share-reddit"
-      href="https://reddit.com/submit/?url=http%3a%2fblog%2fcomputer-technology%2fweb%2fdom%2fdom%2f&amp;resubmit=true&amp;title=Share"
+      href="https://reddit.com/submit/?url=%2fblog%2fcomputer-technology%2fweb%2fdom%2fdom%2f&amp;resubmit=true&amp;title=Share"
       target="_blank"
       rel="noopener"
       aria-label="share reddit">
@@ -1606,18 +1605,17 @@ alert(document.documentElement.textContent);
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/tools/tools-maintain-open-source-projects-with-tools/">
-      如何更好的维护开源项目
+    <a href="/blog/computer-technology/web/web-local-storage/">
+      Web 本地存储
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>一直以来，开源精神被开发者所推崇，开源项目为开发者提供了不用付出除时间以外任何成本就可以学习前沿技术的最佳途径，另一方面，我们应该思考开源为何会成功，在全球开发者参与协作的情况下代码仓库为何能保持整洁、不出现大规模冲突而奔溃，上下游依赖如何管理，这背后有既定的规范进行强约束，也有一系列社区工具来完成复杂而有价值的工作。所以，从参与或者维护开源项目的角度来看，这些<strong>社区公认的最佳实践</strong>值得我们了解，学习这些东西也能在一定程度上提高我们管理项目的能力。</p>
+  <p class="mb-6"><p>为了达到某些需求，我们通常需要在本地存储一些数据，方便我们进行用户个性化定制服务。</p>
 <!-- truncate -->
-<p>以下内容属于经验积累，持续更新，仅供参考。</p>
-<h3 id="许可证license">许可证（License）</h3>
-<p>代码本质上是开发者的创作成果，具有<strong>专利权</strong>，所以开发者应该意识到自己所享有的权利，同时在使用其他人所提供的代码时避免侵权。作为开源项目，有必要在开源之前选择一个合适的<strong>许可证</strong>，提前<strong>声明权利和义务</strong>（一般作为单独的 <em>LICENSE</em> 文本文件保存），避免在后期陷入麻烦之中，GitHub 官方为我们提供了一个简单的工具站点：</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/tools/tools-maintain-open-source-projects-with-tools/">
+<h3 id="web-存储">Web 存储</h3>
+<p>在互联网上，许多网站提供用户注册功能，因为 http 协议是个无状态的协议（无法记录客户端与服务器端状态），所以我们注册登录后每一次跳转网页都需要重新登陆。为了增强用户体验，我们不得不将状态信息保存下来，而 Web 存储技术则实现了该需求。Cookie 最多可在本地存储 4K 数据，出于安全性考虑， Cookie 中并非直接存储的是用户敏感数据（帐号、密码、个人信息等），而是一个状态 ID，该 ID 是服务器端利用 session 存储一个会话状态并分配给客户端用来进行状态识别的。因此，每一次的 http 请求都会带上 Cookie 数据发送给服务器端进行状态识别，从而达到状态保持的目的。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/web-local-storage/">
     Read More
   </a>
 </div>
@@ -1629,17 +1627,19 @@ alert(document.documentElement.textContent);
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/css/css-bfc/">
-      块级格式化上下文（BFC）
+    <a href="/blog/computer-technology/program-architecture-design/bridge-mode-design-of-cross-platform-event-mechanism/">
+      桥接模式：跨平台的事件机制设计
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>在进行页面布局时，通常有流式布局、定位布局、浮动布局这三种形式。而在布局过程中，各元素之间的影响却是一个很关键的问题。</p>
+  <p class="mb-6"><p>对于 Web 的图表组件库来说，一些功能比较强大的开源库，渲染层可以支持 DOM、SVG、Canvas、WebGL 等多个平台的环境，而图表库的很多功能的实现都和渲染层紧密相关。</p>
+<p>最近，在参考学习一些开源的图表组件库时，发现在跨平台设计中，事件机制的实现很有意思，所以在这里以最简化的代码来解释和记录一下这个方案。如果要用经典的软件设计模式来解释，大概就是<strong>桥接模式</strong>了。</p>
+<p><strong>桥接模式（Bridge Pattern）</strong> 将一个功能的实现拆分为抽象（Abstraction）和实现（Implementor），让其相互独立的扩展和定义，借助该模式可以设计一种平台无关的软件架构。</p>
 <!-- truncate -->
-<h3 id="bfc">BFC</h3>
-<p>BFC（Block Formatting Context，块级格式化上下文）是 CSS 2.1 中的一个规范，在 CSS 3 中也称为 Flow Root。首先，BFC 是<strong>块级元素</strong>身上的一个特性，通常它是隐藏不生效的，但某些情况下它会显现出来：</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/css/css-bfc/">
+<h3 id="事件机制">事件机制</h3>
+<p>事件机制是软件设计中最基础、最为常见的一种设计，对于 Web 图表组件库来说要提供一些处理用户交互（例如点击、拖动、右键点击等）的机制。一个典型的事件模型类如下：</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/program-architecture-design/bridge-mode-design-of-cross-platform-event-mechanism/">
     Read More
   </a>
 </div>
@@ -1651,51 +1651,23 @@ alert(document.documentElement.textContent);
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/linux/linux-cmd-shell/">
-      Linux-常用 Shell 命令
+    <a href="/blog/computer-technology/web/dom/dom-attribute/">
+      DOM-元素节点属性
     </a>
   </h4>
   
   
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors//">
-          <i class="fa-regular fa-circle-user mr-2"></i>
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/"
-            class="ms-1"
-            >计算机技术
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/%e6%93%8d%e4%bd%9c%e7%b3%bb%e7%bb%9f/"
-            class="ms-1"
-            >操作系统
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/linux/"
-            class="ms-1"
-            >Linux
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6"><p>Linux 是一个优秀的开发环境，大多数服务器都在上面部署。作为一个程序员，熟悉Linux 系统的常用操作也是很必要的。在 linux 内核外，shell 提供了我们程序员（用户）与内核之间的交互媒介，shell 可以说是一个命令解释器，当然它也负责将内核输出信息翻译给程序员。</p>
+  <p class="mb-6"><p>元素节点上具有很多属性，这些属性我们通常可以很方便的获取，并进行简单的操作。</p>
 <!-- truncate -->
-<h3 id="shell">Shell</h3>
-<p>Linux 是一个基于命令行的操作系统，提供了一个命令解释器，即 Shell（壳）。Shell 是一个软件，是操作系统的用户界面，用户通过在 Shell 中输入命令，然后命令解释器解释完成后将指令送往内核中执行，来实现对 Linux 系统的操作。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/linux/linux-cmd-shell/">
+<h3 id="节点属性常用操作">节点属性常用操作</h3>
+<p>每个 HTML 元素都有很多属性，例如（id、class、name、url、src、href）等等，元素节点上定义了一些方法供我们使用，来对这些属性进行设置、获取、移除操作。</p>
+<ul>
+<li>setAttribute()</li>
+<li>getAttribute()</li>
+<li>removeAttribute()</li>
+</ul>
+<p>exp:</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-attribute/">
     Read More
   </a>
 </div>
