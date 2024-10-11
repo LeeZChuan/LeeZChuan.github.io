@@ -1,19 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>VS Code on 技术之心</title>
-    <link>/tags/vs-code/</link>
-    <description>Recent content in VS Code on 技术之心</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Wed, 15 Aug 2018 16:42:00 -0400</lastBuildDate>
-    <atom:link href="/tags/vs-code/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>IDE：VS Code 配置同步</title>
-      <link>/blog/computer-technology/tools/tools-vscode-sync/</link>
-      <pubDate>Wed, 15 Aug 2018 16:42:00 -0400</pubDate>
-      <guid>/blog/computer-technology/tools/tools-vscode-sync/</guid>
-      <description>&lt;p&gt;利用一款插件来同步 VS Code 的配置到 GitHub 的 gist 上，实现多个设备间共享一套配置。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;vs-code&#34;&gt;VS Code&lt;/h3&gt;&#xA;&lt;p&gt;Visual Studio Code 是由微软出品的一款轻量级编辑器，兼有部分 IDE 功能。在之前，Sublime Text 是最受欢迎的编辑器（开源），也为多数前端开发者所推崇，当然说到底它依然是个编辑器。随着时间的推移，GitHub 打造了自家的编辑器 Atom，微软的 VS Code 也横空出世，更有其它优秀的轻量级编辑器在市场上展开角逐。不过，到现在来看，VS Code 可能胜出了，已成为前端开发的利器。&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VS Code on 技术之心</title><link>https://leezchuan.github.io/tags/vs-code/</link><description>Recent content in VS Code on 技术之心</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Wed, 15 Aug 2018 16:42:00 -0400</lastBuildDate><atom:link href="https://leezchuan.github.io/tags/vs-code/index.xml" rel="self" type="application/rss+xml"/><item><title>IDE：VS Code 配置同步</title><link>https://leezchuan.github.io/blog/computer-technology/tools/tools-vscode-sync/</link><pubDate>Wed, 15 Aug 2018 16:42:00 -0400</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/tools/tools-vscode-sync/</guid><description>&lt;p>利用一款插件来同步 VS Code 的配置到 GitHub 的 gist 上，实现多个设备间共享一套配置。&lt;/p>
+&lt;!-- truncate -->
+&lt;h3 id="vs-code">VS Code&lt;/h3>
+&lt;p>Visual Studio Code 是由微软出品的一款轻量级编辑器，兼有部分 IDE 功能。在之前，Sublime Text 是最受欢迎的编辑器（开源），也为多数前端开发者所推崇，当然说到底它依然是个编辑器。随着时间的推移，GitHub 打造了自家的编辑器 Atom，微软的 VS Code 也横空出世，更有其它优秀的轻量级编辑器在市场上展开角逐。不过，到现在来看，VS Code 可能胜出了，已成为前端开发的利器。&lt;/p></description></item></channel></rss>
