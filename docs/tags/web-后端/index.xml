@@ -1,14 +1,26 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Web 后端 on 技术之心</title><link>https://leezchuan.github.io/tags/web-%E5%90%8E%E7%AB%AF/</link><description>Recent content in Web 后端 on 技术之心</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sun, 27 Jun 2021 16:28:00 -0400</lastBuildDate><atom:link href="https://leezchuan.github.io/tags/web-%E5%90%8E%E7%AB%AF/index.xml" rel="self" type="application/rss+xml"/><item><title>Fastify - 专注于性能和低内存消耗</title><link>https://leezchuan.github.io/blog/computer-technology/nodejs/nodejs-fastify/</link><pubDate>Sun, 27 Jun 2021 16:28:00 -0400</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/nodejs/nodejs-fastify/</guid><description>&lt;p>最近在做 Node.js 技术相关的调研，需要选定一个 Web 框架作为基础来构建业务。一般来说，首选开源方案，对于我来说，比较关注框架背后的开发团队情况、项目活跃度、是否有足够多的商业案例、文档是否完整可读、框架的设计理念、技术架构是否灵活可扩展、技术社区生态是否完整等方面。目前，我比较倾心的是 Fastify 这个新兴框架，根据官网介绍，其专注于高性能和低消耗，并且公开的基准测试表现相当不错，项目足够活跃，更重要的是属于 OpenJS 基金会的孵化项目。本文主要介绍 Fastify 的设计理念和探究其是如何提高性能和降低内存消耗的。&lt;/p></description></item><item><title>使用 npm</title><link>https://leezchuan.github.io/blog/computer-technology/nodejs/tools-npm/</link><pubDate>Sat, 06 Jul 2019 15:43:00 -0400</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/nodejs/tools-npm/</guid><description>&lt;p>npm 是 Node.js 的一个包管理器，Web 前端工程师也经常利用它来简化开发流程，看看如何愉快的使用 npm ，并且发布自己的包，让 npm 成为我们的开发利器。&lt;/p>
-&lt;!-- truncate -->
-&lt;h3 id="npm">npm&lt;/h3>
-&lt;blockquote>
-&lt;p>**Node.js：**&lt;a href="https://www.npmjs.com/"
-
-
-
-
- target="_blank"
- 
-
-
->https://www.npmjs.com/&lt;/a>&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web 后端 on 技术之心</title>
+    <link>http://localhost:1313/tags/web-%E5%90%8E%E7%AB%AF/</link>
+    <description>Recent content in Web 后端 on 技术之心</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 27 Jun 2021 16:28:00 -0400</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/web-%E5%90%8E%E7%AB%AF/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fastify - 专注于性能和低内存消耗</title>
+      <link>http://localhost:1313/blog/computer-technology/nodejs/nodejs-fastify/</link>
+      <pubDate>Sun, 27 Jun 2021 16:28:00 -0400</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/nodejs/nodejs-fastify/</guid>
+      <description>&lt;p&gt;最近在做 Node.js 技术相关的调研，需要选定一个 Web 框架作为基础来构建业务。一般来说，首选开源方案，对于我来说，比较关注框架背后的开发团队情况、项目活跃度、是否有足够多的商业案例、文档是否完整可读、框架的设计理念、技术架构是否灵活可扩展、技术社区生态是否完整等方面。目前，我比较倾心的是 Fastify 这个新兴框架，根据官网介绍，其专注于高性能和低消耗，并且公开的基准测试表现相当不错，项目足够活跃，更重要的是属于 OpenJS 基金会的孵化项目。本文主要介绍 Fastify 的设计理念和探究其是如何提高性能和降低内存消耗的。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>使用 npm</title>
+      <link>http://localhost:1313/blog/computer-technology/nodejs/tools-npm/</link>
+      <pubDate>Sat, 06 Jul 2019 15:43:00 -0400</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/nodejs/tools-npm/</guid>
+      <description>&lt;p&gt;npm 是 Node.js 的一个包管理器，Web 前端工程师也经常利用它来简化开发流程，看看如何愉快的使用 npm ，并且发布自己的包，让 npm 成为我们的开发利器。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;npm&#34;&gt;npm&lt;/h3&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;**Node.js：**&lt;a href=&#34;https://www.npmjs.com/&#34;&#xA;&#xA;&#xA;&#xA;&#xA; target=&#34;_blank&#34;&#xA; &#xA;&#xA;&#xA;&gt;https://www.npmjs.com/&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

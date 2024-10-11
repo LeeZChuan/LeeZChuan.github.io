@@ -1,9 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Selector on 技术之心</title><link>https://leezchuan.github.io/tags/selector/</link><description>Recent content in Selector on 技术之心</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Tue, 17 May 2016 22:10:00 -0400</lastBuildDate><atom:link href="https://leezchuan.github.io/tags/selector/index.xml" rel="self" type="application/rss+xml"/><item><title>DOM-选取元素节点</title><link>https://leezchuan.github.io/blog/computer-technology/web/dom/dom-select/</link><pubDate>Tue, 17 May 2016 22:10:00 -0400</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/dom/dom-select/</guid><description>&lt;p>DOM 操作都是通过对文档树中节点的访问来实现的，如何选取特定的元素节点是关键，进而才能访问该元素节点实现修改、查看、移除、替换等操作。&lt;/p>
-&lt;!-- truncate -->
-&lt;h3 id="选取特定单一元素节点">选取特定单一元素节点&lt;/h3>
-&lt;p>取得某一特定单一元素节点的引用最常用的方式如下：&lt;/p>
-&lt;ul>
-&lt;li>querySelector()&lt;/li>
-&lt;li>getElementById()&lt;/li>
-&lt;/ul>
-&lt;p>exp：&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Selector on 技术之心</title>
+    <link>http://localhost:1313/tags/selector/</link>
+    <description>Recent content in Selector on 技术之心</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 17 May 2016 22:10:00 -0400</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/selector/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DOM-选取元素节点</title>
+      <link>http://localhost:1313/blog/computer-technology/web/dom/dom-select/</link>
+      <pubDate>Tue, 17 May 2016 22:10:00 -0400</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/web/dom/dom-select/</guid>
+      <description>&lt;p&gt;DOM 操作都是通过对文档树中节点的访问来实现的，如何选取特定的元素节点是关键，进而才能访问该元素节点实现修改、查看、移除、替换等操作。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;选取特定单一元素节点&#34;&gt;选取特定单一元素节点&lt;/h3&gt;&#xA;&lt;p&gt;取得某一特定单一元素节点的引用最常用的方式如下：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;querySelector()&lt;/li&gt;&#xA;&lt;li&gt;getElementById()&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;exp：&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,5 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>项目管理 on 技术之心</title><link>https://leezchuan.github.io/tags/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/</link><description>Recent content in 项目管理 on 技术之心</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Fri, 22 Apr 2022 22:53:00 -0400</lastBuildDate><atom:link href="https://leezchuan.github.io/tags/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/index.xml" rel="self" type="application/rss+xml"/><item><title>如何更好的维护开源项目</title><link>https://leezchuan.github.io/blog/computer-technology/tools/tools-maintain-open-source-projects-with-tools/</link><pubDate>Fri, 22 Apr 2022 22:53:00 -0400</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/tools/tools-maintain-open-source-projects-with-tools/</guid><description>&lt;p>一直以来，开源精神被开发者所推崇，开源项目为开发者提供了不用付出除时间以外任何成本就可以学习前沿技术的最佳途径，另一方面，我们应该思考开源为何会成功，在全球开发者参与协作的情况下代码仓库为何能保持整洁、不出现大规模冲突而奔溃，上下游依赖如何管理，这背后有既定的规范进行强约束，也有一系列社区工具来完成复杂而有价值的工作。所以，从参与或者维护开源项目的角度来看，这些&lt;strong>社区公认的最佳实践&lt;/strong>值得我们了解，学习这些东西也能在一定程度上提高我们管理项目的能力。&lt;/p>
-&lt;!-- truncate -->
-&lt;p>以下内容属于经验积累，持续更新，仅供参考。&lt;/p>
-&lt;h3 id="许可证license">许可证（License）&lt;/h3>
-&lt;p>代码本质上是开发者的创作成果，具有&lt;strong>专利权&lt;/strong>，所以开发者应该意识到自己所享有的权利，同时在使用其他人所提供的代码时避免侵权。作为开源项目，有必要在开源之前选择一个合适的&lt;strong>许可证&lt;/strong>，提前&lt;strong>声明权利和义务&lt;/strong>（一般作为单独的 &lt;em>LICENSE&lt;/em> 文本文件保存），避免在后期陷入麻烦之中，GitHub 官方为我们提供了一个简单的工具站点：&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>项目管理 on 技术之心</title>
+    <link>http://localhost:1313/tags/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/</link>
+    <description>Recent content in 项目管理 on 技术之心</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 22 Apr 2022 22:53:00 -0400</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>如何更好的维护开源项目</title>
+      <link>http://localhost:1313/blog/computer-technology/tools/tools-maintain-open-source-projects-with-tools/</link>
+      <pubDate>Fri, 22 Apr 2022 22:53:00 -0400</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/tools/tools-maintain-open-source-projects-with-tools/</guid>
+      <description>&lt;p&gt;一直以来，开源精神被开发者所推崇，开源项目为开发者提供了不用付出除时间以外任何成本就可以学习前沿技术的最佳途径，另一方面，我们应该思考开源为何会成功，在全球开发者参与协作的情况下代码仓库为何能保持整洁、不出现大规模冲突而奔溃，上下游依赖如何管理，这背后有既定的规范进行强约束，也有一系列社区工具来完成复杂而有价值的工作。所以，从参与或者维护开源项目的角度来看，这些&lt;strong&gt;社区公认的最佳实践&lt;/strong&gt;值得我们了解，学习这些东西也能在一定程度上提高我们管理项目的能力。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;p&gt;以下内容属于经验积累，持续更新，仅供参考。&lt;/p&gt;&#xA;&lt;h3 id=&#34;许可证license&#34;&gt;许可证（License）&lt;/h3&gt;&#xA;&lt;p&gt;代码本质上是开发者的创作成果，具有&lt;strong&gt;专利权&lt;/strong&gt;，所以开发者应该意识到自己所享有的权利，同时在使用其他人所提供的代码时避免侵权。作为开源项目，有必要在开源之前选择一个合适的&lt;strong&gt;许可证&lt;/strong&gt;，提前&lt;strong&gt;声明权利和义务&lt;/strong&gt;（一般作为单独的 &lt;em&gt;LICENSE&lt;/em&gt; 文本文件保存），避免在后期陷入麻烦之中，GitHub 官方为我们提供了一个简单的工具站点：&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

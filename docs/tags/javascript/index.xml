@@ -1,9 +1,40 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>JavaScript on 技术之心</title><link>https://leezchuan.github.io/tags/javascript/</link><description>Recent content in JavaScript on 技术之心</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sun, 27 Jun 2021 16:28:00 -0400</lastBuildDate><atom:link href="https://leezchuan.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml"/><item><title>Fastify - 专注于性能和低内存消耗</title><link>https://leezchuan.github.io/blog/computer-technology/nodejs/nodejs-fastify/</link><pubDate>Sun, 27 Jun 2021 16:28:00 -0400</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/nodejs/nodejs-fastify/</guid><description>&lt;p>最近在做 Node.js 技术相关的调研，需要选定一个 Web 框架作为基础来构建业务。一般来说，首选开源方案，对于我来说，比较关注框架背后的开发团队情况、项目活跃度、是否有足够多的商业案例、文档是否完整可读、框架的设计理念、技术架构是否灵活可扩展、技术社区生态是否完整等方面。目前，我比较倾心的是 Fastify 这个新兴框架，根据官网介绍，其专注于高性能和低消耗，并且公开的基准测试表现相当不错，项目足够活跃，更重要的是属于 OpenJS 基金会的孵化项目。本文主要介绍 Fastify 的设计理念和探究其是如何提高性能和降低内存消耗的。&lt;/p></description></item><item><title>Web 前端性能优化：解析函数节流与防抖的实现</title><link>https://leezchuan.github.io/blog/computer-technology/web/javascript/debouncing-and-throttling/</link><pubDate>Sun, 25 Apr 2021 22:56:00 -0400</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/javascript/debouncing-and-throttling/</guid><description>&lt;p>前端开发中，有一个使用较为普遍的性能优化技巧，即函数节流（Throttle）和防抖（Debounce），其主要作用是根据时间对函数调用做以限制。最常见的业务场景是监听页面的 &lt;code>scroll&lt;/code> 事件，浏览器可以在 1s 内触发该事件数次（甚至达数十次），如果事件处理程序在这 1s 内多次执行，必然会造成一定的性能问题，影响用户体验。&lt;/p>
-&lt;!-- truncate -->
-&lt;p>本质上，函数节流和防抖并不是控制事件源的触发次数，而是在事件短时间内连续多次触发之后控制相应事件处理程序的调用频率。&lt;/p></description></item><item><title>JavaScript 异步编程</title><link>https://leezchuan.github.io/blog/computer-technology/web/javascript/web-js-async/</link><pubDate>Wed, 22 Mar 2017 15:48:00 -0400</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/javascript/web-js-async/</guid><description>&lt;p>JavaScript 作为一门在 Web 开发中的主流语言，常常涉及到交互事件方面的应用，这不可避免的用到了异步编程的方法，而它本身则是单线程运行的。在以往的开发中，异步编程正变得越来越难管理，新的 Promise 标准 API 将使得异步编程更加方便、安全。&lt;/p>
-&lt;!-- truncate -->
-&lt;h3 id="异步与并行">异步与并行&lt;/h3>
-&lt;p>作为 Web 前端开发中的主流语言，JavaScript 需要实现诸多的交互动作，但是在宿主环境（例如 v8）中 JS 引擎只有一个主线程，所以多线程并行处理是不可能的。因此，异步编程显得尤为重要。&lt;/p></description></item><item><title>DOM-加载 JavaScript</title><link>https://leezchuan.github.io/blog/computer-technology/web/dom/dom-js/</link><pubDate>Tue, 24 May 2016 22:49:00 -0400</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/dom/dom-js/</guid><description>&lt;p>页面的动态交互离不开 Javascript，将 js 脚本引入页面时会阻塞页面加载，在某些时候我们则可以选择异步加载 js 脚本。&lt;/p>
-&lt;!-- truncate -->
-&lt;h3 id="引入-js-代码">引入 js 代码&lt;/h3>
-&lt;p>通常我们会将 JavaScript 代码写在一个单独的文件中，这样做的好处是页面整洁、结构更清晰，页面更小加载速度更快，同时也易维护。实际上在页面中引入 js 代码的方法有多种，我们按需选择即可。&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JavaScript on 技术之心</title>
+    <link>http://localhost:1313/tags/javascript/</link>
+    <description>Recent content in JavaScript on 技术之心</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 27 Jun 2021 16:28:00 -0400</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fastify - 专注于性能和低内存消耗</title>
+      <link>http://localhost:1313/blog/computer-technology/nodejs/nodejs-fastify/</link>
+      <pubDate>Sun, 27 Jun 2021 16:28:00 -0400</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/nodejs/nodejs-fastify/</guid>
+      <description>&lt;p&gt;最近在做 Node.js 技术相关的调研，需要选定一个 Web 框架作为基础来构建业务。一般来说，首选开源方案，对于我来说，比较关注框架背后的开发团队情况、项目活跃度、是否有足够多的商业案例、文档是否完整可读、框架的设计理念、技术架构是否灵活可扩展、技术社区生态是否完整等方面。目前，我比较倾心的是 Fastify 这个新兴框架，根据官网介绍，其专注于高性能和低消耗，并且公开的基准测试表现相当不错，项目足够活跃，更重要的是属于 OpenJS 基金会的孵化项目。本文主要介绍 Fastify 的设计理念和探究其是如何提高性能和降低内存消耗的。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web 前端性能优化：解析函数节流与防抖的实现</title>
+      <link>http://localhost:1313/blog/computer-technology/web/javascript/debouncing-and-throttling/</link>
+      <pubDate>Sun, 25 Apr 2021 22:56:00 -0400</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/web/javascript/debouncing-and-throttling/</guid>
+      <description>&lt;p&gt;前端开发中，有一个使用较为普遍的性能优化技巧，即函数节流（Throttle）和防抖（Debounce），其主要作用是根据时间对函数调用做以限制。最常见的业务场景是监听页面的 &lt;code&gt;scroll&lt;/code&gt; 事件，浏览器可以在 1s 内触发该事件数次（甚至达数十次），如果事件处理程序在这 1s 内多次执行，必然会造成一定的性能问题，影响用户体验。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;p&gt;本质上，函数节流和防抖并不是控制事件源的触发次数，而是在事件短时间内连续多次触发之后控制相应事件处理程序的调用频率。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>JavaScript 异步编程</title>
+      <link>http://localhost:1313/blog/computer-technology/web/javascript/web-js-async/</link>
+      <pubDate>Wed, 22 Mar 2017 15:48:00 -0400</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/web/javascript/web-js-async/</guid>
+      <description>&lt;p&gt;JavaScript 作为一门在 Web 开发中的主流语言，常常涉及到交互事件方面的应用，这不可避免的用到了异步编程的方法，而它本身则是单线程运行的。在以往的开发中，异步编程正变得越来越难管理，新的 Promise 标准 API 将使得异步编程更加方便、安全。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;异步与并行&#34;&gt;异步与并行&lt;/h3&gt;&#xA;&lt;p&gt;作为 Web 前端开发中的主流语言，JavaScript 需要实现诸多的交互动作，但是在宿主环境（例如 v8）中 JS 引擎只有一个主线程，所以多线程并行处理是不可能的。因此，异步编程显得尤为重要。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>DOM-加载 JavaScript</title>
+      <link>http://localhost:1313/blog/computer-technology/web/dom/dom-js/</link>
+      <pubDate>Tue, 24 May 2016 22:49:00 -0400</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/web/dom/dom-js/</guid>
+      <description>&lt;p&gt;页面的动态交互离不开 Javascript，将 js 脚本引入页面时会阻塞页面加载，在某些时候我们则可以选择异步加载 js 脚本。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;引入-js-代码&#34;&gt;引入 js 代码&lt;/h3&gt;&#xA;&lt;p&gt;通常我们会将 JavaScript 代码写在一个单独的文件中，这样做的好处是页面整洁、结构更清晰，页面更小加载速度更快，同时也易维护。实际上在页面中引入 js 代码的方法有多种，我们按需选择即可。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

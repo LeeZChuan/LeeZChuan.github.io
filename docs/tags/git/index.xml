@@ -1,1 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Git on 技术之心</title><link>https://leezchuan.github.io/tags/git/</link><description>Recent content in Git on 技术之心</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sat, 31 Dec 2016 13:49:00 -0500</lastBuildDate><atom:link href="https://leezchuan.github.io/tags/git/index.xml" rel="self" type="application/rss+xml"/><item><title>使用 Git</title><link>https://leezchuan.github.io/blog/computer-technology/tools/tools-git/</link><pubDate>Sat, 31 Dec 2016 13:49:00 -0500</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/tools/tools-git/</guid><description>&lt;p>Git 是一个分布式的版本控制工具，类似的版本控制工具还有 SVN ；由于 GitHub 平台的盛行，也使得 git 更加受欢迎，在 Windows 平台使用 git 也是非常方便的。&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git on 技术之心</title>
+    <link>http://localhost:1313/tags/git/</link>
+    <description>Recent content in Git on 技术之心</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 31 Dec 2016 13:49:00 -0500</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用 Git</title>
+      <link>http://localhost:1313/blog/computer-technology/tools/tools-git/</link>
+      <pubDate>Sat, 31 Dec 2016 13:49:00 -0500</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/tools/tools-git/</guid>
+      <description>&lt;p&gt;Git 是一个分布式的版本控制工具，类似的版本控制工具还有 SVN ；由于 GitHub 平台的盛行，也使得 git 更加受欢迎，在 Windows 平台使用 git 也是非常方便的。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
