@@ -1,26 +1,7 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>插件 on 技术之心</title>
-    <link>http://localhost:1313/tags/%E6%8F%92%E4%BB%B6/</link>
-    <description>Recent content in 插件 on 技术之心</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Thu, 19 May 2016 13:38:00 -0400</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%E6%8F%92%E4%BB%B6/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>编辑器：Sublime Text 常用插件</title>
-      <link>http://localhost:1313/blog/computer-technology/tools/tools-sublime/</link>
-      <pubDate>Thu, 19 May 2016 13:38:00 -0400</pubDate>
-      <guid>http://localhost:1313/blog/computer-technology/tools/tools-sublime/</guid>
-      <description>&lt;p&gt;Sumblime Text 是一个具有漂亮的界面和强大功能的文本编辑器，而且也支持许多丰富的插件。它是一个收费软件，但是允许开发人员无限期的免费试用。这篇文章介绍一下常用的插件。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;安装-sublime-text&#34;&gt;安装 Sublime Text&lt;/h3&gt;&#xA;&lt;p&gt;Sublime Text 编辑器，我们直接去官网下载相应版本安装即可，2 或 3 版本官网均有链接。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>编辑器：Sublime Text - Vim 插件</title>
-      <link>http://localhost:1313/blog/computer-technology/tools/tools-sublime-vim/</link>
-      <pubDate>Wed, 18 May 2016 12:55:00 -0400</pubDate>
-      <guid>http://localhost:1313/blog/computer-technology/tools/tools-sublime-vim/</guid>
-      <description>&lt;p&gt;Sumblime Text 是一个具有漂亮的界面和强大功能的文本编辑器，而且也支持许多丰富的插件。它是一个收费软件，但是允许开发人员无限期的免费试用。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;vim&#34;&gt;Vim&lt;/h3&gt;&#xA;&lt;p&gt;Vim 是 Linux 操作系统下类 Vi 编辑器，是一款被开发者广泛使用，并且功能强大的文本编辑器。而 Sublime Text 最初的设计初衷也是基于 Vim 的设计思想，被设计为一个跨平台的具有丰富扩展功能的 Vim。随着后来的发展，它已经不仅仅是单纯的模仿 Vim，而是支持越来越多的插件和强大的功能。&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>插件 on 技术之心</title><link>https://leezchuan.github.io/tags/%E6%8F%92%E4%BB%B6/</link><description>Recent content in 插件 on 技术之心</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Thu, 19 May 2016 13:38:00 -0400</lastBuildDate><atom:link href="https://leezchuan.github.io/tags/%E6%8F%92%E4%BB%B6/index.xml" rel="self" type="application/rss+xml"/><item><title>编辑器：Sublime Text 常用插件</title><link>https://leezchuan.github.io/blog/computer-technology/tools/tools-sublime/</link><pubDate>Thu, 19 May 2016 13:38:00 -0400</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/tools/tools-sublime/</guid><description>&lt;p>Sumblime Text 是一个具有漂亮的界面和强大功能的文本编辑器，而且也支持许多丰富的插件。它是一个收费软件，但是允许开发人员无限期的免费试用。这篇文章介绍一下常用的插件。&lt;/p>
+&lt;!-- truncate -->
+&lt;h3 id="安装-sublime-text">安装 Sublime Text&lt;/h3>
+&lt;p>Sublime Text 编辑器，我们直接去官网下载相应版本安装即可，2 或 3 版本官网均有链接。&lt;/p></description></item><item><title>编辑器：Sublime Text - Vim 插件</title><link>https://leezchuan.github.io/blog/computer-technology/tools/tools-sublime-vim/</link><pubDate>Wed, 18 May 2016 12:55:00 -0400</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/tools/tools-sublime-vim/</guid><description>&lt;p>Sumblime Text 是一个具有漂亮的界面和强大功能的文本编辑器，而且也支持许多丰富的插件。它是一个收费软件，但是允许开发人员无限期的免费试用。&lt;/p>
+&lt;!-- truncate -->
+&lt;h3 id="vim">Vim&lt;/h3>
+&lt;p>Vim 是 Linux 操作系统下类 Vi 编辑器，是一款被开发者广泛使用，并且功能强大的文本编辑器。而 Sublime Text 最初的设计初衷也是基于 Vim 的设计思想，被设计为一个跨平台的具有丰富扩展功能的 Vim。随着后来的发展，它已经不仅仅是单纯的模仿 Vim，而是支持越来越多的插件和强大的功能。&lt;/p></description></item></channel></rss>
