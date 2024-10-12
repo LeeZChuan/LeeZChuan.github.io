@@ -1,0 +1,46 @@
+name: Deploy Hugo Site to GitHub Pages
+
+# 触发条件：每次 push 到 main 分支时触发
+on:
+  push:
+    branches:
+      - main  # 确保是你博客的主分支
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 检出当前代码
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+         # 安装 Node.js 和 PostCSS
+      - name: Install Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16' # 安装最新版本的 Node.js
+
+      - name: Install PostCSS and other dependencies
+        run: |
+          npm install postcss postcss-cli autoprefixer
+
+
+      # 设置 Hugo 环境
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+
+
+      # 执行 Hugo 打包
+      - name: Build Hugo site
+        run: hugo --minify
+
+      # 部署到 GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: /  # Hugo 打包生成的静态文件目录
+          publish_branch: gh-pages  # 发布到 gh-pages 分支
