@@ -35,7 +35,7 @@ jobs:
 
       # 执行 Hugo 打包
       - name: Build Hugo site
-        run: hugo --minify
+        run: npm run build
 
       # 部署到 GitHub Pages
       - name: Deploy to GitHub Pages
