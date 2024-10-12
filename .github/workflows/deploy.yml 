@@ -15,27 +15,21 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-         # 安装 Node.js 和 PostCSS
-      - name: Install Node.js
-        uses: actions/setup-node@v2
+       # 安装 Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
         with:
-          node-version: '16' # 安装最新版本的 Node.js
+          node-version: '16'  # 选择适合你的 Node.js 版本
 
-      - name: Install PostCSS and other dependencies
-        run: |
-          npm install postcss postcss-cli autoprefixer
+      # 安装依赖项
+      - name: Install dependencies
+        run: npm install
 
-
-      # 设置 Hugo 环境
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
-        with:
-          hugo-version: 'latest'
-
-
-      # 执行 Hugo 打包
+      # 执行打包
       - name: Build Hugo site
         run: npm run build
+
+
 
       # 部署到 GitHub Pages
       - name: Deploy to GitHub Pages
