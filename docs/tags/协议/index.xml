@@ -8,7 +8,7 @@
 &lt;!-- truncate -->
 &lt;h3 id="局域网lan">局域网（LAN）&lt;/h3>
 &lt;p>局域网（Local Area Network，LAN）是指一个局部的地理范围内（如一个学校、公司、单位），将各种计算机、外部设备和数据库等互相连接起来组成的计算机通信网。局域网通常是封闭的，但它可以通过数据通信网或专用数据电路，与远方的局域网、数据库或处理中心相连接，构成一个大范围的信息处理系统。局域网可以实现硬件资源（如服务器、打印机、扫描仪等）共享和软件资源（应用软件、文件管理等）共享，还可以实现办公自动化（如工作组内的日程安排、电子邮件和传真通信服务）等。&lt;/p>
-&lt;h6 id="局域网协议标准">局域网协议标准&lt;/h6>
+&lt;h4 id="局域网协议标准">局域网协议标准&lt;/h4>
 &lt;p>IEEE 802 是为了规范随着局域网技术进步而产生的种类繁多的局域网产品而制定的标准，有时也称为局域网参考模型。它包括 CSDM/CD、令牌总线和令牌环网等底层（物理层和数据链路层）网络协议。&lt;/p></description></item><item><title>网络通信关键概念</title><link>https://leezchuan.github.io/blog/computer-technology/protocol/protocol-base/</link><pubDate>Sat, 18 Jun 2016 16:17:00 -0400</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/protocol/protocol-base/</guid><description>&lt;p>计算机网络是通过通信设备与线路将地理上分散并且具有独立功能的计算机系统连接在一起，并由功能完善的软件来控制，进而实现资源共享的系统。从物理组成上来看，计算机网络包括硬件、软件和协议三大部分。计算机网络中结点间相互通信是由控制信息传送的网络协议及其他相应的网络软件共同实现的。在计算机网络通信中，有部分关键性概念需要理解透彻，在此做一总结。&lt;/p>
 &lt;!-- truncate -->
 &lt;h3 id="网络通信协议">网络通信协议&lt;/h3>

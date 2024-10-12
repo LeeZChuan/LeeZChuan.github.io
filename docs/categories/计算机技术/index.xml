@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>计算机技术 on 技术之心</title><link>https://leezchuan.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/</link><description>Recent content in 计算机技术 on 技术之心</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Fri, 11 Nov 2022 11:52:00 -0500</lastBuildDate><atom:link href="https://leezchuan.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml"/><item><title>微信小程序与钉钉小程序开发流程</title><link>https://leezchuan.github.io/blog/computer-technology/mobile-web/wx-dingding/</link><pubDate>Fri, 11 Nov 2022 11:52:00 -0500</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/mobile-web/wx-dingding/</guid><description>&lt;p>开发小程序有很多问题特此记录～～～&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>计算机技术 on 技术之心</title><link>https://leezchuan.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/</link><description>Recent content in 计算机技术 on 技术之心</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Fri, 11 Nov 2022 11:52:00 -0500</lastBuildDate><atom:link href="https://leezchuan.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml"/><item><title>微信小程序与钉钉小程序开发流程</title><link>https://leezchuan.github.io/blog/computer-technology/mobile-web/wx-dingding/</link><pubDate>Fri, 11 Nov 2022 11:52:00 -0500</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/mobile-web/wx-dingding/</guid><description>&lt;p>开发小程序有很多问题特此记录一下～～～&lt;/p>
 &lt;p>小程序开发（移动端开发）兼容注意事项：&lt;/p>
 &lt;ol>
 &lt;li>
@@ -32,7 +32,7 @@
 &lt;h3 id="linux">Linux&lt;/h3>
 &lt;p>Linux 的诞生是在上世纪 90 年代，距离现在也就二十年左右，是一种优秀的开发环境，大多时候应用在嵌入式系统开发当中。&lt;strong>Linux 是一个开源的基于 POSIX 和 UNIX，支持多用户、多任务、多线程和多 CPU 的操作系统。事实上，linux 指的是其操作系统的内核。&lt;/strong>&lt;/p></description></item><item><title>CPU 的七种寻址方式</title><link>https://leezchuan.github.io/blog/computer-technology/computer/computer-cpu-addressing-mode/</link><pubDate>Thu, 05 May 2016 01:53:00 -0400</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/computer/computer-cpu-addressing-mode/</guid><description>&lt;p>CPU 获取数据的方式不仅仅一种，多种方式也为不同数据的获取提供了不同的效率考量，保证了寻址效率与指令的灵活性。&lt;/p>
 &lt;!-- truncate -->
-&lt;h3 id="cpu-寻址方式">CPU 寻址方式&lt;/h3>
+&lt;h2 id="cpu-寻址方式">CPU 寻址方式&lt;/h2>
 &lt;p>数据一般均存储在外存(硬盘)中，在需要的时候，会将数据先从外存读入内存(存储器)中，然后 CPU 再直接从内存(缓存)中获取。获取的数据有时候会直接使用；而有时候会先存入 CPU 内部寄存器，稍后再从寄存器中获取。所以，CPU 获取数据的方式是多样化的。&lt;/p></description></item><item><title>内存的 3 种刷新方式</title><link>https://leezchuan.github.io/blog/computer-technology/computer/computer-memory-refresh/</link><pubDate>Tue, 03 May 2016 01:59:00 -0400</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/computer/computer-memory-refresh/</guid><description>&lt;p>&lt;strong>众所周知，内存（Memory）是带电存储的，掉电就会丢失数据，所以需要刷新来保持数据。&lt;/strong>&lt;/p>
 &lt;!-- truncate -->
 &lt;h3 id="原因">原因&lt;/h3>
@@ -40,5 +40,5 @@
 &lt;!-- truncate -->
 &lt;h3 id="处理器">处理器&lt;/h3>
 &lt;p>处理器（CPU）担负着整个计算机系统的核心任务执行责任，所以我们经常关心它的运算处理能力，也就是 CPU 的性能。&lt;/p>
-&lt;h6 id="微处理器">微处理器&lt;/h6>
+&lt;h4 id="微处理器">微处理器&lt;/h4>
 &lt;p>我们经常所说的 Inter、AMD 两大常见品牌厂商出售的桌面端的处理器称为处理器（CPU），而把移动端嵌入式系统中 ARM 架构的处理器称为微处理器（MPU）。事实上，几乎电子设备上均有微型处理器，例如路由器、智能家电等等，只不过以上所提到的离我们最近而且我们也最熟悉。&lt;/p></description></item></channel></rss>
