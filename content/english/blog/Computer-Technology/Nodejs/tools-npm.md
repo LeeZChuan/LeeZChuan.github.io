@@ -149,13 +149,13 @@ npm install -g npm[@latest|<version>]
 
 通常，我们只是下载安装 npm 库中的包来使用，辅助我们进行开发，但去了解如何利用 npm 发布包也是有必要的，这样我们也可以写一些自己的模块并进行发布供自己和他人使用。
 
-###### 注册
+#### 注册
 
 首先需要去 npm 官网注册一个账号（无需翻墙）。如果想更换头像的话，还要去注册一个 **Gravatar** 并上传一张照片，才可以将这张照片作为头像。
 
 > **npm：**https://www.npmjs.com/
 
-###### 初始化
+#### 初始化
 
 在本地新建一个文件夹，并初始化：
 
@@ -167,7 +167,7 @@ npm init [-y]
 
 **这里需要注意的是，如果你将要发布的包，是别人通过 `require('package_name')` 来使用的话，请指定 `package.json` 中的 `main` 字段为该包的入口文件。或者，也可能你将要发布的包只是一个命令行工具，那么删除掉 `main` 字段，指定 `bin` 字段即可。当然 `main` 与 `bin` 是可以共存的。**
 
-###### 编码
+#### 编码
 
 初始化完成后，就主要是我们编码了，建议将入口文件放在项目根目录下，其余代码文件都放在相应文件夹下：
 
@@ -183,7 +183,7 @@ Package/
 
 **这里需要注意，`bin/` 中的命令行脚本文件，必须在每个文件的第一行指定 `#!/usr/bin/env node`，表明这是一个 node 脚本，以及执行该脚本的二进制文件系统路径。**
 
-###### 发布前本地测试
+#### 发布前本地测试
 
 在编码完成并完善 `package.json` 文件后，我们可能需要测试才能确保最终发布后能被自己或者他人通过 npm 安装正常使用。
 
@@ -202,7 +202,7 @@ npm unlink  // 测试完成后，在你将要发布的包根目录下执行该�
 
 > [4 reasons to avoid using `npm link`](https://hirok.io/posts/avoid-npm-link)
 
-######### 小技巧
+####### 小技巧
 
 这里有个小技巧可以不使用 `npm link` 命令就能在本地测试，而且是真的无污染：
 
@@ -212,7 +212,7 @@ npm unlink  // 测试完成后，在你将要发布的包根目录下执行该�
 }
 ```
 
-###### 登录
+#### 登录
 
 发布前需要在命令行登录 npm **官方仓库**：
 
@@ -230,7 +230,7 @@ npm login [--registry=url] [--scope=@orgname]
 npm whoami [--registry <registry>]
 ```
 
-###### 发布
+#### 发布
 
 登录后，即可通过 `publish` 命令发布包：
 
@@ -241,7 +241,7 @@ npm publish [--access public]   // 在将要发布的包根目录执行
 
 **需要注意，如果发布的包带有命名空间，例如 `@babel/core`，需要指定发布限制范围 `--access`，默认为 `restricted`（受限制），如你的 npm 帐户不是付费帐户，必须指定为 `public`。**
 
-###### 撤销发布
+#### 撤销发布
 
 通常，是在本地测试无误后进行发布，如果真的在发布后发现问题，导致不能正常使用，可以撤销发布：
 
@@ -257,7 +257,7 @@ npm unpublish [<@scope>/]<package_name>[@<version>]
 npm deprecate <package_name>[@<version>] <message>
 ```
 
-###### 退出登录
+#### 退出登录
 
 如果不是在自己的机器上工作，建议完成发布后退出登录，保证数据安全。退出登录与登录一样简单，同样需要指定 `--registry` 与 `--scope` 参数。
 
@@ -270,7 +270,7 @@ npm logout [--registry=url] [--scope=@orgname]
 
 以上，是使用 npm 工具本身的过程，但 npm 工具本质上是为维护和发布 Node 模块/包服务的，开发 Node 模块/包有一些很好的社区实践，这里大致记录一下开发 Node 模块/包过程中一些注意的关键点。
 
-###### 模块/包的类型
+#### 模块/包的类型
 
 根据用途，模块/包的类型大致可以分为以下几种，不同的类型需要做对应的处理。
 
@@ -300,7 +300,7 @@ if (process.env.NODE_ENV === 'production') {
 
 > https://overreacted.io/how-does-the-development-mode-work/
 
-###### 支持多个环境
+#### 支持多个环境
 
 纵观 Node.js 的发展历史，其生态中出现过多种模式，例如 [AMD](https://github.com/amdjs/amdjs-api/blob/master/AMD.md)、[CommonJS](http://www.commonjs.org/)、ESM(ECMAScript modules)，以及 [UMD](https://github.com/umdjs/umd)，这种情况给包的开发带来一定困难，不过经过多年的发展社区已经形成一个约定（共识），可以很方便的解决该问题从而同时支持所有环境。
 
@@ -318,7 +318,7 @@ if (process.env.NODE_ENV === 'production') {
 
 > https://2ality.com/2017/04/setting-up-multi-platform-packages.html
 
-######### 新的方案
+####### 新的方案
 
 事实上，`main` 和 `browser` 字段在 npm 文档中有定义，查看文档：
 
@@ -341,7 +341,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 ```
 
-###### 类型定义
+#### 类型定义
 
 JavaScript 并不是一个强类型语言，所以 IDE 要做类型推断和代码智能提示是比较困难的，尤其是编译、压缩、混淆后的代码对于用户使用有诸多不便，要不断的查询文档。然而，[TypeScript](https://www.typescriptlang.org/) 的出现使这一状况得到了改善，如果源代码直接使用 TypeScript 编写，最终编译时生成**类型定义文件**，在发布 npm 模块/包时指定一个 `types` 字段即可，查看文档：
 
@@ -357,7 +357,7 @@ JavaScript 并不是一个强类型语言，所以 IDE 要做类型推断和代�
 npm info @types/react
 ```
 
-###### 参考资料
+#### 参考资料
 
 - https://github.com/sarbbottam/write-an-open-source-js-lib
 - https://reactjs.org/blog/2017/12/15/improving-the-repository-infrastructure.html

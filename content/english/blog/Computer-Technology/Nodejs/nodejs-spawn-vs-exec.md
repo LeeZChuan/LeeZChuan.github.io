@@ -27,7 +27,7 @@ description: 使用 Node.js 编写一些脚本工具是非常方便的，而常�
 
 在这里，主要讨论的是异步版本，当然 Node.js 为它们提供了相应的同步版本，例如 `spawnSync` 和 `execSync`。
 
-###### `spawn`
+#### `spawn`
 
 前面说到 `spawn` 是 Child process API 的核心方法，其实从源码可以一窥究竟：
 
@@ -88,7 +88,7 @@ ls.on('close', (code) => {
 
 父进程通过监听子进程相应的 `stdio` 事件进行通信。
 
-###### `exec`
+#### `exec`
 
 前面根据源码可以看到 `exec` 的实现基于 `spawn`，但不同的是，前者在生成子进程的同时，会先生成一个 shell，然后在 shell 中执行给定的命令，子进程的输出信息会进行缓冲并最终传递给回调函数。根据示例：
 
@@ -114,7 +114,7 @@ exec('cat *.js missing_file | wc -l', (error, stdout, stderr) => {
 
 `exec` 的 POSIX 系统调用的行为是，在当前进程中用新的进程映像（程序）替换旧的进程映像并执行，本质上并没有生成新的进程，也就不存在父子进程的概念。而在这里，Node.js 的 `exec` 方法的行为并不是替换进程映射，而是生成 shell 去执行命令。
 
-###### `spawn` vs `exec`
+#### `spawn` vs `exec`
 
 现在可以总结一下两者的显著区别：
 
