@@ -80,7 +80,7 @@ exp:
 
 **元素节点的 style 内联属性返回一个 `CSSStyleDeclaration` 对象，该对象仅包含该元素节点的内联 CSS 属性（不包含内部样式表、外部样式表中的 CSS 属性）。**
 
-###### 单个 CSS 属性操作
+#### 单个 CSS 属性操作
 
 元素节点的内联 CSS 属性都是该元素的 `style（CSSStyleDeclaration）` 对象上的一个个属性，所以我们可以通过 style（CSSStyleDeclaration）对象来设置、获取、移除单个内联 CSS 属性。
 
@@ -151,7 +151,7 @@ exp:
         div_style.removeProperty("backgroundColor");
     </script>
 
-###### 批量 CSS 属性操作
+#### 批量 CSS 属性操作
 
 当我们需要批量操作内联 CSS 属性的时候，一个一个的进行未免太过麻烦，这里我们可以一次性改变所有内联 CSS 属性。
 

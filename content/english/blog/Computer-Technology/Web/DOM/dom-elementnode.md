@@ -37,7 +37,7 @@ DOM 中每一个元素节点都是从唯一的 Javascript 接口/构造器构建
 
 前面在介绍 DOM 时元素节点（Element Node）的部分属性与方法已做过示例，在此仅简单的提及。
 
-###### 创建节点
+#### 创建节点
 
 - document.createElement()
 
@@ -48,7 +48,7 @@ exp：
         var new_div=document.createElement('div');
     </script>
 
-###### 获取标签名
+#### 获取标签名
 
 - tagName
 - nodeName
@@ -61,7 +61,7 @@ exp：
         console.log(document.querySelector('div').nodeName);  // 输出 "DIV"
     </script>
 
-###### 获取属性列表/集合
+#### 获取属性列表/集合
 
 每个元素节点身上都有很多属性（包括继承自 Node），我们可以取得一个由当前元素定义的 Attr（属性）节点组成的集合。
 
@@ -85,7 +85,7 @@ exp：
 
 我们使用元素节点的 `attributes` 属性获取的是一个包含其所有属性与相应值的属性节点对象集合（NamedNodeMap），因为每一个属性事实上也是一个属性节点对象（Attr 节点）。**我们要知道的是，`NamedNodeMap` 是一个实时数组，会随元素节点属性的变化而变化。**
 
-###### 属性操作
+#### 属性操作
 
 - setAttribute()
 - getAttribute()
@@ -102,7 +102,7 @@ exp：
         document.querySelector('img').removeAttribute('src');
     </script>
 
-###### 属性检测
+#### 属性检测
 
 有时候，我们可能想知道一个元素节点身上是否有某个特定属性时，我们也可以通过下面的方法获知。
 
@@ -122,11 +122,11 @@ exp：
 
 **从上述示例可以看出，当元素节点具有该属性，即使该属性值为空也是存在的。**
 
-###### class 属性
+#### class 属性
 
 一个元素节点可以包含多个定义的类样式，这些 `className` 均被放在 `class` 属性中用空格分割，而我们可以对它们进行单独操作。
 
-######### 获取 class 列表
+##### 获取 class 列表
 
 - classList
 
@@ -144,7 +144,7 @@ exp：
 
 **因为 `class` 是 JavaScript 的关键字，所以获取 class 属性的值时使用 `className` 代替。**
 
-######### class 值操作
+##### class 值操作
 
 我们可以对 `class` 属性列表中的值进行单独修改，添加或者移除某一个 class 值。
 
@@ -166,7 +166,7 @@ exp：
         console.log(document.querySelector('div').className);  // 输出 a c
     </script>
 
-######### class 值检测
+##### class 值检测
 
 当然，我们也可以检测 `classList` 中是否包含某一特定的 class 值。
 
@@ -180,7 +180,7 @@ exp：
         console.log(document.querySelector('div').classList.contains('c'));  // 输出 false
     </script>
 
-######### toggle 自动化
+##### toggle 自动化
 
 当我们要实现特效时，可能要经历查看某个 `class` 样式是否存在，不存在时添加，存在时移除这个过程。然而，我们可以自动地一步来完成这三个过程。
 
@@ -198,7 +198,7 @@ exp：
         console.log(document.querySelector('div').className);  // 输出 a c
     </script>
 
-###### data-\*属性
+#### data-\*属性
 
 元素节点上经常会出现一些类似 `data-*` 形式的属性，这些属性是为了让我们实现某些目的而进行数据保存的属性。
 
