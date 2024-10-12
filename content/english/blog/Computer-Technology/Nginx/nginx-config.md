@@ -29,7 +29,7 @@ Nginx 的架构被设计为模块化，从官方文档我们就可以明显的�
 
 不管 nginx 基于什么场景发挥什么作用，都是基于特定的配置来实现，nginx 的配置文件也相对比较简单。
 
-###### 工作进程
+#### 工作进程
 
 Nginx 是基于异步非阻塞 IO 模型的，同时也支持多进程，通常将其工作进程数目设置为 CPU 的核心数，以发挥其最大作用，实现高并发。
 
@@ -43,7 +43,7 @@ Nginx 是基于异步非阻塞 IO 模型的，同时也支持多进程，通常�
 
 > 官网文档：[Core functionality/worker_processes](http://nginx.org/en/docs/ngx_core_module.html#worker_processes)
 
-###### 隐藏 nginx 版本号
+#### 隐藏 nginx 版本号
 
 隐藏掉版本号，可以降低被攻击的风险。
 
@@ -55,7 +55,7 @@ Nginx 是基于异步非阻塞 IO 模型的，同时也支持多进程，通常�
 
 > 官网文档：[ngx_http_core_module/server_tokens](http://nginx.org/en/docs/http/ngx_http_core_module.html#server_tokens)
 
-###### 设置编码
+#### 设置编码
 
 通常来说，将编码设置为 `UTF-8` 是比较合适的。
 
@@ -67,7 +67,7 @@ Nginx 是基于异步非阻塞 IO 模型的，同时也支持多进程，通常�
 
 > 官网文档：[ngx_http_charset_module/charset](http://nginx.org/en/docs/http/ngx_http_charset_module.html#charset)
 
-###### 更改上传数据大小限制
+#### 更改上传数据大小限制
 
 Nginx 默认的数据上传大小为 2M，某些情况下我们需要将其更改的大一些，以符合业务需求。
 
@@ -79,7 +79,7 @@ Nginx 默认的数据上传大小为 2M，某些情况下我们需要将其更�
 
 > 官网文档：[ngx_http_core_module/client_max_body_size](http://nginx.org/en/docs/http/ngx_http_core_module.html#client_max_body_size)
 
-###### 开启 gzip
+#### 开启 gzip
 
 开启 gzip 压缩可以在客户端请求文本文件时，将传输大小压缩至少**70%**左右，可以获得非常好的优化效果，通常都会开启 gzip 压缩配置。
 
@@ -126,7 +126,7 @@ http {
 
 > 官网文档：[ngx_http_gzip_module](http://nginx.org/en/docs/http/ngx_http_gzip_module.html#gzip)
 
-###### 路由匹配规则
+#### 路由匹配规则
 
 nginx 像一个路由，客户端通过什么地址访问服务器，服务器则在配置文件中通过设置好的路由来匹配请求进行转发。
 
@@ -165,7 +165,7 @@ location / {
 
 > 官网文档：[ngx_http_core_module/location](http://nginx.org/en/docs/http/ngx_http_core_module.html#location)
 
-######### 调试技巧
+####### 调试技巧
 
 nginx 本身是比较难调试的，不过在配置 `location` 指令时，可以利用 `return` 指令来进行调试。
 
@@ -186,7 +186,7 @@ location /test/ {
 
 > 官网文档：[ngx_http_rewrite_module/return](http://nginx.org/en/docs/http/ngx_http_rewrite_module.html#return)
 
-###### 虚拟目录
+#### 虚拟目录
 
 虚拟目录解决了客户端请求资源的 **URL** 与服务器端对应资源存在位置不一致的问题。如下所示：
 
@@ -212,7 +212,7 @@ location /test/ {
 
 > 官网文档：[ngx_http_core_module/alias](http://nginx.org/en/docs/http/ngx_http_core_module.html#alias)
 
-###### 文件列表浏览
+#### 文件列表浏览
 
 静态资源服务器一般允许用户查看服务器上的文件列表，例如 CDN、镜像站等。nginx 出于安全考虑，默认是不允许客户端浏览器查看服务器上的文件列表的，可以通过以下指令来进行配置：
 
@@ -226,7 +226,7 @@ location /static/ {
 
 > 官网文档：[ngx_http_autoindex_module](http://nginx.org/en/docs/http/ngx_http_autoindex_module.html)
 
-###### 允许跨域
+#### 允许跨域
 
 有时候，比较大（几百兆以上）的静态资源需要在客户端使用异步方式加载（例如 Ajax），但是多个人合作开发时，拷贝这些静态资源到各自本地（如果不这么做，将会出现跨域问题）是最糟糕的解决方案，这个时候我们可以将静态资源放在一个服务器上，然后使用反向代理或者允许跨域的配置巧妙的解决这个问题。
 
@@ -248,7 +248,7 @@ location /static/ {
 
 > 官网文档：[ngx_http_headers_module/add_header](http://nginx.org/en/docs/http/ngx_http_headers_module.html#add_header)
 
-###### 反向代理
+#### 反向代理
 
 Nginx 可以作为一个反向代理服务器，来为我们提供一些场景下的解决方案，例如负载均衡、跨域、前后端完全分离开发场景等等。
 
@@ -276,7 +276,7 @@ Nginx 可以作为一个反向代理服务器，来为我们提供一些场景�
 
   则是后端（被代理）服务器地址。
 
-######### 代理服务路径变化时
+####### 代理服务路径变化时
 
 如果说在反向代理过程中，路径没有差异，一般来说不会出现什么问题，但是如果路径有变化时，会出现两个问题，一个是 **cookie 丢失**，另一个则是 **后端服务器重定向错误**。 第一个问题可以用 `proxy_cookie_path` 指令解决，第二个问题则使用 `proxy_redirect` 指令解决。具体如下：
 
@@ -296,7 +296,7 @@ location /test/ {
 
 > 官网文档：[ngx_http_proxy_module](http://nginx.org/en/docs/http/ngx_http_proxy_module.html)
 
-###### 重定向
+#### 重定向
 
 重定向是一个比较常见的需求，nginx 的重定向指令（rewrite）还是相当简单的。例如，需要将所有 http 请求重定向到 https 下，官方推荐这么做：
 
@@ -317,7 +317,7 @@ location /test/ {
 
 > 官网文档：[ngx_http_rewrite_module](http://nginx.org/en/docs/http/ngx_http_rewrite_module.html)
 
-######### 项目首页重定向
+####### 项目首页重定向
 
 大多数时候，我们在同一个域名下会部署多个 Web 应用，访问的话需要 **WebAppName** 来进行区分，例如 `localhost:80/App`，那么 `App` 其实就代表了一个 Web 应用，将会映射到相应的文件夹。这里有一个细节性问题，文件夹的路径必然以 `/` 结束，所以大多数服务器都会自动做一次重定向，将 `localhost:80/App` 重定向到 `localhost:80/App/`。如果 Nginx 没有配置，默认是不会做这个重定向的，为了用户访问方便，我们需要解决这个问题：
 
@@ -336,7 +336,7 @@ location /test/ {
         return 301 $scheme://$http_host$uri/;
     }
 
-###### 日志分割
+#### 日志分割
 
 Nginx 的访问日志（access_log）默认是没有进行分割的，时间一长，日志文件就会有 GB 级别的大小，日志写入速度变慢，也会影响 nginx 的性能。我们可以通过很简单的方式，将访问日志设置为按天记录,将日志记录在不同的文件中。
 
