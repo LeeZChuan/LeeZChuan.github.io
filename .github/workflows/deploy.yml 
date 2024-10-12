@@ -42,5 +42,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: /  # Hugo 打包生成的静态文件目录
+          publish_dir: ./docs  # Hugo 打包生成的静态文件目录
           publish_branch: gh-pages  # 发布到 gh-pages 分支
