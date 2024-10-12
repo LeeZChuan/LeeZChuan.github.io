@@ -18,37 +18,23 @@ name = "学习记录"
 url = "/blog"
 
 [[main]]
-weight = 3
+weight = 4
 name = "生活记录"
 url = "/life"
 
 
+
 [[main]]
+parent = "其他"
 name = "Md编写说明"
 url = "/elements"
-weight = 4
 
 
 [[main]]
 parent = "其他"
-name = ""
-url = ""
-
-
-[[main]]
-parent = "其他"
-name = "Authors"
-url = "/authors"
-
-[[main]]
-parent = "其他"
-name = "Categories"
+name = "文字分类汇总"
 url = "/categories"
 
-[[main]]
-parent = "其他"
-name = "404 Page"
-url = "/404"
 
 
 # footer menu
