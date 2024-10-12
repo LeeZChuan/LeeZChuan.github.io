@@ -15,6 +15,13 @@ weight = 2
 [[main]]
 weight = 3
 name = "学习记录"
+url = "/blog"
+
+[[main]]
+weight = 3
+name = "生活记录"
+url = "/life"
+
 
 [[main]]
 name = "Md编写说明"
@@ -24,8 +31,8 @@ weight = 4
 
 [[main]]
 parent = "其他"
-name = "Blog"
-url = "/blog"
+name = ""
+url = ""
 
 
 [[main]]
