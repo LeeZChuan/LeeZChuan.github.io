@@ -74,7 +74,7 @@ import Set from 'core-js-pure/features/set';
 
 说到 Polyfill，还得再提一下社区主流的 JavaScript 编译方案 Babel，为什么呢？因为一开始，Babel 团队同时非常贴心的提供了 Polyfill 方案 `@babel/polyfill`。
 
-####### `@babel/polyfill`
+##### `@babel/polyfill`
 
 如果看过源码，或者看过目前的文档，其实 @babel/polyfill 做的事情等价于：
 
@@ -90,7 +90,7 @@ import 'regenerator-runtime/runtime';
 
 其实意思很简单，就是把 polyfill 的控制权交给了开发者。与此同时，Babel 又给出了另一个方案 `@babel/preset-env`。
 
-####### `@babel/preset-env`
+##### `@babel/preset-env`
 
 该方案主要解决了 @babel/polyfill 方案不够灵活的问题，提供了两种选择：即 `useBuiltIns` 配置项的 `usage` 和 `entry`。
 
