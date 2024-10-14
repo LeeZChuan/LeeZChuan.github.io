@@ -2,14 +2,9 @@
 title: Web 应用：轻量级状态管理工具 zustand
 date: 2021-11-18 00:14:00
 update: 2021-11-18 00:14:00
-authors: LeeZChuan
-tags: &ref_0
-  - 计算机技术
-  - Web
-  - Web 前端
-  - 应用状态管理
-  - React.js
-keywords: *ref_0
+categories: ["计算机技术", "Web前端",'应用状态管理','React']
+author: "LeeZChuan"
+tags: ["计算机技术", "Web前端",'应用状态管理','React']
 description:
   Web 网页向 Web 应用发展的过程中，势必会出现 Web 项目的复杂化问题，而在移动端场景，基于 React.js 的应用中如何管理状态？zustand
   也许值得一试。
@@ -91,7 +86,7 @@ setState();
 
 两者的核心库均只有 1kb 大小，而 zustand 更小，这是因为 zustand 实现更为简单一些，其差异主要集中在状态更新机制上，其次是状态订阅机制。
 
-###### `subscribe()`
+#### `subscribe()`
 
 在状态订阅的 `subscribe()` API 实现中，zustand 仅是简单的直接将订阅函数添加到订阅列表中，同时提供了一个 `selector` 机制来过滤状态：
 
@@ -208,7 +203,7 @@ function dispatch(action) {
 
 redux 通过 `dispatch()` 更新状态时，由于在订阅时没有默认提供 `selector` 机制，所以会无差别的通知所有订阅者，同时也不会将新旧状态传递给订阅函数，当然在官方示例代码中可以看到，官方推荐在订阅函数中主动通过 `getState()` 获取新的状态以及完成 selector 操作。可以说，由于 redux 和 zustand 设计理念不同，订阅的实现方式也略有差别，前者控制的更细致，而灵活性很高，而后者在保持简单性的同时也没有牺牲灵活性。
 
-###### `setState()` && `dispatch()`
+#### `setState()` && `dispatch()`
 
 状态更新机制是两者实现最大的不同，zustand 提供一个 `setState()` 函数来更新状态：
 
@@ -279,7 +274,7 @@ function dispatch(action) {
 
 根据以上分析来看，实际上核心实现是相似的，而且 zustand 作为后来者，对 redux 有借鉴也有简化的地方，满足状态管理的核心简单需求是没有多大问题的，可作为 redux 的一个替代方案。
 
-###### React.js 适配
+#### React.js 适配
 
 如果说，核心库差异较小，而且包尺寸相近的话，那么最大的差异则出现在对 React.js 库的适配上面。
 
@@ -374,7 +369,7 @@ function Controls() {
 
 然而，react-redux 的实现则要复杂的多。由于其出现的较早，所以同时适配了类组件和函数组件。这里不再细究 react-redux 的具体实现，但其与 zustand 最大的差异则在于把状态放在了 `Context` 中存储，所以需要使用 `Provider` 将页面的根组件包裹起来才能使用。redux 的 `useSelector()` Hook API 与 zustand 上面提到的 `useStore()` 的实现逻辑也非常相似。
 
-###### 调式工具
+#### 调式工具
 
 一个核心工具库好不好用，不仅要能解决业务问题，同时也要能提供良好的开发体验，redux 之所以能成为 React.js 社区普遍采用的状态管理方案，不仅在于其实现的优雅，倡导的优秀的模式，更在于其配套的调试工具、中间件也非常好用。所以，zustand 作为后来者并没有重复造轮子，而是尽最大的可能重用 redux 社区的开源方案，这一点也是比较好的，至少从 redux 迁移到 zustand 不会有太大的困难，开发体验上来说还是不错的。
 

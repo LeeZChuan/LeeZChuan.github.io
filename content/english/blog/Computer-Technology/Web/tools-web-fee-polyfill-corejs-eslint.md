@@ -2,13 +2,9 @@
 title: 解析基于 core-js 与 ESLint 的 Web 兼容方案
 date: 2021-12-07 01:13:00
 update: 2021-12-08 21:12:00
-authors: LeeZChuan
-tags: &ref_0
-  - 计算机技术
-  - 工具
-  - Web
-  - Polyfill
-keywords: *ref_0
+categories: ["计算机技术", "Web前端",'工具','Polyfill']
+author: "LeeZChuan"
+tags: ["计算机技术", "Web前端",'工具','Polyfill']
 description: Web 网页为了保证在多个平台和低中高端设备上的体验稳定性和一致性，通常会做 Polyfill 以保证兼容性，当下社区的主流方案则是基于 core-js，而 ESLint 则可作为自动检测的辅助工具。
 ---
 
@@ -54,19 +50,19 @@ import Set from 'core-js-pure/features/set';
 
 虽然说 `core-js` 只是针对 JavaScript API 的兼容方案，但为了方便，也提供了一些非常常用的 Web API 的 polyfills，例如 `setTimeout`、`URLSearchParams` 等。
 
-###### API 兼容性
+#### API 兼容性
 
 怎么为 API 做兼容的问题解决掉之后，需要考虑的一个问题是怎么判断 API 的兼容性，首先在 [MDN Web Docs](https://developer.mozilla.org/) 特定 API 文档页面最下方会有一个兼容性统计表格，这个是比较准确和全面的。当然，如果要最准确的结果，可以去特定浏览器厂商的标准状态页面查询，例如 [Chrome Platform Status](https://www.chromestatus.com/features) 等。
 
 除此之外，为了让社区各种工具链自动化去检测 API 兼容情况，有非常著名的 [Can I use](https://caniuse.com/) 站点。该站点方便开发者查询各种 JavaScript / CSS / HTML / Web API 的设备兼容情况，同时维护了一个数据库，供社区其它工具开发者使用。
 
-###### 兼容目标
+#### 兼容目标
 
 有了检测 API 兼容情况和添加 polyfill 的工具后，还有一个很关键的问题：为了加载性能的优化，如果我们不引入全量的 polyfills，怎么针对特定平台去拣选相应的 polyfills？API 兼容检测工具的目标平台是什么？特定 API 是否需要添加 polyfills？
 
 当然，为了保证社区各种工具链的通用性，也有一个很著名的项目 `Browserslist`，它可以帮助我们配置代码兼容的目标平台，相应的工具链将会以该目标处理我们所写的代码。
 
-###### ESLint
+#### ESLint
 
 有了以上工具后，我们需要一个解析代码并运行这些工具的工具，ESLint 恰好适合这个角色。`eslint-plugin-compat` 插件可以根据 browserslist 的配置去查询所写代码中需要兼容的 API 并提示出来：
 
@@ -74,11 +70,11 @@ import Set from 'core-js-pure/features/set';
 
 我们可以注意到，该插件仅仅是帮我们检测出来代码中需要引入 polyfills 的 API，最终还是需要开发者手动引入 polyfills，这是比较麻烦的。当然，ESLint 干了自己该干的，剩下的事情交给 Babel 即可。
 
-###### Babel
+#### Babel
 
 说到 Polyfill，还得再提一下社区主流的 JavaScript 编译方案 Babel，为什么呢？因为一开始，Babel 团队同时非常贴心的提供了 Polyfill 方案 `@babel/polyfill`。
 
-######### `@babel/polyfill`
+####### `@babel/polyfill`
 
 如果看过源码，或者看过目前的文档，其实 @babel/polyfill 做的事情等价于：
 
@@ -94,7 +90,7 @@ import 'regenerator-runtime/runtime';
 
 其实意思很简单，就是把 polyfill 的控制权交给了开发者。与此同时，Babel 又给出了另一个方案 `@babel/preset-env`。
 
-######### `@babel/preset-env`
+####### `@babel/preset-env`
 
 该方案主要解决了 @babel/polyfill 方案不够灵活的问题，提供了两种选择：即 `useBuiltIns` 配置项的 `usage` 和 `entry`。
 

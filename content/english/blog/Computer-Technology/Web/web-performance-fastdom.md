@@ -2,15 +2,9 @@
 title: Web 前端性能优化：批量 DOM 操作 - FastDOM
 date: 2021-10-04 00:06:00
 update: 2022-03-10 00:28:00
-authors: LeeZChuan
-tags: &ref_0
-  - 计算机技术
-  - Web
-  - Web 前端
-  - 性能优化
-  - DOM
-  - FastDOM
-keywords: *ref_0
+categories: ["计算机技术", "Web前端",'性能优化','DOM']
+author: "LeeZChuan"
+tags: ["计算机技术", "Web前端",'性能优化','DOM']
 description: 原生应用时代，DOM 操作一般借助类似 jQuery 的工具库手动完成，而在框架/库应用时代 DOM 操作退居幕后自动完成，原生应用与框架应用性能孰高孰低？DOM 批量操作对于性能有何影响？利用 FastDOM 库来解决这些性能问题。
 ---
 
@@ -77,7 +71,7 @@ description: 原生应用时代，DOM 操作一般借助类似 jQuery 的工具�
 
 实际上，这就是前面所分析的，DOM 的读和写操作高频的交替发生，性能影响非常明显。以 **row** 为单位进行缩放处理降低了实现的复杂度，但要将所有 **row** 的 DOM 操作统一调度起来会麻烦一些，不过并不是很难。实现的思路就是用两个数组分别收集对 DOM 的读和写操作函数，然后再统一先执行所有的读操作，再执行写操作，为了保证 UI 交互的及时响应，要动态的每隔一段时间就统一把收集到的 DOM 操作执行一遍再重新收集。
 
-###### FastDOM
+#### FastDOM
 
 不过，不必造轮子，在 Google 的 Web 性能文档中提及一个 npm 工具库 [FastDOM](https://github.com/wilsonpage/fastdom)，正如其名，该工具库的目的就是加速 DOM 的批量处理以提高性能。
 

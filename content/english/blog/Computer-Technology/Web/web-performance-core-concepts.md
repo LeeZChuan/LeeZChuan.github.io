@@ -2,14 +2,9 @@
 title: Web 前端性能优化：核心概念与指标
 date: 2021-07-19 00:51:00
 update: 2021-07-24 21:56:00
-authors: LeeZChuan
-tags: &ref_0
-  - 计算机技术
-  - Web
-  - Web 前端
-  - 性能优化
-  - 核心概念
-keywords: *ref_0
+categories: ["计算机技术", "Web前端",'性能优化','核心概念']
+author: "LeeZChuan"
+tags: ["计算机技术", "Web前端",'性能优化','核心概念']
 description: 在一些较为复杂的 Web 应用中可能会出现性能瓶颈，导致用户体验急剧下降，做优化之前更应该了解一下相关的核心概念，从而在出问题时确定优化路径。
 ---
 
@@ -77,7 +72,7 @@ Web 应用程序生命周期的四个方面：
 >
 > https://gist.github.com/paulirish/5d52fb081b3570c81e3a
 
-###### 动画性能
+#### 动画性能
 
 谈到帧率的时候，我们很容易会想到动画，60 FPS（frame per second）是实现动画的一个核心性能目标。实现动画有两种方式：CSS 和 JavaScript。
 

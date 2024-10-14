@@ -2,15 +2,9 @@
 title: Web 本地存储
 date: 2016-06-01 01:00:00
 update: 2018-05-27 17:27:00
-authors: LeeZChuan
-tags: &ref_0
-  - 计算机技术
-  - Web
-  - Web 前端
-  - Cookie
-  - LocalStorage
-  - SessionStorage
-keywords: *ref_0
+categories: ["计算机技术", "Web前端",'Cookie','LocalStorage','SessionStorage']
+author: "LeeZChuan"
+tags: ["计算机技术", "Web前端",'Cookie','LocalStorage','SessionStorage']
 description: 为了达到某些需求，我们通常需要在本地存储一些数据，方便我们进行用户个性化定制服务。
 ---
 
@@ -28,17 +22,17 @@ description: 为了达到某些需求，我们通常需要在本地存储一些�
 
 在以前，我们是通过 `Cookie` 来实现 Web 本地存储的。不过，HTML5 为我们带来了新的 Web 本地存储功能，即 `localStorage` 与 `sessionStorage`，下面我们来简单的分析一下它们各自的特点。
 
-###### Cookie
+#### Cookie
 
 Cookie 相对来说用的时间很长了，技术更加成熟，尤其是这么多年以来在 Web 安全方面也有了很大的进步，在敏感信息存储方面 Cookie 的优势是明显的。而且，Cookie 在同源窗口中是共享的，同时也可以限制在某个路径下；它的有效期也是可以设置的，没有到达有效期前即使关闭浏览器窗口依然是有效的。
 
 相反的，Cookie 的缺点也是明显的，最多只能存储约 4K 大小的数据；而且每次都会伴随同源 http 请求发送给服务器端，很浪费带宽。
 
-###### localStorage
+#### localStorage
 
 localStorage 存储的数据量要大得多，大约 5M 左右；它在同源窗口中也是共享的。而且，localStorage 存储数据的时间甚至长达数年（不主动删除，即使浏览器关闭也存在），所以说在开发过程中我们可以使用它来存储更多的数据，并更持久的存储。
 
-###### sessionStorage
+#### sessionStorage
 
 sessionStorage 存储的数据量也要大得多，但它是不能在同源窗口中共享的，也就是说它只允许在同窗口同页面中访问。而且，sessionStorage 存储的数据会在浏览器窗口关闭的时候自动删除，不能实现持久的保存数据。
 

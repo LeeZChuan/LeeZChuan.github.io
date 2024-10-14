@@ -2,12 +2,9 @@
 title: Web 字体加载对 DOM 位置的影响
 date: 2022-10-16 23:49:00
 update: 2022-10-16 23:49:00
-authors: LeeZChuan
-tags: &ref_0
-  - 计算机技术
-  - Web
-  - Web 前端
-keywords: *ref_0
+categories: ["计算机技术", "Web前端"]
+author: "LeeZChuan"
+tags: ["计算机技术", "Web前端"]
 description: 由于使用了第三方 Web 字体，产生了一个潜在的线上问题，苦于调试过程中一直没有考虑字体加载会对 DOM 位置产生影响，浪费了大量时间和精力。
 ---
 
