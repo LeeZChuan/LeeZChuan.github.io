@@ -3,7 +3,6 @@ title: "从贝塞尔曲线的计算感受数学建模的魅力"
 meta_title: ""
 description: "最近在做可视化相关的东西，需要计算贝塞尔曲线上一点的坐标位置，从这个解决过程中感受到了数学建模的魅力。"
 date: 2022-12-01 01:04:00
-image: "/images/image-placeholder.png"
 categories: ["动画",'数学','前端']
 author: "LeeZChuan"
 tags: ["动画",'数学','前端']

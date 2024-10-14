@@ -2,7 +2,7 @@
 title: "介绍！"
 meta_title: "关于"
 description: "这是关于本人的介绍"
-image: "/images/avatar.png"
+image: "/images/avatar.jpg"
 draft: false
 ---
 

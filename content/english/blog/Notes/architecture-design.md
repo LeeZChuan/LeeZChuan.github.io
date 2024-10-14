@@ -4,7 +4,6 @@ meta_title: ""
 description: "阅读架构设计的笔记"
 date: 2023-12-01 20:04:00
 update: 2024-10-12 20:01:00
-image: "/images/image-placeholder.png"
 categories: ["架构设计",'前端']
 author: "LeeZChuan"
 tags: ["架构设计", "前端"]
