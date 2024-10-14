@@ -15,7 +15,9 @@
 &lt;p>一段动画实际上是由多个静态帧组成的，当帧率达到人眼不可分辨的程度时（比如 60 FPS），就感觉像是一个无缝连续的视频在流畅的播放。而某一静态帧的状态用数学公式来表达如下：&lt;/p>
 &lt;pre tabindex="0">&lt;code>y = F(t) (0 &amp;lt;= t &amp;lt;= 1)
 &lt;/code>&lt;/pre>&lt;p>那么对于一个物体从 &lt;strong>x0&lt;/strong> 运动到 &lt;strong>x1&lt;/strong>，如何计算 &lt;strong>t&lt;/strong> 时刻的位置？按照我的思路来看，可以转化为以下数学公式：&lt;/p></description></item><item><title>微信小程序与钉钉小程序开发流程</title><link>https://leezchuan.github.io/blog/computer-technology/mobile-web/wx-dingding/</link><pubDate>Fri, 11 Nov 2022 11:52:00 -0500</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/mobile-web/wx-dingding/</guid><description>&lt;p>开发小程序有很多问题特此记录一下～～～&lt;/p>
+&lt;blockquote>
 &lt;p>小程序开发（移动端开发）兼容注意事项：&lt;/p>
+&lt;/blockquote>
 &lt;ol>
 &lt;li>
 &lt;p>ios不兼容yyyy-MM-dd HH:mm:ss这种时间格式，需要将-替换成/，在安卓下两种格式都支持。&lt;/p>
