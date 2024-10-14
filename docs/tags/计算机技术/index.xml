@@ -68,8 +68,9 @@
 &lt;p>Visual Studio Code 是由微软出品的一款轻量级编辑器，兼有部分 IDE 功能。在之前，Sublime Text 是最受欢迎的编辑器（开源），也为多数前端开发者所推崇，当然说到底它依然是个编辑器。随着时间的推移，GitHub 打造了自家的编辑器 Atom，微软的 VS Code 也横空出世，更有其它优秀的轻量级编辑器在市场上展开角逐。不过，到现在来看，VS Code 可能胜出了，已成为前端开发的利器。&lt;/p></description></item><item><title>Web 前端架构设计</title><link>https://leezchuan.github.io/blog/computer-technology/web/web-front-end-architecture/</link><pubDate>Wed, 28 Mar 2018 14:01:00 -0400</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/web-front-end-architecture/</guid><description>&lt;p>让 Web 前端开发可持续化、可扩展，关注四个核心&lt;strong>代码&lt;/strong>、&lt;strong>流程&lt;/strong>、&lt;strong>测试&lt;/strong>、&lt;strong>文档&lt;/strong>。&lt;/p>
 &lt;!-- truncate -->
 &lt;h3 id="代码">代码&lt;/h3>
-&lt;h6 id="html">HTML&lt;/h6>
-&lt;p>######### 模块化标记&lt;/p></description></item><item><title>Web 应用：单页面应用与路由</title><link>https://leezchuan.github.io/blog/computer-technology/web/web-routing/</link><pubDate>Wed, 25 Oct 2017 00:51:00 -0400</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/web-routing/</guid><description>&lt;p>现在，Web 技术不仅仅是局限于页面的开发技术，在应用的开发方面也是一种潮流，B/S 架构的技术是一种趋势。而像一般的管理型 Web 应用，不注重 SEO，非常适合单页面应用（SPA）的实现方式，而路由功能则是单页面应用的核心技术。&lt;/p>
+&lt;h4 id="html">HTML&lt;/h4>
+&lt;h5 id="模块化标记">模块化标记&lt;/h5>
+&lt;p>构建模块化标记原则：&lt;strong>标签表达结构&lt;/strong>，&lt;strong>类名控制外观&lt;/strong>。这样做的好处就是，对相同类型结构的模块可以复用标签模版，同时又可以通过改变类名来灵活的控制模块的外观。例如：&lt;/p></description></item><item><title>Web 应用：单页面应用与路由</title><link>https://leezchuan.github.io/blog/computer-technology/web/web-routing/</link><pubDate>Wed, 25 Oct 2017 00:51:00 -0400</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/web-routing/</guid><description>&lt;p>现在，Web 技术不仅仅是局限于页面的开发技术，在应用的开发方面也是一种潮流，B/S 架构的技术是一种趋势。而像一般的管理型 Web 应用，不注重 SEO，非常适合单页面应用（SPA）的实现方式，而路由功能则是单页面应用的核心技术。&lt;/p>
 &lt;!-- truncate -->
 &lt;h3 id="spa">SPA&lt;/h3>
 &lt;p>单页面应用（Single page application, SPA）已经是目前实现 Web 应用的主流技术了，尤其是移动端的 Web 应用。SPA 使用 Ajax 技术异步加载页面内容，使用户能够在同一个页面流畅的进行交互，并将多个页面的内容根据需要在同一个页面在适当的时候进行展示。当然，SPA 技术采用动态加载 DOM 的方法，随之而来的就是 SEO 优化问题，搜索引擎不执行 JS 代码，页面内容无法被引擎检索到，也就不利于页面的排名和检索量提升。&lt;/p></description></item><item><title>单元测试工具：Junit</title><link>https://leezchuan.github.io/blog/computer-technology/tools/tools-junit/</link><pubDate>Wed, 30 Aug 2017 23:42:00 -0400</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/tools/tools-junit/</guid><description>&lt;p>通常一个项目的代码量是比较大的，而且其中逻辑也较为复杂，在开发完成后再进行项目测试其实是比较耗费时间和精力的，因此边开发边测试是个很好的选择，而 JUnit 则为我们提供了这样的便利。&lt;/p>
@@ -82,7 +83,7 @@
 &lt;!-- truncate -->
 &lt;h3 id="页面优化">页面优化&lt;/h3>
 &lt;p>首先，也是最重要的我们需要关注页面级的优化。&lt;/p>
-&lt;h6 id="减少-http-请求数">减少 HTTP 请求数&lt;/h6>
+&lt;h4 id="减少-http-请求数">减少 HTTP 请求数&lt;/h4>
 &lt;p>HTTP 协议是基于 TCP 连接的，我们都知道 TCP 连接要经过三次握手、四次挥手的过程才能完成数据信息的传输，所以过多的 HTTP 请求会导致网页响应过慢。虽然浏览器是支持 HTTP 请求并发的，但并发数量也是有限的。&lt;/p></description></item><item><title>Web 前端跨域访问</title><link>https://leezchuan.github.io/blog/computer-technology/web/web-cross-domain/</link><pubDate>Wed, 10 Aug 2016 15:18:00 -0400</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/web-cross-domain/</guid><description>&lt;p>为了用户的安全，浏览器通常都会限制跨域（Cross-domain）访问，也就是默认不允许不同域名下页面之间进行资源的传递和信息交互，但很多时候我们又有跨域请求资源的需求。&lt;/p>
 &lt;!-- truncate -->
 &lt;h3 id="同源策略">同源策略&lt;/h3>

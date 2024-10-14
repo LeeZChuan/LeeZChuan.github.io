@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>技术之心</title><link>https://leezchuan.github.io/</link><description>Recent content on 技术之心</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Fri, 01 Dec 2023 20:04:00 -0500</lastBuildDate><atom:link href="https://leezchuan.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>架构设计笔记</title><link>https://leezchuan.github.io/blog/notes/architecture-design/</link><pubDate>Fri, 01 Dec 2023 20:04:00 -0500</pubDate><guid>https://leezchuan.github.io/blog/notes/architecture-design/</guid><description>&lt;!-- truncate -->
-&lt;p>该文章将目前可能能用到的架构理念，概念统一汇总整理～&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>技术之心</title><link>https://leezchuan.github.io/</link><description>Recent content on 技术之心</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Fri, 01 Dec 2023 20:04:00 -0500</lastBuildDate><atom:link href="https://leezchuan.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>架构设计笔记</title><link>https://leezchuan.github.io/blog/notes/architecture-design/</link><pubDate>Fri, 01 Dec 2023 20:04:00 -0500</pubDate><guid>https://leezchuan.github.io/blog/notes/architecture-design/</guid><description>&lt;p>该文章将目前可能能用到的架构理念，概念统一汇总整理～&lt;/p>
 &lt;h3 id="多态">多态&lt;/h3>
 &lt;ul>
 &lt;li>多态：多态的实际含义是:同一操作作用于不同的对象上面，可以产生不同的解释和不同的执行结 果。换句话说，给不同的对象发送同一个消息的时候，这些对象会根据这个消息分别给出不同的反馈。&lt;/li>
@@ -106,8 +105,9 @@
 &lt;p>Visual Studio Code 是由微软出品的一款轻量级编辑器，兼有部分 IDE 功能。在之前，Sublime Text 是最受欢迎的编辑器（开源），也为多数前端开发者所推崇，当然说到底它依然是个编辑器。随着时间的推移，GitHub 打造了自家的编辑器 Atom，微软的 VS Code 也横空出世，更有其它优秀的轻量级编辑器在市场上展开角逐。不过，到现在来看，VS Code 可能胜出了，已成为前端开发的利器。&lt;/p></description></item><item><title>Web 前端架构设计</title><link>https://leezchuan.github.io/blog/computer-technology/web/web-front-end-architecture/</link><pubDate>Wed, 28 Mar 2018 14:01:00 -0400</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/web-front-end-architecture/</guid><description>&lt;p>让 Web 前端开发可持续化、可扩展，关注四个核心&lt;strong>代码&lt;/strong>、&lt;strong>流程&lt;/strong>、&lt;strong>测试&lt;/strong>、&lt;strong>文档&lt;/strong>。&lt;/p>
 &lt;!-- truncate -->
 &lt;h3 id="代码">代码&lt;/h3>
-&lt;h6 id="html">HTML&lt;/h6>
-&lt;p>######### 模块化标记&lt;/p></description></item><item><title>Nginx 配置</title><link>https://leezchuan.github.io/blog/computer-technology/nginx/nginx-config/</link><pubDate>Thu, 15 Mar 2018 12:38:00 -0400</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/nginx/nginx-config/</guid><description>&lt;p>&lt;strong>&lt;u>建议主要参考官网英文文档。&lt;/u>&lt;/strong>&lt;/p>
+&lt;h4 id="html">HTML&lt;/h4>
+&lt;h5 id="模块化标记">模块化标记&lt;/h5>
+&lt;p>构建模块化标记原则：&lt;strong>标签表达结构&lt;/strong>，&lt;strong>类名控制外观&lt;/strong>。这样做的好处就是，对相同类型结构的模块可以复用标签模版，同时又可以通过改变类名来灵活的控制模块的外观。例如：&lt;/p></description></item><item><title>Nginx 配置</title><link>https://leezchuan.github.io/blog/computer-technology/nginx/nginx-config/</link><pubDate>Thu, 15 Mar 2018 12:38:00 -0400</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/nginx/nginx-config/</guid><description>&lt;p>&lt;strong>&lt;u>建议主要参考官网英文文档。&lt;/u>&lt;/strong>&lt;/p>
 &lt;p>具体指令直接可以在官网文档的 Alphabetical index of directives（按字母顺序排列的指令索引）中搜索即可。&lt;/p>
 &lt;blockquote>
 &lt;p>官方文档：http://nginx.org/en/docs/&lt;/p>
@@ -133,7 +133,7 @@
 &lt;!-- truncate -->
 &lt;h3 id="页面优化">页面优化&lt;/h3>
 &lt;p>首先，也是最重要的我们需要关注页面级的优化。&lt;/p>
-&lt;h6 id="减少-http-请求数">减少 HTTP 请求数&lt;/h6>
+&lt;h4 id="减少-http-请求数">减少 HTTP 请求数&lt;/h4>
 &lt;p>HTTP 协议是基于 TCP 连接的，我们都知道 TCP 连接要经过三次握手、四次挥手的过程才能完成数据信息的传输，所以过多的 HTTP 请求会导致网页响应过慢。虽然浏览器是支持 HTTP 请求并发的，但并发数量也是有限的。&lt;/p></description></item><item><title>Web 前端跨域访问</title><link>https://leezchuan.github.io/blog/computer-technology/web/web-cross-domain/</link><pubDate>Wed, 10 Aug 2016 15:18:00 -0400</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/web-cross-domain/</guid><description>&lt;p>为了用户的安全，浏览器通常都会限制跨域（Cross-domain）访问，也就是默认不允许不同域名下页面之间进行资源的传递和信息交互，但很多时候我们又有跨域请求资源的需求。&lt;/p>
 &lt;!-- truncate -->
 &lt;h3 id="同源策略">同源策略&lt;/h3>
