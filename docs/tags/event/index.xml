@@ -1,4 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Event on 技术之心</title><link>https://leezchuan.github.io/tags/event/</link><description>Recent content in Event on 技术之心</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Mon, 23 May 2016 12:18:00 -0400</lastBuildDate><atom:link href="https://leezchuan.github.io/tags/event/index.xml" rel="self" type="application/rss+xml"/><item><title>DOM-事件</title><link>https://leezchuan.github.io/blog/computer-technology/web/dom/dom-event/</link><pubDate>Mon, 23 May 2016 12:18:00 -0400</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/dom/dom-event/</guid><description>&lt;p>JavaScript 的作用就是让 html 静态页面具备动态效果，而这些基本都是利用 DOM 事件来实现的。&lt;/p>
-&lt;!-- truncate -->
-&lt;h3 id="注册-dom-事件">注册 DOM 事件&lt;/h3>
-&lt;p>事件就是给目标 DOM 节点提前注册一个相应类型的事件方法，在合适的时机进行回调执行该方法的过程。接下来就来看看如何给目标 DOM 节点注册事件：&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Event on 技术之心</title>
+    <link>http://localhost:1313/tags/event/</link>
+    <description>Recent content in Event on 技术之心</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 23 May 2016 12:18:00 -0400</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/event/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DOM-事件</title>
+      <link>http://localhost:1313/blog/computer-technology/web/dom/dom-event/</link>
+      <pubDate>Mon, 23 May 2016 12:18:00 -0400</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/web/dom/dom-event/</guid>
+      <description>&lt;p&gt;JavaScript 的作用就是让 html 静态页面具备动态效果，而这些基本都是利用 DOM 事件来实现的。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;注册-dom-事件&#34;&gt;注册 DOM 事件&lt;/h3&gt;&#xA;&lt;p&gt;事件就是给目标 DOM 节点提前注册一个相应类型的事件方法，在合适的时机进行回调执行该方法的过程。接下来就来看看如何给目标 DOM 节点注册事件：&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

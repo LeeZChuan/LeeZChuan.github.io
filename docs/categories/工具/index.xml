@@ -1,15 +1,40 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>工具 on 技术之心</title><link>https://leezchuan.github.io/categories/%E5%B7%A5%E5%85%B7/</link><description>Recent content in 工具 on 技术之心</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Mon, 01 Aug 2022 21:07:00 -0400</lastBuildDate><atom:link href="https://leezchuan.github.io/categories/%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml"/><item><title>前端工程化：对于构建工具链的简单思考</title><link>https://leezchuan.github.io/blog/computer-technology/web/tools-web-fee-toolchain/</link><pubDate>Mon, 01 Aug 2022 21:07:00 -0400</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/tools-web-fee-toolchain/</guid><description>&lt;p>前端工程化是在做与业务开发完全不同的事情，旨在解决软件工程领域与开发者密切相关的问题，通常会将其与基建开发、DevOps 放在一起讨论。前端开发是复杂的，其结合了 HTML/CSS/JavaScript 3 种语言，甚至还有很多其超集，没有开箱即用的工具链，不像 Java Web 开发、Android 开发等等有官方或者商业领域非常成熟的工具可以利用，一切都源于开源社区的从 0 开始构建。正因如此，前端工程化领域百花齐放，开放与创新展现的淋漓尽致，这也是前端开发者了解学习软件工程的机会。&lt;/p></description></item><item><title>解析基于 core-js 与 ESLint 的 Web 兼容方案</title><link>https://leezchuan.github.io/blog/computer-technology/web/tools-web-fee-polyfill-corejs-eslint/</link><pubDate>Tue, 07 Dec 2021 01:13:00 -0500</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/tools-web-fee-polyfill-corejs-eslint/</guid><description>&lt;p>Web 网页为了保证在多个平台和低中高端设备上的体验稳定性和一致性，通常会做 Polyfill 以保证兼容性。&lt;/p>
-&lt;p>然而，兼容性问题本身是个难题，Polyfill 也并非很好处理，所以在技术演变的过程中，社区达成了一致，有一个主流的方案，大家共同来使用和维护。当下社区的主流方案则是基于 &lt;code>core-js&lt;/code>，另一方面， 利用 ESLint 插件则可以做到自动检测代码中需要添加 Polyfill 的 API。&lt;/p></description></item><item><title>Web 前端调试工具：SourceMap 文件</title><link>https://leezchuan.github.io/blog/computer-technology/web/tools-web-fee-debug-with-source-map/</link><pubDate>Sun, 28 Nov 2021 22:31:00 -0500</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/tools-web-fee-debug-with-source-map/</guid><description>&lt;p>Web 前端项目出于加载性能优化和安全考虑，在生产环境部署的代码是经过混淆和压缩的，对于利用生产环境收集到的错误堆栈信息要进行调试是非常具有挑战性的。理想情况下，应该在生产环境收集错误堆栈信息，然后映射到源码进行调试。恰好，&lt;strong>SourceMap 文件&lt;/strong>提供了这个机制，可以将编译（压缩）后的代码映射到源代码中。&lt;/p>
-&lt;!-- truncate -->
-&lt;p>以下是其规范：&lt;/p>
-&lt;blockquote>
-&lt;p>&lt;a href="https://sourcemaps.info/spec.html"
-
-
-
-
- target="_blank"
- 
-
-
->Source Map Revision 3 Proposal&lt;/a>&lt;/p></description></item><item><title>使用 Jest 和 Puppeteer 构建 Web 自动化测试平台</title><link>https://leezchuan.github.io/blog/computer-technology/web/tools-web-fee-test-with-jest-puppeteer/</link><pubDate>Sun, 15 Aug 2021 14:54:00 -0400</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/tools-web-fee-test-with-jest-puppeteer/</guid><description>&lt;p>测试为软件的稳定和完善提供了必要的支持，Web 前端开发领域相比于做单元测试，端到端测试更有意义和价值。谷歌发布的 Puppeteer 工具和脸书发布的 Jest 测试工具为 Web 端到端测试提供了极大的便利，这里记录了如何使用它们构建一个 Web 自动化测试平台。&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>工具 on 技术之心</title>
+    <link>http://localhost:1313/categories/%E5%B7%A5%E5%85%B7/</link>
+    <description>Recent content in 工具 on 技术之心</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 01 Aug 2022 21:07:00 -0400</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>前端工程化：对于构建工具链的简单思考</title>
+      <link>http://localhost:1313/blog/computer-technology/web/tools-web-fee-toolchain/</link>
+      <pubDate>Mon, 01 Aug 2022 21:07:00 -0400</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/web/tools-web-fee-toolchain/</guid>
+      <description>&lt;p&gt;前端工程化是在做与业务开发完全不同的事情，旨在解决软件工程领域与开发者密切相关的问题，通常会将其与基建开发、DevOps 放在一起讨论。前端开发是复杂的，其结合了 HTML/CSS/JavaScript 3 种语言，甚至还有很多其超集，没有开箱即用的工具链，不像 Java Web 开发、Android 开发等等有官方或者商业领域非常成熟的工具可以利用，一切都源于开源社区的从 0 开始构建。正因如此，前端工程化领域百花齐放，开放与创新展现的淋漓尽致，这也是前端开发者了解学习软件工程的机会。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>解析基于 core-js 与 ESLint 的 Web 兼容方案</title>
+      <link>http://localhost:1313/blog/computer-technology/web/tools-web-fee-polyfill-corejs-eslint/</link>
+      <pubDate>Tue, 07 Dec 2021 01:13:00 -0500</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/web/tools-web-fee-polyfill-corejs-eslint/</guid>
+      <description>&lt;p&gt;Web 网页为了保证在多个平台和低中高端设备上的体验稳定性和一致性，通常会做 Polyfill 以保证兼容性。&lt;/p&gt;&#xA;&lt;p&gt;然而，兼容性问题本身是个难题，Polyfill 也并非很好处理，所以在技术演变的过程中，社区达成了一致，有一个主流的方案，大家共同来使用和维护。当下社区的主流方案则是基于 &lt;code&gt;core-js&lt;/code&gt;，另一方面， 利用 ESLint 插件则可以做到自动检测代码中需要添加 Polyfill 的 API。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web 前端调试工具：SourceMap 文件</title>
+      <link>http://localhost:1313/blog/computer-technology/web/tools-web-fee-debug-with-source-map/</link>
+      <pubDate>Sun, 28 Nov 2021 22:31:00 -0500</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/web/tools-web-fee-debug-with-source-map/</guid>
+      <description>&lt;p&gt;Web 前端项目出于加载性能优化和安全考虑，在生产环境部署的代码是经过混淆和压缩的，对于利用生产环境收集到的错误堆栈信息要进行调试是非常具有挑战性的。理想情况下，应该在生产环境收集错误堆栈信息，然后映射到源码进行调试。恰好，&lt;strong&gt;SourceMap 文件&lt;/strong&gt;提供了这个机制，可以将编译（压缩）后的代码映射到源代码中。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;p&gt;以下是其规范：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://sourcemaps.info/spec.html&#34;&#xA;&#xA;&#xA;&#xA;&#xA; target=&#34;_blank&#34;&#xA; &#xA;&#xA;&#xA;&gt;Source Map Revision 3 Proposal&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>使用 Jest 和 Puppeteer 构建 Web 自动化测试平台</title>
+      <link>http://localhost:1313/blog/computer-technology/web/tools-web-fee-test-with-jest-puppeteer/</link>
+      <pubDate>Sun, 15 Aug 2021 14:54:00 -0400</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/web/tools-web-fee-test-with-jest-puppeteer/</guid>
+      <description>&lt;p&gt;测试为软件的稳定和完善提供了必要的支持，Web 前端开发领域相比于做单元测试，端到端测试更有意义和价值。谷歌发布的 Puppeteer 工具和脸书发布的 Jest 测试工具为 Web 端到端测试提供了极大的便利，这里记录了如何使用它们构建一个 Web 自动化测试平台。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

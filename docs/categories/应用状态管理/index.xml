@@ -1,1 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>应用状态管理 on 技术之心</title><link>https://leezchuan.github.io/categories/%E5%BA%94%E7%94%A8%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86/</link><description>Recent content in 应用状态管理 on 技术之心</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Thu, 18 Nov 2021 00:14:00 -0500</lastBuildDate><atom:link href="https://leezchuan.github.io/categories/%E5%BA%94%E7%94%A8%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86/index.xml" rel="self" type="application/rss+xml"/><item><title>Web 应用：轻量级状态管理工具 zustand</title><link>https://leezchuan.github.io/blog/computer-technology/web/web-app-model-zustand/</link><pubDate>Thu, 18 Nov 2021 00:14:00 -0500</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/web-app-model-zustand/</guid><description>&lt;p>基于 React.js 的 Web 应用如何完成状态管理？社区主流方案是 &lt;strong>react-redux&lt;/strong>，其本质上基于 React 的 &lt;code>Context&lt;/code> 特性实现，如果应用足够简单，实际上用 &lt;code>Context&lt;/code> 手写一个简单的状态管理工具倒也并不难。不过，考虑到工具的完善性、项目的健壮性，通常采用较好的、成熟的社区方案。在移动端场景下，&lt;strong>react-redux&lt;/strong> 略显臃肿，轻量级状态管理工具 &lt;strong>zustand&lt;/strong> 倒是一个不错的替代方案。&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>应用状态管理 on 技术之心</title>
+    <link>http://localhost:1313/categories/%E5%BA%94%E7%94%A8%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86/</link>
+    <description>Recent content in 应用状态管理 on 技术之心</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 18 Nov 2021 00:14:00 -0500</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/%E5%BA%94%E7%94%A8%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Web 应用：轻量级状态管理工具 zustand</title>
+      <link>http://localhost:1313/blog/computer-technology/web/web-app-model-zustand/</link>
+      <pubDate>Thu, 18 Nov 2021 00:14:00 -0500</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/web/web-app-model-zustand/</guid>
+      <description>&lt;p&gt;基于 React.js 的 Web 应用如何完成状态管理？社区主流方案是 &lt;strong&gt;react-redux&lt;/strong&gt;，其本质上基于 React 的 &lt;code&gt;Context&lt;/code&gt; 特性实现，如果应用足够简单，实际上用 &lt;code&gt;Context&lt;/code&gt; 手写一个简单的状态管理工具倒也并不难。不过，考虑到工具的完善性、项目的健壮性，通常采用较好的、成熟的社区方案。在移动端场景下，&lt;strong&gt;react-redux&lt;/strong&gt; 略显臃肿，轻量级状态管理工具 &lt;strong&gt;zustand&lt;/strong&gt; 倒是一个不错的替代方案。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

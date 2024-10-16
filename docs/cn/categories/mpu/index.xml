@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MPU on 技术之心</title>
+    <link>http://localhost:1313/cn/categories/mpu/</link>
+    <description>Recent content in MPU on 技术之心</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 28 Apr 2016 01:42:00 -0400</lastBuildDate>
+    <atom:link href="http://localhost:1313/cn/categories/mpu/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>微处理器寻址范围</title>
+      <link>http://localhost:1313/cn/blog/computer-technology/computer/computer-microprocessor-addressing-range/</link>
+      <pubDate>Thu, 28 Apr 2016 01:42:00 -0400</pubDate>
+      <guid>http://localhost:1313/cn/blog/computer-technology/computer/computer-microprocessor-addressing-range/</guid>
+      <description>&lt;p&gt;在此之前，让我们带着下面这个问题来看这篇文章：&lt;strong&gt;64 位处理器所支持的最大内存(寻址范围)为多少？&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;处理器&#34;&gt;处理器&lt;/h3&gt;&#xA;&lt;p&gt;处理器（CPU）担负着整个计算机系统的核心任务执行责任，所以我们经常关心它的运算处理能力，也就是 CPU 的性能。&lt;/p&gt;&#xA;&lt;h4 id=&#34;微处理器&#34;&gt;微处理器&lt;/h4&gt;&#xA;&lt;p&gt;我们经常所说的 Inter、AMD 两大常见品牌厂商出售的桌面端的处理器称为处理器（CPU），而把移动端嵌入式系统中 ARM 架构的处理器称为微处理器（MPU）。事实上，几乎电子设备上均有微型处理器，例如路由器、智能家电等等，只不过以上所提到的离我们最近而且我们也最熟悉。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rule on 技术之心</title>
+    <link>http://localhost:1313/en/tags/rule/</link>
+    <description>Recent content in Rule on 技术之心</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 19 May 2016 14:54:00 -0400</lastBuildDate>
+    <atom:link href="http://localhost:1313/en/tags/rule/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DOM-元素节点几何量</title>
+      <link>http://localhost:1313/en/blog/computer-technology/web/dom/dom-rule/</link>
+      <pubDate>Thu, 19 May 2016 14:54:00 -0400</pubDate>
+      <guid>http://localhost:1313/en/blog/computer-technology/web/dom/dom-rule/</guid>
+      <description>&lt;p&gt;当我们在查看 HTML 文档时，每个元素节点被解析后，都画成了可视形状。我们可以获取每个元素节点的几何量（宽、高、偏移量）以及页面滚动距离。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;元素节点几何量&#34;&gt;元素节点几何量&lt;/h3&gt;&#xA;&lt;p&gt;通常我们将一个元素抽象成一个盒子模型，具有 content（内容）、padding（填充、内边距）、border（边框）、margin（外边距）这些尺寸属性。&lt;/p&gt;&#xA;&lt;h4 id=&#34;定位偏移量&#34;&gt;定位偏移量&lt;/h4&gt;&#xA;&lt;p&gt;使用元素节点的 &lt;code&gt;offsetTop&lt;/code&gt; 与 &lt;code&gt;offsetLeft&lt;/code&gt; 属性，我们可以分别获取该元素节点&lt;strong&gt;顶部与左侧外边框&lt;/strong&gt;相对于 &lt;code&gt;offsetParent&lt;/code&gt; 的&lt;strong&gt;顶部与左侧内边框&lt;/strong&gt;的偏移像素量。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

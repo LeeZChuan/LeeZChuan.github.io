@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>博客列表 on 技术之心</title>
+    <link>http://localhost:1313/en/blog/</link>
+    <description>Recent content in 博客列表 on 技术之心</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 01 Dec 2023 20:04:00 -0500</lastBuildDate>
+    <atom:link href="http://localhost:1313/en/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>架构设计笔记</title>
+      <link>http://localhost:1313/en/blog/notes/architecture-design/</link>
+      <pubDate>Fri, 01 Dec 2023 20:04:00 -0500</pubDate>
+      <guid>http://localhost:1313/en/blog/notes/architecture-design/</guid>
+      <description>&lt;p&gt;该文章将目前可能能用到的架构理念，概念统一汇总整理～&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;多态&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;多态：多态的实际含义是:同一操作作用于不同的对象上面，可以产生不同的解释和不同的执行结 果。换句话说，给不同的对象发送同一个消息的时候，这些对象会根据这个消息分别给出不同的反馈。&lt;/li&gt;&#xA;&lt;li&gt;多态背后的思想是将“做什么”和“谁去做以及怎样去做”分离开来，也就是将“不变的事 物”与 “可能改变的事物”分离开来。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;把不变的部分隔离出来，把可变的部分封装起来，这给予了我们 扩展程序的能力&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;使用继承来得到多态效果，是让对象表现出多态性的最常用手段。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;高阶函数实现AOP&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>从贝塞尔曲线的计算感受数学建模的魅力</title>
+      <link>http://localhost:1313/en/blog/tools/tools-animation-math/</link>
+      <pubDate>Thu, 01 Dec 2022 01:04:00 -0500</pubDate>
+      <guid>http://localhost:1313/en/blog/tools/tools-animation-math/</guid>
+      <description>&lt;p&gt;最近在做前端可视化相关的东西，在完成动画效果时，遇到一个不是很好处理的问题，需要让一个元素在画布上以曲线的轨迹进行运动。因为动画这块之前基本也没有怎么接触过，做的也都是简单的线性动画效果，所以碰到这个需求点的时候觉得是有点难度的。&lt;/p&gt;&#xA;&lt;p&gt;其实，要真的实现按照一定曲线轨迹运动的效果倒也不难，毕竟圆、椭圆方程在平时做布局计算的时候用的也挺多的。但是，用圆或者椭圆计算曲线相当于是找了个特殊场景，不具备通用性；另一方面，说到曲线的绘制，贝塞尔曲线是绕不开的，这也是非常值得考虑的方案。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;动画帧计算&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;一段动画实际上是由多个静态帧组成的，当帧率达到人眼不可分辨的程度时（比如 60 FPS），就感觉像是一个无缝连续的视频在流畅的播放。而某一静态帧的状态用数学公式来表达如下：&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;y = F(t) (0 &amp;lt;= t &amp;lt;= 1)&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;那么对于一个物体从 &lt;strong&gt;x0&lt;/strong&gt; 运动到 &lt;strong&gt;x1&lt;/strong&gt;，如何计算 &lt;strong&gt;t&lt;/strong&gt; 时刻的位置？按照我的思路来看，可以转化为以下数学公式：&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>微信小程序与钉钉小程序开发流程</title>
+      <link>http://localhost:1313/en/blog/computer-technology/mobile-web/wx-dingding/</link>
+      <pubDate>Fri, 11 Nov 2022 11:52:00 -0500</pubDate>
+      <guid>http://localhost:1313/en/blog/computer-technology/mobile-web/wx-dingding/</guid>
+      <description>&lt;p&gt;开发小程序有很多问题特此记录一下～～～&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;小程序开发（移动端开发）兼容注意事项：&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;ios不兼容yyyy-MM-dd HH:mm:ss这种时间格式，需要将-替换成/，在安卓下两种格式都支持。&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;使用window.location.reload()方法刷新页面，在安卓下无效。&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;正常情况下使用window.location.replace()方法跳转页面时会覆盖当前页面而不会生成新的history记录，但是在安卓下依然会生成history记录。&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;ios中，父元素设置border-radius和overflow:hidden实现圆角。如果此时子元素使用了transform属性会导致父元素的圆角失效。&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;小程序中使用web-view打开pdf, IOS 可以正常打开，Android 打开为空白；&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web 字体加载对 DOM 位置的影响</title>
+      <link>http://localhost:1313/en/blog/computer-technology/web/web-tips-fonts/</link>
+      <pubDate>Sun, 16 Oct 2022 23:49:00 -0400</pubDate>
+      <guid>http://localhost:1313/en/blog/computer-technology/web/web-tips-fonts/</guid>
+      <description>&lt;p&gt;由于公司的业务会用到自己设计师定制的 Web 字体，所以一般在组件开发过程中会利用 CSS 引用该字体（&lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face&#34;&#xA;&#xA;&#xA;&#xA;&#xA; target=&#34;_blank&#34;&#xA; &#xA;&#xA;&#xA;&gt;@font-face&lt;/a&gt;），前段时间发现一个线上问题：在部分 iOS 机型上，DOM 元素的位置发生了错位。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;p&gt;首先，对于问题复现的必要条件做了分析，为以下几个方面&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>利用脚本执行 `tsc` 忽略类型检查错误</title>
+      <link>http://localhost:1313/en/blog/computer-technology/typescript/tools-typescript-use-script-to-ts-types/</link>
+      <pubDate>Sat, 06 Aug 2022 17:33:00 -0400</pubDate>
+      <guid>http://localhost:1313/en/blog/computer-technology/typescript/tools-typescript-use-script-to-ts-types/</guid>
+      <description>&lt;p&gt;在发布 npm 包时添加对 TypeScript 类型定义文件的支持会让用户的使用体验增色不少，TypeScript 官方提供了 &lt;code&gt;tsc --emitDeclarationOnly&lt;/code&gt; 命令用来生成类型定义文件（&lt;code&gt;.d.ts&lt;/code&gt;）。但是，该命令会同时执行类型检查，遇到错误时会报错中断命令行进程，这就使其无法直接集成在 CI 环节在发布 npm 包时自动执行生成类型定义文件的操作。当然，一个解决办法就是解决掉代码中所有的类型检查错误即可，既然讨论到这个问题，必然不会花费额外精力去解决一些历史遗留问题。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>前端工程化：对于构建工具链的简单思考</title>
+      <link>http://localhost:1313/en/blog/computer-technology/web/tools-web-fee-toolchain/</link>
+      <pubDate>Mon, 01 Aug 2022 21:07:00 -0400</pubDate>
+      <guid>http://localhost:1313/en/blog/computer-technology/web/tools-web-fee-toolchain/</guid>
+      <description>&lt;p&gt;前端工程化是在做与业务开发完全不同的事情，旨在解决软件工程领域与开发者密切相关的问题，通常会将其与基建开发、DevOps 放在一起讨论。前端开发是复杂的，其结合了 HTML/CSS/JavaScript 3 种语言，甚至还有很多其超集，没有开箱即用的工具链，不像 Java Web 开发、Android 开发等等有官方或者商业领域非常成熟的工具可以利用，一切都源于开源社区的从 0 开始构建。正因如此，前端工程化领域百花齐放，开放与创新展现的淋漓尽致，这也是前端开发者了解学习软件工程的机会。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>桥接模式：跨平台的事件机制设计</title>
+      <link>http://localhost:1313/en/blog/computer-technology/program-architecture-design/bridge-mode-design-of-cross-platform-event-mechanism/</link>
+      <pubDate>Sun, 12 Jun 2022 22:22:00 -0400</pubDate>
+      <guid>http://localhost:1313/en/blog/computer-technology/program-architecture-design/bridge-mode-design-of-cross-platform-event-mechanism/</guid>
+      <description>&lt;p&gt;对于 Web 的图表组件库来说，一些功能比较强大的开源库，渲染层可以支持 DOM、SVG、Canvas、WebGL 等多个平台的环境，而图表库的很多功能的实现都和渲染层紧密相关。&lt;/p&gt;&#xA;&lt;p&gt;最近，在参考学习一些开源的图表组件库时，发现在跨平台设计中，事件机制的实现很有意思，所以在这里以最简化的代码来解释和记录一下这个方案。如果要用经典的软件设计模式来解释，大概就是&lt;strong&gt;桥接模式&lt;/strong&gt;了。&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;桥接模式（Bridge Pattern）&lt;/strong&gt; 将一个功能的实现拆分为抽象（Abstraction）和实现（Implementor），让其相互独立的扩展和定义，借助该模式可以设计一种平台无关的软件架构。&lt;/p&gt;&#xA;&lt;h4 id=&#34;事件机制&#34;&gt;事件机制&lt;/h4&gt;&#xA;&lt;p&gt;事件机制是软件设计中最基础、最为常见的一种设计，对于 Web 图表组件库来说要提供一些处理用户交互（例如点击、拖动、右键点击等）的机制。一个典型的事件模型类如下：&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>如何更好的维护开源项目</title>
+      <link>http://localhost:1313/en/blog/computer-technology/tools/tools-maintain-open-source-projects-with-tools/</link>
+      <pubDate>Fri, 22 Apr 2022 22:53:00 -0400</pubDate>
+      <guid>http://localhost:1313/en/blog/computer-technology/tools/tools-maintain-open-source-projects-with-tools/</guid>
+      <description>&lt;p&gt;一直以来，开源精神被开发者所推崇，开源项目为开发者提供了不用付出除时间以外任何成本就可以学习前沿技术的最佳途径，另一方面，我们应该思考开源为何会成功，在全球开发者参与协作的情况下代码仓库为何能保持整洁、不出现大规模冲突而奔溃，上下游依赖如何管理，这背后有既定的规范进行强约束，也有一系列社区工具来完成复杂而有价值的工作。所以，从参与或者维护开源项目的角度来看，这些&lt;strong&gt;社区公认的最佳实践&lt;/strong&gt;值得我们了解，学习这些东西也能在一定程度上提高我们管理项目的能力。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;p&gt;以下内容属于经验积累，持续更新，仅供参考。&lt;/p&gt;&#xA;&lt;h3 id=&#34;许可证license&#34;&gt;许可证（License）&lt;/h3&gt;&#xA;&lt;p&gt;代码本质上是开发者的创作成果，具有&lt;strong&gt;专利权&lt;/strong&gt;，所以开发者应该意识到自己所享有的权利，同时在使用其他人所提供的代码时避免侵权。作为开源项目，有必要在开源之前选择一个合适的&lt;strong&gt;许可证&lt;/strong&gt;，提前&lt;strong&gt;声明权利和义务&lt;/strong&gt;（一般作为单独的 &lt;em&gt;LICENSE&lt;/em&gt; 文本文件保存），避免在后期陷入麻烦之中，GitHub 官方为我们提供了一个简单的工具站点：&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>一些互联网名词</title>
+      <link>http://localhost:1313/en/blog/business/business-noun/</link>
+      <pubDate>Sun, 27 Mar 2022 01:04:00 -0400</pubDate>
+      <guid>http://localhost:1313/en/blog/business/business-noun/</guid>
+      <description>&lt;p&gt;互联网时代是个新概念频出的时代，每年有相当多的新名词诞生，而诸多与商业活动紧密相关的词汇了解一下有助于我们熟悉日常工作中接触的东西。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h2 id=&#34;互联网名词&#34;&gt;互联网名词&lt;/h2&gt;&#xA;&lt;h3 id=&#34;商业模式&#34;&gt;商业模式&lt;/h3&gt;&#xA;&lt;h4 id=&#34;b2bbusiness-to-business&#34;&gt;B2B（Business to Business）&lt;/h4&gt;&#xA;&lt;p&gt;传统的电子商务商业模式，供需双方都是商家（或企业、公司）。代表性企业如阿里巴巴、聪慧网等。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>TypeScript：扩展第三方库的类型定义</title>
+      <link>http://localhost:1313/en/blog/computer-technology/typescript/tools-typescript-type-extend/</link>
+      <pubDate>Sun, 09 Jan 2022 17:36:00 -0500</pubDate>
+      <guid>http://localhost:1313/en/blog/computer-technology/typescript/tools-typescript-type-extend/</guid>
+      <description>&lt;p&gt;TypeScript 作为 JavaScript 的超集，为 Web 开发带来了强类型语言和类似代码智能提示这种良好的开发体验，而代码提示依赖于类型定义文件。类型定义文件的发展也经历了一个逐步演变的过程，从最初基于 JavaScript 编写的 npm 包，通过&lt;a href=&#34;https://github.com/DefinitelyTyped/DefinitelyTyped&#34;&#xA;&#xA;&#xA;&#xA;&#xA; target=&#34;_blank&#34;&#xA; &#xA;&#xA;&#xA;&gt;社区方案&lt;/a&gt;来引入类型定义包，再到目前多数模块基于 TypeScript 编写并在发布时带上类型定义文件这种最佳方案，开发者体验得到进一步的提升。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>解析基于 core-js 与 ESLint 的 Web 兼容方案</title>
+      <link>http://localhost:1313/en/blog/computer-technology/web/tools-web-fee-polyfill-corejs-eslint/</link>
+      <pubDate>Tue, 07 Dec 2021 01:13:00 -0500</pubDate>
+      <guid>http://localhost:1313/en/blog/computer-technology/web/tools-web-fee-polyfill-corejs-eslint/</guid>
+      <description>&lt;p&gt;Web 网页为了保证在多个平台和低中高端设备上的体验稳定性和一致性，通常会做 Polyfill 以保证兼容性。&lt;/p&gt;&#xA;&lt;p&gt;然而，兼容性问题本身是个难题，Polyfill 也并非很好处理，所以在技术演变的过程中，社区达成了一致，有一个主流的方案，大家共同来使用和维护。当下社区的主流方案则是基于 &lt;code&gt;core-js&lt;/code&gt;，另一方面， 利用 ESLint 插件则可以做到自动检测代码中需要添加 Polyfill 的 API。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web 前端调试工具：SourceMap 文件</title>
+      <link>http://localhost:1313/en/blog/computer-technology/web/tools-web-fee-debug-with-source-map/</link>
+      <pubDate>Sun, 28 Nov 2021 22:31:00 -0500</pubDate>
+      <guid>http://localhost:1313/en/blog/computer-technology/web/tools-web-fee-debug-with-source-map/</guid>
+      <description>&lt;p&gt;Web 前端项目出于加载性能优化和安全考虑，在生产环境部署的代码是经过混淆和压缩的，对于利用生产环境收集到的错误堆栈信息要进行调试是非常具有挑战性的。理想情况下，应该在生产环境收集错误堆栈信息，然后映射到源码进行调试。恰好，&lt;strong&gt;SourceMap 文件&lt;/strong&gt;提供了这个机制，可以将编译（压缩）后的代码映射到源代码中。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;p&gt;以下是其规范：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://sourcemaps.info/spec.html&#34;&#xA;&#xA;&#xA;&#xA;&#xA; target=&#34;_blank&#34;&#xA; &#xA;&#xA;&#xA;&gt;Source Map Revision 3 Proposal&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web 应用：轻量级状态管理工具 zustand</title>
+      <link>http://localhost:1313/en/blog/computer-technology/web/web-app-model-zustand/</link>
+      <pubDate>Thu, 18 Nov 2021 00:14:00 -0500</pubDate>
+      <guid>http://localhost:1313/en/blog/computer-technology/web/web-app-model-zustand/</guid>
+      <description>&lt;p&gt;基于 React.js 的 Web 应用如何完成状态管理？社区主流方案是 &lt;strong&gt;react-redux&lt;/strong&gt;，其本质上基于 React 的 &lt;code&gt;Context&lt;/code&gt; 特性实现，如果应用足够简单，实际上用 &lt;code&gt;Context&lt;/code&gt; 手写一个简单的状态管理工具倒也并不难。不过，考虑到工具的完善性、项目的健壮性，通常采用较好的、成熟的社区方案。在移动端场景下，&lt;strong&gt;react-redux&lt;/strong&gt; 略显臃肿，轻量级状态管理工具 &lt;strong&gt;zustand&lt;/strong&gt; 倒是一个不错的替代方案。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web 前端性能优化：批量 DOM 操作 - FastDOM</title>
+      <link>http://localhost:1313/en/blog/computer-technology/web/web-performance-fastdom/</link>
+      <pubDate>Mon, 04 Oct 2021 00:06:00 -0400</pubDate>
+      <guid>http://localhost:1313/en/blog/computer-technology/web/web-performance-fastdom/</guid>
+      <description>&lt;p&gt;利用 JS 开发的原生应用与依赖于 React.js/Vue 开发的框架/库应用，性能孰高孰低？这两者最显著的区别在于原生应用需要手动操作 DOM 完成业务，而框架/库应用是基于数据变化响应式的应用，后者只需要关注数据如何变化，至于体现在 DOM 上的变化皆由框架/库内部自动完成。所以，要搞清楚两者的性能优劣，可能&lt;strong&gt;批量&lt;/strong&gt;的 DOM 操作是一个不可忽略的核心因素。从代码执行的角度分析，框架/库也是基于原生 API 进行的封装抽象，因此代码执行时的路径更长、堆栈更深，由此可见原生 API 的操作性能应该是最高的。但是，现实情况是业务通常来说是复杂的，代码实现中 DOM 操作的逻辑分散在各处，那么多个 DOM 操作之间是否会产生影响从而不利于性能？这个时候就要关注宿主浏览器的渲染机制是如何理解批量的 DOM 操作的，这里引入的概念就是&lt;strong&gt;关键渲染路径（Critical rendering path）&lt;/strong&gt;。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web 前端性能优化：案例分析 1</title>
+      <link>http://localhost:1313/en/blog/computer-technology/web/web-performance-case-1/</link>
+      <pubDate>Fri, 24 Sep 2021 00:51:00 -0400</pubDate>
+      <guid>http://localhost:1313/en/blog/computer-technology/web/web-performance-case-1/</guid>
+      <description>&lt;p&gt;能在真实业务场景中落地 Web 性能优化方案的机会鲜有，大多数时候业务是较为简单而且要求不高的，前段时间恰好有一个比较核心的业务，对稳定性和性能有一定的要求，在这个过程中也算是做了很多尝试和实践，在此作为案例记录一下分析的过程和最终解决的方案。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;业务情况与技术难点&#34;&gt;业务情况与技术难点&lt;/h3&gt;&#xA;&lt;p&gt;首先，介绍一下业务的具体情况和存在的技术难点。这是一个移动端 WebView 渲染的页面，属于 App 的二级核心页面，用户量数十万，日均 UV 万人，金融资产相关，所以可以看得出来对页面的稳定性要求是比较高的；其次，页面布局分为上中下三部分，中部是一个长列表，&lt;strong&gt;页面整体&lt;/strong&gt;可以竖向滚动。以 DOM 结构说明：&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Child process API: spawn vs exec</title>
+      <link>http://localhost:1313/en/blog/computer-technology/nodejs/nodejs-spawn-vs-exec/</link>
+      <pubDate>Wed, 25 Aug 2021 00:21:00 -0400</pubDate>
+      <guid>http://localhost:1313/en/blog/computer-technology/nodejs/nodejs-spawn-vs-exec/</guid>
+      <description>&lt;p&gt;利用 Node.js 编写一些命令行工具、一次性脚本是很方便的，而在这类场景下 child_process API 的 &lt;code&gt;spawn&lt;/code&gt; 和 &lt;code&gt;exec&lt;/code&gt; 方法的应用则非常常见。在我使用它们时，却不知道该如何进行选择，遂对此进行了探究。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>使用 Jest 和 Puppeteer 构建 Web 自动化测试平台</title>
+      <link>http://localhost:1313/en/blog/computer-technology/web/tools-web-fee-test-with-jest-puppeteer/</link>
+      <pubDate>Sun, 15 Aug 2021 14:54:00 -0400</pubDate>
+      <guid>http://localhost:1313/en/blog/computer-technology/web/tools-web-fee-test-with-jest-puppeteer/</guid>
+      <description>&lt;p&gt;测试为软件的稳定和完善提供了必要的支持，Web 前端开发领域相比于做单元测试，端到端测试更有意义和价值。谷歌发布的 Puppeteer 工具和脸书发布的 Jest 测试工具为 Web 端到端测试提供了极大的便利，这里记录了如何使用它们构建一个 Web 自动化测试平台。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web 前端性能优化：核心概念与指标</title>
+      <link>http://localhost:1313/en/blog/computer-technology/web/web-performance-core-concepts/</link>
+      <pubDate>Mon, 19 Jul 2021 00:51:00 -0400</pubDate>
+      <guid>http://localhost:1313/en/blog/computer-technology/web/web-performance-core-concepts/</guid>
+      <description>&lt;p&gt;说到 Web 的性能优化，可能很多时候我们采取了一些措施，看到了肉眼可见的改进，如果我们可以对其进行测量，确定我们改进的效率（百分比）是不是会更有意义？换句话说，如果我们了解性能瓶颈可能发生的位置，衡量用户体验好坏的指标，做到实时追踪性能变化，我们是不是可以更迅速的采取优化措施？在应用上线前，我们就可以做一些低成本而有高收益的优化工作，进一步提升用户体验。&lt;/p&gt;&#xA;&lt;p&gt;所以，这里主要介绍一下 Web 性能相关的核心概念和相关指标。&lt;/p&gt;&#xA;&lt;p&gt;谷歌作为力推 Web 技术的科技巨头，不仅提供了出色的 Chrome DevTools，更是贡献了高质量的开发文档，为业界引进了众多先进的理念，先来拜读一下下面这篇文章，搞明白为何我们需要对 Web 网站做极致的优化？&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Fastify - 专注于性能和低内存消耗</title>
+      <link>http://localhost:1313/en/blog/computer-technology/nodejs/nodejs-fastify/</link>
+      <pubDate>Sun, 27 Jun 2021 16:28:00 -0400</pubDate>
+      <guid>http://localhost:1313/en/blog/computer-technology/nodejs/nodejs-fastify/</guid>
+      <description>&lt;p&gt;最近在做 Node.js 技术相关的调研，需要选定一个 Web 框架作为基础来构建业务。一般来说，首选开源方案，对于我来说，比较关注框架背后的开发团队情况、项目活跃度、是否有足够多的商业案例、文档是否完整可读、框架的设计理念、技术架构是否灵活可扩展、技术社区生态是否完整等方面。目前，我比较倾心的是 Fastify 这个新兴框架，根据官网介绍，其专注于高性能和低消耗，并且公开的基准测试表现相当不错，项目足够活跃，更重要的是属于 OpenJS 基金会的孵化项目。本文主要介绍 Fastify 的设计理念和探究其是如何提高性能和降低内存消耗的。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>理解编程语言的设计与实现</title>
+      <link>http://localhost:1313/en/blog/computer-technology/tools/tools-programming-language/</link>
+      <pubDate>Sun, 02 May 2021 17:03:00 -0400</pubDate>
+      <guid>http://localhost:1313/en/blog/computer-technology/tools/tools-programming-language/</guid>
+      <description>&lt;p&gt;编程语言本质上是给开发者使用的工具，不同的业务领域使用不同的编程语言去实现具体的业务，是基于语言本身的设计理念与实现方式来做选择，那么作为开发者应该了解一下编程语言是如何被发明的，且其设计理念是什么。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;p&gt;Ruby 是我大学期间课余接触且实际使用过的一门语言，目前我甚是喜爱，其作者松本行弘设计 Ruby 的初心是：为开发者服务，注重简洁和效率。这篇文章主要也是为了记录在拜读了松本行弘先生新书《编程语言的设计与实现》之后掌握的一些相关的关键知识点和其它收获。由于该书主要是围绕作者在设计 Ruby 和新语言 Streem 过程中的一些思考和经验，有些东西可能不太具备普适性，而我在这里主要还是关注一些通用性的知识点和概念。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web 前端性能优化：解析函数节流与防抖的实现</title>
+      <link>http://localhost:1313/en/blog/computer-technology/web/javascript/debouncing-and-throttling/</link>
+      <pubDate>Sun, 25 Apr 2021 22:56:00 -0400</pubDate>
+      <guid>http://localhost:1313/en/blog/computer-technology/web/javascript/debouncing-and-throttling/</guid>
+      <description>&lt;p&gt;前端开发中，有一个使用较为普遍的性能优化技巧，即函数节流（Throttle）和防抖（Debounce），其主要作用是根据时间对函数调用做以限制。最常见的业务场景是监听页面的 &lt;code&gt;scroll&lt;/code&gt; 事件，浏览器可以在 1s 内触发该事件数次（甚至达数十次），如果事件处理程序在这 1s 内多次执行，必然会造成一定的性能问题，影响用户体验。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;p&gt;本质上，函数节流和防抖并不是控制事件源的触发次数，而是在事件短时间内连续多次触发之后控制相应事件处理程序的调用频率。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>使用 npm</title>
+      <link>http://localhost:1313/en/blog/computer-technology/nodejs/tools-npm/</link>
+      <pubDate>Sat, 06 Jul 2019 15:43:00 -0400</pubDate>
+      <guid>http://localhost:1313/en/blog/computer-technology/nodejs/tools-npm/</guid>
+      <description>&lt;p&gt;npm 是 Node.js 的一个包管理器，Web 前端工程师也经常利用它来简化开发流程，看看如何愉快的使用 npm ，并且发布自己的包，让 npm 成为我们的开发利器。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;npm&#34;&gt;npm&lt;/h3&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;**Node.js：**&lt;a href=&#34;https://www.npmjs.com/&#34;&#xA;&#xA;&#xA;&#xA;&#xA; target=&#34;_blank&#34;&#xA; &#xA;&#xA;&#xA;&gt;https://www.npmjs.com/&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>IDE：VS Code 配置同步</title>
+      <link>http://localhost:1313/en/blog/computer-technology/tools/tools-vscode-sync/</link>
+      <pubDate>Wed, 15 Aug 2018 16:42:00 -0400</pubDate>
+      <guid>http://localhost:1313/en/blog/computer-technology/tools/tools-vscode-sync/</guid>
+      <description>&lt;p&gt;利用一款插件来同步 VS Code 的配置到 GitHub 的 gist 上，实现多个设备间共享一套配置。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;vs-code&#34;&gt;VS Code&lt;/h3&gt;&#xA;&lt;p&gt;Visual Studio Code 是由微软出品的一款轻量级编辑器，兼有部分 IDE 功能。在之前，Sublime Text 是最受欢迎的编辑器（开源），也为多数前端开发者所推崇，当然说到底它依然是个编辑器。随着时间的推移，GitHub 打造了自家的编辑器 Atom，微软的 VS Code 也横空出世，更有其它优秀的轻量级编辑器在市场上展开角逐。不过，到现在来看，VS Code 可能胜出了，已成为前端开发的利器。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web 前端架构设计</title>
+      <link>http://localhost:1313/en/blog/computer-technology/web/web-front-end-architecture/</link>
+      <pubDate>Wed, 28 Mar 2018 14:01:00 -0400</pubDate>
+      <guid>http://localhost:1313/en/blog/computer-technology/web/web-front-end-architecture/</guid>
+      <description>&lt;p&gt;让 Web 前端开发可持续化、可扩展，关注四个核心&lt;strong&gt;代码&lt;/strong&gt;、&lt;strong&gt;流程&lt;/strong&gt;、&lt;strong&gt;测试&lt;/strong&gt;、&lt;strong&gt;文档&lt;/strong&gt;。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;代码&#34;&gt;代码&lt;/h3&gt;&#xA;&lt;h4 id=&#34;html&#34;&gt;HTML&lt;/h4&gt;&#xA;&lt;h5 id=&#34;模块化标记&#34;&gt;模块化标记&lt;/h5&gt;&#xA;&lt;p&gt;构建模块化标记原则：&lt;strong&gt;标签表达结构&lt;/strong&gt;，&lt;strong&gt;类名控制外观&lt;/strong&gt;。这样做的好处就是，对相同类型结构的模块可以复用标签模版，同时又可以通过改变类名来灵活的控制模块的外观。例如：&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Nginx 配置</title>
+      <link>http://localhost:1313/en/blog/computer-technology/nginx/nginx-config/</link>
+      <pubDate>Thu, 15 Mar 2018 12:38:00 -0400</pubDate>
+      <guid>http://localhost:1313/en/blog/computer-technology/nginx/nginx-config/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;&lt;u&gt;建议主要参考官网英文文档。&lt;/u&gt;&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;具体指令直接可以在官网文档的 Alphabetical index of directives（按字母顺序排列的指令索引）中搜索即可。&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;官方文档：http://nginx.org/en/docs/&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;nginx&#34;&gt;Nginx&lt;/h3&gt;&#xA;&lt;p&gt;Nginx 是一位俄罗斯开发者（伊戈尔·赛索耶夫）开发的服务器，于 2004 年 10 月 4 日公开发布。Nginx 的优势在于轻量级和高性能，尤其是高并发的场景下，相对其它服务器来说表现比较好，因此现在颇受欢迎。Nginx 通常运行在 Unix/Linux 环境下，当然现在官方也发布了 Windows 环境下的应用，不过性能有所降低，这是受限于系统环境的影响。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web 应用：单页面应用与路由</title>
+      <link>http://localhost:1313/en/blog/computer-technology/web/web-routing/</link>
+      <pubDate>Wed, 25 Oct 2017 00:51:00 -0400</pubDate>
+      <guid>http://localhost:1313/en/blog/computer-technology/web/web-routing/</guid>
+      <description>&lt;p&gt;现在，Web 技术不仅仅是局限于页面的开发技术，在应用的开发方面也是一种潮流，B/S 架构的技术是一种趋势。而像一般的管理型 Web 应用，不注重 SEO，非常适合单页面应用（SPA）的实现方式，而路由功能则是单页面应用的核心技术。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;spa&#34;&gt;SPA&lt;/h3&gt;&#xA;&lt;p&gt;单页面应用（Single page application, SPA）已经是目前实现 Web 应用的主流技术了，尤其是移动端的 Web 应用。SPA 使用 Ajax 技术异步加载页面内容，使用户能够在同一个页面流畅的进行交互，并将多个页面的内容根据需要在同一个页面在适当的时候进行展示。当然，SPA 技术采用动态加载 DOM 的方法，随之而来的就是 SEO 优化问题，搜索引擎不执行 JS 代码，页面内容无法被引擎检索到，也就不利于页面的排名和检索量提升。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>单元测试工具：Junit</title>
+      <link>http://localhost:1313/en/blog/computer-technology/tools/tools-junit/</link>
+      <pubDate>Wed, 30 Aug 2017 23:42:00 -0400</pubDate>
+      <guid>http://localhost:1313/en/blog/computer-technology/tools/tools-junit/</guid>
+      <description>&lt;p&gt;通常一个项目的代码量是比较大的，而且其中逻辑也较为复杂，在开发完成后再进行项目测试其实是比较耗费时间和精力的，因此边开发边测试是个很好的选择，而 JUnit 则为我们提供了这样的便利。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;junit&#34;&gt;JUnit&lt;/h3&gt;&#xA;&lt;p&gt;JUnit 是一个用来对 Java 代码进行单元测试的框架，是 XUnit （一套基于测试驱动开发的测试框架）的一个子集，类似的还有 PythonUnit、CppUnit。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>JavaScript 异步编程</title>
+      <link>http://localhost:1313/en/blog/computer-technology/web/javascript/web-js-async/</link>
+      <pubDate>Wed, 22 Mar 2017 15:48:00 -0400</pubDate>
+      <guid>http://localhost:1313/en/blog/computer-technology/web/javascript/web-js-async/</guid>
+      <description>&lt;p&gt;JavaScript 作为一门在 Web 开发中的主流语言，常常涉及到交互事件方面的应用，这不可避免的用到了异步编程的方法，而它本身则是单线程运行的。在以往的开发中，异步编程正变得越来越难管理，新的 Promise 标准 API 将使得异步编程更加方便、安全。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;异步与并行&#34;&gt;异步与并行&lt;/h3&gt;&#xA;&lt;p&gt;作为 Web 前端开发中的主流语言，JavaScript 需要实现诸多的交互动作，但是在宿主环境（例如 v8）中 JS 引擎只有一个主线程，所以多线程并行处理是不可能的。因此，异步编程显得尤为重要。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>使用 Git</title>
+      <link>http://localhost:1313/en/blog/computer-technology/tools/tools-git/</link>
+      <pubDate>Sat, 31 Dec 2016 13:49:00 -0500</pubDate>
+      <guid>http://localhost:1313/en/blog/computer-technology/tools/tools-git/</guid>
+      <description>&lt;p&gt;Git 是一个分布式的版本控制工具，类似的版本控制工具还有 SVN ；由于 GitHub 平台的盛行，也使得 git 更加受欢迎，在 Windows 平台使用 git 也是非常方便的。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Linux-Vim 编辑器</title>
+      <link>http://localhost:1313/en/blog/computer-technology/linux/linux-cmd-vim/</link>
+      <pubDate>Fri, 28 Oct 2016 21:02:00 -0400</pubDate>
+      <guid>http://localhost:1313/en/blog/computer-technology/linux/linux-cmd-vim/</guid>
+      <description>&lt;p&gt;在 Linux 这样的命令行操作系统中，必须有一款功能强大的编辑器支持我们快速完成文本编辑，这就是 Vi 编辑器；通过对其加强和升级，Vim 编辑器比前者更为强大，拥有更多的功能和颜色高亮的特性，是程序员在 Linux 下编码的利器。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;vim&#34;&gt;Vim&lt;/h3&gt;&#xA;&lt;p&gt;Vim 是基于 Linux 下 Vi 编辑器的升级版，经过多年来的不断更新，功能也越来越强大，Vim 除过具备常用文本编辑器的编辑操作以及颜色高亮特性外，还支持自动补全、多行批量操作、指定跳转等等功能，其中代码颜色高亮特性更利于我们在命令行中进行信息的阅览和查看。而且，Vim 支持大多数操作系统，只是我们经常在 Linux 下使用它而已。当然，在 Linux 下还有一款很著名的编辑器 Emacs 。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Linux-常用 Shell 命令</title>
+      <link>http://localhost:1313/en/blog/computer-technology/linux/linux-cmd-shell/</link>
+      <pubDate>Fri, 21 Oct 2016 21:02:00 -0400</pubDate>
+      <guid>http://localhost:1313/en/blog/computer-technology/linux/linux-cmd-shell/</guid>
+      <description>&lt;p&gt;Linux 是一个优秀的开发环境，大多数服务器都在上面部署。作为一个程序员，熟悉Linux 系统的常用操作也是很必要的。在 linux 内核外，shell 提供了我们程序员（用户）与内核之间的交互媒介，shell 可以说是一个命令解释器，当然它也负责将内核输出信息翻译给程序员。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;shell&#34;&gt;Shell&lt;/h3&gt;&#xA;&lt;p&gt;Linux 是一个基于命令行的操作系统，提供了一个命令解释器，即 Shell（壳）。Shell 是一个软件，是操作系统的用户界面，用户通过在 Shell 中输入命令，然后命令解释器解释完成后将指令送往内核中执行，来实现对 Linux 系统的操作。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web 前端性能优化：工具与技巧</title>
+      <link>http://localhost:1313/en/blog/computer-technology/web/web-performance-optimize-skill/</link>
+      <pubDate>Sat, 20 Aug 2016 19:06:00 -0400</pubDate>
+      <guid>http://localhost:1313/en/blog/computer-technology/web/web-performance-optimize-skill/</guid>
+      <description>&lt;p&gt;Web 前端的性能优化是非常迫切的，客户端的资源非常有限，而且层次不齐，很容易造成一些性能问题从而影响到最终给用户所呈现的数据信息结构的不完整。为了增强用户体验，我们必须在各个方面进行优化，同时也可以节省服务器成本。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;页面优化&#34;&gt;页面优化&lt;/h3&gt;&#xA;&lt;p&gt;首先，也是最重要的我们需要关注页面级的优化。&lt;/p&gt;&#xA;&lt;h4 id=&#34;减少-http-请求数&#34;&gt;减少 HTTP 请求数&lt;/h4&gt;&#xA;&lt;p&gt;HTTP 协议是基于 TCP 连接的，我们都知道 TCP 连接要经过三次握手、四次挥手的过程才能完成数据信息的传输，所以过多的 HTTP 请求会导致网页响应过慢。虽然浏览器是支持 HTTP 请求并发的，但并发数量也是有限的。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web 前端跨域访问</title>
+      <link>http://localhost:1313/en/blog/computer-technology/web/web-cross-domain/</link>
+      <pubDate>Wed, 10 Aug 2016 15:18:00 -0400</pubDate>
+      <guid>http://localhost:1313/en/blog/computer-technology/web/web-cross-domain/</guid>
+      <description>&lt;p&gt;为了用户的安全，浏览器通常都会限制跨域（Cross-domain）访问，也就是默认不允许不同域名下页面之间进行资源的传递和信息交互，但很多时候我们又有跨域请求资源的需求。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;同源策略&#34;&gt;同源策略&lt;/h3&gt;&#xA;&lt;p&gt;我们要在地址栏中正确输入“协议”、“域名”、“端口”、“文件路径”才能访问一个页面，其中任意一个不正确就不会达到我们期望的结果。所谓的跨域就是当&lt;strong&gt;协议&lt;/strong&gt;、&lt;strong&gt;域名&lt;/strong&gt;、&lt;strong&gt;端口&lt;/strong&gt;这三者有一个不同时即称为跨域访问，这时候浏览器为了用户安全就会限制 JavaScript 的跨域行为，这也叫做同源策略（由网景公司提出）。&lt;/p&gt;&#xA;&lt;p&gt;通常一个公司（组织、团队）会申请一个主域名，然后根据服务类型分出多个二级域名，在某些涉及到敏感信息的页面又会采用 HTTPS 协议加密，或许还有更多的类似需求，这些需求大多都需要跨域共享资源才能实现用户的定制服务。所以，跨域访问不是个能避免的问题，在不破坏浏览器安全性的前提下我们需要去解决它。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>块级格式化上下文（BFC）</title>
+      <link>http://localhost:1313/en/blog/computer-technology/web/css/css-bfc/</link>
+      <pubDate>Fri, 22 Jul 2016 16:35:00 -0400</pubDate>
+      <guid>http://localhost:1313/en/blog/computer-technology/web/css/css-bfc/</guid>
+      <description>&lt;p&gt;在进行页面布局时，通常有流式布局、定位布局、浮动布局这三种形式。而在布局过程中，各元素之间的影响却是一个很关键的问题。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;bfc&#34;&gt;BFC&lt;/h3&gt;&#xA;&lt;p&gt;BFC（Block Formatting Context，块级格式化上下文）是 CSS 2.1 中的一个规范，在 CSS 3 中也称为 Flow Root。首先，BFC 是&lt;strong&gt;块级元素&lt;/strong&gt;身上的一个特性，通常它是隐藏不生效的，但某些情况下它会显现出来：&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HTTP 协议</title>
+      <link>http://localhost:1313/en/blog/computer-technology/protocol/protocol-http/</link>
+      <pubDate>Fri, 24 Jun 2016 14:59:00 -0400</pubDate>
+      <guid>http://localhost:1313/en/blog/computer-technology/protocol/protocol-http/</guid>
+      <description>&lt;p&gt;随着 Internet 的发展，使用 Web 浏览器获取网络数据信息已经成为一种习惯标准，而 HTTP 协议也因此成为了网络体系中最重要的应用层协议。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;http&#34;&gt;HTTP&lt;/h3&gt;&#xA;&lt;p&gt;HTTP（HyperText Transfer Protocol，超文本传输协议）是一种通用的、无状态（Stateless）的、与传输数据无关的，应用于分布式、协同式、超媒体信息系统的应用层协议。除了应用于 WWW（World Wide Web，万维网）服务器与 Web 浏览器之间的超文本传输外，它也可以应用于像名称服务器和分布对象管理系统这样的系统。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>IP 协议</title>
+      <link>http://localhost:1313/en/blog/computer-technology/protocol/protocol-ip/</link>
+      <pubDate>Thu, 23 Jun 2016 18:02:00 -0400</pubDate>
+      <guid>http://localhost:1313/en/blog/computer-technology/protocol/protocol-ip/</guid>
+      <description>&lt;p&gt;作为 TCP/IP 协议栈中最核心的协议，IP 协议为网络数据传输和网络互联提供最基本的服务。IP 协议有 IPv4 和 IPv6 两个版本，我们只讨论 TPv4 版本的 IP 协议。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>TCP 与 UDP 协议</title>
+      <link>http://localhost:1313/en/blog/computer-technology/protocol/protocol-tcp-udp/</link>
+      <pubDate>Mon, 20 Jun 2016 17:21:00 -0400</pubDate>
+      <guid>http://localhost:1313/en/blog/computer-technology/protocol/protocol-tcp-udp/</guid>
+      <description>&lt;p&gt;传输层是网络分层模型中举足轻重的层，它是底层通信子网与高层资源子网的接口与桥梁，提供了面向连接的传输控制协议（Transmission Control Protocol，TCP）和无连接的用户数据报协议（User Datagram Protocol，UDP），负责提供端到端的数据传输服务。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;传输层协议&#34;&gt;传输层协议&lt;/h3&gt;&#xA;&lt;p&gt;传输层在两个应用实体之间实现可靠的、透明的、有效的端到端数据传输服务，其主要的功能为以下几个方面：&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>局域网（LAN）与广域网（WAN）</title>
+      <link>http://localhost:1313/en/blog/computer-technology/protocol/protocol-lan-wan/</link>
+      <pubDate>Sat, 18 Jun 2016 18:22:00 -0400</pubDate>
+      <guid>http://localhost:1313/en/blog/computer-technology/protocol/protocol-lan-wan/</guid>
+      <description>&lt;p&gt;TCP/IP 的网络接口层包括物理层和数据链路层，既是局域网（LAN）技术起作用的分层，又是广域网（WAN）技术和连接管理协议发挥作用的层次。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;局域网lan&#34;&gt;局域网（LAN）&lt;/h3&gt;&#xA;&lt;p&gt;局域网（Local Area Network，LAN）是指一个局部的地理范围内（如一个学校、公司、单位），将各种计算机、外部设备和数据库等互相连接起来组成的计算机通信网。局域网通常是封闭的，但它可以通过数据通信网或专用数据电路，与远方的局域网、数据库或处理中心相连接，构成一个大范围的信息处理系统。局域网可以实现硬件资源（如服务器、打印机、扫描仪等）共享和软件资源（应用软件、文件管理等）共享，还可以实现办公自动化（如工作组内的日程安排、电子邮件和传真通信服务）等。&lt;/p&gt;&#xA;&lt;h4 id=&#34;局域网协议标准&#34;&gt;局域网协议标准&lt;/h4&gt;&#xA;&lt;p&gt;IEEE 802 是为了规范随着局域网技术进步而产生的种类繁多的局域网产品而制定的标准，有时也称为局域网参考模型。它包括 CSDM/CD、令牌总线和令牌环网等底层（物理层和数据链路层）网络协议。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>网络通信关键概念</title>
+      <link>http://localhost:1313/en/blog/computer-technology/protocol/protocol-base/</link>
+      <pubDate>Sat, 18 Jun 2016 16:17:00 -0400</pubDate>
+      <guid>http://localhost:1313/en/blog/computer-technology/protocol/protocol-base/</guid>
+      <description>&lt;p&gt;计算机网络是通过通信设备与线路将地理上分散并且具有独立功能的计算机系统连接在一起，并由功能完善的软件来控制，进而实现资源共享的系统。从物理组成上来看，计算机网络包括硬件、软件和协议三大部分。计算机网络中结点间相互通信是由控制信息传送的网络协议及其他相应的网络软件共同实现的。在计算机网络通信中，有部分关键性概念需要理解透彻，在此做一总结。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;网络通信协议&#34;&gt;网络通信协议&lt;/h3&gt;&#xA;&lt;p&gt;**网络通信协议简称网络协议（Poctocol），是指为了能在计算机网络中进行数据交换，实现资源共享而建立的通信规则、标准或约定的集合。**在计算机网络中，只有采用相同网络协议的计算机才能进行信息的交流与沟通。网络协议有以下三个基本要素：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;语义（Semantics）&lt;/p&gt;&#xA;&lt;p&gt;规定双方完成通信需要的控制信息及应执行的动作。&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;语法（Syntax）&lt;/p&gt;&#xA;&lt;p&gt;规定通信双方交换的数据或控制信息的格式和结构。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>OSI 与 TCP/IP 参考模型</title>
+      <link>http://localhost:1313/en/blog/computer-technology/protocol/protocol-osi/</link>
+      <pubDate>Fri, 17 Jun 2016 17:39:00 -0400</pubDate>
+      <guid>http://localhost:1313/en/blog/computer-technology/protocol/protocol-osi/</guid>
+      <description>&lt;p&gt;目前流行的两大网络体系结构是 OSI/RM 和 TCP/IP 参考模型，他们均是分层结构。分层是为了简化问题，降低网络设计复杂性，而且各层次结构相互独立，实现的功能也相对独立。层与层之间只在层间接口处关联，层间耦合最小。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;osiopen-system-interconnect&#34;&gt;OSI（Open System Interconnect）&lt;/h3&gt;&#xA;&lt;p&gt;OSI/RM（Open System Interconnection Reference Module，简称 OSI）即开放系统互联参考模型。为了解决不同网络体系结构的互联、互操作问题，ISO（国际标准化组织）制定了 OSI 模型。OSI 模型把网络通信的工作分为七层，自上而下依次为：&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web 本地存储</title>
+      <link>http://localhost:1313/en/blog/computer-technology/web/web-local-storage/</link>
+      <pubDate>Wed, 01 Jun 2016 01:00:00 -0400</pubDate>
+      <guid>http://localhost:1313/en/blog/computer-technology/web/web-local-storage/</guid>
+      <description>&lt;p&gt;为了达到某些需求，我们通常需要在本地存储一些数据，方便我们进行用户个性化定制服务。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;web-存储&#34;&gt;Web 存储&lt;/h3&gt;&#xA;&lt;p&gt;在互联网上，许多网站提供用户注册功能，因为 http 协议是个无状态的协议（无法记录客户端与服务器端状态），所以我们注册登录后每一次跳转网页都需要重新登陆。为了增强用户体验，我们不得不将状态信息保存下来，而 Web 存储技术则实现了该需求。Cookie 最多可在本地存储 4K 数据，出于安全性考虑， Cookie 中并非直接存储的是用户敏感数据（帐号、密码、个人信息等），而是一个状态 ID，该 ID 是服务器端利用 session 存储一个会话状态并分配给客户端用来进行状态识别的。因此，每一次的 http 请求都会带上 Cookie 数据发送给服务器端进行状态识别，从而达到状态保持的目的。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Linux-基础</title>
+      <link>http://localhost:1313/en/blog/computer-technology/linux/linux-base/</link>
+      <pubDate>Sun, 29 May 2016 15:34:00 -0400</pubDate>
+      <guid>http://localhost:1313/en/blog/computer-technology/linux/linux-base/</guid>
+      <description>&lt;p&gt;Linux 是在做一些较为底层的开发工作时的必要开发环境，了解 Linux 也对操作系统概念的理解有很大的帮助，这篇文章是对 Linux 的一些基础概念的阐述。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;linux&#34;&gt;Linux&lt;/h3&gt;&#xA;&lt;p&gt;Linux 的诞生是在上世纪 90 年代，距离现在也就二十年左右，是一种优秀的开发环境，大多时候应用在嵌入式系统开发当中。&lt;strong&gt;Linux 是一个开源的基于 POSIX 和 UNIX，支持多用户、多任务、多线程和多 CPU 的操作系统。事实上，linux 指的是其操作系统的内核。&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>DOM-加载 JavaScript</title>
+      <link>http://localhost:1313/en/blog/computer-technology/web/dom/dom-js/</link>
+      <pubDate>Tue, 24 May 2016 22:49:00 -0400</pubDate>
+      <guid>http://localhost:1313/en/blog/computer-technology/web/dom/dom-js/</guid>
+      <description>&lt;p&gt;页面的动态交互离不开 Javascript，将 js 脚本引入页面时会阻塞页面加载，在某些时候我们则可以选择异步加载 js 脚本。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;引入-js-代码&#34;&gt;引入 js 代码&lt;/h3&gt;&#xA;&lt;p&gt;通常我们会将 JavaScript 代码写在一个单独的文件中，这样做的好处是页面整洁、结构更清晰，页面更小加载速度更快，同时也易维护。实际上在页面中引入 js 代码的方法有多种，我们按需选择即可。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>DOM-文本节点</title>
+      <link>http://localhost:1313/en/blog/computer-technology/web/dom/dom-textnode/</link>
+      <pubDate>Tue, 24 May 2016 21:50:00 -0400</pubDate>
+      <guid>http://localhost:1313/en/blog/computer-technology/web/dom/dom-textnode/</guid>
+      <description>&lt;p&gt;文本（Text）节点虽然很多时候我们直接用 innerHTML 去赋值替换，但当我们进行一些细微的修改时，了解一下 DOM 操作还是非常有用的。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;文本节点&#34;&gt;文本节点&lt;/h3&gt;&#xA;&lt;p&gt;文本节点的 DOM 操作是不常用的，我们通常直接用元素节点的 &lt;code&gt;innerHTML&lt;/code&gt; 属性直接替换其所有文本节点，但当我们要对文本节点进行局部操作时 DOM 操作却是很有用的。下面列举一些文本节点常用的属性及方法：&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>DOM-文档片段</title>
+      <link>http://localhost:1313/en/blog/computer-technology/web/dom/dom-fragment/</link>
+      <pubDate>Mon, 23 May 2016 13:10:00 -0400</pubDate>
+      <guid>http://localhost:1313/en/blog/computer-technology/web/dom/dom-fragment/</guid>
+      <description>&lt;p&gt;DOM 操作是非常消耗性能的，如果要进行大量的 DOM 操作，我们可以选择在内存中先构建一个文档片段然后一次性插入 DOM 树。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;文档片段&#34;&gt;文档片段&lt;/h3&gt;&#xA;&lt;p&gt;文档片段（DocumentFragment）也就是 DOM 树的部分节点组合而成的局部。频繁的 DOM 操作对性能的影响是显著的，如果我们要进行大量的相似的 DOM 操作，建议在内存中创建一个文档片段并对其修饰，然后一次性插入 DOM 树。这么做的对性能的影响是最小的，同时也更灵活一些。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>DOM-事件</title>
+      <link>http://localhost:1313/en/blog/computer-technology/web/dom/dom-event/</link>
+      <pubDate>Mon, 23 May 2016 12:18:00 -0400</pubDate>
+      <guid>http://localhost:1313/en/blog/computer-technology/web/dom/dom-event/</guid>
+      <description>&lt;p&gt;JavaScript 的作用就是让 html 静态页面具备动态效果，而这些基本都是利用 DOM 事件来实现的。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;注册-dom-事件&#34;&gt;注册 DOM 事件&lt;/h3&gt;&#xA;&lt;p&gt;事件就是给目标 DOM 节点提前注册一个相应类型的事件方法，在合适的时机进行回调执行该方法的过程。接下来就来看看如何给目标 DOM 节点注册事件：&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>DOM-元素节点属性</title>
+      <link>http://localhost:1313/en/blog/computer-technology/web/dom/dom-attribute/</link>
+      <pubDate>Sat, 21 May 2016 21:00:00 -0400</pubDate>
+      <guid>http://localhost:1313/en/blog/computer-technology/web/dom/dom-attribute/</guid>
+      <description>&lt;p&gt;元素节点上具有很多属性，这些属性我们通常可以很方便的获取，并进行简单的操作。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;节点属性常用操作&#34;&gt;节点属性常用操作&lt;/h3&gt;&#xA;&lt;p&gt;每个 HTML 元素都有很多属性，例如（id、class、name、url、src、href）等等，元素节点上定义了一些方法供我们使用，来对这些属性进行设置、获取、移除操作。&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;setAttribute()&lt;/li&gt;&#xA;&lt;li&gt;getAttribute()&lt;/li&gt;&#xA;&lt;li&gt;removeAttribute()&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;exp:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>CSS 清除浮动</title>
+      <link>http://localhost:1313/en/blog/computer-technology/web/css/css-clear-float/</link>
+      <pubDate>Sat, 21 May 2016 18:25:00 -0400</pubDate>
+      <guid>http://localhost:1313/en/blog/computer-technology/web/css/css-clear-float/</guid>
+      <description>&lt;p&gt;在浮动布局中，有时候会因为父元素没有设置高度而子元素浮动导致父元素坍塌，我们就需要清除浮动撑起父元素的高度，在这里总结一下常用方法。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;浮动&#34;&gt;浮动&lt;/h3&gt;&#xA;&lt;p&gt;我们通常为了将块级（block）子元素水平排列，就将其浮动（&lt;code&gt;float: left|right&lt;/code&gt;）起来而达到我们的目的，当然这会带来一些问题。所以，我们应尽可能清除浮动所带来的副作用，以免影响其它元素的布局。&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;&amp;lt;style&amp;gt;&#xA;&#x9;#container{&#xA;&#x9;&#x9;background-color: grey;&#xA;&#x9;}&#xA;&#x9;.inner {&#xA;&#x9;&#x9;margin: 15px;&#xA;&#x9;&#x9;width: 200px;&#xA;&#x9;&#x9;height: 200px;&#xA;&#x9;&#x9;background-color: blue;&#xA;&#x9;&#x9;float: left;&#xA;&#x9;}&#xA;&amp;lt;/style&amp;gt;&#xA;&amp;lt;body&amp;gt;&#xA;&#x9;&amp;lt;div id=&amp;quot;container&amp;quot;&amp;gt;&#xA;&#x9;&#x9;&amp;lt;div class=&amp;quot;inner&amp;quot;&amp;gt;1&amp;lt;/div&amp;gt;&#xA;&#x9;&#x9;&amp;lt;div class=&amp;quot;inner&amp;quot;&amp;gt;2&amp;lt;/div&amp;gt;&#xA;&#x9;&#x9;&amp;lt;div class=&amp;quot;inner&amp;quot;&amp;gt;3&amp;lt;/div&amp;gt;&#xA;&#x9;&amp;lt;/div&amp;gt;&#xA;&amp;lt;/body&amp;gt;&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;此时，我们并看不到外层 div 的灰色背景，打开调试工具会发现外层 div 的 &lt;code&gt;height: 0&lt;/code&gt;。当我们没有设置父元素高度，恰巧所有子元素浮动时，父元素的高度会成为 &lt;code&gt;0&lt;/code&gt;，而没有被子元素撑起来。这是因为，子元素浮动之后脱离了文档流。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>DOM-元素节点几何量</title>
+      <link>http://localhost:1313/en/blog/computer-technology/web/dom/dom-rule/</link>
+      <pubDate>Thu, 19 May 2016 14:54:00 -0400</pubDate>
+      <guid>http://localhost:1313/en/blog/computer-technology/web/dom/dom-rule/</guid>
+      <description>&lt;p&gt;当我们在查看 HTML 文档时，每个元素节点被解析后，都画成了可视形状。我们可以获取每个元素节点的几何量（宽、高、偏移量）以及页面滚动距离。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;元素节点几何量&#34;&gt;元素节点几何量&lt;/h3&gt;&#xA;&lt;p&gt;通常我们将一个元素抽象成一个盒子模型，具有 content（内容）、padding（填充、内边距）、border（边框）、margin（外边距）这些尺寸属性。&lt;/p&gt;&#xA;&lt;h4 id=&#34;定位偏移量&#34;&gt;定位偏移量&lt;/h4&gt;&#xA;&lt;p&gt;使用元素节点的 &lt;code&gt;offsetTop&lt;/code&gt; 与 &lt;code&gt;offsetLeft&lt;/code&gt; 属性，我们可以分别获取该元素节点&lt;strong&gt;顶部与左侧外边框&lt;/strong&gt;相对于 &lt;code&gt;offsetParent&lt;/code&gt; 的&lt;strong&gt;顶部与左侧内边框&lt;/strong&gt;的偏移像素量。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>编辑器：Sublime Text 常用插件</title>
+      <link>http://localhost:1313/en/blog/computer-technology/tools/tools-sublime/</link>
+      <pubDate>Thu, 19 May 2016 13:38:00 -0400</pubDate>
+      <guid>http://localhost:1313/en/blog/computer-technology/tools/tools-sublime/</guid>
+      <description>&lt;p&gt;Sumblime Text 是一个具有漂亮的界面和强大功能的文本编辑器，而且也支持许多丰富的插件。它是一个收费软件，但是允许开发人员无限期的免费试用。这篇文章介绍一下常用的插件。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;安装-sublime-text&#34;&gt;安装 Sublime Text&lt;/h3&gt;&#xA;&lt;p&gt;Sublime Text 编辑器，我们直接去官网下载相应版本安装即可，2 或 3 版本官网均有链接。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>编辑器：Sublime Text - Vim 插件</title>
+      <link>http://localhost:1313/en/blog/computer-technology/tools/tools-sublime-vim/</link>
+      <pubDate>Wed, 18 May 2016 12:55:00 -0400</pubDate>
+      <guid>http://localhost:1313/en/blog/computer-technology/tools/tools-sublime-vim/</guid>
+      <description>&lt;p&gt;Sumblime Text 是一个具有漂亮的界面和强大功能的文本编辑器，而且也支持许多丰富的插件。它是一个收费软件，但是允许开发人员无限期的免费试用。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;vim&#34;&gt;Vim&lt;/h3&gt;&#xA;&lt;p&gt;Vim 是 Linux 操作系统下类 Vi 编辑器，是一款被开发者广泛使用，并且功能强大的文本编辑器。而 Sublime Text 最初的设计初衷也是基于 Vim 的设计思想，被设计为一个跨平台的具有丰富扩展功能的 Vim。随着后来的发展，它已经不仅仅是单纯的模仿 Vim，而是支持越来越多的插件和强大的功能。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>DOM-节点集合</title>
+      <link>http://localhost:1313/en/blog/computer-technology/web/dom/dom-nodelist/</link>
+      <pubDate>Tue, 17 May 2016 22:30:00 -0400</pubDate>
+      <guid>http://localhost:1313/en/blog/computer-technology/web/dom/dom-nodelist/</guid>
+      <description>&lt;p&gt;当从文档树中选取成组的节点或者使用预定义的节点集合时，这些节点都是放在 NodeList 或者一个 HTMLCollecton 之中，而不是一个数组（Array）中。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;节点集合&#34;&gt;节点集合&lt;/h3&gt;&#xA;&lt;p&gt;我们将一个 &lt;code&gt;NodeList&lt;/code&gt; 或者 &lt;code&gt;HTMLCollecton&lt;/code&gt; 称为节点集合，也就是类数组的节点对象集合。节点集合一般有以下特征：&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>DOM-选取元素节点</title>
+      <link>http://localhost:1313/en/blog/computer-technology/web/dom/dom-select/</link>
+      <pubDate>Tue, 17 May 2016 22:10:00 -0400</pubDate>
+      <guid>http://localhost:1313/en/blog/computer-technology/web/dom/dom-select/</guid>
+      <description>&lt;p&gt;DOM 操作都是通过对文档树中节点的访问来实现的，如何选取特定的元素节点是关键，进而才能访问该元素节点实现修改、查看、移除、替换等操作。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;选取特定单一元素节点&#34;&gt;选取特定单一元素节点&lt;/h3&gt;&#xA;&lt;p&gt;取得某一特定单一元素节点的引用最常用的方式如下：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;querySelector()&lt;/li&gt;&#xA;&lt;li&gt;getElementById()&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;exp：&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>DOM-元素节点</title>
+      <link>http://localhost:1313/en/blog/computer-technology/web/dom/dom-elementnode/</link>
+      <pubDate>Tue, 17 May 2016 13:19:00 -0400</pubDate>
+      <guid>http://localhost:1313/en/blog/computer-technology/web/dom/dom-elementnode/</guid>
+      <description>&lt;p&gt;可以说，元素节点是 DOM 树中的核心部分，我们进行文档的操作通常都是建立在元素节点上的。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;元素节点&#34;&gt;元素节点&lt;/h3&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;元素节点（Element Node）是我们最常用的 DOM 节点，不同类型的节点都有其自己的构造方法，并且它们身上还有许多属性和方法（包括继承的）来帮助我们完成 DOM 操作。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>文档对象模型（DOM）</title>
+      <link>http://localhost:1313/en/blog/computer-technology/web/dom/dom/</link>
+      <pubDate>Mon, 16 May 2016 14:04:00 -0400</pubDate>
+      <guid>http://localhost:1313/en/blog/computer-technology/web/dom/dom/</guid>
+      <description>&lt;p&gt;在网页设计中，有一个很重要的角色需要我们了解，DOM 帮助我们对页面元素进行增、删、改等全方位的操作，而且让 JavaScript 在客户端修改 HTML 文档成为一个很简单的事情，可以说 DOM 为我们操作 HTML 文档提供了强大的编程接口。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>浏览器对象模型（BOM）</title>
+      <link>http://localhost:1313/en/blog/computer-technology/web/dom/dom-bom/</link>
+      <pubDate>Sun, 15 May 2016 12:02:00 -0400</pubDate>
+      <guid>http://localhost:1313/en/blog/computer-technology/web/dom/dom-bom/</guid>
+      <description>&lt;p&gt;在网页开发中，我们通常专注于内容的设计，而有些时候我们需要进行不同窗口之间的交互，这时候我们就需要学习如何运用 BOM 中的许多核心对象，及其属性、方法。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;浏览器对象模型&#34;&gt;浏览器对象模型&lt;/h3&gt;&#xA;&lt;p&gt;BOM（Browser Object Model）即浏览器对象模型，我们熟知的另一个对象模型为 DOM（Document Object Model），也就是文档对象模型。这两个都是网页设计中非常重要的概念，我们可以简单的理解为 BOM 注重的是不同网页（框架、窗口）之间的交互（浏览器层面），而 DOM 注重的是同一网页下的内容设计（网页层面）。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>CPU 的七种寻址方式</title>
+      <link>http://localhost:1313/en/blog/computer-technology/computer/computer-cpu-addressing-mode/</link>
+      <pubDate>Thu, 05 May 2016 01:53:00 -0400</pubDate>
+      <guid>http://localhost:1313/en/blog/computer-technology/computer/computer-cpu-addressing-mode/</guid>
+      <description>&lt;p&gt;CPU 获取数据的方式不仅仅一种，多种方式也为不同数据的获取提供了不同的效率考量，保证了寻址效率与指令的灵活性。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h2 id=&#34;cpu-寻址方式&#34;&gt;CPU 寻址方式&lt;/h2&gt;&#xA;&lt;p&gt;数据一般均存储在外存(硬盘)中，在需要的时候，会将数据先从外存读入内存(存储器)中，然后 CPU 再直接从内存(缓存)中获取。获取的数据有时候会直接使用；而有时候会先存入 CPU 内部寄存器，稍后再从寄存器中获取。所以，CPU 获取数据的方式是多样化的。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>内存的 3 种刷新方式</title>
+      <link>http://localhost:1313/en/blog/computer-technology/computer/computer-memory-refresh/</link>
+      <pubDate>Tue, 03 May 2016 01:59:00 -0400</pubDate>
+      <guid>http://localhost:1313/en/blog/computer-technology/computer/computer-memory-refresh/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;众所周知，内存（Memory）是带电存储的，掉电就会丢失数据，所以需要刷新来保持数据。&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;原因&#34;&gt;原因&lt;/h3&gt;&#xA;&lt;p&gt;由于内存（Memory）以及缓存（Cache）都由相应的存储单元芯片&lt;strong&gt;DRAM&lt;/strong&gt;和&lt;strong&gt;SRAM&lt;/strong&gt;构成存储阵列，是一种半导体存储器件。并且，所有的数据都是逻辑 &lt;code&gt;1&lt;/code&gt; 和 &lt;code&gt;0&lt;/code&gt; 的组合。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>微处理器寻址范围</title>
+      <link>http://localhost:1313/en/blog/computer-technology/computer/computer-microprocessor-addressing-range/</link>
+      <pubDate>Thu, 28 Apr 2016 01:42:00 -0400</pubDate>
+      <guid>http://localhost:1313/en/blog/computer-technology/computer/computer-microprocessor-addressing-range/</guid>
+      <description>&lt;p&gt;在此之前，让我们带着下面这个问题来看这篇文章：&lt;strong&gt;64 位处理器所支持的最大内存(寻址范围)为多少？&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;处理器&#34;&gt;处理器&lt;/h3&gt;&#xA;&lt;p&gt;处理器（CPU）担负着整个计算机系统的核心任务执行责任，所以我们经常关心它的运算处理能力，也就是 CPU 的性能。&lt;/p&gt;&#xA;&lt;h4 id=&#34;微处理器&#34;&gt;微处理器&lt;/h4&gt;&#xA;&lt;p&gt;我们经常所说的 Inter、AMD 两大常见品牌厂商出售的桌面端的处理器称为处理器（CPU），而把移动端嵌入式系统中 ARM 架构的处理器称为微处理器（MPU）。事实上，几乎电子设备上均有微型处理器，例如路由器、智能家电等等，只不过以上所提到的离我们最近而且我们也最熟悉。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

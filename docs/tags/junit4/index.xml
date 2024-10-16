@@ -1,4 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>JUnit4 on 技术之心</title><link>https://leezchuan.github.io/tags/junit4/</link><description>Recent content in JUnit4 on 技术之心</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Wed, 30 Aug 2017 23:42:00 -0400</lastBuildDate><atom:link href="https://leezchuan.github.io/tags/junit4/index.xml" rel="self" type="application/rss+xml"/><item><title>单元测试工具：Junit</title><link>https://leezchuan.github.io/blog/computer-technology/tools/tools-junit/</link><pubDate>Wed, 30 Aug 2017 23:42:00 -0400</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/tools/tools-junit/</guid><description>&lt;p>通常一个项目的代码量是比较大的，而且其中逻辑也较为复杂，在开发完成后再进行项目测试其实是比较耗费时间和精力的，因此边开发边测试是个很好的选择，而 JUnit 则为我们提供了这样的便利。&lt;/p>
-&lt;!-- truncate -->
-&lt;h3 id="junit">JUnit&lt;/h3>
-&lt;p>JUnit 是一个用来对 Java 代码进行单元测试的框架，是 XUnit （一套基于测试驱动开发的测试框架）的一个子集，类似的还有 PythonUnit、CppUnit。&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JUnit4 on 技术之心</title>
+    <link>http://localhost:1313/tags/junit4/</link>
+    <description>Recent content in JUnit4 on 技术之心</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 30 Aug 2017 23:42:00 -0400</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/junit4/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>单元测试工具：Junit</title>
+      <link>http://localhost:1313/blog/computer-technology/tools/tools-junit/</link>
+      <pubDate>Wed, 30 Aug 2017 23:42:00 -0400</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/tools/tools-junit/</guid>
+      <description>&lt;p&gt;通常一个项目的代码量是比较大的，而且其中逻辑也较为复杂，在开发完成后再进行项目测试其实是比较耗费时间和精力的，因此边开发边测试是个很好的选择，而 JUnit 则为我们提供了这样的便利。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;junit&#34;&gt;JUnit&lt;/h3&gt;&#xA;&lt;p&gt;JUnit 是一个用来对 Java 代码进行单元测试的框架，是 XUnit （一套基于测试驱动开发的测试框架）的一个子集，类似的还有 PythonUnit、CppUnit。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

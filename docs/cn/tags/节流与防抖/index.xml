@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>节流与防抖 on 技术之心</title>
+    <link>http://localhost:1313/cn/tags/%E8%8A%82%E6%B5%81%E4%B8%8E%E9%98%B2%E6%8A%96/</link>
+    <description>Recent content in 节流与防抖 on 技术之心</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 25 Apr 2021 22:56:00 -0400</lastBuildDate>
+    <atom:link href="http://localhost:1313/cn/tags/%E8%8A%82%E6%B5%81%E4%B8%8E%E9%98%B2%E6%8A%96/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Web 前端性能优化：解析函数节流与防抖的实现</title>
+      <link>http://localhost:1313/cn/blog/computer-technology/web/javascript/debouncing-and-throttling/</link>
+      <pubDate>Sun, 25 Apr 2021 22:56:00 -0400</pubDate>
+      <guid>http://localhost:1313/cn/blog/computer-technology/web/javascript/debouncing-and-throttling/</guid>
+      <description>&lt;p&gt;前端开发中，有一个使用较为普遍的性能优化技巧，即函数节流（Throttle）和防抖（Debounce），其主要作用是根据时间对函数调用做以限制。最常见的业务场景是监听页面的 &lt;code&gt;scroll&lt;/code&gt; 事件，浏览器可以在 1s 内触发该事件数次（甚至达数十次），如果事件处理程序在这 1s 内多次执行，必然会造成一定的性能问题，影响用户体验。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;p&gt;本质上，函数节流和防抖并不是控制事件源的触发次数，而是在事件短时间内连续多次触发之后控制相应事件处理程序的调用频率。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

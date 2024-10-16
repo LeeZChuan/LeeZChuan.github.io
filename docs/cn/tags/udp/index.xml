@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>UDP on 技术之心</title>
+    <link>http://localhost:1313/cn/tags/udp/</link>
+    <description>Recent content in UDP on 技术之心</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 20 Jun 2016 17:21:00 -0400</lastBuildDate>
+    <atom:link href="http://localhost:1313/cn/tags/udp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TCP 与 UDP 协议</title>
+      <link>http://localhost:1313/cn/blog/computer-technology/protocol/protocol-tcp-udp/</link>
+      <pubDate>Mon, 20 Jun 2016 17:21:00 -0400</pubDate>
+      <guid>http://localhost:1313/cn/blog/computer-technology/protocol/protocol-tcp-udp/</guid>
+      <description>&lt;p&gt;传输层是网络分层模型中举足轻重的层，它是底层通信子网与高层资源子网的接口与桥梁，提供了面向连接的传输控制协议（Transmission Control Protocol，TCP）和无连接的用户数据报协议（User Datagram Protocol，UDP），负责提供端到端的数据传输服务。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;传输层协议&#34;&gt;传输层协议&lt;/h3&gt;&#xA;&lt;p&gt;传输层在两个应用实体之间实现可靠的、透明的、有效的端到端数据传输服务，其主要的功能为以下几个方面：&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

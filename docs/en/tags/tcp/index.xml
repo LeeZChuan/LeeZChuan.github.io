@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>TCP on 技术之心</title>
+    <link>http://localhost:1313/en/tags/tcp/</link>
+    <description>Recent content in TCP on 技术之心</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 20 Jun 2016 17:21:00 -0400</lastBuildDate>
+    <atom:link href="http://localhost:1313/en/tags/tcp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TCP 与 UDP 协议</title>
+      <link>http://localhost:1313/en/blog/computer-technology/protocol/protocol-tcp-udp/</link>
+      <pubDate>Mon, 20 Jun 2016 17:21:00 -0400</pubDate>
+      <guid>http://localhost:1313/en/blog/computer-technology/protocol/protocol-tcp-udp/</guid>
+      <description>&lt;p&gt;传输层是网络分层模型中举足轻重的层，它是底层通信子网与高层资源子网的接口与桥梁，提供了面向连接的传输控制协议（Transmission Control Protocol，TCP）和无连接的用户数据报协议（User Datagram Protocol，UDP），负责提供端到端的数据传输服务。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;传输层协议&#34;&gt;传输层协议&lt;/h3&gt;&#xA;&lt;p&gt;传输层在两个应用实体之间实现可靠的、透明的、有效的端到端数据传输服务，其主要的功能为以下几个方面：&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>OSI 与 TCP/IP 参考模型</title>
+      <link>http://localhost:1313/en/blog/computer-technology/protocol/protocol-osi/</link>
+      <pubDate>Fri, 17 Jun 2016 17:39:00 -0400</pubDate>
+      <guid>http://localhost:1313/en/blog/computer-technology/protocol/protocol-osi/</guid>
+      <description>&lt;p&gt;目前流行的两大网络体系结构是 OSI/RM 和 TCP/IP 参考模型，他们均是分层结构。分层是为了简化问题，降低网络设计复杂性，而且各层次结构相互独立，实现的功能也相对独立。层与层之间只在层间接口处关联，层间耦合最小。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;osiopen-system-interconnect&#34;&gt;OSI（Open System Interconnect）&lt;/h3&gt;&#xA;&lt;p&gt;OSI/RM（Open System Interconnection Reference Module，简称 OSI）即开放系统互联参考模型。为了解决不同网络体系结构的互联、互操作问题，ISO（国际标准化组织）制定了 OSI 模型。OSI 模型把网络通信的工作分为七层，自上而下依次为：&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

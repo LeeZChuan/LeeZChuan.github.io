@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SPA on 技术之心</title>
+    <link>http://localhost:1313/en/categories/spa/</link>
+    <description>Recent content in SPA on 技术之心</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 25 Oct 2017 00:51:00 -0400</lastBuildDate>
+    <atom:link href="http://localhost:1313/en/categories/spa/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Web 应用：单页面应用与路由</title>
+      <link>http://localhost:1313/en/blog/computer-technology/web/web-routing/</link>
+      <pubDate>Wed, 25 Oct 2017 00:51:00 -0400</pubDate>
+      <guid>http://localhost:1313/en/blog/computer-technology/web/web-routing/</guid>
+      <description>&lt;p&gt;现在，Web 技术不仅仅是局限于页面的开发技术，在应用的开发方面也是一种潮流，B/S 架构的技术是一种趋势。而像一般的管理型 Web 应用，不注重 SEO，非常适合单页面应用（SPA）的实现方式，而路由功能则是单页面应用的核心技术。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;spa&#34;&gt;SPA&lt;/h3&gt;&#xA;&lt;p&gt;单页面应用（Single page application, SPA）已经是目前实现 Web 应用的主流技术了，尤其是移动端的 Web 应用。SPA 使用 Ajax 技术异步加载页面内容，使用户能够在同一个页面流畅的进行交互，并将多个页面的内容根据需要在同一个页面在适当的时候进行展示。当然，SPA 技术采用动态加载 DOM 的方法，随之而来的就是 SEO 优化问题，搜索引擎不执行 JS 代码，页面内容无法被引擎检索到，也就不利于页面的排名和检索量提升。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
