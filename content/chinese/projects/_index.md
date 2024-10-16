@@ -3,7 +3,7 @@ title: 个人项目
 meta_title: "个人项目"
 description: "展示个人参与的多个代码项目"
 image: /images/presonal-projects.webp
-draft: true
+draft: false
 date: 2024-10-16T06:55:11.736Z
 update: 2024-10-15T16:00:00.000Z
 ---
@@ -12,7 +12,6 @@ update: 2024-10-15T16:00:00.000Z
 
 本人从接触计算机开始参与并实现了多个项目，以下为部分展示，点击链接可查看更多详情。
 
----
 
 ## 项目一：项目名称
 ### 项目描述
@@ -33,7 +32,6 @@ update: 2024-10-15T16:00:00.000Z
 - **GitHub Repo**: [点击查看源代码](https://github.com/your-username/project-repo)
 - **产品演示**: [点击查看演示](https://demo-link.com)
 
----
 
 ## 项目二：项目名称
 ### 项目描述
@@ -55,7 +53,6 @@ update: 2024-10-15T16:00:00.000Z
 - **GitHub Repo**: [点击查看源代码](https://github.com/your-username/blog-platform)
 - **产品演示**: [点击查看演示](https://demo-link.com)
 
----
 
 ## 项目三：项目名称
 ### 项目描述
@@ -76,7 +73,6 @@ update: 2024-10-15T16:00:00.000Z
 - **GitHub Repo**: [点击查看源代码](https://github.com/your-username/stock-analyzer)
 - **产品演示**: [点击查看演示](https://demo-link.com)
 
----
 
 ## 项目四：项目名称
 ### 项目描述
@@ -97,7 +93,6 @@ update: 2024-10-15T16:00:00.000Z
 - **GitHub Repo**: [点击查看源代码](https://github.com/your-username/ecommerce-platform)
 - **产品演示**: [点击查看演示](https://demo-link.com)
 
----
 
 ## 项目五：项目名称
 ### 项目描述
@@ -117,7 +112,3 @@ update: 2024-10-15T16:00:00.000Z
 ### 项目链接
 - **GitHub Repo**: [点击查看源代码](https://github.com/your-username/social-media-platform)
 - **产品演示**: [点击查看演示](https://demo-link.com)
-
----
-
-通过上述模板，观众可以快速了解每个项目的关键内容、使用的技术栈以及项目的主要功能，同时还能轻松访问代码库和演示链接。如果你有其他的个性化需求，可以在此基础上进一步修改和扩展。
