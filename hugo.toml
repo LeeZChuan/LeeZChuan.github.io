@@ -1,36 +1,44 @@
 ######################## default configuration ####################
-# The base URL of your site (required). This will be prepended to all relative URLs.
-# baseURL = "/"
-
+# 站点的基础 URL（必需），所有相对 URL 都会基于此值。
 baseURL = "https://leezchuan.github.io/"
-# Title of your website (required).
+
+# 网站标题（必需）
 title = "技术之心"
-# Your theme name
+
+# 使用的主题
 theme = "hugoplate"
-# Default time zone for time stamps; use any valid tz database name: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List
-timeZone = "America/New_York"
-# post excerpt
-summaryLength = 10 # see https://gohugo.io/content-management/excerpts/
-# disable language
-disableLanguages = [
-] # example: ["fr"] for disable french language. see https://gohugo.io/content-management/multilingual/
-hasCJKLanguage = false #  If hasCJKLanguage true, auto-detect Chinese/Japanese/Korean Languages in the content. see: https://gohugo.io/getting-started/configuration/#hascjklanguage
-# default language
+
+# 时间戳的默认时区；使用任何有效的 tz 数据库名称：例如 "Asia/Shanghai"（北京时间）
+timeZone = "Asia/Shanghai"
+
+# 文章摘要长度
+summaryLength = 20 # 更多信息见 https://gohugo.io/content-management/excerpts/
+
+# 禁用的语言
+disableLanguages = ["fr"] # 示例：["fr"] 用于禁用法语，更多信息见 https://gohugo.io/content-management/multilingual/
+
+# 如果为 true，则会自动检测中文、日文、韩文的内容
+hasCJKLanguage = true
+
+# 默认语言
 defaultContentLanguage = 'cn'
-# defaultContentLanguageInSubdir need to be true if you want to use the language code as a subdirectory and language specific 404 page
+
+# 如果你想使用语言代码作为子目录并拥有特定语言的 404 页面，设置为 true
 defaultContentLanguageInSubdir = false
 
 # 发布目录配置
 publishDir = "docs"  # Hugo 静态站点生成目录（默认是 public，你也可以修改为 docs）
 
+
 ########################### Services #############################
 [services]
+# Google Analytics 配置
 [services.googleAnalytics]
-ID = 'G-MEASUREMENT_ID' # see https://gohugo.io/templates/internal/#configure-google-analytics
+ID = 'G-MEASUREMENT_ID' # 请替换为你的 Google Analytics 跟踪 ID，更多信息见 https://gohugo.io/templates/internal/#configure-google-analytics
 
+# Disqus 配置
 [services.disqus]
-shortname = 'themefisher-template' # we use disqus to show comments in blog posts . To install disqus please follow this tutorial https://portfolio.peter-baumgartner.net/2017/09/10/how-to-install-disqus-on-hugo/
-
+shortname = 'themefisher-template' # 用于在博客文章中显示评论，更多信息见 https://portfolio.peter-baumgartner.net/2017/09/10/how-to-install-disqus-on-hugo/
 ########################## Permalinks ############################
 [permalinks.page]
 "pages" = "/:slugorfilename/"
