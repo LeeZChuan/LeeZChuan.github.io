@@ -1,19 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>程序架构设计 on 技术之心</title>
-    <link>http://localhost:1313/en/categories/%E7%A8%8B%E5%BA%8F%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/</link>
-    <description>Recent content in 程序架构设计 on 技术之心</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Wed, 28 Mar 2018 14:01:00 -0400</lastBuildDate>
-    <atom:link href="http://localhost:1313/en/categories/%E7%A8%8B%E5%BA%8F%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Web 前端架构设计</title>
-      <link>http://localhost:1313/en/blog/computer-technology/web/web-front-end-architecture/</link>
-      <pubDate>Wed, 28 Mar 2018 14:01:00 -0400</pubDate>
-      <guid>http://localhost:1313/en/blog/computer-technology/web/web-front-end-architecture/</guid>
-      <description>&lt;p&gt;让 Web 前端开发可持续化、可扩展，关注四个核心&lt;strong&gt;代码&lt;/strong&gt;、&lt;strong&gt;流程&lt;/strong&gt;、&lt;strong&gt;测试&lt;/strong&gt;、&lt;strong&gt;文档&lt;/strong&gt;。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;代码&#34;&gt;代码&lt;/h3&gt;&#xA;&lt;h4 id=&#34;html&#34;&gt;HTML&lt;/h4&gt;&#xA;&lt;h5 id=&#34;模块化标记&#34;&gt;模块化标记&lt;/h5&gt;&#xA;&lt;p&gt;构建模块化标记原则：&lt;strong&gt;标签表达结构&lt;/strong&gt;，&lt;strong&gt;类名控制外观&lt;/strong&gt;。这样做的好处就是，对相同类型结构的模块可以复用标签模版，同时又可以通过改变类名来灵活的控制模块的外观。例如：&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>程序架构设计 on 技术之心</title><link>https://leezchuan.github.io/en/categories/%E7%A8%8B%E5%BA%8F%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/</link><description>Recent content in 程序架构设计 on 技术之心</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Wed, 28 Mar 2018 14:01:00 -0400</lastBuildDate><atom:link href="https://leezchuan.github.io/en/categories/%E7%A8%8B%E5%BA%8F%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/index.xml" rel="self" type="application/rss+xml"/><item><title>Web 前端架构设计</title><link>https://leezchuan.github.io/en/blog/computer-technology/web/web-front-end-architecture/</link><pubDate>Wed, 28 Mar 2018 14:01:00 -0400</pubDate><guid>https://leezchuan.github.io/en/blog/computer-technology/web/web-front-end-architecture/</guid><description>&lt;p>让 Web 前端开发可持续化、可扩展，关注四个核心&lt;strong>代码&lt;/strong>、&lt;strong>流程&lt;/strong>、&lt;strong>测试&lt;/strong>、&lt;strong>文档&lt;/strong>。&lt;/p>
+&lt;!-- truncate -->
+&lt;h3 id="代码">代码&lt;/h3>
+&lt;h4 id="html">HTML&lt;/h4>
+&lt;h5 id="模块化标记">模块化标记&lt;/h5>
+&lt;p>构建模块化标记原则：&lt;strong>标签表达结构&lt;/strong>，&lt;strong>类名控制外观&lt;/strong>。这样做的好处就是，对相同类型结构的模块可以复用标签模版，同时又可以通过改变类名来灵活的控制模块的外观。例如：&lt;/p></description></item></channel></rss>

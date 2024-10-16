@@ -1,19 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>HTTP on 技术之心</title>
-    <link>http://localhost:1313/tags/http/</link>
-    <description>Recent content in HTTP on 技术之心</description>
-    <generator>Hugo</generator>
-    <language>zh-cn</language>
-    <lastBuildDate>Fri, 24 Jun 2016 14:59:00 -0400</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/http/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>HTTP 协议</title>
-      <link>http://localhost:1313/blog/computer-technology/protocol/protocol-http/</link>
-      <pubDate>Fri, 24 Jun 2016 14:59:00 -0400</pubDate>
-      <guid>http://localhost:1313/blog/computer-technology/protocol/protocol-http/</guid>
-      <description>&lt;p&gt;随着 Internet 的发展，使用 Web 浏览器获取网络数据信息已经成为一种习惯标准，而 HTTP 协议也因此成为了网络体系中最重要的应用层协议。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;http&#34;&gt;HTTP&lt;/h3&gt;&#xA;&lt;p&gt;HTTP（HyperText Transfer Protocol，超文本传输协议）是一种通用的、无状态（Stateless）的、与传输数据无关的，应用于分布式、协同式、超媒体信息系统的应用层协议。除了应用于 WWW（World Wide Web，万维网）服务器与 Web 浏览器之间的超文本传输外，它也可以应用于像名称服务器和分布对象管理系统这样的系统。&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>HTTP on 技术之心</title><link>https://leezchuan.github.io/tags/http/</link><description>Recent content in HTTP on 技术之心</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Fri, 24 Jun 2016 14:59:00 -0400</lastBuildDate><atom:link href="https://leezchuan.github.io/tags/http/index.xml" rel="self" type="application/rss+xml"/><item><title>HTTP 协议</title><link>https://leezchuan.github.io/blog/computer-technology/protocol/protocol-http/</link><pubDate>Fri, 24 Jun 2016 14:59:00 -0400</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/protocol/protocol-http/</guid><description>&lt;p>随着 Internet 的发展，使用 Web 浏览器获取网络数据信息已经成为一种习惯标准，而 HTTP 协议也因此成为了网络体系中最重要的应用层协议。&lt;/p>
+&lt;!-- truncate -->
+&lt;h3 id="http">HTTP&lt;/h3>
+&lt;p>HTTP（HyperText Transfer Protocol，超文本传输协议）是一种通用的、无状态（Stateless）的、与传输数据无关的，应用于分布式、协同式、超媒体信息系统的应用层协议。除了应用于 WWW（World Wide Web，万维网）服务器与 Web 浏览器之间的超文本传输外，它也可以应用于像名称服务器和分布对象管理系统这样的系统。&lt;/p></description></item></channel></rss>
