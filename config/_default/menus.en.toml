@@ -13,27 +13,21 @@ weight = 2
 
 
 [[main]]
+name = "Project"
+url = "/project"
 weight = 3
-name = "Learning"
-url = "/blog"
-
-[[main]]
-weight = 4
-name = "Life"
-url = "/life"
 
 
+# [[main]]
+# parent = "Other"
+# name = "MD"
+# url = "/elements"
 
-[[main]]
-parent = "Other"
-name = "Md编写说明"
-url = "/elements"
 
-
-[[main]]
-parent = "Other"
-name = "文字分类汇总"
-url = "/categories"
+# [[main]]
+# parent = "Other"
+# name = "Categories"
+# url = "/categories"
 
 
 

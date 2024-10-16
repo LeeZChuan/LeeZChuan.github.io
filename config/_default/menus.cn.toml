@@ -13,14 +13,20 @@ weight = 2
 
 
 [[main]]
+name = "个人项目"
+url = "/project"
 weight = 3
-name = "学习记录"
-url = "/blog"
+
 
 [[main]]
+name = "文章记录"
+url = "/blog"
 weight = 4
+
+[[main]]
 name = "生活记录"
 url = "/life"
+weight = 5
 
 
 
