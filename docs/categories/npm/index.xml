@@ -1,1 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Npm on 技术之心</title><link>https://leezchuan.github.io/categories/npm/</link><description>Recent content in Npm on 技术之心</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Sat, 06 Jul 2019 15:43:00 +0800</lastBuildDate><atom:link href="https://leezchuan.github.io/categories/npm/index.xml" rel="self" type="application/rss+xml"/><item><title>使用 npm</title><link>https://leezchuan.github.io/blog/computer-technology/nodejs/tools-npm/</link><pubDate>Sat, 06 Jul 2019 15:43:00 +0800</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/nodejs/tools-npm/</guid><description>&lt;p>npm 是 Node.js 的一个包管理器，Web 前端工程师也经常利用它来简化开发流程，看看如何愉快的使用 npm ，并且发布自己的包，让 npm 成为我们的开发利器。&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Npm on 技术之心</title>
+    <link>http://localhost:1313/categories/npm/</link>
+    <description>Recent content in Npm on 技术之心</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 06 Jul 2019 15:43:00 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/npm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用 npm</title>
+      <link>http://localhost:1313/blog/computer-technology/nodejs/tools-npm/</link>
+      <pubDate>Sat, 06 Jul 2019 15:43:00 +0800</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/nodejs/tools-npm/</guid>
+      <description>&lt;p&gt;npm 是 Node.js 的一个包管理器，Web 前端工程师也经常利用它来简化开发流程，看看如何愉快的使用 npm ，并且发布自己的包，让 npm 成为我们的开发利器。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

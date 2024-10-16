@@ -2,7 +2,7 @@
 title: 个人项目
 meta_title: "个人项目"
 description: "展示个人参与的多个代码项目"
-image: /images/presonal-projects.webp
+image: /images/presonal-projects.jpg
 draft: false
 date: 2024-10-16T06:55:11.736Z
 update: 2024-10-15T16:00:00.000Z

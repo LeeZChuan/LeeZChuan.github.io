@@ -1,13 +1,187 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>计算机技术 on 技术之心</title><link>https://leezchuan.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/</link><description>Recent content in 计算机技术 on 技术之心</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Fri, 11 Nov 2022 11:52:00 +0800</lastBuildDate><atom:link href="https://leezchuan.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml"/><item><title>微信小程序与钉钉小程序开发流程</title><link>https://leezchuan.github.io/blog/computer-technology/mobile-web/wx-dingding/</link><pubDate>Fri, 11 Nov 2022 11:52:00 +0800</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/mobile-web/wx-dingding/</guid><description>&lt;p>开发小程序有很多问题特此记录一下～～～&lt;/p>
-&lt;blockquote>
-&lt;p>小程序开发（移动端开发）兼容注意事项：&lt;/p></description></item><item><title>Web 字体加载对 DOM 位置的影响</title><link>https://leezchuan.github.io/blog/computer-technology/web/web-tips-fonts/</link><pubDate>Sun, 16 Oct 2022 23:49:00 +0800</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/web-tips-fonts/</guid><description>&lt;p>由于公司的业务会用到自己设计师定制的 Web 字体，所以一般在组件开发过程中会利用 CSS 引用该字体（&lt;a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face"
-
-
-
-
- target="_blank"
- 
-
-
->@font-face&lt;/a>），前段时间发现一个线上问题：在部分 iOS 机型上，DOM 元素的位置发生了错位。&lt;/p></description></item><item><title>前端工程化：对于构建工具链的简单思考</title><link>https://leezchuan.github.io/blog/computer-technology/web/tools-web-fee-toolchain/</link><pubDate>Mon, 01 Aug 2022 21:07:00 +0800</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/tools-web-fee-toolchain/</guid><description>&lt;p>前端工程化是在做与业务开发完全不同的事情，旨在解决软件工程领域与开发者密切相关的问题，通常会将其与基建开发、DevOps 放在一起讨论。前端开发是复杂的，其结合了 HTML/CSS/JavaScript 3 种语言，甚至还有很多其超集，没有开箱即用的工具链，不像 Java Web 开发、Android 开发等等有官方或者商业领域非常成熟的工具可以利用，一切都源于开源社区的从 0 开始构建。正因如此，前端工程化领域百花齐放，开放与创新展现的淋漓尽致，这也是前端开发者了解学习软件工程的机会。&lt;/p></description></item><item><title>解析基于 core-js 与 ESLint 的 Web 兼容方案</title><link>https://leezchuan.github.io/blog/computer-technology/web/tools-web-fee-polyfill-corejs-eslint/</link><pubDate>Tue, 07 Dec 2021 01:13:00 +0800</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/tools-web-fee-polyfill-corejs-eslint/</guid><description>&lt;p>Web 网页为了保证在多个平台和低中高端设备上的体验稳定性和一致性，通常会做 Polyfill 以保证兼容性。&lt;/p></description></item><item><title>Web 前端调试工具：SourceMap 文件</title><link>https://leezchuan.github.io/blog/computer-technology/web/tools-web-fee-debug-with-source-map/</link><pubDate>Sun, 28 Nov 2021 22:31:00 +0800</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/tools-web-fee-debug-with-source-map/</guid><description>&lt;p>Web 前端项目出于加载性能优化和安全考虑，在生产环境部署的代码是经过混淆和压缩的，对于利用生产环境收集到的错误堆栈信息要进行调试是非常具有挑战性的。理想情况下，应该在生产环境收集错误堆栈信息，然后映射到源码进行调试。恰好，&lt;strong>SourceMap 文件&lt;/strong>提供了这个机制，可以将编译（压缩）后的代码映射到源代码中。&lt;/p></description></item><item><title>Web 应用：轻量级状态管理工具 zustand</title><link>https://leezchuan.github.io/blog/computer-technology/web/web-app-model-zustand/</link><pubDate>Thu, 18 Nov 2021 00:14:00 +0800</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/web-app-model-zustand/</guid><description>&lt;p>基于 React.js 的 Web 应用如何完成状态管理？社区主流方案是 &lt;strong>react-redux&lt;/strong>，其本质上基于 React 的 &lt;code>Context&lt;/code> 特性实现，如果应用足够简单，实际上用 &lt;code>Context&lt;/code> 手写一个简单的状态管理工具倒也并不难。不过，考虑到工具的完善性、项目的健壮性，通常采用较好的、成熟的社区方案。在移动端场景下，&lt;strong>react-redux&lt;/strong> 略显臃肿，轻量级状态管理工具 &lt;strong>zustand&lt;/strong> 倒是一个不错的替代方案。&lt;/p></description></item><item><title>Web 前端性能优化：批量 DOM 操作 - FastDOM</title><link>https://leezchuan.github.io/blog/computer-technology/web/web-performance-fastdom/</link><pubDate>Mon, 04 Oct 2021 00:06:00 +0800</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/web-performance-fastdom/</guid><description>&lt;p>利用 JS 开发的原生应用与依赖于 React.js/Vue 开发的框架/库应用，性能孰高孰低？这两者最显著的区别在于原生应用需要手动操作 DOM 完成业务，而框架/库应用是基于数据变化响应式的应用，后者只需要关注数据如何变化，至于体现在 DOM 上的变化皆由框架/库内部自动完成。所以，要搞清楚两者的性能优劣，可能&lt;strong>批量&lt;/strong>的 DOM 操作是一个不可忽略的核心因素。从代码执行的角度分析，框架/库也是基于原生 API 进行的封装抽象，因此代码执行时的路径更长、堆栈更深，由此可见原生 API 的操作性能应该是最高的。但是，现实情况是业务通常来说是复杂的，代码实现中 DOM 操作的逻辑分散在各处，那么多个 DOM 操作之间是否会产生影响从而不利于性能？这个时候就要关注宿主浏览器的渲染机制是如何理解批量的 DOM 操作的，这里引入的概念就是&lt;strong>关键渲染路径（Critical rendering path）&lt;/strong>。&lt;/p></description></item><item><title>Web 前端性能优化：案例分析 1</title><link>https://leezchuan.github.io/blog/computer-technology/web/web-performance-case-1/</link><pubDate>Fri, 24 Sep 2021 00:51:00 +0800</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/web-performance-case-1/</guid><description>&lt;p>能在真实业务场景中落地 Web 性能优化方案的机会鲜有，大多数时候业务是较为简单而且要求不高的，前段时间恰好有一个比较核心的业务，对稳定性和性能有一定的要求，在这个过程中也算是做了很多尝试和实践，在此作为案例记录一下分析的过程和最终解决的方案。&lt;/p></description></item><item><title>Child process API: spawn vs exec</title><link>https://leezchuan.github.io/blog/computer-technology/nodejs/nodejs-spawn-vs-exec/</link><pubDate>Wed, 25 Aug 2021 00:21:00 +0800</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/nodejs/nodejs-spawn-vs-exec/</guid><description>&lt;p>利用 Node.js 编写一些命令行工具、一次性脚本是很方便的，而在这类场景下 child_process API 的 &lt;code>spawn&lt;/code> 和 &lt;code>exec&lt;/code> 方法的应用则非常常见。在我使用它们时，却不知道该如何进行选择，遂对此进行了探究。&lt;/p></description></item><item><title>使用 Jest 和 Puppeteer 构建 Web 自动化测试平台</title><link>https://leezchuan.github.io/blog/computer-technology/web/tools-web-fee-test-with-jest-puppeteer/</link><pubDate>Sun, 15 Aug 2021 14:54:00 +0800</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/tools-web-fee-test-with-jest-puppeteer/</guid><description>&lt;p>测试为软件的稳定和完善提供了必要的支持，Web 前端开发领域相比于做单元测试，端到端测试更有意义和价值。谷歌发布的 Puppeteer 工具和脸书发布的 Jest 测试工具为 Web 端到端测试提供了极大的便利，这里记录了如何使用它们构建一个 Web 自动化测试平台。&lt;/p></description></item><item><title>Web 前端性能优化：核心概念与指标</title><link>https://leezchuan.github.io/blog/computer-technology/web/web-performance-core-concepts/</link><pubDate>Mon, 19 Jul 2021 00:51:00 +0800</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/web-performance-core-concepts/</guid><description>&lt;p>说到 Web 的性能优化，可能很多时候我们采取了一些措施，看到了肉眼可见的改进，如果我们可以对其进行测量，确定我们改进的效率（百分比）是不是会更有意义？换句话说，如果我们了解性能瓶颈可能发生的位置，衡量用户体验好坏的指标，做到实时追踪性能变化，我们是不是可以更迅速的采取优化措施？在应用上线前，我们就可以做一些低成本而有高收益的优化工作，进一步提升用户体验。&lt;/p></description></item><item><title>Fastify - 专注于性能和低内存消耗</title><link>https://leezchuan.github.io/blog/computer-technology/nodejs/nodejs-fastify/</link><pubDate>Sun, 27 Jun 2021 16:28:00 +0800</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/nodejs/nodejs-fastify/</guid><description>&lt;p>最近在做 Node.js 技术相关的调研，需要选定一个 Web 框架作为基础来构建业务。一般来说，首选开源方案，对于我来说，比较关注框架背后的开发团队情况、项目活跃度、是否有足够多的商业案例、文档是否完整可读、框架的设计理念、技术架构是否灵活可扩展、技术社区生态是否完整等方面。目前，我比较倾心的是 Fastify 这个新兴框架，根据官网介绍，其专注于高性能和低消耗，并且公开的基准测试表现相当不错，项目足够活跃，更重要的是属于 OpenJS 基金会的孵化项目。本文主要介绍 Fastify 的设计理念和探究其是如何提高性能和降低内存消耗的。&lt;/p></description></item><item><title>使用 npm</title><link>https://leezchuan.github.io/blog/computer-technology/nodejs/tools-npm/</link><pubDate>Sat, 06 Jul 2019 15:43:00 +0800</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/nodejs/tools-npm/</guid><description>&lt;p>npm 是 Node.js 的一个包管理器，Web 前端工程师也经常利用它来简化开发流程，看看如何愉快的使用 npm ，并且发布自己的包，让 npm 成为我们的开发利器。&lt;/p></description></item><item><title>Web 前端架构设计</title><link>https://leezchuan.github.io/blog/computer-technology/web/web-front-end-architecture/</link><pubDate>Wed, 28 Mar 2018 14:01:00 +0800</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/web-front-end-architecture/</guid><description>&lt;p>让 Web 前端开发可持续化、可扩展，关注四个核心&lt;strong>代码&lt;/strong>、&lt;strong>流程&lt;/strong>、&lt;strong>测试&lt;/strong>、&lt;strong>文档&lt;/strong>。&lt;/p></description></item><item><title>Nginx 配置</title><link>https://leezchuan.github.io/blog/computer-technology/nginx/nginx-config/</link><pubDate>Thu, 15 Mar 2018 12:38:00 +0800</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/nginx/nginx-config/</guid><description>&lt;p>&lt;strong>&lt;u>建议主要参考官网英文文档。&lt;/u>&lt;/strong>&lt;/p>
-&lt;p>具体指令直接可以在官网文档的 Alphabetical index of directives（按字母顺序排列的指令索引）中搜索即可。&lt;/p></description></item><item><title>Web 应用：单页面应用与路由</title><link>https://leezchuan.github.io/blog/computer-technology/web/web-routing/</link><pubDate>Wed, 25 Oct 2017 00:51:00 +0800</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/web-routing/</guid><description>&lt;p>现在，Web 技术不仅仅是局限于页面的开发技术，在应用的开发方面也是一种潮流，B/S 架构的技术是一种趋势。而像一般的管理型 Web 应用，不注重 SEO，非常适合单页面应用（SPA）的实现方式，而路由功能则是单页面应用的核心技术。&lt;/p></description></item><item><title>Linux-Vim 编辑器</title><link>https://leezchuan.github.io/blog/computer-technology/linux/linux-cmd-vim/</link><pubDate>Fri, 28 Oct 2016 21:02:00 +0800</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/linux/linux-cmd-vim/</guid><description>&lt;p>在 Linux 这样的命令行操作系统中，必须有一款功能强大的编辑器支持我们快速完成文本编辑，这就是 Vi 编辑器；通过对其加强和升级，Vim 编辑器比前者更为强大，拥有更多的功能和颜色高亮的特性，是程序员在 Linux 下编码的利器。&lt;/p></description></item><item><title>Linux-常用 Shell 命令</title><link>https://leezchuan.github.io/blog/computer-technology/linux/linux-cmd-shell/</link><pubDate>Fri, 21 Oct 2016 21:02:00 +0800</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/linux/linux-cmd-shell/</guid><description>&lt;p>Linux 是一个优秀的开发环境，大多数服务器都在上面部署。作为一个程序员，熟悉Linux 系统的常用操作也是很必要的。在 linux 内核外，shell 提供了我们程序员（用户）与内核之间的交互媒介，shell 可以说是一个命令解释器，当然它也负责将内核输出信息翻译给程序员。&lt;/p></description></item><item><title>Web 前端性能优化：工具与技巧</title><link>https://leezchuan.github.io/blog/computer-technology/web/web-performance-optimize-skill/</link><pubDate>Sat, 20 Aug 2016 19:06:00 +0800</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/web-performance-optimize-skill/</guid><description>&lt;p>Web 前端的性能优化是非常迫切的，客户端的资源非常有限，而且层次不齐，很容易造成一些性能问题从而影响到最终给用户所呈现的数据信息结构的不完整。为了增强用户体验，我们必须在各个方面进行优化，同时也可以节省服务器成本。&lt;/p></description></item><item><title>Web 前端跨域访问</title><link>https://leezchuan.github.io/blog/computer-technology/web/web-cross-domain/</link><pubDate>Wed, 10 Aug 2016 15:18:00 +0800</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/web-cross-domain/</guid><description>&lt;p>为了用户的安全，浏览器通常都会限制跨域（Cross-domain）访问，也就是默认不允许不同域名下页面之间进行资源的传递和信息交互，但很多时候我们又有跨域请求资源的需求。&lt;/p></description></item><item><title>Web 本地存储</title><link>https://leezchuan.github.io/blog/computer-technology/web/web-local-storage/</link><pubDate>Wed, 01 Jun 2016 01:00:00 +0800</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/web-local-storage/</guid><description>&lt;p>为了达到某些需求，我们通常需要在本地存储一些数据，方便我们进行用户个性化定制服务。&lt;/p></description></item><item><title>Linux-基础</title><link>https://leezchuan.github.io/blog/computer-technology/linux/linux-base/</link><pubDate>Sun, 29 May 2016 15:34:00 +0800</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/linux/linux-base/</guid><description>&lt;p>Linux 是在做一些较为底层的开发工作时的必要开发环境，了解 Linux 也对操作系统概念的理解有很大的帮助，这篇文章是对 Linux 的一些基础概念的阐述。&lt;/p></description></item><item><title>CPU 的七种寻址方式</title><link>https://leezchuan.github.io/blog/computer-technology/computer/computer-cpu-addressing-mode/</link><pubDate>Thu, 05 May 2016 01:53:00 +0800</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/computer/computer-cpu-addressing-mode/</guid><description>&lt;p>CPU 获取数据的方式不仅仅一种，多种方式也为不同数据的获取提供了不同的效率考量，保证了寻址效率与指令的灵活性。&lt;/p></description></item><item><title>内存的 3 种刷新方式</title><link>https://leezchuan.github.io/blog/computer-technology/computer/computer-memory-refresh/</link><pubDate>Tue, 03 May 2016 01:59:00 +0800</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/computer/computer-memory-refresh/</guid><description>&lt;p>&lt;strong>众所周知，内存（Memory）是带电存储的，掉电就会丢失数据，所以需要刷新来保持数据。&lt;/strong>&lt;/p></description></item><item><title>微处理器寻址范围</title><link>https://leezchuan.github.io/blog/computer-technology/computer/computer-microprocessor-addressing-range/</link><pubDate>Thu, 28 Apr 2016 01:42:00 +0800</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/computer/computer-microprocessor-addressing-range/</guid><description>&lt;p>在此之前，让我们带着下面这个问题来看这篇文章：&lt;strong>64 位处理器所支持的最大内存(寻址范围)为多少？&lt;/strong>&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>计算机技术 on 技术之心</title>
+    <link>http://localhost:1313/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/</link>
+    <description>Recent content in 计算机技术 on 技术之心</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 11 Nov 2022 11:52:00 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>微信小程序与钉钉小程序开发流程</title>
+      <link>http://localhost:1313/blog/computer-technology/mobile-web/wx-dingding/</link>
+      <pubDate>Fri, 11 Nov 2022 11:52:00 +0800</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/mobile-web/wx-dingding/</guid>
+      <description>&lt;p&gt;开发小程序有很多问题特此记录一下～～～&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;小程序开发（移动端开发）兼容注意事项：&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web 字体加载对 DOM 位置的影响</title>
+      <link>http://localhost:1313/blog/computer-technology/web/web-tips-fonts/</link>
+      <pubDate>Sun, 16 Oct 2022 23:49:00 +0800</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/web/web-tips-fonts/</guid>
+      <description>&lt;p&gt;由于公司的业务会用到自己设计师定制的 Web 字体，所以一般在组件开发过程中会利用 CSS 引用该字体（&lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face&#34;&#xA;&#xA;&#xA;&#xA;&#xA; target=&#34;_blank&#34;&#xA; &#xA;&#xA;&#xA;&gt;@font-face&lt;/a&gt;），前段时间发现一个线上问题：在部分 iOS 机型上，DOM 元素的位置发生了错位。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>前端工程化：对于构建工具链的简单思考</title>
+      <link>http://localhost:1313/blog/computer-technology/web/tools-web-fee-toolchain/</link>
+      <pubDate>Mon, 01 Aug 2022 21:07:00 +0800</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/web/tools-web-fee-toolchain/</guid>
+      <description>&lt;p&gt;前端工程化是在做与业务开发完全不同的事情，旨在解决软件工程领域与开发者密切相关的问题，通常会将其与基建开发、DevOps 放在一起讨论。前端开发是复杂的，其结合了 HTML/CSS/JavaScript 3 种语言，甚至还有很多其超集，没有开箱即用的工具链，不像 Java Web 开发、Android 开发等等有官方或者商业领域非常成熟的工具可以利用，一切都源于开源社区的从 0 开始构建。正因如此，前端工程化领域百花齐放，开放与创新展现的淋漓尽致，这也是前端开发者了解学习软件工程的机会。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>解析基于 core-js 与 ESLint 的 Web 兼容方案</title>
+      <link>http://localhost:1313/blog/computer-technology/web/tools-web-fee-polyfill-corejs-eslint/</link>
+      <pubDate>Tue, 07 Dec 2021 01:13:00 +0800</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/web/tools-web-fee-polyfill-corejs-eslint/</guid>
+      <description>&lt;p&gt;Web 网页为了保证在多个平台和低中高端设备上的体验稳定性和一致性，通常会做 Polyfill 以保证兼容性。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web 前端调试工具：SourceMap 文件</title>
+      <link>http://localhost:1313/blog/computer-technology/web/tools-web-fee-debug-with-source-map/</link>
+      <pubDate>Sun, 28 Nov 2021 22:31:00 +0800</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/web/tools-web-fee-debug-with-source-map/</guid>
+      <description>&lt;p&gt;Web 前端项目出于加载性能优化和安全考虑，在生产环境部署的代码是经过混淆和压缩的，对于利用生产环境收集到的错误堆栈信息要进行调试是非常具有挑战性的。理想情况下，应该在生产环境收集错误堆栈信息，然后映射到源码进行调试。恰好，&lt;strong&gt;SourceMap 文件&lt;/strong&gt;提供了这个机制，可以将编译（压缩）后的代码映射到源代码中。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web 应用：轻量级状态管理工具 zustand</title>
+      <link>http://localhost:1313/blog/computer-technology/web/web-app-model-zustand/</link>
+      <pubDate>Thu, 18 Nov 2021 00:14:00 +0800</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/web/web-app-model-zustand/</guid>
+      <description>&lt;p&gt;基于 React.js 的 Web 应用如何完成状态管理？社区主流方案是 &lt;strong&gt;react-redux&lt;/strong&gt;，其本质上基于 React 的 &lt;code&gt;Context&lt;/code&gt; 特性实现，如果应用足够简单，实际上用 &lt;code&gt;Context&lt;/code&gt; 手写一个简单的状态管理工具倒也并不难。不过，考虑到工具的完善性、项目的健壮性，通常采用较好的、成熟的社区方案。在移动端场景下，&lt;strong&gt;react-redux&lt;/strong&gt; 略显臃肿，轻量级状态管理工具 &lt;strong&gt;zustand&lt;/strong&gt; 倒是一个不错的替代方案。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web 前端性能优化：批量 DOM 操作 - FastDOM</title>
+      <link>http://localhost:1313/blog/computer-technology/web/web-performance-fastdom/</link>
+      <pubDate>Mon, 04 Oct 2021 00:06:00 +0800</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/web/web-performance-fastdom/</guid>
+      <description>&lt;p&gt;利用 JS 开发的原生应用与依赖于 React.js/Vue 开发的框架/库应用，性能孰高孰低？这两者最显著的区别在于原生应用需要手动操作 DOM 完成业务，而框架/库应用是基于数据变化响应式的应用，后者只需要关注数据如何变化，至于体现在 DOM 上的变化皆由框架/库内部自动完成。所以，要搞清楚两者的性能优劣，可能&lt;strong&gt;批量&lt;/strong&gt;的 DOM 操作是一个不可忽略的核心因素。从代码执行的角度分析，框架/库也是基于原生 API 进行的封装抽象，因此代码执行时的路径更长、堆栈更深，由此可见原生 API 的操作性能应该是最高的。但是，现实情况是业务通常来说是复杂的，代码实现中 DOM 操作的逻辑分散在各处，那么多个 DOM 操作之间是否会产生影响从而不利于性能？这个时候就要关注宿主浏览器的渲染机制是如何理解批量的 DOM 操作的，这里引入的概念就是&lt;strong&gt;关键渲染路径（Critical rendering path）&lt;/strong&gt;。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web 前端性能优化：案例分析 1</title>
+      <link>http://localhost:1313/blog/computer-technology/web/web-performance-case-1/</link>
+      <pubDate>Fri, 24 Sep 2021 00:51:00 +0800</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/web/web-performance-case-1/</guid>
+      <description>&lt;p&gt;能在真实业务场景中落地 Web 性能优化方案的机会鲜有，大多数时候业务是较为简单而且要求不高的，前段时间恰好有一个比较核心的业务，对稳定性和性能有一定的要求，在这个过程中也算是做了很多尝试和实践，在此作为案例记录一下分析的过程和最终解决的方案。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Child process API: spawn vs exec</title>
+      <link>http://localhost:1313/blog/computer-technology/nodejs/nodejs-spawn-vs-exec/</link>
+      <pubDate>Wed, 25 Aug 2021 00:21:00 +0800</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/nodejs/nodejs-spawn-vs-exec/</guid>
+      <description>&lt;p&gt;利用 Node.js 编写一些命令行工具、一次性脚本是很方便的，而在这类场景下 child_process API 的 &lt;code&gt;spawn&lt;/code&gt; 和 &lt;code&gt;exec&lt;/code&gt; 方法的应用则非常常见。在我使用它们时，却不知道该如何进行选择，遂对此进行了探究。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>使用 Jest 和 Puppeteer 构建 Web 自动化测试平台</title>
+      <link>http://localhost:1313/blog/computer-technology/web/tools-web-fee-test-with-jest-puppeteer/</link>
+      <pubDate>Sun, 15 Aug 2021 14:54:00 +0800</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/web/tools-web-fee-test-with-jest-puppeteer/</guid>
+      <description>&lt;p&gt;测试为软件的稳定和完善提供了必要的支持，Web 前端开发领域相比于做单元测试，端到端测试更有意义和价值。谷歌发布的 Puppeteer 工具和脸书发布的 Jest 测试工具为 Web 端到端测试提供了极大的便利，这里记录了如何使用它们构建一个 Web 自动化测试平台。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web 前端性能优化：核心概念与指标</title>
+      <link>http://localhost:1313/blog/computer-technology/web/web-performance-core-concepts/</link>
+      <pubDate>Mon, 19 Jul 2021 00:51:00 +0800</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/web/web-performance-core-concepts/</guid>
+      <description>&lt;p&gt;说到 Web 的性能优化，可能很多时候我们采取了一些措施，看到了肉眼可见的改进，如果我们可以对其进行测量，确定我们改进的效率（百分比）是不是会更有意义？换句话说，如果我们了解性能瓶颈可能发生的位置，衡量用户体验好坏的指标，做到实时追踪性能变化，我们是不是可以更迅速的采取优化措施？在应用上线前，我们就可以做一些低成本而有高收益的优化工作，进一步提升用户体验。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Fastify - 专注于性能和低内存消耗</title>
+      <link>http://localhost:1313/blog/computer-technology/nodejs/nodejs-fastify/</link>
+      <pubDate>Sun, 27 Jun 2021 16:28:00 +0800</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/nodejs/nodejs-fastify/</guid>
+      <description>&lt;p&gt;最近在做 Node.js 技术相关的调研，需要选定一个 Web 框架作为基础来构建业务。一般来说，首选开源方案，对于我来说，比较关注框架背后的开发团队情况、项目活跃度、是否有足够多的商业案例、文档是否完整可读、框架的设计理念、技术架构是否灵活可扩展、技术社区生态是否完整等方面。目前，我比较倾心的是 Fastify 这个新兴框架，根据官网介绍，其专注于高性能和低消耗，并且公开的基准测试表现相当不错，项目足够活跃，更重要的是属于 OpenJS 基金会的孵化项目。本文主要介绍 Fastify 的设计理念和探究其是如何提高性能和降低内存消耗的。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>使用 npm</title>
+      <link>http://localhost:1313/blog/computer-technology/nodejs/tools-npm/</link>
+      <pubDate>Sat, 06 Jul 2019 15:43:00 +0800</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/nodejs/tools-npm/</guid>
+      <description>&lt;p&gt;npm 是 Node.js 的一个包管理器，Web 前端工程师也经常利用它来简化开发流程，看看如何愉快的使用 npm ，并且发布自己的包，让 npm 成为我们的开发利器。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web 前端架构设计</title>
+      <link>http://localhost:1313/blog/computer-technology/web/web-front-end-architecture/</link>
+      <pubDate>Wed, 28 Mar 2018 14:01:00 +0800</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/web/web-front-end-architecture/</guid>
+      <description>&lt;p&gt;让 Web 前端开发可持续化、可扩展，关注四个核心&lt;strong&gt;代码&lt;/strong&gt;、&lt;strong&gt;流程&lt;/strong&gt;、&lt;strong&gt;测试&lt;/strong&gt;、&lt;strong&gt;文档&lt;/strong&gt;。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Nginx 配置</title>
+      <link>http://localhost:1313/blog/computer-technology/nginx/nginx-config/</link>
+      <pubDate>Thu, 15 Mar 2018 12:38:00 +0800</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/nginx/nginx-config/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;&lt;u&gt;建议主要参考官网英文文档。&lt;/u&gt;&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;具体指令直接可以在官网文档的 Alphabetical index of directives（按字母顺序排列的指令索引）中搜索即可。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web 应用：单页面应用与路由</title>
+      <link>http://localhost:1313/blog/computer-technology/web/web-routing/</link>
+      <pubDate>Wed, 25 Oct 2017 00:51:00 +0800</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/web/web-routing/</guid>
+      <description>&lt;p&gt;现在，Web 技术不仅仅是局限于页面的开发技术，在应用的开发方面也是一种潮流，B/S 架构的技术是一种趋势。而像一般的管理型 Web 应用，不注重 SEO，非常适合单页面应用（SPA）的实现方式，而路由功能则是单页面应用的核心技术。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Linux-Vim 编辑器</title>
+      <link>http://localhost:1313/blog/computer-technology/linux/linux-cmd-vim/</link>
+      <pubDate>Fri, 28 Oct 2016 21:02:00 +0800</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/linux/linux-cmd-vim/</guid>
+      <description>&lt;p&gt;在 Linux 这样的命令行操作系统中，必须有一款功能强大的编辑器支持我们快速完成文本编辑，这就是 Vi 编辑器；通过对其加强和升级，Vim 编辑器比前者更为强大，拥有更多的功能和颜色高亮的特性，是程序员在 Linux 下编码的利器。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Linux-常用 Shell 命令</title>
+      <link>http://localhost:1313/blog/computer-technology/linux/linux-cmd-shell/</link>
+      <pubDate>Fri, 21 Oct 2016 21:02:00 +0800</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/linux/linux-cmd-shell/</guid>
+      <description>&lt;p&gt;Linux 是一个优秀的开发环境，大多数服务器都在上面部署。作为一个程序员，熟悉Linux 系统的常用操作也是很必要的。在 linux 内核外，shell 提供了我们程序员（用户）与内核之间的交互媒介，shell 可以说是一个命令解释器，当然它也负责将内核输出信息翻译给程序员。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web 前端性能优化：工具与技巧</title>
+      <link>http://localhost:1313/blog/computer-technology/web/web-performance-optimize-skill/</link>
+      <pubDate>Sat, 20 Aug 2016 19:06:00 +0800</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/web/web-performance-optimize-skill/</guid>
+      <description>&lt;p&gt;Web 前端的性能优化是非常迫切的，客户端的资源非常有限，而且层次不齐，很容易造成一些性能问题从而影响到最终给用户所呈现的数据信息结构的不完整。为了增强用户体验，我们必须在各个方面进行优化，同时也可以节省服务器成本。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web 前端跨域访问</title>
+      <link>http://localhost:1313/blog/computer-technology/web/web-cross-domain/</link>
+      <pubDate>Wed, 10 Aug 2016 15:18:00 +0800</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/web/web-cross-domain/</guid>
+      <description>&lt;p&gt;为了用户的安全，浏览器通常都会限制跨域（Cross-domain）访问，也就是默认不允许不同域名下页面之间进行资源的传递和信息交互，但很多时候我们又有跨域请求资源的需求。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web 本地存储</title>
+      <link>http://localhost:1313/blog/computer-technology/web/web-local-storage/</link>
+      <pubDate>Wed, 01 Jun 2016 01:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/web/web-local-storage/</guid>
+      <description>&lt;p&gt;为了达到某些需求，我们通常需要在本地存储一些数据，方便我们进行用户个性化定制服务。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Linux-基础</title>
+      <link>http://localhost:1313/blog/computer-technology/linux/linux-base/</link>
+      <pubDate>Sun, 29 May 2016 15:34:00 +0800</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/linux/linux-base/</guid>
+      <description>&lt;p&gt;Linux 是在做一些较为底层的开发工作时的必要开发环境，了解 Linux 也对操作系统概念的理解有很大的帮助，这篇文章是对 Linux 的一些基础概念的阐述。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>CPU 的七种寻址方式</title>
+      <link>http://localhost:1313/blog/computer-technology/computer/computer-cpu-addressing-mode/</link>
+      <pubDate>Thu, 05 May 2016 01:53:00 +0800</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/computer/computer-cpu-addressing-mode/</guid>
+      <description>&lt;p&gt;CPU 获取数据的方式不仅仅一种，多种方式也为不同数据的获取提供了不同的效率考量，保证了寻址效率与指令的灵活性。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>内存的 3 种刷新方式</title>
+      <link>http://localhost:1313/blog/computer-technology/computer/computer-memory-refresh/</link>
+      <pubDate>Tue, 03 May 2016 01:59:00 +0800</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/computer/computer-memory-refresh/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;众所周知，内存（Memory）是带电存储的，掉电就会丢失数据，所以需要刷新来保持数据。&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>微处理器寻址范围</title>
+      <link>http://localhost:1313/blog/computer-technology/computer/computer-microprocessor-addressing-range/</link>
+      <pubDate>Thu, 28 Apr 2016 01:42:00 +0800</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/computer/computer-microprocessor-addressing-range/</guid>
+      <description>&lt;p&gt;在此之前，让我们带着下面这个问题来看这篇文章：&lt;strong&gt;64 位处理器所支持的最大内存(寻址范围)为多少？&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
