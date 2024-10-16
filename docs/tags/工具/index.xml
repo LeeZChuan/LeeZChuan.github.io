@@ -27,20 +27,7 @@
 
 >Source Map Revision 3 Proposal&lt;/a>&lt;/p></description></item><item><title>使用 Jest 和 Puppeteer 构建 Web 自动化测试平台</title><link>https://leezchuan.github.io/blog/computer-technology/web/tools-web-fee-test-with-jest-puppeteer/</link><pubDate>Sun, 15 Aug 2021 14:54:00 -0400</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/tools-web-fee-test-with-jest-puppeteer/</guid><description>&lt;p>测试为软件的稳定和完善提供了必要的支持，Web 前端开发领域相比于做单元测试，端到端测试更有意义和价值。谷歌发布的 Puppeteer 工具和脸书发布的 Jest 测试工具为 Web 端到端测试提供了极大的便利，这里记录了如何使用它们构建一个 Web 自动化测试平台。&lt;/p></description></item><item><title>理解编程语言的设计与实现</title><link>https://leezchuan.github.io/blog/computer-technology/tools/tools-programming-language/</link><pubDate>Sun, 02 May 2021 17:03:00 -0400</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/tools/tools-programming-language/</guid><description>&lt;p>编程语言本质上是给开发者使用的工具，不同的业务领域使用不同的编程语言去实现具体的业务，是基于语言本身的设计理念与实现方式来做选择，那么作为开发者应该了解一下编程语言是如何被发明的，且其设计理念是什么。&lt;/p>
 &lt;!-- truncate -->
-&lt;p>Ruby 是我大学期间课余接触且实际使用过的一门语言，目前我甚是喜爱，其作者松本行弘设计 Ruby 的初心是：为开发者服务，注重简洁和效率。这篇文章主要也是为了记录在拜读了松本行弘先生新书《编程语言的设计与实现》之后掌握的一些相关的关键知识点和其它收获。由于该书主要是围绕作者在设计 Ruby 和新语言 Streem 过程中的一些思考和经验，有些东西可能不太具备普适性，而我在这里主要还是关注一些通用性的知识点和概念。&lt;/p></description></item><item><title>使用 npm</title><link>https://leezchuan.github.io/blog/computer-technology/nodejs/tools-npm/</link><pubDate>Sat, 06 Jul 2019 15:43:00 -0400</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/nodejs/tools-npm/</guid><description>&lt;p>npm 是 Node.js 的一个包管理器，Web 前端工程师也经常利用它来简化开发流程，看看如何愉快的使用 npm ，并且发布自己的包，让 npm 成为我们的开发利器。&lt;/p>
-&lt;!-- truncate -->
-&lt;h3 id="npm">npm&lt;/h3>
-&lt;blockquote>
-&lt;p>**Node.js：**&lt;a href="https://www.npmjs.com/"
-
-
-
-
- target="_blank"
- 
-
-
->https://www.npmjs.com/&lt;/a>&lt;/p></description></item><item><title>IDE：VS Code 配置同步</title><link>https://leezchuan.github.io/blog/computer-technology/tools/tools-vscode-sync/</link><pubDate>Wed, 15 Aug 2018 16:42:00 -0400</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/tools/tools-vscode-sync/</guid><description>&lt;p>利用一款插件来同步 VS Code 的配置到 GitHub 的 gist 上，实现多个设备间共享一套配置。&lt;/p>
+&lt;p>Ruby 是我大学期间课余接触且实际使用过的一门语言，目前我甚是喜爱，其作者松本行弘设计 Ruby 的初心是：为开发者服务，注重简洁和效率。这篇文章主要也是为了记录在拜读了松本行弘先生新书《编程语言的设计与实现》之后掌握的一些相关的关键知识点和其它收获。由于该书主要是围绕作者在设计 Ruby 和新语言 Streem 过程中的一些思考和经验，有些东西可能不太具备普适性，而我在这里主要还是关注一些通用性的知识点和概念。&lt;/p></description></item><item><title>IDE：VS Code 配置同步</title><link>https://leezchuan.github.io/blog/computer-technology/tools/tools-vscode-sync/</link><pubDate>Wed, 15 Aug 2018 16:42:00 -0400</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/tools/tools-vscode-sync/</guid><description>&lt;p>利用一款插件来同步 VS Code 的配置到 GitHub 的 gist 上，实现多个设备间共享一套配置。&lt;/p>
 &lt;!-- truncate -->
 &lt;h3 id="vs-code">VS Code&lt;/h3>
 &lt;p>Visual Studio Code 是由微软出品的一款轻量级编辑器，兼有部分 IDE 功能。在之前，Sublime Text 是最受欢迎的编辑器（开源），也为多数前端开发者所推崇，当然说到底它依然是个编辑器。随着时间的推移，GitHub 打造了自家的编辑器 Atom，微软的 VS Code 也横空出世，更有其它优秀的轻量级编辑器在市场上展开角逐。不过，到现在来看，VS Code 可能胜出了，已成为前端开发的利器。&lt;/p></description></item><item><title>单元测试工具：Junit</title><link>https://leezchuan.github.io/blog/computer-technology/tools/tools-junit/</link><pubDate>Wed, 30 Aug 2017 23:42:00 -0400</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/tools/tools-junit/</guid><description>&lt;p>通常一个项目的代码量是比较大的，而且其中逻辑也较为复杂，在开发完成后再进行项目测试其实是比较耗费时间和精力的，因此边开发边测试是个很好的选择，而 JUnit 则为我们提供了这样的便利。&lt;/p>

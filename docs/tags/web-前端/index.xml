@@ -1,19 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Web 前端 on 技术之心</title><link>https://leezchuan.github.io/tags/web-%E5%89%8D%E7%AB%AF/</link><description>Recent content in Web 前端 on 技术之心</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sun, 25 Apr 2021 22:56:00 -0400</lastBuildDate><atom:link href="https://leezchuan.github.io/tags/web-%E5%89%8D%E7%AB%AF/index.xml" rel="self" type="application/rss+xml"/><item><title>Web 前端性能优化：解析函数节流与防抖的实现</title><link>https://leezchuan.github.io/blog/computer-technology/web/javascript/debouncing-and-throttling/</link><pubDate>Sun, 25 Apr 2021 22:56:00 -0400</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/javascript/debouncing-and-throttling/</guid><description>&lt;p>前端开发中，有一个使用较为普遍的性能优化技巧，即函数节流（Throttle）和防抖（Debounce），其主要作用是根据时间对函数调用做以限制。最常见的业务场景是监听页面的 &lt;code>scroll&lt;/code> 事件，浏览器可以在 1s 内触发该事件数次（甚至达数十次），如果事件处理程序在这 1s 内多次执行，必然会造成一定的性能问题，影响用户体验。&lt;/p>
 &lt;!-- truncate -->
-&lt;p>本质上，函数节流和防抖并不是控制事件源的触发次数，而是在事件短时间内连续多次触发之后控制相应事件处理程序的调用频率。&lt;/p></description></item><item><title>使用 npm</title><link>https://leezchuan.github.io/blog/computer-technology/nodejs/tools-npm/</link><pubDate>Sat, 06 Jul 2019 15:43:00 -0400</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/nodejs/tools-npm/</guid><description>&lt;p>npm 是 Node.js 的一个包管理器，Web 前端工程师也经常利用它来简化开发流程，看看如何愉快的使用 npm ，并且发布自己的包，让 npm 成为我们的开发利器。&lt;/p>
-&lt;!-- truncate -->
-&lt;h3 id="npm">npm&lt;/h3>
-&lt;blockquote>
-&lt;p>**Node.js：**&lt;a href="https://www.npmjs.com/"
-
-
-
-
- target="_blank"
- 
-
-
->https://www.npmjs.com/&lt;/a>&lt;/p></description></item><item><title>JavaScript 异步编程</title><link>https://leezchuan.github.io/blog/computer-technology/web/javascript/web-js-async/</link><pubDate>Wed, 22 Mar 2017 15:48:00 -0400</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/javascript/web-js-async/</guid><description>&lt;p>JavaScript 作为一门在 Web 开发中的主流语言，常常涉及到交互事件方面的应用，这不可避免的用到了异步编程的方法，而它本身则是单线程运行的。在以往的开发中，异步编程正变得越来越难管理，新的 Promise 标准 API 将使得异步编程更加方便、安全。&lt;/p>
+&lt;p>本质上，函数节流和防抖并不是控制事件源的触发次数，而是在事件短时间内连续多次触发之后控制相应事件处理程序的调用频率。&lt;/p></description></item><item><title>JavaScript 异步编程</title><link>https://leezchuan.github.io/blog/computer-technology/web/javascript/web-js-async/</link><pubDate>Wed, 22 Mar 2017 15:48:00 -0400</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/javascript/web-js-async/</guid><description>&lt;p>JavaScript 作为一门在 Web 开发中的主流语言，常常涉及到交互事件方面的应用，这不可避免的用到了异步编程的方法，而它本身则是单线程运行的。在以往的开发中，异步编程正变得越来越难管理，新的 Promise 标准 API 将使得异步编程更加方便、安全。&lt;/p>
 &lt;!-- truncate -->
 &lt;h3 id="异步与并行">异步与并行&lt;/h3>
 &lt;p>作为 Web 前端开发中的主流语言，JavaScript 需要实现诸多的交互动作，但是在宿主环境（例如 v8）中 JS 引擎只有一个主线程，所以多线程并行处理是不可能的。因此，异步编程显得尤为重要。&lt;/p></description></item><item><title>块级格式化上下文（BFC）</title><link>https://leezchuan.github.io/blog/computer-technology/web/css/css-bfc/</link><pubDate>Fri, 22 Jul 2016 16:35:00 -0400</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/css/css-bfc/</guid><description>&lt;p>在进行页面布局时，通常有流式布局、定位布局、浮动布局这三种形式。而在布局过程中，各元素之间的影响却是一个很关键的问题。&lt;/p>
