@@ -1,4 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>NodeList on 技术之心</title><link>https://leezchuan.github.io/tags/nodelist/</link><description>Recent content in NodeList on 技术之心</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Tue, 17 May 2016 22:30:00 -0400</lastBuildDate><atom:link href="https://leezchuan.github.io/tags/nodelist/index.xml" rel="self" type="application/rss+xml"/><item><title>DOM-节点集合</title><link>https://leezchuan.github.io/blog/computer-technology/web/dom/dom-nodelist/</link><pubDate>Tue, 17 May 2016 22:30:00 -0400</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/dom/dom-nodelist/</guid><description>&lt;p>当从文档树中选取成组的节点或者使用预定义的节点集合时，这些节点都是放在 NodeList 或者一个 HTMLCollecton 之中，而不是一个数组（Array）中。&lt;/p>
-&lt;!-- truncate -->
-&lt;h3 id="节点集合">节点集合&lt;/h3>
-&lt;p>我们将一个 &lt;code>NodeList&lt;/code> 或者 &lt;code>HTMLCollecton&lt;/code> 称为节点集合，也就是类数组的节点对象集合。节点集合一般有以下特征：&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>NodeList on 技术之心</title>
+    <link>http://localhost:1313/tags/nodelist/</link>
+    <description>Recent content in NodeList on 技术之心</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 17 May 2016 22:30:00 -0400</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/nodelist/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DOM-节点集合</title>
+      <link>http://localhost:1313/blog/computer-technology/web/dom/dom-nodelist/</link>
+      <pubDate>Tue, 17 May 2016 22:30:00 -0400</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/web/dom/dom-nodelist/</guid>
+      <description>&lt;p&gt;当从文档树中选取成组的节点或者使用预定义的节点集合时，这些节点都是放在 NodeList 或者一个 HTMLCollecton 之中，而不是一个数组（Array）中。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;节点集合&#34;&gt;节点集合&lt;/h3&gt;&#xA;&lt;p&gt;我们将一个 &lt;code&gt;NodeList&lt;/code&gt; 或者 &lt;code&gt;HTMLCollecton&lt;/code&gt; 称为节点集合，也就是类数组的节点对象集合。节点集合一般有以下特征：&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

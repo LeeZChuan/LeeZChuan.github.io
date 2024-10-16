@@ -1,2 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Polyfill on 技术之心</title><link>https://leezchuan.github.io/en/tags/polyfill/</link><description>Recent content in Polyfill on 技术之心</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Tue, 07 Dec 2021 01:13:00 -0500</lastBuildDate><atom:link href="https://leezchuan.github.io/en/tags/polyfill/index.xml" rel="self" type="application/rss+xml"/><item><title>解析基于 core-js 与 ESLint 的 Web 兼容方案</title><link>https://leezchuan.github.io/en/blog/computer-technology/web/tools-web-fee-polyfill-corejs-eslint/</link><pubDate>Tue, 07 Dec 2021 01:13:00 -0500</pubDate><guid>https://leezchuan.github.io/en/blog/computer-technology/web/tools-web-fee-polyfill-corejs-eslint/</guid><description>&lt;p>Web 网页为了保证在多个平台和低中高端设备上的体验稳定性和一致性，通常会做 Polyfill 以保证兼容性。&lt;/p>
-&lt;p>然而，兼容性问题本身是个难题，Polyfill 也并非很好处理，所以在技术演变的过程中，社区达成了一致，有一个主流的方案，大家共同来使用和维护。当下社区的主流方案则是基于 &lt;code>core-js&lt;/code>，另一方面， 利用 ESLint 插件则可以做到自动检测代码中需要添加 Polyfill 的 API。&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Polyfill on 技术之心</title>
+    <link>http://localhost:1313/en/tags/polyfill/</link>
+    <description>Recent content in Polyfill on 技术之心</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 07 Dec 2021 01:13:00 -0500</lastBuildDate>
+    <atom:link href="http://localhost:1313/en/tags/polyfill/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>解析基于 core-js 与 ESLint 的 Web 兼容方案</title>
+      <link>http://localhost:1313/en/blog/computer-technology/web/tools-web-fee-polyfill-corejs-eslint/</link>
+      <pubDate>Tue, 07 Dec 2021 01:13:00 -0500</pubDate>
+      <guid>http://localhost:1313/en/blog/computer-technology/web/tools-web-fee-polyfill-corejs-eslint/</guid>
+      <description>&lt;p&gt;Web 网页为了保证在多个平台和低中高端设备上的体验稳定性和一致性，通常会做 Polyfill 以保证兼容性。&lt;/p&gt;&#xA;&lt;p&gt;然而，兼容性问题本身是个难题，Polyfill 也并非很好处理，所以在技术演变的过程中，社区达成了一致，有一个主流的方案，大家共同来使用和维护。当下社区的主流方案则是基于 &lt;code&gt;core-js&lt;/code&gt;，另一方面， 利用 ESLint 插件则可以做到自动检测代码中需要添加 Polyfill 的 API。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

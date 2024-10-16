@@ -1,19 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Web on 技术之心</title><link>https://leezchuan.github.io/en/categories/web/</link><description>Recent content in Web on 技术之心</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Fri, 11 Nov 2022 11:52:00 -0500</lastBuildDate><atom:link href="https://leezchuan.github.io/en/categories/web/index.xml" rel="self" type="application/rss+xml"/><item><title>微信小程序与钉钉小程序开发流程</title><link>https://leezchuan.github.io/en/blog/computer-technology/mobile-web/wx-dingding/</link><pubDate>Fri, 11 Nov 2022 11:52:00 -0500</pubDate><guid>https://leezchuan.github.io/en/blog/computer-technology/mobile-web/wx-dingding/</guid><description>&lt;p>开发小程序有很多问题特此记录一下～～～&lt;/p>
-&lt;blockquote>
-&lt;p>小程序开发（移动端开发）兼容注意事项：&lt;/p>
-&lt;/blockquote>
-&lt;ol>
-&lt;li>
-&lt;p>ios不兼容yyyy-MM-dd HH:mm:ss这种时间格式，需要将-替换成/，在安卓下两种格式都支持。&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>使用window.location.reload()方法刷新页面，在安卓下无效。&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>正常情况下使用window.location.replace()方法跳转页面时会覆盖当前页面而不会生成新的history记录，但是在安卓下依然会生成history记录。&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>ios中，父元素设置border-radius和overflow:hidden实现圆角。如果此时子元素使用了transform属性会导致父元素的圆角失效。&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>小程序中使用web-view打开pdf, IOS 可以正常打开，Android 打开为空白；&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web on 技术之心</title>
+    <link>http://localhost:1313/en/categories/web/</link>
+    <description>Recent content in Web on 技术之心</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 11 Nov 2022 11:52:00 -0500</lastBuildDate>
+    <atom:link href="http://localhost:1313/en/categories/web/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>微信小程序与钉钉小程序开发流程</title>
+      <link>http://localhost:1313/en/blog/computer-technology/mobile-web/wx-dingding/</link>
+      <pubDate>Fri, 11 Nov 2022 11:52:00 -0500</pubDate>
+      <guid>http://localhost:1313/en/blog/computer-technology/mobile-web/wx-dingding/</guid>
+      <description>&lt;p&gt;开发小程序有很多问题特此记录一下～～～&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;小程序开发（移动端开发）兼容注意事项：&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;ios不兼容yyyy-MM-dd HH:mm:ss这种时间格式，需要将-替换成/，在安卓下两种格式都支持。&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;使用window.location.reload()方法刷新页面，在安卓下无效。&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;正常情况下使用window.location.replace()方法跳转页面时会覆盖当前页面而不会生成新的history记录，但是在安卓下依然会生成history记录。&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;ios中，父元素设置border-radius和overflow:hidden实现圆角。如果此时子元素使用了transform属性会导致父元素的圆角失效。&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;小程序中使用web-view打开pdf, IOS 可以正常打开，Android 打开为空白；&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>SourceMap on 技术之心</title><link>https://leezchuan.github.io/categories/sourcemap/</link><description>Recent content in SourceMap on 技术之心</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Sun, 28 Nov 2021 22:31:00 -0500</lastBuildDate><atom:link href="https://leezchuan.github.io/categories/sourcemap/index.xml" rel="self" type="application/rss+xml"/><item><title>Web 前端调试工具：SourceMap 文件</title><link>https://leezchuan.github.io/blog/computer-technology/web/tools-web-fee-debug-with-source-map/</link><pubDate>Sun, 28 Nov 2021 22:31:00 -0500</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/tools-web-fee-debug-with-source-map/</guid><description>&lt;p>Web 前端项目出于加载性能优化和安全考虑，在生产环境部署的代码是经过混淆和压缩的，对于利用生产环境收集到的错误堆栈信息要进行调试是非常具有挑战性的。理想情况下，应该在生产环境收集错误堆栈信息，然后映射到源码进行调试。恰好，&lt;strong>SourceMap 文件&lt;/strong>提供了这个机制，可以将编译（压缩）后的代码映射到源代码中。&lt;/p>
-&lt;!-- truncate -->
-&lt;p>以下是其规范：&lt;/p>
-&lt;blockquote>
-&lt;p>&lt;a href="https://sourcemaps.info/spec.html"
-
-
-
-
- target="_blank"
- 
-
-
->Source Map Revision 3 Proposal&lt;/a>&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SourceMap on 技术之心</title>
+    <link>http://localhost:1313/categories/sourcemap/</link>
+    <description>Recent content in SourceMap on 技术之心</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 28 Nov 2021 22:31:00 -0500</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/sourcemap/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Web 前端调试工具：SourceMap 文件</title>
+      <link>http://localhost:1313/blog/computer-technology/web/tools-web-fee-debug-with-source-map/</link>
+      <pubDate>Sun, 28 Nov 2021 22:31:00 -0500</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/web/tools-web-fee-debug-with-source-map/</guid>
+      <description>&lt;p&gt;Web 前端项目出于加载性能优化和安全考虑，在生产环境部署的代码是经过混淆和压缩的，对于利用生产环境收集到的错误堆栈信息要进行调试是非常具有挑战性的。理想情况下，应该在生产环境收集错误堆栈信息，然后映射到源码进行调试。恰好，&lt;strong&gt;SourceMap 文件&lt;/strong&gt;提供了这个机制，可以将编译（压缩）后的代码映射到源代码中。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;p&gt;以下是其规范：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://sourcemaps.info/spec.html&#34;&#xA;&#xA;&#xA;&#xA;&#xA; target=&#34;_blank&#34;&#xA; &#xA;&#xA;&#xA;&gt;Source Map Revision 3 Proposal&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,4 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>内存 on 技术之心</title><link>https://leezchuan.github.io/en/categories/%E5%86%85%E5%AD%98/</link><description>Recent content in 内存 on 技术之心</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Tue, 03 May 2016 01:59:00 -0400</lastBuildDate><atom:link href="https://leezchuan.github.io/en/categories/%E5%86%85%E5%AD%98/index.xml" rel="self" type="application/rss+xml"/><item><title>内存的 3 种刷新方式</title><link>https://leezchuan.github.io/en/blog/computer-technology/computer/computer-memory-refresh/</link><pubDate>Tue, 03 May 2016 01:59:00 -0400</pubDate><guid>https://leezchuan.github.io/en/blog/computer-technology/computer/computer-memory-refresh/</guid><description>&lt;p>&lt;strong>众所周知，内存（Memory）是带电存储的，掉电就会丢失数据，所以需要刷新来保持数据。&lt;/strong>&lt;/p>
-&lt;!-- truncate -->
-&lt;h3 id="原因">原因&lt;/h3>
-&lt;p>由于内存（Memory）以及缓存（Cache）都由相应的存储单元芯片&lt;strong>DRAM&lt;/strong>和&lt;strong>SRAM&lt;/strong>构成存储阵列，是一种半导体存储器件。并且，所有的数据都是逻辑 &lt;code>1&lt;/code> 和 &lt;code>0&lt;/code> 的组合。&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>内存 on 技术之心</title>
+    <link>http://localhost:1313/en/categories/%E5%86%85%E5%AD%98/</link>
+    <description>Recent content in 内存 on 技术之心</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 03 May 2016 01:59:00 -0400</lastBuildDate>
+    <atom:link href="http://localhost:1313/en/categories/%E5%86%85%E5%AD%98/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>内存的 3 种刷新方式</title>
+      <link>http://localhost:1313/en/blog/computer-technology/computer/computer-memory-refresh/</link>
+      <pubDate>Tue, 03 May 2016 01:59:00 -0400</pubDate>
+      <guid>http://localhost:1313/en/blog/computer-technology/computer/computer-memory-refresh/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;众所周知，内存（Memory）是带电存储的，掉电就会丢失数据，所以需要刷新来保持数据。&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;原因&#34;&gt;原因&lt;/h3&gt;&#xA;&lt;p&gt;由于内存（Memory）以及缓存（Cache）都由相应的存储单元芯片&lt;strong&gt;DRAM&lt;/strong&gt;和&lt;strong&gt;SRAM&lt;/strong&gt;构成存储阵列，是一种半导体存储器件。并且，所有的数据都是逻辑 &lt;code&gt;1&lt;/code&gt; 和 &lt;code&gt;0&lt;/code&gt; 的组合。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
