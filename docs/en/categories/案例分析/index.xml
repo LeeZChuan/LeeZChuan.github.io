@@ -1,19 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>案例分析 on 技术之心</title>
-    <link>http://localhost:1313/en/categories/%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90/</link>
-    <description>Recent content in 案例分析 on 技术之心</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 24 Sep 2021 00:51:00 -0400</lastBuildDate>
-    <atom:link href="http://localhost:1313/en/categories/%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Web 前端性能优化：案例分析 1</title>
-      <link>http://localhost:1313/en/blog/computer-technology/web/web-performance-case-1/</link>
-      <pubDate>Fri, 24 Sep 2021 00:51:00 -0400</pubDate>
-      <guid>http://localhost:1313/en/blog/computer-technology/web/web-performance-case-1/</guid>
-      <description>&lt;p&gt;能在真实业务场景中落地 Web 性能优化方案的机会鲜有，大多数时候业务是较为简单而且要求不高的，前段时间恰好有一个比较核心的业务，对稳定性和性能有一定的要求，在这个过程中也算是做了很多尝试和实践，在此作为案例记录一下分析的过程和最终解决的方案。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;业务情况与技术难点&#34;&gt;业务情况与技术难点&lt;/h3&gt;&#xA;&lt;p&gt;首先，介绍一下业务的具体情况和存在的技术难点。这是一个移动端 WebView 渲染的页面，属于 App 的二级核心页面，用户量数十万，日均 UV 万人，金融资产相关，所以可以看得出来对页面的稳定性要求是比较高的；其次，页面布局分为上中下三部分，中部是一个长列表，&lt;strong&gt;页面整体&lt;/strong&gt;可以竖向滚动。以 DOM 结构说明：&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>案例分析 on 技术之心</title><link>https://leezchuan.github.io/en/categories/%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90/</link><description>Recent content in 案例分析 on 技术之心</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Fri, 24 Sep 2021 00:51:00 -0400</lastBuildDate><atom:link href="https://leezchuan.github.io/en/categories/%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90/index.xml" rel="self" type="application/rss+xml"/><item><title>Web 前端性能优化：案例分析 1</title><link>https://leezchuan.github.io/en/blog/computer-technology/web/web-performance-case-1/</link><pubDate>Fri, 24 Sep 2021 00:51:00 -0400</pubDate><guid>https://leezchuan.github.io/en/blog/computer-technology/web/web-performance-case-1/</guid><description>&lt;p>能在真实业务场景中落地 Web 性能优化方案的机会鲜有，大多数时候业务是较为简单而且要求不高的，前段时间恰好有一个比较核心的业务，对稳定性和性能有一定的要求，在这个过程中也算是做了很多尝试和实践，在此作为案例记录一下分析的过程和最终解决的方案。&lt;/p>
+&lt;!-- truncate -->
+&lt;h3 id="业务情况与技术难点">业务情况与技术难点&lt;/h3>
+&lt;p>首先，介绍一下业务的具体情况和存在的技术难点。这是一个移动端 WebView 渲染的页面，属于 App 的二级核心页面，用户量数十万，日均 UV 万人，金融资产相关，所以可以看得出来对页面的稳定性要求是比较高的；其次，页面布局分为上中下三部分，中部是一个长列表，&lt;strong>页面整体&lt;/strong>可以竖向滚动。以 DOM 结构说明：&lt;/p></description></item></channel></rss>

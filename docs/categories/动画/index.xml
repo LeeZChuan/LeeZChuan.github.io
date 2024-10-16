@@ -1,19 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>动画 on 技术之心</title>
-    <link>http://localhost:1313/categories/%E5%8A%A8%E7%94%BB/</link>
-    <description>Recent content in 动画 on 技术之心</description>
-    <generator>Hugo</generator>
-    <language>zh-cn</language>
-    <lastBuildDate>Thu, 01 Dec 2022 01:04:00 -0500</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/%E5%8A%A8%E7%94%BB/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>从贝塞尔曲线的计算感受数学建模的魅力</title>
-      <link>http://localhost:1313/blog/tools/tools-animation-math/</link>
-      <pubDate>Thu, 01 Dec 2022 01:04:00 -0500</pubDate>
-      <guid>http://localhost:1313/blog/tools/tools-animation-math/</guid>
-      <description>&lt;p&gt;最近在做前端可视化相关的东西，在完成动画效果时，遇到一个不是很好处理的问题，需要让一个元素在画布上以曲线的轨迹进行运动。因为动画这块之前基本也没有怎么接触过，做的也都是简单的线性动画效果，所以碰到这个需求点的时候觉得是有点难度的。&lt;/p&gt;&#xA;&lt;p&gt;其实，要真的实现按照一定曲线轨迹运动的效果倒也不难，毕竟圆、椭圆方程在平时做布局计算的时候用的也挺多的。但是，用圆或者椭圆计算曲线相当于是找了个特殊场景，不具备通用性；另一方面，说到曲线的绘制，贝塞尔曲线是绕不开的，这也是非常值得考虑的方案。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;动画帧计算&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;一段动画实际上是由多个静态帧组成的，当帧率达到人眼不可分辨的程度时（比如 60 FPS），就感觉像是一个无缝连续的视频在流畅的播放。而某一静态帧的状态用数学公式来表达如下：&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;y = F(t) (0 &amp;lt;= t &amp;lt;= 1)&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;那么对于一个物体从 &lt;strong&gt;x0&lt;/strong&gt; 运动到 &lt;strong&gt;x1&lt;/strong&gt;，如何计算 &lt;strong&gt;t&lt;/strong&gt; 时刻的位置？按照我的思路来看，可以转化为以下数学公式：&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>动画 on 技术之心</title><link>https://leezchuan.github.io/categories/%E5%8A%A8%E7%94%BB/</link><description>Recent content in 动画 on 技术之心</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Thu, 01 Dec 2022 01:04:00 -0500</lastBuildDate><atom:link href="https://leezchuan.github.io/categories/%E5%8A%A8%E7%94%BB/index.xml" rel="self" type="application/rss+xml"/><item><title>从贝塞尔曲线的计算感受数学建模的魅力</title><link>https://leezchuan.github.io/blog/tools/tools-animation-math/</link><pubDate>Thu, 01 Dec 2022 01:04:00 -0500</pubDate><guid>https://leezchuan.github.io/blog/tools/tools-animation-math/</guid><description>&lt;p>最近在做前端可视化相关的东西，在完成动画效果时，遇到一个不是很好处理的问题，需要让一个元素在画布上以曲线的轨迹进行运动。因为动画这块之前基本也没有怎么接触过，做的也都是简单的线性动画效果，所以碰到这个需求点的时候觉得是有点难度的。&lt;/p>
+&lt;p>其实，要真的实现按照一定曲线轨迹运动的效果倒也不难，毕竟圆、椭圆方程在平时做布局计算的时候用的也挺多的。但是，用圆或者椭圆计算曲线相当于是找了个特殊场景，不具备通用性；另一方面，说到曲线的绘制，贝塞尔曲线是绕不开的，这也是非常值得考虑的方案。&lt;/p>
+&lt;!-- truncate -->
+&lt;blockquote>
+&lt;p>动画帧计算&lt;/p>
+&lt;/blockquote>
+&lt;p>一段动画实际上是由多个静态帧组成的，当帧率达到人眼不可分辨的程度时（比如 60 FPS），就感觉像是一个无缝连续的视频在流畅的播放。而某一静态帧的状态用数学公式来表达如下：&lt;/p>
+&lt;pre tabindex="0">&lt;code>y = F(t) (0 &amp;lt;= t &amp;lt;= 1)
+&lt;/code>&lt;/pre>&lt;p>那么对于一个物体从 &lt;strong>x0&lt;/strong> 运动到 &lt;strong>x1&lt;/strong>，如何计算 &lt;strong>t&lt;/strong> 时刻的位置？按照我的思路来看，可以转化为以下数学公式：&lt;/p></description></item></channel></rss>

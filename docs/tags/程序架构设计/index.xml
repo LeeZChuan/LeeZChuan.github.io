@@ -1,26 +1,10 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>程序架构设计 on 技术之心</title>
-    <link>http://localhost:1313/tags/%E7%A8%8B%E5%BA%8F%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/</link>
-    <description>Recent content in 程序架构设计 on 技术之心</description>
-    <generator>Hugo</generator>
-    <language>zh-cn</language>
-    <lastBuildDate>Sun, 12 Jun 2022 22:22:00 -0400</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%E7%A8%8B%E5%BA%8F%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>桥接模式：跨平台的事件机制设计</title>
-      <link>http://localhost:1313/blog/computer-technology/program-architecture-design/bridge-mode-design-of-cross-platform-event-mechanism/</link>
-      <pubDate>Sun, 12 Jun 2022 22:22:00 -0400</pubDate>
-      <guid>http://localhost:1313/blog/computer-technology/program-architecture-design/bridge-mode-design-of-cross-platform-event-mechanism/</guid>
-      <description>&lt;p&gt;对于 Web 的图表组件库来说，一些功能比较强大的开源库，渲染层可以支持 DOM、SVG、Canvas、WebGL 等多个平台的环境，而图表库的很多功能的实现都和渲染层紧密相关。&lt;/p&gt;&#xA;&lt;p&gt;最近，在参考学习一些开源的图表组件库时，发现在跨平台设计中，事件机制的实现很有意思，所以在这里以最简化的代码来解释和记录一下这个方案。如果要用经典的软件设计模式来解释，大概就是&lt;strong&gt;桥接模式&lt;/strong&gt;了。&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;桥接模式（Bridge Pattern）&lt;/strong&gt; 将一个功能的实现拆分为抽象（Abstraction）和实现（Implementor），让其相互独立的扩展和定义，借助该模式可以设计一种平台无关的软件架构。&lt;/p&gt;&#xA;&lt;h4 id=&#34;事件机制&#34;&gt;事件机制&lt;/h4&gt;&#xA;&lt;p&gt;事件机制是软件设计中最基础、最为常见的一种设计，对于 Web 图表组件库来说要提供一些处理用户交互（例如点击、拖动、右键点击等）的机制。一个典型的事件模型类如下：&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Web 前端架构设计</title>
-      <link>http://localhost:1313/blog/computer-technology/web/web-front-end-architecture/</link>
-      <pubDate>Wed, 28 Mar 2018 14:01:00 -0400</pubDate>
-      <guid>http://localhost:1313/blog/computer-technology/web/web-front-end-architecture/</guid>
-      <description>&lt;p&gt;让 Web 前端开发可持续化、可扩展，关注四个核心&lt;strong&gt;代码&lt;/strong&gt;、&lt;strong&gt;流程&lt;/strong&gt;、&lt;strong&gt;测试&lt;/strong&gt;、&lt;strong&gt;文档&lt;/strong&gt;。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;代码&#34;&gt;代码&lt;/h3&gt;&#xA;&lt;h4 id=&#34;html&#34;&gt;HTML&lt;/h4&gt;&#xA;&lt;h5 id=&#34;模块化标记&#34;&gt;模块化标记&lt;/h5&gt;&#xA;&lt;p&gt;构建模块化标记原则：&lt;strong&gt;标签表达结构&lt;/strong&gt;，&lt;strong&gt;类名控制外观&lt;/strong&gt;。这样做的好处就是，对相同类型结构的模块可以复用标签模版，同时又可以通过改变类名来灵活的控制模块的外观。例如：&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>程序架构设计 on 技术之心</title><link>https://leezchuan.github.io/tags/%E7%A8%8B%E5%BA%8F%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/</link><description>Recent content in 程序架构设计 on 技术之心</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Sun, 12 Jun 2022 22:22:00 -0400</lastBuildDate><atom:link href="https://leezchuan.github.io/tags/%E7%A8%8B%E5%BA%8F%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/index.xml" rel="self" type="application/rss+xml"/><item><title>桥接模式：跨平台的事件机制设计</title><link>https://leezchuan.github.io/blog/computer-technology/program-architecture-design/bridge-mode-design-of-cross-platform-event-mechanism/</link><pubDate>Sun, 12 Jun 2022 22:22:00 -0400</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/program-architecture-design/bridge-mode-design-of-cross-platform-event-mechanism/</guid><description>&lt;p>对于 Web 的图表组件库来说，一些功能比较强大的开源库，渲染层可以支持 DOM、SVG、Canvas、WebGL 等多个平台的环境，而图表库的很多功能的实现都和渲染层紧密相关。&lt;/p>
+&lt;p>最近，在参考学习一些开源的图表组件库时，发现在跨平台设计中，事件机制的实现很有意思，所以在这里以最简化的代码来解释和记录一下这个方案。如果要用经典的软件设计模式来解释，大概就是&lt;strong>桥接模式&lt;/strong>了。&lt;/p>
+&lt;p>&lt;strong>桥接模式（Bridge Pattern）&lt;/strong> 将一个功能的实现拆分为抽象（Abstraction）和实现（Implementor），让其相互独立的扩展和定义，借助该模式可以设计一种平台无关的软件架构。&lt;/p>
+&lt;h4 id="事件机制">事件机制&lt;/h4>
+&lt;p>事件机制是软件设计中最基础、最为常见的一种设计，对于 Web 图表组件库来说要提供一些处理用户交互（例如点击、拖动、右键点击等）的机制。一个典型的事件模型类如下：&lt;/p></description></item><item><title>Web 前端架构设计</title><link>https://leezchuan.github.io/blog/computer-technology/web/web-front-end-architecture/</link><pubDate>Wed, 28 Mar 2018 14:01:00 -0400</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/web-front-end-architecture/</guid><description>&lt;p>让 Web 前端开发可持续化、可扩展，关注四个核心&lt;strong>代码&lt;/strong>、&lt;strong>流程&lt;/strong>、&lt;strong>测试&lt;/strong>、&lt;strong>文档&lt;/strong>。&lt;/p>
+&lt;!-- truncate -->
+&lt;h3 id="代码">代码&lt;/h3>
+&lt;h4 id="html">HTML&lt;/h4>
+&lt;h5 id="模块化标记">模块化标记&lt;/h5>
+&lt;p>构建模块化标记原则：&lt;strong>标签表达结构&lt;/strong>，&lt;strong>类名控制外观&lt;/strong>。这样做的好处就是，对相同类型结构的模块可以复用标签模版，同时又可以通过改变类名来灵活的控制模块的外观。例如：&lt;/p></description></item></channel></rss>
