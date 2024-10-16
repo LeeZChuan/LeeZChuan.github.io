@@ -1,26 +1,54 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>协议 on 技术之心</title><link>https://leezchuan.github.io/tags/%E5%8D%8F%E8%AE%AE/</link><description>Recent content in 协议 on 技术之心</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Fri, 24 Jun 2016 14:59:00 -0400</lastBuildDate><atom:link href="https://leezchuan.github.io/tags/%E5%8D%8F%E8%AE%AE/index.xml" rel="self" type="application/rss+xml"/><item><title>HTTP 协议</title><link>https://leezchuan.github.io/blog/computer-technology/protocol/protocol-http/</link><pubDate>Fri, 24 Jun 2016 14:59:00 -0400</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/protocol/protocol-http/</guid><description>&lt;p>随着 Internet 的发展，使用 Web 浏览器获取网络数据信息已经成为一种习惯标准，而 HTTP 协议也因此成为了网络体系中最重要的应用层协议。&lt;/p>
-&lt;!-- truncate -->
-&lt;h3 id="http">HTTP&lt;/h3>
-&lt;p>HTTP（HyperText Transfer Protocol，超文本传输协议）是一种通用的、无状态（Stateless）的、与传输数据无关的，应用于分布式、协同式、超媒体信息系统的应用层协议。除了应用于 WWW（World Wide Web，万维网）服务器与 Web 浏览器之间的超文本传输外，它也可以应用于像名称服务器和分布对象管理系统这样的系统。&lt;/p></description></item><item><title>IP 协议</title><link>https://leezchuan.github.io/blog/computer-technology/protocol/protocol-ip/</link><pubDate>Thu, 23 Jun 2016 18:02:00 -0400</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/protocol/protocol-ip/</guid><description>&lt;p>作为 TCP/IP 协议栈中最核心的协议，IP 协议为网络数据传输和网络互联提供最基本的服务。IP 协议有 IPv4 和 IPv6 两个版本，我们只讨论 TPv4 版本的 IP 协议。&lt;/p></description></item><item><title>TCP 与 UDP 协议</title><link>https://leezchuan.github.io/blog/computer-technology/protocol/protocol-tcp-udp/</link><pubDate>Mon, 20 Jun 2016 17:21:00 -0400</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/protocol/protocol-tcp-udp/</guid><description>&lt;p>传输层是网络分层模型中举足轻重的层，它是底层通信子网与高层资源子网的接口与桥梁，提供了面向连接的传输控制协议（Transmission Control Protocol，TCP）和无连接的用户数据报协议（User Datagram Protocol，UDP），负责提供端到端的数据传输服务。&lt;/p>
-&lt;!-- truncate -->
-&lt;h3 id="传输层协议">传输层协议&lt;/h3>
-&lt;p>传输层在两个应用实体之间实现可靠的、透明的、有效的端到端数据传输服务，其主要的功能为以下几个方面：&lt;/p></description></item><item><title>局域网（LAN）与广域网（WAN）</title><link>https://leezchuan.github.io/blog/computer-technology/protocol/protocol-lan-wan/</link><pubDate>Sat, 18 Jun 2016 18:22:00 -0400</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/protocol/protocol-lan-wan/</guid><description>&lt;p>TCP/IP 的网络接口层包括物理层和数据链路层，既是局域网（LAN）技术起作用的分层，又是广域网（WAN）技术和连接管理协议发挥作用的层次。&lt;/p>
-&lt;!-- truncate -->
-&lt;h3 id="局域网lan">局域网（LAN）&lt;/h3>
-&lt;p>局域网（Local Area Network，LAN）是指一个局部的地理范围内（如一个学校、公司、单位），将各种计算机、外部设备和数据库等互相连接起来组成的计算机通信网。局域网通常是封闭的，但它可以通过数据通信网或专用数据电路，与远方的局域网、数据库或处理中心相连接，构成一个大范围的信息处理系统。局域网可以实现硬件资源（如服务器、打印机、扫描仪等）共享和软件资源（应用软件、文件管理等）共享，还可以实现办公自动化（如工作组内的日程安排、电子邮件和传真通信服务）等。&lt;/p>
-&lt;h4 id="局域网协议标准">局域网协议标准&lt;/h4>
-&lt;p>IEEE 802 是为了规范随着局域网技术进步而产生的种类繁多的局域网产品而制定的标准，有时也称为局域网参考模型。它包括 CSDM/CD、令牌总线和令牌环网等底层（物理层和数据链路层）网络协议。&lt;/p></description></item><item><title>网络通信关键概念</title><link>https://leezchuan.github.io/blog/computer-technology/protocol/protocol-base/</link><pubDate>Sat, 18 Jun 2016 16:17:00 -0400</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/protocol/protocol-base/</guid><description>&lt;p>计算机网络是通过通信设备与线路将地理上分散并且具有独立功能的计算机系统连接在一起，并由功能完善的软件来控制，进而实现资源共享的系统。从物理组成上来看，计算机网络包括硬件、软件和协议三大部分。计算机网络中结点间相互通信是由控制信息传送的网络协议及其他相应的网络软件共同实现的。在计算机网络通信中，有部分关键性概念需要理解透彻，在此做一总结。&lt;/p>
-&lt;!-- truncate -->
-&lt;h3 id="网络通信协议">网络通信协议&lt;/h3>
-&lt;p>**网络通信协议简称网络协议（Poctocol），是指为了能在计算机网络中进行数据交换，实现资源共享而建立的通信规则、标准或约定的集合。**在计算机网络中，只有采用相同网络协议的计算机才能进行信息的交流与沟通。网络协议有以下三个基本要素：&lt;/p>
-&lt;ul>
-&lt;li>
-&lt;p>语义（Semantics）&lt;/p>
-&lt;p>规定双方完成通信需要的控制信息及应执行的动作。&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>语法（Syntax）&lt;/p>
-&lt;p>规定通信双方交换的数据或控制信息的格式和结构。&lt;/p></description></item><item><title>OSI 与 TCP/IP 参考模型</title><link>https://leezchuan.github.io/blog/computer-technology/protocol/protocol-osi/</link><pubDate>Fri, 17 Jun 2016 17:39:00 -0400</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/protocol/protocol-osi/</guid><description>&lt;p>目前流行的两大网络体系结构是 OSI/RM 和 TCP/IP 参考模型，他们均是分层结构。分层是为了简化问题，降低网络设计复杂性，而且各层次结构相互独立，实现的功能也相对独立。层与层之间只在层间接口处关联，层间耦合最小。&lt;/p>
-&lt;!-- truncate -->
-&lt;h3 id="osiopen-system-interconnect">OSI（Open System Interconnect）&lt;/h3>
-&lt;p>OSI/RM（Open System Interconnection Reference Module，简称 OSI）即开放系统互联参考模型。为了解决不同网络体系结构的互联、互操作问题，ISO（国际标准化组织）制定了 OSI 模型。OSI 模型把网络通信的工作分为七层，自上而下依次为：&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>协议 on 技术之心</title>
+    <link>http://localhost:1313/tags/%E5%8D%8F%E8%AE%AE/</link>
+    <description>Recent content in 协议 on 技术之心</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 24 Jun 2016 14:59:00 -0400</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/%E5%8D%8F%E8%AE%AE/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HTTP 协议</title>
+      <link>http://localhost:1313/blog/computer-technology/protocol/protocol-http/</link>
+      <pubDate>Fri, 24 Jun 2016 14:59:00 -0400</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/protocol/protocol-http/</guid>
+      <description>&lt;p&gt;随着 Internet 的发展，使用 Web 浏览器获取网络数据信息已经成为一种习惯标准，而 HTTP 协议也因此成为了网络体系中最重要的应用层协议。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;http&#34;&gt;HTTP&lt;/h3&gt;&#xA;&lt;p&gt;HTTP（HyperText Transfer Protocol，超文本传输协议）是一种通用的、无状态（Stateless）的、与传输数据无关的，应用于分布式、协同式、超媒体信息系统的应用层协议。除了应用于 WWW（World Wide Web，万维网）服务器与 Web 浏览器之间的超文本传输外，它也可以应用于像名称服务器和分布对象管理系统这样的系统。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>IP 协议</title>
+      <link>http://localhost:1313/blog/computer-technology/protocol/protocol-ip/</link>
+      <pubDate>Thu, 23 Jun 2016 18:02:00 -0400</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/protocol/protocol-ip/</guid>
+      <description>&lt;p&gt;作为 TCP/IP 协议栈中最核心的协议，IP 协议为网络数据传输和网络互联提供最基本的服务。IP 协议有 IPv4 和 IPv6 两个版本，我们只讨论 TPv4 版本的 IP 协议。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>TCP 与 UDP 协议</title>
+      <link>http://localhost:1313/blog/computer-technology/protocol/protocol-tcp-udp/</link>
+      <pubDate>Mon, 20 Jun 2016 17:21:00 -0400</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/protocol/protocol-tcp-udp/</guid>
+      <description>&lt;p&gt;传输层是网络分层模型中举足轻重的层，它是底层通信子网与高层资源子网的接口与桥梁，提供了面向连接的传输控制协议（Transmission Control Protocol，TCP）和无连接的用户数据报协议（User Datagram Protocol，UDP），负责提供端到端的数据传输服务。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;传输层协议&#34;&gt;传输层协议&lt;/h3&gt;&#xA;&lt;p&gt;传输层在两个应用实体之间实现可靠的、透明的、有效的端到端数据传输服务，其主要的功能为以下几个方面：&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>局域网（LAN）与广域网（WAN）</title>
+      <link>http://localhost:1313/blog/computer-technology/protocol/protocol-lan-wan/</link>
+      <pubDate>Sat, 18 Jun 2016 18:22:00 -0400</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/protocol/protocol-lan-wan/</guid>
+      <description>&lt;p&gt;TCP/IP 的网络接口层包括物理层和数据链路层，既是局域网（LAN）技术起作用的分层，又是广域网（WAN）技术和连接管理协议发挥作用的层次。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;局域网lan&#34;&gt;局域网（LAN）&lt;/h3&gt;&#xA;&lt;p&gt;局域网（Local Area Network，LAN）是指一个局部的地理范围内（如一个学校、公司、单位），将各种计算机、外部设备和数据库等互相连接起来组成的计算机通信网。局域网通常是封闭的，但它可以通过数据通信网或专用数据电路，与远方的局域网、数据库或处理中心相连接，构成一个大范围的信息处理系统。局域网可以实现硬件资源（如服务器、打印机、扫描仪等）共享和软件资源（应用软件、文件管理等）共享，还可以实现办公自动化（如工作组内的日程安排、电子邮件和传真通信服务）等。&lt;/p&gt;&#xA;&lt;h4 id=&#34;局域网协议标准&#34;&gt;局域网协议标准&lt;/h4&gt;&#xA;&lt;p&gt;IEEE 802 是为了规范随着局域网技术进步而产生的种类繁多的局域网产品而制定的标准，有时也称为局域网参考模型。它包括 CSDM/CD、令牌总线和令牌环网等底层（物理层和数据链路层）网络协议。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>网络通信关键概念</title>
+      <link>http://localhost:1313/blog/computer-technology/protocol/protocol-base/</link>
+      <pubDate>Sat, 18 Jun 2016 16:17:00 -0400</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/protocol/protocol-base/</guid>
+      <description>&lt;p&gt;计算机网络是通过通信设备与线路将地理上分散并且具有独立功能的计算机系统连接在一起，并由功能完善的软件来控制，进而实现资源共享的系统。从物理组成上来看，计算机网络包括硬件、软件和协议三大部分。计算机网络中结点间相互通信是由控制信息传送的网络协议及其他相应的网络软件共同实现的。在计算机网络通信中，有部分关键性概念需要理解透彻，在此做一总结。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;网络通信协议&#34;&gt;网络通信协议&lt;/h3&gt;&#xA;&lt;p&gt;**网络通信协议简称网络协议（Poctocol），是指为了能在计算机网络中进行数据交换，实现资源共享而建立的通信规则、标准或约定的集合。**在计算机网络中，只有采用相同网络协议的计算机才能进行信息的交流与沟通。网络协议有以下三个基本要素：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;语义（Semantics）&lt;/p&gt;&#xA;&lt;p&gt;规定双方完成通信需要的控制信息及应执行的动作。&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;语法（Syntax）&lt;/p&gt;&#xA;&lt;p&gt;规定通信双方交换的数据或控制信息的格式和结构。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>OSI 与 TCP/IP 参考模型</title>
+      <link>http://localhost:1313/blog/computer-technology/protocol/protocol-osi/</link>
+      <pubDate>Fri, 17 Jun 2016 17:39:00 -0400</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/protocol/protocol-osi/</guid>
+      <description>&lt;p&gt;目前流行的两大网络体系结构是 OSI/RM 和 TCP/IP 参考模型，他们均是分层结构。分层是为了简化问题，降低网络设计复杂性，而且各层次结构相互独立，实现的功能也相对独立。层与层之间只在层间接口处关联，层间耦合最小。&lt;/p&gt;&#xA;&lt;!-- truncate --&gt;&#xA;&lt;h3 id=&#34;osiopen-system-interconnect&#34;&gt;OSI（Open System Interconnect）&lt;/h3&gt;&#xA;&lt;p&gt;OSI/RM（Open System Interconnection Reference Module，简称 OSI）即开放系统互联参考模型。为了解决不同网络体系结构的互联、互操作问题，ISO（国际标准化组织）制定了 OSI 模型。OSI 模型把网络通信的工作分为七层，自上而下依次为：&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

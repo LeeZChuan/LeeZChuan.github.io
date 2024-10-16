@@ -14,7 +14,7 @@ weight = 2
 
 [[main]]
 name = "个人项目"
-url = "/project"
+url = "/projects"
 weight = 3
 
 

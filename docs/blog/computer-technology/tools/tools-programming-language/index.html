@@ -1,43 +1,1701 @@
-<!doctype html><html itemscope lang=zh-cn itemtype=http://schema.org/WebPage><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=5"><meta name=theme-name content="hugoplate"><link rel="shortcut icon" href=/images/favicon_hu9880217891310920762.png type=image/x-icon><link rel=icon href=/images/favicon_hu9880217891310920762.png type=image/x-icon><link rel=icon type=image/png sizes=48x48 href=/images/favicon_hu11285212527156944795.png><link rel=icon type=image/png sizes=96x96 href=/images/favicon_hu9880217891310920762.png><link rel=apple-touch-icon sizes=144x144 href=/images/favicon_hu290619398646655712.png><link rel=manifest href=/manifest.webmanifest><meta name=msapplication-TileColor content="#ddd"><meta name=theme-color content="#ffffff"><base href=https://leezchuan.github.io/blog/computer-technology/tools/tools-programming-language/><title>理解编程语言的设计与实现</title>
-<meta name=keywords content="计算机技术,工具,编程语言"><meta name=description content="编程语言为开发者提供了诸多便利，那么它是如何被发明的，不同的语言设计理念有什么不同呢？"><meta name=author content="zeon.studio"><meta property="og:image" content="https://leezchuan.github.io/images/og-image.png"><meta name=twitter:image content="https://leezchuan.github.io/images/og-image.png"><meta name=twitter:card content="summary_large_image"><meta property="og:image:width" content="900"><meta property="og:image:height" content="600"><meta property="og:image:type" content="image/.png"><meta property="og:title" content="理解编程语言的设计与实现"><meta property="og:description" content="编程语言为开发者提供了诸多便利，那么它是如何被发明的，不同的语言设计理念有什么不同呢？"><meta property="og:type" content="website"><meta property="og:url" content="https://leezchuan.github.io/blog/computer-technology/tools/tools-programming-language/"><meta name=twitter:title content="理解编程语言的设计与实现"><meta name=twitter:description content="编程语言为开发者提供了诸多便利，那么它是如何被发明的，不同的语言设计理念有什么不同呢？"><meta name=twitter:site content="@zeon_studio"><meta name=twitter:creator content="@zeon.studio"><script>let indexURL="https://leezchuan.github.io/searchindex.json",includeSectionsInSearch=["blog"],search_no_results="暂无数据",search_initial_message="标注某事物去搜索..."</script><meta http-equiv=x-dns-prefetch-control content="on"><link rel=preconnect href=https://use.fontawesome.com crossorigin><link rel=preconnect href=//cdnjs.cloudflare.com><link rel=preconnect href=//www.googletagmanager.com><link rel=preconnect href=//www.google-analytics.com><link rel=dns-prefetch href=https://use.fontawesome.com><link rel=dns-prefetch href=//ajax.googleapis.com><link rel=dns-prefetch href=//cdnjs.cloudflare.com><link rel=dns-prefetch href=//www.googletagmanager.com><link rel=dns-prefetch href=//www.google-analytics.com><link rel=dns-prefetch href=//fonts.googleapis.com><link rel=dns-prefetch href=//connect.facebook.net><link rel=dns-prefetch href=//platform.linkedin.com><link rel=dns-prefetch href=//platform.twitter.com><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><script>(function(){const e=document.createElement("link");e.href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&family=Signika:wght@500;700&display=swap",e.type="text/css",e.rel="stylesheet",document.head.appendChild(e)})()</script><link href="/css/style.min.82409c5e6b8ce346d79caec9ea6d799891b1cb69e0d76f0d40059ff9f69c3569.css" integrity="sha256-gkCcXmuM40bXnK7J6m15mJGxy2ng128NQAWf+facNWk=" rel=stylesheet><link defer async rel=stylesheet href="/css/style-lazy.min.5d85e889fd5f5b28f9387aeade847fcb0a66d76a99a985ab4cdae3d37cf21557.css" integrity="sha256-XYXoif1fWyj5OHrq3oR/ywpm12qZqYWrTNrj03zyFVc=" media=print onload='this.media="all",this.onload=null'></head><body><div id=announcement class="announcement announcement-hide">You must replace the <strong>baseURL</strong> in <strong>hugo.toml</strong> file when deploying, you can manage this announcement from the <strong>params.toml</strong> file.
-<button id=announcement-button class=announcement-button>
-&#215;</button></div><style>.announcement{position:relative;z-index:999;padding:1rem;padding-right:2.8rem;background-color:#fff;box-shadow:1px 0 10px 7px rgba(154,154,154,.11);font-size:1.1rem}.announcement-button{cursor:pointer;padding:0 .5rem;border:0;font-size:1.3rem;position:absolute;top:50%;right:1rem;transform:translateY(-50%);border:1px solid;border-radius:50%;height:1.1em;width:1.1em;display:flex;justify-content:center;align-items:center}.announcement-hide{display:none}.dark .announcement{background-color:#222}</style><header class="header sticky top-0 z-30"><nav class="navbar container"><div class=order-0><a class="navbar-brand block" href=/><img fetchpriority=high decoding=async class="img img-light" width=160 height=32 src=/images/logo_hu4114262549785978686.webp alt=Hugoplate onerror='this.onerror=null,this.src="/images/logo_hu7137767845088484273.png"'>
-<img fetchpriority=high decoding=async class="img img-dark" width=160 height=32 src=/images/logo-darkmode_hu8742296558546396051.webp alt=Hugoplate onerror='this.onerror=null,this.src="/images/logo-darkmode_hu4471933895487503573.png"'></a></div><input id=nav-toggle type=checkbox class=hidden>
-<label for=nav-toggle class="order-3 cursor-pointer flex items-center lg:hidden text-dark dark:text-white lg:order-1"><svg id="show-button" class="h-6 fill-current block" viewBox="0 0 20 20"><title>Menu Open</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0V0z"/></svg><svg id="hide-button" class="h-6 fill-current hidden" viewBox="0 0 20 20"><title>Menu Close</title><polygon points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2" transform="rotate(45 10 10)"/></svg></label><ul id=nav-menu class="navbar-nav order-3 hidden lg:flex w-full pb-6 lg:order-1 lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8"><li class=nav-item><a class=nav-link href=/>主页</a></li><li class=nav-item><a class=nav-link href=/about>关于我</a></li><li class=nav-item><a class=nav-link href=/project>个人项目</a></li><li class=nav-item><a class=nav-link href=/blog>文章记录</a></li><li class=nav-item><a class=nav-link href=/life>生活记录</a></li><li class="nav-item nav-dropdown group relative"><span class="nav-link
-inline-flex items-center">其他<svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg></span><ul class="nav-dropdown-list lg:group-hover:visible lg:group-hover:opacity-100"><li class=nav-dropdown-item><a class=nav-dropdown-link href=/elements>Md编写说明</a></li><li class=nav-dropdown-item><a class=nav-dropdown-link href=/categories>文字分类汇总</a></li></ul></li></ul><div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0"><button aria-label=search class="border-border text-dark hover:text-primary dark:border-darkmode-border mr-5 inline-block border-r pr-5 text-xl dark:text-white dark:hover:text-darkmode-primary" data-target=search-modal>
-<i class="fa-solid fa-search"></i></button><div class="theme-switcher mr-5 hidden"><input id=theme-switcher data-theme-switcher type=checkbox>
-<label for=theme-switcher><span class=sr-only>theme switcher</span>
-<span><svg class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-100 dark:opacity-0" viewBox="0 0 56 56" fill="#fff" height="16" width="16"><path d="M30 4.6c0-1-.9-2-2-2a2 2 0 00-2 2v5c0 1 .9 2 2 2s2-1 2-2zm9.6 9a2 2 0 000 2.8c.8.8 2 .8 2.9.0L46 13a2 2 0 000-2.9 2 2 0 00-3 0zm-26 2.8c.7.8 2 .8 2.8.0.8-.7.8-2 0-2.9L13 10c-.7-.7-2-.8-2.9.0-.7.8-.7 2.1.0 3zM28 16A12 12 0 0016 28a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0028 16zm23.3 14c1.1.0 2-.9 2-2s-.9-2-2-2h-4.9a2 2 0 00-2 2c0 1.1 1 2 2 2zM4.7 26a2 2 0 00-2 2c0 1.1.9 2 2 2h4.9c1 0 2-.9 2-2s-1-2-2-2zm37.8 13.6a2 2 0 00-3 0 2 2 0 000 2.9l3.6 3.5a2 2 0 002.9.0c.8-.8.8-2.1.0-3zM10 43.1a2 2 0 000 2.9c.8.7 2.1.8 3 0l3.4-3.5c.8-.8.8-2.1.0-2.9s-2-.8-2.9.0zm20 3.4c0-1.1-.9-2-2-2a2 2 0 00-2 2v4.9c0 1 .9 2 2 2s2-1 2-2z"/></svg><svg class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-0 dark:opacity-100" viewBox="0 0 24 24" fill="none" height="16" width="16"><path fill="#000" fill-rule="evenodd" clip-rule="evenodd" d="M8.2 2.2c1-.4 2 .6 1.6 1.5-1 3-.4 6.4 1.8 8.7a8.4 8.4.0 008.7 1.8c1-.3 2 .5 1.5 1.5v.1A10.3 10.3.0 0112.4 22 10.3 10.3.0 013.2 6.7c1-2 2.9-3.5 4.9-4.4z"/></svg></span></label></div><script>var darkMode=!1;window.matchMedia("(prefers-color-scheme: dark)").matches&&(darkMode=!0),localStorage.getItem("theme")==="dark"?darkMode=!0:localStorage.getItem("theme")==="light"&&(darkMode=!1),darkMode?document.documentElement.classList.add("dark"):document.documentElement.classList.remove("dark"),document.addEventListener("DOMContentLoaded",()=>{var e=document.querySelectorAll("[data-theme-switcher]"),t=document.querySelector(".theme-switcher");[].forEach.call(e,function(e){e.checked=darkMode,e.addEventListener("click",()=>{document.documentElement.classList.toggle("dark"),localStorage.setItem("theme",document.documentElement.classList.contains("dark")?"dark":"light")})}),t.classList.remove("hidden")})</script></div></nav></header><div class=search-modal aria-hidden=true style=--color-primary:#121212><div data-target=close-search-modal class=search-modal-overlay></div><div class=search-wrapper data-image=true data-description=true data-tags=true data-categories=true><div class=search-wrapper-header><label for=search-modal-input style=margin-top:-1px><span class=sr-only>search icon</span>
-<svg viewBox="0 0 512 512" height="18" width="18" class="search-icon" data-type="search"><path fill="currentcolor" d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8.0 45.3s-32.8 12.5-45.3.0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9.0 208S93.1.0 208 0 416 93.1 416 208zM208 352a144 144 0 100-288 144 144 0 100 288z"/></svg>
-<svg viewBox="0 0 512 512" height="18" width="18" class="search-reset" data-type="reset"><path fill="currentcolor" d="M256 512A256 256 0 10256 0a256 256 0 100 512zM175 175c9.4-9.4 24.6-9.4 33.9.0l47 47 47-47c9.4-9.4 24.6-9.4 33.9.0s9.4 24.6.0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6.0 33.9s-24.6 9.4-33.9.0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9.0s-9.4-24.6.0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6.0-33.9z"/></svg>
-</label><input id=search-modal-input type=text data-search-input autocomplete=off aria-label=Search placeholder=搜寻更多...></div><div class=search-wrapper-body><div class=search-result data-search-result></div><span class=search-result-empty>标注某事物去搜索...</span></div><div class=search-wrapper-footer><span><kbd><svg width="14" height="14" fill="currentcolor" viewBox="0 0 16 16"><path d="M3.204 11h9.592L8 5.519 3.204 11zm-.753-.659 4.796-5.48a1 1 0 011.506.0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 01-.753-1.659z"/></svg>
-</kbd><kbd><svg width="14" height="14" fill="currentcolor" style="margin-top:1px" viewBox="0 0 16 16"><path d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 001.506.0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 00-.753 1.659z"/></svg>
-</kbd>去导航
-</span><span><kbd><svg width="12" height="12" fill="currentcolor" style="display:inline-block" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M14.5 1.5a.5.5.0 01.5.5v4.8a2.5 2.5.0 01-2.5 2.5H2.707l3.347 3.346a.5.5.0 01-.708.708l-4.2-4.2a.5.5.0 010-.708l4-4a.5.5.0 11.708.708L2.707 8.3H12.5A1.5 1.5.0 0014 6.8V2a.5.5.0 01.5-.5z"/></svg>
-</kbd>去选择
-</span><span class=search-result-info></span>
-<span data-target=close-search-modal><kbd>ESC</kbd> 去关闭</span></div></div></div><main><section class="section pt-7"><div class=container><div class="row justify-center"><article class=lg:col-10><h1 class="h2 mb-4">理解编程语言的设计与实现</h1><ul class=mb-4><li class="mr-4 inline-block"><a href=/authors//><i class="fa-regular fa-circle-user mr-2"></i></a></li><li class="mr-4 inline-block"><i class="fa-regular fa-clock mr-2"></i>
-May 2, 2021</li></ul><div class="content mb-10"><details open class="table-of-content blog"><summary>内容列表</summary><nav id=TableOfContents><ol><li><ol><li><a href=#为什么要创造编程语言>为什么要创造编程语言</a></li><li><a href=#编程语言的设计与实现>编程语言的设计与实现</a><ol><li><ol><li></li></ol></li></ol></li><li><a href=#参考>参考</a></li></ol></li></ol></nav></details><p>编程语言本质上是给开发者使用的工具，不同的业务领域使用不同的编程语言去实现具体的业务，是基于语言本身的设计理念与实现方式来做选择，那么作为开发者应该了解一下编程语言是如何被发明的，且其设计理念是什么。</p><p>Ruby 是我大学期间课余接触且实际使用过的一门语言，目前我甚是喜爱，其作者松本行弘设计 Ruby 的初心是：为开发者服务，注重简洁和效率。这篇文章主要也是为了记录在拜读了松本行弘先生新书《编程语言的设计与实现》之后掌握的一些相关的关键知识点和其它收获。由于该书主要是围绕作者在设计 Ruby 和新语言 Streem 过程中的一些思考和经验，有些东西可能不太具备普适性，而我在这里主要还是关注一些通用性的知识点和概念。</p><h3 id=为什么要创造编程语言>为什么要创造编程语言</h3><p>在过去，计算机信息技术行业还不够发达，在没有成为主流的时候，编程语言一般是作为商业化附属品出现的，普通人很难能免费且容易的获取到编程语言作为工具使用。所以，基于需求创造自己的编程语言就显得很合理了。然而，当今由于开源技术的盛行，很多编程语言都以开源的形式存在，作为开发者现在很容易就能获取到不同的编程语言作为自己的工具进行业务开发，那为什么还要创造新的编程语言？或者说，为什么现如今新的语言仍然层出不穷？</p><p>软件编程本质上是“人机交互”，开发者使用编程语言设计业务逻辑，然后交由机器具体来执行，编程语言作为开发者与机器之间交流的媒介存在。随着时代的发展，业务需求和场景日益复杂，开发者与机器之间的交流也日趋复杂，为了让开发者“更轻松”地与机器交流，抽象度更高且更简洁的新编程语言作为新的交流媒介被发明。回忆一下计算机发展史，软件编程正是遵循从“汇编语言”（指令、0 和 1）到“低级语言”（例如 C/C++，语句、函数、数据类型）再到“高级语言”（例如 Java/Go，面向对象、并发、自动 GC）的发展路径。</p><p>对于个人来说，创造编程语言，或者说深入了解如何创造编程语言，可以提升自己的技术能力和设计能力，也能在一定程度上打造自己的个人品牌（提高个人声望）。</p><h3 id=编程语言的设计与实现>编程语言的设计与实现</h3><p>对于现今的大多数编程语言来说，都属于“低级语言”和“高级语言”的范畴，而机器只能直接理解汇编语言。那么，设计编程语言是在设计什么？</p><h6 id=语言和语言处理器>语言和语言处理器</h6><p>编程语言在使用过程中可大致分为两个阶段：编写代码和运行代码。前者注重的是语言本身，而后者具体要解决的就是语言代码如何让机器能理解进而执行。</p><blockquote><p><strong>语言是由语法和词汇构成的。语法是一种规则，规定了在该语言中如何表述才能使程序有效；而词汇是能从使用该语言编写的程序中调用的功能的集合，之后会以库的形式逐渐增加。</strong> 在设计语言的场景中说起词汇，就是指该语言一开始就具备的内置功能。</p></blockquote><p>我们可以用不同的编程语言实现同样的功能，但有的语言实现起来复杂繁琐，但有的语言实现起来简单容易，这就是语言层面的直观体现。可以想象的是，很多新出现的编程语言首要解决的就是该问题，如何设计让语法规则更简单易用，内置功能更加强大。</p><p>另一方面，用语言编写的代码如何在机器上实际运行？</p><blockquote><p><strong>语言处理器是能够使语法和词汇在计算机上实际运行的软件。</strong> 要想使编程语言成为真正的语言，而非仅仅停留在一个想法上，是离不开语言处理器的。无法运行的编程语言在严格意义上不能称为编程语言。</p></blockquote><p>我们通常所说的“编译器”、“解释器”、“虚拟机”、&ldquo;JIT（即时编译）&ldquo;等概念，均属于语言处理器相关的内容。</p><p><strong>所以，编程语言的设计是在设计：语言本身和语言处理器。</strong></p><h6 id=语言处理器的构成>语言处理器的构成</h6><p>先来看看语言处理器相关的内容。</p><blockquote><p><strong>语言处理器大体上可分为解释语法的“编译器”、相当于词汇的“库”，以及实际运行软件所需的“运行时（系统）”。</strong> 这三大构成要素的比重会因语言和处理器性质的不同而发生变化。</p></blockquote><p>如何理解后一句，来看看具体的实例即可。</p><p>早期的 TinyBASIC 语言很简单，编译器做的工作很少，主要的处理集中在运行时完成，对于这样的语言处理器可称之为”解释器“（interpreter）。现在这些复杂的语言的处理器都是先将程序编译为内部代码，再在运行时执行内部代码，这种“编译器＋运行时”的组合形式，看起来像源代码未经转换就被直接执行了，因此有时也被称为“解释型”，例如 Ruby。然而，像 C 语言这种在与机器非常接近的层面上追求效率的语言，几乎不存在运行时，只有解释语法的编译器部分非常突出，这样的语言处理器被称为“编译型”。</p><blockquote><p>在 C 语言这类语言中，作为转换结果的程序（可执行文件）是可以直接运行的软件，所以不需要负责运行的运行时。部分运行时的工作，比如内存管理等，由库和操作系统的系统调用负责。</p></blockquote><p>对于如今市场上主流的 Java 语言，其语言处理器设计较为复杂，首先通过编译器将源代码转换为虚拟机的机器码（JVM 字节码），并由虚拟机（JVM）来执行。而且，为了提高效率，运行时采用了将字节码转换为机器码的即时编译（Just In Time Compiler）等技术。</p><p>######### 编译器（Compiler）</p><p>**编译器的工作是将编程语言的源代码（原始语言）转换为可执行的形式（目标语言）。**其大致按顺序会执行多个或所有以下流程：预处理、词法分析、语法分析（解析）、语义分析（语法导向翻译）、将输入程序转换为中间表示（IR）、代码优化和代码生成。</p><p>编译器设计一般分为三个阶段，前端、中端和后端。编译前端包括生成中间表示（IR）之前的流程，这个 IR 通常是程序相对于源代码的较低级别的表示，在该阶段主要做一些静态分析工作，例如类型检查。编译中端则是对前端生成的 IR 做进一步处理，该阶段主要做与 CPU 架构无关的优化，例如去除无用（消除死代码）或无法访问（可达性分析）的代码。编译后端对中端生成的优化 IR 基于特定的 CPU 架构做进一步的分析、转换和优化处理，最终生成依赖于特定平台的汇编代码。</p><p>编译器这种前/中/后的设计方式使得不同语言的前端与不同 CPU 架构的后端相结合成为可能，同时共享中端的优化。例如，GNU 编译器集（GCC）、Clang（LLVM）等。</p><p>############# 提前编译（AOT）与即时编译（JIT）</p><p>目前根据编译的时机可将其分为静态编译和动态编译。其中静态编译通常称为提前编译（Ahead-of-time compilation），是指在程序执行之前将高级编程语言编译成低级语言的行为，减少需要在运行时执行的工作量，通常性能最优。而动态编译技术目前最具代表性的则为即时编译（Just-in-time compilation），是指在程序执行期间（在运行时）而不是在执行之前进行编译，是对两种传统的机器代码翻译方法（提前编译和解释）的结合，具有编译代码的速度和解释的灵活性，当然也引入了解释器的开销和编译及链接的额外开销。</p><p>############# 词法分析</p><p>词法分析器构成了现代处理中编译器前端的第一阶段。词法分析（Lexical analysis）简单来说就是“将源代码由字符序列转换为有意义的单词（token）序列”的工序。将只是字符串的源代码整理为有些许意义的单词序列，后续阶段的处理就会变得简单。</p><p>以 C 语言为例说明：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c data-lang=c><span style=display:flex><span>x <span style=color:#f92672>=</span> a <span style=color:#f92672>+</span> b <span style=color:#f92672>*</span> <span style=color:#ae81ff>2</span>;
-</span></span></code></pre></div><p>上面的表达式经过词法分析后生成如下内容：</p><pre tabindex=0><code>[(identifier, x), (operator, =), (identifier, a), (operator, +), (identifier, b), (operator, *), (literal, 2), (separator, ;)]
-</code></pre><p>我们可以借助 <a href=https://en.wikipedia.org/wiki/Lex_%28software%29 target=_blank>lex</a> 工具根据编写单词的规则自动生成词法分析函数。</p><p>############# 语法分析</p><p>语法分析（Syntax analysis）是检查在词法分析阶段准备好的单词是否符合语法，并进行符合语法的处理的工序，最终结果是生成一个解析树（parse tree）数据结构。语法分析的方法有好几种，其中最有名、最简单的方法是使用别名为“生成编译器的编译器”的语法分析函数生成工具，比如 <a href=https://en.wikipedia.org/wiki/Yacc target=_blank>yacc</a>（yet another compiler compiler）。</p><p>############# 抽象语法树</p><p>抽象语法树（Abstract syntax tree）是用编程语言编写的源代码的抽象语法结构的树表示，树的每个节点表示源代码中出现的一个构造。语法是“抽象的”，因为它不代表真实语法中出现的每个细节，而只是结构或与内容相关的细节。例如，分组括号在树结构中是隐含的，因此不必将它们表示为单独的节点。</p><p>抽象语法树在语义分析期间被大量使用，其中编译器检查程序和语言元素的正确使用。编译器还在语义分析期间根据 AST 生成符号表。树的完整遍历允许验证程序的正确性。验证正确性后，AST 作为代码生成的基础。AST 通常用于为代码生成生成中间表示 (IR)，有时也称为中间语言。</p><p>抽象语法树多用于程序分析和程序转换系统。</p><p>######### 标准库（Standard Library）</p><p>**语言的标准库通常被其用户视为语言的一部分，包括常用算法、数据结构和输入输出机制的定义。**标准库为程序员利用该语言实现更复杂的功能提供了必要的依赖。</p><p>那么，标准库中应该包含什么？对于标准库的设计哲学，可以参考 C/C++ 和 Java/Python，前者只提供在实现程序功能时必要且合理的数据结构和算法，规模相对较小，而后者旨在提供更多的便利、易于编码，封装了较为复杂和强大的功能，规模相对来说更为庞大。因此，Python 成为了目前主流的用来科学研究的语言，它可以很方便的完成复杂的数学计算和科学分析工作。</p><p>######### 运行时（Runtime）</p><p>每种编程语言都指定了一个执行模型，并且许多语言在运行时系统中至少实现了该模型的一部分。<strong>运行时系统为程序提供了运行的环境</strong>，这种环境可以解决许多问题，包括应用程序内存的管理、程序如何访问变量、在子程序之间传递参数的机制、与操作系统的接口等。换句话说，编译器根据具体平台的运行时系统产生正确的代码，运行时系统将负责设置和管理堆栈和堆，并且可能包括诸如垃圾收集、线程或其他内置于语言中的动态特性。</p><p>############# 执行模型（Execution model）</p><p>编程语言由文法/句法加上执行模型组成。执行模型指定语言元素的行为。通过应用执行模型，可以推导出用该编程语言编写的程序的行为。</p><p>例如，当程序员“阅读”代码时，在他们的脑海中，他们会浏览每一行代码的作用。实际上，他们模拟了他们头脑中的行为。程序员正在做的是将执行模型应用于代码，这会导致代码的行为。</p><h6 id=虚拟机virtual-machine>虚拟机（Virtual Machine）</h6><p>虚拟机是运行时的一种技术实现，是用软件实现的（无实际硬件的）计算机，区别于系统虚拟机，将其称之为“进程虚拟机”。进程虚拟机最初是作为中间语言的抽象平台出现的，中间语言被编译器用作程序的中间表示（IR）。它的目的是提供一个独立于平台的编程环境，抽象出底层硬件或操作系统的细节，并允许程序在任何平台上以相同的方式执行。因此，<strong>虚拟机最大的优点就是拥有可移植性。</strong></p><p>配合各种各样的 CPU 生成机器语言的代码生成处理是编译器中最复杂的部分，适配新出现的 CPU 架构重新开发代码生成处理，对语言处理器的开发者来说是很大的负担，虚拟机在减少这类负担上起到了很大作用。另一方面，与在硬件上直接执行相比，模拟虚拟的 CPU 运行的虚拟机在性能上有很大损失，但可以通过引入即时编译（JIT）技术来弥补。</p><p>虚拟机性能相关的实现技术可以了解一下：</p><ul><li>RISC 与 CISC</li><li>栈与寄存器</li><li>指令格式</li></ul><p>RISC 是 Reduced Instruction Set Computer（精简指令集计算机）的缩写，是通过减少指令的种类、简化电路来提高 CPU 性能的架构。具有代表性的 CPU 有 MIPS 和 SPARC 等。在移动设备上广泛使用的 ARM 处理器就属于 RISC。</p><p>CISC 是与 RISC 相对的一个词汇，是 Complex Instruction Set Computer（复杂指令集计算机）的缩写，简单来说就是“不是 RISC 的 CPU”。CISC 的每个指令执行的处理都非常大，而且指令的种类繁多，因此实现起来也比较复杂。</p><p>对用软件实现的虚拟机来说，我们就不能忽视取指令（Instruction Fetch，IF）处理所需要的成本。也就是说，做同样的处理时所需的指令数越少越好。好的虚拟机指令集是类 CISC 架构的指令集，它的全部指令都是高粒度的。</p><p>虚拟机架构的两大流派是栈式虚拟机和寄存器式虚拟机。栈式虚拟机原则上通过栈对数据进行操作，而寄存器式虚拟机的指令中包含寄存器编号，原则上对寄存器进行操作。</p><p>与寄存器式虚拟机相比，栈式虚拟机更为简单，程序也相对较小。然而，由于所有的指令都通过栈来交换数据，所以对指令之间的先后顺序有很大的依赖，很难实施交换指令顺序这样的优化。而寄存器式虚拟机由于指令中包含寄存器信息，所以程序相对较大。</p><p>用哪种架构取决于具体场景，著名的 Java 虚拟机（JVM）采用的是栈式虚拟机架构，而谷歌为优化移动设备性能，为 Android 提供的 Dalvik 虚拟机则采用的是寄存器式虚拟机架构。</p><p>虚拟机解释的中间语言（指令序列）被称为“字节码”，源于 Smalltalk 的指令是以字节为单位的。当然，不是所有虚拟机都拥有字节单位的指令集，例如 mruby 的指令集就是用 32 位整数表示的，可以称之为“字码”，但因为 JVM 比较出名且其采用的是字节码，所以一般将虚拟机解释的中间语言称之为“字节码”。字码与字节码的优缺点不在这里赘述。</p><h3 id=参考>参考</h3><ul><li>《松本行弘：编程语言的设计与实现》，[日] 松本行弘，郑明智 译</li><li><a href=https://en.wikipedia.org/wiki/Compiler target=_blank>https://en.wikipedia.org/wiki/Compiler</a></li><li><a href=https://en.wikipedia.org/wiki/Ahead-of-time_compilation target=_blank>https://en.wikipedia.org/wiki/Ahead-of-time_compilation</a></li><li><a href=https://en.wikipedia.org/wiki/Just-in-time_compilation target=_blank>https://en.wikipedia.org/wiki/Just-in-time_compilation</a></li><li><a href=https://en.wikipedia.org/wiki/Abstract_syntax_tree target=_blank>https://en.wikipedia.org/wiki/Abstract_syntax_tree</a></li><li><a href=https://en.wikipedia.org/wiki/Library_%28computing%29 target=_blank>https://en.wikipedia.org/wiki/Library_(computing)</a></li><li><a href=https://en.wikipedia.org/wiki/Runtime_system target=_blank>https://en.wikipedia.org/wiki/Runtime_system</a></li><li><a href=https://en.wikipedia.org/wiki/Virtual_machine target=_blank>https://en.wikipedia.org/wiki/Virtual_machine</a></li></ul></div><div class="row items-start justify-between"><div class="lg:col-5 mb-10 flex items-center lg:mb-0"><h5 class=mr-3>标签 :</h5><ul><li class=inline-block><a class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white" href=/tags/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/>计算机技术</a></li><li class=inline-block><a class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white" href=/tags/%e5%b7%a5%e5%85%b7/>工具</a></li><li class=inline-block><a class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white" href=/tags/%e7%bc%96%e7%a8%8b%e8%af%ad%e8%a8%80/>编程语言</a></li></ul></div><div class="lg:col-4 flex items-center"><div class=share-icons><h5 class=share-title>分享 :</h5><a class="share-link share-facebook" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fleezchuan.github.io%2fblog%2fcomputer-technology%2ftools%2ftools-programming-language%2f" target=_blank rel=noopener aria-label="share facebook"><span class=share-icon><svg viewBox="0 0 24 24"><path d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z"/></svg>
-</span></a><a class="share-link share-twitter" href="https://twitter.com/intent/tweet/?text=%e5%88%86%e4%ba%ab&amp;url=https%3a%2f%2fleezchuan.github.io%2fblog%2fcomputer-technology%2ftools%2ftools-programming-language%2f" target=_blank rel=noopener aria-label="share twitter"><span aria-hidden=true class=share-icon><svg viewBox="0 0 24 24"><path d="M8 2H1l8.26 11.015L1.45 22H4.1l6.388-7.349L16 22h7l-8.608-11.478L21.8 2h-2.65l-5.986 6.886zm9 18L5 4h2l12 16z"/></svg>
-</span></a><a class="share-link share-email" href="mailto:?subject=%e5%88%86%e4%ba%ab&amp;body=https%3a%2f%2fleezchuan.github.io%2fblog%2fcomputer-technology%2ftools%2ftools-programming-language%2f" target=_self rel=noopener aria-label="share email"><span aria-hidden=true class=share-icon><svg viewBox="0 0 24 24"><path d="M22 4H2C.9 4 0 4.9.0 6v12c0 1.1.9 2 2 2h20c1.1.0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7.25 14.43l-3.5 2c-.08.05-.17.07-.25.07-.17.0-.34-.1-.43-.25-.14-.24-.06-.55.18-.68l3.5-2c.24-.14.55-.06.68.18.14.24.06.55-.18.68zm4.75.07c-.1.0-.2-.03-.27-.08l-8.5-5.5c-.23-.15-.3-.46-.15-.7.15-.22.46-.3.7-.14L12 13.4l8.23-5.32c.23-.15.54-.08.7.15.14.23.07.54-.16.7l-8.5 5.5c-.08.04-.17.07-.27.07zm8.93 1.75c-.1.16-.26.25-.43.25-.08.0-.17-.02-.25-.07l-3.5-2c-.24-.13-.32-.44-.18-.68s.44-.32.68-.18l3.5 2c.24.13.32.44.18.68z"/></svg>
-</span></a><a class="share-link share-reddit" href="https://reddit.com/submit/?url=https%3a%2f%2fleezchuan.github.io%2fblog%2fcomputer-technology%2ftools%2ftools-programming-language%2f&amp;resubmit=true&amp;title=%e5%88%86%e4%ba%ab" target=_blank rel=noopener aria-label="share reddit"><span aria-hidden=true class=share-icon><svg viewBox="0 0 24 24"><path d="M24 11.5c0-1.65-1.35-3-3-3-.96.0-1.86.48-2.42 1.24-1.64-1-3.75-1.64-6.07-1.72.08-1.1.4-3.05 1.52-3.7.72-.4 1.73-.24 3 .5C17.2 6.3 18.46 7.5 20 7.5c1.65.0 3-1.35 3-3s-1.35-3-3-3c-1.38.0-2.54.94-2.88 2.22-1.43-.72-2.64-.8-3.6-.25-1.64.94-1.95 3.47-2 4.55-2.33.08-4.45.7-6.1 1.72C4.86 8.98 3.96 8.5 3 8.5c-1.65.0-3 1.35-3 3 0 1.32.84 2.44 2.05 2.84-.03.22-.05.44-.05.66.0 3.86 4.5 7 10 7s10-3.14 10-7c0-.22-.02-.44-.05-.66 1.2-.4 2.05-1.54 2.05-2.84zM2.3 13.37C1.5 13.07 1 12.35 1 11.5c0-1.1.9-2 2-2 .64.0 1.22.32 1.6.82-1.1.85-1.92 1.9-2.3 3.05zm3.7.13c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9.8 4.8c-1.08.63-2.42.96-3.8.96-1.4.0-2.74-.34-3.8-.95-.24-.13-.32-.44-.2-.68.15-.24.46-.32.7-.18 1.83 1.06 4.76 1.06 6.6.0.23-.13.53-.05.67.2.14.23.06.54-.18.67zm.2-2.8c-1.1.0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm5.7-2.13c-.38-1.16-1.2-2.2-2.3-3.05.38-.5.97-.82 1.6-.82 1.1.0 2 .9 2 2 0 .84-.53 1.57-1.3 1.87z"/></svg></span></a></div></div></div><div class=mt-20><div id=disqus_thread></div><script>window.disqus_config=function(){},function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById("disqus_thread").innerHTML="Disqus comments not available by default when the website is previewed locally.";return}var t=document,e=t.createElement("script");e.async=!0,e.src="//themefisher-template.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}()</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></div></article></div><div class="section pb-0"><h2 class="h3 mb-12">相关</h2><div class=row><div class="lg:col-4 md:col-6 mb-14"><div class="bg-body dark:bg-darkmode-body"><h4 class=mb-3><a href=/blog/computer-technology/web/tools-web-fee-test-with-jest-puppeteer/>使用 Jest 和 Puppeteer 构建 Web 自动化测试平台</a></h4><ul class=mb-4><li class="mr-4 inline-block"><a href=/authors/leezchuan/><i class="fa-regular fa-circle-user mr-2"></i>LeeZChuan</a></li><li class="mr-4 inline-block"><i class="fa-regular fa-folder mr-1"></i>
-<a href=/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/ class=ms-1>计算机技术
-,
-</a><a href=/categories/web%e5%89%8d%e7%ab%af/ class=ms-1>Web前端
-,
-</a><a href=/categories/%e5%b7%a5%e5%85%b7/ class=ms-1>工具
-,
-</a><a href=/categories/%e6%b5%8b%e8%af%95/ class=ms-1>测试
-,
-</a><a href=/categories/jest/ class=ms-1>Jest
-,
-</a><a href=/categories/puppeteer/ class=ms-1>Puppeteer</a></li></ul><p class=mb-6><p>测试为软件的稳定和完善提供了必要的支持，Web 前端开发领域相比于做单元测试，端到端测试更有意义和价值。谷歌发布的 Puppeteer 工具和脸书发布的 Jest 测试工具为 Web 端到端测试提供了极大的便利，这里记录了如何使用它们构建一个 Web 自动化测试平台。</p></p><a class="btn btn-outline-primary btn-sm" href=/blog/computer-technology/web/tools-web-fee-test-with-jest-puppeteer/>了解更多</a></div></div><div class="lg:col-4 md:col-6 mb-14"><div class="bg-body dark:bg-darkmode-body"><h4 class=mb-3><a href=/blog/computer-technology/web/javascript/debouncing-and-throttling/>Web 前端性能优化：解析函数节流与防抖的实现</a></h4><p class=mb-6><p>前端开发中，有一个使用较为普遍的性能优化技巧，即函数节流（Throttle）和防抖（Debounce），其主要作用是根据时间对函数调用做以限制。最常见的业务场景是监听页面的 <code>scroll</code> 事件，浏览器可以在 1s 内触发该事件数次（甚至达数十次），如果事件处理程序在这 1s 内多次执行，必然会造成一定的性能问题，影响用户体验。</p><p>本质上，函数节流和防抖并不是控制事件源的触发次数，而是在事件短时间内连续多次触发之后控制相应事件处理程序的调用频率。</p></p><a class="btn btn-outline-primary btn-sm" href=/blog/computer-technology/web/javascript/debouncing-and-throttling/>了解更多</a></div></div><div class="lg:col-4 md:col-6 mb-14"><div class="bg-body dark:bg-darkmode-body"><h4 class=mb-3><a href=/blog/tools/tools-animation-math/>从贝塞尔曲线的计算感受数学建模的魅力</a></h4><ul class=mb-4><li class="mr-4 inline-block"><a href=/authors/leezchuan/><i class="fa-regular fa-circle-user mr-2"></i>LeeZChuan</a></li><li class="mr-4 inline-block"><i class="fa-regular fa-folder mr-1"></i>
-<a href=/categories/%e5%8a%a8%e7%94%bb/ class=ms-1>动画
-,
-</a><a href=/categories/%e6%95%b0%e5%ad%a6/ class=ms-1>数学
-,
-</a><a href=/categories/%e5%89%8d%e7%ab%af/ class=ms-1>前端</a></li></ul><p class=mb-6><p>最近在做前端可视化相关的东西，在完成动画效果时，遇到一个不是很好处理的问题，需要让一个元素在画布上以曲线的轨迹进行运动。因为动画这块之前基本也没有怎么接触过，做的也都是简单的线性动画效果，所以碰到这个需求点的时候觉得是有点难度的。</p><p>其实，要真的实现按照一定曲线轨迹运动的效果倒也不难，毕竟圆、椭圆方程在平时做布局计算的时候用的也挺多的。但是，用圆或者椭圆计算曲线相当于是找了个特殊场景，不具备通用性；另一方面，说到曲线的绘制，贝塞尔曲线是绕不开的，这也是非常值得考虑的方案。</p><blockquote><p>动画帧计算</p></blockquote><p>一段动画实际上是由多个静态帧组成的，当帧率达到人眼不可分辨的程度时（比如 60 FPS），就感觉像是一个无缝连续的视频在流畅的播放。而某一静态帧的状态用数学公式来表达如下：</p><pre tabindex=0><code>y = F(t) (0 &lt;= t &lt;= 1)
-</code></pre><p>那么对于一个物体从 <strong>x0</strong> 运动到 <strong>x1</strong>，如何计算 <strong>t</strong> 时刻的位置？按照我的思路来看，可以转化为以下数学公式：</p></p><a class="btn btn-outline-primary btn-sm" href=/blog/tools/tools-animation-math/>了解更多</a></div></div></div></div></div></section></main><footer class="bg-theme-light dark:bg-darkmode-theme-light"><div class=container><div class="row items-center py-10"><div class="lg:col-3 mb-8 text-center lg:mb-0 lg:text-left"><a class="navbar-brand inline-block" href=/><img fetchpriority=high decoding=async class="img img-light" width=160 height=32 src=/images/logo_hu4114262549785978686.webp alt=Hugoplate onerror='this.onerror=null,this.src="/images/logo_hu7137767845088484273.png"'>
-<img fetchpriority=high decoding=async class="img img-dark" width=160 height=32 src=/images/logo-darkmode_hu8742296558546396051.webp alt=Hugoplate onerror='this.onerror=null,this.src="/images/logo-darkmode_hu4471933895487503573.png"'></a></div><div class="lg:col-6 mb-8 text-center lg:mb-0"><ul><li class="m-3 inline-block"><a href=/></a></li></ul></div><div class="lg:col-3 mb-8 text-center lg:mb-0 lg:mt-0 lg:text-right"><ul class=social-icons><li><a target=_blank aria-label=facebook rel="nofollow noopener" href="https://www.facebook.com/profile.php?id=100083154937436"><i class="fab fa-facebook"></i></a></li><li><a target=_blank aria-label=github rel="nofollow noopener" href=https://github.com/LeeZChuan><i class="fab fa-github"></i></a></li><li><a target=_blank aria-label=linkedin rel="nofollow noopener" href=https://www.linkedin.com/in/zchuan-lee-89214a1a3/><i class="fab fa-linkedin"></i></a></li></ul></div></div></div><div class="border-border dark:border-darkmode-border border-t py-7"><div class="text-light dark:text-darkmode-light container text-center"><p></p></div></div></footer><script crossorigin=anonymous integrity="sha256-LO9JECYLqyMcpGlrtxZcpUn0I8AvhO6oIIibJZv4zbk=" src=/js/script.min.2cef4910260bab231ca4696bb7165ca549f423c02f84eea820889b259bf8cdb9.js></script><script defer async crossorigin=anonymous integrity="sha256-w+aS42D2+B+Jix+joZ7pAua1vbu/pRK/IhoP55b8n3w=" src=/js/script-lazy.min.c3e692e360f6f81f898b1fa3a19ee902e6b5bdbbbfa512bf221a0fe796fc9f7c.js></script><script>"serviceWorker"in navigator&&navigator.serviceWorker.register("/service-worker.js")</script><script type=application/javascript>const announcementBox=document.getElementById("announcement"),announcementButton=document.getElementById("announcement-button");Cookies.get("announcement-close")||(announcementBox.classList.remove("announcement-hide"),announcementButton.onclick=function(){Cookies.set("announcement-close",!0,{expires:7}),announcementBox.classList.add("announcement-hide")})</script></body></html>
+<!doctype html>
+<html
+  itemscope
+  class=""
+  lang="zh-cn"
+  itemtype="http://schema.org/WebPage">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+    <meta charset="utf-8" />
+
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, maximum-scale=5" />
+
+
+<meta name="theme-name" content="hugoplate" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="/images/favicon_hu9880217891310920762.png" type="image/x-icon">
+<link rel="icon" href="/images/favicon_hu9880217891310920762.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu11285212527156944795.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu9880217891310920762.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu290619398646655712.png">
+
+
+
+
+
+
+
+
+<link rel="manifest" href="/manifest.webmanifest" />
+<meta
+  name="msapplication-TileColor"
+  content="#ddd" />
+<meta
+  name="theme-color"
+  content="#ffffff" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<title>理解编程语言的设计与实现</title>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <meta name="keywords" content="计算机技术, 工具, 编程语言" />
+
+
+
+
+<meta
+  name="description"
+  content="编程语言为开发者提供了诸多便利，那么它是如何被发明的，不同的语言设计理念有什么不同呢？" />
+
+
+
+  <meta name="author" content="zeon.studio" />
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+      
+        <meta property="og:image" content="http://localhost:1313/images/og-image.png" />
+        <meta name="twitter:image" content="http://localhost:1313/images/og-image.png" />
+        <meta
+          name="twitter:card"
+          content="summary_large_image" />
+      
+      
+      <meta property="og:image:width" content="900" />
+      <meta property="og:image:height" content="600" />
+    
+
+
+    
+    <meta
+      property="og:image:type"
+      content="image/.png" />
+  
+
+
+  
+
+
+
+
+
+<meta property="og:title" content="理解编程语言的设计与实现" />
+<meta property="og:description" content="编程语言为开发者提供了诸多便利，那么它是如何被发明的，不同的语言设计理念有什么不同呢？" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://localhost:1313/blog/computer-technology/tools/tools-programming-language/" />
+
+
+<meta name="twitter:title" content="理解编程语言的设计与实现" />
+<meta name="twitter:description" content="编程语言为开发者提供了诸多便利，那么它是如何被发明的，不同的语言设计理念有什么不同呢？" />
+
+
+  <meta name="twitter:site" content="@zeon_studio" />
+
+
+  <meta name="twitter:creator" content="@zeon.studio" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  let indexURL = "http://localhost:1313/searchindex.json";
+  let includeSectionsInSearch = ["blog"];
+  let search_no_results = "暂无数据";
+  let search_initial_message = "标注某事物去搜索...";
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+<meta http-equiv="x-dns-prefetch-control" content="on" />
+<link rel="preconnect" href="https://use.fontawesome.com" crossorigin />
+<link rel="preconnect" href="//cdnjs.cloudflare.com" />
+<link rel="preconnect" href="//www.googletagmanager.com" />
+<link rel="preconnect" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="https://use.fontawesome.com" />
+<link rel="dns-prefetch" href="//ajax.googleapis.com" />
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+<link rel="dns-prefetch" href="//www.googletagmanager.com" />
+<link rel="dns-prefetch" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link rel="dns-prefetch" href="//connect.facebook.net" />
+<link rel="dns-prefetch" href="//platform.linkedin.com" />
+<link rel="dns-prefetch" href="//platform.twitter.com" />
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script>
+  (function () {
+    const googleFont = document.createElement("link");
+    googleFont.href = "https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&family=Signika:wght@500;700&display=swap";
+    googleFont.type = "text/css";
+    googleFont.rel = "stylesheet";
+    document.head.appendChild(googleFont);
+  })();
+</script>
+
+
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+<link
+  href="/css/style.css"
+  integrity=""
+  rel="stylesheet" />
+
+
+<link
+  defer
+  async
+  rel="stylesheet"
+  href="/css/style-lazy.css"
+  integrity=""
+  media="print"
+  onload="this.media='all'; this.onload=null;" />
+
+
+  </head>
+
+  <body>
+    
+    
+      
+
+
+
+
+
+      
+      <div
+  class="fixed left-0 top-0 z-50 flex w-[30px] items-center justify-center bg-gray-200 py-[2.5px] text-[12px] uppercase text-black sm:bg-red-200 md:bg-yellow-200 lg:bg-green-200 xl:bg-blue-200 2xl:bg-pink-200">
+  <span class="block sm:hidden">all</span>
+  <span class="hidden sm:block md:hidden">sm</span>
+  <span class="hidden md:block lg:hidden">md</span>
+  <span class="hidden lg:block xl:hidden">lg</span>
+  <span class="hidden xl:block 2xl:hidden">xl</span>
+  <span class="hidden 2xl:block">2xl</span>
+</div>
+
+    
+
+
+    
+    
+
+
+  <div id="announcement" class="announcement announcement-hide">
+    You must replace the <strong>baseURL</strong> in <strong>hugo.toml</strong> file when deploying, you can manage this announcement from the <strong>params.toml</strong> file.
+    <button id="announcement-button" class="announcement-button">
+      &times;
+    </button>
+  </div>
+
+  
+  <style>
+    .announcement {
+      position: relative;
+      z-index: 999;
+      padding: 1rem;
+      padding-right: 2.8rem;
+      background-color: #fff;
+      box-shadow: 1px 0px 10px 7px rgba(154, 154, 154, 0.11);
+      font-size: 1.1rem;
+    }
+    .announcement-button {
+      cursor: pointer;
+      padding: 0 0.5rem;
+      border: 0;
+      font-size: 1.3rem;
+      position: absolute;
+      top: 50%;
+      right: 1rem;
+      transform: translateY(-50%);
+      border: 1px solid;
+      border-radius: 50%;
+      height: 1.1em;
+      width: 1.1em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .announcement-hide {
+      display: none;
+    }
+    .dark .announcement {
+      background-color: #222;
+    }
+  </style>
+
+
+
+
+    
+    <header
+  class="header sticky top-0 z-30">
+  <nav class="navbar container">
+    
+    <div class="order-0">
+      
+      <a class="navbar-brand block" href="/">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+    
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu4114262549785978686.webp"
+      alt="Hugoplate"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu7137767845088484273.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu8742296558546396051.webp"
+      alt="Hugoplate"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu4471933895487503573.png';" />
+  
+  
+
+
+      </a>
+    </div>
+    
+    <input id="nav-toggle" type="checkbox" class="hidden" />
+    <label
+      for="nav-toggle"
+      class="order-3 cursor-pointer flex items-center lg:hidden text-dark dark:text-white lg:order-1">
+      <svg id="show-button" class="h-6 fill-current block" viewBox="0 0 20 20">
+        <title>Menu Open</title>
+        <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z"></path>
+      </svg>
+      <svg id="hide-button" class="h-6 fill-current hidden" viewBox="0 0 20 20">
+        <title>Menu Close</title>
+        <polygon
+          points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
+          transform="rotate(45 10 10)"></polygon>
+      </svg>
+    </label>
+    
+
+    
+    <ul
+      id="nav-menu"
+      class="navbar-nav order-3 hidden lg:flex w-full pb-6 lg:order-1 lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8">
+      
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/"
+              >主页</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/about"
+              >关于我</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/projects"
+              >个人项目</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/blog"
+              >文章记录</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/life"
+              >生活记录</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item nav-dropdown group relative">
+            <span
+              class="nav-link 
+                
+                
+                
+              
+                
+                
+                
+               inline-flex items-center">
+              其他
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+                <path
+                  d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+              </svg>
+            </span>
+            <ul
+              class="nav-dropdown-list lg:group-hover:visible lg:group-hover:opacity-100">
+              
+                
+                
+                <li class="nav-dropdown-item">
+                  <a
+                    class="nav-dropdown-link "
+                    
+                    href="/elements">
+                    Md编写说明
+                  </a>
+                </li>
+              
+                
+                
+                <li class="nav-dropdown-item">
+                  <a
+                    class="nav-dropdown-link "
+                    
+                    href="/categories">
+                    文字分类汇总
+                  </a>
+                </li>
+              
+            </ul>
+          </li>
+        
+      
+      
+    </ul>
+
+    <div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
+      
+        
+          <button
+            aria-label="search"
+            
+            class="border-border text-dark hover:text-primary dark:border-darkmode-border mr-5 inline-block border-r pr-5 text-xl dark:text-white dark:hover:text-darkmode-primary"
+            
+            data-target="search-modal">
+            <i class="fa-solid fa-search"></i>
+          </button>
+        
+      
+
+      
+
+
+
+
+
+
+
+
+
+      
+
+
+  <div class="theme-switcher mr-5 hidden">
+    <input id="theme-switcher" data-theme-switcher type="checkbox" />
+    <label for="theme-switcher">
+      <span class="sr-only">theme switcher</span>
+      <span>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-100 dark:opacity-0"
+          viewBox="0 0 56 56"
+          fill="#fff"
+          height="16"
+          width="16">
+          <path
+            d="M30 4.6c0-1-.9-2-2-2a2 2 0 0 0-2 2v5c0 1 .9 2 2 2s2-1 2-2Zm9.6 9a2 2 0 0 0 0 2.8c.8.8 2 .8 2.9 0L46 13a2 2 0 0 0 0-2.9 2 2 0 0 0-3 0Zm-26 2.8c.7.8 2 .8 2.8 0 .8-.7.8-2 0-2.9L13 10c-.7-.7-2-.8-2.9 0-.7.8-.7 2.1 0 3ZM28 16a12 12 0 0 0-12 12 12 12 0 0 0 12 12 12 12 0 0 0 12-12 12 12 0 0 0-12-12Zm23.3 14c1.1 0 2-.9 2-2s-.9-2-2-2h-4.9a2 2 0 0 0-2 2c0 1.1 1 2 2 2ZM4.7 26a2 2 0 0 0-2 2c0 1.1.9 2 2 2h4.9c1 0 2-.9 2-2s-1-2-2-2Zm37.8 13.6a2 2 0 0 0-3 0 2 2 0 0 0 0 2.9l3.6 3.5a2 2 0 0 0 2.9 0c.8-.8.8-2.1 0-3ZM10 43.1a2 2 0 0 0 0 2.9c.8.7 2.1.8 3 0l3.4-3.5c.8-.8.8-2.1 0-2.9-.8-.8-2-.8-2.9 0Zm20 3.4c0-1.1-.9-2-2-2a2 2 0 0 0-2 2v4.9c0 1 .9 2 2 2s2-1 2-2Z" />
+        </svg>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-0 dark:opacity-100"
+          viewBox="0 0 24 24"
+          fill="none"
+          height="16"
+          width="16">
+          <path
+            fill="#000"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M8.2 2.2c1-.4 2 .6 1.6 1.5-1 3-.4 6.4 1.8 8.7a8.4 8.4 0 0 0 8.7 1.8c1-.3 2 .5 1.5 1.5v.1a10.3 10.3 0 0 1-9.4 6.2A10.3 10.3 0 0 1 3.2 6.7c1-2 2.9-3.5 4.9-4.4Z" />
+        </svg>
+      </span>
+    </label>
+  </div>
+
+  
+  <script>
+    var darkMode = false;
+
+    
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches){darkMode = true}
+    
+
+    if (localStorage.getItem("theme") === "dark"){darkMode = true}
+    else if (localStorage.getItem("theme") === "light"){darkMode = false}
+
+    if (darkMode){document.documentElement.classList.add("dark")}
+    else {document.documentElement.classList.remove("dark")}
+
+    
+    document.addEventListener("DOMContentLoaded", () => {
+      var themeSwitch = document.querySelectorAll("[data-theme-switcher]");
+      var themeSwitcherContainer = document.querySelector('.theme-switcher');
+
+      [].forEach.call(themeSwitch, function (ts) {
+        ts.checked = darkMode;
+        ts.addEventListener("click", () => {
+          document.documentElement.classList.toggle("dark");
+          localStorage.setItem(
+            "theme",
+            document.documentElement.classList.contains("dark") ? "dark" : "light"
+          );
+        });
+      });
+
+      
+      themeSwitcherContainer.classList.remove('hidden');
+    });
+  </script>
+
+
+
+
+      
+      
+    </div>
+  </nav>
+</header>
+
+    
+
+
+
+
+  
+    <div
+      class="search-modal "
+      aria-hidden="true"
+      style="--color-primary: #121212">
+      <div data-target="close-search-modal" class="search-modal-overlay"></div>
+      <div
+        class="search-wrapper"
+        data-image="true"
+        data-description="true"
+        data-tags="true"
+        data-categories="true">
+        <div class="search-wrapper-header">
+          <label for="search-modal-input" style="margin-top:-1px">
+            <span class="sr-only">search icon</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-icon"
+              data-type="search">
+              <path
+                fill="currentColor"
+                d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-reset"
+              data-type="reset">
+              <path
+                fill="currentColor"
+                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z" />
+            </svg>
+          </label>
+          <input
+            id="search-modal-input"
+            type="text"
+            data-search-input
+            autocomplete="off"
+            aria-label="Search"
+            placeholder="搜寻更多..." />
+        </div>
+        <div class="search-wrapper-body">
+          <div class="search-result" data-search-result></div>
+          <span class="search-result-empty">
+            标注某事物去搜索...
+          </span>
+        </div>
+        <div class="search-wrapper-footer">
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 11h9.592L8 5.519 3.204 11zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659z" />
+              </svg>
+            </kbd>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                style="margin-top:1px;"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z" />
+              </svg>
+            </kbd>
+            去导航
+          </span>
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="12"
+                fill="currentColor"
+                style="display:inline-block;"
+                viewBox="0 0 16 16">
+                <path
+                  fill-rule="evenodd"
+                  d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z" />
+              </svg>
+            </kbd>
+            去选择
+          </span>
+          <span class="search-result-info"></span>
+          <span data-target="close-search-modal">
+            <kbd>ESC</kbd> 去关闭
+          </span>
+        </div>
+      </div>
+    </div>
+  
+
+
+
+
+    <main>
+      
+  <section class="section pt-7">
+    <div class="container">
+      <div class="row justify-center">
+        <article class="lg:col-10">
+          
+          
+          <h1 class="h2 mb-4">
+            理解编程语言的设计与实现
+          </h1>
+          <ul class="mb-4">
+            <li class="mr-4 inline-block">
+              <a
+                href="/authors//">
+                <i class="fa-regular fa-circle-user mr-2"></i
+                >
+              </a>
+            </li>
+            
+            
+            <li class="mr-4 inline-block">
+              <i class="fa-regular fa-clock mr-2"></i>
+              May 2, 2021
+            </li>
+          </ul>
+          <div class="content mb-10">
+            
+
+ 
+  
+
+<details open class="table-of-content blog">
+  <summary>
+    
+      内容列表
+    
+  </summary>
+  <nav id="TableOfContents">
+  <ol>
+    <li>
+      <ol>
+        <li><a href="#为什么要创造编程语言">为什么要创造编程语言</a></li>
+        <li><a href="#编程语言的设计与实现">编程语言的设计与实现</a>
+          <ol>
+            <li>
+              <ol>
+                <li></li>
+              </ol>
+            </li>
+          </ol>
+        </li>
+        <li><a href="#参考">参考</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+</details>
+
+            <p>编程语言本质上是给开发者使用的工具，不同的业务领域使用不同的编程语言去实现具体的业务，是基于语言本身的设计理念与实现方式来做选择，那么作为开发者应该了解一下编程语言是如何被发明的，且其设计理念是什么。</p>
+<!-- truncate -->
+<p>Ruby 是我大学期间课余接触且实际使用过的一门语言，目前我甚是喜爱，其作者松本行弘设计 Ruby 的初心是：为开发者服务，注重简洁和效率。这篇文章主要也是为了记录在拜读了松本行弘先生新书《编程语言的设计与实现》之后掌握的一些相关的关键知识点和其它收获。由于该书主要是围绕作者在设计 Ruby 和新语言 Streem 过程中的一些思考和经验，有些东西可能不太具备普适性，而我在这里主要还是关注一些通用性的知识点和概念。</p>
+<h3 id="为什么要创造编程语言">为什么要创造编程语言</h3>
+<p>在过去，计算机信息技术行业还不够发达，在没有成为主流的时候，编程语言一般是作为商业化附属品出现的，普通人很难能免费且容易的获取到编程语言作为工具使用。所以，基于需求创造自己的编程语言就显得很合理了。然而，当今由于开源技术的盛行，很多编程语言都以开源的形式存在，作为开发者现在很容易就能获取到不同的编程语言作为自己的工具进行业务开发，那为什么还要创造新的编程语言？或者说，为什么现如今新的语言仍然层出不穷？</p>
+<p>软件编程本质上是“人机交互”，开发者使用编程语言设计业务逻辑，然后交由机器具体来执行，编程语言作为开发者与机器之间交流的媒介存在。随着时代的发展，业务需求和场景日益复杂，开发者与机器之间的交流也日趋复杂，为了让开发者“更轻松”地与机器交流，抽象度更高且更简洁的新编程语言作为新的交流媒介被发明。回忆一下计算机发展史，软件编程正是遵循从“汇编语言”（指令、0 和 1）到“低级语言”（例如 C/C++，语句、函数、数据类型）再到“高级语言”（例如 Java/Go，面向对象、并发、自动 GC）的发展路径。</p>
+<p>对于个人来说，创造编程语言，或者说深入了解如何创造编程语言，可以提升自己的技术能力和设计能力，也能在一定程度上打造自己的个人品牌（提高个人声望）。</p>
+<h3 id="编程语言的设计与实现">编程语言的设计与实现</h3>
+<p>对于现今的大多数编程语言来说，都属于“低级语言”和“高级语言”的范畴，而机器只能直接理解汇编语言。那么，设计编程语言是在设计什么？</p>
+<h6 id="语言和语言处理器">语言和语言处理器</h6>
+<p>编程语言在使用过程中可大致分为两个阶段：编写代码和运行代码。前者注重的是语言本身，而后者具体要解决的就是语言代码如何让机器能理解进而执行。</p>
+<blockquote>
+<p><strong>语言是由语法和词汇构成的。语法是一种规则，规定了在该语言中如何表述才能使程序有效；而词汇是能从使用该语言编写的程序中调用的功能的集合，之后会以库的形式逐渐增加。</strong> 在设计语言的场景中说起词汇，就是指该语言一开始就具备的内置功能。</p>
+</blockquote>
+<p>我们可以用不同的编程语言实现同样的功能，但有的语言实现起来复杂繁琐，但有的语言实现起来简单容易，这就是语言层面的直观体现。可以想象的是，很多新出现的编程语言首要解决的就是该问题，如何设计让语法规则更简单易用，内置功能更加强大。</p>
+<p>另一方面，用语言编写的代码如何在机器上实际运行？</p>
+<blockquote>
+<p><strong>语言处理器是能够使语法和词汇在计算机上实际运行的软件。</strong> 要想使编程语言成为真正的语言，而非仅仅停留在一个想法上，是离不开语言处理器的。无法运行的编程语言在严格意义上不能称为编程语言。</p>
+</blockquote>
+<p>我们通常所说的“编译器”、“解释器”、“虚拟机”、&ldquo;JIT（即时编译）&ldquo;等概念，均属于语言处理器相关的内容。</p>
+<p><strong>所以，编程语言的设计是在设计：语言本身和语言处理器。</strong></p>
+<h6 id="语言处理器的构成">语言处理器的构成</h6>
+<p>先来看看语言处理器相关的内容。</p>
+<blockquote>
+<p><strong>语言处理器大体上可分为解释语法的“编译器”、相当于词汇的“库”，以及实际运行软件所需的“运行时（系统）”。</strong> 这三大构成要素的比重会因语言和处理器性质的不同而发生变化。</p>
+</blockquote>
+<p>如何理解后一句，来看看具体的实例即可。</p>
+<p>早期的 TinyBASIC 语言很简单，编译器做的工作很少，主要的处理集中在运行时完成，对于这样的语言处理器可称之为”解释器“（interpreter）。现在这些复杂的语言的处理器都是先将程序编译为内部代码，再在运行时执行内部代码，这种“编译器＋运行时”的组合形式，看起来像源代码未经转换就被直接执行了，因此有时也被称为“解释型”，例如 Ruby。然而，像 C 语言这种在与机器非常接近的层面上追求效率的语言，几乎不存在运行时，只有解释语法的编译器部分非常突出，这样的语言处理器被称为“编译型”。</p>
+<blockquote>
+<p>在 C 语言这类语言中，作为转换结果的程序（可执行文件）是可以直接运行的软件，所以不需要负责运行的运行时。部分运行时的工作，比如内存管理等，由库和操作系统的系统调用负责。</p>
+</blockquote>
+<p>对于如今市场上主流的 Java 语言，其语言处理器设计较为复杂，首先通过编译器将源代码转换为虚拟机的机器码（JVM 字节码），并由虚拟机（JVM）来执行。而且，为了提高效率，运行时采用了将字节码转换为机器码的即时编译（Just In Time Compiler）等技术。</p>
+<p>######### 编译器（Compiler）</p>
+<p>**编译器的工作是将编程语言的源代码（原始语言）转换为可执行的形式（目标语言）。**其大致按顺序会执行多个或所有以下流程：预处理、词法分析、语法分析（解析）、语义分析（语法导向翻译）、将输入程序转换为中间表示（IR）、代码优化和代码生成。</p>
+<p>编译器设计一般分为三个阶段，前端、中端和后端。编译前端包括生成中间表示（IR）之前的流程，这个 IR 通常是程序相对于源代码的较低级别的表示，在该阶段主要做一些静态分析工作，例如类型检查。编译中端则是对前端生成的 IR 做进一步处理，该阶段主要做与 CPU 架构无关的优化，例如去除无用（消除死代码）或无法访问（可达性分析）的代码。编译后端对中端生成的优化 IR 基于特定的 CPU 架构做进一步的分析、转换和优化处理，最终生成依赖于特定平台的汇编代码。</p>
+<p>编译器这种前/中/后的设计方式使得不同语言的前端与不同 CPU 架构的后端相结合成为可能，同时共享中端的优化。例如，GNU 编译器集（GCC）、Clang（LLVM）等。</p>
+<p>############# 提前编译（AOT）与即时编译（JIT）</p>
+<p>目前根据编译的时机可将其分为静态编译和动态编译。其中静态编译通常称为提前编译（Ahead-of-time compilation），是指在程序执行之前将高级编程语言编译成低级语言的行为，减少需要在运行时执行的工作量，通常性能最优。而动态编译技术目前最具代表性的则为即时编译（Just-in-time compilation），是指在程序执行期间（在运行时）而不是在执行之前进行编译，是对两种传统的机器代码翻译方法（提前编译和解释）的结合，具有编译代码的速度和解释的灵活性，当然也引入了解释器的开销和编译及链接的额外开销。</p>
+<p>############# 词法分析</p>
+<p>词法分析器构成了现代处理中编译器前端的第一阶段。词法分析（Lexical analysis）简单来说就是“将源代码由字符序列转换为有意义的单词（token）序列”的工序。将只是字符串的源代码整理为有些许意义的单词序列，后续阶段的处理就会变得简单。</p>
+<p>以 C 语言为例说明：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>x <span style="color:#f92672">=</span> a <span style="color:#f92672">+</span> b <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>;
+</span></span></code></pre></div><p>上面的表达式经过词法分析后生成如下内容：</p>
+<pre tabindex="0"><code>[(identifier, x), (operator, =), (identifier, a), (operator, +), (identifier, b), (operator, *), (literal, 2), (separator, ;)]
+</code></pre><p>我们可以借助 <a href="https://en.wikipedia.org/wiki/Lex_%28software%29"
+
+
+
+
+ target="_blank"
+ 
+
+
+>lex</a> 工具根据编写单词的规则自动生成词法分析函数。</p>
+<p>############# 语法分析</p>
+<p>语法分析（Syntax analysis）是检查在词法分析阶段准备好的单词是否符合语法，并进行符合语法的处理的工序，最终结果是生成一个解析树（parse tree）数据结构。语法分析的方法有好几种，其中最有名、最简单的方法是使用别名为“生成编译器的编译器”的语法分析函数生成工具，比如 <a href="https://en.wikipedia.org/wiki/Yacc"
+
+
+
+
+ target="_blank"
+ 
+
+
+>yacc</a>（yet another compiler compiler）。</p>
+<p>############# 抽象语法树</p>
+<p>抽象语法树（Abstract syntax tree）是用编程语言编写的源代码的抽象语法结构的树表示，树的每个节点表示源代码中出现的一个构造。语法是“抽象的”，因为它不代表真实语法中出现的每个细节，而只是结构或与内容相关的细节。例如，分组括号在树结构中是隐含的，因此不必将它们表示为单独的节点。</p>
+<p>抽象语法树在语义分析期间被大量使用，其中编译器检查程序和语言元素的正确使用。编译器还在语义分析期间根据 AST 生成符号表。树的完整遍历允许验证程序的正确性。验证正确性后，AST 作为代码生成的基础。AST 通常用于为代码生成生成中间表示 (IR)，有时也称为中间语言。</p>
+<p>抽象语法树多用于程序分析和程序转换系统。</p>
+<p>######### 标准库（Standard Library）</p>
+<p>**语言的标准库通常被其用户视为语言的一部分，包括常用算法、数据结构和输入输出机制的定义。**标准库为程序员利用该语言实现更复杂的功能提供了必要的依赖。</p>
+<p>那么，标准库中应该包含什么？对于标准库的设计哲学，可以参考 C/C++ 和 Java/Python，前者只提供在实现程序功能时必要且合理的数据结构和算法，规模相对较小，而后者旨在提供更多的便利、易于编码，封装了较为复杂和强大的功能，规模相对来说更为庞大。因此，Python 成为了目前主流的用来科学研究的语言，它可以很方便的完成复杂的数学计算和科学分析工作。</p>
+<p>######### 运行时（Runtime）</p>
+<p>每种编程语言都指定了一个执行模型，并且许多语言在运行时系统中至少实现了该模型的一部分。<strong>运行时系统为程序提供了运行的环境</strong>，这种环境可以解决许多问题，包括应用程序内存的管理、程序如何访问变量、在子程序之间传递参数的机制、与操作系统的接口等。换句话说，编译器根据具体平台的运行时系统产生正确的代码，运行时系统将负责设置和管理堆栈和堆，并且可能包括诸如垃圾收集、线程或其他内置于语言中的动态特性。</p>
+<p>############# 执行模型（Execution model）</p>
+<p>编程语言由文法/句法加上执行模型组成。执行模型指定语言元素的行为。通过应用执行模型，可以推导出用该编程语言编写的程序的行为。</p>
+<p>例如，当程序员“阅读”代码时，在他们的脑海中，他们会浏览每一行代码的作用。实际上，他们模拟了他们头脑中的行为。程序员正在做的是将执行模型应用于代码，这会导致代码的行为。</p>
+<h6 id="虚拟机virtual-machine">虚拟机（Virtual Machine）</h6>
+<p>虚拟机是运行时的一种技术实现，是用软件实现的（无实际硬件的）计算机，区别于系统虚拟机，将其称之为“进程虚拟机”。进程虚拟机最初是作为中间语言的抽象平台出现的，中间语言被编译器用作程序的中间表示（IR）。它的目的是提供一个独立于平台的编程环境，抽象出底层硬件或操作系统的细节，并允许程序在任何平台上以相同的方式执行。因此，<strong>虚拟机最大的优点就是拥有可移植性。</strong></p>
+<p>配合各种各样的 CPU 生成机器语言的代码生成处理是编译器中最复杂的部分，适配新出现的 CPU 架构重新开发代码生成处理，对语言处理器的开发者来说是很大的负担，虚拟机在减少这类负担上起到了很大作用。另一方面，与在硬件上直接执行相比，模拟虚拟的 CPU 运行的虚拟机在性能上有很大损失，但可以通过引入即时编译（JIT）技术来弥补。</p>
+<p>虚拟机性能相关的实现技术可以了解一下：</p>
+<ul>
+<li>RISC 与 CISC</li>
+<li>栈与寄存器</li>
+<li>指令格式</li>
+</ul>
+<p>RISC 是 Reduced Instruction Set Computer（精简指令集计算机）的缩写，是通过减少指令的种类、简化电路来提高 CPU 性能的架构。具有代表性的 CPU 有 MIPS 和 SPARC 等。在移动设备上广泛使用的 ARM 处理器就属于 RISC。</p>
+<p>CISC 是与 RISC 相对的一个词汇，是 Complex Instruction Set Computer（复杂指令集计算机）的缩写，简单来说就是“不是 RISC 的 CPU”。CISC 的每个指令执行的处理都非常大，而且指令的种类繁多，因此实现起来也比较复杂。</p>
+<p>对用软件实现的虚拟机来说，我们就不能忽视取指令（Instruction Fetch，IF）处理所需要的成本。也就是说，做同样的处理时所需的指令数越少越好。好的虚拟机指令集是类 CISC 架构的指令集，它的全部指令都是高粒度的。</p>
+<p>虚拟机架构的两大流派是栈式虚拟机和寄存器式虚拟机。栈式虚拟机原则上通过栈对数据进行操作，而寄存器式虚拟机的指令中包含寄存器编号，原则上对寄存器进行操作。</p>
+<p>与寄存器式虚拟机相比，栈式虚拟机更为简单，程序也相对较小。然而，由于所有的指令都通过栈来交换数据，所以对指令之间的先后顺序有很大的依赖，很难实施交换指令顺序这样的优化。而寄存器式虚拟机由于指令中包含寄存器信息，所以程序相对较大。</p>
+<p>用哪种架构取决于具体场景，著名的 Java 虚拟机（JVM）采用的是栈式虚拟机架构，而谷歌为优化移动设备性能，为 Android 提供的 Dalvik 虚拟机则采用的是寄存器式虚拟机架构。</p>
+<p>虚拟机解释的中间语言（指令序列）被称为“字节码”，源于 Smalltalk 的指令是以字节为单位的。当然，不是所有虚拟机都拥有字节单位的指令集，例如 mruby 的指令集就是用 32 位整数表示的，可以称之为“字码”，但因为 JVM 比较出名且其采用的是字节码，所以一般将虚拟机解释的中间语言称之为“字节码”。字码与字节码的优缺点不在这里赘述。</p>
+<h3 id="参考">参考</h3>
+<ul>
+<li>《松本行弘：编程语言的设计与实现》，[日] 松本行弘，郑明智 译</li>
+<li><a href="https://en.wikipedia.org/wiki/Compiler"
+
+
+
+
+ target="_blank"
+ 
+
+
+>https://en.wikipedia.org/wiki/Compiler</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Ahead-of-time_compilation"
+
+
+
+
+ target="_blank"
+ 
+
+
+>https://en.wikipedia.org/wiki/Ahead-of-time_compilation</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Just-in-time_compilation"
+
+
+
+
+ target="_blank"
+ 
+
+
+>https://en.wikipedia.org/wiki/Just-in-time_compilation</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Abstract_syntax_tree"
+
+
+
+
+ target="_blank"
+ 
+
+
+>https://en.wikipedia.org/wiki/Abstract_syntax_tree</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Library_%28computing%29"
+
+
+
+
+ target="_blank"
+ 
+
+
+>https://en.wikipedia.org/wiki/Library_(computing)</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Runtime_system"
+
+
+
+
+ target="_blank"
+ 
+
+
+>https://en.wikipedia.org/wiki/Runtime_system</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Virtual_machine"
+
+
+
+
+ target="_blank"
+ 
+
+
+>https://en.wikipedia.org/wiki/Virtual_machine</a></li>
+</ul>
+
+          </div>
+          <div class="row items-start justify-between">
+            
+            
+              <div class="lg:col-5 mb-10 flex items-center lg:mb-0">
+                <h5 class="mr-3">标签 :</h5>
+                <ul>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/">
+                        计算机技术
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/%e5%b7%a5%e5%85%b7/">
+                        工具
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/%e7%bc%96%e7%a8%8b%e8%af%ad%e8%a8%80/">
+                        编程语言
+                      </a>
+                    </li>
+                  
+                </ul>
+              </div>
+            
+            <div class="lg:col-4 flex items-center">
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="share-icons">
+  <h5 class="share-title">分享 :</h5>
+
+
+  
+  
+    <a
+      class="share-link share-facebook"
+      href="https://facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fblog%2fcomputer-technology%2ftools%2ftools-programming-language%2f"
+      target="_blank"
+      rel="noopener"
+      aria-label="share facebook">
+      <span class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-twitter"
+      href="https://twitter.com/intent/tweet/?text=%e5%88%86%e4%ba%ab&amp;url=http%3a%2f%2flocalhost%3a1313%2fblog%2fcomputer-technology%2ftools%2ftools-programming-language%2f"
+      target="_blank"
+      rel="noopener"
+      aria-label="share twitter">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path 
+            d="M8 2H1l8.26 11.015L1.45 22H4.1l6.388-7.349L16 22h7l-8.608-11.478L21.8 2h-2.65l-5.986 6.886zm9 18L5 4h2l12 16z"/>
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-email"
+      href="mailto:?subject=%e5%88%86%e4%ba%ab&amp;body=http%3a%2f%2flocalhost%3a1313%2fblog%2fcomputer-technology%2ftools%2ftools-programming-language%2f"
+      target="_self"
+      rel="noopener"
+      aria-label="share email">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M22 4H2C.9 4 0 4.9 0 6v12c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7.25 14.43l-3.5 2c-.08.05-.17.07-.25.07-.17 0-.34-.1-.43-.25-.14-.24-.06-.55.18-.68l3.5-2c.24-.14.55-.06.68.18.14.24.06.55-.18.68zm4.75.07c-.1 0-.2-.03-.27-.08l-8.5-5.5c-.23-.15-.3-.46-.15-.7.15-.22.46-.3.7-.14L12 13.4l8.23-5.32c.23-.15.54-.08.7.15.14.23.07.54-.16.7l-8.5 5.5c-.08.04-.17.07-.27.07zm8.93 1.75c-.1.16-.26.25-.43.25-.08 0-.17-.02-.25-.07l-3.5-2c-.24-.13-.32-.44-.18-.68s.44-.32.68-.18l3.5 2c.24.13.32.44.18.68z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-reddit"
+      href="https://reddit.com/submit/?url=http%3a%2f%2flocalhost%3a1313%2fblog%2fcomputer-technology%2ftools%2ftools-programming-language%2f&amp;resubmit=true&amp;title=%e5%88%86%e4%ba%ab"
+      target="_blank"
+      rel="noopener"
+      aria-label="share reddit">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M24 11.5c0-1.65-1.35-3-3-3-.96 0-1.86.48-2.42 1.24-1.64-1-3.75-1.64-6.07-1.72.08-1.1.4-3.05 1.52-3.7.72-.4 1.73-.24 3 .5C17.2 6.3 18.46 7.5 20 7.5c1.65 0 3-1.35 3-3s-1.35-3-3-3c-1.38 0-2.54.94-2.88 2.22-1.43-.72-2.64-.8-3.6-.25-1.64.94-1.95 3.47-2 4.55-2.33.08-4.45.7-6.1 1.72C4.86 8.98 3.96 8.5 3 8.5c-1.65 0-3 1.35-3 3 0 1.32.84 2.44 2.05 2.84-.03.22-.05.44-.05.66 0 3.86 4.5 7 10 7s10-3.14 10-7c0-.22-.02-.44-.05-.66 1.2-.4 2.05-1.54 2.05-2.84zM2.3 13.37C1.5 13.07 1 12.35 1 11.5c0-1.1.9-2 2-2 .64 0 1.22.32 1.6.82-1.1.85-1.92 1.9-2.3 3.05zm3.7.13c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9.8 4.8c-1.08.63-2.42.96-3.8.96-1.4 0-2.74-.34-3.8-.95-.24-.13-.32-.44-.2-.68.15-.24.46-.32.7-.18 1.83 1.06 4.76 1.06 6.6 0 .23-.13.53-.05.67.2.14.23.06.54-.18.67zm.2-2.8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm5.7-2.13c-.38-1.16-1.2-2.2-2.3-3.05.38-.5.97-.82 1.6-.82 1.1 0 2 .9 2 2 0 .84-.53 1.57-1.3 1.87z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+</div>
+
+            </div>
+          </div>
+          
+          
+            <div class="mt-20">
+              <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "themefisher-template" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+          
+        </article>
+      </div>
+
+      
+      
+      
+      
+        <div class="section pb-0">
+          <h2 class="h3 mb-12">相关</h2>
+          <div class="row">
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/computer-technology/tools/tools-vscode-sync/">
+      IDE：VS Code 配置同步
+    </a>
+  </h4>
+  
+  
+  <p class="mb-6"><p>利用一款插件来同步 VS Code 的配置到 GitHub 的 gist 上，实现多个设备间共享一套配置。</p>
+<!-- truncate -->
+<h3 id="vs-code">VS Code</h3>
+<p>Visual Studio Code 是由微软出品的一款轻量级编辑器，兼有部分 IDE 功能。在之前，Sublime Text 是最受欢迎的编辑器（开源），也为多数前端开发者所推崇，当然说到底它依然是个编辑器。随着时间的推移，GitHub 打造了自家的编辑器 Atom，微软的 VS Code 也横空出世，更有其它优秀的轻量级编辑器在市场上展开角逐。不过，到现在来看，VS Code 可能胜出了，已成为前端开发的利器。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/tools/tools-vscode-sync/">
+    了解更多
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/computer-technology/web/dom/dom/">
+      文档对象模型（DOM）
+    </a>
+  </h4>
+  
+  
+  <p class="mb-6"><p>在网页设计中，有一个很重要的角色需要我们了解，DOM 帮助我们对页面元素进行增、删、改等全方位的操作，而且让 JavaScript 在客户端修改 HTML 文档成为一个很简单的事情，可以说 DOM 为我们操作 HTML 文档提供了强大的编程接口。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom/">
+    了解更多
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/computer-technology/computer/computer-cpu-addressing-mode/">
+      CPU 的七种寻址方式
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors//">
+          <i class="fa-regular fa-circle-user mr-2"></i>
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/"
+            class="ms-1"
+            >计算机技术
+              ,
+            
+          </a>
+        
+          <a
+            href="/categories/cpu/"
+            class="ms-1"
+            >CPU
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>CPU 获取数据的方式不仅仅一种，多种方式也为不同数据的获取提供了不同的效率考量，保证了寻址效率与指令的灵活性。</p>
+<!-- truncate -->
+<h2 id="cpu-寻址方式">CPU 寻址方式</h2>
+<p>数据一般均存储在外存(硬盘)中，在需要的时候，会将数据先从外存读入内存(存储器)中，然后 CPU 再直接从内存(缓存)中获取。获取的数据有时候会直接使用；而有时候会先存入 CPU 内部寄存器，稍后再从寄存器中获取。所以，CPU 获取数据的方式是多样化的。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/computer/computer-cpu-addressing-mode/">
+    了解更多
+  </a>
+</div>
+
+              </div>
+            
+          </div>
+        </div>
+      
+    </div>
+  </section>
+
+    </main>
+
+    
+    <footer class="bg-theme-light dark:bg-darkmode-theme-light">
+  <div class="container">
+    <div class="row items-center py-10">
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:text-left">
+        
+        <a
+          class="navbar-brand inline-block"
+          href="/">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+    
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu4114262549785978686.webp"
+      alt="Hugoplate"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu7137767845088484273.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu8742296558546396051.webp"
+      alt="Hugoplate"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu4471933895487503573.png';" />
+  
+  
+
+
+        </a>
+      </div>
+      <div class="lg:col-6 mb-8 text-center lg:mb-0">
+        <ul>
+          
+            <li class="m-3 inline-block">
+              <a
+                
+                href="
+                  /
+                "
+                ></a
+              >
+            </li>
+          
+        </ul>
+      </div>
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:mt-0 lg:text-right">
+        <ul class="social-icons">
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="facebook"
+                rel="nofollow noopener"
+                href="https://www.facebook.com/profile.php?id=100083154937436">
+                <i class="fab fa-facebook"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="github"
+                rel="nofollow noopener"
+                href="https://github.com/LeeZChuan">
+                <i class="fab fa-github"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="linkedin"
+                rel="nofollow noopener"
+                href="https://www.linkedin.com/in/zchuan-lee-89214a1a3/">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="border-border dark:border-darkmode-border border-t py-7">
+    <div class="text-light dark:text-darkmode-light container text-center">
+      <p>
+        
+      </p>
+    </div>
+  </div>
+</footer>
+
+
+
+    
+    
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<script
+  crossorigin="anonymous"
+  integrity=""
+  src="/js/script.js"></script>
+
+
+<script
+  defer
+  async
+  crossorigin="anonymous"
+  integrity=""
+  src="/js/script-lazy.js"></script>
+
+
+
+<script>
+  if ('serviceWorker' in navigator){navigator.serviceWorker.register("/service-worker.js");}
+</script>
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <script type="application/javascript">
+      const announcementBox = document.getElementById('announcement');
+      const announcementButton = document.getElementById('announcement-button');
+      if (!Cookies.get('announcement-close')) {
+        announcementBox.classList.remove('announcement-hide');
+        announcementButton.onclick = function () {
+          Cookies.set('announcement-close', true, {
+            expires:  7 
+          });
+          announcementBox.classList.add('announcement-hide');
+        };
+      }
+    </script>
+  
+
+
+
+  </body>
+</html>

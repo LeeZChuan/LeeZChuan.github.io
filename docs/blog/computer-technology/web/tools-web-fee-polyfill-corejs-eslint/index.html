@@ -1,51 +1,1839 @@
-<!doctype html><html itemscope lang=zh-cn itemtype=http://schema.org/WebPage><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=5"><meta name=theme-name content="hugoplate"><link rel="shortcut icon" href=/images/favicon_hu9880217891310920762.png type=image/x-icon><link rel=icon href=/images/favicon_hu9880217891310920762.png type=image/x-icon><link rel=icon type=image/png sizes=48x48 href=/images/favicon_hu11285212527156944795.png><link rel=icon type=image/png sizes=96x96 href=/images/favicon_hu9880217891310920762.png><link rel=apple-touch-icon sizes=144x144 href=/images/favicon_hu290619398646655712.png><link rel=manifest href=/manifest.webmanifest><meta name=msapplication-TileColor content="#ddd"><meta name=theme-color content="#ffffff"><base href=https://leezchuan.github.io/blog/computer-technology/web/tools-web-fee-polyfill-corejs-eslint/><title>解析基于 core-js 与 ESLint 的 Web 兼容方案</title>
-<meta name=keywords content="Boilerplate,Hugo"><meta name=description content="Web 网页为了保证在多个平台和低中高端设备上的体验稳定性和一致性，通常会做 Polyfill 以保证兼容性，当下社区的主流方案则是基于 core-js，而 ESLint 则可作为自动检测的辅助工具。"><meta name=author content="zeon.studio"><meta property="og:image" content="https://leezchuan.github.io/images/og-image.png"><meta name=twitter:image content="https://leezchuan.github.io/images/og-image.png"><meta name=twitter:card content="summary_large_image"><meta property="og:image:width" content="900"><meta property="og:image:height" content="600"><meta property="og:image:type" content="image/.png"><meta property="og:title" content="解析基于 core-js 与 ESLint 的 Web 兼容方案"><meta property="og:description" content="Web 网页为了保证在多个平台和低中高端设备上的体验稳定性和一致性，通常会做 Polyfill 以保证兼容性，当下社区的主流方案则是基于 core-js，而 ESLint 则可作为自动检测的辅助工具。"><meta property="og:type" content="website"><meta property="og:url" content="https://leezchuan.github.io/blog/computer-technology/web/tools-web-fee-polyfill-corejs-eslint/"><meta name=twitter:title content="解析基于 core-js 与 ESLint 的 Web 兼容方案"><meta name=twitter:description content="Web 网页为了保证在多个平台和低中高端设备上的体验稳定性和一致性，通常会做 Polyfill 以保证兼容性，当下社区的主流方案则是基于 core-js，而 ESLint 则可作为自动检测的辅助工具。"><meta name=twitter:site content="@zeon_studio"><meta name=twitter:creator content="@zeon.studio"><script>let indexURL="https://leezchuan.github.io/searchindex.json",includeSectionsInSearch=["blog"],search_no_results="暂无数据",search_initial_message="标注某事物去搜索..."</script><meta http-equiv=x-dns-prefetch-control content="on"><link rel=preconnect href=https://use.fontawesome.com crossorigin><link rel=preconnect href=//cdnjs.cloudflare.com><link rel=preconnect href=//www.googletagmanager.com><link rel=preconnect href=//www.google-analytics.com><link rel=dns-prefetch href=https://use.fontawesome.com><link rel=dns-prefetch href=//ajax.googleapis.com><link rel=dns-prefetch href=//cdnjs.cloudflare.com><link rel=dns-prefetch href=//www.googletagmanager.com><link rel=dns-prefetch href=//www.google-analytics.com><link rel=dns-prefetch href=//fonts.googleapis.com><link rel=dns-prefetch href=//connect.facebook.net><link rel=dns-prefetch href=//platform.linkedin.com><link rel=dns-prefetch href=//platform.twitter.com><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><script>(function(){const e=document.createElement("link");e.href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&family=Signika:wght@500;700&display=swap",e.type="text/css",e.rel="stylesheet",document.head.appendChild(e)})()</script><link href="/css/style.min.82409c5e6b8ce346d79caec9ea6d799891b1cb69e0d76f0d40059ff9f69c3569.css" integrity="sha256-gkCcXmuM40bXnK7J6m15mJGxy2ng128NQAWf+facNWk=" rel=stylesheet><link defer async rel=stylesheet href="/css/style-lazy.min.5d85e889fd5f5b28f9387aeade847fcb0a66d76a99a985ab4cdae3d37cf21557.css" integrity="sha256-XYXoif1fWyj5OHrq3oR/ywpm12qZqYWrTNrj03zyFVc=" media=print onload='this.media="all",this.onload=null'></head><body><div id=announcement class="announcement announcement-hide">You must replace the <strong>baseURL</strong> in <strong>hugo.toml</strong> file when deploying, you can manage this announcement from the <strong>params.toml</strong> file.
-<button id=announcement-button class=announcement-button>
-&#215;</button></div><style>.announcement{position:relative;z-index:999;padding:1rem;padding-right:2.8rem;background-color:#fff;box-shadow:1px 0 10px 7px rgba(154,154,154,.11);font-size:1.1rem}.announcement-button{cursor:pointer;padding:0 .5rem;border:0;font-size:1.3rem;position:absolute;top:50%;right:1rem;transform:translateY(-50%);border:1px solid;border-radius:50%;height:1.1em;width:1.1em;display:flex;justify-content:center;align-items:center}.announcement-hide{display:none}.dark .announcement{background-color:#222}</style><header class="header sticky top-0 z-30"><nav class="navbar container"><div class=order-0><a class="navbar-brand block" href=/><img fetchpriority=high decoding=async class="img img-light" width=160 height=32 src=/images/logo_hu4114262549785978686.webp alt=Hugoplate onerror='this.onerror=null,this.src="/images/logo_hu7137767845088484273.png"'>
-<img fetchpriority=high decoding=async class="img img-dark" width=160 height=32 src=/images/logo-darkmode_hu8742296558546396051.webp alt=Hugoplate onerror='this.onerror=null,this.src="/images/logo-darkmode_hu4471933895487503573.png"'></a></div><input id=nav-toggle type=checkbox class=hidden>
-<label for=nav-toggle class="order-3 cursor-pointer flex items-center lg:hidden text-dark dark:text-white lg:order-1"><svg id="show-button" class="h-6 fill-current block" viewBox="0 0 20 20"><title>Menu Open</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0V0z"/></svg><svg id="hide-button" class="h-6 fill-current hidden" viewBox="0 0 20 20"><title>Menu Close</title><polygon points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2" transform="rotate(45 10 10)"/></svg></label><ul id=nav-menu class="navbar-nav order-3 hidden lg:flex w-full pb-6 lg:order-1 lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8"><li class=nav-item><a class=nav-link href=/>主页</a></li><li class=nav-item><a class=nav-link href=/about>关于我</a></li><li class=nav-item><a class=nav-link href=/project>个人项目</a></li><li class=nav-item><a class=nav-link href=/blog>文章记录</a></li><li class=nav-item><a class=nav-link href=/life>生活记录</a></li><li class="nav-item nav-dropdown group relative"><span class="nav-link
-inline-flex items-center">其他<svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg></span><ul class="nav-dropdown-list lg:group-hover:visible lg:group-hover:opacity-100"><li class=nav-dropdown-item><a class=nav-dropdown-link href=/elements>Md编写说明</a></li><li class=nav-dropdown-item><a class=nav-dropdown-link href=/categories>文字分类汇总</a></li></ul></li></ul><div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0"><button aria-label=search class="border-border text-dark hover:text-primary dark:border-darkmode-border mr-5 inline-block border-r pr-5 text-xl dark:text-white dark:hover:text-darkmode-primary" data-target=search-modal>
-<i class="fa-solid fa-search"></i></button><div class="theme-switcher mr-5 hidden"><input id=theme-switcher data-theme-switcher type=checkbox>
-<label for=theme-switcher><span class=sr-only>theme switcher</span>
-<span><svg class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-100 dark:opacity-0" viewBox="0 0 56 56" fill="#fff" height="16" width="16"><path d="M30 4.6c0-1-.9-2-2-2a2 2 0 00-2 2v5c0 1 .9 2 2 2s2-1 2-2zm9.6 9a2 2 0 000 2.8c.8.8 2 .8 2.9.0L46 13a2 2 0 000-2.9 2 2 0 00-3 0zm-26 2.8c.7.8 2 .8 2.8.0.8-.7.8-2 0-2.9L13 10c-.7-.7-2-.8-2.9.0-.7.8-.7 2.1.0 3zM28 16A12 12 0 0016 28a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0028 16zm23.3 14c1.1.0 2-.9 2-2s-.9-2-2-2h-4.9a2 2 0 00-2 2c0 1.1 1 2 2 2zM4.7 26a2 2 0 00-2 2c0 1.1.9 2 2 2h4.9c1 0 2-.9 2-2s-1-2-2-2zm37.8 13.6a2 2 0 00-3 0 2 2 0 000 2.9l3.6 3.5a2 2 0 002.9.0c.8-.8.8-2.1.0-3zM10 43.1a2 2 0 000 2.9c.8.7 2.1.8 3 0l3.4-3.5c.8-.8.8-2.1.0-2.9s-2-.8-2.9.0zm20 3.4c0-1.1-.9-2-2-2a2 2 0 00-2 2v4.9c0 1 .9 2 2 2s2-1 2-2z"/></svg><svg class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-0 dark:opacity-100" viewBox="0 0 24 24" fill="none" height="16" width="16"><path fill="#000" fill-rule="evenodd" clip-rule="evenodd" d="M8.2 2.2c1-.4 2 .6 1.6 1.5-1 3-.4 6.4 1.8 8.7a8.4 8.4.0 008.7 1.8c1-.3 2 .5 1.5 1.5v.1A10.3 10.3.0 0112.4 22 10.3 10.3.0 013.2 6.7c1-2 2.9-3.5 4.9-4.4z"/></svg></span></label></div><script>var darkMode=!1;window.matchMedia("(prefers-color-scheme: dark)").matches&&(darkMode=!0),localStorage.getItem("theme")==="dark"?darkMode=!0:localStorage.getItem("theme")==="light"&&(darkMode=!1),darkMode?document.documentElement.classList.add("dark"):document.documentElement.classList.remove("dark"),document.addEventListener("DOMContentLoaded",()=>{var e=document.querySelectorAll("[data-theme-switcher]"),t=document.querySelector(".theme-switcher");[].forEach.call(e,function(e){e.checked=darkMode,e.addEventListener("click",()=>{document.documentElement.classList.toggle("dark"),localStorage.setItem("theme",document.documentElement.classList.contains("dark")?"dark":"light")})}),t.classList.remove("hidden")})</script></div></nav></header><div class=search-modal aria-hidden=true style=--color-primary:#121212><div data-target=close-search-modal class=search-modal-overlay></div><div class=search-wrapper data-image=true data-description=true data-tags=true data-categories=true><div class=search-wrapper-header><label for=search-modal-input style=margin-top:-1px><span class=sr-only>search icon</span>
-<svg viewBox="0 0 512 512" height="18" width="18" class="search-icon" data-type="search"><path fill="currentcolor" d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8.0 45.3s-32.8 12.5-45.3.0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9.0 208S93.1.0 208 0 416 93.1 416 208zM208 352a144 144 0 100-288 144 144 0 100 288z"/></svg>
-<svg viewBox="0 0 512 512" height="18" width="18" class="search-reset" data-type="reset"><path fill="currentcolor" d="M256 512A256 256 0 10256 0a256 256 0 100 512zM175 175c9.4-9.4 24.6-9.4 33.9.0l47 47 47-47c9.4-9.4 24.6-9.4 33.9.0s9.4 24.6.0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6.0 33.9s-24.6 9.4-33.9.0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9.0s-9.4-24.6.0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6.0-33.9z"/></svg>
-</label><input id=search-modal-input type=text data-search-input autocomplete=off aria-label=Search placeholder=搜寻更多...></div><div class=search-wrapper-body><div class=search-result data-search-result></div><span class=search-result-empty>标注某事物去搜索...</span></div><div class=search-wrapper-footer><span><kbd><svg width="14" height="14" fill="currentcolor" viewBox="0 0 16 16"><path d="M3.204 11h9.592L8 5.519 3.204 11zm-.753-.659 4.796-5.48a1 1 0 011.506.0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 01-.753-1.659z"/></svg>
-</kbd><kbd><svg width="14" height="14" fill="currentcolor" style="margin-top:1px" viewBox="0 0 16 16"><path d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 001.506.0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 00-.753 1.659z"/></svg>
-</kbd>去导航
-</span><span><kbd><svg width="12" height="12" fill="currentcolor" style="display:inline-block" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M14.5 1.5a.5.5.0 01.5.5v4.8a2.5 2.5.0 01-2.5 2.5H2.707l3.347 3.346a.5.5.0 01-.708.708l-4.2-4.2a.5.5.0 010-.708l4-4a.5.5.0 11.708.708L2.707 8.3H12.5A1.5 1.5.0 0014 6.8V2a.5.5.0 01.5-.5z"/></svg>
-</kbd>去选择
-</span><span class=search-result-info></span>
-<span data-target=close-search-modal><kbd>ESC</kbd> 去关闭</span></div></div></div><main><section class="section pt-7"><div class=container><div class="row justify-center"><article class=lg:col-10><h1 class="h2 mb-4">解析基于 core-js 与 ESLint 的 Web 兼容方案</h1><ul class=mb-4><li class="mr-4 inline-block"><a href=/authors/leezchuan/><i class="fa-regular fa-circle-user mr-2"></i>LeeZChuan</a></li><li class="mr-4 inline-block"><i class="fa-regular fa-folder mr-2"></i>
-<a href=/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/>计算机技术
-,
-</a><a href=/categories/web%e5%89%8d%e7%ab%af/>Web前端
-,
-</a><a href=/categories/%e5%b7%a5%e5%85%b7/>工具
-,
-</a><a href=/categories/polyfill/>Polyfill</a></li><li class="mr-4 inline-block"><i class="fa-regular fa-clock mr-2"></i>
-December 7, 2021</li></ul><div class="content mb-10"><details open class="table-of-content blog"><summary>内容列表</summary><nav id=TableOfContents><ol><li><ol><li><a href=#基于-core-js-的兼容方案>基于 <code>core-js</code> 的兼容方案</a><ol><li><a href=#api-兼容性>API 兼容性</a></li><li><a href=#兼容目标>兼容目标</a></li><li><a href=#eslint>ESLint</a></li><li><a href=#babel>Babel</a><ol><li><a href=#babelpolyfill><code>@babel/polyfill</code></a></li><li><a href=#babelpreset-env><code>@babel/preset-env</code></a></li></ol></li></ol></li><li><a href=#结语>结语</a></li><li><a href=#参考资源>参考资源</a></li></ol></li></ol></nav></details><p>Web 网页为了保证在多个平台和低中高端设备上的体验稳定性和一致性，通常会做 Polyfill 以保证兼容性。</p><p>然而，兼容性问题本身是个难题，Polyfill 也并非很好处理，所以在技术演变的过程中，社区达成了一致，有一个主流的方案，大家共同来使用和维护。当下社区的主流方案则是基于 <code>core-js</code>，另一方面， 利用 ESLint 插件则可以做到自动检测代码中需要添加 Polyfill 的 API。</p><p><code>core-js</code> 只是解决了 JavaScript 的兼容性问题，Web 网页还有 CSS / HTML / Web API 的兼容性问题，处理这些问题的过程中，必然会存在大量相似的逻辑，比如目标设备的检测、目标设备的 API 支持情况统计。当然，社区也给出了非常好的方案，下面就来了解一下。</p><h3 id=基于-core-js-的兼容方案>基于 <code>core-js</code> 的兼容方案</h3><p>首先，来看看这两者如何进行配合以非常优雅的方式完成 Polyfill 任务的。</p><p><code>core-js</code> 是实现了遵循 ECMAScript 标准的模块化标准库，也就是说，主要是实现 JavaScript 的 API，这并不包括浏览器平台的 Web API（例如一些 DOM API、<code>fetch</code> 等）。用起来也很简单，直接在项目中引入即可：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#75715e>// polyfill all `core-js` features:
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>import</span> <span style=color:#e6db74>&#39;core-js&#39;</span>;
-</span></span><span style=display:flex><span><span style=color:#75715e>// polyfill only stable `core-js` features - ES and web standards:
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>import</span> <span style=color:#e6db74>&#39;core-js/stable&#39;</span>;
-</span></span><span style=display:flex><span><span style=color:#75715e>// polyfill only stable ES features:
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>import</span> <span style=color:#e6db74>&#39;core-js/es&#39;</span>;
-</span></span></code></pre></div><p>上面是将所有 API 的 polyfills 引入项目，为了构建包尺寸更小，可以选择性的对特定 API 做兼容：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#66d9ef>import</span> <span style=color:#e6db74>&#39;core-js/modules/es.array.unscopables.flat&#39;</span>;
-</span></span><span style=display:flex><span><span style=color:#66d9ef>import</span> <span style=color:#e6db74>&#39;core-js/modules/es.array.unscopables.flat-map&#39;</span>;
-</span></span><span style=display:flex><span><span style=color:#66d9ef>import</span> <span style=color:#e6db74>&#39;core-js/modules/es.object.from-entries&#39;</span>;
-</span></span><span style=display:flex><span><span style=color:#66d9ef>import</span> <span style=color:#e6db74>&#39;core-js/modules/web.immediate&#39;</span>;
-</span></span></code></pre></div><p>这些方式引入的 polyfill 会污染全局作用域，开发 Web 应用项目时也许不存在太大问题，但若是开发第三方工具库，为了避免这个问题，官方提供了 <code>core-js-pure</code> 包：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#66d9ef>import</span> <span style=color:#a6e22e>Set</span> <span style=color:#a6e22e>from</span> <span style=color:#e6db74>&#39;core-js-pure/features/set&#39;</span>;
-</span></span></code></pre></div><p>虽然说 <code>core-js</code> 只是针对 JavaScript API 的兼容方案，但为了方便，也提供了一些非常常用的 Web API 的 polyfills，例如 <code>setTimeout</code>、<code>URLSearchParams</code> 等。</p><h4 id=api-兼容性>API 兼容性</h4><p>怎么为 API 做兼容的问题解决掉之后，需要考虑的一个问题是怎么判断 API 的兼容性，首先在 <a href=https://developer.mozilla.org/ target=_blank>MDN Web Docs</a> 特定 API 文档页面最下方会有一个兼容性统计表格，这个是比较准确和全面的。当然，如果要最准确的结果，可以去特定浏览器厂商的标准状态页面查询，例如 <a href=https://www.chromestatus.com/features target=_blank>Chrome Platform Status</a> 等。</p><p>除此之外，为了让社区各种工具链自动化去检测 API 兼容情况，有非常著名的 <a href=https://caniuse.com/ target=_blank>Can I use</a> 站点。该站点方便开发者查询各种 JavaScript / CSS / HTML / Web API 的设备兼容情况，同时维护了一个数据库，供社区其它工具开发者使用。</p><h4 id=兼容目标>兼容目标</h4><p>有了检测 API 兼容情况和添加 polyfill 的工具后，还有一个很关键的问题：为了加载性能的优化，如果我们不引入全量的 polyfills，怎么针对特定平台去拣选相应的 polyfills？API 兼容检测工具的目标平台是什么？特定 API 是否需要添加 polyfills？</p><p>当然，为了保证社区各种工具链的通用性，也有一个很著名的项目 <code>Browserslist</code>，它可以帮助我们配置代码兼容的目标平台，相应的工具链将会以该目标处理我们所写的代码。</p><h4 id=eslint>ESLint</h4><p>有了以上工具后，我们需要一个解析代码并运行这些工具的工具，ESLint 恰好适合这个角色。<code>eslint-plugin-compat</code> 插件可以根据 browserslist 的配置去查询所写代码中需要兼容的 API 并提示出来：</p><blockquote><p>eslint-plugin-compat（解析代码）-> 用解析的代码和 browserslist 配置根据标准查询（MDN/Can I use 等）代码中的兼容情况 -> 开发者手动引入 polyfills</p></blockquote><p>我们可以注意到，该插件仅仅是帮我们检测出来代码中需要引入 polyfills 的 API，最终还是需要开发者手动引入 polyfills，这是比较麻烦的。当然，ESLint 干了自己该干的，剩下的事情交给 Babel 即可。</p><h4 id=babel>Babel</h4><p>说到 Polyfill，还得再提一下社区主流的 JavaScript 编译方案 Babel，为什么呢？因为一开始，Babel 团队同时非常贴心的提供了 Polyfill 方案 <code>@babel/polyfill</code>。</p><h5 id=babelpolyfill><code>@babel/polyfill</code></h5><p>如果看过源码，或者看过目前的文档，其实 @babel/polyfill 做的事情等价于：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#75715e>// see docs: https://babeljs.io/docs/en/babel-polyfill/
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>import</span> <span style=color:#e6db74>&#39;core-js/stable&#39;</span>;
-</span></span><span style=display:flex><span><span style=color:#66d9ef>import</span> <span style=color:#e6db74>&#39;regenerator-runtime/runtime&#39;</span>;
-</span></span></code></pre></div><p>当然，现在（Babel 7.4.0+）这个方案已经被官方弃用了，这又是为什么呢？其实看上面的代码也能猜出个大概，这种方案不够灵活，把需要和不需要的 polyfills 全部添加到项目代码中，不利于加载性能优化；其次，对于开发者来说是个黑盒子，开发者不清楚干了哪些事，干到了什么程度，不受开发者控制。文档中也有所提及：</p><blockquote><p>Note: Depending on what ES2015 methods you actually use, you may not need to use <code>@babel/polyfill</code> or the runtime plugin. You may want to only <a href=https://github.com/zloirock/core-js#commonjs-api target=_blank>load the specific polyfills you are using</a> (like <code>Object.assign</code>) or just document that the environment the library is being loaded in should include certain polyfills.</p></blockquote><p>其实意思很简单，就是把 polyfill 的控制权交给了开发者。与此同时，Babel 又给出了另一个方案 <code>@babel/preset-env</code>。</p><h5 id=babelpreset-env><code>@babel/preset-env</code></h5><p>该方案主要解决了 @babel/polyfill 方案不够灵活的问题，提供了两种选择：即 <code>useBuiltIns</code> 配置项的 <code>usage</code> 和 <code>entry</code>。</p><ul><li><code>entry</code> 模式</li></ul><blockquote><p>This option enables a new plugin that replaces the <code>import "core-js/stable";</code> and <code>import "regenerator-runtime/runtime"</code> statements (or <code>require("core-js")</code> and <code>require("regenerator-runtime/runtime")</code>) with individual requires to different <code>core-js</code> entry points based on environment.</p></blockquote><p>该模式需要开发者在入口文件显式引入 <code>core-js</code>，然后 Babel 会根据配置的兼容目标环境精细化拣选需要的 polyfills 引入，达到减小最终构建包体积的目的。这里是以所有的 polyfills 和兼容目标环境为基础进行过滤，过滤掉目标环境已支持 API 的 polyfills，也就是说最终还是会引入项目代码没有用到的 API 的 polyfills。</p><ul><li><code>usage</code> 模式</li></ul><blockquote><p>Adds specific imports for polyfills when they are used in each file. We take advantage of the fact that a bundler will load the same polyfill only once.</p></blockquote><p>而这种模式就解决了上面的问题，在以上模式过滤掉的结果中，再以项目代码为基础，过滤掉没有用到的 API 的 polyfills，这样最终的构建包体积会进一步减小。</p><h3 id=结语>结语</h3><p>至此，我们了解到基于 <code>core-js</code> 的兼容方案是通过一系列优秀的社区开源项目共同配合完成的，借助 Babel 的工具可以自动化完成大部分的兼容工作，而借助 ESLint 的插件工具可以显式知道哪些 API 需要引入 Polyfill 来做兼容。</p><h3 id=参考资源>参考资源</h3><ul><li><a href=https://github.com/zloirock/core-js target=_blank>https://github.com/zloirock/core-js</a></li><li><a href=https://developer.mozilla.org/ target=_blank>https://developer.mozilla.org/</a></li><li><a href=https://caniuse.com/ target=_blank>https://caniuse.com/</a></li><li><a href=https://github.com/browserslist/browserslist target=_blank>https://github.com/browserslist/browserslist</a></li><li><a href=https://browserslist.dev/ target=_blank>https://browserslist.dev/</a></li><li><a href=https://eslint.org/ target=_blank>https://eslint.org/</a></li><li><a href=https://github.com/amilajack/eslint-plugin-compat target=_blank>https://github.com/amilajack/eslint-plugin-compat</a></li><li><a href=https://babeljs.io/ target=_blank>https://babeljs.io/</a></li><li><a href=https://babeljs.io/docs/en/babel-polyfill/ target=_blank>https://babeljs.io/docs/en/babel-polyfill/</a></li></ul></div><div class="row items-start justify-between"><div class="lg:col-5 mb-10 flex items-center lg:mb-0"><h5 class=mr-3>标签 :</h5><ul><li class=inline-block><a class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white" href=/tags/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/>计算机技术</a></li><li class=inline-block><a class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white" href=/tags/web%e5%89%8d%e7%ab%af/>Web前端</a></li><li class=inline-block><a class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white" href=/tags/%e5%b7%a5%e5%85%b7/>工具</a></li><li class=inline-block><a class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white" href=/tags/polyfill/>Polyfill</a></li></ul></div><div class="lg:col-4 flex items-center"><div class=share-icons><h5 class=share-title>分享 :</h5><a class="share-link share-facebook" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fleezchuan.github.io%2fblog%2fcomputer-technology%2fweb%2ftools-web-fee-polyfill-corejs-eslint%2f" target=_blank rel=noopener aria-label="share facebook"><span class=share-icon><svg viewBox="0 0 24 24"><path d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z"/></svg>
-</span></a><a class="share-link share-twitter" href="https://twitter.com/intent/tweet/?text=%e5%88%86%e4%ba%ab&amp;url=https%3a%2f%2fleezchuan.github.io%2fblog%2fcomputer-technology%2fweb%2ftools-web-fee-polyfill-corejs-eslint%2f" target=_blank rel=noopener aria-label="share twitter"><span aria-hidden=true class=share-icon><svg viewBox="0 0 24 24"><path d="M8 2H1l8.26 11.015L1.45 22H4.1l6.388-7.349L16 22h7l-8.608-11.478L21.8 2h-2.65l-5.986 6.886zm9 18L5 4h2l12 16z"/></svg>
-</span></a><a class="share-link share-email" href="mailto:?subject=%e5%88%86%e4%ba%ab&amp;body=https%3a%2f%2fleezchuan.github.io%2fblog%2fcomputer-technology%2fweb%2ftools-web-fee-polyfill-corejs-eslint%2f" target=_self rel=noopener aria-label="share email"><span aria-hidden=true class=share-icon><svg viewBox="0 0 24 24"><path d="M22 4H2C.9 4 0 4.9.0 6v12c0 1.1.9 2 2 2h20c1.1.0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7.25 14.43l-3.5 2c-.08.05-.17.07-.25.07-.17.0-.34-.1-.43-.25-.14-.24-.06-.55.18-.68l3.5-2c.24-.14.55-.06.68.18.14.24.06.55-.18.68zm4.75.07c-.1.0-.2-.03-.27-.08l-8.5-5.5c-.23-.15-.3-.46-.15-.7.15-.22.46-.3.7-.14L12 13.4l8.23-5.32c.23-.15.54-.08.7.15.14.23.07.54-.16.7l-8.5 5.5c-.08.04-.17.07-.27.07zm8.93 1.75c-.1.16-.26.25-.43.25-.08.0-.17-.02-.25-.07l-3.5-2c-.24-.13-.32-.44-.18-.68s.44-.32.68-.18l3.5 2c.24.13.32.44.18.68z"/></svg>
-</span></a><a class="share-link share-reddit" href="https://reddit.com/submit/?url=https%3a%2f%2fleezchuan.github.io%2fblog%2fcomputer-technology%2fweb%2ftools-web-fee-polyfill-corejs-eslint%2f&amp;resubmit=true&amp;title=%e5%88%86%e4%ba%ab" target=_blank rel=noopener aria-label="share reddit"><span aria-hidden=true class=share-icon><svg viewBox="0 0 24 24"><path d="M24 11.5c0-1.65-1.35-3-3-3-.96.0-1.86.48-2.42 1.24-1.64-1-3.75-1.64-6.07-1.72.08-1.1.4-3.05 1.52-3.7.72-.4 1.73-.24 3 .5C17.2 6.3 18.46 7.5 20 7.5c1.65.0 3-1.35 3-3s-1.35-3-3-3c-1.38.0-2.54.94-2.88 2.22-1.43-.72-2.64-.8-3.6-.25-1.64.94-1.95 3.47-2 4.55-2.33.08-4.45.7-6.1 1.72C4.86 8.98 3.96 8.5 3 8.5c-1.65.0-3 1.35-3 3 0 1.32.84 2.44 2.05 2.84-.03.22-.05.44-.05.66.0 3.86 4.5 7 10 7s10-3.14 10-7c0-.22-.02-.44-.05-.66 1.2-.4 2.05-1.54 2.05-2.84zM2.3 13.37C1.5 13.07 1 12.35 1 11.5c0-1.1.9-2 2-2 .64.0 1.22.32 1.6.82-1.1.85-1.92 1.9-2.3 3.05zm3.7.13c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9.8 4.8c-1.08.63-2.42.96-3.8.96-1.4.0-2.74-.34-3.8-.95-.24-.13-.32-.44-.2-.68.15-.24.46-.32.7-.18 1.83 1.06 4.76 1.06 6.6.0.23-.13.53-.05.67.2.14.23.06.54-.18.67zm.2-2.8c-1.1.0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm5.7-2.13c-.38-1.16-1.2-2.2-2.3-3.05.38-.5.97-.82 1.6-.82 1.1.0 2 .9 2 2 0 .84-.53 1.57-1.3 1.87z"/></svg></span></a></div></div></div><div class=mt-20><div id=disqus_thread></div><script>window.disqus_config=function(){},function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById("disqus_thread").innerHTML="Disqus comments not available by default when the website is previewed locally.";return}var t=document,e=t.createElement("script");e.async=!0,e.src="//themefisher-template.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}()</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></div></article></div><div class="section pb-0"><h2 class="h3 mb-12">相关</h2><div class=row><div class="lg:col-4 md:col-6 mb-14"><div class="bg-body dark:bg-darkmode-body"><h4 class=mb-3><a href=/blog/computer-technology/program-architecture-design/bridge-mode-design-of-cross-platform-event-mechanism/>桥接模式：跨平台的事件机制设计</a></h4><p class=mb-6><p>对于 Web 的图表组件库来说，一些功能比较强大的开源库，渲染层可以支持 DOM、SVG、Canvas、WebGL 等多个平台的环境，而图表库的很多功能的实现都和渲染层紧密相关。</p><p>最近，在参考学习一些开源的图表组件库时，发现在跨平台设计中，事件机制的实现很有意思，所以在这里以最简化的代码来解释和记录一下这个方案。如果要用经典的软件设计模式来解释，大概就是<strong>桥接模式</strong>了。</p><p><strong>桥接模式（Bridge Pattern）</strong> 将一个功能的实现拆分为抽象（Abstraction）和实现（Implementor），让其相互独立的扩展和定义，借助该模式可以设计一种平台无关的软件架构。</p><h4 id=事件机制>事件机制</h4><p>事件机制是软件设计中最基础、最为常见的一种设计，对于 Web 图表组件库来说要提供一些处理用户交互（例如点击、拖动、右键点击等）的机制。一个典型的事件模型类如下：</p></p><a class="btn btn-outline-primary btn-sm" href=/blog/computer-technology/program-architecture-design/bridge-mode-design-of-cross-platform-event-mechanism/>了解更多</a></div></div><div class="lg:col-4 md:col-6 mb-14"><div class="bg-body dark:bg-darkmode-body"><h4 class=mb-3><a href=/blog/computer-technology/tools/tools-sublime-vim/>编辑器：Sublime Text - Vim 插件</a></h4><p class=mb-6><p>Sumblime Text 是一个具有漂亮的界面和强大功能的文本编辑器，而且也支持许多丰富的插件。它是一个收费软件，但是允许开发人员无限期的免费试用。</p><h3 id=vim>Vim</h3><p>Vim 是 Linux 操作系统下类 Vi 编辑器，是一款被开发者广泛使用，并且功能强大的文本编辑器。而 Sublime Text 最初的设计初衷也是基于 Vim 的设计思想，被设计为一个跨平台的具有丰富扩展功能的 Vim。随着后来的发展，它已经不仅仅是单纯的模仿 Vim，而是支持越来越多的插件和强大的功能。</p></p><a class="btn btn-outline-primary btn-sm" href=/blog/computer-technology/tools/tools-sublime-vim/>了解更多</a></div></div><div class="lg:col-4 md:col-6 mb-14"><div class="bg-body dark:bg-darkmode-body"><h4 class=mb-3><a href=/blog/tools/tools-animation-math/>从贝塞尔曲线的计算感受数学建模的魅力</a></h4><ul class=mb-4><li class="mr-4 inline-block"><a href=/authors/leezchuan/><i class="fa-regular fa-circle-user mr-2"></i>LeeZChuan</a></li><li class="mr-4 inline-block"><i class="fa-regular fa-folder mr-1"></i>
-<a href=/categories/%e5%8a%a8%e7%94%bb/ class=ms-1>动画
-,
-</a><a href=/categories/%e6%95%b0%e5%ad%a6/ class=ms-1>数学
-,
-</a><a href=/categories/%e5%89%8d%e7%ab%af/ class=ms-1>前端</a></li></ul><p class=mb-6><p>最近在做前端可视化相关的东西，在完成动画效果时，遇到一个不是很好处理的问题，需要让一个元素在画布上以曲线的轨迹进行运动。因为动画这块之前基本也没有怎么接触过，做的也都是简单的线性动画效果，所以碰到这个需求点的时候觉得是有点难度的。</p><p>其实，要真的实现按照一定曲线轨迹运动的效果倒也不难，毕竟圆、椭圆方程在平时做布局计算的时候用的也挺多的。但是，用圆或者椭圆计算曲线相当于是找了个特殊场景，不具备通用性；另一方面，说到曲线的绘制，贝塞尔曲线是绕不开的，这也是非常值得考虑的方案。</p><blockquote><p>动画帧计算</p></blockquote><p>一段动画实际上是由多个静态帧组成的，当帧率达到人眼不可分辨的程度时（比如 60 FPS），就感觉像是一个无缝连续的视频在流畅的播放。而某一静态帧的状态用数学公式来表达如下：</p><pre tabindex=0><code>y = F(t) (0 &lt;= t &lt;= 1)
-</code></pre><p>那么对于一个物体从 <strong>x0</strong> 运动到 <strong>x1</strong>，如何计算 <strong>t</strong> 时刻的位置？按照我的思路来看，可以转化为以下数学公式：</p></p><a class="btn btn-outline-primary btn-sm" href=/blog/tools/tools-animation-math/>了解更多</a></div></div></div></div></div></section></main><footer class="bg-theme-light dark:bg-darkmode-theme-light"><div class=container><div class="row items-center py-10"><div class="lg:col-3 mb-8 text-center lg:mb-0 lg:text-left"><a class="navbar-brand inline-block" href=/><img fetchpriority=high decoding=async class="img img-light" width=160 height=32 src=/images/logo_hu4114262549785978686.webp alt=Hugoplate onerror='this.onerror=null,this.src="/images/logo_hu7137767845088484273.png"'>
-<img fetchpriority=high decoding=async class="img img-dark" width=160 height=32 src=/images/logo-darkmode_hu8742296558546396051.webp alt=Hugoplate onerror='this.onerror=null,this.src="/images/logo-darkmode_hu4471933895487503573.png"'></a></div><div class="lg:col-6 mb-8 text-center lg:mb-0"><ul><li class="m-3 inline-block"><a href=/></a></li></ul></div><div class="lg:col-3 mb-8 text-center lg:mb-0 lg:mt-0 lg:text-right"><ul class=social-icons><li><a target=_blank aria-label=facebook rel="nofollow noopener" href="https://www.facebook.com/profile.php?id=100083154937436"><i class="fab fa-facebook"></i></a></li><li><a target=_blank aria-label=github rel="nofollow noopener" href=https://github.com/LeeZChuan><i class="fab fa-github"></i></a></li><li><a target=_blank aria-label=linkedin rel="nofollow noopener" href=https://www.linkedin.com/in/zchuan-lee-89214a1a3/><i class="fab fa-linkedin"></i></a></li></ul></div></div></div><div class="border-border dark:border-darkmode-border border-t py-7"><div class="text-light dark:text-darkmode-light container text-center"><p></p></div></div></footer><script crossorigin=anonymous integrity="sha256-LO9JECYLqyMcpGlrtxZcpUn0I8AvhO6oIIibJZv4zbk=" src=/js/script.min.2cef4910260bab231ca4696bb7165ca549f423c02f84eea820889b259bf8cdb9.js></script><script defer async crossorigin=anonymous integrity="sha256-w+aS42D2+B+Jix+joZ7pAua1vbu/pRK/IhoP55b8n3w=" src=/js/script-lazy.min.c3e692e360f6f81f898b1fa3a19ee902e6b5bdbbbfa512bf221a0fe796fc9f7c.js></script><script>"serviceWorker"in navigator&&navigator.serviceWorker.register("/service-worker.js")</script><script type=application/javascript>const announcementBox=document.getElementById("announcement"),announcementButton=document.getElementById("announcement-button");Cookies.get("announcement-close")||(announcementBox.classList.remove("announcement-hide"),announcementButton.onclick=function(){Cookies.set("announcement-close",!0,{expires:7}),announcementBox.classList.add("announcement-hide")})</script></body></html>
+<!doctype html>
+<html
+  itemscope
+  class=""
+  lang="zh-cn"
+  itemtype="http://schema.org/WebPage">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+    <meta charset="utf-8" />
+
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, maximum-scale=5" />
+
+
+<meta name="theme-name" content="hugoplate" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="/images/favicon_hu9880217891310920762.png" type="image/x-icon">
+<link rel="icon" href="/images/favicon_hu9880217891310920762.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu11285212527156944795.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu9880217891310920762.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu290619398646655712.png">
+
+
+
+
+
+
+
+
+<link rel="manifest" href="/manifest.webmanifest" />
+<meta
+  name="msapplication-TileColor"
+  content="#ddd" />
+<meta
+  name="theme-color"
+  content="#ffffff" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<title>解析基于 core-js 与 ESLint 的 Web 兼容方案</title>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <meta
+    name="keywords"
+    content="Boilerplate, Hugo" />
+
+
+
+
+<meta
+  name="description"
+  content="Web 网页为了保证在多个平台和低中高端设备上的体验稳定性和一致性，通常会做 Polyfill 以保证兼容性，当下社区的主流方案则是基于 core-js，而 ESLint 则可作为自动检测的辅助工具。" />
+
+
+
+  <meta name="author" content="zeon.studio" />
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+      
+        <meta property="og:image" content="http://localhost:1313/images/og-image.png" />
+        <meta name="twitter:image" content="http://localhost:1313/images/og-image.png" />
+        <meta
+          name="twitter:card"
+          content="summary_large_image" />
+      
+      
+      <meta property="og:image:width" content="900" />
+      <meta property="og:image:height" content="600" />
+    
+
+
+    
+    <meta
+      property="og:image:type"
+      content="image/.png" />
+  
+
+
+  
+
+
+
+
+
+<meta property="og:title" content="解析基于 core-js 与 ESLint 的 Web 兼容方案" />
+<meta property="og:description" content="Web 网页为了保证在多个平台和低中高端设备上的体验稳定性和一致性，通常会做 Polyfill 以保证兼容性，当下社区的主流方案则是基于 core-js，而 ESLint 则可作为自动检测的辅助工具。" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://localhost:1313/blog/computer-technology/web/tools-web-fee-polyfill-corejs-eslint/" />
+
+
+<meta name="twitter:title" content="解析基于 core-js 与 ESLint 的 Web 兼容方案" />
+<meta name="twitter:description" content="Web 网页为了保证在多个平台和低中高端设备上的体验稳定性和一致性，通常会做 Polyfill 以保证兼容性，当下社区的主流方案则是基于 core-js，而 ESLint 则可作为自动检测的辅助工具。" />
+
+
+  <meta name="twitter:site" content="@zeon_studio" />
+
+
+  <meta name="twitter:creator" content="@zeon.studio" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  let indexURL = "http://localhost:1313/searchindex.json";
+  let includeSectionsInSearch = ["blog"];
+  let search_no_results = "暂无数据";
+  let search_initial_message = "标注某事物去搜索...";
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+<meta http-equiv="x-dns-prefetch-control" content="on" />
+<link rel="preconnect" href="https://use.fontawesome.com" crossorigin />
+<link rel="preconnect" href="//cdnjs.cloudflare.com" />
+<link rel="preconnect" href="//www.googletagmanager.com" />
+<link rel="preconnect" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="https://use.fontawesome.com" />
+<link rel="dns-prefetch" href="//ajax.googleapis.com" />
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+<link rel="dns-prefetch" href="//www.googletagmanager.com" />
+<link rel="dns-prefetch" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link rel="dns-prefetch" href="//connect.facebook.net" />
+<link rel="dns-prefetch" href="//platform.linkedin.com" />
+<link rel="dns-prefetch" href="//platform.twitter.com" />
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script>
+  (function () {
+    const googleFont = document.createElement("link");
+    googleFont.href = "https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&family=Signika:wght@500;700&display=swap";
+    googleFont.type = "text/css";
+    googleFont.rel = "stylesheet";
+    document.head.appendChild(googleFont);
+  })();
+</script>
+
+
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+<link
+  href="/css/style.css"
+  integrity=""
+  rel="stylesheet" />
+
+
+<link
+  defer
+  async
+  rel="stylesheet"
+  href="/css/style-lazy.css"
+  integrity=""
+  media="print"
+  onload="this.media='all'; this.onload=null;" />
+
+
+  </head>
+
+  <body>
+    
+    
+      
+
+
+
+
+
+      
+      <div
+  class="fixed left-0 top-0 z-50 flex w-[30px] items-center justify-center bg-gray-200 py-[2.5px] text-[12px] uppercase text-black sm:bg-red-200 md:bg-yellow-200 lg:bg-green-200 xl:bg-blue-200 2xl:bg-pink-200">
+  <span class="block sm:hidden">all</span>
+  <span class="hidden sm:block md:hidden">sm</span>
+  <span class="hidden md:block lg:hidden">md</span>
+  <span class="hidden lg:block xl:hidden">lg</span>
+  <span class="hidden xl:block 2xl:hidden">xl</span>
+  <span class="hidden 2xl:block">2xl</span>
+</div>
+
+    
+
+
+    
+    
+
+
+  <div id="announcement" class="announcement announcement-hide">
+    You must replace the <strong>baseURL</strong> in <strong>hugo.toml</strong> file when deploying, you can manage this announcement from the <strong>params.toml</strong> file.
+    <button id="announcement-button" class="announcement-button">
+      &times;
+    </button>
+  </div>
+
+  
+  <style>
+    .announcement {
+      position: relative;
+      z-index: 999;
+      padding: 1rem;
+      padding-right: 2.8rem;
+      background-color: #fff;
+      box-shadow: 1px 0px 10px 7px rgba(154, 154, 154, 0.11);
+      font-size: 1.1rem;
+    }
+    .announcement-button {
+      cursor: pointer;
+      padding: 0 0.5rem;
+      border: 0;
+      font-size: 1.3rem;
+      position: absolute;
+      top: 50%;
+      right: 1rem;
+      transform: translateY(-50%);
+      border: 1px solid;
+      border-radius: 50%;
+      height: 1.1em;
+      width: 1.1em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .announcement-hide {
+      display: none;
+    }
+    .dark .announcement {
+      background-color: #222;
+    }
+  </style>
+
+
+
+
+    
+    <header
+  class="header sticky top-0 z-30">
+  <nav class="navbar container">
+    
+    <div class="order-0">
+      
+      <a class="navbar-brand block" href="/">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+    
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu4114262549785978686.webp"
+      alt="Hugoplate"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu7137767845088484273.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu8742296558546396051.webp"
+      alt="Hugoplate"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu4471933895487503573.png';" />
+  
+  
+
+
+      </a>
+    </div>
+    
+    <input id="nav-toggle" type="checkbox" class="hidden" />
+    <label
+      for="nav-toggle"
+      class="order-3 cursor-pointer flex items-center lg:hidden text-dark dark:text-white lg:order-1">
+      <svg id="show-button" class="h-6 fill-current block" viewBox="0 0 20 20">
+        <title>Menu Open</title>
+        <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z"></path>
+      </svg>
+      <svg id="hide-button" class="h-6 fill-current hidden" viewBox="0 0 20 20">
+        <title>Menu Close</title>
+        <polygon
+          points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
+          transform="rotate(45 10 10)"></polygon>
+      </svg>
+    </label>
+    
+
+    
+    <ul
+      id="nav-menu"
+      class="navbar-nav order-3 hidden lg:flex w-full pb-6 lg:order-1 lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8">
+      
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/"
+              >主页</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/about"
+              >关于我</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/projects"
+              >个人项目</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/blog"
+              >文章记录</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/life"
+              >生活记录</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item nav-dropdown group relative">
+            <span
+              class="nav-link 
+                
+                
+                
+              
+                
+                
+                
+               inline-flex items-center">
+              其他
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+                <path
+                  d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+              </svg>
+            </span>
+            <ul
+              class="nav-dropdown-list lg:group-hover:visible lg:group-hover:opacity-100">
+              
+                
+                
+                <li class="nav-dropdown-item">
+                  <a
+                    class="nav-dropdown-link "
+                    
+                    href="/elements">
+                    Md编写说明
+                  </a>
+                </li>
+              
+                
+                
+                <li class="nav-dropdown-item">
+                  <a
+                    class="nav-dropdown-link "
+                    
+                    href="/categories">
+                    文字分类汇总
+                  </a>
+                </li>
+              
+            </ul>
+          </li>
+        
+      
+      
+    </ul>
+
+    <div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
+      
+        
+          <button
+            aria-label="search"
+            
+            class="border-border text-dark hover:text-primary dark:border-darkmode-border mr-5 inline-block border-r pr-5 text-xl dark:text-white dark:hover:text-darkmode-primary"
+            
+            data-target="search-modal">
+            <i class="fa-solid fa-search"></i>
+          </button>
+        
+      
+
+      
+
+
+
+
+
+
+
+
+
+      
+
+
+  <div class="theme-switcher mr-5 hidden">
+    <input id="theme-switcher" data-theme-switcher type="checkbox" />
+    <label for="theme-switcher">
+      <span class="sr-only">theme switcher</span>
+      <span>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-100 dark:opacity-0"
+          viewBox="0 0 56 56"
+          fill="#fff"
+          height="16"
+          width="16">
+          <path
+            d="M30 4.6c0-1-.9-2-2-2a2 2 0 0 0-2 2v5c0 1 .9 2 2 2s2-1 2-2Zm9.6 9a2 2 0 0 0 0 2.8c.8.8 2 .8 2.9 0L46 13a2 2 0 0 0 0-2.9 2 2 0 0 0-3 0Zm-26 2.8c.7.8 2 .8 2.8 0 .8-.7.8-2 0-2.9L13 10c-.7-.7-2-.8-2.9 0-.7.8-.7 2.1 0 3ZM28 16a12 12 0 0 0-12 12 12 12 0 0 0 12 12 12 12 0 0 0 12-12 12 12 0 0 0-12-12Zm23.3 14c1.1 0 2-.9 2-2s-.9-2-2-2h-4.9a2 2 0 0 0-2 2c0 1.1 1 2 2 2ZM4.7 26a2 2 0 0 0-2 2c0 1.1.9 2 2 2h4.9c1 0 2-.9 2-2s-1-2-2-2Zm37.8 13.6a2 2 0 0 0-3 0 2 2 0 0 0 0 2.9l3.6 3.5a2 2 0 0 0 2.9 0c.8-.8.8-2.1 0-3ZM10 43.1a2 2 0 0 0 0 2.9c.8.7 2.1.8 3 0l3.4-3.5c.8-.8.8-2.1 0-2.9-.8-.8-2-.8-2.9 0Zm20 3.4c0-1.1-.9-2-2-2a2 2 0 0 0-2 2v4.9c0 1 .9 2 2 2s2-1 2-2Z" />
+        </svg>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-0 dark:opacity-100"
+          viewBox="0 0 24 24"
+          fill="none"
+          height="16"
+          width="16">
+          <path
+            fill="#000"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M8.2 2.2c1-.4 2 .6 1.6 1.5-1 3-.4 6.4 1.8 8.7a8.4 8.4 0 0 0 8.7 1.8c1-.3 2 .5 1.5 1.5v.1a10.3 10.3 0 0 1-9.4 6.2A10.3 10.3 0 0 1 3.2 6.7c1-2 2.9-3.5 4.9-4.4Z" />
+        </svg>
+      </span>
+    </label>
+  </div>
+
+  
+  <script>
+    var darkMode = false;
+
+    
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches){darkMode = true}
+    
+
+    if (localStorage.getItem("theme") === "dark"){darkMode = true}
+    else if (localStorage.getItem("theme") === "light"){darkMode = false}
+
+    if (darkMode){document.documentElement.classList.add("dark")}
+    else {document.documentElement.classList.remove("dark")}
+
+    
+    document.addEventListener("DOMContentLoaded", () => {
+      var themeSwitch = document.querySelectorAll("[data-theme-switcher]");
+      var themeSwitcherContainer = document.querySelector('.theme-switcher');
+
+      [].forEach.call(themeSwitch, function (ts) {
+        ts.checked = darkMode;
+        ts.addEventListener("click", () => {
+          document.documentElement.classList.toggle("dark");
+          localStorage.setItem(
+            "theme",
+            document.documentElement.classList.contains("dark") ? "dark" : "light"
+          );
+        });
+      });
+
+      
+      themeSwitcherContainer.classList.remove('hidden');
+    });
+  </script>
+
+
+
+
+      
+      
+    </div>
+  </nav>
+</header>
+
+    
+
+
+
+
+  
+    <div
+      class="search-modal "
+      aria-hidden="true"
+      style="--color-primary: #121212">
+      <div data-target="close-search-modal" class="search-modal-overlay"></div>
+      <div
+        class="search-wrapper"
+        data-image="true"
+        data-description="true"
+        data-tags="true"
+        data-categories="true">
+        <div class="search-wrapper-header">
+          <label for="search-modal-input" style="margin-top:-1px">
+            <span class="sr-only">search icon</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-icon"
+              data-type="search">
+              <path
+                fill="currentColor"
+                d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-reset"
+              data-type="reset">
+              <path
+                fill="currentColor"
+                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z" />
+            </svg>
+          </label>
+          <input
+            id="search-modal-input"
+            type="text"
+            data-search-input
+            autocomplete="off"
+            aria-label="Search"
+            placeholder="搜寻更多..." />
+        </div>
+        <div class="search-wrapper-body">
+          <div class="search-result" data-search-result></div>
+          <span class="search-result-empty">
+            标注某事物去搜索...
+          </span>
+        </div>
+        <div class="search-wrapper-footer">
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 11h9.592L8 5.519 3.204 11zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659z" />
+              </svg>
+            </kbd>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                style="margin-top:1px;"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z" />
+              </svg>
+            </kbd>
+            去导航
+          </span>
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="12"
+                fill="currentColor"
+                style="display:inline-block;"
+                viewBox="0 0 16 16">
+                <path
+                  fill-rule="evenodd"
+                  d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z" />
+              </svg>
+            </kbd>
+            去选择
+          </span>
+          <span class="search-result-info"></span>
+          <span data-target="close-search-modal">
+            <kbd>ESC</kbd> 去关闭
+          </span>
+        </div>
+      </div>
+    </div>
+  
+
+
+
+
+    <main>
+      
+  <section class="section pt-7">
+    <div class="container">
+      <div class="row justify-center">
+        <article class="lg:col-10">
+          
+          
+          <h1 class="h2 mb-4">
+            解析基于 core-js 与 ESLint 的 Web 兼容方案
+          </h1>
+          <ul class="mb-4">
+            <li class="mr-4 inline-block">
+              <a
+                href="/authors/leezchuan/">
+                <i class="fa-regular fa-circle-user mr-2"></i
+                >LeeZChuan
+              </a>
+            </li>
+            
+            
+              <li class="mr-4 inline-block">
+                <i class="fa-regular fa-folder mr-2"></i>
+                
+                  <a
+                    href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/"
+                    class=""
+                    >计算机技术
+                      ,
+                    
+                  </a>
+                
+                  <a
+                    href="/categories/web%e5%89%8d%e7%ab%af/"
+                    class=""
+                    >Web前端
+                      ,
+                    
+                  </a>
+                
+                  <a
+                    href="/categories/%e5%b7%a5%e5%85%b7/"
+                    class=""
+                    >工具
+                      ,
+                    
+                  </a>
+                
+                  <a
+                    href="/categories/polyfill/"
+                    class=""
+                    >Polyfill
+                  </a>
+                
+              </li>
+            
+            <li class="mr-4 inline-block">
+              <i class="fa-regular fa-clock mr-2"></i>
+              December 7, 2021
+            </li>
+          </ul>
+          <div class="content mb-10">
+            
+
+ 
+  
+
+<details open class="table-of-content blog">
+  <summary>
+    
+      内容列表
+    
+  </summary>
+  <nav id="TableOfContents">
+  <ol>
+    <li>
+      <ol>
+        <li><a href="#基于-core-js-的兼容方案">基于 <code>core-js</code> 的兼容方案</a>
+          <ol>
+            <li><a href="#api-兼容性">API 兼容性</a></li>
+            <li><a href="#兼容目标">兼容目标</a></li>
+            <li><a href="#eslint">ESLint</a></li>
+            <li><a href="#babel">Babel</a>
+              <ol>
+                <li><a href="#babelpolyfill"><code>@babel/polyfill</code></a></li>
+                <li><a href="#babelpreset-env"><code>@babel/preset-env</code></a></li>
+              </ol>
+            </li>
+          </ol>
+        </li>
+        <li><a href="#结语">结语</a></li>
+        <li><a href="#参考资源">参考资源</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+</details>
+
+            <p>Web 网页为了保证在多个平台和低中高端设备上的体验稳定性和一致性，通常会做 Polyfill 以保证兼容性。</p>
+<p>然而，兼容性问题本身是个难题，Polyfill 也并非很好处理，所以在技术演变的过程中，社区达成了一致，有一个主流的方案，大家共同来使用和维护。当下社区的主流方案则是基于 <code>core-js</code>，另一方面， 利用 ESLint 插件则可以做到自动检测代码中需要添加 Polyfill 的 API。</p>
+<p><code>core-js</code> 只是解决了 JavaScript 的兼容性问题，Web 网页还有 CSS / HTML / Web API 的兼容性问题，处理这些问题的过程中，必然会存在大量相似的逻辑，比如目标设备的检测、目标设备的 API 支持情况统计。当然，社区也给出了非常好的方案，下面就来了解一下。</p>
+<!-- truncate -->
+<h3 id="基于-core-js-的兼容方案">基于 <code>core-js</code> 的兼容方案</h3>
+<p>首先，来看看这两者如何进行配合以非常优雅的方式完成 Polyfill 任务的。</p>
+<p><code>core-js</code> 是实现了遵循 ECMAScript 标准的模块化标准库，也就是说，主要是实现 JavaScript 的 API，这并不包括浏览器平台的 Web API（例如一些 DOM API、<code>fetch</code> 等）。用起来也很简单，直接在项目中引入即可：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// polyfill all `core-js` features:
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#39;core-js&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// polyfill only stable `core-js` features - ES and web standards:
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#39;core-js/stable&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// polyfill only stable ES features:
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#39;core-js/es&#39;</span>;
+</span></span></code></pre></div><p>上面是将所有 API 的 polyfills 引入项目，为了构建包尺寸更小，可以选择性的对特定 API 做兼容：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#39;core-js/modules/es.array.unscopables.flat&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#39;core-js/modules/es.array.unscopables.flat-map&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#39;core-js/modules/es.object.from-entries&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#39;core-js/modules/web.immediate&#39;</span>;
+</span></span></code></pre></div><p>这些方式引入的 polyfill 会污染全局作用域，开发 Web 应用项目时也许不存在太大问题，但若是开发第三方工具库，为了避免这个问题，官方提供了 <code>core-js-pure</code> 包：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Set</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;core-js-pure/features/set&#39;</span>;
+</span></span></code></pre></div><p>虽然说 <code>core-js</code> 只是针对 JavaScript API 的兼容方案，但为了方便，也提供了一些非常常用的 Web API 的 polyfills，例如 <code>setTimeout</code>、<code>URLSearchParams</code> 等。</p>
+<h4 id="api-兼容性">API 兼容性</h4>
+<p>怎么为 API 做兼容的问题解决掉之后，需要考虑的一个问题是怎么判断 API 的兼容性，首先在 <a href="https://developer.mozilla.org/"
+
+
+
+
+ target="_blank"
+ 
+
+
+>MDN Web Docs</a> 特定 API 文档页面最下方会有一个兼容性统计表格，这个是比较准确和全面的。当然，如果要最准确的结果，可以去特定浏览器厂商的标准状态页面查询，例如 <a href="https://www.chromestatus.com/features"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Chrome Platform Status</a> 等。</p>
+<p>除此之外，为了让社区各种工具链自动化去检测 API 兼容情况，有非常著名的 <a href="https://caniuse.com/"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Can I use</a> 站点。该站点方便开发者查询各种 JavaScript / CSS / HTML / Web API 的设备兼容情况，同时维护了一个数据库，供社区其它工具开发者使用。</p>
+<h4 id="兼容目标">兼容目标</h4>
+<p>有了检测 API 兼容情况和添加 polyfill 的工具后，还有一个很关键的问题：为了加载性能的优化，如果我们不引入全量的 polyfills，怎么针对特定平台去拣选相应的 polyfills？API 兼容检测工具的目标平台是什么？特定 API 是否需要添加 polyfills？</p>
+<p>当然，为了保证社区各种工具链的通用性，也有一个很著名的项目 <code>Browserslist</code>，它可以帮助我们配置代码兼容的目标平台，相应的工具链将会以该目标处理我们所写的代码。</p>
+<h4 id="eslint">ESLint</h4>
+<p>有了以上工具后，我们需要一个解析代码并运行这些工具的工具，ESLint 恰好适合这个角色。<code>eslint-plugin-compat</code> 插件可以根据 browserslist 的配置去查询所写代码中需要兼容的 API 并提示出来：</p>
+<blockquote>
+<p>eslint-plugin-compat（解析代码）-&gt; 用解析的代码和 browserslist 配置根据标准查询（MDN/Can I use 等）代码中的兼容情况 -&gt; 开发者手动引入 polyfills</p>
+</blockquote>
+<p>我们可以注意到，该插件仅仅是帮我们检测出来代码中需要引入 polyfills 的 API，最终还是需要开发者手动引入 polyfills，这是比较麻烦的。当然，ESLint 干了自己该干的，剩下的事情交给 Babel 即可。</p>
+<h4 id="babel">Babel</h4>
+<p>说到 Polyfill，还得再提一下社区主流的 JavaScript 编译方案 Babel，为什么呢？因为一开始，Babel 团队同时非常贴心的提供了 Polyfill 方案 <code>@babel/polyfill</code>。</p>
+<h5 id="babelpolyfill"><code>@babel/polyfill</code></h5>
+<p>如果看过源码，或者看过目前的文档，其实 @babel/polyfill 做的事情等价于：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// see docs: https://babeljs.io/docs/en/babel-polyfill/
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#39;core-js/stable&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#39;regenerator-runtime/runtime&#39;</span>;
+</span></span></code></pre></div><p>当然，现在（Babel 7.4.0+）这个方案已经被官方弃用了，这又是为什么呢？其实看上面的代码也能猜出个大概，这种方案不够灵活，把需要和不需要的 polyfills 全部添加到项目代码中，不利于加载性能优化；其次，对于开发者来说是个黑盒子，开发者不清楚干了哪些事，干到了什么程度，不受开发者控制。文档中也有所提及：</p>
+<blockquote>
+<p>Note: Depending on what ES2015 methods you actually use, you may not need to use <code>@babel/polyfill</code> or the runtime plugin. You may want to only <a href="https://github.com/zloirock/core-js#commonjs-api"
+
+
+
+
+ target="_blank"
+ 
+
+
+>load the specific polyfills you are using</a> (like <code>Object.assign</code>) or just document that the environment the library is being loaded in should include certain polyfills.</p>
+</blockquote>
+<p>其实意思很简单，就是把 polyfill 的控制权交给了开发者。与此同时，Babel 又给出了另一个方案 <code>@babel/preset-env</code>。</p>
+<h5 id="babelpreset-env"><code>@babel/preset-env</code></h5>
+<p>该方案主要解决了 @babel/polyfill 方案不够灵活的问题，提供了两种选择：即 <code>useBuiltIns</code> 配置项的 <code>usage</code> 和 <code>entry</code>。</p>
+<ul>
+<li><code>entry</code> 模式</li>
+</ul>
+<blockquote>
+<p>This option enables a new plugin that replaces the <code>import &quot;core-js/stable&quot;;</code> and <code>import &quot;regenerator-runtime/runtime&quot;</code> statements (or <code>require(&quot;core-js&quot;)</code> and <code>require(&quot;regenerator-runtime/runtime&quot;)</code>) with individual requires to different <code>core-js</code> entry points based on environment.</p>
+</blockquote>
+<p>该模式需要开发者在入口文件显式引入 <code>core-js</code>，然后 Babel 会根据配置的兼容目标环境精细化拣选需要的 polyfills 引入，达到减小最终构建包体积的目的。这里是以所有的 polyfills 和兼容目标环境为基础进行过滤，过滤掉目标环境已支持 API 的 polyfills，也就是说最终还是会引入项目代码没有用到的 API 的 polyfills。</p>
+<ul>
+<li><code>usage</code> 模式</li>
+</ul>
+<blockquote>
+<p>Adds specific imports for polyfills when they are used in each file. We take advantage of the fact that a bundler will load the same polyfill only once.</p>
+</blockquote>
+<p>而这种模式就解决了上面的问题，在以上模式过滤掉的结果中，再以项目代码为基础，过滤掉没有用到的 API 的 polyfills，这样最终的构建包体积会进一步减小。</p>
+<h3 id="结语">结语</h3>
+<p>至此，我们了解到基于 <code>core-js</code> 的兼容方案是通过一系列优秀的社区开源项目共同配合完成的，借助 Babel 的工具可以自动化完成大部分的兼容工作，而借助 ESLint 的插件工具可以显式知道哪些 API 需要引入 Polyfill 来做兼容。</p>
+<h3 id="参考资源">参考资源</h3>
+<ul>
+<li><a href="https://github.com/zloirock/core-js"
+
+
+
+
+ target="_blank"
+ 
+
+
+>https://github.com/zloirock/core-js</a></li>
+<li><a href="https://developer.mozilla.org/"
+
+
+
+
+ target="_blank"
+ 
+
+
+>https://developer.mozilla.org/</a></li>
+<li><a href="https://caniuse.com/"
+
+
+
+
+ target="_blank"
+ 
+
+
+>https://caniuse.com/</a></li>
+<li><a href="https://github.com/browserslist/browserslist"
+
+
+
+
+ target="_blank"
+ 
+
+
+>https://github.com/browserslist/browserslist</a></li>
+<li><a href="https://browserslist.dev/"
+
+
+
+
+ target="_blank"
+ 
+
+
+>https://browserslist.dev/</a></li>
+<li><a href="https://eslint.org/"
+
+
+
+
+ target="_blank"
+ 
+
+
+>https://eslint.org/</a></li>
+<li><a href="https://github.com/amilajack/eslint-plugin-compat"
+
+
+
+
+ target="_blank"
+ 
+
+
+>https://github.com/amilajack/eslint-plugin-compat</a></li>
+<li><a href="https://babeljs.io/"
+
+
+
+
+ target="_blank"
+ 
+
+
+>https://babeljs.io/</a></li>
+<li><a href="https://babeljs.io/docs/en/babel-polyfill/"
+
+
+
+
+ target="_blank"
+ 
+
+
+>https://babeljs.io/docs/en/babel-polyfill/</a></li>
+</ul>
+
+          </div>
+          <div class="row items-start justify-between">
+            
+            
+              <div class="lg:col-5 mb-10 flex items-center lg:mb-0">
+                <h5 class="mr-3">标签 :</h5>
+                <ul>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/">
+                        计算机技术
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/web%e5%89%8d%e7%ab%af/">
+                        Web前端
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/%e5%b7%a5%e5%85%b7/">
+                        工具
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/polyfill/">
+                        Polyfill
+                      </a>
+                    </li>
+                  
+                </ul>
+              </div>
+            
+            <div class="lg:col-4 flex items-center">
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="share-icons">
+  <h5 class="share-title">分享 :</h5>
+
+
+  
+  
+    <a
+      class="share-link share-facebook"
+      href="https://facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fblog%2fcomputer-technology%2fweb%2ftools-web-fee-polyfill-corejs-eslint%2f"
+      target="_blank"
+      rel="noopener"
+      aria-label="share facebook">
+      <span class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-twitter"
+      href="https://twitter.com/intent/tweet/?text=%e5%88%86%e4%ba%ab&amp;url=http%3a%2f%2flocalhost%3a1313%2fblog%2fcomputer-technology%2fweb%2ftools-web-fee-polyfill-corejs-eslint%2f"
+      target="_blank"
+      rel="noopener"
+      aria-label="share twitter">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path 
+            d="M8 2H1l8.26 11.015L1.45 22H4.1l6.388-7.349L16 22h7l-8.608-11.478L21.8 2h-2.65l-5.986 6.886zm9 18L5 4h2l12 16z"/>
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-email"
+      href="mailto:?subject=%e5%88%86%e4%ba%ab&amp;body=http%3a%2f%2flocalhost%3a1313%2fblog%2fcomputer-technology%2fweb%2ftools-web-fee-polyfill-corejs-eslint%2f"
+      target="_self"
+      rel="noopener"
+      aria-label="share email">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M22 4H2C.9 4 0 4.9 0 6v12c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7.25 14.43l-3.5 2c-.08.05-.17.07-.25.07-.17 0-.34-.1-.43-.25-.14-.24-.06-.55.18-.68l3.5-2c.24-.14.55-.06.68.18.14.24.06.55-.18.68zm4.75.07c-.1 0-.2-.03-.27-.08l-8.5-5.5c-.23-.15-.3-.46-.15-.7.15-.22.46-.3.7-.14L12 13.4l8.23-5.32c.23-.15.54-.08.7.15.14.23.07.54-.16.7l-8.5 5.5c-.08.04-.17.07-.27.07zm8.93 1.75c-.1.16-.26.25-.43.25-.08 0-.17-.02-.25-.07l-3.5-2c-.24-.13-.32-.44-.18-.68s.44-.32.68-.18l3.5 2c.24.13.32.44.18.68z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-reddit"
+      href="https://reddit.com/submit/?url=http%3a%2f%2flocalhost%3a1313%2fblog%2fcomputer-technology%2fweb%2ftools-web-fee-polyfill-corejs-eslint%2f&amp;resubmit=true&amp;title=%e5%88%86%e4%ba%ab"
+      target="_blank"
+      rel="noopener"
+      aria-label="share reddit">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M24 11.5c0-1.65-1.35-3-3-3-.96 0-1.86.48-2.42 1.24-1.64-1-3.75-1.64-6.07-1.72.08-1.1.4-3.05 1.52-3.7.72-.4 1.73-.24 3 .5C17.2 6.3 18.46 7.5 20 7.5c1.65 0 3-1.35 3-3s-1.35-3-3-3c-1.38 0-2.54.94-2.88 2.22-1.43-.72-2.64-.8-3.6-.25-1.64.94-1.95 3.47-2 4.55-2.33.08-4.45.7-6.1 1.72C4.86 8.98 3.96 8.5 3 8.5c-1.65 0-3 1.35-3 3 0 1.32.84 2.44 2.05 2.84-.03.22-.05.44-.05.66 0 3.86 4.5 7 10 7s10-3.14 10-7c0-.22-.02-.44-.05-.66 1.2-.4 2.05-1.54 2.05-2.84zM2.3 13.37C1.5 13.07 1 12.35 1 11.5c0-1.1.9-2 2-2 .64 0 1.22.32 1.6.82-1.1.85-1.92 1.9-2.3 3.05zm3.7.13c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9.8 4.8c-1.08.63-2.42.96-3.8.96-1.4 0-2.74-.34-3.8-.95-.24-.13-.32-.44-.2-.68.15-.24.46-.32.7-.18 1.83 1.06 4.76 1.06 6.6 0 .23-.13.53-.05.67.2.14.23.06.54-.18.67zm.2-2.8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm5.7-2.13c-.38-1.16-1.2-2.2-2.3-3.05.38-.5.97-.82 1.6-.82 1.1 0 2 .9 2 2 0 .84-.53 1.57-1.3 1.87z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+</div>
+
+            </div>
+          </div>
+          
+          
+            <div class="mt-20">
+              <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "themefisher-template" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+          
+        </article>
+      </div>
+
+      
+      
+      
+      
+        <div class="section pb-0">
+          <h2 class="h3 mb-12">相关</h2>
+          <div class="row">
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/computer-technology/tools/tools-vscode-sync/">
+      IDE：VS Code 配置同步
+    </a>
+  </h4>
+  
+  
+  <p class="mb-6"><p>利用一款插件来同步 VS Code 的配置到 GitHub 的 gist 上，实现多个设备间共享一套配置。</p>
+<!-- truncate -->
+<h3 id="vs-code">VS Code</h3>
+<p>Visual Studio Code 是由微软出品的一款轻量级编辑器，兼有部分 IDE 功能。在之前，Sublime Text 是最受欢迎的编辑器（开源），也为多数前端开发者所推崇，当然说到底它依然是个编辑器。随着时间的推移，GitHub 打造了自家的编辑器 Atom，微软的 VS Code 也横空出世，更有其它优秀的轻量级编辑器在市场上展开角逐。不过，到现在来看，VS Code 可能胜出了，已成为前端开发的利器。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/tools/tools-vscode-sync/">
+    了解更多
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/computer-technology/nodejs/tools-npm/">
+      使用 npm
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors//">
+          <i class="fa-regular fa-circle-user mr-2"></i>
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/"
+            class="ms-1"
+            >计算机技术
+              ,
+            
+          </a>
+        
+          <a
+            href="/categories/node.js/"
+            class="ms-1"
+            >Node.js
+              ,
+            
+          </a>
+        
+          <a
+            href="/categories/npm/"
+            class="ms-1"
+            >Npm
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>npm 是 Node.js 的一个包管理器，Web 前端工程师也经常利用它来简化开发流程，看看如何愉快的使用 npm ，并且发布自己的包，让 npm 成为我们的开发利器。</p>
+<!-- truncate -->
+<h3 id="npm">npm</h3>
+<blockquote>
+<p>**Node.js：**<a href="https://www.npmjs.com/"
+
+
+
+
+ target="_blank"
+ 
+
+
+>https://www.npmjs.com/</a></p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/nodejs/tools-npm/">
+    了解更多
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/computer-technology/web/web-cross-domain/">
+      Web 前端跨域访问
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/leezchuan/">
+          <i class="fa-regular fa-circle-user mr-2"></i>LeeZChuan
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/"
+            class="ms-1"
+            >计算机技术
+              ,
+            
+          </a>
+        
+          <a
+            href="/categories/web%e5%89%8d%e7%ab%af/"
+            class="ms-1"
+            >Web前端
+              ,
+            
+          </a>
+        
+          <a
+            href="/categories/%e5%ae%89%e5%85%a8/"
+            class="ms-1"
+            >安全
+              ,
+            
+          </a>
+        
+          <a
+            href="/categories/%e8%b7%a8%e5%9f%9f/"
+            class="ms-1"
+            >跨域
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>为了用户的安全，浏览器通常都会限制跨域（Cross-domain）访问，也就是默认不允许不同域名下页面之间进行资源的传递和信息交互，但很多时候我们又有跨域请求资源的需求。</p>
+<!-- truncate -->
+<h3 id="同源策略">同源策略</h3>
+<p>我们要在地址栏中正确输入“协议”、“域名”、“端口”、“文件路径”才能访问一个页面，其中任意一个不正确就不会达到我们期望的结果。所谓的跨域就是当<strong>协议</strong>、<strong>域名</strong>、<strong>端口</strong>这三者有一个不同时即称为跨域访问，这时候浏览器为了用户安全就会限制 JavaScript 的跨域行为，这也叫做同源策略（由网景公司提出）。</p>
+<p>通常一个公司（组织、团队）会申请一个主域名，然后根据服务类型分出多个二级域名，在某些涉及到敏感信息的页面又会采用 HTTPS 协议加密，或许还有更多的类似需求，这些需求大多都需要跨域共享资源才能实现用户的定制服务。所以，跨域访问不是个能避免的问题，在不破坏浏览器安全性的前提下我们需要去解决它。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/web-cross-domain/">
+    了解更多
+  </a>
+</div>
+
+              </div>
+            
+          </div>
+        </div>
+      
+    </div>
+  </section>
+
+    </main>
+
+    
+    <footer class="bg-theme-light dark:bg-darkmode-theme-light">
+  <div class="container">
+    <div class="row items-center py-10">
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:text-left">
+        
+        <a
+          class="navbar-brand inline-block"
+          href="/">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+    
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu4114262549785978686.webp"
+      alt="Hugoplate"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu7137767845088484273.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu8742296558546396051.webp"
+      alt="Hugoplate"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu4471933895487503573.png';" />
+  
+  
+
+
+        </a>
+      </div>
+      <div class="lg:col-6 mb-8 text-center lg:mb-0">
+        <ul>
+          
+            <li class="m-3 inline-block">
+              <a
+                
+                href="
+                  /
+                "
+                ></a
+              >
+            </li>
+          
+        </ul>
+      </div>
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:mt-0 lg:text-right">
+        <ul class="social-icons">
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="facebook"
+                rel="nofollow noopener"
+                href="https://www.facebook.com/profile.php?id=100083154937436">
+                <i class="fab fa-facebook"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="github"
+                rel="nofollow noopener"
+                href="https://github.com/LeeZChuan">
+                <i class="fab fa-github"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="linkedin"
+                rel="nofollow noopener"
+                href="https://www.linkedin.com/in/zchuan-lee-89214a1a3/">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="border-border dark:border-darkmode-border border-t py-7">
+    <div class="text-light dark:text-darkmode-light container text-center">
+      <p>
+        
+      </p>
+    </div>
+  </div>
+</footer>
+
+
+
+    
+    
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<script
+  crossorigin="anonymous"
+  integrity=""
+  src="/js/script.js"></script>
+
+
+<script
+  defer
+  async
+  crossorigin="anonymous"
+  integrity=""
+  src="/js/script-lazy.js"></script>
+
+
+
+<script>
+  if ('serviceWorker' in navigator){navigator.serviceWorker.register("/service-worker.js");}
+</script>
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <script type="application/javascript">
+      const announcementBox = document.getElementById('announcement');
+      const announcementButton = document.getElementById('announcement-button');
+      if (!Cookies.get('announcement-close')) {
+        announcementBox.classList.remove('announcement-hide');
+        announcementButton.onclick = function () {
+          Cookies.set('announcement-close', true, {
+            expires:  7 
+          });
+          announcementBox.classList.add('announcement-hide');
+        };
+      }
+    </script>
+  
+
+
+
+  </body>
+</html>
