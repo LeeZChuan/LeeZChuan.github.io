@@ -557,20 +557,6 @@
             <a
               class="nav-link "
               
-              href="/"
-              >主页</a
-            >
-          </li>
-        
-      
-        
-        
-        
-        
-          <li class="nav-item">
-            <a
-              class="nav-link "
-              
               href="/about"
               >关于我</a
             >
@@ -1334,6 +1320,59 @@ header('Access-Control-Allow-Origin: http://www.163.com');
   
   
   <h4 class="mb-3">
+    <a href="/blog/computer-technology/nodejs/nodejs-fastify/">
+      Fastify - 专注于性能和低内存消耗
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors//">
+          <i class="fa-regular fa-circle-user mr-2"></i>
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/"
+            class="ms-1"
+            >计算机技术
+              ,
+            
+          </a>
+        
+          <a
+            href="/categories/node.js/"
+            class="ms-1"
+            >Node.js
+              ,
+            
+          </a>
+        
+          <a
+            href="/categories/fastify/"
+            class="ms-1"
+            >Fastify
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>最近在做 Node.js 技术相关的调研，需要选定一个 Web 框架作为基础来构建业务。一般来说，首选开源方案，对于我来说，比较关注框架背后的开发团队情况、项目活跃度、是否有足够多的商业案例、文档是否完整可读、框架的设计理念、技术架构是否灵活可扩展、技术社区生态是否完整等方面。目前，我比较倾心的是 Fastify 这个新兴框架，根据官网介绍，其专注于高性能和低消耗，并且公开的基准测试表现相当不错，项目足够活跃，更重要的是属于 OpenJS 基金会的孵化项目。本文主要介绍 Fastify 的设计理念和探究其是如何提高性能和降低内存消耗的。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/nodejs/nodejs-fastify/">
+    了解更多
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
     <a href="/blog/computer-technology/computer/computer-microprocessor-addressing-range/">
       微处理器寻址范围
     </a>
@@ -1387,27 +1426,8 @@ header('Access-Control-Allow-Origin: http://www.163.com');
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/tools/tools-maintain-open-source-projects-with-tools/">
-      如何更好的维护开源项目
-    </a>
-  </h4>
-  
-  
-  <p class="mb-6"><p>一直以来，开源精神被开发者所推崇，开源项目为开发者提供了不用付出除时间以外任何成本就可以学习前沿技术的最佳途径，另一方面，我们应该思考开源为何会成功，在全球开发者参与协作的情况下代码仓库为何能保持整洁、不出现大规模冲突而奔溃，上下游依赖如何管理，这背后有既定的规范进行强约束，也有一系列社区工具来完成复杂而有价值的工作。所以，从参与或者维护开源项目的角度来看，这些<strong>社区公认的最佳实践</strong>值得我们了解，学习这些东西也能在一定程度上提高我们管理项目的能力。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/tools/tools-maintain-open-source-projects-with-tools/">
-    了解更多
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/web-front-end-architecture/">
-      Web 前端架构设计
+    <a href="/blog/computer-technology/web/web-performance-case-1/">
+      Web 前端性能优化：案例分析 1
     </a>
   </h4>
   
@@ -1438,16 +1458,24 @@ header('Access-Control-Allow-Origin: http://www.163.com');
           </a>
         
           <a
-            href="/categories/%e7%a8%8b%e5%ba%8f%e6%9e%b6%e6%9e%84%e8%ae%be%e8%ae%a1/"
+            href="/categories/%e6%80%a7%e8%83%bd%e4%bc%98%e5%8c%96/"
             class="ms-1"
-            >程序架构设计
+            >性能优化
+              ,
+            
+          </a>
+        
+          <a
+            href="/categories/%e6%a1%88%e4%be%8b%e5%88%86%e6%9e%90/"
+            class="ms-1"
+            >案例分析
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>让 Web 前端开发可持续化、可扩展，关注四个核心<strong>代码</strong>、<strong>流程</strong>、<strong>测试</strong>、<strong>文档</strong>。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/web-front-end-architecture/">
+  <p class="mb-6"><p>能在真实业务场景中落地 Web 性能优化方案的机会鲜有，大多数时候业务是较为简单而且要求不高的，前段时间恰好有一个比较核心的业务，对稳定性和性能有一定的要求，在这个过程中也算是做了很多尝试和实践，在此作为案例记录一下分析的过程和最终解决的方案。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/web-performance-case-1/">
     了解更多
   </a>
 </div>

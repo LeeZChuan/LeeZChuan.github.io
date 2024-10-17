@@ -555,20 +555,6 @@
             <a
               class="nav-link "
               
-              href="/"
-              >主页</a
-            >
-          </li>
-        
-      
-        
-        
-        
-        
-          <li class="nav-item">
-            <a
-              class="nav-link "
-              
               href="/about"
               >关于我</a
             >
@@ -1216,8 +1202,53 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/nodejs/nodejs-fastify/">
-      Fastify - 专注于性能和低内存消耗
+    <a href="/blog/notes/architecture-design/">
+      架构设计笔记
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/leezchuan/">
+          <i class="fa-regular fa-circle-user mr-2"></i>LeeZChuan
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/%e6%9e%b6%e6%9e%84%e8%ae%be%e8%ae%a1/"
+            class="ms-1"
+            >架构设计
+              ,
+            
+          </a>
+        
+          <a
+            href="/categories/%e5%89%8d%e7%ab%af/"
+            class="ms-1"
+            >前端
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>该文章将目前可能能用到的架构理念，概念统一汇总整理～</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/notes/architecture-design/">
+    了解更多
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/computer-technology/nodejs/nodejs-spawn-vs-exec/">
+      Child process API: spawn vs exec
     </a>
   </h4>
   
@@ -1248,16 +1279,24 @@
           </a>
         
           <a
-            href="/categories/fastify/"
+            href="/categories/spawn/"
             class="ms-1"
-            >Fastify
+            >Spawn
+              ,
+            
+          </a>
+        
+          <a
+            href="/categories/exec/"
+            class="ms-1"
+            >Exec
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>最近在做 Node.js 技术相关的调研，需要选定一个 Web 框架作为基础来构建业务。一般来说，首选开源方案，对于我来说，比较关注框架背后的开发团队情况、项目活跃度、是否有足够多的商业案例、文档是否完整可读、框架的设计理念、技术架构是否灵活可扩展、技术社区生态是否完整等方面。目前，我比较倾心的是 Fastify 这个新兴框架，根据官网介绍，其专注于高性能和低消耗，并且公开的基准测试表现相当不错，项目足够活跃，更重要的是属于 OpenJS 基金会的孵化项目。本文主要介绍 Fastify 的设计理念和探究其是如何提高性能和降低内存消耗的。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/nodejs/nodejs-fastify/">
+  <p class="mb-6"><p>利用 Node.js 编写一些命令行工具、一次性脚本是很方便的，而在这类场景下 child_process API 的 <code>spawn</code> 和 <code>exec</code> 方法的应用则非常常见。在我使用它们时，却不知道该如何进行选择，遂对此进行了探究。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/nodejs/nodejs-spawn-vs-exec/">
     了解更多
   </a>
 </div>
@@ -1269,8 +1308,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/linux/linux-cmd-shell/">
-      Linux-常用 Shell 命令
+    <a href="/blog/computer-technology/mobile-web/wx-dingding/">
+      微信小程序与钉钉小程序开发流程
     </a>
   </h4>
   
@@ -1293,43 +1332,18 @@
           </a>
         
           <a
-            href="/categories/%e6%93%8d%e4%bd%9c%e7%b3%bb%e7%bb%9f/"
+            href="/categories/web/"
             class="ms-1"
-            >操作系统
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/linux/"
-            class="ms-1"
-            >Linux
+            >Web
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>Linux 是一个优秀的开发环境，大多数服务器都在上面部署。作为一个程序员，熟悉Linux 系统的常用操作也是很必要的。在 linux 内核外，shell 提供了我们程序员（用户）与内核之间的交互媒介，shell 可以说是一个命令解释器，当然它也负责将内核输出信息翻译给程序员。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/linux/linux-cmd-shell/">
-    了解更多
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/dom/dom-fragment/">
-      DOM-文档片段
-    </a>
-  </h4>
-  
-  
-  <p class="mb-6"><p>DOM 操作是非常消耗性能的，如果要进行大量的 DOM 操作，我们可以选择在内存中先构建一个文档片段然后一次性插入 DOM 树。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-fragment/">
+  <p class="mb-6"><p>开发小程序有很多问题特此记录一下～～～</p>
+<blockquote>
+<p>小程序开发（移动端开发）兼容注意事项：</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/mobile-web/wx-dingding/">
     了解更多
   </a>
 </div>

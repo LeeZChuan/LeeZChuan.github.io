@@ -555,20 +555,6 @@
             <a
               class="nav-link "
               
-              href="/"
-              >主页</a
-            >
-          </li>
-        
-      
-        
-        
-        
-        
-          <li class="nav-item">
-            <a
-              class="nav-link "
-              
               href="/about"
               >关于我</a
             >
@@ -1500,14 +1486,14 @@ fetch('/api/postData', {
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/dom/dom-attribute/">
-      DOM-元素节点属性
+    <a href="/blog/computer-technology/web/dom/dom-rule/">
+      DOM-元素节点几何量
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>元素节点上具有很多属性，这些属性我们通常可以很方便的获取，并进行简单的操作。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-attribute/">
+  <p class="mb-6"><p>当我们在查看 HTML 文档时，每个元素节点被解析后，都画成了可视形状。我们可以获取每个元素节点的几何量（宽、高、偏移量）以及页面滚动距离。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-rule/">
     了解更多
   </a>
 </div>
@@ -1519,27 +1505,8 @@ fetch('/api/postData', {
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/dom/dom-bom/">
-      浏览器对象模型（BOM）
-    </a>
-  </h4>
-  
-  
-  <p class="mb-6"><p>在网页开发中，我们通常专注于内容的设计，而有些时候我们需要进行不同窗口之间的交互，这时候我们就需要学习如何运用 BOM 中的许多核心对象，及其属性、方法。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-bom/">
-    了解更多
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/tools-web-fee-debug-with-source-map/">
-      Web 前端调试工具：SourceMap 文件
+    <a href="/blog/computer-technology/web/web-performance-core-concepts/">
+      Web 前端性能优化：核心概念与指标
     </a>
   </h4>
   
@@ -1570,24 +1537,85 @@ fetch('/api/postData', {
           </a>
         
           <a
-            href="/categories/%e5%b7%a5%e5%85%b7/"
+            href="/categories/%e6%80%a7%e8%83%bd%e4%bc%98%e5%8c%96/"
             class="ms-1"
-            >工具
+            >性能优化
               ,
             
           </a>
         
           <a
-            href="/categories/sourcemap/"
+            href="/categories/%e6%a0%b8%e5%bf%83%e6%a6%82%e5%bf%b5/"
             class="ms-1"
-            >Source map
+            >核心概念
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>Web 前端项目出于加载性能优化和安全考虑，在生产环境部署的代码是经过混淆和压缩的，对于利用生产环境收集到的错误堆栈信息要进行调试是非常具有挑战性的。理想情况下，应该在生产环境收集错误堆栈信息，然后映射到源码进行调试。恰好，<strong>SourceMap 文件</strong>提供了这个机制，可以将编译（压缩）后的代码映射到源代码中。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/tools-web-fee-debug-with-source-map/">
+  <p class="mb-6"><p>说到 Web 的性能优化，可能很多时候我们采取了一些措施，看到了肉眼可见的改进，如果我们可以对其进行测量，确定我们改进的效率（百分比）是不是会更有意义？换句话说，如果我们了解性能瓶颈可能发生的位置，衡量用户体验好坏的指标，做到实时追踪性能变化，我们是不是可以更迅速的采取优化措施？在应用上线前，我们就可以做一些低成本而有高收益的优化工作，进一步提升用户体验。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/web-performance-core-concepts/">
+    了解更多
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/computer-technology/web/web-app-model-zustand/">
+      Web 应用：轻量级状态管理工具 zustand
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/leezchuan/">
+          <i class="fa-regular fa-circle-user mr-2"></i>LeeZChuan
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/"
+            class="ms-1"
+            >计算机技术
+              ,
+            
+          </a>
+        
+          <a
+            href="/categories/web%e5%89%8d%e7%ab%af/"
+            class="ms-1"
+            >Web前端
+              ,
+            
+          </a>
+        
+          <a
+            href="/categories/%e5%ba%94%e7%94%a8%e7%8a%b6%e6%80%81%e7%ae%a1%e7%90%86/"
+            class="ms-1"
+            >应用状态管理
+              ,
+            
+          </a>
+        
+          <a
+            href="/categories/react/"
+            class="ms-1"
+            >React
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>基于 React.js 的 Web 应用如何完成状态管理？社区主流方案是 <strong>react-redux</strong>，其本质上基于 React 的 <code>Context</code> 特性实现，如果应用足够简单，实际上用 <code>Context</code> 手写一个简单的状态管理工具倒也并不难。不过，考虑到工具的完善性、项目的健壮性，通常采用较好的、成熟的社区方案。在移动端场景下，<strong>react-redux</strong> 略显臃肿，轻量级状态管理工具 <strong>zustand</strong> 倒是一个不错的替代方案。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/web-app-model-zustand/">
     了解更多
   </a>
 </div>

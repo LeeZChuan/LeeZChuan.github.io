@@ -555,20 +555,6 @@
             <a
               class="nav-link "
               
-              href="/"
-              >主页</a
-            >
-          </li>
-        
-      
-        
-        
-        
-        
-          <li class="nav-item">
-            <a
-              class="nav-link "
-              
               href="/about"
               >关于我</a
             >
@@ -1240,14 +1226,48 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/dom/dom-event/">
-      DOM-事件
+    <a href="/blog/computer-technology/computer/computer-microprocessor-addressing-range/">
+      微处理器寻址范围
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>JavaScript 的作用就是让 html 静态页面具备动态效果，而这些基本都是利用 DOM 事件来实现的。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-event/">
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors//">
+          <i class="fa-regular fa-circle-user mr-2"></i>
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/"
+            class="ms-1"
+            >计算机技术
+              ,
+            
+          </a>
+        
+          <a
+            href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba/"
+            class="ms-1"
+            >计算机
+              ,
+            
+          </a>
+        
+          <a
+            href="/categories/mpu/"
+            class="ms-1"
+            >Mpu
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>在此之前，让我们带着下面这个问题来看这篇文章：<strong>64 位处理器所支持的最大内存(寻址范围)为多少？</strong></p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/computer/computer-microprocessor-addressing-range/">
     了解更多
   </a>
 </div>
@@ -1259,27 +1279,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/dom/dom-textnode/">
-      DOM-文本节点
-    </a>
-  </h4>
-  
-  
-  <p class="mb-6"><p>文本（Text）节点虽然很多时候我们直接用 innerHTML 去赋值替换，但当我们进行一些细微的修改时，了解一下 DOM 操作还是非常有用的。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-textnode/">
-    了解更多
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/notes/architecture-design/">
-      架构设计笔记
+    <a href="/blog/computer-technology/web/tools-web-fee-debug-with-source-map/">
+      Web 前端调试工具：SourceMap 文件
     </a>
   </h4>
   
@@ -1294,24 +1295,59 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/%e6%9e%b6%e6%9e%84%e8%ae%be%e8%ae%a1/"
+            href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/"
             class="ms-1"
-            >架构设计
+            >计算机技术
               ,
             
           </a>
         
           <a
-            href="/categories/%e5%89%8d%e7%ab%af/"
+            href="/categories/web%e5%89%8d%e7%ab%af/"
             class="ms-1"
-            >前端
+            >Web前端
+              ,
+            
+          </a>
+        
+          <a
+            href="/categories/%e5%b7%a5%e5%85%b7/"
+            class="ms-1"
+            >工具
+              ,
+            
+          </a>
+        
+          <a
+            href="/categories/sourcemap/"
+            class="ms-1"
+            >Source map
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>该文章将目前可能能用到的架构理念，概念统一汇总整理～</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/notes/architecture-design/">
+  <p class="mb-6"><p>Web 前端项目出于加载性能优化和安全考虑，在生产环境部署的代码是经过混淆和压缩的，对于利用生产环境收集到的错误堆栈信息要进行调试是非常具有挑战性的。理想情况下，应该在生产环境收集错误堆栈信息，然后映射到源码进行调试。恰好，<strong>SourceMap 文件</strong>提供了这个机制，可以将编译（压缩）后的代码映射到源代码中。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/tools-web-fee-debug-with-source-map/">
+    了解更多
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/computer-technology/typescript/tools-typescript-use-script-to-ts-types/">
+      利用脚本执行 `tsc` 忽略类型检查错误
+    </a>
+  </h4>
+  
+  
+  <p class="mb-6"><p>在发布 npm 包时添加对 TypeScript 类型定义文件的支持会让用户的使用体验增色不少，TypeScript 官方提供了 <code>tsc --emitDeclarationOnly</code> 命令用来生成类型定义文件（<code>.d.ts</code>）。但是，该命令会同时执行类型检查，遇到错误时会报错中断命令行进程，这就使其无法直接集成在 CI 环节在发布 npm 包时自动执行生成类型定义文件的操作。当然，一个解决办法就是解决掉代码中所有的类型检查错误即可，既然讨论到这个问题，必然不会花费额外精力去解决一些历史遗留问题。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/typescript/tools-typescript-use-script-to-ts-types/">
     了解更多
   </a>
 </div>

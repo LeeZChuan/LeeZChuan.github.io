@@ -555,20 +555,6 @@
             <a
               class="nav-link "
               
-              href="/"
-              >主页</a
-            >
-          </li>
-        
-      
-        
-        
-        
-        
-          <li class="nav-item">
-            <a
-              class="nav-link "
-              
               href="/about"
               >关于我</a
             >
@@ -1747,48 +1733,14 @@ README.zh-CN.md
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/linux/linux-base/">
-      Linux-基础
+    <a href="/blog/computer-technology/tools/tools-junit/">
+      单元测试工具：Junit
     </a>
   </h4>
   
   
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors//">
-          <i class="fa-regular fa-circle-user mr-2"></i>
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/"
-            class="ms-1"
-            >计算机技术
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/%e6%93%8d%e4%bd%9c%e7%b3%bb%e7%bb%9f/"
-            class="ms-1"
-            >操作系统
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/linux/"
-            class="ms-1"
-            >Linux
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6"><p>Linux 是在做一些较为底层的开发工作时的必要开发环境，了解 Linux 也对操作系统概念的理解有很大的帮助，这篇文章是对 Linux 的一些基础概念的阐述。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/linux/linux-base/">
+  <p class="mb-6"><p>通常一个项目的代码量是比较大的，而且其中逻辑也较为复杂，在开发完成后再进行项目测试其实是比较耗费时间和精力的，因此边开发边测试是个很好的选择，而 JUnit 则为我们提供了这样的便利。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/tools/tools-junit/">
     了解更多
   </a>
 </div>
@@ -1800,56 +1752,14 @@ README.zh-CN.md
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/web-performance-fastdom/">
-      Web 前端性能优化：批量 DOM 操作 - FastDOM
+    <a href="/blog/computer-technology/program-architecture-design/bridge-mode-design-of-cross-platform-event-mechanism/">
+      桥接模式：跨平台的事件机制设计
     </a>
   </h4>
   
   
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/leezchuan/">
-          <i class="fa-regular fa-circle-user mr-2"></i>LeeZChuan
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/"
-            class="ms-1"
-            >计算机技术
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/web%e5%89%8d%e7%ab%af/"
-            class="ms-1"
-            >Web前端
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/%e6%80%a7%e8%83%bd%e4%bc%98%e5%8c%96/"
-            class="ms-1"
-            >性能优化
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/dom/"
-            class="ms-1"
-            >Dom
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6"><p>利用 JS 开发的原生应用与依赖于 React.js/Vue 开发的框架/库应用，性能孰高孰低？这两者最显著的区别在于原生应用需要手动操作 DOM 完成业务，而框架/库应用是基于数据变化响应式的应用，后者只需要关注数据如何变化，至于体现在 DOM 上的变化皆由框架/库内部自动完成。所以，要搞清楚两者的性能优劣，可能<strong>批量</strong>的 DOM 操作是一个不可忽略的核心因素。从代码执行的角度分析，框架/库也是基于原生 API 进行的封装抽象，因此代码执行时的路径更长、堆栈更深，由此可见原生 API 的操作性能应该是最高的。但是，现实情况是业务通常来说是复杂的，代码实现中 DOM 操作的逻辑分散在各处，那么多个 DOM 操作之间是否会产生影响从而不利于性能？这个时候就要关注宿主浏览器的渲染机制是如何理解批量的 DOM 操作的，这里引入的概念就是<strong>关键渲染路径（Critical rendering path）</strong>。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/web-performance-fastdom/">
+  <p class="mb-6"><p>对于 Web 的图表组件库来说，一些功能比较强大的开源库，渲染层可以支持 DOM、SVG、Canvas、WebGL 等多个平台的环境，而图表库的很多功能的实现都和渲染层紧密相关。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/program-architecture-design/bridge-mode-design-of-cross-platform-event-mechanism/">
     了解更多
   </a>
 </div>
@@ -1861,40 +1771,14 @@ README.zh-CN.md
   
   
   <h4 class="mb-3">
-    <a href="/blog/notes/architecture-design/">
-      架构设计笔记
+    <a href="/blog/computer-technology/protocol/protocol-osi/">
+      OSI 与 TCP/IP 参考模型
     </a>
   </h4>
   
   
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/leezchuan/">
-          <i class="fa-regular fa-circle-user mr-2"></i>LeeZChuan
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/%e6%9e%b6%e6%9e%84%e8%ae%be%e8%ae%a1/"
-            class="ms-1"
-            >架构设计
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/%e5%89%8d%e7%ab%af/"
-            class="ms-1"
-            >前端
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6"><p>该文章将目前可能能用到的架构理念，概念统一汇总整理～</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/notes/architecture-design/">
+  <p class="mb-6"><p>目前流行的两大网络体系结构是 OSI/RM 和 TCP/IP 参考模型，他们均是分层结构。分层是为了简化问题，降低网络设计复杂性，而且各层次结构相互独立，实现的功能也相对独立。层与层之间只在层间接口处关联，层间耦合最小。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/protocol/protocol-osi/">
     了解更多
   </a>
 </div>

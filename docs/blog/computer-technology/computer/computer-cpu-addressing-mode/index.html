@@ -557,20 +557,6 @@
             <a
               class="nav-link "
               
-              href="/"
-              >主页</a
-            >
-          </li>
-        
-      
-        
-        
-        
-        
-          <li class="nav-item">
-            <a
-              class="nav-link "
-              
               href="/about"
               >关于我</a
             >
@@ -1224,56 +1210,14 @@ MOV AX, [BX]
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/tools-web-fee-debug-with-source-map/">
-      Web 前端调试工具：SourceMap 文件
+    <a href="/blog/computer-technology/web/dom/dom-select/">
+      DOM-选取元素节点
     </a>
   </h4>
   
   
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/leezchuan/">
-          <i class="fa-regular fa-circle-user mr-2"></i>LeeZChuan
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/"
-            class="ms-1"
-            >计算机技术
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/web%e5%89%8d%e7%ab%af/"
-            class="ms-1"
-            >Web前端
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/%e5%b7%a5%e5%85%b7/"
-            class="ms-1"
-            >工具
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/sourcemap/"
-            class="ms-1"
-            >Source map
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6"><p>Web 前端项目出于加载性能优化和安全考虑，在生产环境部署的代码是经过混淆和压缩的，对于利用生产环境收集到的错误堆栈信息要进行调试是非常具有挑战性的。理想情况下，应该在生产环境收集错误堆栈信息，然后映射到源码进行调试。恰好，<strong>SourceMap 文件</strong>提供了这个机制，可以将编译（压缩）后的代码映射到源代码中。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/tools-web-fee-debug-with-source-map/">
+  <p class="mb-6"><p>DOM 操作都是通过对文档树中节点的访问来实现的，如何选取特定的元素节点是关键，进而才能访问该元素节点实现修改、查看、移除、替换等操作。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-select/">
     了解更多
   </a>
 </div>
@@ -1285,56 +1229,14 @@ MOV AX, [BX]
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/web-app-model-zustand/">
-      Web 应用：轻量级状态管理工具 zustand
+    <a href="/blog/computer-technology/tools/tools-programming-language/">
+      理解编程语言的设计与实现
     </a>
   </h4>
   
   
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/leezchuan/">
-          <i class="fa-regular fa-circle-user mr-2"></i>LeeZChuan
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/"
-            class="ms-1"
-            >计算机技术
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/web%e5%89%8d%e7%ab%af/"
-            class="ms-1"
-            >Web前端
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/%e5%ba%94%e7%94%a8%e7%8a%b6%e6%80%81%e7%ae%a1%e7%90%86/"
-            class="ms-1"
-            >应用状态管理
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/react/"
-            class="ms-1"
-            >React
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6"><p>基于 React.js 的 Web 应用如何完成状态管理？社区主流方案是 <strong>react-redux</strong>，其本质上基于 React 的 <code>Context</code> 特性实现，如果应用足够简单，实际上用 <code>Context</code> 手写一个简单的状态管理工具倒也并不难。不过，考虑到工具的完善性、项目的健壮性，通常采用较好的、成熟的社区方案。在移动端场景下，<strong>react-redux</strong> 略显臃肿，轻量级状态管理工具 <strong>zustand</strong> 倒是一个不错的替代方案。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/web-app-model-zustand/">
+  <p class="mb-6"><p>编程语言本质上是给开发者使用的工具，不同的业务领域使用不同的编程语言去实现具体的业务，是基于语言本身的设计理念与实现方式来做选择，那么作为开发者应该了解一下编程语言是如何被发明的，且其设计理念是什么。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/tools/tools-programming-language/">
     了解更多
   </a>
 </div>
@@ -1346,14 +1248,14 @@ MOV AX, [BX]
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/css/css-bfc/">
-      块级格式化上下文（BFC）
+    <a href="/blog/computer-technology/protocol/protocol-tcp-udp/">
+      TCP 与 UDP 协议
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>在进行页面布局时，通常有流式布局、定位布局、浮动布局这三种形式。而在布局过程中，各元素之间的影响却是一个很关键的问题。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/css/css-bfc/">
+  <p class="mb-6"><p>传输层是网络分层模型中举足轻重的层，它是底层通信子网与高层资源子网的接口与桥梁，提供了面向连接的传输控制协议（Transmission Control Protocol，TCP）和无连接的用户数据报协议（User Datagram Protocol，UDP），负责提供端到端的数据传输服务。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/protocol/protocol-tcp-udp/">
     了解更多
   </a>
 </div>

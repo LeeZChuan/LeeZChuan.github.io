@@ -557,20 +557,6 @@
             <a
               class="nav-link "
               
-              href="/"
-              >主页</a
-            >
-          </li>
-        
-      
-        
-        
-        
-        
-          <li class="nav-item">
-            <a
-              class="nav-link "
-              
               href="/about"
               >关于我</a
             >
@@ -1539,80 +1525,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/tools/tools-animation-math/">
-      从贝塞尔曲线的计算感受数学建模的魅力
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/leezchuan/">
-          <i class="fa-regular fa-circle-user mr-2"></i>LeeZChuan
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/%e5%8a%a8%e7%94%bb/"
-            class="ms-1"
-            >动画
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/%e6%95%b0%e5%ad%a6/"
-            class="ms-1"
-            >数学
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/%e5%89%8d%e7%ab%af/"
-            class="ms-1"
-            >前端
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6"><p>最近在做前端可视化相关的东西，在完成动画效果时，遇到一个不是很好处理的问题，需要让一个元素在画布上以曲线的轨迹进行运动。因为动画这块之前基本也没有怎么接触过，做的也都是简单的线性动画效果，所以碰到这个需求点的时候觉得是有点难度的。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/tools/tools-animation-math/">
-    了解更多
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/computer-technology/protocol/protocol-base/">
-      网络通信关键概念
-    </a>
-  </h4>
-  
-  
-  <p class="mb-6"><p>计算机网络是通过通信设备与线路将地理上分散并且具有独立功能的计算机系统连接在一起，并由功能完善的软件来控制，进而实现资源共享的系统。从物理组成上来看，计算机网络包括硬件、软件和协议三大部分。计算机网络中结点间相互通信是由控制信息传送的网络协议及其他相应的网络软件共同实现的。在计算机网络通信中，有部分关键性概念需要理解透彻，在此做一总结。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/protocol/protocol-base/">
-    了解更多
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/web-performance-fastdom/">
-      Web 前端性能优化：批量 DOM 操作 - FastDOM
+    <a href="/blog/computer-technology/web/web-routing/">
+      Web 应用：单页面应用与路由
     </a>
   </h4>
   
@@ -1643,24 +1557,96 @@
           </a>
         
           <a
-            href="/categories/%e6%80%a7%e8%83%bd%e4%bc%98%e5%8c%96/"
+            href="/categories/spa/"
             class="ms-1"
-            >性能优化
+            >Spa
               ,
             
           </a>
         
           <a
-            href="/categories/dom/"
+            href="/categories/%e8%b7%af%e7%94%b1/"
             class="ms-1"
-            >Dom
+            >路由
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>利用 JS 开发的原生应用与依赖于 React.js/Vue 开发的框架/库应用，性能孰高孰低？这两者最显著的区别在于原生应用需要手动操作 DOM 完成业务，而框架/库应用是基于数据变化响应式的应用，后者只需要关注数据如何变化，至于体现在 DOM 上的变化皆由框架/库内部自动完成。所以，要搞清楚两者的性能优劣，可能<strong>批量</strong>的 DOM 操作是一个不可忽略的核心因素。从代码执行的角度分析，框架/库也是基于原生 API 进行的封装抽象，因此代码执行时的路径更长、堆栈更深，由此可见原生 API 的操作性能应该是最高的。但是，现实情况是业务通常来说是复杂的，代码实现中 DOM 操作的逻辑分散在各处，那么多个 DOM 操作之间是否会产生影响从而不利于性能？这个时候就要关注宿主浏览器的渲染机制是如何理解批量的 DOM 操作的，这里引入的概念就是<strong>关键渲染路径（Critical rendering path）</strong>。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/web-performance-fastdom/">
+  <p class="mb-6"><p>现在，Web 技术不仅仅是局限于页面的开发技术，在应用的开发方面也是一种潮流，B/S 架构的技术是一种趋势。而像一般的管理型 Web 应用，不注重 SEO，非常适合单页面应用（SPA）的实现方式，而路由功能则是单页面应用的核心技术。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/web-routing/">
+    了解更多
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/computer-technology/protocol/protocol-base/">
+      网络通信关键概念
+    </a>
+  </h4>
+  
+  
+  <p class="mb-6"><p>计算机网络是通过通信设备与线路将地理上分散并且具有独立功能的计算机系统连接在一起，并由功能完善的软件来控制，进而实现资源共享的系统。从物理组成上来看，计算机网络包括硬件、软件和协议三大部分。计算机网络中结点间相互通信是由控制信息传送的网络协议及其他相应的网络软件共同实现的。在计算机网络通信中，有部分关键性概念需要理解透彻，在此做一总结。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/protocol/protocol-base/">
+    了解更多
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/computer-technology/computer/computer-microprocessor-addressing-range/">
+      微处理器寻址范围
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors//">
+          <i class="fa-regular fa-circle-user mr-2"></i>
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/"
+            class="ms-1"
+            >计算机技术
+              ,
+            
+          </a>
+        
+          <a
+            href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba/"
+            class="ms-1"
+            >计算机
+              ,
+            
+          </a>
+        
+          <a
+            href="/categories/mpu/"
+            class="ms-1"
+            >Mpu
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>在此之前，让我们带着下面这个问题来看这篇文章：<strong>64 位处理器所支持的最大内存(寻址范围)为多少？</strong></p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/computer/computer-microprocessor-addressing-range/">
     了解更多
   </a>
 </div>

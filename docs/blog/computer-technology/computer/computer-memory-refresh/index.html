@@ -557,20 +557,6 @@
             <a
               class="nav-link "
               
-              href="/"
-              >主页</a
-            >
-          </li>
-        
-      
-        
-        
-        
-        
-          <li class="nav-item">
-            <a
-              class="nav-link "
-              
               href="/about"
               >关于我</a
             >
@@ -1166,8 +1152,27 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/web-performance-case-1/">
-      Web 前端性能优化：案例分析 1
+    <a href="/blog/computer-technology/web/dom/dom-attribute/">
+      DOM-元素节点属性
+    </a>
+  </h4>
+  
+  
+  <p class="mb-6"><p>元素节点上具有很多属性，这些属性我们通常可以很方便的获取，并进行简单的操作。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-attribute/">
+    了解更多
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/computer-technology/web/web-tips-fonts/">
+      Web 字体加载对 DOM 位置的影响
     </a>
   </h4>
   
@@ -1193,29 +1198,22 @@
             href="/categories/web%e5%89%8d%e7%ab%af/"
             class="ms-1"
             >Web前端
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/%e6%80%a7%e8%83%bd%e4%bc%98%e5%8c%96/"
-            class="ms-1"
-            >性能优化
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/%e6%a1%88%e4%be%8b%e5%88%86%e6%9e%90/"
-            class="ms-1"
-            >案例分析
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>能在真实业务场景中落地 Web 性能优化方案的机会鲜有，大多数时候业务是较为简单而且要求不高的，前段时间恰好有一个比较核心的业务，对稳定性和性能有一定的要求，在这个过程中也算是做了很多尝试和实践，在此作为案例记录一下分析的过程和最终解决的方案。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/web-performance-case-1/">
+  <p class="mb-6"><p>由于公司的业务会用到自己设计师定制的 Web 字体，所以一般在组件开发过程中会利用 CSS 引用该字体（<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face"
+
+
+
+
+ target="_blank"
+ 
+
+
+>@font-face</a>），前段时间发现一个线上问题：在部分 iOS 机型上，DOM 元素的位置发生了错位。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/web-tips-fonts/">
     了解更多
   </a>
 </div>
@@ -1227,69 +1225,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/tools-web-fee-polyfill-corejs-eslint/">
-      解析基于 core-js 与 ESLint 的 Web 兼容方案
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/leezchuan/">
-          <i class="fa-regular fa-circle-user mr-2"></i>LeeZChuan
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/"
-            class="ms-1"
-            >计算机技术
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/web%e5%89%8d%e7%ab%af/"
-            class="ms-1"
-            >Web前端
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/%e5%b7%a5%e5%85%b7/"
-            class="ms-1"
-            >工具
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/polyfill/"
-            class="ms-1"
-            >Polyfill
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6"><p>Web 网页为了保证在多个平台和低中高端设备上的体验稳定性和一致性，通常会做 Polyfill 以保证兼容性。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/tools-web-fee-polyfill-corejs-eslint/">
-    了解更多
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/computer-technology/nodejs/nodejs-spawn-vs-exec/">
-      Child process API: spawn vs exec
+    <a href="/blog/computer-technology/nodejs/nodejs-fastify/">
+      Fastify - 专注于性能和低内存消耗
     </a>
   </h4>
   
@@ -1320,24 +1257,16 @@
           </a>
         
           <a
-            href="/categories/spawn/"
+            href="/categories/fastify/"
             class="ms-1"
-            >Spawn
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/exec/"
-            class="ms-1"
-            >Exec
+            >Fastify
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>利用 Node.js 编写一些命令行工具、一次性脚本是很方便的，而在这类场景下 child_process API 的 <code>spawn</code> 和 <code>exec</code> 方法的应用则非常常见。在我使用它们时，却不知道该如何进行选择，遂对此进行了探究。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/nodejs/nodejs-spawn-vs-exec/">
+  <p class="mb-6"><p>最近在做 Node.js 技术相关的调研，需要选定一个 Web 框架作为基础来构建业务。一般来说，首选开源方案，对于我来说，比较关注框架背后的开发团队情况、项目活跃度、是否有足够多的商业案例、文档是否完整可读、框架的设计理念、技术架构是否灵活可扩展、技术社区生态是否完整等方面。目前，我比较倾心的是 Fastify 这个新兴框架，根据官网介绍，其专注于高性能和低消耗，并且公开的基准测试表现相当不错，项目足够活跃，更重要的是属于 OpenJS 基金会的孵化项目。本文主要介绍 Fastify 的设计理念和探究其是如何提高性能和降低内存消耗的。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/nodejs/nodejs-fastify/">
     了解更多
   </a>
 </div>

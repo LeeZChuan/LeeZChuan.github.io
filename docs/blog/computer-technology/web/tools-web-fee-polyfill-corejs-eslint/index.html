@@ -557,20 +557,6 @@
             <a
               class="nav-link "
               
-              href="/"
-              >主页</a
-            >
-          </li>
-        
-      
-        
-        
-        
-        
-          <li class="nav-item">
-            <a
-              class="nav-link "
-              
               href="/about"
               >关于我</a
             >
@@ -1382,27 +1368,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/css/css-bfc/">
-      块级格式化上下文（BFC）
-    </a>
-  </h4>
-  
-  
-  <p class="mb-6"><p>在进行页面布局时，通常有流式布局、定位布局、浮动布局这三种形式。而在布局过程中，各元素之间的影响却是一个很关键的问题。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/css/css-bfc/">
-    了解更多
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/tools-web-fee-test-with-jest-puppeteer/">
-      使用 Jest 和 Puppeteer 构建 Web 自动化测试平台
+    <a href="/blog/computer-technology/web/web-performance-fastdom/">
+      Web 前端性能优化：批量 DOM 操作 - FastDOM
     </a>
   </h4>
   
@@ -1433,40 +1400,24 @@
           </a>
         
           <a
-            href="/categories/%e5%b7%a5%e5%85%b7/"
+            href="/categories/%e6%80%a7%e8%83%bd%e4%bc%98%e5%8c%96/"
             class="ms-1"
-            >工具
+            >性能优化
               ,
             
           </a>
         
           <a
-            href="/categories/%e6%b5%8b%e8%af%95/"
+            href="/categories/dom/"
             class="ms-1"
-            >测试
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/jest/"
-            class="ms-1"
-            >Jest
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/puppeteer/"
-            class="ms-1"
-            >Puppeteer
+            >Dom
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>测试为软件的稳定和完善提供了必要的支持，Web 前端开发领域相比于做单元测试，端到端测试更有意义和价值。谷歌发布的 Puppeteer 工具和脸书发布的 Jest 测试工具为 Web 端到端测试提供了极大的便利，这里记录了如何使用它们构建一个 Web 自动化测试平台。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/tools-web-fee-test-with-jest-puppeteer/">
+  <p class="mb-6"><p>利用 JS 开发的原生应用与依赖于 React.js/Vue 开发的框架/库应用，性能孰高孰低？这两者最显著的区别在于原生应用需要手动操作 DOM 完成业务，而框架/库应用是基于数据变化响应式的应用，后者只需要关注数据如何变化，至于体现在 DOM 上的变化皆由框架/库内部自动完成。所以，要搞清楚两者的性能优劣，可能<strong>批量</strong>的 DOM 操作是一个不可忽略的核心因素。从代码执行的角度分析，框架/库也是基于原生 API 进行的封装抽象，因此代码执行时的路径更长、堆栈更深，由此可见原生 API 的操作性能应该是最高的。但是，现实情况是业务通常来说是复杂的，代码实现中 DOM 操作的逻辑分散在各处，那么多个 DOM 操作之间是否会产生影响从而不利于性能？这个时候就要关注宿主浏览器的渲染机制是如何理解批量的 DOM 操作的，这里引入的概念就是<strong>关键渲染路径（Critical rendering path）</strong>。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/web-performance-fastdom/">
     了解更多
   </a>
 </div>
@@ -1520,6 +1471,25 @@
   
   <p class="mb-6"><p>让 Web 前端开发可持续化、可扩展，关注四个核心<strong>代码</strong>、<strong>流程</strong>、<strong>测试</strong>、<strong>文档</strong>。</p></p>
   <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/web-front-end-architecture/">
+    了解更多
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/computer-technology/web/dom/dom-rule/">
+      DOM-元素节点几何量
+    </a>
+  </h4>
+  
+  
+  <p class="mb-6"><p>当我们在查看 HTML 文档时，每个元素节点被解析后，都画成了可视形状。我们可以获取每个元素节点的几何量（宽、高、偏移量）以及页面滚动距离。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-rule/">
     了解更多
   </a>
 </div>

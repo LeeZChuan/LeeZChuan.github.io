@@ -557,20 +557,6 @@
             <a
               class="nav-link "
               
-              href="/"
-              >主页</a
-            >
-          </li>
-        
-      
-        
-        
-        
-        
-          <li class="nav-item">
-            <a
-              class="nav-link "
-              
               href="/about"
               >关于我</a
             >
@@ -1280,54 +1266,16 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/tools/tools-sublime/">
-      编辑器：Sublime Text 常用插件
-    </a>
-  </h4>
-  
-  
-  <p class="mb-6"><p>Sumblime Text 是一个具有漂亮的界面和强大功能的文本编辑器，而且也支持许多丰富的插件。它是一个收费软件，但是允许开发人员无限期的免费试用。这篇文章介绍一下常用的插件。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/tools/tools-sublime/">
-    了解更多
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/dom/dom-attribute/">
-      DOM-元素节点属性
-    </a>
-  </h4>
-  
-  
-  <p class="mb-6"><p>元素节点上具有很多属性，这些属性我们通常可以很方便的获取，并进行简单的操作。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-attribute/">
-    了解更多
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/computer-technology/computer/computer-cpu-addressing-mode/">
-      CPU 的七种寻址方式
+    <a href="/blog/computer-technology/web/tools-web-fee-toolchain/">
+      前端工程化：对于构建工具链的简单思考
     </a>
   </h4>
   
   
     <ul class="mb-4">
       <li class="mr-4 inline-block">
-        <a href="/authors//">
-          <i class="fa-regular fa-circle-user mr-2"></i>
+        <a href="/authors/leezchuan/">
+          <i class="fa-regular fa-circle-user mr-2"></i>LeeZChuan
         </a>
       </li>
       <li class="mr-4 inline-block">
@@ -1342,16 +1290,70 @@
           </a>
         
           <a
-            href="/categories/cpu/"
+            href="/categories/web%e5%89%8d%e7%ab%af/"
             class="ms-1"
-            >CPU
+            >Web前端
+              ,
+            
+          </a>
+        
+          <a
+            href="/categories/%e5%b7%a5%e5%85%b7/"
+            class="ms-1"
+            >工具
+              ,
+            
+          </a>
+        
+          <a
+            href="/categories/%e6%9e%84%e5%bb%ba%e5%b7%a5%e5%85%b7%e9%93%be/"
+            class="ms-1"
+            >构建工具链
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>CPU 获取数据的方式不仅仅一种，多种方式也为不同数据的获取提供了不同的效率考量，保证了寻址效率与指令的灵活性。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/computer/computer-cpu-addressing-mode/">
+  <p class="mb-6"><p>前端工程化是在做与业务开发完全不同的事情，旨在解决软件工程领域与开发者密切相关的问题，通常会将其与基建开发、DevOps 放在一起讨论。前端开发是复杂的，其结合了 HTML/CSS/JavaScript 3 种语言，甚至还有很多其超集，没有开箱即用的工具链，不像 Java Web 开发、Android 开发等等有官方或者商业领域非常成熟的工具可以利用，一切都源于开源社区的从 0 开始构建。正因如此，前端工程化领域百花齐放，开放与创新展现的淋漓尽致，这也是前端开发者了解学习软件工程的机会。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/tools-web-fee-toolchain/">
+    了解更多
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/computer-technology/web/dom/dom-textnode/">
+      DOM-文本节点
+    </a>
+  </h4>
+  
+  
+  <p class="mb-6"><p>文本（Text）节点虽然很多时候我们直接用 innerHTML 去赋值替换，但当我们进行一些细微的修改时，了解一下 DOM 操作还是非常有用的。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-textnode/">
+    了解更多
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/computer-technology/web/javascript/debouncing-and-throttling/">
+      Web 前端性能优化：解析函数节流与防抖的实现
+    </a>
+  </h4>
+  
+  
+  <p class="mb-6"><p>前端开发中，有一个使用较为普遍的性能优化技巧，即函数节流（Throttle）和防抖（Debounce），其主要作用是根据时间对函数调用做以限制。最常见的业务场景是监听页面的 <code>scroll</code> 事件，浏览器可以在 1s 内触发该事件数次（甚至达数十次），如果事件处理程序在这 1s 内多次执行，必然会造成一定的性能问题，影响用户体验。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/javascript/debouncing-and-throttling/">
     了解更多
   </a>
 </div>
