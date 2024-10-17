@@ -1,9 +1,11 @@
 ---
-title: "AI"
+title: AI技术
 date: 2024-10-14T15:58:55+08:00
 authors: LeeZChuan
-categories: ["计算机技术", "AI"]
-description: 2024年最近两年出现的主要生成式 AI 技术
+categories:
+    - 计算机技术
+    - AI
+description: 2024年最近两年出现的主要生成式 AI 技术罗列
 draft: true
 ---
 
