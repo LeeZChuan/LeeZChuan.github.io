@@ -12,3 +12,5 @@ author: |
 
 
 # Cursor接触
+
+下载了Cursor提供的官方编辑器，他相当于在vscode上直接集成了ai的一个编辑器

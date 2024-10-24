@@ -1,13 +1,12 @@
-
 ---
-title: 网站鼠标特效
-date: 2024-10-22T12:59:06.589Z
+title: （转载）如何实现网站鼠标特效
+description: 以下代码可以实现一个在画布上的鼠标炫酷特效
+date: 2024-10-24T06:29:32.966Z
 categories:
-    - 计算机技术
-    - 特效
-description: 以下代码可以实现一个在画布上的鼠标特效
-author: |
-    LeeZChuan
+  - 特效
+  - 计算机技术
+  - canvas
+author: 来自于互联网
 ---
 
 
