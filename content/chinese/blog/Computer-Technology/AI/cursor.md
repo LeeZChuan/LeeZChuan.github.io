@@ -13,4 +13,4 @@ author: |
 
 # Cursor接触
 
-下载了Cursor提供的官方编辑器，他相当于在vscode上直接集成了ai的一个编辑器
+下载了Cursor提供的官方编辑器，他相当于在vscode上直接集成了ai的一个编辑器，然后官方支持多种api_token让用户使用多种ai
