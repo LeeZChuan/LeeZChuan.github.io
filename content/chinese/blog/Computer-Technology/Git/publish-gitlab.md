@@ -74,3 +74,12 @@ sh echo $NPM_TOKEN # Unix/macOS echo %NPM_TOKEN% # Windows
 
 > 具体其实就是使用：https://verdaccio.org/docs/what-is-verdaccio
 
+
+## 方案三：使用公网npm平台
+
+
+## 参考文档
+https://docs.gitlab.com/ee/user/packages/package_registry/
+https://docs.gitlab.com/ee/user/packages/npm_registry/
+https://docs.gitlab.com/ee/user/packages/yarn_repository/
+
