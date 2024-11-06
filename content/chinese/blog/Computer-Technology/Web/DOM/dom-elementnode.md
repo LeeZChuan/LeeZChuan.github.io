@@ -2,7 +2,7 @@
 title: DOM-元素节点
 date: 2016-05-17 13:19:00
 update: 2016-05-17 13:19:00
-authors: LeeZChuan
+authors: "LeeZChuan"
 tags: &ref_0
   - 计算机技术
   - Web

@@ -2,7 +2,7 @@
 title: DOM-文档片段
 date: 2016-05-23 13:10:00
 update: 2016-05-23 13:10:00
-authors: LeeZChuan
+authors: "LeeZChuan"
 tags: &ref_0
   - 计算机技术
   - Web
