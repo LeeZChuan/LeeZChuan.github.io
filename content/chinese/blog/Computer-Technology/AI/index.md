@@ -1,7 +1,7 @@
 ---
 title: AI技术
 date: 2024-10-14T15:58:55+08:00
-authors: LeeZChuan
+authors: "LeeZChuan"
 categories:
     - 计算机技术
     - AI

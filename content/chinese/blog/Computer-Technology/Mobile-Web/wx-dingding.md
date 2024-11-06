@@ -2,7 +2,7 @@
 title: 微信小程序与钉钉小程序开发流程
 date: 2022-11-11 11:52:00
 update: 2022-11-11 11:52:00
-authors: LeeZChuan
+authors: "LeeZChuan"
 categories: ["计算机技术", "Web"]
 description: 微信小程序开发与钉钉小程序开发的移动端兼容上有很多需要注意的点。
 

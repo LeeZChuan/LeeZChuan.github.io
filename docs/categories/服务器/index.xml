@@ -1,2 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>服务器 on 技术之心</title><link>https://leezchuan.github.io/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/</link><description>Recent content in 服务器 on 技术之心</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Thu, 15 Mar 2018 12:38:00 +0800</lastBuildDate><atom:link href="https://leezchuan.github.io/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/index.xml" rel="self" type="application/rss+xml"/><item><title>Nginx 配置</title><link>https://leezchuan.github.io/blog/computer-technology/nginx/nginx-config/</link><pubDate>Thu, 15 Mar 2018 12:38:00 +0800</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/nginx/nginx-config/</guid><description>&lt;p>&lt;strong>&lt;u>建议主要参考官网英文文档。&lt;/u>&lt;/strong>&lt;/p>
-&lt;p>具体指令直接可以在官网文档的 Alphabetical index of directives（按字母顺序排列的指令索引）中搜索即可。&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>服务器 on 技术之心</title>
+    <link>http://localhost:1313/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+    <description>Recent content in 服务器 on 技术之心</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 15 Mar 2018 12:38:00 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Nginx 配置</title>
+      <link>http://localhost:1313/blog/computer-technology/nginx/nginx-config/</link>
+      <pubDate>Thu, 15 Mar 2018 12:38:00 +0800</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/nginx/nginx-config/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;&lt;u&gt;建议主要参考官网英文文档。&lt;/u&gt;&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;具体指令直接可以在官网文档的 Alphabetical index of directives（按字母顺序排列的指令索引）中搜索即可。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

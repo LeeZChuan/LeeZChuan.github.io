@@ -2,7 +2,7 @@
 title: 桥接模式：跨平台的事件机制设计
 date: 2022-06-12 22:22:00
 update: 2022-06-12 22:22:00
-authors: LeeZChuan
+authors: "LeeZChuan"
 tags: &ref_0
   - 计算机技术
   - 程序架构设计

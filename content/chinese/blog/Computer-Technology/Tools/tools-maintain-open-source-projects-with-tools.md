@@ -2,7 +2,7 @@
 title: 如何更好的维护开源项目
 date: 2022-04-22 22:53:00
 update: 2022-05-03 16:43:00
-authors: LeeZChuan
+authors: "LeeZChuan"
 tags: &ref_0
   - 计算机技术
   - 工具

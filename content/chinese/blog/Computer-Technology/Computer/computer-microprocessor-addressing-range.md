@@ -2,7 +2,7 @@
 title: 微处理器寻址范围
 date: 2016-04-28 01:42:00
 update: 2016-04-28 01:42:00
-authors: LeeZChuan
+authors: "LeeZChuan"
 categories: ["计算机技术",'计算机', "MPU"]
 description: 为什么内存不是越大越好，内存的大小受限于处理器的寻址范围。
 ---

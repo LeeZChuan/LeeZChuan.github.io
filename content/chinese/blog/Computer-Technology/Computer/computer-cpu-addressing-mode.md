@@ -1,7 +1,7 @@
 ---
 title: CPU 的七种寻址方式
 date: 2016-05-05 01:53:00
-authors: LeeZChuan
+authors: "LeeZChuan"
 categories: ["计算机技术", "CPU"]
 description: CPU 获取数据的方式不仅仅一种，多种方式也为不同数据的获取提供了不同的效率考量，保证了寻址效率与指令的灵活性。
 ---

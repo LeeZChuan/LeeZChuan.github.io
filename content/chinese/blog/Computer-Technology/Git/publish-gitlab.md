@@ -1,15 +1,14 @@
 ---
 title: git依赖包发布
 date: 2024-10-26T02:40:53.341Z
-authors: LeeZChuan
+author: "LeeZChuan"
 categories:
     - git
     - gitlab
     - npm
     - 计算机
-    - 计算机技术
     - 内网部署
-description: 包如何发布到内网。
+description: "包如何发布到内网。"
 tags:
     - npm
 ---

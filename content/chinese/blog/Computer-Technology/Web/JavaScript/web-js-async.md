@@ -2,7 +2,7 @@
 title: JavaScript 异步编程
 date: 2017-03-22 15:48:00
 update: 2018-06-03 13:46:00
-authors: LeeZChuan
+authors: "LeeZChuan"
 tags: &ref_0
   - 计算机技术
   - Web

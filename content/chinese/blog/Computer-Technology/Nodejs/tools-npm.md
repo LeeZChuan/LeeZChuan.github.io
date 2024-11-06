@@ -2,7 +2,7 @@
 title: 使用 npm
 date: 2019-07-06 15:43:00
 update: 2022-10-24 01:51:00
-authors: LeeZChuan
+authors: "LeeZChuan"
 categories: ["计算机技术",'Node.js', "npm"]
 description: npm 是 Node.js 的一个包管理器，Web 前端工程师也经常利用它构建前端工作流，来看看如何愉快的使用 npm。
 ---

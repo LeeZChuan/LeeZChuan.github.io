@@ -1,206 +1,2267 @@
-<!doctype html><html itemscope lang=zh-cn itemtype=http://schema.org/WebPage><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=5"><meta name=theme-name content="hugoplate"><link rel="shortcut icon" href=/images/favicon_hu9880217891310920762.png type=image/x-icon><link rel=icon href=/images/favicon_hu9880217891310920762.png type=image/x-icon><link rel=icon type=image/png sizes=48x48 href=/images/favicon_hu11285212527156944795.png><link rel=icon type=image/png sizes=96x96 href=/images/favicon_hu9880217891310920762.png><link rel=apple-touch-icon sizes=144x144 href=/images/favicon_hu290619398646655712.png><link rel=manifest href=/manifest.webmanifest><meta name=msapplication-TileColor content="#ddd"><meta name=theme-color content="#ffffff"><base href=https://leezchuan.github.io/blog/computer-technology/nodejs/nodejs-fastify/><title>Fastify - 专注于性能和低内存消耗</title>
-<meta name=keywords content="Boilerplate,Hugo"><meta name=description content="Fastify 作为一个 Node.js Web 框架，是如何实现高性能和低内存消耗的呢？"><meta name=author content="zeon.studio"><meta property="og:image" content="https://leezchuan.github.io/images/og-image.png"><meta name=twitter:image content="https://leezchuan.github.io/images/og-image.png"><meta name=twitter:card content="summary_large_image"><meta property="og:image:width" content="900"><meta property="og:image:height" content="600"><meta property="og:image:type" content="image/.png"><meta property="og:title" content="Fastify - 专注于性能和低内存消耗"><meta property="og:description" content="Fastify 作为一个 Node.js Web 框架，是如何实现高性能和低内存消耗的呢？"><meta property="og:type" content="website"><meta property="og:url" content="https://leezchuan.github.io/blog/computer-technology/nodejs/nodejs-fastify/"><meta name=twitter:title content="Fastify - 专注于性能和低内存消耗"><meta name=twitter:description content="Fastify 作为一个 Node.js Web 框架，是如何实现高性能和低内存消耗的呢？"><meta name=twitter:site content="@zeon_studio"><meta name=twitter:creator content="@zeon.studio"><script>let indexURL="https://leezchuan.github.io/searchindex.json",includeSectionsInSearch=["blog"],search_no_results="暂无数据",search_initial_message="标注某事物去搜索..."</script><meta http-equiv=x-dns-prefetch-control content="on"><link rel=preconnect href=https://use.fontawesome.com crossorigin><link rel=preconnect href=//cdnjs.cloudflare.com><link rel=preconnect href=//www.googletagmanager.com><link rel=preconnect href=//www.google-analytics.com><link rel=dns-prefetch href=https://use.fontawesome.com><link rel=dns-prefetch href=//ajax.googleapis.com><link rel=dns-prefetch href=//cdnjs.cloudflare.com><link rel=dns-prefetch href=//www.googletagmanager.com><link rel=dns-prefetch href=//www.google-analytics.com><link rel=dns-prefetch href=//fonts.googleapis.com><link rel=dns-prefetch href=//connect.facebook.net><link rel=dns-prefetch href=//platform.linkedin.com><link rel=dns-prefetch href=//platform.twitter.com><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><script>(function(){const e=document.createElement("link");e.href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&family=Signika:wght@500;700&display=swap",e.type="text/css",e.rel="stylesheet",document.head.appendChild(e)})()</script><link href="/css/style.min.82409c5e6b8ce346d79caec9ea6d799891b1cb69e0d76f0d40059ff9f69c3569.css" integrity="sha256-gkCcXmuM40bXnK7J6m15mJGxy2ng128NQAWf+facNWk=" rel=stylesheet><link defer async rel=stylesheet href="/css/style-lazy.min.5d85e889fd5f5b28f9387aeade847fcb0a66d76a99a985ab4cdae3d37cf21557.css" integrity="sha256-XYXoif1fWyj5OHrq3oR/ywpm12qZqYWrTNrj03zyFVc=" media=print onload='this.media="all",this.onload=null'></head><body><div id=announcement class="announcement announcement-hide">You must replace the <strong>baseURL</strong> in <strong>hugo.toml</strong> file when deploying, you can manage this announcement from the <strong>params.toml</strong> file.
-<button id=announcement-button class=announcement-button>
-&#215;</button></div><style>.announcement{position:relative;z-index:999;padding:1rem;padding-right:2.8rem;background-color:#fff;box-shadow:1px 0 10px 7px rgba(154,154,154,.11);font-size:1.1rem}.announcement-button{cursor:pointer;padding:0 .5rem;border:0;font-size:1.3rem;position:absolute;top:50%;right:1rem;transform:translateY(-50%);border:1px solid;border-radius:50%;height:1.1em;width:1.1em;display:flex;justify-content:center;align-items:center}.announcement-hide{display:none}.dark .announcement{background-color:#222}</style><header class="header sticky top-0 z-30"><nav class="navbar container"><div class=order-0><a class="navbar-brand block" href=/><img fetchpriority=high decoding=async class="img img-light" width=160 height=32 src=/images/logo_hu4114262549785978686.webp alt=Hugoplate onerror='this.onerror=null,this.src="/images/logo_hu7137767845088484273.png"'>
-<img fetchpriority=high decoding=async class="img img-dark" width=160 height=32 src=/images/logo-darkmode_hu8742296558546396051.webp alt=Hugoplate onerror='this.onerror=null,this.src="/images/logo-darkmode_hu4471933895487503573.png"'></a></div><input id=nav-toggle type=checkbox class=hidden>
-<label for=nav-toggle class="order-3 cursor-pointer flex items-center lg:hidden text-dark dark:text-white lg:order-1"><svg id="show-button" class="h-6 fill-current block" viewBox="0 0 20 20"><title>Menu Open</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0V0z"/></svg><svg id="hide-button" class="h-6 fill-current hidden" viewBox="0 0 20 20"><title>Menu Close</title><polygon points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2" transform="rotate(45 10 10)"/></svg></label><ul id=nav-menu class="navbar-nav order-3 hidden lg:flex w-full pb-6 lg:order-1 lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8"><li class=nav-item><a class=nav-link href=/about>关于我</a></li><li class=nav-item><a class=nav-link href=/projects>个人项目</a></li><li class=nav-item><a class=nav-link href=/blog>文章记录</a></li><li class=nav-item><a class=nav-link href=/life>生活记录</a></li><li class="nav-item nav-dropdown group relative"><span class="nav-link
-inline-flex items-center">其他<svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg></span><ul class="nav-dropdown-list lg:group-hover:visible lg:group-hover:opacity-100"><li class=nav-dropdown-item><a class=nav-dropdown-link href=/elements>Md编写说明</a></li><li class=nav-dropdown-item><a class=nav-dropdown-link href=/categories>文字分类汇总</a></li></ul></li></ul><div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0"><button aria-label=search class="border-border text-dark hover:text-primary dark:border-darkmode-border mr-5 inline-block border-r pr-5 text-xl dark:text-white dark:hover:text-darkmode-primary" data-target=search-modal>
-<i class="fa-solid fa-search"></i></button><div class="theme-switcher mr-5 hidden"><input id=theme-switcher data-theme-switcher type=checkbox>
-<label for=theme-switcher><span class=sr-only>theme switcher</span>
-<span><svg class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-100 dark:opacity-0" viewBox="0 0 56 56" fill="#fff" height="16" width="16"><path d="M30 4.6c0-1-.9-2-2-2a2 2 0 00-2 2v5c0 1 .9 2 2 2s2-1 2-2zm9.6 9a2 2 0 000 2.8c.8.8 2 .8 2.9.0L46 13a2 2 0 000-2.9 2 2 0 00-3 0zm-26 2.8c.7.8 2 .8 2.8.0.8-.7.8-2 0-2.9L13 10c-.7-.7-2-.8-2.9.0-.7.8-.7 2.1.0 3zM28 16A12 12 0 0016 28a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0028 16zm23.3 14c1.1.0 2-.9 2-2s-.9-2-2-2h-4.9a2 2 0 00-2 2c0 1.1 1 2 2 2zM4.7 26a2 2 0 00-2 2c0 1.1.9 2 2 2h4.9c1 0 2-.9 2-2s-1-2-2-2zm37.8 13.6a2 2 0 00-3 0 2 2 0 000 2.9l3.6 3.5a2 2 0 002.9.0c.8-.8.8-2.1.0-3zM10 43.1a2 2 0 000 2.9c.8.7 2.1.8 3 0l3.4-3.5c.8-.8.8-2.1.0-2.9s-2-.8-2.9.0zm20 3.4c0-1.1-.9-2-2-2a2 2 0 00-2 2v4.9c0 1 .9 2 2 2s2-1 2-2z"/></svg><svg class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-0 dark:opacity-100" viewBox="0 0 24 24" fill="none" height="16" width="16"><path fill="#000" fill-rule="evenodd" clip-rule="evenodd" d="M8.2 2.2c1-.4 2 .6 1.6 1.5-1 3-.4 6.4 1.8 8.7a8.4 8.4.0 008.7 1.8c1-.3 2 .5 1.5 1.5v.1A10.3 10.3.0 0112.4 22 10.3 10.3.0 013.2 6.7c1-2 2.9-3.5 4.9-4.4z"/></svg></span></label></div><script>var darkMode=!1;window.matchMedia("(prefers-color-scheme: dark)").matches&&(darkMode=!0),localStorage.getItem("theme")==="dark"?darkMode=!0:localStorage.getItem("theme")==="light"&&(darkMode=!1),darkMode?document.documentElement.classList.add("dark"):document.documentElement.classList.remove("dark"),document.addEventListener("DOMContentLoaded",()=>{var e=document.querySelectorAll("[data-theme-switcher]"),t=document.querySelector(".theme-switcher");[].forEach.call(e,function(e){e.checked=darkMode,e.addEventListener("click",()=>{document.documentElement.classList.toggle("dark"),localStorage.setItem("theme",document.documentElement.classList.contains("dark")?"dark":"light")})}),t.classList.remove("hidden")})</script></div></nav></header><div class=search-modal aria-hidden=true style=--color-primary:#121212><div data-target=close-search-modal class=search-modal-overlay></div><div class=search-wrapper data-image=true data-description=true data-tags=true data-categories=true><div class=search-wrapper-header><label for=search-modal-input style=margin-top:-1px><span class=sr-only>search icon</span>
-<svg viewBox="0 0 512 512" height="18" width="18" class="search-icon" data-type="search"><path fill="currentcolor" d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8.0 45.3s-32.8 12.5-45.3.0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9.0 208S93.1.0 208 0 416 93.1 416 208zM208 352a144 144 0 100-288 144 144 0 100 288z"/></svg>
-<svg viewBox="0 0 512 512" height="18" width="18" class="search-reset" data-type="reset"><path fill="currentcolor" d="M256 512A256 256 0 10256 0a256 256 0 100 512zM175 175c9.4-9.4 24.6-9.4 33.9.0l47 47 47-47c9.4-9.4 24.6-9.4 33.9.0s9.4 24.6.0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6.0 33.9s-24.6 9.4-33.9.0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9.0s-9.4-24.6.0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6.0-33.9z"/></svg>
-</label><input id=search-modal-input type=text data-search-input autocomplete=off aria-label=Search placeholder=搜寻更多...></div><div class=search-wrapper-body><div class=search-result data-search-result></div><span class=search-result-empty>标注某事物去搜索...</span></div><div class=search-wrapper-footer><span><kbd><svg width="14" height="14" fill="currentcolor" viewBox="0 0 16 16"><path d="M3.204 11h9.592L8 5.519 3.204 11zm-.753-.659 4.796-5.48a1 1 0 011.506.0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 01-.753-1.659z"/></svg>
-</kbd><kbd><svg width="14" height="14" fill="currentcolor" style="margin-top:1px" viewBox="0 0 16 16"><path d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 001.506.0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 00-.753 1.659z"/></svg>
-</kbd>去导航
-</span><span><kbd><svg width="12" height="12" fill="currentcolor" style="display:inline-block" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M14.5 1.5a.5.5.0 01.5.5v4.8a2.5 2.5.0 01-2.5 2.5H2.707l3.347 3.346a.5.5.0 01-.708.708l-4.2-4.2a.5.5.0 010-.708l4-4a.5.5.0 11.708.708L2.707 8.3H12.5A1.5 1.5.0 0014 6.8V2a.5.5.0 01.5-.5z"/></svg>
-</kbd>去选择
-</span><span class=search-result-info></span>
-<span data-target=close-search-modal><kbd>ESC</kbd> 去关闭</span></div></div></div><main><section class="section pt-7"><div class=container><div class="row justify-center"><article class=lg:col-10><h1 class="h2 mb-4">Fastify - 专注于性能和低内存消耗</h1><ul class=mb-4><li class="mr-4 inline-block"><a href=/authors//><i class="fa-regular fa-circle-user mr-2"></i></a></li><li class="mr-4 inline-block"><i class="fa-regular fa-folder mr-2"></i>
-<a href=/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/>计算机技术
-,
-</a><a href=/categories/node.js/>Node.js
-,
-</a><a href=/categories/fastify/>Fastify</a></li><li class="mr-4 inline-block"><i class="fa-regular fa-clock mr-2"></i>
-June 27, 2021</li></ul><div class="content mb-10"><details open class="table-of-content blog"><summary>内容列表</summary><nav id=TableOfContents><ol><li><ol><li><a href=#设计理念>设计理念</a></li><li><a href=#fastify-的实现细节>Fastify 的实现细节</a><ol><li><a href=#json-序列化>JSON 序列化</a></li><li><a href=#路由routing>路由（Routing）</a></li><li><a href=#闭包closure>闭包（Closure）</a></li><li><a href=#调用栈call-stack>调用栈（Call stack）</a></li><li><a href=#服务器的生命周期server-lifecycle>服务器的生命周期（Server Lifecycle）</a></li><li><a href=#插件模型plugin-model>插件模型（Plugin Model）</a></li><li><a href=#其它方面>其它方面</a></li></ol></li><li><a href=#结语>结语</a></li><li><a href=#参考资源>参考资源</a></li><li><a href=#附对比表>附：对比表</a></li><li><a href=#附基准测试>附：基准测试</a></li></ol></li></ol></nav></details><p>最近在做 Node.js 技术相关的调研，需要选定一个 Web 框架作为基础来构建业务。一般来说，首选开源方案，对于我来说，比较关注框架背后的开发团队情况、项目活跃度、是否有足够多的商业案例、文档是否完整可读、框架的设计理念、技术架构是否灵活可扩展、技术社区生态是否完整等方面。目前，我比较倾心的是 Fastify 这个新兴框架，根据官网介绍，其专注于高性能和低消耗，并且公开的基准测试表现相当不错，项目足够活跃，更重要的是属于 OpenJS 基金会的孵化项目。本文主要介绍 Fastify 的设计理念和探究其是如何提高性能和降低内存消耗的。</p><blockquote><p>Fastify 官网：https://www.fastify.io/</p></blockquote><p>Fastify v1.0.0 发布是在 2018 年的 3 月份，相比于业内广为熟知的 Express / Koa 等框架还很年轻，其项目发起者和核心维护者之一 Matteo Collina 也在开源社区很有声望，是 Node.js TSC 成员，目前 Fastify 项目已经加入 OpenJS 基金会。</p><blockquote><p><a href=https://medium.com/the-node-js-collection/fastify-goes-lts-with-1-0-0-911112c64752 target=_blank>Fastify 到达 1.0.0 LTS！</a></p></blockquote><blockquote><p><a href=https://openjsf.org/blog/2019/11/20/web-framework-fastify-joins-openjs-foundation-as-an-incubating-project/ target=_blank>Fastify 作为孵化项目加入 OpenJS 基金会</a></p></blockquote><blockquote><p><a href=https://openjsf.org/blog/2020/08/27/fastify-graduation-performance-and-the-future/ target=_blank>Fastify：毕业、性能和未来</a></p></blockquote><h3 id=设计理念>设计理念</h3><p>一般来说，一个开源项目会在文档中阐述自己的设计理念和技术架构等理论层面的思考，以帮助开发者更快的了解项目的核心思想和目标人群，或者说解决的关键性问题。官网首页首先给出了标题为 Why 的一段话，然后列举了核心功能点（Core features），文档中没有找到具体阐述设计理念之类的东西。不过，在看了官方博客文章以及相关的资料之后，Fastify 的设计理念大体可以总结：</p><ul><li>高性能</li><li>灵活可扩展</li><li>开发人员友好（例如内置日志系统、TS 支持等等）</li></ul><p>纵观众多 Node.js Web 开源框架，大多都做到了后两点，例如 Express 项目利用中间件提供了足够的灵活性，内置了开箱即用的功能；而 Koa 为了改进开发人员的体验，引入 <code>async/await</code> 替代回调函数，以及所谓的 “洋葱模型” 提供了更高的灵活性，精简了框架核心，只提供必要的功能，从而有了比 Express 更好的性能。而 Fastify 除此之外，对性能有极致的追求，同时也提出了很多不一样的思想，值得学习。</p><p>其实，Web 开发框架还有一个较为严峻的问题就是项目的工程化标准，最著名的就是 MVC 模型，而对应的也有解决此类问题的 Node.js 框架，近年来发展前景比较好的应该就是 nest.js 了。</p><blockquote><p><a href=https://thenewstack.io/introducing-fastify-speedy-node-js-web-framework/ target=_blank>Introducing Fastify, a Speedy Node.js Web Framework</a></p></blockquote><h3 id=fastify-的实现细节>Fastify 的实现细节</h3><p>了解了 Fastify 的设计理念之后，接下来要看看开发团队是如何实施的，探索其技术细节。</p><h4 id=json-序列化>JSON 序列化</h4><p>Fastify 项目的历史故事背后是 <code>fast-json-stringify</code> 模块的诞生，该模块比 <code>JSON.stringify()</code> 这种原生 JavaScript 方法快很多，可以达到 2 到 3 倍的性能优势。其背后的原理主要是 <strong>依赖 JSON Schema 对 JSON 数据进行校验，避免了类型判断的过程，从而提高了性能</strong>。根据其公开的基准测试，其优势主要体现在处理的目标数据为复杂对象时，可以达到 4 倍的性能优势。</p><blockquote><p><a href=https://github.com/fastify/fast-json-stringify target=_blank>GitHub: <code>fast-json-stringify</code></a></p></blockquote><blockquote><p><a href=https://json-schema.org/ target=_blank>JSON Schema</a></p></blockquote><p>其中有两个细节我们值得注意。第一个便是项目 <em>README.md</em> 文件中提到的安全方面需要注意的问题，是由于 <strong>在初始化时利用 <code>Function</code> 构造函数预编译了函数体，以此达到优化性能的目的</strong>。</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-typescript data-lang=typescript><span style=display:flex><span><span style=color:#a6e22e>result</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> Function(<span style=color:#e6db74>&#39;schema&#39;</span>, <span style=color:#a6e22e>code</span>)(<span style=color:#a6e22e>root</span>);
-</span></span></code></pre></div><p>而这个原理其实也是比较好理解的，通过把一个函数体内包含循环迭代的代码预先“编译”成字符串再交给函数来执行，在函数的“运行时”就不需要再做额外的“解释翻译”以及迭代工作，从而提高性能。下面有一篇相关的比较有趣的文章可以看看：</p><blockquote><p><a href=https://github.com/felixge/faster-than-c target=_blank>Faster than C? Parsing binary data in JavaScript.</a></p></blockquote><p>我们也可以通过以下示例代码来进行简单的测试：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-typescript data-lang=typescript><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>a() {</span>
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>let</span> <span style=color:#a6e22e>i</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; <span style=color:#a6e22e>i</span> <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>3</span>; <span style=color:#a6e22e>i</span><span style=color:#f92672>++</span>) {
-</span></span><span style=display:flex><span>    <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>i</span>);
-</span></span><span style=display:flex><span>  }
-</span></span><span style=display:flex><span>}
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>code</span> <span style=color:#f92672>=</span> [<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>].<span style=color:#a6e22e>map</span>((<span style=color:#a6e22e>i</span>) <span style=color:#f92672>=&gt;</span> <span style=color:#e6db74>`console.log(</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>i</span><span style=color:#e6db74>}</span><span style=color:#e6db74>)`</span>);
-</span></span><span style=display:flex><span><span style=color:#75715e>// 函数体预编译后 b 等价于
-</span></span></span><span style=display:flex><span><span style=color:#75715e>// function b() {
-</span></span></span><span style=display:flex><span><span style=color:#75715e>//   console.log(0);
-</span></span></span><span style=display:flex><span><span style=color:#75715e>//   console.log(1);
-</span></span></span><span style=display:flex><span><span style=color:#75715e>//   console.log(2);
-</span></span></span><span style=display:flex><span><span style=color:#75715e>// }
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>b</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> Function(<span style=color:#a6e22e>code</span>);
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>time</span>(<span style=color:#e6db74>&#39;a&#39;</span>);
-</span></span><span style=display:flex><span><span style=color:#a6e22e>a</span>();
-</span></span><span style=display:flex><span><span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>timeEnd</span>(<span style=color:#e6db74>&#39;a&#39;</span>); <span style=color:#75715e>// a: 0.136962890625 ms
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
-</span></span><span style=display:flex><span><span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>time</span>(<span style=color:#e6db74>&#39;b&#39;</span>);
-</span></span><span style=display:flex><span><span style=color:#a6e22e>b</span>();
-</span></span><span style=display:flex><span><span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>timeEnd</span>(<span style=color:#e6db74>&#39;b&#39;</span>); <span style=color:#75715e>// b: 0.05908203125 ms
-</span></span></span></code></pre></div><p>第二个细节便是 <em>README.md</em> 文件中有提到可以和 <code>flatstr</code> 模块很好的配合使用，因为该模块会触发 V8 的优化机制，把字符串最终转换成了 <code>Buffer</code>。 其项目的 <em>README.md</em> 文件中 <strong>How does it work</strong> 段落详细解释了底层机制，简单的来说，V8 会在某些情况下针对 <code>String</code> 数据做特定优化，而该模块的主要作用就是主动去触发这种 V8 的优化机制以达到提高性能的目的。</p><blockquote><p><a href=https://github.com/davidmarkclements/flatstr target=_blank>GitHub: <code>flatstr</code></a></p></blockquote><h4 id=路由routing>路由（Routing）</h4><p>Fastify 的路由是依赖 <code>find-my-way</code> 模块实现的，在公开的基准测试中相比于 <code>express</code> 和 <code>koa-router</code> 有数倍的性能优势。</p><p>根据 <code>find-my-way</code> 模块的 <em>README.md</em> 文件中所介绍，其 <strong>底层采用了基数树（Radix tree，亦称 compact prefix tree）的数据结构，并非通常的路由数组和迭代正则匹配方案</strong>。基数树是一种空间优化的前缀树（即紧凑前缀树），具有前缀树的搜索性能同时尽可能小的占用内存。前缀树的应用场景比较常见，常用于字符串检索，例如字典查找、字符统计、公共前缀匹配等等，要比遍历数组和正则匹配的查找性能好数倍。但前缀树的内存消耗比较大，所以通过将只有一个子节点的与其父节点合并从而减少内存消耗，形成了“基数树”数据结构。</p><blockquote><p><a href=https://github.com/delvedor/find-my-way target=_blank>GitHub: <code>find-my-way</code></a></p></blockquote><blockquote><p><a href=https://en.wikipedia.org/wiki/Radix_tree target=_blank>Radix tree</a></p></blockquote><p>Koa 的官方路由 <code>@koa/router</code> 从源码中可以看到，是将每个路由的路径 <code>path</code> 转换成正则表达式存储在数组中，此后遍历该数组通过正则匹配来完成路由映射，这种方案实现起来相对简单，但性能要低得多。不过也有一个同样基于基数树结构实现的 <code>koa-tree-router</code> 模块，性能比前者高数倍，当然它的功能还是相当简单的。Express 的官方路由实现也大致相同，<code>@koa/router</code> 应该是参考了前者的实现。</p><h4 id=闭包closure>闭包（Closure）</h4><p>闭包是 JavaScript 一个很有用的语言特性，利用它可以实现很多东西，最常见的则是模块封装了，在没有类（Class）概念的情况下，要实现类似类的效果必然会用到闭包，很多第三方库就是这样做的，例如著名的 <code>jQuery</code>。但另一方面需要注意的是，闭包极易引起内存泄漏，同时造成不必要的内存消耗；而且，在闭包中如果嵌套太深，作用域递归解析也会有一定的开销。</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>process</span>(<span style=color:#a6e22e>bigData</span>, <span style=color:#a6e22e>cb</span>) {
-</span></span><span style=display:flex><span>  <span style=color:#a6e22e>remoteCall</span>(<span style=color:#a6e22e>bigData</span>, <span style=color:#66d9ef>function</span> (<span style=color:#a6e22e>err</span>, <span style=color:#a6e22e>something</span>)) {
-</span></span><span style=display:flex><span>    <span style=color:#a6e22e>storeSomething</span>(<span style=color:#a6e22e>something</span>, <span style=color:#66d9ef>function</span> (<span style=color:#a6e22e>err</span>, <span style=color:#a6e22e>res</span>) {
-</span></span><span style=display:flex><span>      <span style=color:#75715e>// 该函数是暂时的，但是难以被优化
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>      <span style=color:#75715e>// bigData 一直驻留在作用域中，无法被 GC
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>      <span style=color:#a6e22e>cb</span>(<span style=color:#66d9ef>null</span>, <span style=color:#a6e22e>res</span> <span style=color:#f92672>*</span> <span style=color:#ae81ff>2</span>)
-</span></span><span style=display:flex><span>    })
-</span></span><span style=display:flex><span>  }
-</span></span><span style=display:flex><span>}
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e>// -------
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>process</span>(<span style=color:#a6e22e>bigData</span>, <span style=color:#a6e22e>cb</span>) {
-</span></span><span style=display:flex><span>  <span style=color:#a6e22e>remoteCall</span>(<span style=color:#a6e22e>bigData</span>, <span style=color:#66d9ef>function</span> (<span style=color:#a6e22e>err</span>, <span style=color:#a6e22e>something</span>)) {
-</span></span><span style=display:flex><span>    <span style=color:#75715e>// bigData 在这里退出了作用域，可以被 GC
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#a6e22e>callStoreSomething</span>(<span style=color:#a6e22e>something</span>, <span style=color:#a6e22e>cb</span>)
-</span></span><span style=display:flex><span>  }
-</span></span><span style=display:flex><span>}
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>callStoreSomething</span>(<span style=color:#a6e22e>something</span>, <span style=color:#a6e22e>cb</span>) {
-</span></span><span style=display:flex><span>  <span style=color:#75715e>// 该函数可以被优化
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  <span style=color:#a6e22e>storeSomething</span>(<span style=color:#a6e22e>something</span>, <span style=color:#66d9ef>function</span> (<span style=color:#a6e22e>err</span>, <span style=color:#a6e22e>res</span>) {
-</span></span><span style=display:flex><span>    <span style=color:#a6e22e>cb</span>(<span style=color:#66d9ef>null</span>, <span style=color:#a6e22e>res</span> <span style=color:#f92672>*</span> <span style=color:#ae81ff>2</span>)
-</span></span><span style=display:flex><span>  })
-</span></span><span style=display:flex><span>}
-</span></span></code></pre></div><p>基于此，<strong>Fastify 团队在框架内部基本上杜绝了利用闭包实现功能，从而保证了低内存消耗</strong>。</p><blockquote><p><a href=https://akaphenom.medium.com/javascript-closures-and-the-call-stack-722ef2c3b5a8 target=_blank>JavaScript: Closures and the Call Stack</a></p></blockquote><blockquote><p><a href=https://en.wikipedia.org/wiki/Scope_%28computer_science%29 target=_blank>Scope</a></p></blockquote><h4 id=调用栈call-stack>调用栈（Call stack）</h4><p>Fastify 内部优化之后，调用栈也小很多，作者利用 <code>0x</code> 工具进行了分析，从生成的栈火焰图来看，Express 的图形中有两个高峰，说明调用栈特别大；相对的，Fastify 的图形总体较为平缓。<strong>更小的调用栈也降低了内存消耗</strong>，详细信息可以在下面的视频讲解中查看。</p><blockquote><p><a href="https://www.youtube.com/watch?v=5z46jJZNe8k" target=_blank>Take your http server to ludicrous speed</a></p></blockquote><blockquote><p><a href=https://github.com/davidmarkclements/0x target=_blank>GitHub: <code>0x</code></a></p></blockquote><blockquote><p><a href=https://en.wikipedia.org/wiki/Call_stack target=_blank>Call stack</a></p></blockquote><h4 id=服务器的生命周期server-lifecycle>服务器的生命周期（Server Lifecycle）</h4><p>大多数 Web 框架的生命周期是相似的：服务器启动，路由处理程序注册，服务器侦听请求并调用适当的函数来处理它们。如下图所示，Fastify 做了特殊处理，在服务器启动之后执行预初始化阶段（preinitialisation ），该阶段做了一些优化工作，使用 <code>fast-json-stringify</code> 模块处理 JSON schemas，以及用 <code>reusify</code> 模块优化处理函数（handler functions）。</p><p><img src=https://www.nearform.com/wp-content/uploads/jekyllsite/blog/2017/08/diagram_fastify_lifecycle.png></p><p>这里提及的 <code>reusify</code> 模块是如何来优化处理函数的呢？首先，请求的处理函数属于频繁被执行的代码块，也就是所谓的"热代码路径（hot code paths）"。<code>reusify</code> 的源码非常简单，主要作用是 <strong>将对象或者函数进行缓存，降低高并发场景下热代码路径上的 GC 压力</strong>。</p><blockquote><p><a href=https://www.nearform.com/blog/reaching-ludicrous-speed-with-fastify/ target=_blank>Reaching Ludicrous Speed with Fastify</a></p><p><a href=https://github.com/mcollina/reusify target=_blank>GitHub: <code>reusify</code></a></p><p><a href=https://stackoverflow.com/questions/22894877/avoid-allocations-in-compiler-hot-paths-roslyn-coding-conventions target=_blank>Avoid allocations in compiler hot paths” Roslyn Coding Conventions</a></p></blockquote><p>不过，在 <code>reusify</code> 模块给出的示例代码中有一个细节值得注意：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#75715e>// ...
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>MyObject</span> () {
-</span></span><span style=display:flex><span>  <span style=color:#75715e>// you need to define this property
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  <span style=color:#75715e>// so V8 can compile MyObject into an
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  <span style=color:#75715e>// hidden class
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>next</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>null</span>
-</span></span><span style=display:flex><span>  <span style=color:#75715e>// ...
-</span></span></span></code></pre></div><p>作者注释到你要重用的对象内部第一个属性应该定义为 <code>next</code>，因为可以触发 V8 的优化机制 <strong>“隐藏类（hidden class）”</strong>。首先，<strong>隐藏类是 V8 内部为了优化非整数索引属性（命名属性）的访问速度的机制，每一次对对象命名属性的增删操作都会导致新的隐藏类被创建，而具备同样的命名属性定义顺序的对象可以共享隐藏类，减少开销</strong>。接下来，通过查看 <code>reusify</code> 模块的源码便可知道，模块内部为了实现缓存队列给被重用的对象添加了一个 <code>next</code> 属性，由此便可以明白作者的注释是告诉我们如何利用好 V8 的内部优化机制 —— 隐藏类。</p><blockquote><p><a href=https://v8.dev/blog/fast-properties target=_blank>Fast properties in V8</a></p></blockquote><blockquote><p><a href=https://engineering.linecorp.com/en/blog/v8-hidden-class/ target=_blank>V8 Hidden class</a></p></blockquote><blockquote><p><a href=https://stackoverflow.com/questions/17925726/clearing-up-the-hidden-classes-concept-of-v8 target=_blank>Clearing up the <code>hidden classes</code> concept of V8</a></p></blockquote><blockquote><p><a href=https://codereview.stackexchange.com/questions/28344/should-i-put-default-values-of-attributes-on-the-prototype-to-save-space/28360#28360 target=_blank>Should I put default values of attributes on the prototype to save space?</a></p></blockquote><h4 id=插件模型plugin-model>插件模型（Plugin Model）</h4><p>Fastify 的灵活扩展主要依赖于其插件系统，同时也支持 Express 中间件（需要 <code>middie</code> 插件），可以说是 Express 与 Hapi 的组合。在探究 Fastify 的插件模型之前，先来看看 Koa 的中间件模型的源码实现：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#75715e>// https://github.com/koajs/compose/blob/25568a36509fefc58914bc2a7600f787b16aa0df/index.js#L42
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>compose</span>(<span style=color:#a6e22e>middleware</span>) {
-</span></span><span style=display:flex><span>  <span style=color:#75715e>// ...
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>function</span> (<span style=color:#a6e22e>context</span>, <span style=color:#a6e22e>next</span>) {
-</span></span><span style=display:flex><span>    <span style=color:#75715e>// ...
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>dispatch</span>(<span style=color:#ae81ff>0</span>);
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>function</span> <span style=color:#a6e22e>dispatch</span>(<span style=color:#a6e22e>i</span>) {
-</span></span><span style=display:flex><span>      <span style=color:#75715e>// ...
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>      <span style=color:#75715e>// 遍历嵌套迭代（类递归）的方式执行
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>      <span style=color:#66d9ef>return</span> Promise.<span style=color:#a6e22e>resolve</span>(<span style=color:#a6e22e>fn</span>(<span style=color:#a6e22e>context</span>, <span style=color:#a6e22e>dispatch</span>.<span style=color:#a6e22e>bind</span>(<span style=color:#66d9ef>null</span>, <span style=color:#a6e22e>i</span> <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>)));
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span>  };
-</span></span><span style=display:flex><span>}
-</span></span></code></pre></div><p>我们可以看到 <code>koa-compose</code> 模块实现了 Koa 的中间件模型，是一种通过遍历嵌套迭代（类递归）的方式来逐个执行中间件函数，而且引入上下游（upstream / downstream）的概念，这种方式会导致调用栈会非常的大，性能很难优化。而查看 Express 的源码，发现其会把中间件函数当作路由函数来对待，存储在数组中，后续也会以类似的方式执行，同样也会有调用栈过大的问题。</p><p>Fastify 依赖于 <code>avvio</code> 模块 <strong>建立了一种基于可重入（reentrant ）和有向无环图（directed acyclic graph）的插件模型</strong>，可以正确处理异步代码，保证插件的加载顺序，避免了前面提到的调用栈过大的问题。建立一个有向无环图的插件系统可以保证不会创建交叉依赖，并且实现了可以在应用程序的不同部分使用相同插件的不同版本。</p><p><img alt=有向无环图.png src=https://survivejs.com/9f7ecd003147aad41c8b8c236c703db4.png>
-有向无环图</p><p>由于这种架构模式，带来的另外一个好处就是很容易将应用拆分为多个微服务。</p><p><img alt=有向无环图服务.png src=https://survivejs.com/6758771bb4590b09ac0780ceb3c51da9.png>
-有向无环图服务</p><p>那么，可重入带来了什么？可重入性是代码的一种属性，指其没有共享状态，可以安全的在多个线程中或者递归地调用执行；换句话说，代码因为具备某些状态，在多个线程或者递归调用时因为改变了该状态而导致逻辑出错，表明代码是不可重入的，不具备可重入性。常见的应用场景就是在遍历图形的算法中，可能会多次到达同一个节点，可重入性保证了遍历过程中是安全的。</p><p>具体实现，在 Fastify 官方文档的 <strong><a href=https://www.fastify.io/docs/latest/Encapsulation/ target=_blank>Encapsulation</a></strong> 章节有关于其基本特性 &ldquo;封装上下文（encapsulation context）&rdquo; 的介绍，示例代码形象易懂，核心是围绕 <code>register</code> API 构建的自上而下继承的上下文模型，并可以通过 <code>fastify-plugin</code> 模块打破这种限制完成特定场景下的应用。在 Fastify 中一切皆插件，形成的这种插件系统，也正是上面提到的可以将应用方便的拆分为微服务的基础。</p><blockquote><p><a href=https://github.com/fastify/middie target=_blank>GitHub: <code>middie</code></a></p></blockquote><blockquote><p><a href=https://github.com/fastify/avvio target=_blank>GitHub: <code>avvio</code></a></p></blockquote><blockquote><p><a href=https://en.wikipedia.org/wiki/Directed_acyclic_graph target=_blank>Directed acyclic graph</a></p></blockquote><blockquote><p><a href=https://stackoverflow.com/questions/1312259/what-is-the-re-entrant-lock-and-concept-in-general target=_blank>What is the Re-entrant lock and concept in general?</a></p></blockquote><h4 id=其它方面>其它方面</h4><p>除了上面所介绍的 Fastify 特点外，还有其它一些方面值得关注。</p><p>第一个，<code>Decorators</code> API 提供了一个在整个应用的请求链路中共享数据的机制，此 API 也体现了 Fastify 对性能的关注，其与 V8 内部优化机制“隐藏类”和“内联缓存”相关。</p><blockquote><p><a href=https://mathiasbynens.be/notes/shapes-ics target=_blank>JavaScript engine fundamentals: Shapes and Inline Caches</a></p></blockquote><p>第二个，<code>Hooks</code> API 允许监听一些应用生命周期事件，提供了更高的灵活性，给特定场景下的应用提供了较好的实现机制。</p><p>第三个，内置了依赖于 <code>Pino</code> 模块实现的日志系统，日志作为后端应用针对错误分析、性能分析等的原始信息是相当重要的，可见 Fastify 团队关注点还是相当准确的。</p><p>最后，Fastify 的插件生态目前可能还不算很丰富，但官方提供的核心插件基本上也覆盖了常见的各种场景，例如消息队列、WebSocket、鉴权、缓存等。</p><h3 id=结语>结语</h3><p>可以看得出来，Fastify 对性能的追求是极致的，涉及到很多 V8 内部对代码的优化机制，通过了解还是收获颇丰的。回过头来，Node.js Web 框架虽然层出不穷，但根据 NPM Trends 的下载量统计来看，Express 依然高居榜首，说明 Node.js Web 框架在重业务场景下的应用其实不多，更多的应该是作为一些小项目的后端或者类似 BFF 层这种轻量的场景下应用。从 Express 到 Koa 再到 Fastify，这是向更轻量更高性能的方向发展，技术的发展趋势也从侧面反映了该技术在业务场景中的价值体现。</p><h3 id=参考资源>参考资源</h3><ul><li><a href=https://www.webexpo.net/prague2017/talk/what-if-i-told-you-that-http-can-be-fast/ target=_blank>What if I told you that HTTP can be fast?</a></li><li><a href=https://survivejs.com/blog/fastify-interview/ target=_blank>Fastify - Fast and low overhead web framework for Node.js - Interview with Tomas Della Vedova</a></li></ul><h3 id=附对比表>附：对比表</h3><table><thead><tr><th style=text-align:left>对比项(2021-06-01)</th><th style=text-align:left>express</th><th style=text-align:left>koa</th><th style=text-align:left>Fastify</th><th style=text-align:left>nestjs</th></tr></thead><tbody><tr><td style=text-align:left>当前版本</td><td style=text-align:left>v4.17.1(2019-05-26)</td><td style=text-align:left>v2.13.1(2021-01-04)</td><td style=text-align:left>v3.17.0(2021-05-29)</td><td style=text-align:left>v7.6.17(2021-05-18)</td></tr><tr><td style=text-align:left>设计理念/哲学</td><td style=text-align:left>小型、强大的 HTTP 服务器工具</td><td style=text-align:left>更轻量、高性能、“洋葱模型”</td><td style=text-align:left>高性能、低开销，开发友好</td><td style=text-align:left>提供 Node Web 应用的”架构规范“</td></tr><tr><td style=text-align:left>技术架构</td><td style=text-align:left>核心简单，具备路由等常见功能，其它需依赖中间件扩展</td><td style=text-align:left>核心极简，不包含任何额外功能，路由等其它功能需要依赖中间件扩展</td><td style=text-align:left>核心简单，提供路由、日志等必要组件，其它依赖插件扩展</td><td style=text-align:left>底层核心可替换，上层 MVC 模型</td></tr><tr><td style=text-align:left>扩展机制</td><td style=text-align:left>中间件</td><td style=text-align:left>中间件</td><td style=text-align:left>插件</td><td style=text-align:left>插件</td></tr><tr><td style=text-align:left>项目活跃度（近一年平均每周 GitHub commits）</td><td style=text-align:left>0-2</td><td style=text-align:left>0-2</td><td style=text-align:left>5-10</td><td style=text-align:left>20</td></tr><tr><td style=text-align:left>维护团队的 roadmap</td><td style=text-align:left>4.x -> 5.0（缓慢）</td><td style=text-align:left>2.x -> 3.0（缓慢）</td><td style=text-align:left>3.x -> 4.0（积极）</td><td style=text-align:left>v8.0 计划完成，待发布</td></tr><tr><td style=text-align:left>是否支持 ts</td><td style=text-align:left>社区维护 @types</td><td style=text-align:left>社区维护 @types</td><td style=text-align:left>官方维护 @types</td><td style=text-align:left>官方内置支持</td></tr><tr><td style=text-align:left>公开的基准测试</td><td style=text-align:left>QPS 最低</td><td style=text-align:left>QPS 高</td><td style=text-align:left>QPS 最高</td><td style=text-align:left></td></tr><tr><td style=text-align:left>技术生态（官方+社区）</td><td style=text-align:left>丰富</td><td style=text-align:left>丰富</td><td style=text-align:left>较丰富</td><td style=text-align:left>较丰富</td></tr><tr><td style=text-align:left>常见业务场景解决方案</td><td style=text-align:left>社区中间件</td><td style=text-align:left>社区中间件</td><td style=text-align:left>官方插件</td><td style=text-align:left>官方文档，内置适配器</td></tr><tr><td style=text-align:left>商业案例</td><td style=text-align:left>有</td><td style=text-align:left>有</td><td style=text-align:left>有</td><td style=text-align:left>有</td></tr><tr><td style=text-align:left>上手难易程度</td><td style=text-align:left>容易</td><td style=text-align:left>容易</td><td style=text-align:left>容易</td><td style=text-align:left>中等</td></tr><tr><td style=text-align:left>可查阅的资料</td><td style=text-align:left>多</td><td style=text-align:left>较多</td><td style=text-align:left>较多</td><td style=text-align:left>较多</td></tr><tr><td style=text-align:left>官网文档（中文）</td><td style=text-align:left>有</td><td style=text-align:left>有</td><td style=text-align:left>有</td><td style=text-align:left>有</td></tr><tr><td style=text-align:left>OpenJS 基金会项目</td><td style=text-align:left>是</td><td style=text-align:left></td><td style=text-align:left>是</td><td style=text-align:left></td></tr></tbody></table><h3 id=附基准测试>附：基准测试</h3><p>这里做了一个简单的基准测试，在 <em>windows 10</em> 平台下采用 <code>autocannon</code> 测试工具，依赖版本如下：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#e6db74>&#34;dependencies&#34;</span><span style=color:#f92672>:</span> {
-</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#34;express&#34;</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;4.17.1&#34;</span>,
-</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#34;fastify&#34;</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;3.18.1&#34;</span>,
-</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#34;koa&#34;</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;2.13.1&#34;</span>
-</span></span><span style=display:flex><span>},
-</span></span><span style=display:flex><span><span style=color:#e6db74>&#34;devDependencies&#34;</span><span style=color:#f92672>:</span> {
-</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#34;autocannon&#34;</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;^7.3.0&#34;</span>,
-</span></span><span style=display:flex><span>},
-</span></span></code></pre></div><p>测试代码如下：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#75715e>// express
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>app</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>express</span>();
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#a6e22e>app</span>.<span style=color:#a6e22e>get</span>(<span style=color:#e6db74>&#39;/&#39;</span>, <span style=color:#66d9ef>function</span> (<span style=color:#a6e22e>req</span>, <span style=color:#a6e22e>res</span>) {
-</span></span><span style=display:flex><span>  <span style=color:#a6e22e>res</span>.<span style=color:#a6e22e>send</span>({ <span style=color:#a6e22e>hello</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;world&#39;</span> });
-</span></span><span style=display:flex><span>});
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#a6e22e>app</span>.<span style=color:#a6e22e>listen</span>(<span style=color:#ae81ff>3002</span>);
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e>// koa
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>app</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>Koa</span>();
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#a6e22e>app</span>.<span style=color:#a6e22e>use</span>(<span style=color:#66d9ef>async</span> (<span style=color:#a6e22e>ctx</span>) =&gt; {
-</span></span><span style=display:flex><span>  <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>body</span> <span style=color:#f92672>=</span> { <span style=color:#a6e22e>hello</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;world&#39;</span> };
-</span></span><span style=display:flex><span>});
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#a6e22e>app</span>.<span style=color:#a6e22e>listen</span>(<span style=color:#ae81ff>3001</span>);
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e>// fastify
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>fastify</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>Fastify</span>({
-</span></span><span style=display:flex><span>  <span style=color:#75715e>// logger: true,
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>});
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#a6e22e>fastify</span>.<span style=color:#a6e22e>get</span>(<span style=color:#e6db74>&#39;/&#39;</span>, <span style=color:#66d9ef>async</span> (<span style=color:#a6e22e>request</span>, <span style=color:#a6e22e>reply</span>) =&gt; {
-</span></span><span style=display:flex><span>  <span style=color:#a6e22e>reply</span>.<span style=color:#a6e22e>type</span>(<span style=color:#e6db74>&#39;application/json&#39;</span>).<span style=color:#a6e22e>code</span>(<span style=color:#ae81ff>200</span>);
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> { <span style=color:#a6e22e>hello</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;world&#39;</span> };
-</span></span><span style=display:flex><span>});
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#a6e22e>fastify</span>.<span style=color:#a6e22e>listen</span>(<span style=color:#ae81ff>3000</span>, (<span style=color:#a6e22e>err</span>, <span style=color:#a6e22e>address</span>) =&gt; {
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>err</span>) <span style=color:#66d9ef>throw</span> <span style=color:#a6e22e>err</span>;
-</span></span><span style=display:flex><span>});
-</span></span></code></pre></div><p>测试结果如下：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># express</span>
-</span></span><span style=display:flex><span>&gt; autocannon http://127.0.0.1:3002/
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>Running 10s test @ http://127.0.0.1:3002/
-</span></span><span style=display:flex><span><span style=color:#ae81ff>10</span> connections
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>┌─────────┬──────┬──────┬───────┬──────┬─────────┬─────────┬───────┐
-</span></span><span style=display:flex><span>│ Stat    │ 2.5% │ 50%  │ 97.5% │ 99%  │ Avg     │ Stdev   │ Max   │
-</span></span><span style=display:flex><span>├─────────┼──────┼──────┼───────┼──────┼─────────┼─────────┼───────┤
-</span></span><span style=display:flex><span>│ Latency │ <span style=color:#ae81ff>0</span> ms │ <span style=color:#ae81ff>1</span> ms │ <span style=color:#ae81ff>2</span> ms  │ <span style=color:#ae81ff>3</span> ms │ 0.84 ms │ 0.61 ms │ <span style=color:#ae81ff>10</span> ms │
-</span></span><span style=display:flex><span>└─────────┴──────┴──────┴───────┴──────┴─────────┴─────────┴───────┘
-</span></span><span style=display:flex><span>┌───────────┬─────────┬─────────┬─────────┬────────┬─────────┬─────────┬─────────┐
-</span></span><span style=display:flex><span>│ Stat      │ 1%      │ 2.5%    │ 50%     │ 97.5%  │ Avg     │ Stdev   │ Min     │
-</span></span><span style=display:flex><span>├───────────┼─────────┼─────────┼─────────┼────────┼─────────┼─────────┼─────────┤
-</span></span><span style=display:flex><span>│ Req/Sec   │ <span style=color:#ae81ff>4675</span>    │ <span style=color:#ae81ff>4675</span>    │ <span style=color:#ae81ff>8199</span>    │ <span style=color:#ae81ff>8287</span>   │ 7838.37 │ 1017.07 │ <span style=color:#ae81ff>4672</span>    │
-</span></span><span style=display:flex><span>├───────────┼─────────┼─────────┼─────────┼────────┼─────────┼─────────┼─────────┤
-</span></span><span style=display:flex><span>│ Bytes/Sec │ 1.07 MB │ 1.07 MB │ 1.88 MB │ 1.9 MB │ 1.79 MB │ <span style=color:#ae81ff>233</span> kB  │ 1.07 MB │
-</span></span><span style=display:flex><span>└───────────┴─────────┴─────────┴─────────┴────────┴─────────┴─────────┴─────────┘
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>Req/Bytes counts sampled once per second.
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>86k requests in 11.01s, 19.7 MB read
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># koa</span>
-</span></span><span style=display:flex><span>&gt; autocannon http://127.0.0.1:3001/
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>Running 10s test @ http://127.0.0.1:3001/
-</span></span><span style=display:flex><span><span style=color:#ae81ff>10</span> connections
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>┌─────────┬──────┬──────┬───────┬──────┬─────────┬─────────┬──────┐
-</span></span><span style=display:flex><span>│ Stat    │ 2.5% │ 50%  │ 97.5% │ 99%  │ Avg     │ Stdev   │ Max  │
-</span></span><span style=display:flex><span>├─────────┼──────┼──────┼───────┼──────┼─────────┼─────────┼──────┤
-</span></span><span style=display:flex><span>│ Latency │ <span style=color:#ae81ff>0</span> ms │ <span style=color:#ae81ff>0</span> ms │ <span style=color:#ae81ff>0</span> ms  │ <span style=color:#ae81ff>0</span> ms │ 0.01 ms │ 0.12 ms │ <span style=color:#ae81ff>9</span> ms │
-</span></span><span style=display:flex><span>└─────────┴──────┴──────┴───────┴──────┴─────────┴─────────┴──────┘
-</span></span><span style=display:flex><span>┌───────────┬─────────┬─────────┬────────┬─────────┬────────┬────────┬─────────┐
-</span></span><span style=display:flex><span>│ Stat      │ 1%      │ 2.5%    │ 50%    │ 97.5%   │ Avg    │ Stdev  │ Min     │
-</span></span><span style=display:flex><span>├───────────┼─────────┼─────────┼────────┼─────────┼────────┼────────┼─────────┤
-</span></span><span style=display:flex><span>│ Req/Sec   │ <span style=color:#ae81ff>17743</span>   │ <span style=color:#ae81ff>17743</span>   │ <span style=color:#ae81ff>20111</span>  │ <span style=color:#ae81ff>20335</span>   │ <span style=color:#ae81ff>19496</span>  │ 964.55 │ <span style=color:#ae81ff>17731</span>   │
-</span></span><span style=display:flex><span>├───────────┼─────────┼─────────┼────────┼─────────┼────────┼────────┼─────────┤
-</span></span><span style=display:flex><span>│ Bytes/Sec │ 2.91 MB │ 2.91 MB │ 3.3 MB │ 3.33 MB │ 3.2 MB │ <span style=color:#ae81ff>159</span> kB │ 2.91 MB │
-</span></span><span style=display:flex><span>└───────────┴─────────┴─────────┴────────┴─────────┴────────┴────────┴─────────┘
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>Req/Bytes counts sampled once per second.
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>214k requests in 11.01s, 35.2 MB read
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># fastify</span>
-</span></span><span style=display:flex><span>&gt; autocannon http://127.0.0.1:3000/
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>Running 10s test @ http://127.0.0.1:3000/
-</span></span><span style=display:flex><span><span style=color:#ae81ff>10</span> connections
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>┌─────────┬──────┬──────┬───────┬──────┬─────────┬─────────┬───────┐
-</span></span><span style=display:flex><span>│ Stat    │ 2.5% │ 50%  │ 97.5% │ 99%  │ Avg     │ Stdev   │ Max   │
-</span></span><span style=display:flex><span>├─────────┼──────┼──────┼───────┼──────┼─────────┼─────────┼───────┤
-</span></span><span style=display:flex><span>│ Latency │ <span style=color:#ae81ff>0</span> ms │ <span style=color:#ae81ff>0</span> ms │ <span style=color:#ae81ff>0</span> ms  │ <span style=color:#ae81ff>0</span> ms │ 0.01 ms │ 0.13 ms │ <span style=color:#ae81ff>13</span> ms │
-</span></span><span style=display:flex><span>└─────────┴──────┴──────┴───────┴──────┴─────────┴─────────┴───────┘
-</span></span><span style=display:flex><span>┌───────────┬─────────┬─────────┬─────────┬─────────┬──────────┬─────────┬─────────┐
-</span></span><span style=display:flex><span>│ Stat      │ 1%      │ 2.5%    │ 50%     │ 97.5%   │ Avg      │ Stdev   │ Min     │
-</span></span><span style=display:flex><span>├───────────┼─────────┼─────────┼─────────┼─────────┼──────────┼─────────┼─────────┤
-</span></span><span style=display:flex><span>│ Req/Sec   │ <span style=color:#ae81ff>19759</span>   │ <span style=color:#ae81ff>19759</span>   │ <span style=color:#ae81ff>27631</span>   │ <span style=color:#ae81ff>27903</span>   │ 26960.73 │ 2284.47 │ <span style=color:#ae81ff>19752</span>   │
-</span></span><span style=display:flex><span>├───────────┼─────────┼─────────┼─────────┼─────────┼──────────┼─────────┼─────────┤
-</span></span><span style=display:flex><span>│ Bytes/Sec │ 3.24 MB │ 3.24 MB │ 4.53 MB │ 4.58 MB │ 4.42 MB  │ <span style=color:#ae81ff>375</span> kB  │ 3.24 MB │
-</span></span><span style=display:flex><span>└───────────┴─────────┴─────────┴─────────┴─────────┴──────────┴─────────┴─────────┘
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>Req/Bytes counts sampled once per second.
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>297k requests in 11.01s, 48.6 MB read
-</span></span></code></pre></div><p>根据测试结果来看，仅 <strong>Req/Sec</strong> 这一项的平均值（Avg），Express 只有 <strong>7838.37</strong>，Koa 有 <strong>19496</strong>，约为前者的 2.4 倍，而 Fastify 达到了 <strong>26960.73</strong>，是 Express 的约 3.4 倍，Koa 的约 1.4 倍。除此之外，<strong>Bytes/Sec</strong> 指标也有差距，综合起来 Koa 和 Fastify 的表现要好的多，而 Fastify 要比 Koa 表现更好一些。</p></div><div class="row items-start justify-between"><div class="lg:col-4 flex items-center"><div class=share-icons><h5 class=share-title>分享 :</h5><a class="share-link share-facebook" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fleezchuan.github.io%2fblog%2fcomputer-technology%2fnodejs%2fnodejs-fastify%2f" target=_blank rel=noopener aria-label="share facebook"><span class=share-icon><svg viewBox="0 0 24 24"><path d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z"/></svg>
-</span></a><a class="share-link share-twitter" href="https://twitter.com/intent/tweet/?text=%e5%88%86%e4%ba%ab&amp;url=https%3a%2f%2fleezchuan.github.io%2fblog%2fcomputer-technology%2fnodejs%2fnodejs-fastify%2f" target=_blank rel=noopener aria-label="share twitter"><span aria-hidden=true class=share-icon><svg viewBox="0 0 24 24"><path d="M8 2H1l8.26 11.015L1.45 22H4.1l6.388-7.349L16 22h7l-8.608-11.478L21.8 2h-2.65l-5.986 6.886zm9 18L5 4h2l12 16z"/></svg>
-</span></a><a class="share-link share-email" href="mailto:?subject=%e5%88%86%e4%ba%ab&amp;body=https%3a%2f%2fleezchuan.github.io%2fblog%2fcomputer-technology%2fnodejs%2fnodejs-fastify%2f" target=_self rel=noopener aria-label="share email"><span aria-hidden=true class=share-icon><svg viewBox="0 0 24 24"><path d="M22 4H2C.9 4 0 4.9.0 6v12c0 1.1.9 2 2 2h20c1.1.0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7.25 14.43l-3.5 2c-.08.05-.17.07-.25.07-.17.0-.34-.1-.43-.25-.14-.24-.06-.55.18-.68l3.5-2c.24-.14.55-.06.68.18.14.24.06.55-.18.68zm4.75.07c-.1.0-.2-.03-.27-.08l-8.5-5.5c-.23-.15-.3-.46-.15-.7.15-.22.46-.3.7-.14L12 13.4l8.23-5.32c.23-.15.54-.08.7.15.14.23.07.54-.16.7l-8.5 5.5c-.08.04-.17.07-.27.07zm8.93 1.75c-.1.16-.26.25-.43.25-.08.0-.17-.02-.25-.07l-3.5-2c-.24-.13-.32-.44-.18-.68s.44-.32.68-.18l3.5 2c.24.13.32.44.18.68z"/></svg>
-</span></a><a class="share-link share-reddit" href="https://reddit.com/submit/?url=https%3a%2f%2fleezchuan.github.io%2fblog%2fcomputer-technology%2fnodejs%2fnodejs-fastify%2f&amp;resubmit=true&amp;title=%e5%88%86%e4%ba%ab" target=_blank rel=noopener aria-label="share reddit"><span aria-hidden=true class=share-icon><svg viewBox="0 0 24 24"><path d="M24 11.5c0-1.65-1.35-3-3-3-.96.0-1.86.48-2.42 1.24-1.64-1-3.75-1.64-6.07-1.72.08-1.1.4-3.05 1.52-3.7.72-.4 1.73-.24 3 .5C17.2 6.3 18.46 7.5 20 7.5c1.65.0 3-1.35 3-3s-1.35-3-3-3c-1.38.0-2.54.94-2.88 2.22-1.43-.72-2.64-.8-3.6-.25-1.64.94-1.95 3.47-2 4.55-2.33.08-4.45.7-6.1 1.72C4.86 8.98 3.96 8.5 3 8.5c-1.65.0-3 1.35-3 3 0 1.32.84 2.44 2.05 2.84-.03.22-.05.44-.05.66.0 3.86 4.5 7 10 7s10-3.14 10-7c0-.22-.02-.44-.05-.66 1.2-.4 2.05-1.54 2.05-2.84zM2.3 13.37C1.5 13.07 1 12.35 1 11.5c0-1.1.9-2 2-2 .64.0 1.22.32 1.6.82-1.1.85-1.92 1.9-2.3 3.05zm3.7.13c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9.8 4.8c-1.08.63-2.42.96-3.8.96-1.4.0-2.74-.34-3.8-.95-.24-.13-.32-.44-.2-.68.15-.24.46-.32.7-.18 1.83 1.06 4.76 1.06 6.6.0.23-.13.53-.05.67.2.14.23.06.54-.18.67zm.2-2.8c-1.1.0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm5.7-2.13c-.38-1.16-1.2-2.2-2.3-3.05.38-.5.97-.82 1.6-.82 1.1.0 2 .9 2 2 0 .84-.53 1.57-1.3 1.87z"/></svg></span></a></div></div></div><div class=mt-20><div id=disqus_thread></div><script>window.disqus_config=function(){},function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById("disqus_thread").innerHTML="Disqus comments not available by default when the website is previewed locally.";return}var t=document,e=t.createElement("script");e.async=!0,e.src="//themefisher-template.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}()</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></div></article></div><div class="section pb-0"><h2 class="h3 mb-12">相关</h2><div class=row><div class="lg:col-4 md:col-6 mb-14"><div class="bg-body dark:bg-darkmode-body"><h4 class=mb-3><a href=/blog/computer-technology/tools/tools-programming-language/>理解编程语言的设计与实现</a></h4><p class=mb-6><p>编程语言本质上是给开发者使用的工具，不同的业务领域使用不同的编程语言去实现具体的业务，是基于语言本身的设计理念与实现方式来做选择，那么作为开发者应该了解一下编程语言是如何被发明的，且其设计理念是什么。</p></p><a class="btn btn-outline-primary btn-sm" href=/blog/computer-technology/tools/tools-programming-language/>了解更多</a></div></div><div class="lg:col-4 md:col-6 mb-14"><div class="bg-body dark:bg-darkmode-body"><h4 class=mb-3><a href=/blog/computer-technology/protocol/protocol-http/>HTTP 协议</a></h4><p class=mb-6><p>随着 Internet 的发展，使用 Web 浏览器获取网络数据信息已经成为一种习惯标准，而 HTTP 协议也因此成为了网络体系中最重要的应用层协议。</p></p><a class="btn btn-outline-primary btn-sm" href=/blog/computer-technology/protocol/protocol-http/>了解更多</a></div></div><div class="lg:col-4 md:col-6 mb-14"><div class="bg-body dark:bg-darkmode-body"><h4 class=mb-3><a href=/blog/computer-technology/web/css/css-bfc/>块级格式化上下文（BFC）</a></h4><p class=mb-6><p>在进行页面布局时，通常有流式布局、定位布局、浮动布局这三种形式。而在布局过程中，各元素之间的影响却是一个很关键的问题。</p></p><a class="btn btn-outline-primary btn-sm" href=/blog/computer-technology/web/css/css-bfc/>了解更多</a></div></div></div></div></div></section></main><footer class="bg-theme-light dark:bg-darkmode-theme-light"><div class=container><div class="row items-center py-10"><div class="lg:col-3 mb-8 text-center lg:mb-0 lg:text-left"><a class="navbar-brand inline-block" href=/><img fetchpriority=high decoding=async class="img img-light" width=160 height=32 src=/images/logo_hu4114262549785978686.webp alt=Hugoplate onerror='this.onerror=null,this.src="/images/logo_hu7137767845088484273.png"'>
-<img fetchpriority=high decoding=async class="img img-dark" width=160 height=32 src=/images/logo-darkmode_hu8742296558546396051.webp alt=Hugoplate onerror='this.onerror=null,this.src="/images/logo-darkmode_hu4471933895487503573.png"'></a></div><div class="lg:col-6 mb-8 text-center lg:mb-0"><ul><li class="m-3 inline-block"><a href=/></a></li></ul></div><div class="lg:col-3 mb-8 text-center lg:mb-0 lg:mt-0 lg:text-right"><ul class=social-icons><li><a target=_blank aria-label=facebook rel="nofollow noopener" href="https://www.facebook.com/profile.php?id=100083154937436"><i class="fab fa-facebook"></i></a></li><li><a target=_blank aria-label=github rel="nofollow noopener" href=https://github.com/LeeZChuan><i class="fab fa-github"></i></a></li><li><a target=_blank aria-label=linkedin rel="nofollow noopener" href=https://www.linkedin.com/in/zchuan-lee-89214a1a3/><i class="fab fa-linkedin"></i></a></li></ul></div></div></div><div class="border-border dark:border-darkmode-border border-t py-7"><div class="text-light dark:text-darkmode-light container text-center"><p></p></div></div></footer><script crossorigin=anonymous integrity="sha256-LO9JECYLqyMcpGlrtxZcpUn0I8AvhO6oIIibJZv4zbk=" src=/js/script.min.2cef4910260bab231ca4696bb7165ca549f423c02f84eea820889b259bf8cdb9.js></script><script defer async crossorigin=anonymous integrity="sha256-w+aS42D2+B+Jix+joZ7pAua1vbu/pRK/IhoP55b8n3w=" src=/js/script-lazy.min.c3e692e360f6f81f898b1fa3a19ee902e6b5bdbbbfa512bf221a0fe796fc9f7c.js></script><script>"serviceWorker"in navigator&&navigator.serviceWorker.register("/service-worker.js")</script><script type=application/javascript>const announcementBox=document.getElementById("announcement"),announcementButton=document.getElementById("announcement-button");Cookies.get("announcement-close")||(announcementBox.classList.remove("announcement-hide"),announcementButton.onclick=function(){Cookies.set("announcement-close",!0,{expires:7}),announcementBox.classList.add("announcement-hide")})</script></body></html>
+<!doctype html>
+<html
+  itemscope
+  class=""
+  lang="zh-cn"
+  itemtype="http://schema.org/WebPage">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+    <meta charset="utf-8" />
+
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, maximum-scale=5" />
+
+
+<meta name="theme-name" content="hugoplate" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="/images/favicon_hu9880217891310920762.png" type="image/x-icon">
+<link rel="icon" href="/images/favicon_hu9880217891310920762.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu11285212527156944795.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu9880217891310920762.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu290619398646655712.png">
+
+
+
+
+
+
+
+
+<link rel="manifest" href="/manifest.webmanifest" />
+<meta
+  name="msapplication-TileColor"
+  content="#ddd" />
+<meta
+  name="theme-color"
+  content="#ffffff" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<title>Fastify - 专注于性能和低内存消耗</title>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <meta
+    name="keywords"
+    content="Boilerplate, Hugo" />
+
+
+
+
+<meta
+  name="description"
+  content="Fastify 作为一个 Node.js Web 框架，是如何实现高性能和低内存消耗的呢？?" />
+
+
+
+  <meta name="author" content="zeon.studio" />
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+      
+        <meta property="og:image" content="http://localhost:1313/images/og-image.png" />
+        <meta name="twitter:image" content="http://localhost:1313/images/og-image.png" />
+        <meta
+          name="twitter:card"
+          content="summary_large_image" />
+      
+      
+      <meta property="og:image:width" content="900" />
+      <meta property="og:image:height" content="600" />
+    
+
+
+    
+    <meta
+      property="og:image:type"
+      content="image/.png" />
+  
+
+
+  
+
+
+
+
+
+<meta property="og:title" content="Fastify - 专注于性能和低内存消耗" />
+<meta property="og:description" content="Fastify 作为一个 Node.js Web 框架，是如何实现高性能和低内存消耗的呢？?" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://localhost:1313/blog/computer-technology/nodejs/nodejs-fastify/" />
+
+
+<meta name="twitter:title" content="Fastify - 专注于性能和低内存消耗" />
+<meta name="twitter:description" content="Fastify 作为一个 Node.js Web 框架，是如何实现高性能和低内存消耗的呢？?" />
+
+
+  <meta name="twitter:site" content="@zeon_studio" />
+
+
+  <meta name="twitter:creator" content="@zeon.studio" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  let indexURL = "http://localhost:1313/searchindex.json";
+  let includeSectionsInSearch = ["blog"];
+  let search_no_results = "暂无数据";
+  let search_initial_message = "标注某事物去搜索...";
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+<meta http-equiv="x-dns-prefetch-control" content="on" />
+<link rel="preconnect" href="https://use.fontawesome.com" crossorigin />
+<link rel="preconnect" href="//cdnjs.cloudflare.com" />
+<link rel="preconnect" href="//www.googletagmanager.com" />
+<link rel="preconnect" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="https://use.fontawesome.com" />
+<link rel="dns-prefetch" href="//ajax.googleapis.com" />
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+<link rel="dns-prefetch" href="//www.googletagmanager.com" />
+<link rel="dns-prefetch" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link rel="dns-prefetch" href="//connect.facebook.net" />
+<link rel="dns-prefetch" href="//platform.linkedin.com" />
+<link rel="dns-prefetch" href="//platform.twitter.com" />
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script>
+  (function () {
+    const googleFont = document.createElement("link");
+    googleFont.href = "https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&family=Signika:wght@500;700&display=swap";
+    googleFont.type = "text/css";
+    googleFont.rel = "stylesheet";
+    document.head.appendChild(googleFont);
+  })();
+</script>
+
+
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+<link
+  href="/css/style.css"
+  integrity=""
+  rel="stylesheet" />
+
+
+<link
+  defer
+  async
+  rel="stylesheet"
+  href="/css/style-lazy.css"
+  integrity=""
+  media="print"
+  onload="this.media='all'; this.onload=null;" />
+
+
+  </head>
+
+  <body>
+    
+    
+      
+
+
+
+
+
+      
+      <div
+  class="fixed left-0 top-0 z-50 flex w-[30px] items-center justify-center bg-gray-200 py-[2.5px] text-[12px] uppercase text-black sm:bg-red-200 md:bg-yellow-200 lg:bg-green-200 xl:bg-blue-200 2xl:bg-pink-200">
+  <span class="block sm:hidden">all</span>
+  <span class="hidden sm:block md:hidden">sm</span>
+  <span class="hidden md:block lg:hidden">md</span>
+  <span class="hidden lg:block xl:hidden">lg</span>
+  <span class="hidden xl:block 2xl:hidden">xl</span>
+  <span class="hidden 2xl:block">2xl</span>
+</div>
+
+    
+
+
+    
+    
+
+
+  <div id="announcement" class="announcement announcement-hide">
+    You must replace the <strong>baseURL</strong> in <strong>hugo.toml</strong> file when deploying, you can manage this announcement from the <strong>params.toml</strong> file.
+    <button id="announcement-button" class="announcement-button">
+      &times;
+    </button>
+  </div>
+
+  
+  <style>
+    .announcement {
+      position: relative;
+      z-index: 999;
+      padding: 1rem;
+      padding-right: 2.8rem;
+      background-color: #fff;
+      box-shadow: 1px 0px 10px 7px rgba(154, 154, 154, 0.11);
+      font-size: 1.1rem;
+    }
+    .announcement-button {
+      cursor: pointer;
+      padding: 0 0.5rem;
+      border: 0;
+      font-size: 1.3rem;
+      position: absolute;
+      top: 50%;
+      right: 1rem;
+      transform: translateY(-50%);
+      border: 1px solid;
+      border-radius: 50%;
+      height: 1.1em;
+      width: 1.1em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .announcement-hide {
+      display: none;
+    }
+    .dark .announcement {
+      background-color: #222;
+    }
+  </style>
+
+
+
+
+    
+    <header
+  class="header sticky top-0 z-30">
+  <nav class="navbar container">
+    
+    <div class="order-0">
+      
+      <a class="navbar-brand block" href="/">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+    
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu4114262549785978686.webp"
+      alt="Hugoplate"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu7137767845088484273.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu8742296558546396051.webp"
+      alt="Hugoplate"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu4471933895487503573.png';" />
+  
+  
+
+
+      </a>
+    </div>
+    
+    <input id="nav-toggle" type="checkbox" class="hidden" />
+    <label
+      for="nav-toggle"
+      class="order-3 cursor-pointer flex items-center lg:hidden text-dark dark:text-white lg:order-1">
+      <svg id="show-button" class="h-6 fill-current block" viewBox="0 0 20 20">
+        <title>Menu Open</title>
+        <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z"></path>
+      </svg>
+      <svg id="hide-button" class="h-6 fill-current hidden" viewBox="0 0 20 20">
+        <title>Menu Close</title>
+        <polygon
+          points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
+          transform="rotate(45 10 10)"></polygon>
+      </svg>
+    </label>
+    
+
+    
+    <ul
+      id="nav-menu"
+      class="navbar-nav order-3 hidden lg:flex w-full pb-6 lg:order-1 lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8">
+      
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/about"
+              >关于我</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/projects"
+              >个人项目</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/blog"
+              >文章记录</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/life"
+              >生活记录</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item nav-dropdown group relative">
+            <span
+              class="nav-link 
+                
+                
+                
+              
+                
+                
+                
+               inline-flex items-center">
+              其他
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+                <path
+                  d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+              </svg>
+            </span>
+            <ul
+              class="nav-dropdown-list lg:group-hover:visible lg:group-hover:opacity-100">
+              
+                
+                
+                <li class="nav-dropdown-item">
+                  <a
+                    class="nav-dropdown-link "
+                    
+                    href="/elements">
+                    Md编写说明
+                  </a>
+                </li>
+              
+                
+                
+                <li class="nav-dropdown-item">
+                  <a
+                    class="nav-dropdown-link "
+                    
+                    href="/categories">
+                    文字分类汇总
+                  </a>
+                </li>
+              
+            </ul>
+          </li>
+        
+      
+      
+    </ul>
+
+    <div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
+      
+        
+          <button
+            aria-label="search"
+            
+            class="border-border text-dark hover:text-primary dark:border-darkmode-border mr-5 inline-block border-r pr-5 text-xl dark:text-white dark:hover:text-darkmode-primary"
+            
+            data-target="search-modal">
+            <i class="fa-solid fa-search"></i>
+          </button>
+        
+      
+
+      
+
+
+
+
+
+
+
+
+
+      
+
+
+  <div class="theme-switcher mr-5 hidden">
+    <input id="theme-switcher" data-theme-switcher type="checkbox" />
+    <label for="theme-switcher">
+      <span class="sr-only">theme switcher</span>
+      <span>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-100 dark:opacity-0"
+          viewBox="0 0 56 56"
+          fill="#fff"
+          height="16"
+          width="16">
+          <path
+            d="M30 4.6c0-1-.9-2-2-2a2 2 0 0 0-2 2v5c0 1 .9 2 2 2s2-1 2-2Zm9.6 9a2 2 0 0 0 0 2.8c.8.8 2 .8 2.9 0L46 13a2 2 0 0 0 0-2.9 2 2 0 0 0-3 0Zm-26 2.8c.7.8 2 .8 2.8 0 .8-.7.8-2 0-2.9L13 10c-.7-.7-2-.8-2.9 0-.7.8-.7 2.1 0 3ZM28 16a12 12 0 0 0-12 12 12 12 0 0 0 12 12 12 12 0 0 0 12-12 12 12 0 0 0-12-12Zm23.3 14c1.1 0 2-.9 2-2s-.9-2-2-2h-4.9a2 2 0 0 0-2 2c0 1.1 1 2 2 2ZM4.7 26a2 2 0 0 0-2 2c0 1.1.9 2 2 2h4.9c1 0 2-.9 2-2s-1-2-2-2Zm37.8 13.6a2 2 0 0 0-3 0 2 2 0 0 0 0 2.9l3.6 3.5a2 2 0 0 0 2.9 0c.8-.8.8-2.1 0-3ZM10 43.1a2 2 0 0 0 0 2.9c.8.7 2.1.8 3 0l3.4-3.5c.8-.8.8-2.1 0-2.9-.8-.8-2-.8-2.9 0Zm20 3.4c0-1.1-.9-2-2-2a2 2 0 0 0-2 2v4.9c0 1 .9 2 2 2s2-1 2-2Z" />
+        </svg>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-0 dark:opacity-100"
+          viewBox="0 0 24 24"
+          fill="none"
+          height="16"
+          width="16">
+          <path
+            fill="#000"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M8.2 2.2c1-.4 2 .6 1.6 1.5-1 3-.4 6.4 1.8 8.7a8.4 8.4 0 0 0 8.7 1.8c1-.3 2 .5 1.5 1.5v.1a10.3 10.3 0 0 1-9.4 6.2A10.3 10.3 0 0 1 3.2 6.7c1-2 2.9-3.5 4.9-4.4Z" />
+        </svg>
+      </span>
+    </label>
+  </div>
+
+  
+  <script>
+    var darkMode = false;
+
+    
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches){darkMode = true}
+    
+
+    if (localStorage.getItem("theme") === "dark"){darkMode = true}
+    else if (localStorage.getItem("theme") === "light"){darkMode = false}
+
+    if (darkMode){document.documentElement.classList.add("dark")}
+    else {document.documentElement.classList.remove("dark")}
+
+    
+    document.addEventListener("DOMContentLoaded", () => {
+      var themeSwitch = document.querySelectorAll("[data-theme-switcher]");
+      var themeSwitcherContainer = document.querySelector('.theme-switcher');
+
+      [].forEach.call(themeSwitch, function (ts) {
+        ts.checked = darkMode;
+        ts.addEventListener("click", () => {
+          document.documentElement.classList.toggle("dark");
+          localStorage.setItem(
+            "theme",
+            document.documentElement.classList.contains("dark") ? "dark" : "light"
+          );
+        });
+      });
+
+      
+      themeSwitcherContainer.classList.remove('hidden');
+    });
+  </script>
+
+
+
+
+      
+      
+    </div>
+  </nav>
+</header>
+
+    
+
+
+
+
+  
+    <div
+      class="search-modal "
+      aria-hidden="true"
+      style="--color-primary: #121212">
+      <div data-target="close-search-modal" class="search-modal-overlay"></div>
+      <div
+        class="search-wrapper"
+        data-image="true"
+        data-description="true"
+        data-tags="true"
+        data-categories="true">
+        <div class="search-wrapper-header">
+          <label for="search-modal-input" style="margin-top:-1px">
+            <span class="sr-only">search icon</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-icon"
+              data-type="search">
+              <path
+                fill="currentColor"
+                d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-reset"
+              data-type="reset">
+              <path
+                fill="currentColor"
+                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z" />
+            </svg>
+          </label>
+          <input
+            id="search-modal-input"
+            type="text"
+            data-search-input
+            autocomplete="off"
+            aria-label="Search"
+            placeholder="搜寻更多..." />
+        </div>
+        <div class="search-wrapper-body">
+          <div class="search-result" data-search-result></div>
+          <span class="search-result-empty">
+            标注某事物去搜索...
+          </span>
+        </div>
+        <div class="search-wrapper-footer">
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 11h9.592L8 5.519 3.204 11zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659z" />
+              </svg>
+            </kbd>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                style="margin-top:1px;"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z" />
+              </svg>
+            </kbd>
+            去导航
+          </span>
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="12"
+                fill="currentColor"
+                style="display:inline-block;"
+                viewBox="0 0 16 16">
+                <path
+                  fill-rule="evenodd"
+                  d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z" />
+              </svg>
+            </kbd>
+            去选择
+          </span>
+          <span class="search-result-info"></span>
+          <span data-target="close-search-modal">
+            <kbd>ESC</kbd> 去关闭
+          </span>
+        </div>
+      </div>
+    </div>
+  
+
+
+
+
+    <main>
+      
+  <section class="section pt-7">
+    <div class="container">
+      <div class="row justify-center">
+        <article class="lg:col-10">
+          
+          
+          <h1 class="h2 mb-4">
+            Fastify - 专注于性能和低内存消耗
+          </h1>
+          <ul class="mb-4">
+            <li class="mr-4 inline-block">
+              <a
+                href="/authors//">
+                <i class="fa-regular fa-circle-user mr-2"></i
+                >
+              </a>
+            </li>
+            
+            
+              <li class="mr-4 inline-block">
+                <i class="fa-regular fa-folder mr-2"></i>
+                
+                  <a
+                    href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/"
+                    class=""
+                    >计算机技术
+                      ,
+                    
+                  </a>
+                
+                  <a
+                    href="/categories/node.js/"
+                    class=""
+                    >Node.js
+                      ,
+                    
+                  </a>
+                
+                  <a
+                    href="/categories/fastify/"
+                    class=""
+                    >Fastify
+                  </a>
+                
+              </li>
+            
+            <li class="mr-4 inline-block">
+              <i class="fa-regular fa-clock mr-2"></i>
+              June 27, 2021
+            </li>
+          </ul>
+          <div class="content mb-10">
+            
+
+ 
+  
+
+<details open class="table-of-content blog">
+  <summary>
+    
+      内容列表
+    
+  </summary>
+  <nav id="TableOfContents">
+  <ol>
+    <li>
+      <ol>
+        <li><a href="#设计理念">设计理念</a></li>
+        <li><a href="#fastify-的实现细节">Fastify 的实现细节</a>
+          <ol>
+            <li><a href="#json-序列化">JSON 序列化</a></li>
+            <li><a href="#路由routing">路由（Routing）</a></li>
+            <li><a href="#闭包closure">闭包（Closure）</a></li>
+            <li><a href="#调用栈call-stack">调用栈（Call stack）</a></li>
+            <li><a href="#服务器的生命周期server-lifecycle">服务器的生命周期（Server Lifecycle）</a></li>
+            <li><a href="#插件模型plugin-model">插件模型（Plugin Model）</a></li>
+            <li><a href="#其它方面">其它方面</a></li>
+          </ol>
+        </li>
+        <li><a href="#结语">结语</a></li>
+        <li><a href="#参考资源">参考资源</a></li>
+        <li><a href="#附对比表">附：对比表</a></li>
+        <li><a href="#附基准测试">附：基准测试</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+</details>
+
+            <p>最近在做 Node.js 技术相关的调研，需要选定一个 Web 框架作为基础来构建业务。一般来说，首选开源方案，对于我来说，比较关注框架背后的开发团队情况、项目活跃度、是否有足够多的商业案例、文档是否完整可读、框架的设计理念、技术架构是否灵活可扩展、技术社区生态是否完整等方面。目前，我比较倾心的是 Fastify 这个新兴框架，根据官网介绍，其专注于高性能和低消耗，并且公开的基准测试表现相当不错，项目足够活跃，更重要的是属于 OpenJS 基金会的孵化项目。本文主要介绍 Fastify 的设计理念和探究其是如何提高性能和降低内存消耗的。</p>
+<!-- truncate -->
+<blockquote>
+<p>Fastify 官网：https://www.fastify.io/</p>
+</blockquote>
+<p>Fastify v1.0.0 发布是在 2018 年的 3 月份，相比于业内广为熟知的 Express / Koa 等框架还很年轻，其项目发起者和核心维护者之一 Matteo Collina 也在开源社区很有声望，是 Node.js TSC 成员，目前 Fastify 项目已经加入 OpenJS 基金会。</p>
+<blockquote>
+<p><a href="https://medium.com/the-node-js-collection/fastify-goes-lts-with-1-0-0-911112c64752"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Fastify 到达 1.0.0 LTS！</a></p>
+</blockquote>
+<blockquote>
+<p><a href="https://openjsf.org/blog/2019/11/20/web-framework-fastify-joins-openjs-foundation-as-an-incubating-project/"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Fastify 作为孵化项目加入 OpenJS 基金会</a></p>
+</blockquote>
+<blockquote>
+<p><a href="https://openjsf.org/blog/2020/08/27/fastify-graduation-performance-and-the-future/"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Fastify：毕业、性能和未来</a></p>
+</blockquote>
+<h3 id="设计理念">设计理念</h3>
+<p>一般来说，一个开源项目会在文档中阐述自己的设计理念和技术架构等理论层面的思考，以帮助开发者更快的了解项目的核心思想和目标人群，或者说解决的关键性问题。官网首页首先给出了标题为 Why 的一段话，然后列举了核心功能点（Core features），文档中没有找到具体阐述设计理念之类的东西。不过，在看了官方博客文章以及相关的资料之后，Fastify 的设计理念大体可以总结：</p>
+<ul>
+<li>高性能</li>
+<li>灵活可扩展</li>
+<li>开发人员友好（例如内置日志系统、TS 支持等等）</li>
+</ul>
+<p>纵观众多 Node.js Web 开源框架，大多都做到了后两点，例如 Express 项目利用中间件提供了足够的灵活性，内置了开箱即用的功能；而 Koa 为了改进开发人员的体验，引入 <code>async/await</code> 替代回调函数，以及所谓的 “洋葱模型” 提供了更高的灵活性，精简了框架核心，只提供必要的功能，从而有了比 Express 更好的性能。而 Fastify 除此之外，对性能有极致的追求，同时也提出了很多不一样的思想，值得学习。</p>
+<p>其实，Web 开发框架还有一个较为严峻的问题就是项目的工程化标准，最著名的就是 MVC 模型，而对应的也有解决此类问题的 Node.js 框架，近年来发展前景比较好的应该就是 nest.js 了。</p>
+<blockquote>
+<p><a href="https://thenewstack.io/introducing-fastify-speedy-node-js-web-framework/"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Introducing Fastify, a Speedy Node.js Web Framework</a></p>
+</blockquote>
+<h3 id="fastify-的实现细节">Fastify 的实现细节</h3>
+<p>了解了 Fastify 的设计理念之后，接下来要看看开发团队是如何实施的，探索其技术细节。</p>
+<h4 id="json-序列化">JSON 序列化</h4>
+<p>Fastify 项目的历史故事背后是 <code>fast-json-stringify</code> 模块的诞生，该模块比 <code>JSON.stringify()</code> 这种原生 JavaScript 方法快很多，可以达到 2 到 3 倍的性能优势。其背后的原理主要是 <strong>依赖 JSON Schema 对 JSON 数据进行校验，避免了类型判断的过程，从而提高了性能</strong>。根据其公开的基准测试，其优势主要体现在处理的目标数据为复杂对象时，可以达到 4 倍的性能优势。</p>
+<blockquote>
+<p><a href="https://github.com/fastify/fast-json-stringify"
+
+
+
+
+ target="_blank"
+ 
+
+
+>GitHub: <code>fast-json-stringify</code></a></p>
+</blockquote>
+<blockquote>
+<p><a href="https://json-schema.org/"
+
+
+
+
+ target="_blank"
+ 
+
+
+>JSON Schema</a></p>
+</blockquote>
+<p>其中有两个细节我们值得注意。第一个便是项目 <em>README.md</em> 文件中提到的安全方面需要注意的问题，是由于 <strong>在初始化时利用 <code>Function</code> 构造函数预编译了函数体，以此达到优化性能的目的</strong>。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Function(<span style="color:#e6db74">&#39;schema&#39;</span>, <span style="color:#a6e22e">code</span>)(<span style="color:#a6e22e">root</span>);
+</span></span></code></pre></div><p>而这个原理其实也是比较好理解的，通过把一个函数体内包含循环迭代的代码预先“编译”成字符串再交给函数来执行，在函数的“运行时”就不需要再做额外的“解释翻译”以及迭代工作，从而提高性能。下面有一篇相关的比较有趣的文章可以看看：</p>
+<blockquote>
+<p><a href="https://github.com/felixge/faster-than-c"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Faster than C? Parsing binary data in JavaScript.</a></p>
+</blockquote>
+<p>我们也可以通过以下示例代码来进行简单的测试：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">a() {</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">3</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">i</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">code</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>].<span style="color:#a6e22e">map</span>((<span style="color:#a6e22e">i</span>) <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">`console.log(</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">i</span><span style="color:#e6db74">}</span><span style="color:#e6db74">)`</span>);
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 函数体预编译后 b 等价于
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// function b() {
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//   console.log(0);
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//   console.log(1);
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//   console.log(2);
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// }
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Function(<span style="color:#a6e22e">code</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">time</span>(<span style="color:#e6db74">&#39;a&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">a</span>();
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">timeEnd</span>(<span style="color:#e6db74">&#39;a&#39;</span>); <span style="color:#75715e">// a: 0.136962890625 ms
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">time</span>(<span style="color:#e6db74">&#39;b&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">b</span>();
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">timeEnd</span>(<span style="color:#e6db74">&#39;b&#39;</span>); <span style="color:#75715e">// b: 0.05908203125 ms
+</span></span></span></code></pre></div><p>第二个细节便是 <em>README.md</em> 文件中有提到可以和 <code>flatstr</code> 模块很好的配合使用，因为该模块会触发 V8 的优化机制，把字符串最终转换成了 <code>Buffer</code>。 其项目的 <em>README.md</em> 文件中 <strong>How does it work</strong> 段落详细解释了底层机制，简单的来说，V8 会在某些情况下针对 <code>String</code> 数据做特定优化，而该模块的主要作用就是主动去触发这种 V8 的优化机制以达到提高性能的目的。</p>
+<blockquote>
+<p><a href="https://github.com/davidmarkclements/flatstr"
+
+
+
+
+ target="_blank"
+ 
+
+
+>GitHub: <code>flatstr</code></a></p>
+</blockquote>
+<h4 id="路由routing">路由（Routing）</h4>
+<p>Fastify 的路由是依赖 <code>find-my-way</code> 模块实现的，在公开的基准测试中相比于 <code>express</code> 和 <code>koa-router</code> 有数倍的性能优势。</p>
+<p>根据 <code>find-my-way</code> 模块的 <em>README.md</em> 文件中所介绍，其 <strong>底层采用了基数树（Radix tree，亦称 compact prefix tree）的数据结构，并非通常的路由数组和迭代正则匹配方案</strong>。基数树是一种空间优化的前缀树（即紧凑前缀树），具有前缀树的搜索性能同时尽可能小的占用内存。前缀树的应用场景比较常见，常用于字符串检索，例如字典查找、字符统计、公共前缀匹配等等，要比遍历数组和正则匹配的查找性能好数倍。但前缀树的内存消耗比较大，所以通过将只有一个子节点的与其父节点合并从而减少内存消耗，形成了“基数树”数据结构。</p>
+<blockquote>
+<p><a href="https://github.com/delvedor/find-my-way"
+
+
+
+
+ target="_blank"
+ 
+
+
+>GitHub: <code>find-my-way</code></a></p>
+</blockquote>
+<blockquote>
+<p><a href="https://en.wikipedia.org/wiki/Radix_tree"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Radix tree</a></p>
+</blockquote>
+<p>Koa 的官方路由 <code>@koa/router</code> 从源码中可以看到，是将每个路由的路径 <code>path</code> 转换成正则表达式存储在数组中，此后遍历该数组通过正则匹配来完成路由映射，这种方案实现起来相对简单，但性能要低得多。不过也有一个同样基于基数树结构实现的 <code>koa-tree-router</code> 模块，性能比前者高数倍，当然它的功能还是相当简单的。Express 的官方路由实现也大致相同，<code>@koa/router</code> 应该是参考了前者的实现。</p>
+<h4 id="闭包closure">闭包（Closure）</h4>
+<p>闭包是 JavaScript 一个很有用的语言特性，利用它可以实现很多东西，最常见的则是模块封装了，在没有类（Class）概念的情况下，要实现类似类的效果必然会用到闭包，很多第三方库就是这样做的，例如著名的 <code>jQuery</code>。但另一方面需要注意的是，闭包极易引起内存泄漏，同时造成不必要的内存消耗；而且，在闭包中如果嵌套太深，作用域递归解析也会有一定的开销。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">process</span>(<span style="color:#a6e22e">bigData</span>, <span style="color:#a6e22e">cb</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">remoteCall</span>(<span style="color:#a6e22e">bigData</span>, <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">err</span>, <span style="color:#a6e22e">something</span>)) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">storeSomething</span>(<span style="color:#a6e22e">something</span>, <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">err</span>, <span style="color:#a6e22e">res</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// 该函数是暂时的，但是难以被优化
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#75715e">// bigData 一直驻留在作用域中，无法被 GC
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#a6e22e">cb</span>(<span style="color:#66d9ef">null</span>, <span style="color:#a6e22e">res</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>    })
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// -------
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">process</span>(<span style="color:#a6e22e">bigData</span>, <span style="color:#a6e22e">cb</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">remoteCall</span>(<span style="color:#a6e22e">bigData</span>, <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">err</span>, <span style="color:#a6e22e">something</span>)) {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// bigData 在这里退出了作用域，可以被 GC
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">callStoreSomething</span>(<span style="color:#a6e22e">something</span>, <span style="color:#a6e22e">cb</span>)
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">callStoreSomething</span>(<span style="color:#a6e22e">something</span>, <span style="color:#a6e22e">cb</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 该函数可以被优化
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">storeSomething</span>(<span style="color:#a6e22e">something</span>, <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">err</span>, <span style="color:#a6e22e">res</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">cb</span>(<span style="color:#66d9ef">null</span>, <span style="color:#a6e22e">res</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>  })
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>基于此，<strong>Fastify 团队在框架内部基本上杜绝了利用闭包实现功能，从而保证了低内存消耗</strong>。</p>
+<blockquote>
+<p><a href="https://akaphenom.medium.com/javascript-closures-and-the-call-stack-722ef2c3b5a8"
+
+
+
+
+ target="_blank"
+ 
+
+
+>JavaScript: Closures and the Call Stack</a></p>
+</blockquote>
+<blockquote>
+<p><a href="https://en.wikipedia.org/wiki/Scope_%28computer_science%29"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Scope</a></p>
+</blockquote>
+<h4 id="调用栈call-stack">调用栈（Call stack）</h4>
+<p>Fastify 内部优化之后，调用栈也小很多，作者利用 <code>0x</code> 工具进行了分析，从生成的栈火焰图来看，Express 的图形中有两个高峰，说明调用栈特别大；相对的，Fastify 的图形总体较为平缓。<strong>更小的调用栈也降低了内存消耗</strong>，详细信息可以在下面的视频讲解中查看。</p>
+<blockquote>
+<p><a href="https://www.youtube.com/watch?v=5z46jJZNe8k"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Take your http server to ludicrous speed</a></p>
+</blockquote>
+<blockquote>
+<p><a href="https://github.com/davidmarkclements/0x"
+
+
+
+
+ target="_blank"
+ 
+
+
+>GitHub: <code>0x</code></a></p>
+</blockquote>
+<blockquote>
+<p><a href="https://en.wikipedia.org/wiki/Call_stack"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Call stack</a></p>
+</blockquote>
+<h4 id="服务器的生命周期server-lifecycle">服务器的生命周期（Server Lifecycle）</h4>
+<p>大多数 Web 框架的生命周期是相似的：服务器启动，路由处理程序注册，服务器侦听请求并调用适当的函数来处理它们。如下图所示，Fastify 做了特殊处理，在服务器启动之后执行预初始化阶段（preinitialisation ），该阶段做了一些优化工作，使用 <code>fast-json-stringify</code> 模块处理 JSON schemas，以及用 <code>reusify</code> 模块优化处理函数（handler functions）。</p>
+<p><img src="https://www.nearform.com/wp-content/uploads/jekyllsite/blog/2017/08/diagram_fastify_lifecycle.png"></p>
+<p>这里提及的 <code>reusify</code> 模块是如何来优化处理函数的呢？首先，请求的处理函数属于频繁被执行的代码块，也就是所谓的&quot;热代码路径（hot code paths）&quot;。<code>reusify</code> 的源码非常简单，主要作用是 <strong>将对象或者函数进行缓存，降低高并发场景下热代码路径上的 GC 压力</strong>。</p>
+<blockquote>
+<p><a href="https://www.nearform.com/blog/reaching-ludicrous-speed-with-fastify/"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Reaching Ludicrous Speed with Fastify</a></p>
+<p><a href="https://github.com/mcollina/reusify"
+
+
+
+
+ target="_blank"
+ 
+
+
+>GitHub: <code>reusify</code></a></p>
+<p><a href="https://stackoverflow.com/questions/22894877/avoid-allocations-in-compiler-hot-paths-roslyn-coding-conventions"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Avoid allocations in compiler hot paths” Roslyn Coding Conventions</a></p>
+</blockquote>
+<p>不过，在 <code>reusify</code> 模块给出的示例代码中有一个细节值得注意：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">// ...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">MyObject</span> () {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// you need to define this property
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// so V8 can compile MyObject into an
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// hidden class
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">next</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// ...
+</span></span></span></code></pre></div><p>作者注释到你要重用的对象内部第一个属性应该定义为 <code>next</code>，因为可以触发 V8 的优化机制 <strong>“隐藏类（hidden class）”</strong>。首先，<strong>隐藏类是 V8 内部为了优化非整数索引属性（命名属性）的访问速度的机制，每一次对对象命名属性的增删操作都会导致新的隐藏类被创建，而具备同样的命名属性定义顺序的对象可以共享隐藏类，减少开销</strong>。接下来，通过查看 <code>reusify</code> 模块的源码便可知道，模块内部为了实现缓存队列给被重用的对象添加了一个 <code>next</code> 属性，由此便可以明白作者的注释是告诉我们如何利用好 V8 的内部优化机制 —— 隐藏类。</p>
+<blockquote>
+<p><a href="https://v8.dev/blog/fast-properties"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Fast properties in V8</a></p>
+</blockquote>
+<blockquote>
+<p><a href="https://engineering.linecorp.com/en/blog/v8-hidden-class/"
+
+
+
+
+ target="_blank"
+ 
+
+
+>V8 Hidden class</a></p>
+</blockquote>
+<blockquote>
+<p><a href="https://stackoverflow.com/questions/17925726/clearing-up-the-hidden-classes-concept-of-v8"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Clearing up the <code>hidden classes</code> concept of V8</a></p>
+</blockquote>
+<blockquote>
+<p><a href="https://codereview.stackexchange.com/questions/28344/should-i-put-default-values-of-attributes-on-the-prototype-to-save-space/28360#28360"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Should I put default values of attributes on the prototype to save space?</a></p>
+</blockquote>
+<h4 id="插件模型plugin-model">插件模型（Plugin Model）</h4>
+<p>Fastify 的灵活扩展主要依赖于其插件系统，同时也支持 Express 中间件（需要 <code>middie</code> 插件），可以说是 Express 与 Hapi 的组合。在探究 Fastify 的插件模型之前，先来看看 Koa 的中间件模型的源码实现：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">// https://github.com/koajs/compose/blob/25568a36509fefc58914bc2a7600f787b16aa0df/index.js#L42
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">compose</span>(<span style="color:#a6e22e">middleware</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// ...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">context</span>, <span style="color:#a6e22e">next</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// ...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">dispatch</span>(<span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">dispatch</span>(<span style="color:#a6e22e">i</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// ...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#75715e">// 遍历嵌套迭代（类递归）的方式执行
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#66d9ef">return</span> Promise.<span style="color:#a6e22e">resolve</span>(<span style="color:#a6e22e">fn</span>(<span style="color:#a6e22e">context</span>, <span style="color:#a6e22e">dispatch</span>.<span style="color:#a6e22e">bind</span>(<span style="color:#66d9ef">null</span>, <span style="color:#a6e22e">i</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>)));
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  };
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>我们可以看到 <code>koa-compose</code> 模块实现了 Koa 的中间件模型，是一种通过遍历嵌套迭代（类递归）的方式来逐个执行中间件函数，而且引入上下游（upstream / downstream）的概念，这种方式会导致调用栈会非常的大，性能很难优化。而查看 Express 的源码，发现其会把中间件函数当作路由函数来对待，存储在数组中，后续也会以类似的方式执行，同样也会有调用栈过大的问题。</p>
+<p>Fastify 依赖于 <code>avvio</code> 模块 <strong>建立了一种基于可重入（reentrant ）和有向无环图（directed acyclic graph）的插件模型</strong>，可以正确处理异步代码，保证插件的加载顺序，避免了前面提到的调用栈过大的问题。建立一个有向无环图的插件系统可以保证不会创建交叉依赖，并且实现了可以在应用程序的不同部分使用相同插件的不同版本。</p>
+<p><img alt="有向无环图.png" src="https://survivejs.com/9f7ecd003147aad41c8b8c236c703db4.png">
+有向无环图</p>
+<p>由于这种架构模式，带来的另外一个好处就是很容易将应用拆分为多个微服务。</p>
+<p><img alt="有向无环图服务.png" src="https://survivejs.com/6758771bb4590b09ac0780ceb3c51da9.png">
+有向无环图服务</p>
+<p>那么，可重入带来了什么？可重入性是代码的一种属性，指其没有共享状态，可以安全的在多个线程中或者递归地调用执行；换句话说，代码因为具备某些状态，在多个线程或者递归调用时因为改变了该状态而导致逻辑出错，表明代码是不可重入的，不具备可重入性。常见的应用场景就是在遍历图形的算法中，可能会多次到达同一个节点，可重入性保证了遍历过程中是安全的。</p>
+<p>具体实现，在 Fastify 官方文档的 <strong><a href="https://www.fastify.io/docs/latest/Encapsulation/"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Encapsulation</a></strong> 章节有关于其基本特性 &ldquo;封装上下文（encapsulation context）&rdquo; 的介绍，示例代码形象易懂，核心是围绕 <code>register</code> API 构建的自上而下继承的上下文模型，并可以通过 <code>fastify-plugin</code> 模块打破这种限制完成特定场景下的应用。在 Fastify 中一切皆插件，形成的这种插件系统，也正是上面提到的可以将应用方便的拆分为微服务的基础。</p>
+<blockquote>
+<p><a href="https://github.com/fastify/middie"
+
+
+
+
+ target="_blank"
+ 
+
+
+>GitHub: <code>middie</code></a></p>
+</blockquote>
+<blockquote>
+<p><a href="https://github.com/fastify/avvio"
+
+
+
+
+ target="_blank"
+ 
+
+
+>GitHub: <code>avvio</code></a></p>
+</blockquote>
+<blockquote>
+<p><a href="https://en.wikipedia.org/wiki/Directed_acyclic_graph"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Directed acyclic graph</a></p>
+</blockquote>
+<blockquote>
+<p><a href="https://stackoverflow.com/questions/1312259/what-is-the-re-entrant-lock-and-concept-in-general"
+
+
+
+
+ target="_blank"
+ 
+
+
+>What is the Re-entrant lock and concept in general?</a></p>
+</blockquote>
+<h4 id="其它方面">其它方面</h4>
+<p>除了上面所介绍的 Fastify 特点外，还有其它一些方面值得关注。</p>
+<p>第一个，<code>Decorators</code> API 提供了一个在整个应用的请求链路中共享数据的机制，此 API 也体现了 Fastify 对性能的关注，其与 V8 内部优化机制“隐藏类”和“内联缓存”相关。</p>
+<blockquote>
+<p><a href="https://mathiasbynens.be/notes/shapes-ics"
+
+
+
+
+ target="_blank"
+ 
+
+
+>JavaScript engine fundamentals: Shapes and Inline Caches</a></p>
+</blockquote>
+<p>第二个，<code>Hooks</code> API 允许监听一些应用生命周期事件，提供了更高的灵活性，给特定场景下的应用提供了较好的实现机制。</p>
+<p>第三个，内置了依赖于 <code>Pino</code> 模块实现的日志系统，日志作为后端应用针对错误分析、性能分析等的原始信息是相当重要的，可见 Fastify 团队关注点还是相当准确的。</p>
+<p>最后，Fastify 的插件生态目前可能还不算很丰富，但官方提供的核心插件基本上也覆盖了常见的各种场景，例如消息队列、WebSocket、鉴权、缓存等。</p>
+<h3 id="结语">结语</h3>
+<p>可以看得出来，Fastify 对性能的追求是极致的，涉及到很多 V8 内部对代码的优化机制，通过了解还是收获颇丰的。回过头来，Node.js Web 框架虽然层出不穷，但根据 NPM Trends 的下载量统计来看，Express 依然高居榜首，说明 Node.js Web 框架在重业务场景下的应用其实不多，更多的应该是作为一些小项目的后端或者类似 BFF 层这种轻量的场景下应用。从 Express 到 Koa 再到 Fastify，这是向更轻量更高性能的方向发展，技术的发展趋势也从侧面反映了该技术在业务场景中的价值体现。</p>
+<h3 id="参考资源">参考资源</h3>
+<ul>
+<li><a href="https://www.webexpo.net/prague2017/talk/what-if-i-told-you-that-http-can-be-fast/"
+
+
+
+
+ target="_blank"
+ 
+
+
+>What if I told you that HTTP can be fast?</a></li>
+<li><a href="https://survivejs.com/blog/fastify-interview/"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Fastify - Fast and low overhead web framework for Node.js - Interview with Tomas Della Vedova</a></li>
+</ul>
+<h3 id="附对比表">附：对比表</h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">对比项(2021-06-01)</th>
+          <th style="text-align: left">express</th>
+          <th style="text-align: left">koa</th>
+          <th style="text-align: left">Fastify</th>
+          <th style="text-align: left">nestjs</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">当前版本</td>
+          <td style="text-align: left">v4.17.1(2019-05-26)</td>
+          <td style="text-align: left">v2.13.1(2021-01-04)</td>
+          <td style="text-align: left">v3.17.0(2021-05-29)</td>
+          <td style="text-align: left">v7.6.17(2021-05-18)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">设计理念/哲学</td>
+          <td style="text-align: left">小型、强大的 HTTP 服务器工具</td>
+          <td style="text-align: left">更轻量、高性能、“洋葱模型”</td>
+          <td style="text-align: left">高性能、低开销，开发友好</td>
+          <td style="text-align: left">提供 Node Web 应用的”架构规范“</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">技术架构</td>
+          <td style="text-align: left">核心简单，具备路由等常见功能，其它需依赖中间件扩展</td>
+          <td style="text-align: left">核心极简，不包含任何额外功能，路由等其它功能需要依赖中间件扩展</td>
+          <td style="text-align: left">核心简单，提供路由、日志等必要组件，其它依赖插件扩展</td>
+          <td style="text-align: left">底层核心可替换，上层 MVC 模型</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">扩展机制</td>
+          <td style="text-align: left">中间件</td>
+          <td style="text-align: left">中间件</td>
+          <td style="text-align: left">插件</td>
+          <td style="text-align: left">插件</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">项目活跃度（近一年平均每周 GitHub commits）</td>
+          <td style="text-align: left">0-2</td>
+          <td style="text-align: left">0-2</td>
+          <td style="text-align: left">5-10</td>
+          <td style="text-align: left">20</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">维护团队的 roadmap</td>
+          <td style="text-align: left">4.x -&gt; 5.0（缓慢）</td>
+          <td style="text-align: left">2.x -&gt; 3.0（缓慢）</td>
+          <td style="text-align: left">3.x -&gt; 4.0（积极）</td>
+          <td style="text-align: left">v8.0 计划完成，待发布</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">是否支持 ts</td>
+          <td style="text-align: left">社区维护 @types</td>
+          <td style="text-align: left">社区维护 @types</td>
+          <td style="text-align: left">官方维护 @types</td>
+          <td style="text-align: left">官方内置支持</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">公开的基准测试</td>
+          <td style="text-align: left">QPS 最低</td>
+          <td style="text-align: left">QPS 高</td>
+          <td style="text-align: left">QPS 最高</td>
+          <td style="text-align: left"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">技术生态（官方+社区）</td>
+          <td style="text-align: left">丰富</td>
+          <td style="text-align: left">丰富</td>
+          <td style="text-align: left">较丰富</td>
+          <td style="text-align: left">较丰富</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">常见业务场景解决方案</td>
+          <td style="text-align: left">社区中间件</td>
+          <td style="text-align: left">社区中间件</td>
+          <td style="text-align: left">官方插件</td>
+          <td style="text-align: left">官方文档，内置适配器</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">商业案例</td>
+          <td style="text-align: left">有</td>
+          <td style="text-align: left">有</td>
+          <td style="text-align: left">有</td>
+          <td style="text-align: left">有</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">上手难易程度</td>
+          <td style="text-align: left">容易</td>
+          <td style="text-align: left">容易</td>
+          <td style="text-align: left">容易</td>
+          <td style="text-align: left">中等</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">可查阅的资料</td>
+          <td style="text-align: left">多</td>
+          <td style="text-align: left">较多</td>
+          <td style="text-align: left">较多</td>
+          <td style="text-align: left">较多</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">官网文档（中文）</td>
+          <td style="text-align: left">有</td>
+          <td style="text-align: left">有</td>
+          <td style="text-align: left">有</td>
+          <td style="text-align: left">有</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">OpenJS 基金会项目</td>
+          <td style="text-align: left">是</td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left">是</td>
+          <td style="text-align: left"></td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="附基准测试">附：基准测试</h3>
+<p>这里做了一个简单的基准测试，在 <em>windows 10</em> 平台下采用 <code>autocannon</code> 测试工具，依赖版本如下：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#e6db74">&#34;dependencies&#34;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;express&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;4.17.1&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;fastify&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;3.18.1&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;koa&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;2.13.1&#34;</span>
+</span></span><span style="display:flex;"><span>},
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;devDependencies&#34;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;autocannon&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;^7.3.0&#34;</span>,
+</span></span><span style="display:flex;"><span>},
+</span></span></code></pre></div><p>测试代码如下：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">// express
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">app</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">express</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;/&#39;</span>, <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">send</span>({ <span style="color:#a6e22e">hello</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;world&#39;</span> });
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">listen</span>(<span style="color:#ae81ff">3002</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// koa
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">app</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Koa</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(<span style="color:#66d9ef">async</span> (<span style="color:#a6e22e">ctx</span>) =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">ctx</span>.<span style="color:#a6e22e">body</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">hello</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;world&#39;</span> };
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">listen</span>(<span style="color:#ae81ff">3001</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// fastify
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">fastify</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Fastify</span>({
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// logger: true,
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">fastify</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;/&#39;</span>, <span style="color:#66d9ef">async</span> (<span style="color:#a6e22e">request</span>, <span style="color:#a6e22e">reply</span>) =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">reply</span>.<span style="color:#a6e22e">type</span>(<span style="color:#e6db74">&#39;application/json&#39;</span>).<span style="color:#a6e22e">code</span>(<span style="color:#ae81ff">200</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> { <span style="color:#a6e22e">hello</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;world&#39;</span> };
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">fastify</span>.<span style="color:#a6e22e">listen</span>(<span style="color:#ae81ff">3000</span>, (<span style="color:#a6e22e">err</span>, <span style="color:#a6e22e">address</span>) =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">err</span>) <span style="color:#66d9ef">throw</span> <span style="color:#a6e22e">err</span>;
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><p>测试结果如下：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># express</span>
+</span></span><span style="display:flex;"><span>&gt; autocannon http://127.0.0.1:3002/
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Running 10s test @ http://127.0.0.1:3002/
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">10</span> connections
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>┌─────────┬──────┬──────┬───────┬──────┬─────────┬─────────┬───────┐
+</span></span><span style="display:flex;"><span>│ Stat    │ 2.5% │ 50%  │ 97.5% │ 99%  │ Avg     │ Stdev   │ Max   │
+</span></span><span style="display:flex;"><span>├─────────┼──────┼──────┼───────┼──────┼─────────┼─────────┼───────┤
+</span></span><span style="display:flex;"><span>│ Latency │ <span style="color:#ae81ff">0</span> ms │ <span style="color:#ae81ff">1</span> ms │ <span style="color:#ae81ff">2</span> ms  │ <span style="color:#ae81ff">3</span> ms │ 0.84 ms │ 0.61 ms │ <span style="color:#ae81ff">10</span> ms │
+</span></span><span style="display:flex;"><span>└─────────┴──────┴──────┴───────┴──────┴─────────┴─────────┴───────┘
+</span></span><span style="display:flex;"><span>┌───────────┬─────────┬─────────┬─────────┬────────┬─────────┬─────────┬─────────┐
+</span></span><span style="display:flex;"><span>│ Stat      │ 1%      │ 2.5%    │ 50%     │ 97.5%  │ Avg     │ Stdev   │ Min     │
+</span></span><span style="display:flex;"><span>├───────────┼─────────┼─────────┼─────────┼────────┼─────────┼─────────┼─────────┤
+</span></span><span style="display:flex;"><span>│ Req/Sec   │ <span style="color:#ae81ff">4675</span>    │ <span style="color:#ae81ff">4675</span>    │ <span style="color:#ae81ff">8199</span>    │ <span style="color:#ae81ff">8287</span>   │ 7838.37 │ 1017.07 │ <span style="color:#ae81ff">4672</span>    │
+</span></span><span style="display:flex;"><span>├───────────┼─────────┼─────────┼─────────┼────────┼─────────┼─────────┼─────────┤
+</span></span><span style="display:flex;"><span>│ Bytes/Sec │ 1.07 MB │ 1.07 MB │ 1.88 MB │ 1.9 MB │ 1.79 MB │ <span style="color:#ae81ff">233</span> kB  │ 1.07 MB │
+</span></span><span style="display:flex;"><span>└───────────┴─────────┴─────────┴─────────┴────────┴─────────┴─────────┴─────────┘
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Req/Bytes counts sampled once per second.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>86k requests in 11.01s, 19.7 MB read
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># koa</span>
+</span></span><span style="display:flex;"><span>&gt; autocannon http://127.0.0.1:3001/
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Running 10s test @ http://127.0.0.1:3001/
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">10</span> connections
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>┌─────────┬──────┬──────┬───────┬──────┬─────────┬─────────┬──────┐
+</span></span><span style="display:flex;"><span>│ Stat    │ 2.5% │ 50%  │ 97.5% │ 99%  │ Avg     │ Stdev   │ Max  │
+</span></span><span style="display:flex;"><span>├─────────┼──────┼──────┼───────┼──────┼─────────┼─────────┼──────┤
+</span></span><span style="display:flex;"><span>│ Latency │ <span style="color:#ae81ff">0</span> ms │ <span style="color:#ae81ff">0</span> ms │ <span style="color:#ae81ff">0</span> ms  │ <span style="color:#ae81ff">0</span> ms │ 0.01 ms │ 0.12 ms │ <span style="color:#ae81ff">9</span> ms │
+</span></span><span style="display:flex;"><span>└─────────┴──────┴──────┴───────┴──────┴─────────┴─────────┴──────┘
+</span></span><span style="display:flex;"><span>┌───────────┬─────────┬─────────┬────────┬─────────┬────────┬────────┬─────────┐
+</span></span><span style="display:flex;"><span>│ Stat      │ 1%      │ 2.5%    │ 50%    │ 97.5%   │ Avg    │ Stdev  │ Min     │
+</span></span><span style="display:flex;"><span>├───────────┼─────────┼─────────┼────────┼─────────┼────────┼────────┼─────────┤
+</span></span><span style="display:flex;"><span>│ Req/Sec   │ <span style="color:#ae81ff">17743</span>   │ <span style="color:#ae81ff">17743</span>   │ <span style="color:#ae81ff">20111</span>  │ <span style="color:#ae81ff">20335</span>   │ <span style="color:#ae81ff">19496</span>  │ 964.55 │ <span style="color:#ae81ff">17731</span>   │
+</span></span><span style="display:flex;"><span>├───────────┼─────────┼─────────┼────────┼─────────┼────────┼────────┼─────────┤
+</span></span><span style="display:flex;"><span>│ Bytes/Sec │ 2.91 MB │ 2.91 MB │ 3.3 MB │ 3.33 MB │ 3.2 MB │ <span style="color:#ae81ff">159</span> kB │ 2.91 MB │
+</span></span><span style="display:flex;"><span>└───────────┴─────────┴─────────┴────────┴─────────┴────────┴────────┴─────────┘
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Req/Bytes counts sampled once per second.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>214k requests in 11.01s, 35.2 MB read
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># fastify</span>
+</span></span><span style="display:flex;"><span>&gt; autocannon http://127.0.0.1:3000/
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Running 10s test @ http://127.0.0.1:3000/
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">10</span> connections
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>┌─────────┬──────┬──────┬───────┬──────┬─────────┬─────────┬───────┐
+</span></span><span style="display:flex;"><span>│ Stat    │ 2.5% │ 50%  │ 97.5% │ 99%  │ Avg     │ Stdev   │ Max   │
+</span></span><span style="display:flex;"><span>├─────────┼──────┼──────┼───────┼──────┼─────────┼─────────┼───────┤
+</span></span><span style="display:flex;"><span>│ Latency │ <span style="color:#ae81ff">0</span> ms │ <span style="color:#ae81ff">0</span> ms │ <span style="color:#ae81ff">0</span> ms  │ <span style="color:#ae81ff">0</span> ms │ 0.01 ms │ 0.13 ms │ <span style="color:#ae81ff">13</span> ms │
+</span></span><span style="display:flex;"><span>└─────────┴──────┴──────┴───────┴──────┴─────────┴─────────┴───────┘
+</span></span><span style="display:flex;"><span>┌───────────┬─────────┬─────────┬─────────┬─────────┬──────────┬─────────┬─────────┐
+</span></span><span style="display:flex;"><span>│ Stat      │ 1%      │ 2.5%    │ 50%     │ 97.5%   │ Avg      │ Stdev   │ Min     │
+</span></span><span style="display:flex;"><span>├───────────┼─────────┼─────────┼─────────┼─────────┼──────────┼─────────┼─────────┤
+</span></span><span style="display:flex;"><span>│ Req/Sec   │ <span style="color:#ae81ff">19759</span>   │ <span style="color:#ae81ff">19759</span>   │ <span style="color:#ae81ff">27631</span>   │ <span style="color:#ae81ff">27903</span>   │ 26960.73 │ 2284.47 │ <span style="color:#ae81ff">19752</span>   │
+</span></span><span style="display:flex;"><span>├───────────┼─────────┼─────────┼─────────┼─────────┼──────────┼─────────┼─────────┤
+</span></span><span style="display:flex;"><span>│ Bytes/Sec │ 3.24 MB │ 3.24 MB │ 4.53 MB │ 4.58 MB │ 4.42 MB  │ <span style="color:#ae81ff">375</span> kB  │ 3.24 MB │
+</span></span><span style="display:flex;"><span>└───────────┴─────────┴─────────┴─────────┴─────────┴──────────┴─────────┴─────────┘
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Req/Bytes counts sampled once per second.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>297k requests in 11.01s, 48.6 MB read
+</span></span></code></pre></div><p>根据测试结果来看，仅 <strong>Req/Sec</strong> 这一项的平均值（Avg），Express 只有 <strong>7838.37</strong>，Koa 有 <strong>19496</strong>，约为前者的 2.4 倍，而 Fastify 达到了 <strong>26960.73</strong>，是 Express 的约 3.4 倍，Koa 的约 1.4 倍。除此之外，<strong>Bytes/Sec</strong> 指标也有差距，综合起来 Koa 和 Fastify 的表现要好的多，而 Fastify 要比 Koa 表现更好一些。</p>
+
+          </div>
+          <div class="row items-start justify-between">
+            
+            
+            <div class="lg:col-4 flex items-center">
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="share-icons">
+  <h5 class="share-title">分享 :</h5>
+
+
+  
+  
+    <a
+      class="share-link share-facebook"
+      href="https://facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fblog%2fcomputer-technology%2fnodejs%2fnodejs-fastify%2f"
+      target="_blank"
+      rel="noopener"
+      aria-label="share facebook">
+      <span class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-twitter"
+      href="https://twitter.com/intent/tweet/?text=%e5%88%86%e4%ba%ab&amp;url=http%3a%2f%2flocalhost%3a1313%2fblog%2fcomputer-technology%2fnodejs%2fnodejs-fastify%2f"
+      target="_blank"
+      rel="noopener"
+      aria-label="share twitter">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path 
+            d="M8 2H1l8.26 11.015L1.45 22H4.1l6.388-7.349L16 22h7l-8.608-11.478L21.8 2h-2.65l-5.986 6.886zm9 18L5 4h2l12 16z"/>
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-email"
+      href="mailto:?subject=%e5%88%86%e4%ba%ab&amp;body=http%3a%2f%2flocalhost%3a1313%2fblog%2fcomputer-technology%2fnodejs%2fnodejs-fastify%2f"
+      target="_self"
+      rel="noopener"
+      aria-label="share email">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M22 4H2C.9 4 0 4.9 0 6v12c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7.25 14.43l-3.5 2c-.08.05-.17.07-.25.07-.17 0-.34-.1-.43-.25-.14-.24-.06-.55.18-.68l3.5-2c.24-.14.55-.06.68.18.14.24.06.55-.18.68zm4.75.07c-.1 0-.2-.03-.27-.08l-8.5-5.5c-.23-.15-.3-.46-.15-.7.15-.22.46-.3.7-.14L12 13.4l8.23-5.32c.23-.15.54-.08.7.15.14.23.07.54-.16.7l-8.5 5.5c-.08.04-.17.07-.27.07zm8.93 1.75c-.1.16-.26.25-.43.25-.08 0-.17-.02-.25-.07l-3.5-2c-.24-.13-.32-.44-.18-.68s.44-.32.68-.18l3.5 2c.24.13.32.44.18.68z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-reddit"
+      href="https://reddit.com/submit/?url=http%3a%2f%2flocalhost%3a1313%2fblog%2fcomputer-technology%2fnodejs%2fnodejs-fastify%2f&amp;resubmit=true&amp;title=%e5%88%86%e4%ba%ab"
+      target="_blank"
+      rel="noopener"
+      aria-label="share reddit">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M24 11.5c0-1.65-1.35-3-3-3-.96 0-1.86.48-2.42 1.24-1.64-1-3.75-1.64-6.07-1.72.08-1.1.4-3.05 1.52-3.7.72-.4 1.73-.24 3 .5C17.2 6.3 18.46 7.5 20 7.5c1.65 0 3-1.35 3-3s-1.35-3-3-3c-1.38 0-2.54.94-2.88 2.22-1.43-.72-2.64-.8-3.6-.25-1.64.94-1.95 3.47-2 4.55-2.33.08-4.45.7-6.1 1.72C4.86 8.98 3.96 8.5 3 8.5c-1.65 0-3 1.35-3 3 0 1.32.84 2.44 2.05 2.84-.03.22-.05.44-.05.66 0 3.86 4.5 7 10 7s10-3.14 10-7c0-.22-.02-.44-.05-.66 1.2-.4 2.05-1.54 2.05-2.84zM2.3 13.37C1.5 13.07 1 12.35 1 11.5c0-1.1.9-2 2-2 .64 0 1.22.32 1.6.82-1.1.85-1.92 1.9-2.3 3.05zm3.7.13c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9.8 4.8c-1.08.63-2.42.96-3.8.96-1.4 0-2.74-.34-3.8-.95-.24-.13-.32-.44-.2-.68.15-.24.46-.32.7-.18 1.83 1.06 4.76 1.06 6.6 0 .23-.13.53-.05.67.2.14.23.06.54-.18.67zm.2-2.8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm5.7-2.13c-.38-1.16-1.2-2.2-2.3-3.05.38-.5.97-.82 1.6-.82 1.1 0 2 .9 2 2 0 .84-.53 1.57-1.3 1.87z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+</div>
+
+            </div>
+          </div>
+          
+          
+            <div class="mt-20">
+              <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "themefisher-template" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+          
+        </article>
+      </div>
+
+      
+      
+      
+      
+        <div class="section pb-0">
+          <h2 class="h3 mb-12">相关</h2>
+          <div class="row">
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/computer-technology/typescript/tools-typescript-use-script-to-ts-types/">
+      利用脚本执行 `tsc` 忽略类型检查错误
+    </a>
+  </h4>
+  
+  
+  <p class="mb-6"><p>在发布 npm 包时添加对 TypeScript 类型定义文件的支持会让用户的使用体验增色不少，TypeScript 官方提供了 <code>tsc --emitDeclarationOnly</code> 命令用来生成类型定义文件（<code>.d.ts</code>）。但是，该命令会同时执行类型检查，遇到错误时会报错中断命令行进程，这就使其无法直接集成在 CI 环节在发布 npm 包时自动执行生成类型定义文件的操作。当然，一个解决办法就是解决掉代码中所有的类型检查错误即可，既然讨论到这个问题，必然不会花费额外精力去解决一些历史遗留问题。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/typescript/tools-typescript-use-script-to-ts-types/">
+    了解更多
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/computer-technology/web/web-performance-fastdom/">
+      Web 前端性能优化：批量 DOM 操作 - FastDOM
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/leezchuan/">
+          <i class="fa-regular fa-circle-user mr-2"></i>LeeZChuan
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/"
+            class="ms-1"
+            >计算机技术
+              ,
+            
+          </a>
+        
+          <a
+            href="/categories/web%e5%89%8d%e7%ab%af/"
+            class="ms-1"
+            >Web前端
+              ,
+            
+          </a>
+        
+          <a
+            href="/categories/%e6%80%a7%e8%83%bd%e4%bc%98%e5%8c%96/"
+            class="ms-1"
+            >性能优化
+              ,
+            
+          </a>
+        
+          <a
+            href="/categories/dom/"
+            class="ms-1"
+            >Dom
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>利用 JS 开发的原生应用与依赖于 React.js/Vue 开发的框架/库应用，性能孰高孰低？这两者最显著的区别在于原生应用需要手动操作 DOM 完成业务，而框架/库应用是基于数据变化响应式的应用，后者只需要关注数据如何变化，至于体现在 DOM 上的变化皆由框架/库内部自动完成。所以，要搞清楚两者的性能优劣，可能<strong>批量</strong>的 DOM 操作是一个不可忽略的核心因素。从代码执行的角度分析，框架/库也是基于原生 API 进行的封装抽象，因此代码执行时的路径更长、堆栈更深，由此可见原生 API 的操作性能应该是最高的。但是，现实情况是业务通常来说是复杂的，代码实现中 DOM 操作的逻辑分散在各处，那么多个 DOM 操作之间是否会产生影响从而不利于性能？这个时候就要关注宿主浏览器的渲染机制是如何理解批量的 DOM 操作的，这里引入的概念就是<strong>关键渲染路径（Critical rendering path）</strong>。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/web-performance-fastdom/">
+    了解更多
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/business/business-noun/">
+      一些互联网名词
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/leezchuan/">
+          <i class="fa-regular fa-circle-user mr-2"></i>LeeZChuan
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/%e5%95%86%e4%b8%9a/"
+            class="ms-1"
+            >商业
+              ,
+            
+          </a>
+        
+          <a
+            href="/categories/%e4%ba%92%e8%81%94%e7%bd%91%e5%90%8d%e8%af%8d/"
+            class="ms-1"
+            >互联网名词
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>互联网时代是个新概念频出的时代，每年有相当多的新名词诞生，而诸多与商业活动紧密相关的词汇了解一下有助于我们熟悉日常工作中接触的东西。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/business/business-noun/">
+    了解更多
+  </a>
+</div>
+
+              </div>
+            
+          </div>
+        </div>
+      
+    </div>
+  </section>
+
+    </main>
+
+    
+    <footer class="bg-theme-light dark:bg-darkmode-theme-light">
+  <div class="container">
+    <div class="row items-center py-10">
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:text-left">
+        
+        <a
+          class="navbar-brand inline-block"
+          href="/">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+    
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu4114262549785978686.webp"
+      alt="Hugoplate"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu7137767845088484273.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu8742296558546396051.webp"
+      alt="Hugoplate"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu4471933895487503573.png';" />
+  
+  
+
+
+        </a>
+      </div>
+      <div class="lg:col-6 mb-8 text-center lg:mb-0">
+        <ul>
+          
+            <li class="m-3 inline-block">
+              <a
+                
+                href="
+                  /
+                "
+                ></a
+              >
+            </li>
+          
+        </ul>
+      </div>
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:mt-0 lg:text-right">
+        <ul class="social-icons">
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="facebook"
+                rel="nofollow noopener"
+                href="https://www.facebook.com/profile.php?id=100083154937436">
+                <i class="fab fa-facebook"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="github"
+                rel="nofollow noopener"
+                href="https://github.com/LeeZChuan">
+                <i class="fab fa-github"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="linkedin"
+                rel="nofollow noopener"
+                href="https://www.linkedin.com/in/zchuan-lee-89214a1a3/">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="border-border dark:border-darkmode-border border-t py-7">
+    <div class="text-light dark:text-darkmode-light container text-center">
+      <p>
+        
+      </p>
+    </div>
+  </div>
+</footer>
+
+
+
+    
+    
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<script
+  crossorigin="anonymous"
+  integrity=""
+  src="/js/script.js"></script>
+
+
+<script
+  defer
+  async
+  crossorigin="anonymous"
+  integrity=""
+  src="/js/script-lazy.js"></script>
+
+
+
+<script>
+  if ('serviceWorker' in navigator){navigator.serviceWorker.register("/service-worker.js");}
+</script>
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <script type="application/javascript">
+      const announcementBox = document.getElementById('announcement');
+      const announcementButton = document.getElementById('announcement-button');
+      if (!Cookies.get('announcement-close')) {
+        announcementBox.classList.remove('announcement-hide');
+        announcementButton.onclick = function () {
+          Cookies.set('announcement-close', true, {
+            expires:  7 
+          });
+          announcementBox.classList.add('announcement-hide');
+        };
+      }
+    </script>
+  
+
+
+
+  </body>
+</html>

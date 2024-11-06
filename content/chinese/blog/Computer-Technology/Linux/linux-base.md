@@ -2,7 +2,7 @@
 title: Linux-基础
 date: 2016-05-29 15:34:00
 update: 2018-10-13 14:11:00
-authors: LeeZChuan 
+authors: "LeeZChuan" 
 categories: ["计算机技术",'操作系统', "LINUX"]
 description: Linux 是在做一些较为底层的开发工作时的必要开发环境，了解 Linux 也对操作系统概念的理解有很大的帮助，这篇文章是对 Linux 的一些基础概念的阐述。
 ---

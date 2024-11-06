@@ -2,7 +2,7 @@
 title: DOM-文本节点
 date: 2016-05-24 21:50:00
 update: 2016-05-24 21:50:00
-authors: LeeZChuan
+authors: "LeeZChuan"
 tags: &ref_0
   - 计算机技术
   - Web
