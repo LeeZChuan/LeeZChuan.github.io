@@ -1,19 +1,163 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>AI工具 on 技术之心</title>
-    <link>http://localhost:1313/categories/ai%E5%B7%A5%E5%85%B7/</link>
-    <description>Recent content in AI工具 on 技术之心</description>
-    <generator>Hugo</generator>
-    <language>zh-cn</language>
-    <lastBuildDate>Mon, 14 Oct 2024 15:58:55 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/ai%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>AI技术</title>
-      <link>http://localhost:1313/blog/computer-technology/ai/</link>
-      <pubDate>Mon, 14 Oct 2024 15:58:55 +0800</pubDate>
-      <guid>http://localhost:1313/blog/computer-technology/ai/</guid>
-      <description>&lt;p&gt;Recent Generative AI Technologies (2022-2024)&lt;/p&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th style=&#34;text-align: left&#34;&gt;技术名称&lt;/th&gt;&#xA;          &lt;th style=&#34;text-align: left&#34;&gt;技术描述&lt;/th&gt;&#xA;          &lt;th style=&#34;text-align: left&#34;&gt;访问链接&lt;/th&gt;&#xA;          &lt;th style=&#34;text-align: left&#34;&gt;收费情况&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;GPT-4 (OpenAI)&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;GPT-4 是 OpenAI 发布的最新版本的语言模型，显著提升了生成文本的质量和准确性，广泛应用于对话、写作和代码生成。&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a href=&#34;https://openai.com/gpt-4&#34;&#xA;&#xA;&#xA;&#xA;&#xA; target=&#34;_blank&#34;&#xA; &#xA;&#xA;&#xA;&gt;OpenAI GPT-4&lt;/a&gt;&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;免费试用，付费订阅（API访问和Pro版本）&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Claude (Anthropic)&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;Claude 是由 Anthropic 开发的生成式 AI 对话模型，注重安全性和可控性，设计为更可预测和安全的 AI。&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a href=&#34;https://www.anthropic.com/&#34;&#xA;&#xA;&#xA;&#xA;&#xA; target=&#34;_blank&#34;&#xA; &#xA;&#xA;&#xA;&gt;Anthropic Claude&lt;/a&gt;&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;免费试用，企业版付费&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;DALL·E 3 (OpenAI)&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;DALL·E 3 是 OpenAI 的图像生成模型，能够根据文字描述生成高质量、精细的图像，进一步提升了图像生成能力。&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a href=&#34;https://openai.com/dall-e-3&#34;&#xA;&#xA;&#xA;&#xA;&#xA; target=&#34;_blank&#34;&#xA; &#xA;&#xA;&#xA;&gt;OpenAI DALL·E 3&lt;/a&gt;&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;免费试用，API 和高级功能付费&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Stable Diffusion XL (Stability AI)&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;稳定扩散 (Stable Diffusion) 是一种图像生成模型，提供了更高分辨率的图像生成，并且在文本到图像的转换任务中性能强大。&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a href=&#34;https://stability.ai/stable-diffusion&#34;&#xA;&#xA;&#xA;&#xA;&#xA; target=&#34;_blank&#34;&#xA; &#xA;&#xA;&#xA;&gt;Stability AI&lt;/a&gt;&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;开源，免费使用，付费API&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;ChatGPT Code Interpreter (OpenAI)&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;该功能扩展了 ChatGPT 的能力，使其能够执行代码、处理数据分析和解决复杂的计算任务，适合开发人员和数据科学家。&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a href=&#34;https://openai.com/chatgpt&#34;&#xA;&#xA;&#xA;&#xA;&#xA; target=&#34;_blank&#34;&#xA; &#xA;&#xA;&#xA;&gt;OpenAI Code Interpreter&lt;/a&gt;&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;免费试用，Pro版本付费&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;MidJourney V5&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;MidJourney 是一个流行的文本到图像生成模型，它在创造艺术风格图像方面表现出色，并被许多设计师和艺术家使用。&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a href=&#34;https://www.midjourney.com/&#34;&#xA;&#xA;&#xA;&#xA;&#xA; target=&#34;_blank&#34;&#xA; &#xA;&#xA;&#xA;&gt;MidJourney&lt;/a&gt;&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;付费订阅，按月计费&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Gemini (Google DeepMind)&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;Google 的 Gemini 系列模型整合了 DeepMind 的最先进技术，旨在竞争 OpenAI 的 GPT 系列，提供多种生成式 AI 服务。&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a href=&#34;https://www.deepmind.com/research&#34;&#xA;&#xA;&#xA;&#xA;&#xA; target=&#34;_blank&#34;&#xA; &#xA;&#xA;&#xA;&gt;Google DeepMind&lt;/a&gt;&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;目前无具体定价信息，视使用场景定价&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Mistral 7B&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;Mistral 是一个小型高效的生成式语言模型，尽管模型参数较小，但在各类文本生成任务中表现出色。&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a href=&#34;https://mistral.ai/&#34;&#xA;&#xA;&#xA;&#xA;&#xA; target=&#34;_blank&#34;&#xA; &#xA;&#xA;&#xA;&gt;Mistral AI&lt;/a&gt;&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;免费&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;LLaMA 2 (Meta)&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;LLaMA 2 是 Meta 的开放源代码语言模型，旨在为研究和开发提供一个强大的生成式 AI 基础。&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a href=&#34;https://ai.meta.com/llama/&#34;&#xA;&#xA;&#xA;&#xA;&#xA; target=&#34;_blank&#34;&#xA; &#xA;&#xA;&#xA;&gt;Meta LLaMA 2&lt;/a&gt;&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;开源，免费使用&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Cohere Command R&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;专为自然语言理解和生成任务设计的生成式 AI 模型，支持多语言和特定任务定制。&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a href=&#34;https://cohere.com/&#34;&#xA;&#xA;&#xA;&#xA;&#xA; target=&#34;_blank&#34;&#xA; &#xA;&#xA;&#xA;&gt;Cohere AI&lt;/a&gt;&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;免费试用，企业级付费&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AI工具 on 技术之心</title><link>https://leezchuan.github.io/categories/ai%E5%B7%A5%E5%85%B7/</link><description>Recent content in AI工具 on 技术之心</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Mon, 14 Oct 2024 15:58:55 +0800</lastBuildDate><atom:link href="https://leezchuan.github.io/categories/ai%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml"/><item><title>AI技术</title><link>https://leezchuan.github.io/blog/computer-technology/ai/</link><pubDate>Mon, 14 Oct 2024 15:58:55 +0800</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/ai/</guid><description>&lt;p>Recent Generative AI Technologies (2022-2024)&lt;/p>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: left">技术名称&lt;/th>
+ &lt;th style="text-align: left">技术描述&lt;/th>
+ &lt;th style="text-align: left">访问链接&lt;/th>
+ &lt;th style="text-align: left">收费情况&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: left">&lt;strong>GPT-4 (OpenAI)&lt;/strong>&lt;/td>
+ &lt;td style="text-align: left">GPT-4 是 OpenAI 发布的最新版本的语言模型，显著提升了生成文本的质量和准确性，广泛应用于对话、写作和代码生成。&lt;/td>
+ &lt;td style="text-align: left">&lt;a href="https://openai.com/gpt-4"
+
+
+
+
+ target="_blank"
+ 
+
+
+>OpenAI GPT-4&lt;/a>&lt;/td>
+ &lt;td style="text-align: left">免费试用，付费订阅（API访问和Pro版本）&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">&lt;strong>Claude (Anthropic)&lt;/strong>&lt;/td>
+ &lt;td style="text-align: left">Claude 是由 Anthropic 开发的生成式 AI 对话模型，注重安全性和可控性，设计为更可预测和安全的 AI。&lt;/td>
+ &lt;td style="text-align: left">&lt;a href="https://www.anthropic.com/"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Anthropic Claude&lt;/a>&lt;/td>
+ &lt;td style="text-align: left">免费试用，企业版付费&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">&lt;strong>DALL·E 3 (OpenAI)&lt;/strong>&lt;/td>
+ &lt;td style="text-align: left">DALL·E 3 是 OpenAI 的图像生成模型，能够根据文字描述生成高质量、精细的图像，进一步提升了图像生成能力。&lt;/td>
+ &lt;td style="text-align: left">&lt;a href="https://openai.com/dall-e-3"
+
+
+
+
+ target="_blank"
+ 
+
+
+>OpenAI DALL·E 3&lt;/a>&lt;/td>
+ &lt;td style="text-align: left">免费试用，API 和高级功能付费&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">&lt;strong>Stable Diffusion XL (Stability AI)&lt;/strong>&lt;/td>
+ &lt;td style="text-align: left">稳定扩散 (Stable Diffusion) 是一种图像生成模型，提供了更高分辨率的图像生成，并且在文本到图像的转换任务中性能强大。&lt;/td>
+ &lt;td style="text-align: left">&lt;a href="https://stability.ai/stable-diffusion"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Stability AI&lt;/a>&lt;/td>
+ &lt;td style="text-align: left">开源，免费使用，付费API&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">&lt;strong>ChatGPT Code Interpreter (OpenAI)&lt;/strong>&lt;/td>
+ &lt;td style="text-align: left">该功能扩展了 ChatGPT 的能力，使其能够执行代码、处理数据分析和解决复杂的计算任务，适合开发人员和数据科学家。&lt;/td>
+ &lt;td style="text-align: left">&lt;a href="https://openai.com/chatgpt"
+
+
+
+
+ target="_blank"
+ 
+
+
+>OpenAI Code Interpreter&lt;/a>&lt;/td>
+ &lt;td style="text-align: left">免费试用，Pro版本付费&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">&lt;strong>MidJourney V5&lt;/strong>&lt;/td>
+ &lt;td style="text-align: left">MidJourney 是一个流行的文本到图像生成模型，它在创造艺术风格图像方面表现出色，并被许多设计师和艺术家使用。&lt;/td>
+ &lt;td style="text-align: left">&lt;a href="https://www.midjourney.com/"
+
+
+
+
+ target="_blank"
+ 
+
+
+>MidJourney&lt;/a>&lt;/td>
+ &lt;td style="text-align: left">付费订阅，按月计费&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">&lt;strong>Gemini (Google DeepMind)&lt;/strong>&lt;/td>
+ &lt;td style="text-align: left">Google 的 Gemini 系列模型整合了 DeepMind 的最先进技术，旨在竞争 OpenAI 的 GPT 系列，提供多种生成式 AI 服务。&lt;/td>
+ &lt;td style="text-align: left">&lt;a href="https://www.deepmind.com/research"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Google DeepMind&lt;/a>&lt;/td>
+ &lt;td style="text-align: left">目前无具体定价信息，视使用场景定价&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">&lt;strong>Mistral 7B&lt;/strong>&lt;/td>
+ &lt;td style="text-align: left">Mistral 是一个小型高效的生成式语言模型，尽管模型参数较小，但在各类文本生成任务中表现出色。&lt;/td>
+ &lt;td style="text-align: left">&lt;a href="https://mistral.ai/"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Mistral AI&lt;/a>&lt;/td>
+ &lt;td style="text-align: left">免费&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">&lt;strong>LLaMA 2 (Meta)&lt;/strong>&lt;/td>
+ &lt;td style="text-align: left">LLaMA 2 是 Meta 的开放源代码语言模型，旨在为研究和开发提供一个强大的生成式 AI 基础。&lt;/td>
+ &lt;td style="text-align: left">&lt;a href="https://ai.meta.com/llama/"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Meta LLaMA 2&lt;/a>&lt;/td>
+ &lt;td style="text-align: left">开源，免费使用&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">&lt;strong>Cohere Command R&lt;/strong>&lt;/td>
+ &lt;td style="text-align: left">专为自然语言理解和生成任务设计的生成式 AI 模型，支持多语言和特定任务定制。&lt;/td>
+ &lt;td style="text-align: left">&lt;a href="https://cohere.com/"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Cohere AI&lt;/a>&lt;/td>
+ &lt;td style="text-align: left">免费试用，企业级付费&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table></description></item></channel></rss>
