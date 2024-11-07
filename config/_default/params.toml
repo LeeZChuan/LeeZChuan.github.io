@@ -1,92 +1,98 @@
 #################### default parameters ############################
-# favicon module: https://github.com/gethugothemes/hugo-modules/tree/master/images#favicon-implementation
+
+# favicon 图标路径设置
 favicon = "images/favicon.png"
-# logo module: https://github.com/gethugothemes/hugo-modules/tree/master/images#logo-implementation
+
+# logo 图标路径设置（默认和深色模式）
 logo = "images/logo.png"
 logo_darkmode = "images/logo-darkmode.png"
-# use `px` or `x` with logo_width, example: "100px".
-# Note: logo_width is not work with .svg file
+
+# logo 尺寸设置。可以用 `px` 或 `x` 表示尺寸，例如 "100px"。注意：对于 .svg 文件，logo_width 不生效
 logo_width = "160px"
 logo_height = "32px"
-# if logo_webp set false, will not generate WEBP version of logo | default is true
+
+# 如果 logo_webp 设置为 false，则不会生成 logo 的 WEBP 版本。默认值为 true
 logo_webp = true
-# logo text will only show when logo is missing.
+
+# logo_text 当 logo 图片丢失时显示的文本
 logo_text = "LeeZChuan"
-# navbar fixed to top
+
+# 导航栏是否固定在页面顶部
 navbar_fixed = true
-# theme-mode
+
+# 主题模式切换开关
 theme_switcher = true
-theme_default = "system" # available options [light/dark/system]
-# Main Sections
-mainSections = ["blog"]
-# contact form action
-# contact_form_action = "#" # contact form works with [https://airform.io/] or [https://formspree.io]
-# google tag manager, see https://developers.google.com/tag-manager/
-google_tag_manager = "" # example: G-XXXXXXXXXX
-google_adsense = ""     # example: ca-pub-xxxxxxxxxxxxxxxx
-# custom script on header, example: custom_script= "<script>console.log(\"Hello World\")</script>"
+theme_default = "system" # 可选 [light/dark/system]
+
+# 主内容部分的栏目（例如博客）
+mainSections = ["blog","life"]
+
+# 联系表单的提交操作
+# contact_form_action = "#" # 联系表单可以集成 [https://airform.io/] 或 [https://formspree.io]
+
+# Google 标签管理器
+google_tag_manager = "" # 示例: G-XXXXXXXXXX
+
+# Google 广告代码
+google_adsense = ""     # 示例: ca-pub-xxxxxxxxxxxxxxxx
+
+# 自定义脚本代码，可嵌入HTML代码，示例: custom_script= "<script>console.log(\"Hello World\")</script>"
 custom_script = ""
-# copyright
+
+# 版权声明
 # copyright = "由[Zeon Studio](https://zeon.studio)设计，[LeeZChuan](https://github.com/LeeZChuan)改造"
 
-# Preloader
-# preloader module: https://github.com/gethugothemes/hugo-modules/tree/master/components/preloader
+# 预加载器模块配置
 [preloader]
 enable = false
-preloader = "" # use jpg, png, svg or gif format.
+preloader = "" # 可使用 jpg, png, svg 或 gif 格式的文件
 
-# Navigation button 导航按钮
+# 导航按钮配置
 [navigation_button]
 enable = false
 label = ""
 link = ""
 
-# search
-# search module: https://github.com/gethugothemes/hugo-modules/tree/master/search
+# 搜索模块配置
 [search]
 enable = true
 primary_color = "#121212"
-include_sections = ["blog"]
+include_sections = ["blog","life"]
 show_image = true
 show_description = true
 show_tags = true
 show_categories = true
 
-# announcement
-# announcement module: https://github.com/gethugothemes/hugo-modules/tree/master/components/announcement
+# 公告模块配置
 [announcement]
 enable = true
 expire_days = 7
-content = "You must replace the **baseURL** in **hugo.toml** file when deploying, you can manage this announcement from the **params.toml** file."
+content = "您在部署时必须替换 **hugo.toml** 文件中的 **baseURL**，您可以从 **params.toml** 文件管理此公告。"
 
-# seo meta data for OpenGraph / Twitter Card
-# seo module: https://github.com/gethugothemes/hugo-modules/tree/master/seo-tools/basic-seo
+# SEO meta 数据，用于 OpenGraph / Twitter Card
 [metadata]
 keywords = ["Boilerplate", "Hugo"]
-description = "Hugo & Tailwindcss Starter"
+description = "Hugo & Tailwindcss 启动模板"
 author = "zeon.studio"
 twitter = "zeon_studio"
 image = "images/og-image.png"
 
-
-# site verifications
-# verification module: https://github.com/gethugothemes/hugo-modules/tree/master/seo-tools/site-verifications
+# 网站验证设置
 [site_verification]
-google = ""   # Your verification code
-bing = ""     # Your verification code
-baidu = ""    # Your verification code
-facebook = "" # Your verification code
-mastodon = "" # Your verification code
+google = ""   # Google 验证码
+bing = ""     # Bing 验证码
+baidu = ""    # 百度验证
+facebook = "" # Facebook 验证
+mastodon = "" # Mastodon 验证
 
-# cookies
-# cookies module: https://github.com/gethugothemes/hugo-modules/tree/master/components/cookie-consent
+# Cookie 同意模块配置
 [cookies]
 enable = false
 expire_days = 60
-content = "This site uses cookies. By continuing to use this website, you agree to their use."
-button = "I Accept"
+content = "本网站使用 cookies，继续使用即表示同意。"
+button = "我接受"
 
-# diagrams
+# Mermaid 图表设置
 [mermaid]
 js_url = 'https://cdn.jsdelivr.net/npm/mermaid@latest/dist/mermaid.esm.min.mjs'
 
@@ -94,8 +100,7 @@ js_url = 'https://cdn.jsdelivr.net/npm/mermaid@latest/dist/mermaid.esm.min.mjs'
 [widgets]
 sidebar = ["categories", "tags"]
 
-
-# google map
+# Google 地图设置
 [google_map]
 enable = false
 map_api_key = "AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU"
@@ -103,10 +108,9 @@ map_latitude = "51.5223477"
 map_longitude = "-0.1622023"
 map_marker = "images/marker.png"
 
-
-# Subscription
+# 订阅模块设置
 [subscription]
 enable = false
-# mailchimp subsciption
-mailchimp_form_action = "https://gmail.us4.list-manage.com/subscribe/post?u=463ee871f45d2d93748e77cad&amp;id=a0a2c6d074" # replace this url with yours
+# Mailchimp 订阅表单设置
+mailchimp_form_action = "https://gmail.us4.list-manage.com/subscribe/post?u=463ee871f45d2d93748e77cad&amp;id=a0a2c6d074" # 替换为自己的URL
 mailchimp_form_name = "b_463ee871f45d2d93748e77cad_a0a2c6d074"

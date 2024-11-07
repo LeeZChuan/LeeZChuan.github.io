@@ -1,1 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>BFC on 技术之心</title><link>https://leezchuan.github.io/tags/bfc/</link><description>Recent content in BFC on 技术之心</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Fri, 22 Jul 2016 16:35:00 +0800</lastBuildDate><atom:link href="https://leezchuan.github.io/tags/bfc/index.xml" rel="self" type="application/rss+xml"/><item><title>块级格式化上下文（BFC）</title><link>https://leezchuan.github.io/blog/computer-technology/web/css/css-bfc/</link><pubDate>Fri, 22 Jul 2016 16:35:00 +0800</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/css/css-bfc/</guid><description>&lt;p>在进行页面布局时，通常有流式布局、定位布局、浮动布局这三种形式。而在布局过程中，各元素之间的影响却是一个很关键的问题。&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>BFC on 技术之心</title>
+    <link>http://localhost:1313/tags/bfc/</link>
+    <description>Recent content in BFC on 技术之心</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 22 Jul 2016 16:35:00 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/bfc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>块级格式化上下文（BFC）</title>
+      <link>http://localhost:1313/blog/computer-technology/web/css/css-bfc/</link>
+      <pubDate>Fri, 22 Jul 2016 16:35:00 +0800</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/web/css/css-bfc/</guid>
+      <description>&lt;p&gt;在进行页面布局时，通常有流式布局、定位布局、浮动布局这三种形式。而在布局过程中，各元素之间的影响却是一个很关键的问题。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
