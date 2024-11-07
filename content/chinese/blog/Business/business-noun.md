@@ -3,14 +3,9 @@ title: 一些互联网名词
 meta_title: ""
 description: 互联网时代创造了诸多名词，而这些与商业活动紧密相关，了解一下还是挺有趣的。
 date: 2022-03-27 01:04:00
-categories:
-  - 商业
-  - 互联网名词
+categories: ["商业", "互联网名词"]
 author: "LeeZChuan"
-tags:
-  - 商业
-  - 互联网名词
-draft: false
+tags: ["商业", "互联网名词"]
 ---
 
 

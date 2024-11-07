@@ -11,28 +11,18 @@
           "type": "string"
         },
         {
-          "title": "meta_title",
-          "name": "meta_title",
-          "type": "string"
-        },
-        {
-          "title": "description",
-          "name": "description",
-          "type": "string"
-        },
-        {
           "title": "date",
           "name": "date",
           "type": "datetime"
         },
         {
-          "title": "categories",
-          "name": "categories",
-          "type": "categories"
+          "title": "update",
+          "name": "update",
+          "type": "datetime"
         },
         {
-          "title": "author",
-          "name": "author",
+          "title": "authors",
+          "name": "authors",
           "type": "string"
         },
         {
@@ -41,9 +31,20 @@
           "type": "tags"
         },
         {
-          "title": "draft",
-          "name": "draft",
-          "type": "draft"
+          "title": "keywords",
+          "name": "keywords",
+          "type": "choice",
+          "choices": [
+            "计算机技术",
+            "工具",
+            "项目管理",
+            "开源"
+          ]
+        },
+        {
+          "title": "description",
+          "name": "description",
+          "type": "string"
         }
       ]
     }

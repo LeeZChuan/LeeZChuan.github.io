@@ -2,11 +2,9 @@
 title: 桥接模式：跨平台的事件机制设计
 date: 2022-06-12 22:22:00
 update: 2022-06-12 22:22:00
-authors: "LeeZChuan"
-tags: &ref_0
-  - 计算机技术
-  - 程序架构设计
-keywords: *ref_0
+author: "LeeZChuan"
+categories: ["计算机技术",'服务器', "Nginx"]
+tags: ["计算机技术", "服务器", "Nginx"]
 description: 最近在做图表组件库的技术调研的架构方案设计，参考了很多开源库的源码，发现其中跨平台的事件机制设计很值得学习，如果要用软件设计模式来解释，那大概就是桥接模式了。
 ---
 
