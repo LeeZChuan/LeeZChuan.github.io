@@ -1516,56 +1516,14 @@ location /static/ {
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/web-performance-optimize-skill/">
-      Web 前端性能优化：工具与技巧
+    <a href="/blog/computer-technology/typescript/tools-typescript-use-script-to-ts-types/">
+      利用脚本执行 `tsc` 忽略类型检查错误
     </a>
   </h4>
   
   
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/leezchuan/">
-          <i class="fa-regular fa-circle-user mr-2"></i>LeeZChuan
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/"
-            class="ms-1"
-            >计算机技术
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/web%e5%89%8d%e7%ab%af/"
-            class="ms-1"
-            >Web前端
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/%e6%80%a7%e8%83%bd%e4%bc%98%e5%8c%96/"
-            class="ms-1"
-            >性能优化
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/%e6%8a%80%e5%b7%a7/"
-            class="ms-1"
-            >技巧
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6"><p>Web 前端的性能优化是非常迫切的，客户端的资源非常有限，而且层次不齐，很容易造成一些性能问题从而影响到最终给用户所呈现的数据信息结构的不完整。为了增强用户体验，我们必须在各个方面进行优化，同时也可以节省服务器成本。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/web-performance-optimize-skill/">
+  <p class="mb-6"><p>在发布 npm 包时添加对 TypeScript 类型定义文件的支持会让用户的使用体验增色不少，TypeScript 官方提供了 <code>tsc --emitDeclarationOnly</code> 命令用来生成类型定义文件（<code>.d.ts</code>）。但是，该命令会同时执行类型检查，遇到错误时会报错中断命令行进程，这就使其无法直接集成在 CI 环节在发布 npm 包时自动执行生成类型定义文件的操作。当然，一个解决办法就是解决掉代码中所有的类型检查错误即可，既然讨论到这个问题，必然不会花费额外精力去解决一些历史遗留问题。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/typescript/tools-typescript-use-script-to-ts-types/">
     了解更多
   </a>
 </div>
@@ -1577,69 +1535,8 @@ location /static/ {
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/web-performance-case-1/">
-      Web 前端性能优化：案例分析 1
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/leezchuan/">
-          <i class="fa-regular fa-circle-user mr-2"></i>LeeZChuan
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/"
-            class="ms-1"
-            >计算机技术
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/web%e5%89%8d%e7%ab%af/"
-            class="ms-1"
-            >Web前端
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/%e6%80%a7%e8%83%bd%e4%bc%98%e5%8c%96/"
-            class="ms-1"
-            >性能优化
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/%e6%a1%88%e4%be%8b%e5%88%86%e6%9e%90/"
-            class="ms-1"
-            >案例分析
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6"><p>能在真实业务场景中落地 Web 性能优化方案的机会鲜有，大多数时候业务是较为简单而且要求不高的，前段时间恰好有一个比较核心的业务，对稳定性和性能有一定的要求，在这个过程中也算是做了很多尝试和实践，在此作为案例记录一下分析的过程和最终解决的方案。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/web-performance-case-1/">
-    了解更多
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/computer-technology/nodejs/tools-npm/">
-      使用 npm
+    <a href="/blog/computer-technology/mobile-web/wx-dingding/">
+      微信小程序与钉钉小程序开发流程
     </a>
   </h4>
   
@@ -1662,24 +1559,63 @@ location /static/ {
           </a>
         
           <a
-            href="/categories/node.js/"
+            href="/categories/web/"
             class="ms-1"
-            >Node.js
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/npm/"
-            class="ms-1"
-            >Npm
+            >Web
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>npm 是 Node.js 的一个包管理器，Web 前端工程师也经常利用它来简化开发流程，看看如何愉快的使用 npm ，并且发布自己的包，让 npm 成为我们的开发利器。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/nodejs/tools-npm/">
+  <p class="mb-6"><p>开发小程序有很多问题特此记录一下～～～</p>
+<blockquote>
+<p>小程序开发（移动端开发）兼容注意事项：</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/mobile-web/wx-dingding/">
+    了解更多
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/life/travel/traveling/">
+      2022年至2023年徒步记录
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/leezchuan/">
+          <i class="fa-regular fa-circle-user mr-2"></i>LeeZChuan
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/%e5%be%92%e6%ad%a5/"
+            class="ms-1"
+            >徒步
+              ,
+            
+          </a>
+        
+          <a
+            href="/categories/%e6%97%85%e8%a1%8c/"
+            class="ms-1"
+            >旅行
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>我在22年的夏天来到北京，然后接触到北京的徒步团体非常多，所以参加了很多次徒步，记录一下走过的路。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/life/travel/traveling/">
     了解更多
   </a>
 </div>

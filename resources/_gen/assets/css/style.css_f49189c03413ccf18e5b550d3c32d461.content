@@ -1942,12 +1942,6 @@ input#nav-toggle:checked ~ #nav-menu {
 .mb-14 {
   margin-bottom: 3.5rem;
 }
-.mb-16 {
-  margin-bottom: 4rem;
-}
-.mb-2 {
-  margin-bottom: 0.5rem;
-}
 .mb-20 {
   margin-bottom: 5rem;
 }
@@ -1995,9 +1989,6 @@ input#nav-toggle:checked ~ #nav-menu {
 }
 .mt-11 {
   margin-top: 2.75rem;
-}
-.mt-20 {
-  margin-top: 5rem;
 }
 .mt-6 {
   margin-top: 1.5rem;
@@ -3274,11 +3265,6 @@ input#nav-toggle:checked ~ #nav-menu {
 }
 
 @media (min-width: 1024px) {
-
-  .lg\:col-2 {
-    flex: 0 0 auto;
-    width: 16.666666666666668%;
-  }
 
   .lg\:col-3 {
     flex: 0 0 auto;

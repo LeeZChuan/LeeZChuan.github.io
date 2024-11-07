@@ -1255,29 +1255,6 @@ x  // 保存文档并关闭
           </div>
           
           
-            <div class="mt-20">
-              <div id="disqus_thread"></div>
-<script>
-    window.disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "themefisher-template" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-            </div>
-          
         </article>
       </div>
 
@@ -1294,14 +1271,15 @@ x  // 保存文档并关闭
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/typescript/tools-typescript-use-script-to-ts-types/">
-      利用脚本执行 `tsc` 忽略类型检查错误
+    <a href="/life/phone/">
+      那些年之手机
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>在发布 npm 包时添加对 TypeScript 类型定义文件的支持会让用户的使用体验增色不少，TypeScript 官方提供了 <code>tsc --emitDeclarationOnly</code> 命令用来生成类型定义文件（<code>.d.ts</code>）。但是，该命令会同时执行类型检查，遇到错误时会报错中断命令行进程，这就使其无法直接集成在 CI 环节在发布 npm 包时自动执行生成类型定义文件的操作。当然，一个解决办法就是解决掉代码中所有的类型检查错误即可，既然讨论到这个问题，必然不会花费额外精力去解决一些历史遗留问题。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/typescript/tools-typescript-use-script-to-ts-types/">
+  <p class="mb-6"><p>20241107整理</p>
+<p>把这几年工作上学买过的电子产品整理下；</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/life/phone/">
     了解更多
   </a>
 </div>
@@ -1313,56 +1291,23 @@ x  // 保存文档并关闭
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/web-routing/">
-      Web 应用：单页面应用与路由
+    <a href="/blog/computer-technology/typescript/tools-typescript-type-extend/">
+      TypeScript：扩展第三方库的类型定义
     </a>
   </h4>
   
   
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/leezchuan/">
-          <i class="fa-regular fa-circle-user mr-2"></i>LeeZChuan
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/"
-            class="ms-1"
-            >计算机技术
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/web%e5%89%8d%e7%ab%af/"
-            class="ms-1"
-            >Web前端
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/spa/"
-            class="ms-1"
-            >Spa
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/%e8%b7%af%e7%94%b1/"
-            class="ms-1"
-            >路由
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6"><p>现在，Web 技术不仅仅是局限于页面的开发技术，在应用的开发方面也是一种潮流，B/S 架构的技术是一种趋势。而像一般的管理型 Web 应用，不注重 SEO，非常适合单页面应用（SPA）的实现方式，而路由功能则是单页面应用的核心技术。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/web-routing/">
+  <p class="mb-6"><p>TypeScript 作为 JavaScript 的超集，为 Web 开发带来了强类型语言和类似代码智能提示这种良好的开发体验，而代码提示依赖于类型定义文件。类型定义文件的发展也经历了一个逐步演变的过程，从最初基于 JavaScript 编写的 npm 包，通过<a href="https://github.com/DefinitelyTyped/DefinitelyTyped"
+
+
+
+
+ target="_blank"
+ 
+
+
+>社区方案</a>来引入类型定义包，再到目前多数模块基于 TypeScript 编写并在发布时带上类型定义文件这种最佳方案，开发者体验得到进一步的提升。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/typescript/tools-typescript-type-extend/">
     了解更多
   </a>
 </div>
@@ -1374,56 +1319,14 @@ x  // 保存文档并关闭
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/tools-web-fee-debug-with-source-map/">
-      Web 前端调试工具：SourceMap 文件
+    <a href="/blog/computer-technology/tools/tools-git/">
+      使用 Git
     </a>
   </h4>
   
   
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/leezchuan/">
-          <i class="fa-regular fa-circle-user mr-2"></i>LeeZChuan
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/"
-            class="ms-1"
-            >计算机技术
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/web%e5%89%8d%e7%ab%af/"
-            class="ms-1"
-            >Web前端
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/%e5%b7%a5%e5%85%b7/"
-            class="ms-1"
-            >工具
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/sourcemap/"
-            class="ms-1"
-            >Source map
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6"><p>Web 前端项目出于加载性能优化和安全考虑，在生产环境部署的代码是经过混淆和压缩的，对于利用生产环境收集到的错误堆栈信息要进行调试是非常具有挑战性的。理想情况下，应该在生产环境收集错误堆栈信息，然后映射到源码进行调试。恰好，<strong>SourceMap 文件</strong>提供了这个机制，可以将编译（压缩）后的代码映射到源代码中。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/tools-web-fee-debug-with-source-map/">
+  <p class="mb-6"><p>Git 是一个分布式的版本控制工具，类似的版本控制工具还有 SVN ；由于 GitHub 平台的盛行，也使得 git 更加受欢迎，在 Windows 平台使用 git 也是非常方便的。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/tools/tools-git/">
     了解更多
   </a>
 </div>

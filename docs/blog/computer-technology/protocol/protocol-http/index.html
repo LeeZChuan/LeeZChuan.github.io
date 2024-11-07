@@ -1192,46 +1192,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/dom/dom-fragment/">
-      DOM-文档片段
-    </a>
-  </h4>
-  
-  
-  <p class="mb-6"><p>DOM 操作是非常消耗性能的，如果要进行大量的 DOM 操作，我们可以选择在内存中先构建一个文档片段然后一次性插入 DOM 树。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-fragment/">
-    了解更多
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/computer-technology/typescript/tools-typescript-use-script-to-ts-types/">
-      利用脚本执行 `tsc` 忽略类型检查错误
-    </a>
-  </h4>
-  
-  
-  <p class="mb-6"><p>在发布 npm 包时添加对 TypeScript 类型定义文件的支持会让用户的使用体验增色不少，TypeScript 官方提供了 <code>tsc --emitDeclarationOnly</code> 命令用来生成类型定义文件（<code>.d.ts</code>）。但是，该命令会同时执行类型检查，遇到错误时会报错中断命令行进程，这就使其无法直接集成在 CI 环节在发布 npm 包时自动执行生成类型定义文件的操作。当然，一个解决办法就是解决掉代码中所有的类型检查错误即可，既然讨论到这个问题，必然不会花费额外精力去解决一些历史遗留问题。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/typescript/tools-typescript-use-script-to-ts-types/">
-    了解更多
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/computer-technology/code/mouse-pointer/">
-      （转载）如何实现网站鼠标特效
+    <a href="/blog/computer-technology/web/web-performance-case-1/">
+      Web 前端性能优化：案例分析 1
     </a>
   </h4>
   
@@ -1246,12 +1208,65 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/%e7%89%b9%e6%95%88/"
+            href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/"
             class="ms-1"
-            >特效
+            >计算机技术
               ,
             
           </a>
+        
+          <a
+            href="/categories/web%e5%89%8d%e7%ab%af/"
+            class="ms-1"
+            >Web前端
+              ,
+            
+          </a>
+        
+          <a
+            href="/categories/%e6%80%a7%e8%83%bd%e4%bc%98%e5%8c%96/"
+            class="ms-1"
+            >性能优化
+              ,
+            
+          </a>
+        
+          <a
+            href="/categories/%e6%a1%88%e4%be%8b%e5%88%86%e6%9e%90/"
+            class="ms-1"
+            >案例分析
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>能在真实业务场景中落地 Web 性能优化方案的机会鲜有，大多数时候业务是较为简单而且要求不高的，前段时间恰好有一个比较核心的业务，对稳定性和性能有一定的要求，在这个过程中也算是做了很多尝试和实践，在此作为案例记录一下分析的过程和最终解决的方案。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/web-performance-case-1/">
+    了解更多
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/computer-technology/web/web-front-end-architecture/">
+      Web 前端架构设计
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/leezchuan/">
+          <i class="fa-regular fa-circle-user mr-2"></i>LeeZChuan
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
         
           <a
             href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/"
@@ -1262,16 +1277,43 @@
           </a>
         
           <a
-            href="/categories/canvas/"
+            href="/categories/web%e5%89%8d%e7%ab%af/"
             class="ms-1"
-            >Canvas
+            >Web前端
+              ,
+            
+          </a>
+        
+          <a
+            href="/categories/%e7%a8%8b%e5%ba%8f%e6%9e%b6%e6%9e%84%e8%ae%be%e8%ae%a1/"
+            class="ms-1"
+            >程序架构设计
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>以下代码可以实现一个在画布上的鼠标特效～～～～～～～</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/code/mouse-pointer/">
+  <p class="mb-6"><p>让 Web 前端开发可持续化、可扩展，关注四个核心<strong>代码</strong>、<strong>流程</strong>、<strong>测试</strong>、<strong>文档</strong>。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/web-front-end-architecture/">
+    了解更多
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/computer-technology/protocol/protocol-osi/">
+      OSI 与 TCP/IP 参考模型
+    </a>
+  </h4>
+  
+  
+  <p class="mb-6"><p>目前流行的两大网络体系结构是 OSI/RM 和 TCP/IP 参考模型，他们均是分层结构。分层是为了简化问题，降低网络设计复杂性，而且各层次结构相互独立，实现的功能也相对独立。层与层之间只在层间接口处关联，层间耦合最小。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/protocol/protocol-osi/">
     了解更多
   </a>
 </div>

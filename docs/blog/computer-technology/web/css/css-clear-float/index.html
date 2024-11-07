@@ -1194,29 +1194,6 @@
           </div>
           
           
-            <div class="mt-20">
-              <div id="disqus_thread"></div>
-<script>
-    window.disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "themefisher-template" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-            </div>
-          
         </article>
       </div>
 
@@ -1233,8 +1210,27 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/web-performance-core-concepts/">
-      Web 前端性能优化：核心概念与指标
+    <a href="/blog/computer-technology/web/dom/dom-fragment/">
+      DOM-文档片段
+    </a>
+  </h4>
+  
+  
+  <p class="mb-6"><p>DOM 操作是非常消耗性能的，如果要进行大量的 DOM 操作，我们可以选择在内存中先构建一个文档片段然后一次性插入 DOM 树。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-fragment/">
+    了解更多
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/computer-technology/web/web-performance-case-1/">
+      Web 前端性能优化：案例分析 1
     </a>
   </h4>
   
@@ -1273,16 +1269,16 @@
           </a>
         
           <a
-            href="/categories/%e6%a0%b8%e5%bf%83%e6%a6%82%e5%bf%b5/"
+            href="/categories/%e6%a1%88%e4%be%8b%e5%88%86%e6%9e%90/"
             class="ms-1"
-            >核心概念
+            >案例分析
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>说到 Web 的性能优化，可能很多时候我们采取了一些措施，看到了肉眼可见的改进，如果我们可以对其进行测量，确定我们改进的效率（百分比）是不是会更有意义？换句话说，如果我们了解性能瓶颈可能发生的位置，衡量用户体验好坏的指标，做到实时追踪性能变化，我们是不是可以更迅速的采取优化措施？在应用上线前，我们就可以做一些低成本而有高收益的优化工作，进一步提升用户体验。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/web-performance-core-concepts/">
+  <p class="mb-6"><p>能在真实业务场景中落地 Web 性能优化方案的机会鲜有，大多数时候业务是较为简单而且要求不高的，前段时间恰好有一个比较核心的业务，对稳定性和性能有一定的要求，在这个过程中也算是做了很多尝试和实践，在此作为案例记录一下分析的过程和最终解决的方案。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/web-performance-case-1/">
     了解更多
   </a>
 </div>
@@ -1294,34 +1290,14 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/typescript/tools-typescript-use-script-to-ts-types/">
-      利用脚本执行 `tsc` 忽略类型检查错误
+    <a href="/blog/computer-technology/web/javascript/web-js-async/">
+      JavaScript 异步编程
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>在发布 npm 包时添加对 TypeScript 类型定义文件的支持会让用户的使用体验增色不少，TypeScript 官方提供了 <code>tsc --emitDeclarationOnly</code> 命令用来生成类型定义文件（<code>.d.ts</code>）。但是，该命令会同时执行类型检查，遇到错误时会报错中断命令行进程，这就使其无法直接集成在 CI 环节在发布 npm 包时自动执行生成类型定义文件的操作。当然，一个解决办法就是解决掉代码中所有的类型检查错误即可，既然讨论到这个问题，必然不会花费额外精力去解决一些历史遗留问题。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/typescript/tools-typescript-use-script-to-ts-types/">
-    了解更多
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/life/phone/">
-      那些年之手机
-    </a>
-  </h4>
-  
-  
-  <p class="mb-6"><p>20241107整理</p>
-<p>把这几年工作上学买过的电子产品整理下；</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/life/phone/">
+  <p class="mb-6"><p>JavaScript 作为一门在 Web 开发中的主流语言，常常涉及到交互事件方面的应用，这不可避免的用到了异步编程的方法，而它本身则是单线程运行的。在以往的开发中，异步编程正变得越来越难管理，新的 Promise 标准 API 将使得异步编程更加方便、安全。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/javascript/web-js-async/">
     了解更多
   </a>
 </div>

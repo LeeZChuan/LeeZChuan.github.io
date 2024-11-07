@@ -1480,29 +1480,6 @@
           </div>
           
           
-            <div class="mt-20">
-              <div id="disqus_thread"></div>
-<script>
-    window.disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "themefisher-template" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-            </div>
-          
         </article>
       </div>
 
@@ -1538,8 +1515,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/notes/architecture-design/">
-      架构设计笔记
+    <a href="/blog/computer-technology/web/tools-web-fee-toolchain/">
+      前端工程化：对于构建工具链的简单思考
     </a>
   </h4>
   
@@ -1554,24 +1531,40 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/%e6%9e%b6%e6%9e%84%e8%ae%be%e8%ae%a1/"
+            href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/"
             class="ms-1"
-            >架构设计
+            >计算机技术
               ,
             
           </a>
         
           <a
-            href="/categories/%e5%89%8d%e7%ab%af/"
+            href="/categories/web%e5%89%8d%e7%ab%af/"
             class="ms-1"
-            >前端
+            >Web前端
+              ,
+            
+          </a>
+        
+          <a
+            href="/categories/%e5%b7%a5%e5%85%b7/"
+            class="ms-1"
+            >工具
+              ,
+            
+          </a>
+        
+          <a
+            href="/categories/%e6%9e%84%e5%bb%ba%e5%b7%a5%e5%85%b7%e9%93%be/"
+            class="ms-1"
+            >构建工具链
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>该文章将目前可能能用到的架构理念，概念统一汇总整理～</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/notes/architecture-design/">
+  <p class="mb-6"><p>前端工程化是在做与业务开发完全不同的事情，旨在解决软件工程领域与开发者密切相关的问题，通常会将其与基建开发、DevOps 放在一起讨论。前端开发是复杂的，其结合了 HTML/CSS/JavaScript 3 种语言，甚至还有很多其超集，没有开箱即用的工具链，不像 Java Web 开发、Android 开发等等有官方或者商业领域非常成熟的工具可以利用，一切都源于开源社区的从 0 开始构建。正因如此，前端工程化领域百花齐放，开放与创新展现的淋漓尽致，这也是前端开发者了解学习软件工程的机会。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/tools-web-fee-toolchain/">
     了解更多
   </a>
 </div>
@@ -1583,14 +1576,14 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/dom/dom-rule/">
-      DOM-元素节点几何量
+    <a href="/blog/computer-technology/web/dom/dom-select/">
+      DOM-选取元素节点
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>当我们在查看 HTML 文档时，每个元素节点被解析后，都画成了可视形状。我们可以获取每个元素节点的几何量（宽、高、偏移量）以及页面滚动距离。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-rule/">
+  <p class="mb-6"><p>DOM 操作都是通过对文档树中节点的访问来实现的，如何选取特定的元素节点是关键，进而才能访问该元素节点实现修改、查看、移除、替换等操作。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-select/">
     了解更多
   </a>
 </div>

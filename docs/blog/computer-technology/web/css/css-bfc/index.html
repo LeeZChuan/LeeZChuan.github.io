@@ -1126,29 +1126,6 @@
           </div>
           
           
-            <div class="mt-20">
-              <div id="disqus_thread"></div>
-<script>
-    window.disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "themefisher-template" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-            </div>
-          
         </article>
       </div>
 
@@ -1165,72 +1142,14 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/tools-web-fee-test-with-jest-puppeteer/">
-      使用 Jest 和 Puppeteer 构建 Web 自动化测试平台
+    <a href="/blog/computer-technology/web/dom/dom-elementnode/">
+      DOM-元素节点
     </a>
   </h4>
   
   
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/leezchuan/">
-          <i class="fa-regular fa-circle-user mr-2"></i>LeeZChuan
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/"
-            class="ms-1"
-            >计算机技术
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/web%e5%89%8d%e7%ab%af/"
-            class="ms-1"
-            >Web前端
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/%e5%b7%a5%e5%85%b7/"
-            class="ms-1"
-            >工具
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/%e6%b5%8b%e8%af%95/"
-            class="ms-1"
-            >测试
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/jest/"
-            class="ms-1"
-            >Jest
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/puppeteer/"
-            class="ms-1"
-            >Puppeteer
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6"><p>测试为软件的稳定和完善提供了必要的支持，Web 前端开发领域相比于做单元测试，端到端测试更有意义和价值。谷歌发布的 Puppeteer 工具和脸书发布的 Jest 测试工具为 Web 端到端测试提供了极大的便利，这里记录了如何使用它们构建一个 Web 自动化测试平台。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/tools-web-fee-test-with-jest-puppeteer/">
+  <p class="mb-6"><p>可以说，元素节点是 DOM 树中的核心部分，我们进行文档的操作通常都是建立在元素节点上的。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-elementnode/">
     了解更多
   </a>
 </div>
@@ -1242,56 +1161,14 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/tools-web-fee-debug-with-source-map/">
-      Web 前端调试工具：SourceMap 文件
+    <a href="/blog/computer-technology/web/dom/dom-select/">
+      DOM-选取元素节点
     </a>
   </h4>
   
   
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/leezchuan/">
-          <i class="fa-regular fa-circle-user mr-2"></i>LeeZChuan
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/"
-            class="ms-1"
-            >计算机技术
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/web%e5%89%8d%e7%ab%af/"
-            class="ms-1"
-            >Web前端
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/%e5%b7%a5%e5%85%b7/"
-            class="ms-1"
-            >工具
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/sourcemap/"
-            class="ms-1"
-            >Source map
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6"><p>Web 前端项目出于加载性能优化和安全考虑，在生产环境部署的代码是经过混淆和压缩的，对于利用生产环境收集到的错误堆栈信息要进行调试是非常具有挑战性的。理想情况下，应该在生产环境收集错误堆栈信息，然后映射到源码进行调试。恰好，<strong>SourceMap 文件</strong>提供了这个机制，可以将编译（压缩）后的代码映射到源代码中。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/tools-web-fee-debug-with-source-map/">
+  <p class="mb-6"><p>DOM 操作都是通过对文档树中节点的访问来实现的，如何选取特定的元素节点是关键，进而才能访问该元素节点实现修改、查看、移除、替换等操作。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-select/">
     了解更多
   </a>
 </div>
@@ -1303,48 +1180,14 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/linux/linux-cmd-vim/">
-      Linux-Vim 编辑器
+    <a href="/blog/computer-technology/web/css/css-clear-float/">
+      CSS 清除浮动
     </a>
   </h4>
   
   
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors//">
-          <i class="fa-regular fa-circle-user mr-2"></i>
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/"
-            class="ms-1"
-            >计算机技术
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba/"
-            class="ms-1"
-            >计算机
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/linux/"
-            class="ms-1"
-            >Linux
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6"><p>在 Linux 这样的命令行操作系统中，必须有一款功能强大的编辑器支持我们快速完成文本编辑，这就是 Vi 编辑器；通过对其加强和升级，Vim 编辑器比前者更为强大，拥有更多的功能和颜色高亮的特性，是程序员在 Linux 下编码的利器。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/linux/linux-cmd-vim/">
+  <p class="mb-6"><p>在浮动布局中，有时候会因为父元素没有设置高度而子元素浮动导致父元素坍塌，我们就需要清除浮动撑起父元素的高度，在这里总结一下常用方法。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/css/css-clear-float/">
     了解更多
   </a>
 </div>

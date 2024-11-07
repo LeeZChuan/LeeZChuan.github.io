@@ -1316,29 +1316,6 @@
           </div>
           
           
-            <div class="mt-20">
-              <div id="disqus_thread"></div>
-<script>
-    window.disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "themefisher-template" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-            </div>
-          
         </article>
       </div>
 
@@ -1349,67 +1326,6 @@
         <div class="section pb-0">
           <h2 class="h3 mb-12">相关</h2>
           <div class="row">
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/web-performance-case-1/">
-      Web 前端性能优化：案例分析 1
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/leezchuan/">
-          <i class="fa-regular fa-circle-user mr-2"></i>LeeZChuan
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/"
-            class="ms-1"
-            >计算机技术
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/web%e5%89%8d%e7%ab%af/"
-            class="ms-1"
-            >Web前端
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/%e6%80%a7%e8%83%bd%e4%bc%98%e5%8c%96/"
-            class="ms-1"
-            >性能优化
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/%e6%a1%88%e4%be%8b%e5%88%86%e6%9e%90/"
-            class="ms-1"
-            >案例分析
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6"><p>能在真实业务场景中落地 Web 性能优化方案的机会鲜有，大多数时候业务是较为简单而且要求不高的，前段时间恰好有一个比较核心的业务，对稳定性和性能有一定的要求，在这个过程中也算是做了很多尝试和实践，在此作为案例记录一下分析的过程和最终解决的方案。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/web-performance-case-1/">
-    了解更多
-  </a>
-</div>
-
-              </div>
             
               <div class="lg:col-4 md:col-6 mb-14">
                 <div class="bg-body dark:bg-darkmode-body">
@@ -1435,23 +1351,33 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/typescript/tools-typescript-type-extend/">
-      TypeScript：扩展第三方库的类型定义
+    <a href="/blog/computer-technology/web/dom/dom-rule/">
+      DOM-元素节点几何量
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>TypeScript 作为 JavaScript 的超集，为 Web 开发带来了强类型语言和类似代码智能提示这种良好的开发体验，而代码提示依赖于类型定义文件。类型定义文件的发展也经历了一个逐步演变的过程，从最初基于 JavaScript 编写的 npm 包，通过<a href="https://github.com/DefinitelyTyped/DefinitelyTyped"
+  <p class="mb-6"><p>当我们在查看 HTML 文档时，每个元素节点被解析后，都画成了可视形状。我们可以获取每个元素节点的几何量（宽、高、偏移量）以及页面滚动距离。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-rule/">
+    了解更多
+  </a>
+</div>
 
-
-
-
- target="_blank"
- 
-
-
->社区方案</a>来引入类型定义包，再到目前多数模块基于 TypeScript 编写并在发布时带上类型定义文件这种最佳方案，开发者体验得到进一步的提升。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/typescript/tools-typescript-type-extend/">
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/computer-technology/web/dom/dom-textnode/">
+      DOM-文本节点
+    </a>
+  </h4>
+  
+  
+  <p class="mb-6"><p>文本（Text）节点虽然很多时候我们直接用 innerHTML 去赋值替换，但当我们进行一些细微的修改时，了解一下 DOM 操作还是非常有用的。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-textnode/">
     了解更多
   </a>
 </div>

@@ -1163,29 +1163,6 @@
           </div>
           
           
-            <div class="mt-20">
-              <div id="disqus_thread"></div>
-<script>
-    window.disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "themefisher-template" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-            </div>
-          
         </article>
       </div>
 
@@ -1202,14 +1179,14 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/dom/dom-fragment/">
-      DOM-文档片段
+    <a href="/blog/computer-technology/web/dom/dom-event/">
+      DOM-事件
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>DOM 操作是非常消耗性能的，如果要进行大量的 DOM 操作，我们可以选择在内存中先构建一个文档片段然后一次性插入 DOM 树。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-fragment/">
+  <p class="mb-6"><p>JavaScript 的作用就是让 html 静态页面具备动态效果，而这些基本都是利用 DOM 事件来实现的。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-event/">
     了解更多
   </a>
 </div>
@@ -1221,16 +1198,16 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/computer/computer-cpu-addressing-mode/">
-      CPU 的七种寻址方式
+    <a href="/blog/computer-technology/program-architecture-design/bridge-mode-design-of-cross-platform-event-mechanism/">
+      桥接模式：跨平台的事件机制设计
     </a>
   </h4>
   
   
     <ul class="mb-4">
       <li class="mr-4 inline-block">
-        <a href="/authors//">
-          <i class="fa-regular fa-circle-user mr-2"></i>
+        <a href="/authors/leezchuan/">
+          <i class="fa-regular fa-circle-user mr-2"></i>LeeZChuan
         </a>
       </li>
       <li class="mr-4 inline-block">
@@ -1245,16 +1222,24 @@
           </a>
         
           <a
-            href="/categories/cpu/"
+            href="/categories/%e6%9c%8d%e5%8a%a1%e5%99%a8/"
             class="ms-1"
-            >CPU
+            >服务器
+              ,
+            
+          </a>
+        
+          <a
+            href="/categories/nginx/"
+            class="ms-1"
+            >Nginx
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>CPU 获取数据的方式不仅仅一种，多种方式也为不同数据的获取提供了不同的效率考量，保证了寻址效率与指令的灵活性。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/computer/computer-cpu-addressing-mode/">
+  <p class="mb-6"><p>对于 Web 的图表组件库来说，一些功能比较强大的开源库，渲染层可以支持 DOM、SVG、Canvas、WebGL 等多个平台的环境，而图表库的很多功能的实现都和渲染层紧密相关。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/program-architecture-design/bridge-mode-design-of-cross-platform-event-mechanism/">
     了解更多
   </a>
 </div>
@@ -1266,14 +1251,14 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/tools/tools-maintain-open-source-projects-with-tools/">
-      如何更好的维护开源项目
+    <a href="/blog/computer-technology/typescript/tools-typescript-use-script-to-ts-types/">
+      利用脚本执行 `tsc` 忽略类型检查错误
     </a>
   </h4>
   
   
-  <p class="mb-6"><p>一直以来，开源精神被开发者所推崇，开源项目为开发者提供了不用付出除时间以外任何成本就可以学习前沿技术的最佳途径，另一方面，我们应该思考开源为何会成功，在全球开发者参与协作的情况下代码仓库为何能保持整洁、不出现大规模冲突而奔溃，上下游依赖如何管理，这背后有既定的规范进行强约束，也有一系列社区工具来完成复杂而有价值的工作。所以，从参与或者维护开源项目的角度来看，这些<strong>社区公认的最佳实践</strong>值得我们了解，学习这些东西也能在一定程度上提高我们管理项目的能力。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/tools/tools-maintain-open-source-projects-with-tools/">
+  <p class="mb-6"><p>在发布 npm 包时添加对 TypeScript 类型定义文件的支持会让用户的使用体验增色不少，TypeScript 官方提供了 <code>tsc --emitDeclarationOnly</code> 命令用来生成类型定义文件（<code>.d.ts</code>）。但是，该命令会同时执行类型检查，遇到错误时会报错中断命令行进程，这就使其无法直接集成在 CI 环节在发布 npm 包时自动执行生成类型定义文件的操作。当然，一个解决办法就是解决掉代码中所有的类型检查错误即可，既然讨论到这个问题，必然不会花费额外精力去解决一些历史遗留问题。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/typescript/tools-typescript-use-script-to-ts-types/">
     了解更多
   </a>
 </div>

@@ -1300,29 +1300,6 @@
           </div>
           
           
-            <div class="mt-20">
-              <div id="disqus_thread"></div>
-<script>
-    window.disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "themefisher-template" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-            </div>
-          
         </article>
       </div>
 
@@ -1339,69 +1316,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/tools-web-fee-toolchain/">
-      前端工程化：对于构建工具链的简单思考
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/leezchuan/">
-          <i class="fa-regular fa-circle-user mr-2"></i>LeeZChuan
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/"
-            class="ms-1"
-            >计算机技术
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/web%e5%89%8d%e7%ab%af/"
-            class="ms-1"
-            >Web前端
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/%e5%b7%a5%e5%85%b7/"
-            class="ms-1"
-            >工具
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/%e6%9e%84%e5%bb%ba%e5%b7%a5%e5%85%b7%e9%93%be/"
-            class="ms-1"
-            >构建工具链
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6"><p>前端工程化是在做与业务开发完全不同的事情，旨在解决软件工程领域与开发者密切相关的问题，通常会将其与基建开发、DevOps 放在一起讨论。前端开发是复杂的，其结合了 HTML/CSS/JavaScript 3 种语言，甚至还有很多其超集，没有开箱即用的工具链，不像 Java Web 开发、Android 开发等等有官方或者商业领域非常成熟的工具可以利用，一切都源于开源社区的从 0 开始构建。正因如此，前端工程化领域百花齐放，开放与创新展现的淋漓尽致，这也是前端开发者了解学习软件工程的机会。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/tools-web-fee-toolchain/">
-    了解更多
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/computer-technology/nodejs/nodejs-fastify/">
-      Fastify - 专注于性能和低内存消耗
+    <a href="/blog/computer-technology/nginx/nginx-config/">
+      Nginx 配置
     </a>
   </h4>
   
@@ -1424,24 +1340,25 @@
           </a>
         
           <a
-            href="/categories/node.js/"
+            href="/categories/%e6%9c%8d%e5%8a%a1%e5%99%a8/"
             class="ms-1"
-            >Node.js
+            >服务器
               ,
             
           </a>
         
           <a
-            href="/categories/fastify/"
+            href="/categories/nginx/"
             class="ms-1"
-            >Fastify
+            >Nginx
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>最近在做 Node.js 技术相关的调研，需要选定一个 Web 框架作为基础来构建业务。一般来说，首选开源方案，对于我来说，比较关注框架背后的开发团队情况、项目活跃度、是否有足够多的商业案例、文档是否完整可读、框架的设计理念、技术架构是否灵活可扩展、技术社区生态是否完整等方面。目前，我比较倾心的是 Fastify 这个新兴框架，根据官网介绍，其专注于高性能和低消耗，并且公开的基准测试表现相当不错，项目足够活跃，更重要的是属于 OpenJS 基金会的孵化项目。本文主要介绍 Fastify 的设计理念和探究其是如何提高性能和降低内存消耗的。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/nodejs/nodejs-fastify/">
+  <p class="mb-6"><p><strong><u>建议主要参考官网英文文档。</u></strong></p>
+<p>具体指令直接可以在官网文档的 Alphabetical index of directives（按字母顺序排列的指令索引）中搜索即可。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/nginx/nginx-config/">
     了解更多
   </a>
 </div>
@@ -1453,8 +1370,61 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/tools-web-fee-polyfill-corejs-eslint/">
-      解析基于 core-js 与 ESLint 的 Web 兼容方案
+    <a href="/blog/computer-technology/linux/linux-base/">
+      Linux-基础
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors//">
+          <i class="fa-regular fa-circle-user mr-2"></i>
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/"
+            class="ms-1"
+            >计算机技术
+              ,
+            
+          </a>
+        
+          <a
+            href="/categories/%e6%93%8d%e4%bd%9c%e7%b3%bb%e7%bb%9f/"
+            class="ms-1"
+            >操作系统
+              ,
+            
+          </a>
+        
+          <a
+            href="/categories/linux/"
+            class="ms-1"
+            >Linux
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>Linux 是在做一些较为底层的开发工作时的必要开发环境，了解 Linux 也对操作系统概念的理解有很大的帮助，这篇文章是对 Linux 的一些基础概念的阐述。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/linux/linux-base/">
+    了解更多
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/computer-technology/web/tools-web-fee-debug-with-source-map/">
+      Web 前端调试工具：SourceMap 文件
     </a>
   </h4>
   
@@ -1493,16 +1463,16 @@
           </a>
         
           <a
-            href="/categories/polyfill/"
+            href="/categories/sourcemap/"
             class="ms-1"
-            >Polyfill
+            >Source map
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>Web 网页为了保证在多个平台和低中高端设备上的体验稳定性和一致性，通常会做 Polyfill 以保证兼容性。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/tools-web-fee-polyfill-corejs-eslint/">
+  <p class="mb-6"><p>Web 前端项目出于加载性能优化和安全考虑，在生产环境部署的代码是经过混淆和压缩的，对于利用生产环境收集到的错误堆栈信息要进行调试是非常具有挑战性的。理想情况下，应该在生产环境收集错误堆栈信息，然后映射到源码进行调试。恰好，<strong>SourceMap 文件</strong>提供了这个机制，可以将编译（压缩）后的代码映射到源代码中。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/tools-web-fee-debug-with-source-map/">
     了解更多
   </a>
 </div>

@@ -1463,29 +1463,6 @@
           </div>
           
           
-            <div class="mt-20">
-              <div id="disqus_thread"></div>
-<script>
-    window.disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "themefisher-template" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-            </div>
-          
         </article>
       </div>
 
@@ -1502,8 +1479,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/web-performance-fastdom/">
-      Web 前端性能优化：批量 DOM 操作 - FastDOM
+    <a href="/blog/computer-technology/git/publish-gitlab/">
+      git依赖包发布
     </a>
   </h4>
   
@@ -1518,40 +1495,49 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/"
+            href="/categories/git/"
             class="ms-1"
-            >计算机技术
+            >Git
               ,
             
           </a>
         
           <a
-            href="/categories/web%e5%89%8d%e7%ab%af/"
+            href="/categories/gitlab/"
             class="ms-1"
-            >Web前端
+            >Gitlab
               ,
             
           </a>
         
           <a
-            href="/categories/%e6%80%a7%e8%83%bd%e4%bc%98%e5%8c%96/"
+            href="/categories/npm/"
             class="ms-1"
-            >性能优化
+            >Npm
               ,
             
           </a>
         
           <a
-            href="/categories/dom/"
+            href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba/"
             class="ms-1"
-            >Dom
+            >计算机
+              ,
+            
+          </a>
+        
+          <a
+            href="/categories/%e5%86%85%e7%bd%91%e9%83%a8%e7%bd%b2/"
+            class="ms-1"
+            >内网部署
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>利用 JS 开发的原生应用与依赖于 React.js/Vue 开发的框架/库应用，性能孰高孰低？这两者最显著的区别在于原生应用需要手动操作 DOM 完成业务，而框架/库应用是基于数据变化响应式的应用，后者只需要关注数据如何变化，至于体现在 DOM 上的变化皆由框架/库内部自动完成。所以，要搞清楚两者的性能优劣，可能<strong>批量</strong>的 DOM 操作是一个不可忽略的核心因素。从代码执行的角度分析，框架/库也是基于原生 API 进行的封装抽象，因此代码执行时的路径更长、堆栈更深，由此可见原生 API 的操作性能应该是最高的。但是，现实情况是业务通常来说是复杂的，代码实现中 DOM 操作的逻辑分散在各处，那么多个 DOM 操作之间是否会产生影响从而不利于性能？这个时候就要关注宿主浏览器的渲染机制是如何理解批量的 DOM 操作的，这里引入的概念就是<strong>关键渲染路径（Critical rendering path）</strong>。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/web-performance-fastdom/">
+  <p class="mb-6"><blockquote>
+<p>最近在开发npm包，需要发布到内网，于是调研有多少种方案</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/git/publish-gitlab/">
     了解更多
   </a>
 </div>
@@ -1563,8 +1549,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/linux/linux-cmd-vim/">
-      Linux-Vim 编辑器
+    <a href="/blog/computer-technology/computer/computer-microprocessor-addressing-range/">
+      微处理器寻址范围
     </a>
   </h4>
   
@@ -1595,16 +1581,16 @@
           </a>
         
           <a
-            href="/categories/linux/"
+            href="/categories/mpu/"
             class="ms-1"
-            >Linux
+            >Mpu
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>在 Linux 这样的命令行操作系统中，必须有一款功能强大的编辑器支持我们快速完成文本编辑，这就是 Vi 编辑器；通过对其加强和升级，Vim 编辑器比前者更为强大，拥有更多的功能和颜色高亮的特性，是程序员在 Linux 下编码的利器。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/linux/linux-cmd-vim/">
+  <p class="mb-6"><p>在此之前，让我们带着下面这个问题来看这篇文章：<strong>64 位处理器所支持的最大内存(寻址范围)为多少？</strong></p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/computer/computer-microprocessor-addressing-range/">
     了解更多
   </a>
 </div>
@@ -1616,56 +1602,14 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/web-performance-optimize-skill/">
-      Web 前端性能优化：工具与技巧
+    <a href="/blog/computer-technology/web/dom/dom-fragment/">
+      DOM-文档片段
     </a>
   </h4>
   
   
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/leezchuan/">
-          <i class="fa-regular fa-circle-user mr-2"></i>LeeZChuan
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/"
-            class="ms-1"
-            >计算机技术
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/web%e5%89%8d%e7%ab%af/"
-            class="ms-1"
-            >Web前端
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/%e6%80%a7%e8%83%bd%e4%bc%98%e5%8c%96/"
-            class="ms-1"
-            >性能优化
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/%e6%8a%80%e5%b7%a7/"
-            class="ms-1"
-            >技巧
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6"><p>Web 前端的性能优化是非常迫切的，客户端的资源非常有限，而且层次不齐，很容易造成一些性能问题从而影响到最终给用户所呈现的数据信息结构的不完整。为了增强用户体验，我们必须在各个方面进行优化，同时也可以节省服务器成本。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/web-performance-optimize-skill/">
+  <p class="mb-6"><p>DOM 操作是非常消耗性能的，如果要进行大量的 DOM 操作，我们可以选择在内存中先构建一个文档片段然后一次性插入 DOM 树。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-fragment/">
     了解更多
   </a>
 </div>

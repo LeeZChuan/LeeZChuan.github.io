@@ -1224,29 +1224,6 @@
           </div>
           
           
-            <div class="mt-20">
-              <div id="disqus_thread"></div>
-<script>
-    window.disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "themefisher-template" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-            </div>
-          
         </article>
       </div>
 
@@ -1263,56 +1240,23 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/web-app-model-zustand/">
-      Web 应用：轻量级状态管理工具 zustand
+    <a href="/blog/computer-technology/typescript/tools-typescript-type-extend/">
+      TypeScript：扩展第三方库的类型定义
     </a>
   </h4>
   
   
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/leezchuan/">
-          <i class="fa-regular fa-circle-user mr-2"></i>LeeZChuan
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/"
-            class="ms-1"
-            >计算机技术
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/web%e5%89%8d%e7%ab%af/"
-            class="ms-1"
-            >Web前端
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/%e5%ba%94%e7%94%a8%e7%8a%b6%e6%80%81%e7%ae%a1%e7%90%86/"
-            class="ms-1"
-            >应用状态管理
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/react/"
-            class="ms-1"
-            >React
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6"><p>基于 React.js 的 Web 应用如何完成状态管理？社区主流方案是 <strong>react-redux</strong>，其本质上基于 React 的 <code>Context</code> 特性实现，如果应用足够简单，实际上用 <code>Context</code> 手写一个简单的状态管理工具倒也并不难。不过，考虑到工具的完善性、项目的健壮性，通常采用较好的、成熟的社区方案。在移动端场景下，<strong>react-redux</strong> 略显臃肿，轻量级状态管理工具 <strong>zustand</strong> 倒是一个不错的替代方案。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/web-app-model-zustand/">
+  <p class="mb-6"><p>TypeScript 作为 JavaScript 的超集，为 Web 开发带来了强类型语言和类似代码智能提示这种良好的开发体验，而代码提示依赖于类型定义文件。类型定义文件的发展也经历了一个逐步演变的过程，从最初基于 JavaScript 编写的 npm 包，通过<a href="https://github.com/DefinitelyTyped/DefinitelyTyped"
+
+
+
+
+ target="_blank"
+ 
+
+
+>社区方案</a>来引入类型定义包，再到目前多数模块基于 TypeScript 编写并在发布时带上类型定义文件这种最佳方案，开发者体验得到进一步的提升。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/typescript/tools-typescript-type-extend/">
     了解更多
   </a>
 </div>
@@ -1324,56 +1268,14 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/web-performance-fastdom/">
-      Web 前端性能优化：批量 DOM 操作 - FastDOM
+    <a href="/blog/computer-technology/web/dom/dom/">
+      文档对象模型（DOM）
     </a>
   </h4>
   
   
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/leezchuan/">
-          <i class="fa-regular fa-circle-user mr-2"></i>LeeZChuan
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/"
-            class="ms-1"
-            >计算机技术
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/web%e5%89%8d%e7%ab%af/"
-            class="ms-1"
-            >Web前端
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/%e6%80%a7%e8%83%bd%e4%bc%98%e5%8c%96/"
-            class="ms-1"
-            >性能优化
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/dom/"
-            class="ms-1"
-            >Dom
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6"><p>利用 JS 开发的原生应用与依赖于 React.js/Vue 开发的框架/库应用，性能孰高孰低？这两者最显著的区别在于原生应用需要手动操作 DOM 完成业务，而框架/库应用是基于数据变化响应式的应用，后者只需要关注数据如何变化，至于体现在 DOM 上的变化皆由框架/库内部自动完成。所以，要搞清楚两者的性能优劣，可能<strong>批量</strong>的 DOM 操作是一个不可忽略的核心因素。从代码执行的角度分析，框架/库也是基于原生 API 进行的封装抽象，因此代码执行时的路径更长、堆栈更深，由此可见原生 API 的操作性能应该是最高的。但是，现实情况是业务通常来说是复杂的，代码实现中 DOM 操作的逻辑分散在各处，那么多个 DOM 操作之间是否会产生影响从而不利于性能？这个时候就要关注宿主浏览器的渲染机制是如何理解批量的 DOM 操作的，这里引入的概念就是<strong>关键渲染路径（Critical rendering path）</strong>。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/web-performance-fastdom/">
+  <p class="mb-6"><p>在网页设计中，有一个很重要的角色需要我们了解，DOM 帮助我们对页面元素进行增、删、改等全方位的操作，而且让 JavaScript 在客户端修改 HTML 文档成为一个很简单的事情，可以说 DOM 为我们操作 HTML 文档提供了强大的编程接口。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom/">
     了解更多
   </a>
 </div>
@@ -1385,8 +1287,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/nodejs/nodejs-spawn-vs-exec/">
-      Child process API: spawn vs exec
+    <a href="/blog/computer-technology/nginx/nginx-config/">
+      Nginx 配置
     </a>
   </h4>
   
@@ -1409,32 +1311,25 @@
           </a>
         
           <a
-            href="/categories/node.js/"
+            href="/categories/%e6%9c%8d%e5%8a%a1%e5%99%a8/"
             class="ms-1"
-            >Node.js
+            >服务器
               ,
             
           </a>
         
           <a
-            href="/categories/spawn/"
+            href="/categories/nginx/"
             class="ms-1"
-            >Spawn
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/exec/"
-            class="ms-1"
-            >Exec
+            >Nginx
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>利用 Node.js 编写一些命令行工具、一次性脚本是很方便的，而在这类场景下 child_process API 的 <code>spawn</code> 和 <code>exec</code> 方法的应用则非常常见。在我使用它们时，却不知道该如何进行选择，遂对此进行了探究。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/nodejs/nodejs-spawn-vs-exec/">
+  <p class="mb-6"><p><strong><u>建议主要参考官网英文文档。</u></strong></p>
+<p>具体指令直接可以在官网文档的 Alphabetical index of directives（按字母顺序排列的指令索引）中搜索即可。</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/nginx/nginx-config/">
     了解更多
   </a>
 </div>
