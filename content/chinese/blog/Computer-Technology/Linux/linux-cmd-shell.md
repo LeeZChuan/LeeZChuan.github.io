@@ -2,7 +2,7 @@
 title: Linux-常用 Shell 命令
 date: 2016-10-21 21:02:00
 update: 2018-10-14 13:00:00
-authors: "LeeZChuan" 
+authors: "Clone" 
 categories: ["计算机技术",'操作系统', "Linux"]
 description: Linux 是一个优秀的开发环境，大多数服务器都在上面部署。作为一个程序员，熟悉Linux 系统的常用操作也是很必要的。在 linux 内核外，shell 提供了我们程序员（用户）与内核之间的交互媒介，shell 可以说是一个命令解释器，当然它也负责将内核输出信息翻译给程序员。
 ---

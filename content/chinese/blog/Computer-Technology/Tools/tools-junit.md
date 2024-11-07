@@ -2,15 +2,8 @@
 title: 单元测试工具：Junit
 date: 2017-08-30 23:42:00
 update: 2017-08-30 23:42:00
-authors: "LeeZChuan"
-tags: &ref_0
-  - 计算机技术
-  - 工具
-  - 测试
-  - 单元测试
-  - Java
-  - JUnit4
-keywords: *ref_0
+author: "LeeZChuan"
+categories: ["计算机技术",'工具', "测试"]
 description: 通常一个项目的代码量是比较大的，而且其中逻辑也较为复杂，在开发完成后再进行项目测试其实是比较耗费时间和精力的，因此边开发边测试是个很好的选择，而 JUnit 则为我们提供了这样的便利。
 ---
 

@@ -1,12 +1,9 @@
 ---
-title: Fastify - 专注于性能和低内存消耗
+title: Fastify框架 - 专注于性能和低内存消耗
 date: 2021-06-27 16:28:00
 update: 2021-07-04 21:56:00
 authors: "LeeZChuan"
-categories:
-  - 计算机技术
-  - Node.js
-  - Fastify
+categories: ["计算机技术",'Node.js', "Fastify"]
 description: Fastify 作为一个 Node.js Web 框架，是如何实现高性能和低内存消耗的呢？?
 ---
 

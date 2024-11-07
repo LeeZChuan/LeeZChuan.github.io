@@ -6,7 +6,6 @@ categories:
   - 特效
   - 计算机技术
   - canvas
-author: "LeeZChuan"
 tags: ["计算机技术", "Web前端",'特效','demo']
 ---
 

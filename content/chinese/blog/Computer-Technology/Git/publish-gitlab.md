@@ -2,20 +2,13 @@
 title: git依赖包发布
 date: 2024-10-26T02:40:53.341Z
 author: "LeeZChuan"
-categories:
-    - git
-    - gitlab
-    - npm
-    - 计算机
-    - 内网部署
-description: "包如何发布到内网。"
-tags:
-    - npm
+categories: ["git",'gitlab', "npm","内网部署"]
+description: "自己开发的npm包如何发布到公网与内网"
 ---
 
 
 
-> 最近在开发npm包，需要发布到内网，于是调研有多少种方案
+> 最近在开发npm包，需要发布到内网或者公网，便于是乎调研有多少种方案
 
 ### 方案一：使用gitlab构建平台
 
@@ -75,6 +68,8 @@ sh echo $NPM_TOKEN # Unix/macOS echo %NPM_TOKEN% # Windows
 
 
 ## 方案三：使用公网npm平台
+
+最常用的就是在npm网站注册登陆自己的用户，然后使用npm publish发布自己的包，但是缺点就是需要公网ip，如果在内网的话，就需要使用内网穿透工具，比如frp等，但是这种方式需要额外配置，而且需要公网ip，所以不推荐使用。
 
 
 ## 参考文档
