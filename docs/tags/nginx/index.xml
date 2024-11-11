@@ -1,1 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Nginx on 技术之心</title><link>https://leezchuan.github.io/tags/nginx/</link><description>Recent content in Nginx on 技术之心</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Sun, 12 Jun 2022 22:22:00 +0800</lastBuildDate><atom:link href="https://leezchuan.github.io/tags/nginx/index.xml" rel="self" type="application/rss+xml"/><item><title>桥接模式：跨平台的事件机制设计</title><link>https://leezchuan.github.io/blog/computer-technology/program-architecture-design/bridge-mode-design-of-cross-platform-event-mechanism/</link><pubDate>Sun, 12 Jun 2022 22:22:00 +0800</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/program-architecture-design/bridge-mode-design-of-cross-platform-event-mechanism/</guid><description>&lt;p>对于 Web 的图表组件库来说，一些功能比较强大的开源库，渲染层可以支持 DOM、SVG、Canvas、WebGL 等多个平台的环境，而图表库的很多功能的实现都和渲染层紧密相关。&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nginx on 技术之心</title>
+    <link>http://localhost:1313/tags/nginx/</link>
+    <description>Recent content in Nginx on 技术之心</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 12 Jun 2022 22:22:00 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>桥接模式：跨平台的事件机制设计</title>
+      <link>http://localhost:1313/blog/computer-technology/program-architecture-design/bridge-mode-design-of-cross-platform-event-mechanism/</link>
+      <pubDate>Sun, 12 Jun 2022 22:22:00 +0800</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/program-architecture-design/bridge-mode-design-of-cross-platform-event-mechanism/</guid>
+      <description>&lt;p&gt;对于 Web 的图表组件库来说，一些功能比较强大的开源库，渲染层可以支持 DOM、SVG、Canvas、WebGL 等多个平台的环境，而图表库的很多功能的实现都和渲染层紧密相关。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
