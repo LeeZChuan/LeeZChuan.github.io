@@ -2,7 +2,7 @@
 title: DOM-加载 JavaScript
 date: 2016-05-24 22:49:00
 update: 2016-05-24 22:49:00
-authors: "LeeZChuan"
+author: "LeeZChuan"
 tags: &ref_0
   - 计算机技术
   - Web

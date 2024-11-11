@@ -2,7 +2,7 @@
 title: Nginx 配置
 date: 2018-03-15 12:38:00
 update: 2020-12-02 01:19:00
-authors: "LeeZChuan" 
+author: "LeeZChuan" 
 categories: ["计算机技术",'服务器', "Nginx"]
 description:
   Nginx 作为一个轻量、高性能的服务器，近年来颇受欢迎，无论是生产环境还是开发环境都有其发挥作用的地方，其配置文件相对来说还是较为简单的。而且，现在

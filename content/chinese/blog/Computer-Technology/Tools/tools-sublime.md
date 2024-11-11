@@ -2,7 +2,7 @@
 title: 编辑器：Sublime Text 常用插件
 date: 2016-05-19 13:38:00
 update: 2016-05-19 13:38:00
-authors: "LeeZChuan"
+author: "LeeZChuan"
 categories: ["计算机技术",'工具', "编辑器","Sublime Text"]
 description: Sumblime Text 是一个具有漂亮的界面和强大功能的文本编辑器，而且也支持许多丰富的插件。它是一个收费软件，但是允许开发人员无限期的免费试用。这篇文章介绍一下常用的插件。
 ---

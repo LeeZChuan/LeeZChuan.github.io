@@ -2,7 +2,7 @@
 title: TypeScript：扩展第三方库的类型定义
 date: 2022-01-09 17:36:00
 update: 2022-01-09 17:36:00
-authors: "LeeZChuan"
+author: "LeeZChuan"
 tags: &ref_0
   - 计算机技术
   - 工具

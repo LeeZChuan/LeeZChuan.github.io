@@ -2,7 +2,7 @@
 title: useSignal() 是Web框架的未来
 date: 2024-11-11T06:19:51.214Z
 update: 2024-11-11T06:19:51.862Z
-authors: "LeeZChuan"
+author: "LeeZChuan"
 categories: ["计算机技术","Web前端","React","JavaScript"]
 description: JavaScript 作为一门在 Web 开发中的主流语言，常常涉及到交互事件方面的应用，这不可避免的用到了异步编程的方法，而它本身则是单线程运行的。在以往的开发中，异步编程正变得越来越难管理，新的 Promise 标准 API 将使得异步编程更加方便、安全。
 keywords: 工具
