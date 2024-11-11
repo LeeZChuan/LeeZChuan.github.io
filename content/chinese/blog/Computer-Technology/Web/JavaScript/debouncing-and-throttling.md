@@ -3,14 +3,7 @@ title: Web 前端性能优化：解析函数节流与防抖的实现
 date: 2021-04-25 22:56:00
 update: 2021-04-26 22:48:00
 authors: "LeeZChuan"
-tags: &ref_0
-  - 计算机技术
-  - Web
-  - Web 前端
-  - JavaScript
-  - 性能优化
-  - 节流与防抖
-keywords: *ref_0
+categories: ["计算机技术", "Web前端",'JavaScript','性能优化','节流与防抖']
 description: 前端开发中广泛采用的优化技巧，函数节流与防抖。
 ---
 
