@@ -1,19 +1,2 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>内网部署 on 技术之心</title>
-    <link>http://localhost:1313/categories/%E5%86%85%E7%BD%91%E9%83%A8%E7%BD%B2/</link>
-    <description>Recent content in 内网部署 on 技术之心</description>
-    <generator>Hugo</generator>
-    <language>zh-cn</language>
-    <lastBuildDate>Sat, 26 Oct 2024 02:40:53 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/%E5%86%85%E7%BD%91%E9%83%A8%E7%BD%B2/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>git依赖包发布</title>
-      <link>http://localhost:1313/blog/computer-technology/git/publish-gitlab/</link>
-      <pubDate>Sat, 26 Oct 2024 02:40:53 +0000</pubDate>
-      <guid>http://localhost:1313/blog/computer-technology/git/publish-gitlab/</guid>
-      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;最近在开发npm包，需要发布到内网，于是调研有多少种方案&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>内网部署 on 技术之心</title><link>https://leezchuan.github.io/categories/%E5%86%85%E7%BD%91%E9%83%A8%E7%BD%B2/</link><description>Recent content in 内网部署 on 技术之心</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Sat, 26 Oct 2024 02:40:53 +0000</lastBuildDate><atom:link href="https://leezchuan.github.io/categories/%E5%86%85%E7%BD%91%E9%83%A8%E7%BD%B2/index.xml" rel="self" type="application/rss+xml"/><item><title>git依赖包发布</title><link>https://leezchuan.github.io/blog/computer-technology/git/publish-gitlab/</link><pubDate>Sat, 26 Oct 2024 02:40:53 +0000</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/git/publish-gitlab/</guid><description>&lt;blockquote>
+&lt;p>最近在开发npm包，需要发布到内网或者公网，便于是乎调研有多少种方案&lt;/p></description></item></channel></rss>
