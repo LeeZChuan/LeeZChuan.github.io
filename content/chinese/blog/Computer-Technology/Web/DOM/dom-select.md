@@ -3,13 +3,7 @@ title: DOM-选取元素节点
 date: 2016-05-17 22:10:00
 update: 2016-05-17 22:10:00
 author: "LeeZChuan"
-tags: &ref_0
-  - 计算机技术
-  - Web
-  - Web 前端
-  - DOM
-  - Selector
-keywords: *ref_0
+categories: ["计算机技术", "Web", "Web 前端", "DOM", "Selector"]
 description: DOM 操作都是通过对文档树中节点的访问来实现的，如何选取特定的元素节点是关键，进而才能访问该元素节点实现修改、查看、移除、替换等操作。
 ---
 

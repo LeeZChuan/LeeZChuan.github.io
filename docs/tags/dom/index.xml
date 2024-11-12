@@ -1,1 +1,96 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>DOM on 技术之心</title><link>https://leezchuan.github.io/tags/dom/</link><description>Recent content in DOM on 技术之心</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Mon, 04 Oct 2021 00:06:00 +0800</lastBuildDate><atom:link href="https://leezchuan.github.io/tags/dom/index.xml" rel="self" type="application/rss+xml"/><item><title>Web 前端性能优化：批量 DOM 操作 - FastDOM</title><link>https://leezchuan.github.io/blog/computer-technology/web/web-performance-fastdom/</link><pubDate>Mon, 04 Oct 2021 00:06:00 +0800</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/web-performance-fastdom/</guid><description>&lt;p>利用 JS 开发的原生应用与依赖于 React.js/Vue 开发的框架/库应用，性能孰高孰低？这两者最显著的区别在于原生应用需要手动操作 DOM 完成业务，而框架/库应用是基于数据变化响应式的应用，后者只需要关注数据如何变化，至于体现在 DOM 上的变化皆由框架/库内部自动完成。所以，要搞清楚两者的性能优劣，可能&lt;strong>批量&lt;/strong>的 DOM 操作是一个不可忽略的核心因素。从代码执行的角度分析，框架/库也是基于原生 API 进行的封装抽象，因此代码执行时的路径更长、堆栈更深，由此可见原生 API 的操作性能应该是最高的。但是，现实情况是业务通常来说是复杂的，代码实现中 DOM 操作的逻辑分散在各处，那么多个 DOM 操作之间是否会产生影响从而不利于性能？这个时候就要关注宿主浏览器的渲染机制是如何理解批量的 DOM 操作的，这里引入的概念就是&lt;strong>关键渲染路径（Critical rendering path）&lt;/strong>。&lt;/p></description></item><item><title>DOM-加载 JavaScript</title><link>https://leezchuan.github.io/blog/computer-technology/web/dom/dom-js/</link><pubDate>Tue, 24 May 2016 22:49:00 +0800</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/dom/dom-js/</guid><description>&lt;p>页面的动态交互离不开 Javascript，将 js 脚本引入页面时会阻塞页面加载，在某些时候我们则可以选择异步加载 js 脚本。&lt;/p></description></item><item><title>DOM-文本节点</title><link>https://leezchuan.github.io/blog/computer-technology/web/dom/dom-textnode/</link><pubDate>Tue, 24 May 2016 21:50:00 +0800</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/dom/dom-textnode/</guid><description>&lt;p>文本（Text）节点虽然很多时候我们直接用 innerHTML 去赋值替换，但当我们进行一些细微的修改时，了解一下 DOM 操作还是非常有用的。&lt;/p></description></item><item><title>DOM-文档片段</title><link>https://leezchuan.github.io/blog/computer-technology/web/dom/dom-fragment/</link><pubDate>Mon, 23 May 2016 13:10:00 +0800</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/dom/dom-fragment/</guid><description>&lt;p>DOM 操作是非常消耗性能的，如果要进行大量的 DOM 操作，我们可以选择在内存中先构建一个文档片段然后一次性插入 DOM 树。&lt;/p></description></item><item><title>DOM-事件</title><link>https://leezchuan.github.io/blog/computer-technology/web/dom/dom-event/</link><pubDate>Mon, 23 May 2016 12:18:00 +0800</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/dom/dom-event/</guid><description>&lt;p>JavaScript 的作用就是让 html 静态页面具备动态效果，而这些基本都是利用 DOM 事件来实现的。&lt;/p></description></item><item><title>DOM-元素节点属性</title><link>https://leezchuan.github.io/blog/computer-technology/web/dom/dom-attribute/</link><pubDate>Sat, 21 May 2016 21:00:00 +0800</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/dom/dom-attribute/</guid><description>&lt;p>元素节点上具有很多属性，这些属性我们通常可以很方便的获取，并进行简单的操作。&lt;/p></description></item><item><title>DOM-元素节点几何量</title><link>https://leezchuan.github.io/blog/computer-technology/web/dom/dom-rule/</link><pubDate>Thu, 19 May 2016 14:54:00 +0800</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/dom/dom-rule/</guid><description>&lt;p>当我们在查看 HTML 文档时，每个元素节点被解析后，都画成了可视形状。我们可以获取每个元素节点的几何量（宽、高、偏移量）以及页面滚动距离。&lt;/p></description></item><item><title>DOM-节点集合</title><link>https://leezchuan.github.io/blog/computer-technology/web/dom/dom-nodelist/</link><pubDate>Tue, 17 May 2016 22:30:00 +0800</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/dom/dom-nodelist/</guid><description>&lt;p>当从文档树中选取成组的节点或者使用预定义的节点集合时，这些节点都是放在 NodeList 或者一个 HTMLCollecton 之中，而不是一个数组（Array）中。&lt;/p></description></item><item><title>DOM-选取元素节点</title><link>https://leezchuan.github.io/blog/computer-technology/web/dom/dom-select/</link><pubDate>Tue, 17 May 2016 22:10:00 +0800</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/dom/dom-select/</guid><description>&lt;p>DOM 操作都是通过对文档树中节点的访问来实现的，如何选取特定的元素节点是关键，进而才能访问该元素节点实现修改、查看、移除、替换等操作。&lt;/p></description></item><item><title>DOM-元素节点</title><link>https://leezchuan.github.io/blog/computer-technology/web/dom/dom-elementnode/</link><pubDate>Tue, 17 May 2016 13:19:00 +0800</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/dom/dom-elementnode/</guid><description>&lt;p>可以说，元素节点是 DOM 树中的核心部分，我们进行文档的操作通常都是建立在元素节点上的。&lt;/p></description></item><item><title>文档对象模型（DOM）</title><link>https://leezchuan.github.io/blog/computer-technology/web/dom/dom/</link><pubDate>Mon, 16 May 2016 14:04:00 +0800</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/dom/dom/</guid><description>&lt;p>在网页设计中，有一个很重要的角色需要我们了解，DOM 帮助我们对页面元素进行增、删、改等全方位的操作，而且让 JavaScript 在客户端修改 HTML 文档成为一个很简单的事情，可以说 DOM 为我们操作 HTML 文档提供了强大的编程接口。&lt;/p></description></item><item><title>浏览器对象模型（BOM）</title><link>https://leezchuan.github.io/blog/computer-technology/web/dom/dom-bom/</link><pubDate>Sun, 15 May 2016 12:02:00 +0800</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/dom/dom-bom/</guid><description>&lt;p>在网页开发中，我们通常专注于内容的设计，而有些时候我们需要进行不同窗口之间的交互，这时候我们就需要学习如何运用 BOM 中的许多核心对象，及其属性、方法。&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DOM on 技术之心</title>
+    <link>http://localhost:1313/tags/dom/</link>
+    <description>Recent content in DOM on 技术之心</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 04 Oct 2021 00:06:00 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/dom/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Web 前端性能优化：批量 DOM 操作 - FastDOM</title>
+      <link>http://localhost:1313/blog/computer-technology/web/web-performance-fastdom/</link>
+      <pubDate>Mon, 04 Oct 2021 00:06:00 +0800</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/web/web-performance-fastdom/</guid>
+      <description>&lt;p&gt;利用 JS 开发的原生应用与依赖于 React.js/Vue 开发的框架/库应用，性能孰高孰低？这两者最显著的区别在于原生应用需要手动操作 DOM 完成业务，而框架/库应用是基于数据变化响应式的应用，后者只需要关注数据如何变化，至于体现在 DOM 上的变化皆由框架/库内部自动完成。所以，要搞清楚两者的性能优劣，可能&lt;strong&gt;批量&lt;/strong&gt;的 DOM 操作是一个不可忽略的核心因素。从代码执行的角度分析，框架/库也是基于原生 API 进行的封装抽象，因此代码执行时的路径更长、堆栈更深，由此可见原生 API 的操作性能应该是最高的。但是，现实情况是业务通常来说是复杂的，代码实现中 DOM 操作的逻辑分散在各处，那么多个 DOM 操作之间是否会产生影响从而不利于性能？这个时候就要关注宿主浏览器的渲染机制是如何理解批量的 DOM 操作的，这里引入的概念就是&lt;strong&gt;关键渲染路径（Critical rendering path）&lt;/strong&gt;。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>DOM-加载 JavaScript</title>
+      <link>http://localhost:1313/blog/computer-technology/web/dom/dom-js/</link>
+      <pubDate>Tue, 24 May 2016 22:49:00 +0800</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/web/dom/dom-js/</guid>
+      <description>&lt;p&gt;页面的动态交互离不开 Javascript，将 js 脚本引入页面时会阻塞页面加载，在某些时候我们则可以选择异步加载 js 脚本。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>DOM-文本节点</title>
+      <link>http://localhost:1313/blog/computer-technology/web/dom/dom-textnode/</link>
+      <pubDate>Tue, 24 May 2016 21:50:00 +0800</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/web/dom/dom-textnode/</guid>
+      <description>&lt;p&gt;文本（Text）节点虽然很多时候我们直接用 innerHTML 去赋值替换，但当我们进行一些细微的修改时，了解一下 DOM 操作还是非常有用的。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>DOM-文档片段</title>
+      <link>http://localhost:1313/blog/computer-technology/web/dom/dom-fragment/</link>
+      <pubDate>Mon, 23 May 2016 13:10:00 +0800</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/web/dom/dom-fragment/</guid>
+      <description>&lt;p&gt;DOM 操作是非常消耗性能的，如果要进行大量的 DOM 操作，我们可以选择在内存中先构建一个文档片段然后一次性插入 DOM 树。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>DOM-事件</title>
+      <link>http://localhost:1313/blog/computer-technology/web/dom/dom-event/</link>
+      <pubDate>Mon, 23 May 2016 12:18:00 +0800</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/web/dom/dom-event/</guid>
+      <description>&lt;p&gt;JavaScript 的作用就是让 html 静态页面具备动态效果，而这些基本都是利用 DOM 事件来实现的。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>DOM-元素节点属性</title>
+      <link>http://localhost:1313/blog/computer-technology/web/dom/dom-attribute/</link>
+      <pubDate>Sat, 21 May 2016 21:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/web/dom/dom-attribute/</guid>
+      <description>&lt;p&gt;元素节点上具有很多属性，这些属性我们通常可以很方便的获取，并进行简单的操作。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>DOM-元素节点几何量</title>
+      <link>http://localhost:1313/blog/computer-technology/web/dom/dom-rule/</link>
+      <pubDate>Thu, 19 May 2016 14:54:00 +0800</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/web/dom/dom-rule/</guid>
+      <description>&lt;p&gt;当我们在查看 HTML 文档时，每个元素节点被解析后，都画成了可视形状。我们可以获取每个元素节点的几何量（宽、高、偏移量）以及页面滚动距离。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>DOM-节点集合</title>
+      <link>http://localhost:1313/blog/computer-technology/web/dom/dom-nodelist/</link>
+      <pubDate>Tue, 17 May 2016 22:30:00 +0800</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/web/dom/dom-nodelist/</guid>
+      <description>&lt;p&gt;当从文档树中选取成组的节点或者使用预定义的节点集合时，这些节点都是放在 NodeList 或者一个 HTMLCollecton 之中，而不是一个数组（Array）中。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>DOM-选取元素节点</title>
+      <link>http://localhost:1313/blog/computer-technology/web/dom/dom-select/</link>
+      <pubDate>Tue, 17 May 2016 22:10:00 +0800</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/web/dom/dom-select/</guid>
+      <description>&lt;p&gt;DOM 操作都是通过对文档树中节点的访问来实现的，如何选取特定的元素节点是关键，进而才能访问该元素节点实现修改、查看、移除、替换等操作。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>DOM-元素节点</title>
+      <link>http://localhost:1313/blog/computer-technology/web/dom/dom-elementnode/</link>
+      <pubDate>Tue, 17 May 2016 13:19:00 +0800</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/web/dom/dom-elementnode/</guid>
+      <description>&lt;p&gt;可以说，元素节点是 DOM 树中的核心部分，我们进行文档的操作通常都是建立在元素节点上的。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>文档对象模型（DOM）</title>
+      <link>http://localhost:1313/blog/computer-technology/web/dom/dom/</link>
+      <pubDate>Mon, 16 May 2016 14:04:00 +0800</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/web/dom/dom/</guid>
+      <description>&lt;p&gt;在网页设计中，有一个很重要的角色需要我们了解，DOM 帮助我们对页面元素进行增、删、改等全方位的操作，而且让 JavaScript 在客户端修改 HTML 文档成为一个很简单的事情，可以说 DOM 为我们操作 HTML 文档提供了强大的编程接口。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>浏览器对象模型（BOM）</title>
+      <link>http://localhost:1313/blog/computer-technology/web/dom/dom-bom/</link>
+      <pubDate>Sun, 15 May 2016 12:02:00 +0800</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/web/dom/dom-bom/</guid>
+      <description>&lt;p&gt;在网页开发中，我们通常专注于内容的设计，而有些时候我们需要进行不同窗口之间的交互，这时候我们就需要学习如何运用 BOM 中的许多核心对象，及其属性、方法。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

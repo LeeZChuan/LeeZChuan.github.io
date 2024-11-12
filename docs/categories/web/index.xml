@@ -6,14 +6,14 @@
     <description>Recent content in Web on 技术之心</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 11 Nov 2022 11:52:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 23 May 2016 12:18:00 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/web/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>微信小程序与钉钉小程序开发流程</title>
-      <link>http://localhost:1313/blog/computer-technology/mobile-web/wx-dingding/</link>
-      <pubDate>Fri, 11 Nov 2022 11:52:00 +0800</pubDate>
-      <guid>http://localhost:1313/blog/computer-technology/mobile-web/wx-dingding/</guid>
-      <description>&lt;p&gt;开发小程序有很多问题特此记录一下～～～&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;小程序开发（移动端开发）兼容注意事项：&lt;/p&gt;</description>
+      <title>DOM-事件</title>
+      <link>http://localhost:1313/blog/computer-technology/web/dom/dom-event/</link>
+      <pubDate>Mon, 23 May 2016 12:18:00 +0800</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/web/dom/dom-event/</guid>
+      <description>&lt;p&gt;JavaScript 的作用就是让 html 静态页面具备动态效果，而这些基本都是利用 DOM 事件来实现的。&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

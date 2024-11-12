@@ -1,1 +1,33 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>JavaScript on 技术之心</title><link>https://leezchuan.github.io/categories/javascript/</link><description>Recent content in JavaScript on 技术之心</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Mon, 11 Nov 2024 06:19:51 +0000</lastBuildDate><atom:link href="https://leezchuan.github.io/categories/javascript/index.xml" rel="self" type="application/rss+xml"/><item><title>useSignal() 是Web框架的未来</title><link>https://leezchuan.github.io/blog/computer-technology/web/react/usesign/</link><pubDate>Mon, 11 Nov 2024 06:19:51 +0000</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/react/usesign/</guid><description>&lt;p>Angular、Qwik的作者 MIŠKO HEVERY 在文章中盛赞了 useSignal() 这种数据流方案， 表示 useSignal() 是前端框架的未来，并考虑在Angular中实现它。我们在这里不评价文章的观点，我们来看看 useSignal 这个方案的前世今生。&lt;/p></description></item><item><title>Web 前端性能优化：解析函数节流与防抖的实现</title><link>https://leezchuan.github.io/blog/computer-technology/web/javascript/debouncing-and-throttling/</link><pubDate>Sun, 25 Apr 2021 22:56:00 +0800</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/javascript/debouncing-and-throttling/</guid><description>&lt;p>前端开发中，有一个使用较为普遍的性能优化技巧，即函数节流（Throttle）和防抖（Debounce），其主要作用是根据时间对函数调用做以限制。最常见的业务场景是监听页面的 &lt;code>scroll&lt;/code> 事件，浏览器可以在 1s 内触发该事件数次（甚至达数十次），如果事件处理程序在这 1s 内多次执行，必然会造成一定的性能问题，影响用户体验。&lt;/p></description></item><item><title>JavaScript 异步编程</title><link>https://leezchuan.github.io/blog/computer-technology/web/javascript/web-js-async/</link><pubDate>Wed, 22 Mar 2017 15:48:00 +0800</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/javascript/web-js-async/</guid><description>&lt;p>JavaScript 作为一门在 Web 开发中的主流语言，常常涉及到交互事件方面的应用，这不可避免的用到了异步编程的方法，而它本身则是单线程运行的。在以往的开发中，异步编程正变得越来越难管理，新的 Promise 标准 API 将使得异步编程更加方便、安全。&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JavaScript on 技术之心</title>
+    <link>http://localhost:1313/categories/javascript/</link>
+    <description>Recent content in JavaScript on 技术之心</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 11 Nov 2024 06:19:51 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>useSignal() 是Web框架的未来</title>
+      <link>http://localhost:1313/blog/computer-technology/web/react/usesign/</link>
+      <pubDate>Mon, 11 Nov 2024 06:19:51 +0000</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/web/react/usesign/</guid>
+      <description>&lt;p&gt;Angular、Qwik的作者 MIŠKO HEVERY 在文章中盛赞了 useSignal() 这种数据流方案， 表示 useSignal() 是前端框架的未来，并考虑在Angular中实现它。我们在这里不评价文章的观点，我们来看看 useSignal 这个方案的前世今生。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web 前端性能优化：解析函数节流与防抖的实现</title>
+      <link>http://localhost:1313/blog/computer-technology/web/javascript/debouncing-and-throttling/</link>
+      <pubDate>Sun, 25 Apr 2021 22:56:00 +0800</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/web/javascript/debouncing-and-throttling/</guid>
+      <description>&lt;p&gt;前端开发中，有一个使用较为普遍的性能优化技巧，即函数节流（Throttle）和防抖（Debounce），其主要作用是根据时间对函数调用做以限制。最常见的业务场景是监听页面的 &lt;code&gt;scroll&lt;/code&gt; 事件，浏览器可以在 1s 内触发该事件数次（甚至达数十次），如果事件处理程序在这 1s 内多次执行，必然会造成一定的性能问题，影响用户体验。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>JavaScript 异步编程</title>
+      <link>http://localhost:1313/blog/computer-technology/web/javascript/web-js-async/</link>
+      <pubDate>Wed, 22 Mar 2017 15:48:00 +0800</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/web/javascript/web-js-async/</guid>
+      <description>&lt;p&gt;JavaScript 作为一门在 Web 开发中的主流语言，常常涉及到交互事件方面的应用，这不可避免的用到了异步编程的方法，而它本身则是单线程运行的。在以往的开发中，异步编程正变得越来越难管理，新的 Promise 标准 API 将使得异步编程更加方便、安全。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

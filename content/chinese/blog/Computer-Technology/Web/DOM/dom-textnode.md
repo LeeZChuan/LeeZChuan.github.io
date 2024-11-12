@@ -3,13 +3,7 @@ title: DOM-文本节点
 date: 2016-05-24 21:50:00
 update: 2016-05-24 21:50:00
 author: "LeeZChuan"
-tags: &ref_0
-  - 计算机技术
-  - Web
-  - Web 前端
-  - DOM
-  - Text Node
-keywords: *ref_0
+categories: ["计算机技术", "Web", "Web 前端", "DOM"]
 description: 文本（Text）节点虽然很多时候我们直接用 innerHTML 去赋值替换，但当我们进行一些细微的修改时，了解一下 DOM 操作还是非常有用的。
 ---
 

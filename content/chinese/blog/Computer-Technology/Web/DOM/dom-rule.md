@@ -3,13 +3,7 @@ title: DOM-元素节点几何量
 date: 2016-05-19 14:54:00
 update: 2016-05-19 14:54:00
 author: "LeeZChuan"
-tags: &ref_0
-  - 计算机技术
-  - Web
-  - Web 前端
-  - DOM
-  - Rule
-keywords: *ref_0
+categories: ["计算机技术", "Web", "Web 前端","DOM", "Rule"]
 description: 当我们在查看 HTML 文档时，每个元素节点被解析后，都画成了可视形状。我们可以获取每个元素节点的几何量（宽、高、偏移量）以及页面滚动距离。
 ---
 
