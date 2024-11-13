@@ -16,11 +16,11 @@ Angular、Qwik的作者 MIŠKO HEVERY 在文章中盛赞了 useSignal() 这种�
 
 一个简单的 react 组件是下面这样的：它使用了useState这个hooks钩子函数
 
-![useState](useState.png)
+![useState](./useState.png)
 
 useSignal()就是 state 和 setState 的改良版本，它写起来是这样的：
 
-![useSignal](useSignal.png)
+![useSignal](./useSignal.png)
 
 
 虽然看起来没什么特别的，只是省略了一个 setState，但是两者的原理其实完全不同。Signals 和 State 之间的主要区别在于 Signals 返回一个 getter 和一个 setter ，而非响应式系统返回其值（和一个 setter ）。
