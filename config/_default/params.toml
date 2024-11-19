@@ -65,7 +65,7 @@ show_categories = true
 
 # 公告模块配置
 [announcement]
-enable = true
+enable = false
 expire_days = 7
 content = "您在部署时必须替换 **hugo.toml** 文件中的 **baseURL**，您可以从 **params.toml** 文件管理此公告。"
 
