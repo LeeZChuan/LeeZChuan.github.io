@@ -1,2 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>IP on 技术之心</title><link>https://leezchuan.github.io/categories/ip/</link><description>Recent content in IP on 技术之心</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Thu, 23 Jun 2016 18:02:00 +0800</lastBuildDate><atom:link href="https://leezchuan.github.io/categories/ip/index.xml" rel="self" type="application/rss+xml"/><item><title>IP 协议</title><link>https://leezchuan.github.io/blog/computer-technology/protocol/protocol-ip/</link><pubDate>Thu, 23 Jun 2016 18:02:00 +0800</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/protocol/protocol-ip/</guid><description>&lt;!-- truncate -->
-&lt;p>作为 TCP/IP 协议栈中最核心的协议，IP 协议为网络数据传输和网络互联提供最基本的服务。IP 协议有 IPv4 和 IPv6 两个版本，我们只讨论 TPv4 版本的 IP 协议。&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>IP on 技术之心</title>
+    <link>http://localhost:1313/categories/ip/</link>
+    <description>Recent content in IP on 技术之心</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 23 Jun 2016 18:02:00 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/ip/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>IP 协议</title>
+      <link>http://localhost:1313/blog/computer-technology/protocol/protocol-ip/</link>
+      <pubDate>Thu, 23 Jun 2016 18:02:00 +0800</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/protocol/protocol-ip/</guid>
+      <description>&lt;!-- truncate --&gt;&#xA;&lt;p&gt;作为 TCP/IP 协议栈中最核心的协议，IP 协议为网络数据传输和网络互联提供最基本的服务。IP 协议有 IPv4 和 IPv6 两个版本，我们只讨论 TPv4 版本的 IP 协议。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

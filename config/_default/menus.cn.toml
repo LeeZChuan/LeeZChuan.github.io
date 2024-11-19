@@ -7,14 +7,14 @@
 # weight = 1
 
 [[main]]
-name = "关于"
+name = "关于该网站"
 url = "/about"
 weight = 2
 
 
 [[main]]
-name = "个人项目"
-url = "/projects"
+name = "关于我"
+url = "https://leezchuan.github.io/EasyHomePage"
 weight = 3
 
 
