@@ -1,61 +1,10 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>工具 on 技术之心</title>
-    <link>http://localhost:1313/tags/%E5%B7%A5%E5%85%B7/</link>
-    <description>Recent content in 工具 on 技术之心</description>
-    <generator>Hugo</generator>
-    <language>zh-cn</language>
-    <lastBuildDate>Sat, 06 Aug 2022 17:33:00 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>利用脚本执行 `tsc` 忽略类型检查错误</title>
-      <link>http://localhost:1313/blog/computer-technology/typescript/tools-typescript-use-script-to-ts-types/</link>
-      <pubDate>Sat, 06 Aug 2022 17:33:00 +0800</pubDate>
-      <guid>http://localhost:1313/blog/computer-technology/typescript/tools-typescript-use-script-to-ts-types/</guid>
-      <description>&lt;p&gt;在发布 npm 包时添加对 TypeScript 类型定义文件的支持会让用户的使用体验增色不少，TypeScript 官方提供了 &lt;code&gt;tsc --emitDeclarationOnly&lt;/code&gt; 命令用来生成类型定义文件（&lt;code&gt;.d.ts&lt;/code&gt;）。但是，该命令会同时执行类型检查，遇到错误时会报错中断命令行进程，这就使其无法直接集成在 CI 环节在发布 npm 包时自动执行生成类型定义文件的操作。当然，一个解决办法就是解决掉代码中所有的类型检查错误即可，既然讨论到这个问题，必然不会花费额外精力去解决一些历史遗留问题。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>前端工程化：对于构建工具链的简单思考</title>
-      <link>http://localhost:1313/blog/computer-technology/web/tools-web-fee-toolchain/</link>
-      <pubDate>Mon, 01 Aug 2022 21:07:00 +0800</pubDate>
-      <guid>http://localhost:1313/blog/computer-technology/web/tools-web-fee-toolchain/</guid>
-      <description>&lt;p&gt;前端工程化是在做与业务开发完全不同的事情，旨在解决软件工程领域与开发者密切相关的问题，通常会将其与基建开发、DevOps 放在一起讨论。前端开发是复杂的，其结合了 HTML/CSS/JavaScript 3 种语言，甚至还有很多其超集，没有开箱即用的工具链，不像 Java Web 开发、Android 开发等等有官方或者商业领域非常成熟的工具可以利用，一切都源于开源社区的从 0 开始构建。正因如此，前端工程化领域百花齐放，开放与创新展现的淋漓尽致，这也是前端开发者了解学习软件工程的机会。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>TypeScript：扩展第三方库的类型定义</title>
-      <link>http://localhost:1313/blog/computer-technology/typescript/tools-typescript-type-extend/</link>
-      <pubDate>Sun, 09 Jan 2022 17:36:00 +0800</pubDate>
-      <guid>http://localhost:1313/blog/computer-technology/typescript/tools-typescript-type-extend/</guid>
-      <description>&lt;p&gt;TypeScript 作为 JavaScript 的超集，为 Web 开发带来了强类型语言和类似代码智能提示这种良好的开发体验，而代码提示依赖于类型定义文件。类型定义文件的发展也经历了一个逐步演变的过程，从最初基于 JavaScript 编写的 npm 包，通过&lt;a href=&#34;https://github.com/DefinitelyTyped/DefinitelyTyped&#34;&#xA;&#xA;&#xA;&#xA;&#xA; target=&#34;_blank&#34;&#xA; &#xA;&#xA;&#xA;&gt;社区方案&lt;/a&gt;来引入类型定义包，再到目前多数模块基于 TypeScript 编写并在发布时带上类型定义文件这种最佳方案，开发者体验得到进一步的提升。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>解析基于 core-js 与 ESLint 的 Web 兼容方案</title>
-      <link>http://localhost:1313/blog/computer-technology/web/tools-web-fee-polyfill-corejs-eslint/</link>
-      <pubDate>Tue, 07 Dec 2021 01:13:00 +0800</pubDate>
-      <guid>http://localhost:1313/blog/computer-technology/web/tools-web-fee-polyfill-corejs-eslint/</guid>
-      <description>&lt;p&gt;Web 网页为了保证在多个平台和低中高端设备上的体验稳定性和一致性，通常会做 Polyfill 以保证兼容性。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Web 前端调试工具：SourceMap 文件</title>
-      <link>http://localhost:1313/blog/computer-technology/web/tools-web-fee-debug-with-source-map/</link>
-      <pubDate>Sun, 28 Nov 2021 22:31:00 +0800</pubDate>
-      <guid>http://localhost:1313/blog/computer-technology/web/tools-web-fee-debug-with-source-map/</guid>
-      <description>&lt;p&gt;Web 前端项目出于加载性能优化和安全考虑，在生产环境部署的代码是经过混淆和压缩的，对于利用生产环境收集到的错误堆栈信息要进行调试是非常具有挑战性的。理想情况下，应该在生产环境收集错误堆栈信息，然后映射到源码进行调试。恰好，&lt;strong&gt;SourceMap 文件&lt;/strong&gt;提供了这个机制，可以将编译（压缩）后的代码映射到源代码中。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>使用 Jest 和 Puppeteer 构建 Web 自动化测试平台</title>
-      <link>http://localhost:1313/blog/computer-technology/web/tools-web-fee-test-with-jest-puppeteer/</link>
-      <pubDate>Sun, 15 Aug 2021 14:54:00 +0800</pubDate>
-      <guid>http://localhost:1313/blog/computer-technology/web/tools-web-fee-test-with-jest-puppeteer/</guid>
-      <description>&lt;p&gt;测试为软件的稳定和完善提供了必要的支持，Web 前端开发领域相比于做单元测试，端到端测试更有意义和价值。谷歌发布的 Puppeteer 工具和脸书发布的 Jest 测试工具为 Web 端到端测试提供了极大的便利，这里记录了如何使用它们构建一个 Web 自动化测试平台。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>编辑器：Sublime Text - Vim 插件</title>
-      <link>http://localhost:1313/blog/computer-technology/tools/tools-sublime-vim/</link>
-      <pubDate>Wed, 18 May 2016 12:55:00 +0800</pubDate>
-      <guid>http://localhost:1313/blog/computer-technology/tools/tools-sublime-vim/</guid>
-      <description>&lt;p&gt;Sumblime Text 是一个具有漂亮的界面和强大功能的文本编辑器，而且也支持许多丰富的插件。它是一个收费软件，但是允许开发人员无限期的免费试用。&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>工具 on 技术之心</title><link>https://leezchuan.github.io/tags/%E5%B7%A5%E5%85%B7/</link><description>Recent content in 工具 on 技术之心</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Sat, 06 Aug 2022 17:33:00 +0800</lastBuildDate><atom:link href="https://leezchuan.github.io/tags/%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml"/><item><title>利用脚本执行 `tsc` 忽略类型检查错误</title><link>https://leezchuan.github.io/blog/computer-technology/typescript/tools-typescript-use-script-to-ts-types/</link><pubDate>Sat, 06 Aug 2022 17:33:00 +0800</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/typescript/tools-typescript-use-script-to-ts-types/</guid><description>&lt;p>在发布 npm 包时添加对 TypeScript 类型定义文件的支持会让用户的使用体验增色不少，TypeScript 官方提供了 &lt;code>tsc --emitDeclarationOnly&lt;/code> 命令用来生成类型定义文件（&lt;code>.d.ts&lt;/code>）。但是，该命令会同时执行类型检查，遇到错误时会报错中断命令行进程，这就使其无法直接集成在 CI 环节在发布 npm 包时自动执行生成类型定义文件的操作。当然，一个解决办法就是解决掉代码中所有的类型检查错误即可，既然讨论到这个问题，必然不会花费额外精力去解决一些历史遗留问题。&lt;/p></description></item><item><title>前端工程化：对于构建工具链的简单思考</title><link>https://leezchuan.github.io/blog/computer-technology/web/tools-web-fee-toolchain/</link><pubDate>Mon, 01 Aug 2022 21:07:00 +0800</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/tools-web-fee-toolchain/</guid><description>&lt;p>前端工程化是在做与业务开发完全不同的事情，旨在解决软件工程领域与开发者密切相关的问题，通常会将其与基建开发、DevOps 放在一起讨论。前端开发是复杂的，其结合了 HTML/CSS/JavaScript 3 种语言，甚至还有很多其超集，没有开箱即用的工具链，不像 Java Web 开发、Android 开发等等有官方或者商业领域非常成熟的工具可以利用，一切都源于开源社区的从 0 开始构建。正因如此，前端工程化领域百花齐放，开放与创新展现的淋漓尽致，这也是前端开发者了解学习软件工程的机会。&lt;/p></description></item><item><title>TypeScript：扩展第三方库的类型定义</title><link>https://leezchuan.github.io/blog/computer-technology/typescript/tools-typescript-type-extend/</link><pubDate>Sun, 09 Jan 2022 17:36:00 +0800</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/typescript/tools-typescript-type-extend/</guid><description>&lt;p>TypeScript 作为 JavaScript 的超集，为 Web 开发带来了强类型语言和类似代码智能提示这种良好的开发体验，而代码提示依赖于类型定义文件。类型定义文件的发展也经历了一个逐步演变的过程，从最初基于 JavaScript 编写的 npm 包，通过&lt;a href="https://github.com/DefinitelyTyped/DefinitelyTyped"
+
+
+
+
+ target="_blank"
+ 
+
+
+>社区方案&lt;/a>来引入类型定义包，再到目前多数模块基于 TypeScript 编写并在发布时带上类型定义文件这种最佳方案，开发者体验得到进一步的提升。&lt;/p></description></item><item><title>解析基于 core-js 与 ESLint 的 Web 兼容方案</title><link>https://leezchuan.github.io/blog/computer-technology/web/tools-web-fee-polyfill-corejs-eslint/</link><pubDate>Tue, 07 Dec 2021 01:13:00 +0800</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/tools-web-fee-polyfill-corejs-eslint/</guid><description>&lt;p>Web 网页为了保证在多个平台和低中高端设备上的体验稳定性和一致性，通常会做 Polyfill 以保证兼容性。&lt;/p></description></item><item><title>Web 前端调试工具：SourceMap 文件</title><link>https://leezchuan.github.io/blog/computer-technology/web/tools-web-fee-debug-with-source-map/</link><pubDate>Sun, 28 Nov 2021 22:31:00 +0800</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/tools-web-fee-debug-with-source-map/</guid><description>&lt;p>Web 前端项目出于加载性能优化和安全考虑，在生产环境部署的代码是经过混淆和压缩的，对于利用生产环境收集到的错误堆栈信息要进行调试是非常具有挑战性的。理想情况下，应该在生产环境收集错误堆栈信息，然后映射到源码进行调试。恰好，&lt;strong>SourceMap 文件&lt;/strong>提供了这个机制，可以将编译（压缩）后的代码映射到源代码中。&lt;/p></description></item><item><title>使用 Jest 和 Puppeteer 构建 Web 自动化测试平台</title><link>https://leezchuan.github.io/blog/computer-technology/web/tools-web-fee-test-with-jest-puppeteer/</link><pubDate>Sun, 15 Aug 2021 14:54:00 +0800</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/tools-web-fee-test-with-jest-puppeteer/</guid><description>&lt;p>测试为软件的稳定和完善提供了必要的支持，Web 前端开发领域相比于做单元测试，端到端测试更有意义和价值。谷歌发布的 Puppeteer 工具和脸书发布的 Jest 测试工具为 Web 端到端测试提供了极大的便利，这里记录了如何使用它们构建一个 Web 自动化测试平台。&lt;/p></description></item><item><title>编辑器：Sublime Text - Vim 插件</title><link>https://leezchuan.github.io/blog/computer-technology/tools/tools-sublime-vim/</link><pubDate>Wed, 18 May 2016 12:55:00 +0800</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/tools/tools-sublime-vim/</guid><description>&lt;p>Sumblime Text 是一个具有漂亮的界面和强大功能的文本编辑器，而且也支持许多丰富的插件。它是一个收费软件，但是允许开发人员无限期的免费试用。&lt;/p></description></item></channel></rss>
