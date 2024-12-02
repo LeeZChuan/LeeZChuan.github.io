@@ -1,14 +1,16 @@
 <div class="bg-body dark:bg-darkmode-body">
-  {{ $image:= .Params.image }}
+  {{ $image := .Params.image }}
   {{ if $image }}
     {{ partial "image" (dict "Src" $image "Context" .Page "Alt" .Title "Class" "mb-6 w-full rounded") }}
   {{ end }}
   <h4 class="mb-3">
-    <a href="{{ .RelPermalink }}">
-      {{ .Title }}
-    </a>
+    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
   </h4>
-  {{ $categories:= .Params.categories }}
+  <!-- 添加日期 -->
+  <p class="text-sm text-muted">
+    <i class="fa-regular fa-calendar-alt mr-2"></i>{{ .Date.Format "2006-01-02" }} <!-- 格式为 YYYY-MM-DD -->
+  </p>
+  {{ $categories := .Params.categories }}
   {{ if $categories }}
     <ul class="mb-4">
       <li class="mr-4 inline-block">
@@ -18,7 +20,7 @@
       </li>
       <li class="mr-4 inline-block">
         <i class="fa-regular fa-folder mr-1"></i>
-        {{ range $i,$p:= $categories }}
+        {{ range $i, $p := $categories }}
           <a
             href="{{ `categories/` | relLangURL }}{{ . | urlize | lower }}/"
             class="ms-1"
@@ -30,7 +32,14 @@
       </li>
     </ul>
   {{ end }}
-  <p class="mb-6">{{ .Summary }}</p>
+  <!-- 修改摘要文字内容不超过一定文字长度 -->
+  <p class="mb-6">
+    {{ if gt (len .Summary) 100 }}
+      {{ .Summary | truncate 100 }}
+    {{ else }}
+      {{ .Summary }}
+    {{ end }}
+  </p>
   <a class="btn btn-outline-primary btn-sm" href="{{ .RelPermalink }}">
     {{ T "read_more" }}
   </a>
