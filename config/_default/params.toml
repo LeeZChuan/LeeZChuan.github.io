@@ -67,14 +67,14 @@ show_categories = true
 [announcement]
 enable = false
 expire_days = 7
-content = "您在部署时必须替换 **hugo.toml** 文件中的 **baseURL**，您可以从 **params.toml** 文件管理此公告。"
+content = "这是公告内容！！！"
 
 # SEO meta 数据，用于 OpenGraph / Twitter Card
 [metadata]
 keywords = ["Boilerplate", "Hugo"]
 description = "Hugo & Tailwindcss 启动模板"
-author = "zeon.studio"
-twitter = "zeon_studio"
+author = "leezhucna"
+twitter = "leezhucna"
 image = "images/og-image.png"
 
 # 网站验证设置
