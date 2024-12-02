@@ -2052,9 +2052,6 @@ input#nav-toggle:checked ~ #nav-menu {
 .items-center {
   align-items: center;
 }
-.items-stretch {
-  align-items: stretch;
-}
 .justify-center {
   justify-content: center;
 }

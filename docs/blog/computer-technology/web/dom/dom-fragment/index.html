@@ -1149,10 +1149,71 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/web-app-model-zustand/">
-      Web 应用：轻量级状态管理工具 zustand
-    </a>
+    <a href="/blog/computer-technology/protocol/protocol-http/">HTTP 协议</a>
   </h4>
+  
+  <p class="text-sm text-muted">
+    <i class="fa-regular fa-calendar-alt mr-2"></i>2016-06-24 
+  </p>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/leezchuan/">
+          <i class="fa-regular fa-circle-user mr-2"></i>LeeZChuan
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/"
+            class="ms-1"
+            >计算机技术
+              ,
+            
+          </a>
+        
+          <a
+            href="/categories/%e5%8d%8f%e8%ae%ae/"
+            class="ms-1"
+            >协议
+              ,
+            
+          </a>
+        
+          <a
+            href="/categories/http/"
+            class="ms-1"
+            >HTTP
+          </a>
+        
+      </li>
+    </ul>
+  
+  
+  <p class="mb-6">
+    
+      <p>随着 Internet 的发展，使用 Web 浏览器获取网络数据信息已经成为一种习惯标准，而 HTTP 协议也因此成为了网络体系中最重要的应用层协议。</p>
+    
+  </p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/protocol/protocol-http/">
+    了解更多
+  </a>
+</div>
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/computer-technology/web/tools-web-fee-polyfill-corejs-eslint/">解析基于 core-js 与 ESLint 的 Web 兼容方案</a>
+  </h4>
+  
+  <p class="text-sm text-muted">
+    <i class="fa-regular fa-calendar-alt mr-2"></i>2021-12-07 
+  </p>
   
   
     <ul class="mb-4">
@@ -1181,28 +1242,32 @@
           </a>
         
           <a
-            href="/categories/%e5%ba%94%e7%94%a8%e7%8a%b6%e6%80%81%e7%ae%a1%e7%90%86/"
+            href="/categories/%e5%b7%a5%e5%85%b7/"
             class="ms-1"
-            >应用状态管理
+            >工具
               ,
             
           </a>
         
           <a
-            href="/categories/react/"
+            href="/categories/polyfill/"
             class="ms-1"
-            >React
+            >Polyfill
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>基于 React.js 的 Web 应用如何完成状态管理？社区主流方案是 <strong>react-redux</strong>，其本质上基于 React 的 <code>Context</code> 特性实现，如果应用足够简单，实际上用 <code>Context</code> 手写一个简单的状态管理工具倒也并不难。不过，考虑到工具的完善性、项目的健壮性，通常采用较好的、成熟的社区方案。在移动端场景下，<strong>react-redux</strong> 略显臃肿，轻量级状态管理工具 <strong>zustand</strong> 倒是一个不错的替代方案。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/web-app-model-zustand/">
+  
+  <p class="mb-6">
+    
+      <p>Web 网页为了保证在多个平台和低中高端设备上的体验稳定性和一致性，通常会做 Polyfill 以保证兼容性。</p>
+    
+  </p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/tools-web-fee-polyfill-corejs-eslint/">
     了解更多
   </a>
 </div>
-
               </div>
             
               <div class="lg:col-4 md:col-6 mb-14">
@@ -1210,10 +1275,12 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/web/javascript/debouncing-and-throttling/">
-      Web 前端性能优化：解析函数节流与防抖的实现
-    </a>
+    <a href="/blog/computer-technology/web/javascript/web-js-async/">JavaScript 异步编程</a>
   </h4>
+  
+  <p class="text-sm text-muted">
+    <i class="fa-regular fa-calendar-alt mr-2"></i>2017-03-22 
+  </p>
   
   
     <ul class="mb-4">
@@ -1250,90 +1317,24 @@
           </a>
         
           <a
-            href="/categories/%e6%80%a7%e8%83%bd%e4%bc%98%e5%8c%96/"
+            href="/categories/%e5%bc%82%e6%ad%a5%e7%bc%96%e7%a8%8b/"
             class="ms-1"
-            >性能优化
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/%e8%8a%82%e6%b5%81%e4%b8%8e%e9%98%b2%e6%8a%96/"
-            class="ms-1"
-            >节流与防抖
+            >异步编程
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>前端开发中，有一个使用较为普遍的性能优化技巧，即函数节流（Throttle）和防抖（Debounce），其主要作用是根据时间对函数调用做以限制。最常见的业务场景是监听页面的 <code>scroll</code> 事件，浏览器可以在 1s 内触发该事件数次（甚至达数十次），如果事件处理程序在这 1s 内多次执行，必然会造成一定的性能问题，影响用户体验。</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/javascript/debouncing-and-throttling/">
+  
+  <p class="mb-6">
+    
+      <p>JavaScript 作为一门在 Web 开发中的主流语言，常常涉及到交互事件方面的应用，这不可避免的用到了异步编程的方法，而它本身则是单线程运行的。在以往的开发中，异步编程正变得越来越难管理， …</p>
+    
+  </p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/javascript/web-js-async/">
     了解更多
   </a>
 </div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/computer-technology/git/publish-gitlab/">
-      git依赖包发布
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/leezchuan/">
-          <i class="fa-regular fa-circle-user mr-2"></i>LeeZChuan
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/git/"
-            class="ms-1"
-            >Git
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/gitlab/"
-            class="ms-1"
-            >Gitlab
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/npm/"
-            class="ms-1"
-            >Npm
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/%e5%86%85%e7%bd%91%e9%83%a8%e7%bd%b2/"
-            class="ms-1"
-            >内网部署
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6"><blockquote>
-<p>最近在开发npm包，需要发布到内网或者公网，便于是乎调研有多少种方案</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/git/publish-gitlab/">
-    了解更多
-  </a>
-</div>
-
               </div>
             
           </div>

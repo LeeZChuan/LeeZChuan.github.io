@@ -3,12 +3,11 @@ title: 利用脚本执行 `tsc` 忽略类型检查错误
 date: 2022-08-06 17:33:00
 update: 2022-08-13 02:46:00
 author: LeeZChuan
-tags: &ref_0
+categories: &ref_0
   - 计算机技术
   - 工具
   - TypeScript
   - 类型定义
-keywords: *ref_0
 description: TypeScript 作为一个强类型的语言，增强了 JavaScript 编程开发体验，类型定义文件为一个第三方模块的使用体验增色不少，现如今很多 npm 包的发布都内置了对类型定义文件的支持。
 ---
 
