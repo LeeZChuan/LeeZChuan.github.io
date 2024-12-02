@@ -337,7 +337,7 @@ debounced() -> leadingEdge() -> timerExpired() -> trailingEdge() -> debounced()
 
 这里其实是一个调用循环，无论 `leading` 和 `trailing` 值如何，其相应的函数 `leadingEdge()` 和 `trailingEdge()` 都参与其中，只不过在不同值的情况下，这两个函数所扮演的角色不同而已。这里举一个简单的例子即可说明问题：
 
-```
+```js
 // 当 leading=true，且 trailing=false 时：
 // leadingEdge() 函数主要作用是调用 invokeFunc() 函数来实际调用 func() 函数
 // trailingEdge() 函数主要作用则是超时器到期后清除掉内部状态，主要是 timerId 的值

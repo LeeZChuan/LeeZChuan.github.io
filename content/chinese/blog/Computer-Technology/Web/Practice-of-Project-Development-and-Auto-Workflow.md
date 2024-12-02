@@ -106,7 +106,7 @@ echo "module.exports = {extends: ['@commitlint/config-conventional']}" > commitl
 
 配置了 commitlint 之后，若是使用默认配置，那么只有当我们的 commit msg 符合如下规范时，commit 操作才能正常完成执行，否则中断（其中 scope 为可选）：
 
-```
+```js
 <type>(<scope>): description
 ```
 
