@@ -20,10 +20,10 @@ description: "自己开发的npm包如何发布到公网与内网"
 
 然后在windows配置全局token：
 
-```
+```sh
 set NPM_TOKEN=xxxxxx;
 
-确保你的token配置成功：
+// 确保你的token配置成功：
 sh echo $NPM_TOKEN # Unix/macOS echo %NPM_TOKEN% # Windows
 ```
 
@@ -34,7 +34,7 @@ sh echo $NPM_TOKEN # Unix/macOS echo %NPM_TOKEN% # Windows
 
 > 首先在项目中创建.npmrc文件
 
-```
+```sh
 #@scope:registry=https://your_domain_name/api/v4/projects/your_project_id/packages/npm/
 #//your_domain_name/api/v4/projects/your_project_id/packages/npm/:_authToken="${NPM_TOKEN}"
 # 格式:
