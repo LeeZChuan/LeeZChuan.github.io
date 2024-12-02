@@ -45,6 +45,26 @@
           "title": "description",
           "name": "description",
           "type": "string"
+        },
+        {
+          "title": "meta_title",
+          "name": "meta_title",
+          "type": "string"
+        },
+        {
+          "title": "categories",
+          "name": "categories",
+          "type": "categories"
+        },
+        {
+          "title": "author",
+          "name": "author",
+          "type": "string"
+        },
+        {
+          "title": "draft",
+          "name": "draft",
+          "type": "draft"
         }
       ]
     }
