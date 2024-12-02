@@ -20,8 +20,9 @@ draft: false
 
 ### 2022年7月
 
-- 2022年7月30日和网友一起去了一下河北张家口的小山坡，山下非常炎热，山上却凉快很多，非常舒服。
+- 2022年7月30日和朋友一起去了一下河北张家口的小山坡，山下非常炎热，山上却凉快很多，非常舒服。
 
-![张家口](image.png)
+
+{{< image src="images/zhangjiakou.png" caption="" alt="张家口徒步" height="" width="" position="center" command="fill" option="q100" class="img-fluid" title="image title"  webp="false" >}}
 
 ### 2023年2月
