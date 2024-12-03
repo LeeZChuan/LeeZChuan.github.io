@@ -1,7 +1,7 @@
 ---
 title: DOM-文档片段
-date: 2016-05-23 13:10:00
-update: 2016-05-23 13:10:00
+date: 2018-05-23 13:10:00
+update: 2018-05-23 13:10:00
 author: "LeeZChuan"
 categories: ["计算机技术", "Web", "Web 前端", "DOM", "Fragment"]
 description: DOM 操作是非常消耗性能的，如果要进行大量的 DOM 操作，我们可以选择在内存中先构建一个文档片段然后一次性插入 DOM 树。

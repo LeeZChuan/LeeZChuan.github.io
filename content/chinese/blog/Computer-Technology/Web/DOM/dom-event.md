@@ -1,7 +1,7 @@
 ---
 title: DOM-事件
-date: 2016-05-23 12:18:00
-update: 2016-05-23 12:18:00
+date: 2018-05-23 12:18:00
+update: 2018-05-23 12:18:00
 author: LeeZChuan
 categories: ["计算机技术", "Web", "Web 前端", "DOM", "Event"]
 description: JavaScript 的作用就是让 html 静态页面具备动态效果，而这些基本都是利用 DOM 事件来实现的。

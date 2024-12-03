@@ -1,7 +1,7 @@
 ---
 title: 编辑器：Sublime Text - Vim 插件
-date: 2016-05-18 12:55:00
-update: 2016-05-18 12:55:00
+date: 2018-05-18 12:55:00
+update: 2018-05-18 12:55:00
 author: "LeeZChuan"
 tags: &ref_0
   - 计算机技术

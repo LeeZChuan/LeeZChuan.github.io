@@ -1,7 +1,7 @@
 ---
 title: DOM-加载 JavaScript
-date: 2016-05-24 22:49:00
-update: 2016-05-24 22:49:00
+date: 2018-05-24 22:49:00
+update: 2018-05-24 22:49:00
 author: "LeeZChuan"
 categories: ["计算机技术", "Web", "Web 前端","DOM","JavaScript"]
 description: 页面的动态交互离不开 Javascript，将 js 脚本引入页面时会阻塞页面加载，在某些时候我们则可以选择异步加载 js 脚本。
