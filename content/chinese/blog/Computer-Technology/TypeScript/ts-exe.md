@@ -70,10 +70,58 @@ type I = GetRequired<{ foo: number, bar?: string }> // expected to be { foo: num
 type GetRequired<T> = {[P in keyof T as T[P] extends Required<T>[P] ? P: never]: T[P]}
 ```
 
-## 5.去除函数类型
+## 5.获取class的公有属性
 ```ts
-type Foo = () => void;
-type Bar = { name: string; age: number; }
-type Baz = [number, () => void];
+class A {
+  public str: string
+  protected num: number
+  private bool: boolean
+  getNum() {
+    return Math.random()
+  }
+}
 
-type RemoveFnType<T> = T extends (...args: infer P) => infer R ? R : T
+type publicKeys = ClassPublicKeys<A> // 'str' | 'getNum'
+
+// 使用方案
+type ClassPublicKeys<A> = keyof A
+```
+
+
+## 6.获取class的私有属性
+```ts
+class A {
+  public str: string
+  protected num: number
+  private bool: boolean
+  getNum() {
+    return Math.random()
+  }
+}
+
+type privateKeys = ClassPrivateKeys<A> // 'bool'
+
+// 使用方案
+type ClassPrivateKeys<A> = {
+  [K in keyof A]: A[K] extends Function ? never: K
+}[keyof A]
+```
+
+## 7.获取class的受保护属性
+```ts
+class A {
+  public str: string
+  protected num: number
+  private bool: boolean
+  getNum() {
+    return Math.random()
+  }
+}
+
+type protectedKeys = ClassProtectedKeys<A> // 'num'
+
+// 使用方案
+type ClassProtectedKeys<A> = {
+  [K in keyof A]: A[K] extends Function ? never: K
+}[keyof A]
+```
