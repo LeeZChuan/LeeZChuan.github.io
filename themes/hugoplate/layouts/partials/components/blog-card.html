@@ -32,12 +32,12 @@
       </li>
     </ul>
   {{ end }}
-  <!-- 修改摘要文字内容不超过一定文字长度 -->
+  <!-- 使用 description 字段 -->
   <p class="mb-6">
-    {{ if gt (len .Summary) 100 }}
-      {{ .Summary | truncate 100 }}
+    {{ with .Params.description }}
+      {{ . }}
     {{ else }}
-      {{ .Summary }}
+      No description available.
     {{ end }}
   </p>
   <a class="btn btn-outline-primary btn-sm" href="{{ .RelPermalink }}">

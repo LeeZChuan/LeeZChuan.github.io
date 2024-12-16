@@ -1,1 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>BOM on 技术之心</title><link>https://leezchuan.github.io/categories/bom/</link><description>Recent content in BOM on 技术之心</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Tue, 15 May 2018 12:02:00 +0800</lastBuildDate><atom:link href="https://leezchuan.github.io/categories/bom/index.xml" rel="self" type="application/rss+xml"/><item><title>浏览器对象模型（BOM）</title><link>https://leezchuan.github.io/blog/computer-technology/web/dom/dom-bom/</link><pubDate>Tue, 15 May 2018 12:02:00 +0800</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/dom/dom-bom/</guid><description>&lt;p>在网页开发中，我们通常专注于内容的设计，而有些时候我们需要进行不同窗口之间的交互，这时候我们就需要学习如何运用 BOM 中的许多核心对象，及其属性、方法。&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>BOM on 技术之心</title>
+    <link>http://localhost:1313/categories/bom/</link>
+    <description>Recent content in BOM on 技术之心</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 15 May 2018 12:02:00 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/bom/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>浏览器对象模型（BOM）</title>
+      <link>http://localhost:1313/blog/computer-technology/web/dom/dom-bom/</link>
+      <pubDate>Tue, 15 May 2018 12:02:00 +0800</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/web/dom/dom-bom/</guid>
+      <description>&lt;p&gt;在网页开发中，我们通常专注于内容的设计，而有些时候我们需要进行不同窗口之间的交互，这时候我们就需要学习如何运用 BOM 中的许多核心对象，及其属性、方法。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

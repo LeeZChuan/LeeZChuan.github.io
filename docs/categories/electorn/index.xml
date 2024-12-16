@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Electorn on 技术之心</title>
+    <link>http://localhost:1313/categories/electorn/</link>
+    <description>Recent content in Electorn on 技术之心</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 16 Dec 2024 06:37:21 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/electorn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Electorn</title>
+      <link>http://localhost:1313/blog/computer-technology/web/react/electorn/</link>
+      <pubDate>Mon, 16 Dec 2024 06:37:21 +0000</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/web/react/electorn/</guid>
+      <description>&lt;p&gt;既然从头学习一门语言，最好的方式还是直接接触全流程的开发是最快的，调研了Electorn一下，目前比较流行的框架有如下几种：&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

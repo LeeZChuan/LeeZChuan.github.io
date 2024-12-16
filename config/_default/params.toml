@@ -71,10 +71,10 @@ content = "这是公告内容！！！"
 
 # SEO meta 数据，用于 OpenGraph / Twitter Card
 [metadata]
-keywords = ["Boilerplate", "Hugo"]
-description = "Hugo & Tailwindcss 启动模板"
-author = "leezhucna"
-twitter = "leezhucna"
+keywords = ["LeeZChuan", "Hugo", "Blog"]
+description = "LeeZChuan的blog"
+author = "LeeZChuan"
+twitter = "LeeZChuan"
 image = "images/og-image.png"
 
 # 网站验证设置

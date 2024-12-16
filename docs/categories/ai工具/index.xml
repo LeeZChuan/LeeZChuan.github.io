@@ -1,1 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AI工具 on 技术之心</title><link>https://leezchuan.github.io/categories/ai%E5%B7%A5%E5%85%B7/</link><description>Recent content in AI工具 on 技术之心</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Mon, 14 Oct 2024 15:58:55 +0800</lastBuildDate><atom:link href="https://leezchuan.github.io/categories/ai%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml"/><item><title>AI技术</title><link>https://leezchuan.github.io/blog/computer-technology/ai/</link><pubDate>Mon, 14 Oct 2024 15:58:55 +0800</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/ai/</guid><description>&lt;p>近几年ai发展历程 (2022-2024),以下使用表格进行详细展示&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AI工具 on 技术之心</title>
+    <link>http://localhost:1313/categories/ai%E5%B7%A5%E5%85%B7/</link>
+    <description>Recent content in AI工具 on 技术之心</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 14 Oct 2024 15:58:55 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/ai%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AI技术</title>
+      <link>http://localhost:1313/blog/computer-technology/ai/</link>
+      <pubDate>Mon, 14 Oct 2024 15:58:55 +0800</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/ai/</guid>
+      <description>&lt;p&gt;近几年ai发展历程 (2022-2024),以下使用表格进行详细展示&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

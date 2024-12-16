@@ -1,124 +1,1092 @@
-<!doctype html><html itemscope lang=zh-cn itemtype=http://schema.org/WebPage><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=5"><meta name=theme-name content="hugoplate"><link rel="shortcut icon" href=/images/favicon_hu533619655037541214.png type=image/x-icon><link rel=icon href=/images/favicon_hu533619655037541214.png type=image/x-icon><link rel=icon type=image/png sizes=48x48 href=/images/favicon_hu10045982978932320562.png><link rel=icon type=image/png sizes=96x96 href=/images/favicon_hu533619655037541214.png><link rel=apple-touch-icon sizes=144x144 href=/images/favicon_hu12879857052853119446.png><link rel=manifest href=/manifest.webmanifest><meta name=msapplication-TileColor content="#ddd"><meta name=theme-color content="#ffffff"><base href=https://leezchuan.github.io/blog/computer-technology/web/practice-of-project-development-and-auto-workflow/><title>前端开发中的流程自动化与提效实践</title>
-<meta name=keywords content="Boilerplate,Hugo"><meta name=description content="前端开发中的流程自动化与提效实践。"><meta name=author content="leezhucna"><meta property="og:image" content="https://leezchuan.github.io/images/og-image.png"><meta name=twitter:image content="https://leezchuan.github.io/images/og-image.png"><meta name=twitter:card content="summary_large_image"><meta property="og:image:width" content="900"><meta property="og:image:height" content="600"><meta property="og:image:type" content="image/.png"><meta property="og:title" content="前端开发中的流程自动化与提效实践"><meta property="og:description" content="前端开发中的流程自动化与提效实践。"><meta property="og:type" content="website"><meta property="og:url" content="https://leezchuan.github.io/blog/computer-technology/web/practice-of-project-development-and-auto-workflow/"><meta name=twitter:title content="前端开发中的流程自动化与提效实践"><meta name=twitter:description content="前端开发中的流程自动化与提效实践。"><meta name=twitter:site content="@leezhucna"><meta name=twitter:creator content="@leezhucna"><script>let indexURL="https://leezchuan.github.io/searchindex.json",includeSectionsInSearch=["blog","life"],search_no_results="暂无数据",search_initial_message="标注某事物去搜索..."</script><meta http-equiv=x-dns-prefetch-control content="on"><link rel=preconnect href=https://use.fontawesome.com crossorigin><link rel=preconnect href=//cdnjs.cloudflare.com><link rel=preconnect href=//www.googletagmanager.com><link rel=preconnect href=//www.google-analytics.com><link rel=dns-prefetch href=https://use.fontawesome.com><link rel=dns-prefetch href=//ajax.googleapis.com><link rel=dns-prefetch href=//cdnjs.cloudflare.com><link rel=dns-prefetch href=//www.googletagmanager.com><link rel=dns-prefetch href=//www.google-analytics.com><link rel=dns-prefetch href=//fonts.googleapis.com><link rel=dns-prefetch href=//connect.facebook.net><link rel=dns-prefetch href=//platform.linkedin.com><link rel=dns-prefetch href=//platform.twitter.com><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><script>(function(){const e=document.createElement("link");e.href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&family=Signika:wght@500;700&display=swap",e.type="text/css",e.rel="stylesheet",document.head.appendChild(e)})()</script><link href="/css/style.min.26a7f2d1ed2d93aba9321b8b375aafeb85e7868f7eb921d31bb4b20a56e7d1b6.css" integrity="sha256-Jqfy0e0tk6upMhuLN1qv64Xnho9+uSHTG7SyClbn0bY=" rel=stylesheet><link defer async rel=stylesheet href="/css/style-lazy.min.5d85e889fd5f5b28f9387aeade847fcb0a66d76a99a985ab4cdae3d37cf21557.css" integrity="sha256-XYXoif1fWyj5OHrq3oR/ywpm12qZqYWrTNrj03zyFVc=" media=print onload='this.media="all",this.onload=null'></head><body><header class="header sticky top-0 z-30"><nav class="navbar container"><div class=order-0><a class="navbar-brand block" href=/><img fetchpriority=high decoding=async class="img img-light" width=160 height=32 src=/images/logo_hu4668213964747553556.webp alt=LeeZChuan onerror='this.onerror=null,this.src="/images/logo_hu16137327364032044341.png"'>
-<img fetchpriority=high decoding=async class="img img-dark" width=160 height=32 src=/images/logo-darkmode_hu4521180468968039794.webp alt=LeeZChuan onerror='this.onerror=null,this.src="/images/logo-darkmode_hu12278668914502940210.png"'></a></div><input id=nav-toggle type=checkbox class=hidden>
-<label for=nav-toggle class="order-3 cursor-pointer flex items-center lg:hidden text-dark dark:text-white lg:order-1"><svg id="show-button" class="h-6 fill-current block" viewBox="0 0 20 20"><title>Menu Open</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0V0z"/></svg><svg id="hide-button" class="h-6 fill-current hidden" viewBox="0 0 20 20"><title>Menu Close</title><polygon points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2" transform="rotate(45 10 10)"/></svg></label><ul id=nav-menu class="navbar-nav order-3 hidden lg:flex w-full pb-6 lg:order-1 lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8"><li class=nav-item><a class=nav-link href=/about>关于该网站</a></li><li class=nav-item><a class=nav-link target=_blank rel=noopener href=/EasyHomePage>关于我</a></li><li class=nav-item><a class=nav-link href=/blog>文章记录</a></li><li class=nav-item><a class=nav-link href=/life>生活记录</a></li><li class="nav-item nav-dropdown group relative"><span class="nav-link
-inline-flex items-center">其他<svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg></span><ul class="nav-dropdown-list lg:group-hover:visible lg:group-hover:opacity-100"><li class=nav-dropdown-item><a class=nav-dropdown-link href=/elements>Md编写说明</a></li><li class=nav-dropdown-item><a class=nav-dropdown-link href=/categories>文字分类汇总</a></li></ul></li></ul><div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0"><button aria-label=search class="border-border text-dark hover:text-primary dark:border-darkmode-border mr-5 inline-block border-r pr-5 text-xl dark:text-white dark:hover:text-darkmode-primary" data-target=search-modal>
-<i class="fa-solid fa-search"></i></button><div class="theme-switcher mr-5 hidden"><input id=theme-switcher data-theme-switcher type=checkbox>
-<label for=theme-switcher><span class=sr-only>theme switcher</span>
-<span><svg class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-100 dark:opacity-0" viewBox="0 0 56 56" fill="#fff" height="16" width="16"><path d="M30 4.6c0-1-.9-2-2-2a2 2 0 00-2 2v5c0 1 .9 2 2 2s2-1 2-2zm9.6 9a2 2 0 000 2.8c.8.8 2 .8 2.9.0L46 13a2 2 0 000-2.9 2 2 0 00-3 0zm-26 2.8c.7.8 2 .8 2.8.0.8-.7.8-2 0-2.9L13 10c-.7-.7-2-.8-2.9.0-.7.8-.7 2.1.0 3zM28 16A12 12 0 0016 28a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0028 16zm23.3 14c1.1.0 2-.9 2-2s-.9-2-2-2h-4.9a2 2 0 00-2 2c0 1.1 1 2 2 2zM4.7 26a2 2 0 00-2 2c0 1.1.9 2 2 2h4.9c1 0 2-.9 2-2s-1-2-2-2zm37.8 13.6a2 2 0 00-3 0 2 2 0 000 2.9l3.6 3.5a2 2 0 002.9.0c.8-.8.8-2.1.0-3zM10 43.1a2 2 0 000 2.9c.8.7 2.1.8 3 0l3.4-3.5c.8-.8.8-2.1.0-2.9s-2-.8-2.9.0zm20 3.4c0-1.1-.9-2-2-2a2 2 0 00-2 2v4.9c0 1 .9 2 2 2s2-1 2-2z"/></svg><svg class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-0 dark:opacity-100" viewBox="0 0 24 24" fill="none" height="16" width="16"><path fill="#000" fill-rule="evenodd" clip-rule="evenodd" d="M8.2 2.2c1-.4 2 .6 1.6 1.5-1 3-.4 6.4 1.8 8.7a8.4 8.4.0 008.7 1.8c1-.3 2 .5 1.5 1.5v.1A10.3 10.3.0 0112.4 22 10.3 10.3.0 013.2 6.7c1-2 2.9-3.5 4.9-4.4z"/></svg></span></label></div><script>var darkMode=!1;window.matchMedia("(prefers-color-scheme: dark)").matches&&(darkMode=!0),localStorage.getItem("theme")==="dark"?darkMode=!0:localStorage.getItem("theme")==="light"&&(darkMode=!1),darkMode?document.documentElement.classList.add("dark"):document.documentElement.classList.remove("dark"),document.addEventListener("DOMContentLoaded",()=>{var e=document.querySelectorAll("[data-theme-switcher]"),t=document.querySelector(".theme-switcher");[].forEach.call(e,function(e){e.checked=darkMode,e.addEventListener("click",()=>{document.documentElement.classList.toggle("dark"),localStorage.setItem("theme",document.documentElement.classList.contains("dark")?"dark":"light")})}),t.classList.remove("hidden")})</script></div></nav></header><div class=search-modal aria-hidden=true style=--color-primary:#121212><div data-target=close-search-modal class=search-modal-overlay></div><div class=search-wrapper data-image=true data-description=true data-tags=true data-categories=true><div class=search-wrapper-header><label for=search-modal-input style=margin-top:-1px><span class=sr-only>search icon</span>
-<svg viewBox="0 0 512 512" height="18" width="18" class="search-icon" data-type="search"><path fill="currentcolor" d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8.0 45.3s-32.8 12.5-45.3.0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9.0 208S93.1.0 208 0 416 93.1 416 208zM208 352a144 144 0 100-288 144 144 0 100 288z"/></svg>
-<svg viewBox="0 0 512 512" height="18" width="18" class="search-reset" data-type="reset"><path fill="currentcolor" d="M256 512A256 256 0 10256 0a256 256 0 100 512zM175 175c9.4-9.4 24.6-9.4 33.9.0l47 47 47-47c9.4-9.4 24.6-9.4 33.9.0s9.4 24.6.0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6.0 33.9s-24.6 9.4-33.9.0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9.0s-9.4-24.6.0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6.0-33.9z"/></svg>
-</label><input id=search-modal-input type=text data-search-input autocomplete=off aria-label=Search placeholder=搜寻更多...></div><div class=search-wrapper-body><div class=search-result data-search-result></div><span class=search-result-empty>标注某事物去搜索...</span></div><div class=search-wrapper-footer><span><kbd><svg width="14" height="14" fill="currentcolor" viewBox="0 0 16 16"><path d="M3.204 11h9.592L8 5.519 3.204 11zm-.753-.659 4.796-5.48a1 1 0 011.506.0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 01-.753-1.659z"/></svg>
-</kbd><kbd><svg width="14" height="14" fill="currentcolor" style="margin-top:1px" viewBox="0 0 16 16"><path d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 001.506.0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 00-.753 1.659z"/></svg>
-</kbd>去导航
-</span><span><kbd><svg width="12" height="12" fill="currentcolor" style="display:inline-block" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M14.5 1.5a.5.5.0 01.5.5v4.8a2.5 2.5.0 01-2.5 2.5H2.707l3.347 3.346a.5.5.0 01-.708.708l-4.2-4.2a.5.5.0 010-.708l4-4a.5.5.0 11.708.708L2.707 8.3H12.5A1.5 1.5.0 0014 6.8V2a.5.5.0 01.5-.5z"/></svg>
-</kbd>去选择
-</span><span class=search-result-info></span>
-<span data-target=close-search-modal><kbd>ESC</kbd> 去关闭</span></div></div></div><main><section class="section pt-7"><div class=container><div class="row justify-center"><article class=lg:col-10><h1 class="h2 mb-4">前端开发中的流程自动化与提效实践</h1><ul class=mb-4><li class="mr-4 inline-block"><a href=/authors/leezchuan/><i class="fa-regular fa-circle-user mr-2"></i>LeeZChuan</a></li><li class="mr-4 inline-block"><i class="fa-regular fa-folder mr-2"></i>
-<a href=/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/>计算机技术
-,
-</a><a href=/categories/web%e5%89%8d%e7%ab%af/>Web前端
-,
-</a><a href=/categories/%e6%8f%90%e6%95%88/>提效</a></li><li class="mr-4 inline-block"><i class="fa-regular fa-clock mr-2"></i>
-November 28, 2021</li></ul><div class="content mb-10"><details open class="table-of-content blog"><summary>内容列表</summary><nav id=TableOfContents><ol><li><a href=#新建项目第一步脚手架>新建项目第一步：脚手架</a></li><li><a href=#样式隔离方案css-modules>样式隔离方案：CSS Modules</a></li><li><a href=#eslint-代码检查两个自定义-lint-场景分享>ESLINT 代码检查：两个自定义 lint 场景分享</a></li><li><a href=#自动化环境配置git-hook-钩子定义>自动化环境配置：git hook 钩子定义</a></li><li><a href=#自定义命令调用代码风格统一与-commit-信息规范>自定义命令调用：代码风格统一与 commit 信息规范</a></li><li><a href=#本地开发代理环境>本地开发代理环境</a></li><li><a href=#代码复用组件模版与-code-snippets>代码复用：组件模版与 code snippets</a></li></ol><ol><li><a href=#1110httpsgitwoacomtestprojectcomparev1101v1110-2022-06-28><a href=https://git.woa.com/test/project/compare/v1.10.1...v1.11.0>1.11.0</a> (2022-06-28)</a><ol><li><a href=#features>Features</a></li><li><a href=#1101httpsgitwoacomtestprojectcomparev1100v1101-2022-06-24><a href=https://git.woa.com/test/project/compare/v1.10.0...v1.10.1>1.10.1</a> (2022-06-24)</a></li><li><a href=#bug-fixes>Bug Fixes</a></li></ol></li></ol></nav></details><p>随着前端的发展，越来越多的工具库、方法被用在日常研发流程中，这大大提升了业务开发的效率，而随着各类自动化流程的建设，开发同学也不再需要关注到每一个细节。前段时间项目阶段性交付，在推进的过程中也做了不少尝试，虽然从长期看，这类工作最后可能都该收敛到基础设施部门或者标准的自动化流程中去，但并不妨碍我通过实践来落实一些对项目开发的思考和想法。</p><p>如果你是一名有经验的开发者，可以直接跳到文章末尾，「总结」一章有对全文内容的精简描述。</p><p>接下来，我来分享下在项目开发中尝试的一些自动化和提效实践。本文在撰写中涉及的 UI 框架主要以 create-react-app 所产生的 React 项目为主，会辅以部分其他框架的解决方案以说明。</p><h2 id=新建项目第一步脚手架>新建项目第一步：脚手架</h2><p>如果你的项目选型是 Angular 的话，那么选择不多可以直接上 Angular CLI；如果是 React 或 Vue 的话，那么会有不少脚手架可以选择，国内很多开发者都有开源不同方案。其中，大多方案会有一些组件库、开源库的绑定，如果你希望一个更加自由的框架搭建，官方脚手架 create-create-app (CRA) 肯定会是第一选择。</p><p>通过 npx 执行如下命令，我们可以通过 CRA 快速创建一个 TypeScript 项目：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>npx create-react-app project --template typescript
-</span></span></code></pre></div><p>但随着 CRA 的发展，官方脚手架也将原来暴露在模版中的越来越多细节封装到 react-scripts 包里，简单举个例子，比如你想修改项目 webpack 构建流程，用官方模版无法直接上手。</p><p>官方模版提供了 npm run eject 命令，执行这个命令会将潜藏的一系列配置文件和一些依赖项都“弹出”到项目中，然后就可以由你自己完全控制增删，但是该操作是不可逆的。在配置文件被“弹出”后，你后续将无法跟随官方的脚步去升级项目所使用的 react-script 版本了。</p><p>那么，如果你想要一个可以覆盖配置，但又与官方版本保持同步的方案，则可以试试 craco <a href=https://github.com/dilanx/craco target=_blank>https://github.com/dilanx/craco</a></p><h2 id=样式隔离方案css-modules>样式隔离方案：CSS Modules</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#a6e22e>module</span>.<span style=color:#a6e22e>exports</span> <span style=color:#f92672>=</span> {
-</span></span><span style=display:flex><span>  <span style=color:#a6e22e>style</span><span style=color:#f92672>:</span> {
-</span></span><span style=display:flex><span>    <span style=color:#a6e22e>css</span><span style=color:#f92672>:</span> {
-</span></span><span style=display:flex><span>      <span style=color:#a6e22e>mode</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;extends&#34;</span>,
-</span></span><span style=display:flex><span>      <span style=color:#a6e22e>loaderOptions</span><span style=color:#f92672>:</span> {
-</span></span><span style=display:flex><span>        <span style=color:#a6e22e>modules</span><span style=color:#f92672>:</span> {
-</span></span><span style=display:flex><span>          <span style=color:#a6e22e>auto</span><span style=color:#f92672>:</span> <span style=color:#66d9ef>true</span>,
-</span></span><span style=display:flex><span>          <span style=color:#a6e22e>exportLocalsConvention</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;camelCaseOnly&#39;</span>,
-</span></span><span style=display:flex><span>        },
-</span></span><span style=display:flex><span>      },
-</span></span><span style=display:flex><span>    },
-</span></span><span style=display:flex><span>  },
-</span></span><span style=display:flex><span>};
-</span></span></code></pre></div><p>在ts环境中可以添加类型定义</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ts data-lang=ts><span style=display:flex><span><span style=color:#75715e>/// &lt;reference types=&#34;node&#34; /&gt;
-</span></span></span><span style=display:flex><span><span style=color:#75715e>/// &lt;reference types=&#34;react&#34; /&gt;
-</span></span></span><span style=display:flex><span><span style=color:#75715e>/// &lt;reference types=&#34;react-dom&#34; /&gt;
-</span></span></span><span style=display:flex><span><span style=color:#75715e>/// &lt;reference types=&#34;react-scripts&#34; /&gt;
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>declare</span> <span style=color:#a6e22e>module</span> <span style=color:#e6db74>&#39;*.module.css&#39;</span> {
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>classes</span><span style=color:#f92672>:</span> { <span style=color:#66d9ef>readonly</span> [<span style=color:#a6e22e>key</span>: <span style=color:#66d9ef>string</span>]<span style=color:#f92672>:</span> <span style=color:#66d9ef>string</span> };
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>export</span> <span style=color:#66d9ef>default</span> <span style=color:#a6e22e>classes</span>;
-</span></span><span style=display:flex><span>}
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>declare</span> <span style=color:#a6e22e>module</span> <span style=color:#e6db74>&#39;*.module.scss&#39;</span> {
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>classes</span><span style=color:#f92672>:</span> { <span style=color:#66d9ef>readonly</span> [<span style=color:#a6e22e>key</span>: <span style=color:#66d9ef>string</span>]<span style=color:#f92672>:</span> <span style=color:#66d9ef>string</span> };
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>export</span> <span style=color:#66d9ef>default</span> <span style=color:#a6e22e>classes</span>;
-</span></span><span style=display:flex><span>}
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>declare</span> <span style=color:#a6e22e>module</span> <span style=color:#e6db74>&#39;*.module.sass&#39;</span> {
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>classes</span><span style=color:#f92672>:</span> { <span style=color:#66d9ef>readonly</span> [<span style=color:#a6e22e>key</span>: <span style=color:#66d9ef>string</span>]<span style=color:#f92672>:</span> <span style=color:#66d9ef>string</span> };
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>export</span> <span style=color:#66d9ef>default</span> <span style=color:#a6e22e>classes</span>;
-</span></span><span style=display:flex><span>}
-</span></span></code></pre></div><h2 id=eslint-代码检查两个自定义-lint-场景分享>ESLINT 代码检查：两个自定义 lint 场景分享</h2><h2 id=自动化环境配置git-hook-钩子定义>自动化环境配置：git hook 钩子定义</h2><p>husky 是一个为 git 客户端增加 hook 的工具，可以被用于我们配置本地自动化环境。我们可以安装 husky 并定制我们需要的 git 钩子及具体需要执行的任务，这样可以方便我们在对代码执行 git 操作时，在特定时机对代码进行特定的检查与处理，常见的钩子有如下两个：</p><p>commit-msg - 提交信息钩子，在执行 git commit 或者 git merge 时触发
+<!doctype html>
+<html
+  itemscope
+  class=""
+  lang="zh-cn"
+  itemtype="http://schema.org/WebPage">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+    <meta charset="utf-8" />
+
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, maximum-scale=5" />
+
+
+<meta name="theme-name" content="hugoplate" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="/images/favicon_hu533619655037541214.png" type="image/x-icon">
+<link rel="icon" href="/images/favicon_hu533619655037541214.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu10045982978932320562.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu533619655037541214.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu12879857052853119446.png">
+
+
+
+
+
+
+
+
+<link rel="manifest" href="/manifest.webmanifest" />
+<meta
+  name="msapplication-TileColor"
+  content="#ddd" />
+<meta
+  name="theme-color"
+  content="#ffffff" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<title>前端开发中的流程自动化与提效实践</title>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <meta
+    name="keywords"
+    content="LeeZChuan, Hugo, Blog" />
+
+
+
+
+<meta
+  name="description"
+  content="前端开发中的流程自动化与提效实践。" />
+
+
+
+  <meta name="author" content="LeeZChuan" />
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+      
+        <meta property="og:image" content="http://localhost:1313/images/og-image.png" />
+        <meta name="twitter:image" content="http://localhost:1313/images/og-image.png" />
+        <meta
+          name="twitter:card"
+          content="summary_large_image" />
+      
+      
+      <meta property="og:image:width" content="900" />
+      <meta property="og:image:height" content="600" />
+    
+
+
+    
+    <meta
+      property="og:image:type"
+      content="image/.png" />
+  
+
+
+  
+
+
+
+
+
+<meta property="og:title" content="前端开发中的流程自动化与提效实践" />
+<meta property="og:description" content="前端开发中的流程自动化与提效实践。" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://localhost:1313/blog/computer-technology/web/practice-of-project-development-and-auto-workflow/" />
+
+
+<meta name="twitter:title" content="前端开发中的流程自动化与提效实践" />
+<meta name="twitter:description" content="前端开发中的流程自动化与提效实践。" />
+
+
+  <meta name="twitter:site" content="@LeeZChuan" />
+
+
+  <meta name="twitter:creator" content="@LeeZChuan" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  let indexURL = "http://localhost:1313/searchindex.json";
+  let includeSectionsInSearch = ["blog","life"];
+  let search_no_results = "暂无数据";
+  let search_initial_message = "标注某事物去搜索...";
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+<meta http-equiv="x-dns-prefetch-control" content="on" />
+<link rel="preconnect" href="https://use.fontawesome.com" crossorigin />
+<link rel="preconnect" href="//cdnjs.cloudflare.com" />
+<link rel="preconnect" href="//www.googletagmanager.com" />
+<link rel="preconnect" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="https://use.fontawesome.com" />
+<link rel="dns-prefetch" href="//ajax.googleapis.com" />
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+<link rel="dns-prefetch" href="//www.googletagmanager.com" />
+<link rel="dns-prefetch" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link rel="dns-prefetch" href="//connect.facebook.net" />
+<link rel="dns-prefetch" href="//platform.linkedin.com" />
+<link rel="dns-prefetch" href="//platform.twitter.com" />
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script>
+  (function () {
+    const googleFont = document.createElement("link");
+    googleFont.href = "https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&family=Signika:wght@500;700&display=swap";
+    googleFont.type = "text/css";
+    googleFont.rel = "stylesheet";
+    document.head.appendChild(googleFont);
+  })();
+</script>
+
+
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+<link
+  href="/css/style.css"
+  integrity=""
+  rel="stylesheet" />
+
+
+<link
+  defer
+  async
+  rel="stylesheet"
+  href="/css/style-lazy.css"
+  integrity=""
+  media="print"
+  onload="this.media='all'; this.onload=null;" />
+
+
+  </head>
+
+  <body>
+    
+    
+      
+
+
+
+
+
+      
+      <div
+  class="fixed left-0 top-0 z-50 flex w-[30px] items-center justify-center bg-gray-200 py-[2.5px] text-[12px] uppercase text-black sm:bg-red-200 md:bg-yellow-200 lg:bg-green-200 xl:bg-blue-200 2xl:bg-pink-200">
+  <span class="block sm:hidden">all</span>
+  <span class="hidden sm:block md:hidden">sm</span>
+  <span class="hidden md:block lg:hidden">md</span>
+  <span class="hidden lg:block xl:hidden">lg</span>
+  <span class="hidden xl:block 2xl:hidden">xl</span>
+  <span class="hidden 2xl:block">2xl</span>
+</div>
+
+    
+
+
+    
+    
+
+
+
+
+
+    
+    <header
+  class="header sticky top-0 z-30">
+  <nav class="navbar container">
+    
+    <div class="order-0">
+      
+      <a class="navbar-brand block" href="/">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+    
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu4668213964747553556.webp"
+      alt="LeeZChuan"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu16137327364032044341.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu4521180468968039794.webp"
+      alt="LeeZChuan"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu12278668914502940210.png';" />
+  
+  
+
+
+      </a>
+    </div>
+    
+    <input id="nav-toggle" type="checkbox" class="hidden" />
+    <label
+      for="nav-toggle"
+      class="order-3 cursor-pointer flex items-center lg:hidden text-dark dark:text-white lg:order-1">
+      <svg id="show-button" class="h-6 fill-current block" viewBox="0 0 20 20">
+        <title>Menu Open</title>
+        <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z"></path>
+      </svg>
+      <svg id="hide-button" class="h-6 fill-current hidden" viewBox="0 0 20 20">
+        <title>Menu Close</title>
+        <polygon
+          points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
+          transform="rotate(45 10 10)"></polygon>
+      </svg>
+    </label>
+    
+
+    
+    <ul
+      id="nav-menu"
+      class="navbar-nav order-3 hidden lg:flex w-full pb-6 lg:order-1 lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8">
+      
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/about"
+              >关于该网站</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+                target="_blank" rel="noopener"
+              
+              href="https://leezchuan.github.io/EasyHomePage"
+              >关于我</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/blog"
+              >文章记录</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/life"
+              >生活记录</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item nav-dropdown group relative">
+            <span
+              class="nav-link 
+                
+                
+                
+              
+                
+                
+                
+               inline-flex items-center">
+              其他
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+                <path
+                  d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+              </svg>
+            </span>
+            <ul
+              class="nav-dropdown-list lg:group-hover:visible lg:group-hover:opacity-100">
+              
+                
+                
+                <li class="nav-dropdown-item">
+                  <a
+                    class="nav-dropdown-link "
+                    
+                    href="/elements">
+                    Md编写说明
+                  </a>
+                </li>
+              
+                
+                
+                <li class="nav-dropdown-item">
+                  <a
+                    class="nav-dropdown-link "
+                    
+                    href="/categories">
+                    文字分类汇总
+                  </a>
+                </li>
+              
+            </ul>
+          </li>
+        
+      
+      
+    </ul>
+
+    <div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
+      
+        
+          <button
+            aria-label="search"
+            
+            class="border-border text-dark hover:text-primary dark:border-darkmode-border mr-5 inline-block border-r pr-5 text-xl dark:text-white dark:hover:text-darkmode-primary"
+            
+            data-target="search-modal">
+            <i class="fa-solid fa-search"></i>
+          </button>
+        
+      
+
+      
+
+
+
+
+
+
+
+
+
+      
+
+
+  <div class="theme-switcher mr-5 hidden">
+    <input id="theme-switcher" data-theme-switcher type="checkbox" />
+    <label for="theme-switcher">
+      <span class="sr-only">theme switcher</span>
+      <span>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-100 dark:opacity-0"
+          viewBox="0 0 56 56"
+          fill="#fff"
+          height="16"
+          width="16">
+          <path
+            d="M30 4.6c0-1-.9-2-2-2a2 2 0 0 0-2 2v5c0 1 .9 2 2 2s2-1 2-2Zm9.6 9a2 2 0 0 0 0 2.8c.8.8 2 .8 2.9 0L46 13a2 2 0 0 0 0-2.9 2 2 0 0 0-3 0Zm-26 2.8c.7.8 2 .8 2.8 0 .8-.7.8-2 0-2.9L13 10c-.7-.7-2-.8-2.9 0-.7.8-.7 2.1 0 3ZM28 16a12 12 0 0 0-12 12 12 12 0 0 0 12 12 12 12 0 0 0 12-12 12 12 0 0 0-12-12Zm23.3 14c1.1 0 2-.9 2-2s-.9-2-2-2h-4.9a2 2 0 0 0-2 2c0 1.1 1 2 2 2ZM4.7 26a2 2 0 0 0-2 2c0 1.1.9 2 2 2h4.9c1 0 2-.9 2-2s-1-2-2-2Zm37.8 13.6a2 2 0 0 0-3 0 2 2 0 0 0 0 2.9l3.6 3.5a2 2 0 0 0 2.9 0c.8-.8.8-2.1 0-3ZM10 43.1a2 2 0 0 0 0 2.9c.8.7 2.1.8 3 0l3.4-3.5c.8-.8.8-2.1 0-2.9-.8-.8-2-.8-2.9 0Zm20 3.4c0-1.1-.9-2-2-2a2 2 0 0 0-2 2v4.9c0 1 .9 2 2 2s2-1 2-2Z" />
+        </svg>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-0 dark:opacity-100"
+          viewBox="0 0 24 24"
+          fill="none"
+          height="16"
+          width="16">
+          <path
+            fill="#000"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M8.2 2.2c1-.4 2 .6 1.6 1.5-1 3-.4 6.4 1.8 8.7a8.4 8.4 0 0 0 8.7 1.8c1-.3 2 .5 1.5 1.5v.1a10.3 10.3 0 0 1-9.4 6.2A10.3 10.3 0 0 1 3.2 6.7c1-2 2.9-3.5 4.9-4.4Z" />
+        </svg>
+      </span>
+    </label>
+  </div>
+
+  
+  <script>
+    var darkMode = false;
+
+    
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches){darkMode = true}
+    
+
+    if (localStorage.getItem("theme") === "dark"){darkMode = true}
+    else if (localStorage.getItem("theme") === "light"){darkMode = false}
+
+    if (darkMode){document.documentElement.classList.add("dark")}
+    else {document.documentElement.classList.remove("dark")}
+
+    
+    document.addEventListener("DOMContentLoaded", () => {
+      var themeSwitch = document.querySelectorAll("[data-theme-switcher]");
+      var themeSwitcherContainer = document.querySelector('.theme-switcher');
+
+      [].forEach.call(themeSwitch, function (ts) {
+        ts.checked = darkMode;
+        ts.addEventListener("click", () => {
+          document.documentElement.classList.toggle("dark");
+          localStorage.setItem(
+            "theme",
+            document.documentElement.classList.contains("dark") ? "dark" : "light"
+          );
+        });
+      });
+
+      
+      themeSwitcherContainer.classList.remove('hidden');
+    });
+  </script>
+
+
+
+
+      
+      
+    </div>
+  </nav>
+</header>
+
+    
+
+
+
+
+  
+    <div
+      class="search-modal "
+      aria-hidden="true"
+      style="--color-primary: #121212">
+      <div data-target="close-search-modal" class="search-modal-overlay"></div>
+      <div
+        class="search-wrapper"
+        data-image="true"
+        data-description="true"
+        data-tags="true"
+        data-categories="true">
+        <div class="search-wrapper-header">
+          <label for="search-modal-input" style="margin-top:-1px">
+            <span class="sr-only">search icon</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-icon"
+              data-type="search">
+              <path
+                fill="currentColor"
+                d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-reset"
+              data-type="reset">
+              <path
+                fill="currentColor"
+                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z" />
+            </svg>
+          </label>
+          <input
+            id="search-modal-input"
+            type="text"
+            data-search-input
+            autocomplete="off"
+            aria-label="Search"
+            placeholder="搜寻更多..." />
+        </div>
+        <div class="search-wrapper-body">
+          <div class="search-result" data-search-result></div>
+          <span class="search-result-empty">
+            标注某事物去搜索...
+          </span>
+        </div>
+        <div class="search-wrapper-footer">
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 11h9.592L8 5.519 3.204 11zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659z" />
+              </svg>
+            </kbd>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                style="margin-top:1px;"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z" />
+              </svg>
+            </kbd>
+            去导航
+          </span>
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="12"
+                fill="currentColor"
+                style="display:inline-block;"
+                viewBox="0 0 16 16">
+                <path
+                  fill-rule="evenodd"
+                  d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z" />
+              </svg>
+            </kbd>
+            去选择
+          </span>
+          <span class="search-result-info"></span>
+          <span data-target="close-search-modal">
+            <kbd>ESC</kbd> 去关闭
+          </span>
+        </div>
+      </div>
+    </div>
+  
+
+
+
+
+    <main>
+      
+  <section class="section pt-7">
+    <div class="container">
+      <div class="row justify-center">
+        <article class="lg:col-10">
+          
+          
+          <h1 class="h2 mb-4">
+            前端开发中的流程自动化与提效实践
+          </h1>
+          <ul class="mb-4">
+            <li class="mr-4 inline-block">
+              <a
+                href="/authors/leezchuan/">
+                <i class="fa-regular fa-circle-user mr-2"></i
+                >LeeZChuan
+              </a>
+            </li>
+            
+            
+              <li class="mr-4 inline-block">
+                <i class="fa-regular fa-folder mr-2"></i>
+                
+                  <a
+                    href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/"
+                    class=""
+                    >计算机技术
+                      ,
+                    
+                  </a>
+                
+                  <a
+                    href="/categories/web%e5%89%8d%e7%ab%af/"
+                    class=""
+                    >Web前端
+                      ,
+                    
+                  </a>
+                
+                  <a
+                    href="/categories/%e6%8f%90%e6%95%88/"
+                    class=""
+                    >提效
+                  </a>
+                
+              </li>
+            
+            <li class="mr-4 inline-block">
+              <i class="fa-regular fa-clock mr-2"></i>
+              November 28, 2021
+            </li>
+          </ul>
+          <div class="content mb-10">
+            
+
+ 
+  
+
+<details open class="table-of-content blog">
+  <summary>
+    
+      内容列表
+    
+  </summary>
+  <nav id="TableOfContents">
+  <ol>
+    <li><a href="#新建项目第一步脚手架">新建项目第一步：脚手架</a></li>
+    <li><a href="#样式隔离方案css-modules">样式隔离方案：CSS Modules</a></li>
+    <li><a href="#eslint-代码检查两个自定义-lint-场景分享">ESLINT 代码检查：两个自定义 lint 场景分享</a></li>
+    <li><a href="#自动化环境配置git-hook-钩子定义">自动化环境配置：git hook 钩子定义</a></li>
+    <li><a href="#自定义命令调用代码风格统一与-commit-信息规范">自定义命令调用：代码风格统一与 commit 信息规范</a></li>
+    <li><a href="#本地开发代理环境">本地开发代理环境</a></li>
+    <li><a href="#代码复用组件模版与-code-snippets">代码复用：组件模版与 code snippets</a></li>
+  </ol>
+
+  <ol>
+    <li><a href="#1110httpsgitwoacomtestprojectcomparev1101v1110-2022-06-28"><a href="https://git.woa.com/test/project/compare/v1.10.1...v1.11.0">1.11.0</a> (2022-06-28)</a>
+      <ol>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#1101httpsgitwoacomtestprojectcomparev1100v1101-2022-06-24"><a href="https://git.woa.com/test/project/compare/v1.10.0...v1.10.1">1.10.1</a> (2022-06-24)</a></li>
+        <li><a href="#bug-fixes">Bug Fixes</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+</details>
+
+            <p>随着前端的发展，越来越多的工具库、方法被用在日常研发流程中，这大大提升了业务开发的效率，而随着各类自动化流程的建设，开发同学也不再需要关注到每一个细节。前段时间项目阶段性交付，在推进的过程中也做了不少尝试，虽然从长期看，这类工作最后可能都该收敛到基础设施部门或者标准的自动化流程中去，但并不妨碍我通过实践来落实一些对项目开发的思考和想法。</p>
+<p>如果你是一名有经验的开发者，可以直接跳到文章末尾，「总结」一章有对全文内容的精简描述。</p>
+<p>接下来，我来分享下在项目开发中尝试的一些自动化和提效实践。本文在撰写中涉及的 UI 框架主要以 create-react-app 所产生的 React 项目为主，会辅以部分其他框架的解决方案以说明。</p>
+<h2 id="新建项目第一步脚手架">新建项目第一步：脚手架</h2>
+<p>如果你的项目选型是 Angular 的话，那么选择不多可以直接上 Angular CLI；如果是 React 或 Vue 的话，那么会有不少脚手架可以选择，国内很多开发者都有开源不同方案。其中，大多方案会有一些组件库、开源库的绑定，如果你希望一个更加自由的框架搭建，官方脚手架 create-create-app (CRA) 肯定会是第一选择。</p>
+<p>通过 npx 执行如下命令，我们可以通过 CRA 快速创建一个 TypeScript 项目：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npx create-react-app project --template typescript
+</span></span></code></pre></div><p>但随着 CRA 的发展，官方脚手架也将原来暴露在模版中的越来越多细节封装到 react-scripts 包里，简单举个例子，比如你想修改项目 webpack 构建流程，用官方模版无法直接上手。</p>
+<p>官方模版提供了 npm run eject 命令，执行这个命令会将潜藏的一系列配置文件和一些依赖项都“弹出”到项目中，然后就可以由你自己完全控制增删，但是该操作是不可逆的。在配置文件被“弹出”后，你后续将无法跟随官方的脚步去升级项目所使用的 react-script 版本了。</p>
+<p>那么，如果你想要一个可以覆盖配置，但又与官方版本保持同步的方案，则可以试试 craco <a href="https://github.com/dilanx/craco"
+
+
+
+
+ target="_blank"
+ 
+
+
+>https://github.com/dilanx/craco</a></p>
+<h2 id="样式隔离方案css-modules">样式隔离方案：CSS Modules</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">style</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">css</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">mode</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;extends&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">loaderOptions</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">modules</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">auto</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">exportLocalsConvention</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;camelCaseOnly&#39;</span>,
+</span></span><span style="display:flex;"><span>        },
+</span></span><span style="display:flex;"><span>      },
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><p>在ts环境中可以添加类型定义</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ts" data-lang="ts"><span style="display:flex;"><span><span style="color:#75715e">/// &lt;reference types=&#34;node&#34; /&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;reference types=&#34;react&#34; /&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;reference types=&#34;react-dom&#34; /&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;reference types=&#34;react-scripts&#34; /&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">declare</span> <span style="color:#a6e22e">module</span> <span style="color:#e6db74">&#39;*.module.css&#39;</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">classes</span><span style="color:#f92672">:</span> { <span style="color:#66d9ef">readonly</span> [<span style="color:#a6e22e">key</span>: <span style="color:#66d9ef">string</span>]<span style="color:#f92672">:</span> <span style="color:#66d9ef">string</span> };
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">classes</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">declare</span> <span style="color:#a6e22e">module</span> <span style="color:#e6db74">&#39;*.module.scss&#39;</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">classes</span><span style="color:#f92672">:</span> { <span style="color:#66d9ef">readonly</span> [<span style="color:#a6e22e">key</span>: <span style="color:#66d9ef">string</span>]<span style="color:#f92672">:</span> <span style="color:#66d9ef">string</span> };
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">classes</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">declare</span> <span style="color:#a6e22e">module</span> <span style="color:#e6db74">&#39;*.module.sass&#39;</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">classes</span><span style="color:#f92672">:</span> { <span style="color:#66d9ef">readonly</span> [<span style="color:#a6e22e">key</span>: <span style="color:#66d9ef">string</span>]<span style="color:#f92672">:</span> <span style="color:#66d9ef">string</span> };
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">classes</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="eslint-代码检查两个自定义-lint-场景分享">ESLINT 代码检查：两个自定义 lint 场景分享</h2>
+<h2 id="自动化环境配置git-hook-钩子定义">自动化环境配置：git hook 钩子定义</h2>
+<p>husky 是一个为 git 客户端增加 hook 的工具，可以被用于我们配置本地自动化环境。我们可以安装 husky 并定制我们需要的 git 钩子及具体需要执行的任务，这样可以方便我们在对代码执行 git 操作时，在特定时机对代码进行特定的检查与处理，常见的钩子有如下两个：</p>
+<p>commit-msg - 提交信息钩子，在执行 git commit 或者 git merge 时触发
 pre-commit - 预先提交钩子，在执行 git commit 时触发
-如下为一段 husky 安装和初始化代码：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>npm install husky -D
-</span></span><span style=display:flex><span>npx husky-init <span style=color:#f92672>&amp;&amp;</span> npm install 
+如下为一段 husky 安装和初始化代码：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm install husky -D
+</span></span><span style="display:flex;"><span>npx husky-init <span style="color:#f92672">&amp;&amp;</span> npm install 
 </span></span></code></pre></div><p>// 添加任务一条 commit-msg 钩子
 npx husky add .husky/commit-msg &lsquo;./node_modules/.bin/commitlint &ndash;from=HEAD~1&rsquo;
-举个例子，比如我们可以结合 commitlint 工具，在 commit-msg 阶段针对 commit 信息进行检查和处理（如上代码所示），又或者在 pre-commit 阶段对将要提交的代码进行格式化操作。</p><h2 id=自定义命令调用代码风格统一与-commit-信息规范>自定义命令调用：代码风格统一与 commit 信息规范</h2><p>不仅是对于开发代码，对于 commit 信息来说，五花八门的书写风格，也十分不利于阅读和维护，比如，当我们需要翻阅历史提交来定位具体 commit 所带来的代码变动时，这依赖于规范的 commit 信息。借助 commitlint 可以帮助我们达到这一点。</p><p>commitlint 需要配合 husky 一起使用，具体来说，通过 husky 来保证针对具体钩子的命令配置，通过 commitlint 保证 命令执行能够对 commit msg 信息进行特定检查。一个简单的 commitlint 安装和配置如下：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># 安装</span>
-</span></span><span style=display:flex><span>npm install --save-dev @commitlint/<span style=color:#f92672>{</span>config-conventional,cli<span style=color:#f92672>}</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># 配置</span>
-</span></span><span style=display:flex><span>echo <span style=color:#e6db74>&#34;module.exports = {extends: [&#39;@commitlint/config-conventional&#39;]}&#34;</span> &gt; commitlint.config.js
-</span></span></code></pre></div><p>配置了 commitlint 之后，若是使用默认配置，那么只有当我们的 commit msg 符合如下规范时，commit 操作才能正常完成执行，否则中断（其中 scope 为可选）：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#f92672>&lt;</span><span style=color:#a6e22e>type</span><span style=color:#f92672>&gt;</span>(<span style=color:#f92672>&lt;</span><span style=color:#a6e22e>scope</span><span style=color:#f92672>&gt;</span>)<span style=color:#f92672>:</span> <span style=color:#a6e22e>description</span>
-</span></span></code></pre></div><p>如果需要自定义规则，则需要我们更改 commitlint.config.js 文件，为其增添 rules，关于这一部分可以参考官方文档 <a href=https://commitlint.js.org/ target=_blank>https://commitlint.js.org/</a>。</p><p>此外，在添加了 commitlint 配置文件后，我们可能会看到 IDE 对这个文件的检查标红，由于在项目构建中我们并不关注该配置文件的格式等内容（因为他只是对 commitlint 的简单配置），所以我们可以在 eslint 配置文件中将其忽略掉。同样的，如果有其他的文件属于类似的定位，你也可以一并将其加入：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span>{
-</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#34;ignorePatterns&#34;</span><span style=color:#f92672>:</span> [<span style=color:#e6db74>&#34;commitlint.config.js&#34;</span>]
-</span></span><span style=display:flex><span>}
-</span></span></code></pre></div><p>说完 commit 规范，我们的代码格式本身也需要规范，比如针对 TypeScript 代码会有变量命名和排序的规则，针对 html 模版会有缩进、标签闭合等规则，这些也可以利用工具结合 git hook 来实现，此处，我们介绍下 linter 工具：lint-staged。</p><p>lint-staged 是一个在 git 暂存文件上运行 linters 的工具，通过 lint-staged 定制各类文件格式化的操作（主要通过 eslint 和 prettier 保证执行）。结合 pre-commit git hook，我们在此钩子被触发时执行 lint-staged，便能完成对相应文件的格式化处理。如何让工具针对不同类型的文件区分处理呢？这里可以通过配置达到目的，即在 pakage.json 中对 lint-staged 字段进行声明：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span>{
-</span></span><span style=display:flex><span>  ...,
-</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#34;lint-staged&#34;</span><span style=color:#f92672>:</span> {
-</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;*.{js,jsx,ts,tsx}&#34;</span><span style=color:#f92672>:</span> [
-</span></span><span style=display:flex><span>      <span style=color:#e6db74>&#34;eslint -c ./.eslintrc.json --fix&#34;</span>
-</span></span><span style=display:flex><span>    ],
-</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;(*.json|.eslintrc|.prettierrc)&#34;</span><span style=color:#f92672>:</span> [
-</span></span><span style=display:flex><span>      <span style=color:#e6db74>&#34;jsonlint --in-place&#34;</span>
-</span></span><span style=display:flex><span>    ],
-</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;*.{s,}css&#34;</span><span style=color:#f92672>:</span> [
-</span></span><span style=display:flex><span>      <span style=color:#e6db74>&#34;prettier --write&#34;</span>
-</span></span><span style=display:flex><span>    ],
-</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;*.{html,md}&#34;</span><span style=color:#f92672>:</span> [
-</span></span><span style=display:flex><span>      <span style=color:#e6db74>&#34;prettier --write&#34;</span>
-</span></span><span style=display:flex><span>    ]
-</span></span><span style=display:flex><span>  }
-</span></span><span style=display:flex><span>}
-</span></span></code></pre></div><p>如上代码表明，lint-staged 可以针对 JavaScript/TypeScript 类文件执行 eslint 处理，针对 json 类文件执行 jsonlint 处理，而对样式文件和 html 文件都用 prettier 处理。</p><h2 id=本地开发代理环境>本地开发代理环境</h2><p>从本地开发的场景来看，最需要完善的一个功能就是转发 API 请求了，用以规避可能存在的 CORS 错误，或者绕开一些请求限制，形式上可以是针对特定请求变更 header 信息，也可以是针对特定请求变更实际请求的域名与路径。但无外乎都需要在本地建立一个代理环境。前端项目在本地开发时，我们可以通过一个叫做 http-proxy-middleware 的库来增强本地 dev server 的能力。</p><p>通过文档介绍，我们知道可以通过调用 createProxyMiddleware API 来构造一个中间件，以供 Node.js 项目使用，针对 express 应用可以通过如下配置完成代理服务器中间件的配置：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#66d9ef>import</span> <span style=color:#f92672>*</span> <span style=color:#a6e22e>as</span> <span style=color:#a6e22e>express</span> <span style=color:#a6e22e>from</span> <span style=color:#e6db74>&#39;express&#39;</span>;
-</span></span><span style=display:flex><span><span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>createProxyMiddleware</span> } <span style=color:#a6e22e>from</span> <span style=color:#e6db74>&#39;http-proxy-middleware&#39;</span>;
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>app</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>express</span>();
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#a6e22e>app</span>.<span style=color:#a6e22e>use</span>(
-</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#39;/api&#39;</span>,
-</span></span><span style=display:flex><span>  <span style=color:#a6e22e>createProxyMiddleware</span>({
-</span></span><span style=display:flex><span>    <span style=color:#a6e22e>target</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;http://www.example.org/api&#39;</span>,
-</span></span><span style=display:flex><span>    <span style=color:#a6e22e>changeOrigin</span><span style=color:#f92672>:</span> <span style=color:#66d9ef>true</span>,
-</span></span><span style=display:flex><span>  })
-</span></span><span style=display:flex><span>);
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#a6e22e>app</span>.<span style=color:#a6e22e>listen</span>(<span style=color:#ae81ff>3000</span>);
-</span></span></code></pre></div><p>而对于通过 CRA 构建的项目，由于 CRA 已经做了一些封装工作，于是在本地开发时，我们不再需要显式地起一个 Node.js 应用，而如上对代理中间件地调用，也可以在指定文件中按照规范书写（文件名以及方法签名需要规范，此处不列举，CRA 官方文档有说明）。</p><h2 id=代码复用组件模版与-code-snippets>代码复用：组件模版与 code snippets</h2><p>当我们新建一个项目时，我们会找脚手架替我们搭建一个合适的架子，然后我们往里面填充组件、页面、服务等等，而针对更细粒度的代码，我们同样可以考虑通过代码复用来提升我们的开发效率，这里的场景主要可以分为两类：</p><ol><li>Code snippets 类代码片段</li><li>组件粒度的文件代码
-针对第一类场景，我们在 IDE 中安装的不少插件都替我们达到了这个目的。当我们在特定类型的文件中敲出几个字母，然后一回车，就能快速生成一段代码片段。举个例子，比如当我们使用 RxJS 时经常需要定义 BehaviorSubject 及其 getter & setter，要是输入 bgs 就能出现如下代码，便能提高我们在写一些初始化代码时的效率：</li></ol><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#75715e>/* TODO: 数据流定义 */</span>
-</span></span><span style=display:flex><span><span style=color:#a6e22e>behaviorName$</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>BehaviorSubject</span><span style=color:#f92672>&lt;</span><span style=color:#a6e22e>string</span><span style=color:#f92672>&gt;</span>(<span style=color:#a6e22e>initialValue</span>);
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#a6e22e>get</span> <span style=color:#a6e22e>behaviorName</span>() {
-</span></span><span style=display:flex><span>     <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>behaviorName$</span>;
-</span></span><span style=display:flex><span>}
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#a6e22e>set</span> <span style=color:#a6e22e>behaviorName</span>(<span style=color:#a6e22e>value</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>string</span>) {
-</span></span><span style=display:flex><span>     <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>behaviorName$</span>.<span style=color:#a6e22e>next</span>(<span style=color:#a6e22e>value</span>);
-</span></span><span style=display:flex><span>}
-</span></span></code></pre></div><p>而我们要做的事情就是将 bgs 和上述代码（及特定占位符）连接起来，实现方案可以是 VS Code 插件，比如我之前写过一个 <a href="https://marketplace.visualstudio.com/items?itemName=hijiangtao.tutor-code-snippets" target=_blank>https://marketplace.visualstudio.com/items?itemName=hijiangtao.tutor-code-snippets</a>，也可以是 WebStorm 插件或者 live templates。</p><p>针对第二类场景，我们需要的往往是指定路径下一套遵循我们命名规范的模版、样式和 TypeScript 逻辑代码。举个例子，在 Angular 项目中，当我们新建一个组件时，我们需要同时生成 HTML、JavaScript、CSS 文件并更新离其最近的 *.module.ts 文件：</p><p>CREATE projects/src/app/demo/demo.component.css (0 bytes)
+举个例子，比如我们可以结合 commitlint 工具，在 commit-msg 阶段针对 commit 信息进行检查和处理（如上代码所示），又或者在 pre-commit 阶段对将要提交的代码进行格式化操作。</p>
+<h2 id="自定义命令调用代码风格统一与-commit-信息规范">自定义命令调用：代码风格统一与 commit 信息规范</h2>
+<p>不仅是对于开发代码，对于 commit 信息来说，五花八门的书写风格，也十分不利于阅读和维护，比如，当我们需要翻阅历史提交来定位具体 commit 所带来的代码变动时，这依赖于规范的 commit 信息。借助 commitlint 可以帮助我们达到这一点。</p>
+<p>commitlint 需要配合 husky 一起使用，具体来说，通过 husky 来保证针对具体钩子的命令配置，通过 commitlint 保证 命令执行能够对 commit msg 信息进行特定检查。一个简单的 commitlint 安装和配置如下：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 安装</span>
+</span></span><span style="display:flex;"><span>npm install --save-dev @commitlint/<span style="color:#f92672">{</span>config-conventional,cli<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 配置</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;module.exports = {extends: [&#39;@commitlint/config-conventional&#39;]}&#34;</span> &gt; commitlint.config.js
+</span></span></code></pre></div><p>配置了 commitlint 之后，若是使用默认配置，那么只有当我们的 commit msg 符合如下规范时，commit 操作才能正常完成执行，否则中断（其中 scope 为可选）：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">type</span><span style="color:#f92672">&gt;</span>(<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">scope</span><span style="color:#f92672">&gt;</span>)<span style="color:#f92672">:</span> <span style="color:#a6e22e">description</span>
+</span></span></code></pre></div><p>如果需要自定义规则，则需要我们更改 commitlint.config.js 文件，为其增添 rules，关于这一部分可以参考官方文档 <a href="https://commitlint.js.org/"
+
+
+
+
+ target="_blank"
+ 
+
+
+>https://commitlint.js.org/</a>。</p>
+<p>此外，在添加了 commitlint 配置文件后，我们可能会看到 IDE 对这个文件的检查标红，由于在项目构建中我们并不关注该配置文件的格式等内容（因为他只是对 commitlint 的简单配置），所以我们可以在 eslint 配置文件中将其忽略掉。同样的，如果有其他的文件属于类似的定位，你也可以一并将其加入：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;ignorePatterns&#34;</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;commitlint.config.js&#34;</span>]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>说完 commit 规范，我们的代码格式本身也需要规范，比如针对 TypeScript 代码会有变量命名和排序的规则，针对 html 模版会有缩进、标签闭合等规则，这些也可以利用工具结合 git hook 来实现，此处，我们介绍下 linter 工具：lint-staged。</p>
+<p>lint-staged 是一个在 git 暂存文件上运行 linters 的工具，通过 lint-staged 定制各类文件格式化的操作（主要通过 eslint 和 prettier 保证执行）。结合 pre-commit git hook，我们在此钩子被触发时执行 lint-staged，便能完成对相应文件的格式化处理。如何让工具针对不同类型的文件区分处理呢？这里可以通过配置达到目的，即在 pakage.json 中对 lint-staged 字段进行声明：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  ...,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;lint-staged&#34;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;*.{js,jsx,ts,tsx}&#34;</span><span style="color:#f92672">:</span> [
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;eslint -c ./.eslintrc.json --fix&#34;</span>
+</span></span><span style="display:flex;"><span>    ],
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;(*.json|.eslintrc|.prettierrc)&#34;</span><span style="color:#f92672">:</span> [
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;jsonlint --in-place&#34;</span>
+</span></span><span style="display:flex;"><span>    ],
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;*.{s,}css&#34;</span><span style="color:#f92672">:</span> [
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;prettier --write&#34;</span>
+</span></span><span style="display:flex;"><span>    ],
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;*.{html,md}&#34;</span><span style="color:#f92672">:</span> [
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;prettier --write&#34;</span>
+</span></span><span style="display:flex;"><span>    ]
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>如上代码表明，lint-staged 可以针对 JavaScript/TypeScript 类文件执行 eslint 处理，针对 json 类文件执行 jsonlint 处理，而对样式文件和 html 文件都用 prettier 处理。</p>
+<h2 id="本地开发代理环境">本地开发代理环境</h2>
+<p>从本地开发的场景来看，最需要完善的一个功能就是转发 API 请求了，用以规避可能存在的 CORS 错误，或者绕开一些请求限制，形式上可以是针对特定请求变更 header 信息，也可以是针对特定请求变更实际请求的域名与路径。但无外乎都需要在本地建立一个代理环境。前端项目在本地开发时，我们可以通过一个叫做 http-proxy-middleware 的库来增强本地 dev server 的能力。</p>
+<p>通过文档介绍，我们知道可以通过调用 createProxyMiddleware API 来构造一个中间件，以供 Node.js 项目使用，针对 express 应用可以通过如下配置完成代理服务器中间件的配置：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">express</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;express&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">createProxyMiddleware</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;http-proxy-middleware&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">app</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">express</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;/api&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">createProxyMiddleware</span>({
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">target</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;http://www.example.org/api&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">changeOrigin</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>  })
+</span></span><span style="display:flex;"><span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">listen</span>(<span style="color:#ae81ff">3000</span>);
+</span></span></code></pre></div><p>而对于通过 CRA 构建的项目，由于 CRA 已经做了一些封装工作，于是在本地开发时，我们不再需要显式地起一个 Node.js 应用，而如上对代理中间件地调用，也可以在指定文件中按照规范书写（文件名以及方法签名需要规范，此处不列举，CRA 官方文档有说明）。</p>
+<h2 id="代码复用组件模版与-code-snippets">代码复用：组件模版与 code snippets</h2>
+<p>当我们新建一个项目时，我们会找脚手架替我们搭建一个合适的架子，然后我们往里面填充组件、页面、服务等等，而针对更细粒度的代码，我们同样可以考虑通过代码复用来提升我们的开发效率，这里的场景主要可以分为两类：</p>
+<ol>
+<li>Code snippets 类代码片段</li>
+<li>组件粒度的文件代码
+针对第一类场景，我们在 IDE 中安装的不少插件都替我们达到了这个目的。当我们在特定类型的文件中敲出几个字母，然后一回车，就能快速生成一段代码片段。举个例子，比如当我们使用 RxJS 时经常需要定义 BehaviorSubject 及其 getter &amp; setter，要是输入 bgs 就能出现如下代码，便能提高我们在写一些初始化代码时的效率：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">/* TODO: 数据流定义 */</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">behaviorName$</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">BehaviorSubject</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">string</span><span style="color:#f92672">&gt;</span>(<span style="color:#a6e22e">initialValue</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">get</span> <span style="color:#a6e22e">behaviorName</span>() {
+</span></span><span style="display:flex;"><span>     <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">behaviorName$</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">set</span> <span style="color:#a6e22e">behaviorName</span>(<span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">string</span>) {
+</span></span><span style="display:flex;"><span>     <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">behaviorName$</span>.<span style="color:#a6e22e">next</span>(<span style="color:#a6e22e">value</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>而我们要做的事情就是将 bgs 和上述代码（及特定占位符）连接起来，实现方案可以是 VS Code 插件，比如我之前写过一个 <a href="https://marketplace.visualstudio.com/items?itemName=hijiangtao.tutor-code-snippets"
+
+
+
+
+ target="_blank"
+ 
+
+
+>https://marketplace.visualstudio.com/items?itemName=hijiangtao.tutor-code-snippets</a>，也可以是 WebStorm 插件或者 live templates。</p>
+<p>针对第二类场景，我们需要的往往是指定路径下一套遵循我们命名规范的模版、样式和 TypeScript 逻辑代码。举个例子，在 Angular 项目中，当我们新建一个组件时，我们需要同时生成 HTML、JavaScript、CSS 文件并更新离其最近的 *.module.ts 文件：</p>
+<p>CREATE projects/src/app/demo/demo.component.css (0 bytes)
 CREATE projects/src/app/demo/demo.component.html (19 bytes)
 CREATE projects/src/app/demo/demo.component.spec.ts (612 bytes)
 CREATE projects/src/app/demo/demo.component.ts (267 bytes)
 UPDATE projects/src/app/app.module.ts (1723 bytes)
-在 Angular 项目中，我们可以通过 Angular schematics 来很方便的实现这一目的；而针对 React 或者 Vue 项目，社区也有不少实现方案，比如 generate-react-cli。</p><p>如果不借助社区或者官方方案，要实现第二类场景所需的工具，也可以自己开发一个 npm 包并暴露相应 bin 脚本，然后通过 npx 执行来达到目的，关于 npx 的介绍可以参考我之前写过的一篇博文《记录一下 npx 的使用场景》。</p><p>版本发布：发版与 CHANGELOG 自动化
-每当我们需要上线一个新需求时，为了更好的记录变动，我们一般需要发个版本，并同时记录一些 CHANGELOG，如果能把这部分工作完全自动化，毋庸置疑可以提升我们的项目规范和发版效率。这里以 standard-version 举例。我们引入 standard-version 对自动打 tag 以及 CHANGELOG 生成进行规范，具体来说，是期望通过 standard-version 达到如下目的：</p><p>根据指定规则自动升级项目不同级别（major、minor、patch）的版本并打 tag
+在 Angular 项目中，我们可以通过 Angular schematics 来很方便的实现这一目的；而针对 React 或者 Vue 项目，社区也有不少实现方案，比如 generate-react-cli。</p>
+<p>如果不借助社区或者官方方案，要实现第二类场景所需的工具，也可以自己开发一个 npm 包并暴露相应 bin 脚本，然后通过 npx 执行来达到目的，关于 npx 的介绍可以参考我之前写过的一篇博文《记录一下 npx 的使用场景》。</p>
+<p>版本发布：发版与 CHANGELOG 自动化
+每当我们需要上线一个新需求时，为了更好的记录变动，我们一般需要发个版本，并同时记录一些 CHANGELOG，如果能把这部分工作完全自动化，毋庸置疑可以提升我们的项目规范和发版效率。这里以 standard-version 举例。我们引入 standard-version 对自动打 tag 以及 CHANGELOG 生成进行规范，具体来说，是期望通过 standard-version 达到如下目的：</p>
+<p>根据指定规则自动升级项目不同级别（major、minor、patch）的版本并打 tag
 对比历史 commit 提交自动生成不同版本间的可阅读、分类的 CHANGELOG 日志
-通过配置，我们还可以重命名上文提到的 commit 信息中的 type 字段在 CHANGELOG 中的标题展示，如下为一个示例配置：</p><p>module.exports = {
+通过配置，我们还可以重命名上文提到的 commit 信息中的 type 字段在 CHANGELOG 中的标题展示，如下为一个示例配置：</p>
+<p>module.exports = {
 &ldquo;types&rdquo;: [
 { &ldquo;type&rdquo;: &ldquo;feat&rdquo;, &ldquo;section&rdquo;: &ldquo;Features&rdquo; },
 { &ldquo;type&rdquo;: &ldquo;fix&rdquo;, &ldquo;section&rdquo;: &ldquo;Bug Fixes&rdquo; },
@@ -128,33 +1096,748 @@ UPDATE projects/src/app/app.module.ts (1723 bytes)
 { &ldquo;type&rdquo;: &ldquo;ci&rdquo;, &ldquo;hidden&rdquo;: true }
 ]
 }
-如下为自动生成的 CHANGELOG 示例：</p><h1 id=changelog>Changelog</h1><p>All notable changes to this project will be documented in this file. See <a href=https://github.com/conventional-changelog/standard-version target=_blank>standard-version</a> for commit guidelines.</p><h2 id=1110httpsgitwoacomtestprojectcomparev1101v1110-2022-06-28><a href=https://git.woa.com/test/project/compare/v1.10.1...v1.11.0 target=_blank>1.11.0</a> (2022-06-28)</h2><h3 id=features>Features</h3><ul><li>测试 feature 提交 @hijiangtao (merge request !65) (<a href=https://git.woa.com/test/project/commit/xxx target=_blank>a091125</a>)</li></ul><h3 id=1101httpsgitwoacomtestprojectcomparev1100v1101-2022-06-24><a href=https://git.woa.com/test/project/compare/v1.10.0...v1.10.1 target=_blank>1.10.1</a> (2022-06-24)</h3><h3 id=bug-fixes>Bug Fixes</h3><ul><li>修改 XXX，并新增 YYY (merge request !63) (<a href=https://git.woa.com/test/project/commit/yyy target=_blank>e3a01ce</a>)
-在使用 standard-version 的时候，默认的配置可以满足绝大部分场景了，但更细粒度的控制仍需要我们修改命令或者配置。比如，当我们在 package.json 中指定了仓库 url 后，我们便可以在 commit 信息中通过 @ 符号指定对应用户、通过 # 引用对应 issue/PR，这些在生成 CHANGELOG 时都会被转成对应包含链接地址的超链接，如下列上一些我在开发中的版本自动生成所涉及的应用场景及注意事项：</li></ul><p>// 首次执行（不变更版本）
-standard-version -a &ndash; &ndash;first-release</p><p>// 但是如果项目版本不符合规范，还是需要手动发布，因为需要保证项目从 v1.0.0 开始
-// <a href=https://github.com/conventional-changelog/standard-version/issues/131 target=_blank>https://github.com/conventional-changelog/standard-version/issues/131</a>
-standard-version -a &ndash; &ndash;release-as 1.0.0</p><p>// 在 package.json 中确保项目正确配置 repository 对象
-repository.url</p><p>// 带通知具体 user 的 commit-msg
-git commit -m &ldquo;fix: bug produced by @timojiang&rdquo;</p><p>// 带 issue 的 commit-msg
+如下为自动生成的 CHANGELOG 示例：</p>
+<h1 id="changelog">Changelog</h1>
+<p>All notable changes to this project will be documented in this file. See <a href="https://github.com/conventional-changelog/standard-version"
+
+
+
+
+ target="_blank"
+ 
+
+
+>standard-version</a> for commit guidelines.</p>
+<h2 id="1110httpsgitwoacomtestprojectcomparev1101v1110-2022-06-28"><a href="https://git.woa.com/test/project/compare/v1.10.1...v1.11.0"
+
+
+
+
+ target="_blank"
+ 
+
+
+>1.11.0</a> (2022-06-28)</h2>
+<h3 id="features">Features</h3>
+<ul>
+<li>测试 feature 提交 @hijiangtao (merge request !65) (<a href="https://git.woa.com/test/project/commit/xxx"
+
+
+
+
+ target="_blank"
+ 
+
+
+>a091125</a>)</li>
+</ul>
+<h3 id="1101httpsgitwoacomtestprojectcomparev1100v1101-2022-06-24"><a href="https://git.woa.com/test/project/compare/v1.10.0...v1.10.1"
+
+
+
+
+ target="_blank"
+ 
+
+
+>1.10.1</a> (2022-06-24)</h3>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li>修改 XXX，并新增 YYY (merge request !63) (<a href="https://git.woa.com/test/project/commit/yyy"
+
+
+
+
+ target="_blank"
+ 
+
+
+>e3a01ce</a>)
+在使用 standard-version 的时候，默认的配置可以满足绝大部分场景了，但更细粒度的控制仍需要我们修改命令或者配置。比如，当我们在 package.json 中指定了仓库 url 后，我们便可以在 commit 信息中通过 @ 符号指定对应用户、通过 # 引用对应 issue/PR，这些在生成 CHANGELOG 时都会被转成对应包含链接地址的超链接，如下列上一些我在开发中的版本自动生成所涉及的应用场景及注意事项：</li>
+</ul>
+<p>// 首次执行（不变更版本）
+standard-version -a &ndash; &ndash;first-release</p>
+<p>// 但是如果项目版本不符合规范，还是需要手动发布，因为需要保证项目从 v1.0.0 开始
+// <a href="https://github.com/conventional-changelog/standard-version/issues/131"
+
+
+
+
+ target="_blank"
+ 
+
+
+>https://github.com/conventional-changelog/standard-version/issues/131</a>
+standard-version -a &ndash; &ndash;release-as 1.0.0</p>
+<p>// 在 package.json 中确保项目正确配置 repository 对象
+repository.url</p>
+<p>// 带通知具体 user 的 commit-msg
+git commit -m &ldquo;fix: bug produced by @timojiang&rdquo;</p>
+<p>// 带 issue 的 commit-msg
 git commit -m &ldquo;fix: implement functionality discussed in issue #2&rdquo;
 总结
-本文从项目初始化选用脚手架开始、样式隔离、lint 规则与 git hook 再到模版工具和自动化版本日志，介绍了本人在开发过程中的一些实践和思考，旨在指出一个项目从代码初始化到交付上线过程中可能涉及到的不同流程中，存在的不同提交效率和自动化流程的工作，囿于文章篇幅，没有针对所有涉及到的流程和工具进行详细的 API 介绍，但你仍可以针对其中提到的各类关键词在互联网上进行搜索和查看。</p><p>本文在撰写时也尽量针对不同流程换用了普适的一些描述，以保证所提供的方案在替换了具体工具库后仍是长期可用的，防止文章内容受工具的时效性影响。</p><p>全文来看，主要有这么几点实践总结：</p><ol><li>在脚手架的选择上，你可以使用 create-react-app 或者 umi 等社区方案，但如果想要更灵活的脚手架，当你使用 CRA 的时候，可以一并考虑 craco；</li><li>CSS Modules 的作用无需多说，但同样需要注意 TypeScript 检查以及你在命名 CSS 变量写法上的兼容；</li><li>ESLINT 现在已经是大部分项目的标配了，如果你的项目涉及多人协作，可以配置一些额外的 plugin 协助保持风格一致、减少代码合并冲突。当然，在统一代码风格上，还可以通过 husky 定制 git 钩子与具体需要执行的任务，比如：</li></ol><blockquote><p>commit-msg
-pre-commit</p></blockquote><ol start=4><li>其中通过 lint-staged 在 pre-commit 时机定制各类文件格式化的操作（主要用 eslint 和 prettier 保证执行），通过 commitlint 保证 commit msg 信息符合规范。</li><li>本地开发代理环境在很多团队是必须的，你可以选用一个中间件来增强你的 dev server。</li><li>我们同样可以考虑通过代码复用来提升我们的开发效率，这里的场景主要可以分为两类：code snippets 以及组件级别的文件修改。</li><li>每当项目上线，规范来说，都需要发版及记录日志变更，我们可以引入 standard-version 对自动打 tag 以及 CHANGELOG 生成进行规范。</li></ol></div><div class="row items-start justify-between"><div class="lg:col-5 mb-10 flex items-center lg:mb-0"><h5 class=mr-3>标签 :</h5><ul><li class=inline-block><a class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white" href=/tags/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/>计算机技术</a></li><li class=inline-block><a class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white" href=/tags/web%e5%89%8d%e7%ab%af/>Web前端</a></li><li class=inline-block><a class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white" href=/tags/%e6%8f%90%e6%95%88/>提效</a></li></ul></div><div class="lg:col-4 flex items-center"><div class=share-icons><h5 class=share-title>分享 :</h5><a class="share-link share-facebook" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fleezchuan.github.io%2fblog%2fcomputer-technology%2fweb%2fpractice-of-project-development-and-auto-workflow%2f" target=_blank rel=noopener aria-label="share facebook"><span class=share-icon><svg viewBox="0 0 24 24"><path d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z"/></svg>
-</span></a><a class="share-link share-twitter" href="https://twitter.com/intent/tweet/?text=%e5%88%86%e4%ba%ab&amp;url=https%3a%2f%2fleezchuan.github.io%2fblog%2fcomputer-technology%2fweb%2fpractice-of-project-development-and-auto-workflow%2f" target=_blank rel=noopener aria-label="share twitter"><span aria-hidden=true class=share-icon><svg viewBox="0 0 24 24"><path d="M8 2H1l8.26 11.015L1.45 22H4.1l6.388-7.349L16 22h7l-8.608-11.478L21.8 2h-2.65l-5.986 6.886zm9 18L5 4h2l12 16z"/></svg>
-</span></a><a class="share-link share-email" href="mailto:?subject=%e5%88%86%e4%ba%ab&amp;body=https%3a%2f%2fleezchuan.github.io%2fblog%2fcomputer-technology%2fweb%2fpractice-of-project-development-and-auto-workflow%2f" target=_self rel=noopener aria-label="share email"><span aria-hidden=true class=share-icon><svg viewBox="0 0 24 24"><path d="M22 4H2C.9 4 0 4.9.0 6v12c0 1.1.9 2 2 2h20c1.1.0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7.25 14.43l-3.5 2c-.08.05-.17.07-.25.07-.17.0-.34-.1-.43-.25-.14-.24-.06-.55.18-.68l3.5-2c.24-.14.55-.06.68.18.14.24.06.55-.18.68zm4.75.07c-.1.0-.2-.03-.27-.08l-8.5-5.5c-.23-.15-.3-.46-.15-.7.15-.22.46-.3.7-.14L12 13.4l8.23-5.32c.23-.15.54-.08.7.15.14.23.07.54-.16.7l-8.5 5.5c-.08.04-.17.07-.27.07zm8.93 1.75c-.1.16-.26.25-.43.25-.08.0-.17-.02-.25-.07l-3.5-2c-.24-.13-.32-.44-.18-.68s.44-.32.68-.18l3.5 2c.24.13.32.44.18.68z"/></svg>
-</span></a><a class="share-link share-reddit" href="https://reddit.com/submit/?url=https%3a%2f%2fleezchuan.github.io%2fblog%2fcomputer-technology%2fweb%2fpractice-of-project-development-and-auto-workflow%2f&amp;resubmit=true&amp;title=%e5%88%86%e4%ba%ab" target=_blank rel=noopener aria-label="share reddit"><span aria-hidden=true class=share-icon><svg viewBox="0 0 24 24"><path d="M24 11.5c0-1.65-1.35-3-3-3-.96.0-1.86.48-2.42 1.24-1.64-1-3.75-1.64-6.07-1.72.08-1.1.4-3.05 1.52-3.7.72-.4 1.73-.24 3 .5C17.2 6.3 18.46 7.5 20 7.5c1.65.0 3-1.35 3-3s-1.35-3-3-3c-1.38.0-2.54.94-2.88 2.22-1.43-.72-2.64-.8-3.6-.25-1.64.94-1.95 3.47-2 4.55-2.33.08-4.45.7-6.1 1.72C4.86 8.98 3.96 8.5 3 8.5c-1.65.0-3 1.35-3 3 0 1.32.84 2.44 2.05 2.84-.03.22-.05.44-.05.66.0 3.86 4.5 7 10 7s10-3.14 10-7c0-.22-.02-.44-.05-.66 1.2-.4 2.05-1.54 2.05-2.84zM2.3 13.37C1.5 13.07 1 12.35 1 11.5c0-1.1.9-2 2-2 .64.0 1.22.32 1.6.82-1.1.85-1.92 1.9-2.3 3.05zm3.7.13c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9.8 4.8c-1.08.63-2.42.96-3.8.96-1.4.0-2.74-.34-3.8-.95-.24-.13-.32-.44-.2-.68.15-.24.46-.32.7-.18 1.83 1.06 4.76 1.06 6.6.0.23-.13.53-.05.67.2.14.23.06.54-.18.67zm.2-2.8c-1.1.0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm5.7-2.13c-.38-1.16-1.2-2.2-2.3-3.05.38-.5.97-.82 1.6-.82 1.1.0 2 .9 2 2 0 .84-.53 1.57-1.3 1.87z"/></svg></span></a></div></div></div></article></div><div class="section pb-0"><h2 class="h3 mb-12">相关</h2><div class=row><div class="lg:col-4 md:col-6 mb-14"><div class="bg-body dark:bg-darkmode-body"><h4 class=mb-3><a href=/blog/computer-technology/protocol/protocol-ip/>IP 协议</a></h4><p class="text-sm text-muted"><i class="fa-regular fa-calendar-alt mr-2"></i>2018-06-23</p><ul class=mb-4><li class="mr-4 inline-block"><a href=/authors/leezchuan/><i class="fa-regular fa-circle-user mr-2"></i>LeeZChuan</a></li><li class="mr-4 inline-block"><i class="fa-regular fa-folder mr-1"></i>
-<a href=/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/ class=ms-1>计算机技术
-,
-</a><a href=/categories/%e5%8d%8f%e8%ae%ae/ class=ms-1>协议
-,
-</a><a href=/categories/ip/ class=ms-1>IP</a></li></ul><p class=mb-6><p>作为 TCP/IP 协议栈中最核心的协议，IP 协议为网络数据传输和网络互联提供最基本的服务。IP 协议有 IPv4 和 IPv6 两个版本，我们只讨论 TPv4 版本的 IP 协议。</p></p><a class="btn btn-outline-primary btn-sm" href=/blog/computer-technology/protocol/protocol-ip/>了解更多</a></div></div><div class="lg:col-4 md:col-6 mb-14"><div class="bg-body dark:bg-darkmode-body"><h4 class=mb-3><a href=/blog/computer-technology/web/dom/dom-js/>DOM-加载 JavaScript</a></h4><p class="text-sm text-muted"><i class="fa-regular fa-calendar-alt mr-2"></i>2018-05-24</p><ul class=mb-4><li class="mr-4 inline-block"><a href=/authors/leezchuan/><i class="fa-regular fa-circle-user mr-2"></i>LeeZChuan</a></li><li class="mr-4 inline-block"><i class="fa-regular fa-folder mr-1"></i>
-<a href=/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/ class=ms-1>计算机技术
-,
-</a><a href=/categories/web/ class=ms-1>Web
-,
-</a><a href=/categories/web-%e5%89%8d%e7%ab%af/ class=ms-1>Web 前端
-,
-</a><a href=/categories/dom/ class=ms-1>Dom
-,
-</a><a href=/categories/javascript/ class=ms-1>Java script</a></li></ul><p class=mb-6><p>页面的动态交互离不开 Javascript，将 js 脚本引入页面时会阻塞页面加载，在某些时候我们则可以选择异步加载 js 脚本。</p></p><a class="btn btn-outline-primary btn-sm" href=/blog/computer-technology/web/dom/dom-js/>了解更多</a></div></div><div class="lg:col-4 md:col-6 mb-14"><div class="bg-body dark:bg-darkmode-body"><h4 class=mb-3><a href=/life/reading/unemployment/>何为失业？何为工作</a></h4><p class="text-sm text-muted"><i class="fa-regular fa-calendar-alt mr-2"></i>2024-12-02</p><ul class=mb-4><li class="mr-4 inline-block"><a href=/authors/leezchuan/><i class="fa-regular fa-circle-user mr-2"></i>LeeZChuan</a></li><li class="mr-4 inline-block"><i class="fa-regular fa-folder mr-1"></i>
-<a href=/categories/%e5%a4%b1%e4%b8%9a/ class=ms-1>失业</a></li></ul><p class=mb-6><p>最近在看博客，翻阅到一个博主聊失业所提及的观点，觉得挺有道理，分享给大家。</p></p><a class="btn btn-outline-primary btn-sm" href=/life/reading/unemployment/>了解更多</a></div></div></div></div></div></section></main><footer class="bg-theme-light dark:bg-darkmode-theme-light"><div class=container><div class="row items-center py-10"><div class="lg:col-3 mb-8 text-center lg:mb-0 lg:text-left"><a class="navbar-brand inline-block" href=/><img fetchpriority=high decoding=async class="img img-light" width=160 height=32 src=/images/logo_hu4668213964747553556.webp alt=LeeZChuan onerror='this.onerror=null,this.src="/images/logo_hu16137327364032044341.png"'>
-<img fetchpriority=high decoding=async class="img img-dark" width=160 height=32 src=/images/logo-darkmode_hu4521180468968039794.webp alt=LeeZChuan onerror='this.onerror=null,this.src="/images/logo-darkmode_hu12278668914502940210.png"'></a></div><div class="lg:col-6 mb-8 text-center lg:mb-0"><ul><li class="m-3 inline-block"><a href=/></a></li></ul></div><div class="lg:col-3 mb-8 text-center lg:mb-0 lg:mt-0 lg:text-right"><ul class=social-icons><li><a target=_blank aria-label=facebook rel="nofollow noopener" href="https://www.facebook.com/profile.php?id=100083154937436"><i class="fab fa-facebook"></i></a></li><li><a target=_blank aria-label=github rel="nofollow noopener" href=https://github.com/LeeZChuan><i class="fab fa-github"></i></a></li><li><a target=_blank aria-label=linkedin rel="nofollow noopener" href=https://www.linkedin.com/in/zchuan-lee-89214a1a3/><i class="fab fa-linkedin"></i></a></li></ul></div></div></div><div class="border-border dark:border-darkmode-border border-t py-7"><div class="text-light dark:text-darkmode-light container text-center"><p></p></div></div></footer><script crossorigin=anonymous integrity="sha256-LO9JECYLqyMcpGlrtxZcpUn0I8AvhO6oIIibJZv4zbk=" src=/js/script.min.2cef4910260bab231ca4696bb7165ca549f423c02f84eea820889b259bf8cdb9.js></script><script defer async crossorigin=anonymous integrity="sha256-w+aS42D2+B+Jix+joZ7pAua1vbu/pRK/IhoP55b8n3w=" src=/js/script-lazy.min.c3e692e360f6f81f898b1fa3a19ee902e6b5bdbbbfa512bf221a0fe796fc9f7c.js></script><script>"serviceWorker"in navigator&&navigator.serviceWorker.register("/service-worker.js")</script></body></html>
+本文从项目初始化选用脚手架开始、样式隔离、lint 规则与 git hook 再到模版工具和自动化版本日志，介绍了本人在开发过程中的一些实践和思考，旨在指出一个项目从代码初始化到交付上线过程中可能涉及到的不同流程中，存在的不同提交效率和自动化流程的工作，囿于文章篇幅，没有针对所有涉及到的流程和工具进行详细的 API 介绍，但你仍可以针对其中提到的各类关键词在互联网上进行搜索和查看。</p>
+<p>本文在撰写时也尽量针对不同流程换用了普适的一些描述，以保证所提供的方案在替换了具体工具库后仍是长期可用的，防止文章内容受工具的时效性影响。</p>
+<p>全文来看，主要有这么几点实践总结：</p>
+<ol>
+<li>在脚手架的选择上，你可以使用 create-react-app 或者 umi 等社区方案，但如果想要更灵活的脚手架，当你使用 CRA 的时候，可以一并考虑 craco；</li>
+<li>CSS Modules 的作用无需多说，但同样需要注意 TypeScript 检查以及你在命名 CSS 变量写法上的兼容；</li>
+<li>ESLINT 现在已经是大部分项目的标配了，如果你的项目涉及多人协作，可以配置一些额外的 plugin 协助保持风格一致、减少代码合并冲突。当然，在统一代码风格上，还可以通过 husky 定制 git 钩子与具体需要执行的任务，比如：</li>
+</ol>
+<blockquote>
+<p>commit-msg
+pre-commit</p>
+</blockquote>
+<ol start="4">
+<li>其中通过 lint-staged 在 pre-commit 时机定制各类文件格式化的操作（主要用 eslint 和 prettier 保证执行），通过 commitlint 保证 commit msg 信息符合规范。</li>
+<li>本地开发代理环境在很多团队是必须的，你可以选用一个中间件来增强你的 dev server。</li>
+<li>我们同样可以考虑通过代码复用来提升我们的开发效率，这里的场景主要可以分为两类：code snippets 以及组件级别的文件修改。</li>
+<li>每当项目上线，规范来说，都需要发版及记录日志变更，我们可以引入 standard-version 对自动打 tag 以及 CHANGELOG 生成进行规范。</li>
+</ol>
+
+          </div>
+          <div class="row items-start justify-between">
+            
+            
+              <div class="lg:col-5 mb-10 flex items-center lg:mb-0">
+                <h5 class="mr-3">标签 :</h5>
+                <ul>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/">
+                        计算机技术
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/web%e5%89%8d%e7%ab%af/">
+                        Web前端
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/%e6%8f%90%e6%95%88/">
+                        提效
+                      </a>
+                    </li>
+                  
+                </ul>
+              </div>
+            
+            <div class="lg:col-4 flex items-center">
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="share-icons">
+  <h5 class="share-title">分享 :</h5>
+
+
+  
+  
+    <a
+      class="share-link share-facebook"
+      href="https://facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fblog%2fcomputer-technology%2fweb%2fpractice-of-project-development-and-auto-workflow%2f"
+      target="_blank"
+      rel="noopener"
+      aria-label="share facebook">
+      <span class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-twitter"
+      href="https://twitter.com/intent/tweet/?text=%e5%88%86%e4%ba%ab&amp;url=http%3a%2f%2flocalhost%3a1313%2fblog%2fcomputer-technology%2fweb%2fpractice-of-project-development-and-auto-workflow%2f"
+      target="_blank"
+      rel="noopener"
+      aria-label="share twitter">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path 
+            d="M8 2H1l8.26 11.015L1.45 22H4.1l6.388-7.349L16 22h7l-8.608-11.478L21.8 2h-2.65l-5.986 6.886zm9 18L5 4h2l12 16z"/>
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-email"
+      href="mailto:?subject=%e5%88%86%e4%ba%ab&amp;body=http%3a%2f%2flocalhost%3a1313%2fblog%2fcomputer-technology%2fweb%2fpractice-of-project-development-and-auto-workflow%2f"
+      target="_self"
+      rel="noopener"
+      aria-label="share email">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M22 4H2C.9 4 0 4.9 0 6v12c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7.25 14.43l-3.5 2c-.08.05-.17.07-.25.07-.17 0-.34-.1-.43-.25-.14-.24-.06-.55.18-.68l3.5-2c.24-.14.55-.06.68.18.14.24.06.55-.18.68zm4.75.07c-.1 0-.2-.03-.27-.08l-8.5-5.5c-.23-.15-.3-.46-.15-.7.15-.22.46-.3.7-.14L12 13.4l8.23-5.32c.23-.15.54-.08.7.15.14.23.07.54-.16.7l-8.5 5.5c-.08.04-.17.07-.27.07zm8.93 1.75c-.1.16-.26.25-.43.25-.08 0-.17-.02-.25-.07l-3.5-2c-.24-.13-.32-.44-.18-.68s.44-.32.68-.18l3.5 2c.24.13.32.44.18.68z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-reddit"
+      href="https://reddit.com/submit/?url=http%3a%2f%2flocalhost%3a1313%2fblog%2fcomputer-technology%2fweb%2fpractice-of-project-development-and-auto-workflow%2f&amp;resubmit=true&amp;title=%e5%88%86%e4%ba%ab"
+      target="_blank"
+      rel="noopener"
+      aria-label="share reddit">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M24 11.5c0-1.65-1.35-3-3-3-.96 0-1.86.48-2.42 1.24-1.64-1-3.75-1.64-6.07-1.72.08-1.1.4-3.05 1.52-3.7.72-.4 1.73-.24 3 .5C17.2 6.3 18.46 7.5 20 7.5c1.65 0 3-1.35 3-3s-1.35-3-3-3c-1.38 0-2.54.94-2.88 2.22-1.43-.72-2.64-.8-3.6-.25-1.64.94-1.95 3.47-2 4.55-2.33.08-4.45.7-6.1 1.72C4.86 8.98 3.96 8.5 3 8.5c-1.65 0-3 1.35-3 3 0 1.32.84 2.44 2.05 2.84-.03.22-.05.44-.05.66 0 3.86 4.5 7 10 7s10-3.14 10-7c0-.22-.02-.44-.05-.66 1.2-.4 2.05-1.54 2.05-2.84zM2.3 13.37C1.5 13.07 1 12.35 1 11.5c0-1.1.9-2 2-2 .64 0 1.22.32 1.6.82-1.1.85-1.92 1.9-2.3 3.05zm3.7.13c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9.8 4.8c-1.08.63-2.42.96-3.8.96-1.4 0-2.74-.34-3.8-.95-.24-.13-.32-.44-.2-.68.15-.24.46-.32.7-.18 1.83 1.06 4.76 1.06 6.6 0 .23-.13.53-.05.67.2.14.23.06.54-.18.67zm.2-2.8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm5.7-2.13c-.38-1.16-1.2-2.2-2.3-3.05.38-.5.97-.82 1.6-.82 1.1 0 2 .9 2 2 0 .84-.53 1.57-1.3 1.87z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+</div>
+
+            </div>
+          </div>
+          
+          
+        </article>
+      </div>
+
+      
+      
+      
+      
+        <div class="section pb-0">
+          <h2 class="h3 mb-12">相关</h2>
+          <div class="row">
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/computer-technology/web/web-tips-fonts/">Web 字体加载对 DOM 位置的影响</a>
+  </h4>
+  
+  <p class="text-sm text-muted">
+    <i class="fa-regular fa-calendar-alt mr-2"></i>2022-10-16 
+  </p>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/leezchuan/">
+          <i class="fa-regular fa-circle-user mr-2"></i>LeeZChuan
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/"
+            class="ms-1"
+            >计算机技术
+              ,
+            
+          </a>
+        
+          <a
+            href="/categories/web%e5%89%8d%e7%ab%af/"
+            class="ms-1"
+            >Web前端
+          </a>
+        
+      </li>
+    </ul>
+  
+  
+  <p class="mb-6">
+    
+      <p>由于公司的业务会用到自己设计师定制的 Web 字体，所以一般在组件开发过程中会利用 CSS 引用该字体（<a …</p>
+    
+  </p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/web-tips-fonts/">
+    了解更多
+  </a>
+</div>
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/computer-technology/linux/linux-cmd-shell/">Linux-常用 Shell 命令</a>
+  </h4>
+  
+  <p class="text-sm text-muted">
+    <i class="fa-regular fa-calendar-alt mr-2"></i>2018-02-21 
+  </p>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/clone/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Clone
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/"
+            class="ms-1"
+            >计算机技术
+              ,
+            
+          </a>
+        
+          <a
+            href="/categories/%e6%93%8d%e4%bd%9c%e7%b3%bb%e7%bb%9f/"
+            class="ms-1"
+            >操作系统
+              ,
+            
+          </a>
+        
+          <a
+            href="/categories/linux/"
+            class="ms-1"
+            >Linux
+          </a>
+        
+      </li>
+    </ul>
+  
+  
+  <p class="mb-6">
+    
+      <p>Linux 是一个优秀的开发环境，大多数服务器都在上面部署。作为一个程序员，熟悉Linux 系统的常用操作也是很必要的。在 linux 内核外，shell 提供了我们程序员（用户）与内核之间的交互媒 …</p>
+    
+  </p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/linux/linux-cmd-shell/">
+    了解更多
+  </a>
+</div>
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/computer-technology/web/dom/dom-rule/">DOM-元素节点几何量</a>
+  </h4>
+  
+  <p class="text-sm text-muted">
+    <i class="fa-regular fa-calendar-alt mr-2"></i>2018-05-19 
+  </p>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/leezchuan/">
+          <i class="fa-regular fa-circle-user mr-2"></i>LeeZChuan
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/"
+            class="ms-1"
+            >计算机技术
+              ,
+            
+          </a>
+        
+          <a
+            href="/categories/web/"
+            class="ms-1"
+            >Web
+              ,
+            
+          </a>
+        
+          <a
+            href="/categories/web-%e5%89%8d%e7%ab%af/"
+            class="ms-1"
+            >Web 前端
+              ,
+            
+          </a>
+        
+          <a
+            href="/categories/dom/"
+            class="ms-1"
+            >Dom
+              ,
+            
+          </a>
+        
+          <a
+            href="/categories/rule/"
+            class="ms-1"
+            >Rule
+          </a>
+        
+      </li>
+    </ul>
+  
+  
+  <p class="mb-6">
+    
+      <p>当我们在查看 HTML 文档时，每个元素节点被解析后，都画成了可视形状。我们可以获取每个元素节点的几何量（宽、高、偏移量）以及页面滚动距离。</p>
+    
+  </p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom-rule/">
+    了解更多
+  </a>
+</div>
+              </div>
+            
+          </div>
+        </div>
+      
+    </div>
+  </section>
+
+    </main>
+
+    
+    <footer class="bg-theme-light dark:bg-darkmode-theme-light">
+  <div class="container">
+    <div class="row items-center py-10">
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:text-left">
+        
+        <a
+          class="navbar-brand inline-block"
+          href="/">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+    
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu4668213964747553556.webp"
+      alt="LeeZChuan"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu16137327364032044341.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu4521180468968039794.webp"
+      alt="LeeZChuan"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu12278668914502940210.png';" />
+  
+  
+
+
+        </a>
+      </div>
+      <div class="lg:col-6 mb-8 text-center lg:mb-0">
+        <ul>
+          
+            <li class="m-3 inline-block">
+              <a
+                
+                href="
+                  /
+                "
+                ></a
+              >
+            </li>
+          
+        </ul>
+      </div>
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:mt-0 lg:text-right">
+        <ul class="social-icons">
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="facebook"
+                rel="nofollow noopener"
+                href="https://www.facebook.com/profile.php?id=100083154937436">
+                <i class="fab fa-facebook"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="github"
+                rel="nofollow noopener"
+                href="https://github.com/LeeZChuan">
+                <i class="fab fa-github"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="linkedin"
+                rel="nofollow noopener"
+                href="https://www.linkedin.com/in/zchuan-lee-89214a1a3/">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="border-border dark:border-darkmode-border border-t py-7">
+    <div class="text-light dark:text-darkmode-light container text-center">
+      <p>
+        
+      </p>
+    </div>
+  </div>
+</footer>
+
+
+
+    
+    
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<script
+  crossorigin="anonymous"
+  integrity=""
+  src="/js/script.js"></script>
+
+
+<script
+  defer
+  async
+  crossorigin="anonymous"
+  integrity=""
+  src="/js/script-lazy.js"></script>
+
+
+
+<script>
+  if ('serviceWorker' in navigator){navigator.serviceWorker.register("/service-worker.js");}
+</script>
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  </body>
+</html>
