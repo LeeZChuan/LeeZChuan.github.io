@@ -9,7 +9,7 @@
   "searchKeyword": "",
   "categories": "计算机技术, 虚拟滚动",
   "tags": "",
-  "content":""},{
+  "content":"前言 在前端开发中，表格一直都是最复杂的组件之一，由于公司业务，需要在低版本浏览器中使用，并且需要实现固定列，所以市面上使用（使用position:sticky 实现粘性布局）的方案就被pass掉了，因为该特性只能在浏览器56版本以上才能使用，需要使用原生表格实现虚拟滚动，本篇仅分享表格竖向的虚拟滚动。\n原生表格的虚拟滚动 原生表格 原生表格的虚拟滚动，主要是指使用原生表格标签，通过计算表格的scrollTop来控制表格的显示区域，从而实现表格的虚拟滚动。\n原生表格的虚拟滚动实现 参考 https://www.yuque.com/shinima/blog/nbgglx https://www.yuque.com/shinima/blog/llo9ro "},{
   "section": "Blog",
   "slug": "/blog/computer-technology/web/react/electorn/",
   "title": "Electorn",

@@ -889,10 +889,50 @@
       内容列表
     
   </summary>
-  <nav id="TableOfContents"></nav>
+  <nav id="TableOfContents">
+  <ol>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#原生表格的虚拟滚动">原生表格的虚拟滚动</a>
+      <ol>
+        <li><a href="#原生表格">原生表格</a></li>
+        <li><a href="#原生表格的虚拟滚动实现">原生表格的虚拟滚动实现</a></li>
+      </ol>
+    </li>
+    <li><a href="#参考">参考</a></li>
+  </ol>
+</nav>
 </details>
 
-            
+            <h2 id="前言">前言</h2>
+<p>在前端开发中，表格一直都是最复杂的组件之一，由于公司业务，需要在低版本浏览器中使用，并且需要实现固定列，所以市面上使用（使用position:sticky 实现粘性布局）的方案就被pass掉了，因为该特性只能在浏览器56版本以上才能使用，需要使用原生表格实现虚拟滚动，本篇仅分享表格竖向的虚拟滚动。</p>
+<h2 id="原生表格的虚拟滚动">原生表格的虚拟滚动</h2>
+<h3 id="原生表格">原生表格</h3>
+<p>原生表格的虚拟滚动，主要是指使用原生表格标签，通过计算表格的<code>scrollTop</code>来控制表格的显示区域，从而实现表格的虚拟滚动。</p>
+<h3 id="原生表格的虚拟滚动实现">原生表格的虚拟滚动实现</h3>
+<h2 id="参考">参考</h2>
+<ol>
+<li><a href="https://www.yuque.com/shinima/blog/nbgglx"
+
+
+
+
+ target="_blank"
+ 
+
+
+>https://www.yuque.com/shinima/blog/nbgglx</a></li>
+<li><a href="https://www.yuque.com/shinima/blog/llo9ro"
+
+
+
+
+ target="_blank"
+ 
+
+
+>https://www.yuque.com/shinima/blog/llo9ro</a></li>
+</ol>
+
           </div>
           <div class="row items-start justify-between">
             
@@ -1035,11 +1075,11 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/ai/">AI技术</a>
+    <a href="/blog/computer-technology/mobile-web/wx-dingding/">主流小程序开发流程</a>
   </h4>
   
   <p class="text-sm text-muted">
-    <i class="fa-regular fa-calendar-alt mr-2"></i>2024-10-14 
+    <i class="fa-regular fa-calendar-alt mr-2"></i>2022-11-11 
   </p>
   
   
@@ -1053,17 +1093,25 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/"
+            href="/categories/%e5%89%8d%e7%ab%af/"
             class="ms-1"
-            >计算机技术
+            >前端
               ,
             
           </a>
         
           <a
-            href="/categories/ai%e5%b7%a5%e5%85%b7/"
+            href="/categories/%e5%be%ae%e4%bf%a1%e5%b0%8f%e7%a8%8b%e5%ba%8f/"
             class="ms-1"
-            >Ai工具
+            >微信小程序
+              ,
+            
+          </a>
+        
+          <a
+            href="/categories/%e9%92%89%e9%92%89%e5%b0%8f%e7%a8%8b%e5%ba%8f/"
+            class="ms-1"
+            >钉钉小程序
           </a>
         
       </li>
@@ -1072,10 +1120,10 @@
   
   <p class="mb-6">
     
-      <p>近几年ai发展历程 (2022-2024),以下使用表格进行详细展示</p>
+      微信小程序开发与钉钉小程序开发的移动端兼容上有很多需要注意的点。
     
   </p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/ai/">
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/mobile-web/wx-dingding/">
     了解更多
   </a>
 </div>
@@ -1086,11 +1134,11 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/tools/tools-maintain-open-source-projects-with-tools/">如何更好的维护开源项目</a>
+    <a href="/blog/computer-technology/web/web-performance-case-1/">Web 前端性能优化：案例分析 1</a>
   </h4>
   
   <p class="text-sm text-muted">
-    <i class="fa-regular fa-calendar-alt mr-2"></i>2022-04-22 
+    <i class="fa-regular fa-calendar-alt mr-2"></i>2021-09-24 
   </p>
   
   
@@ -1104,22 +1152,6 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/%e5%b7%a5%e5%85%b7/"
-            class="ms-1"
-            >工具
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/%e5%bc%80%e6%ba%90/"
-            class="ms-1"
-            >开源
-              ,
-            
-          </a>
-        
-          <a
             href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/"
             class="ms-1"
             >计算机技术
@@ -1128,9 +1160,25 @@
           </a>
         
           <a
-            href="/categories/%e9%a1%b9%e7%9b%ae/"
+            href="/categories/web%e5%89%8d%e7%ab%af/"
             class="ms-1"
-            >项目
+            >Web前端
+              ,
+            
+          </a>
+        
+          <a
+            href="/categories/%e6%80%a7%e8%83%bd%e4%bc%98%e5%8c%96/"
+            class="ms-1"
+            >性能优化
+              ,
+            
+          </a>
+        
+          <a
+            href="/categories/%e6%a1%88%e4%be%8b%e5%88%86%e6%9e%90/"
+            class="ms-1"
+            >案例分析
           </a>
         
       </li>
@@ -1139,10 +1187,10 @@
   
   <p class="mb-6">
     
-      <p>一直以来，开源精神被开发者所推崇，开源项目为开发者提供了不用付出除时间以外任何成本就可以学习前沿技术的最佳途径，另一方面，我们应该思考开源为何会成功，在全球开发者参与协作的情况下代码仓库为何能保持整 …</p>
+      Web 性能相关的概念很多，但如何落地在真实业务场景中，其实是一个比较难的事情，或者说机会鲜有，在这里记录一下真实业务案例做性能优化的过程。
     
   </p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/tools/tools-maintain-open-source-projects-with-tools/">
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/web-performance-case-1/">
     了解更多
   </a>
 </div>
@@ -1153,11 +1201,11 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/computer-technology/protocol/protocol-tcp-udp/">TCP 与 UDP 协议</a>
+    <a href="/blog/business/business-noun/">一些互联网名词</a>
   </h4>
   
   <p class="text-sm text-muted">
-    <i class="fa-regular fa-calendar-alt mr-2"></i>2018-06-20 
+    <i class="fa-regular fa-calendar-alt mr-2"></i>2022-03-27 
   </p>
   
   
@@ -1171,33 +1219,17 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/"
+            href="/categories/%e5%95%86%e4%b8%9a/"
             class="ms-1"
-            >计算机技术
+            >商业
               ,
             
           </a>
         
           <a
-            href="/categories/%e5%8d%8f%e8%ae%ae/"
+            href="/categories/%e4%ba%92%e8%81%94%e7%bd%91%e5%90%8d%e8%af%8d/"
             class="ms-1"
-            >协议
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/tcp/"
-            class="ms-1"
-            >Tcp
-              ,
-            
-          </a>
-        
-          <a
-            href="/categories/udp/"
-            class="ms-1"
-            >UDP
+            >互联网名词
           </a>
         
       </li>
@@ -1206,10 +1238,10 @@
   
   <p class="mb-6">
     
-      <p>传输层是网络分层模型中举足轻重的层，它是底层通信子网与高层资源子网的接口与桥梁，提供了面向连接的传输控制协议（Transmission Control Protocol，TCP）和无连接的用户数据报协 …</p>
+      互联网时代创造了诸多名词，而这些与商业活动紧密相关，了解一下还是挺有趣的。
     
   </p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/protocol/protocol-tcp-udp/">
+  <a class="btn btn-outline-primary btn-sm" href="/blog/business/business-noun/">
     了解更多
   </a>
 </div>
