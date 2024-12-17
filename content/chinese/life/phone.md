@@ -3,12 +3,12 @@ title: 那些年之电子产品
 date: 2024-11-07T05:53:42.707Z
 update: 2024-11-07T05:53:43.212Z
 authors: LeeZChuan
+description: "从上大学开始到现在买了很多电子产品，于是乎，就整理一下，做个纪念"
 tags:
     - 手机
     - 电子消费品
     - 记录
 ---
-
 
 
 
@@ -23,11 +23,11 @@ tags:
 
 2020年疫情过后，工作购入iphone 11 128g
 
-2021年 ipad pro 2021 11寸 128g
+2021年 ipad pro 2021 11寸 128g 、 MacBookPro M1pro 14寸 2021款 16g
 
 2022年 罗技Master3
 
-2023年 iphone14pro 256g
+2023年 iphone14pro 256g、rog掌机
 
-2024年 罗技Master3s
+2024年 罗技Master3s、联想4070tis整机
 
