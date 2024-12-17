@@ -23,7 +23,7 @@ description: 由于业务开发需要在低版本浏览器中使用，所以需�
 横向虚拟滚动
 当表格的列非常多时，也会导致表格渲染卡顿，所以如何在原生组件下实现了横向的虚拟滚动。横向虚拟滚动的开启前提是所有列的宽度都已知，这使横向的实现更加直截了当。根据当前的偏移量和最大渲染宽度，就可以精确地算出渲染范围，不再需要缓存来记录每一列的实际/预估宽度了。
 
-{{< image src="images/virtual03.png" caption="" alt="" height="" width="" position="center" command="fill"  class="img-fluid" title="实现3"  webp="false" >}}
+{{< image src="images/blog/virtual03.png" caption="" alt="" height="" width="" position="center" command="fill"  class="img-fluid" title="实现3"  webp="false" >}}
 
 
 不过左右两侧锁列的存在给实现带来了一定的麻烦：锁定的列不需要进行虚拟滚动。为了使横向虚拟滚动与锁列兼容，组件将所有列分为五个部分，从左至右依次为：left-lock, left-blank, center, right-blank, right-lock。根据 offset / maxRenderWidth 计算渲染范围时，组件要先根据锁列部分对输入进行调整，从而计算出非锁列部分的渲染范围（即算出 center 部分对应的下标）。在实际渲染时，组件会用一个宽度很大的单元格来替代 left-blank 所对应的多个单元格（right-blank 同理）。
@@ -47,7 +47,7 @@ description: 由于业务开发需要在低版本浏览器中使用，所以需�
 ● 减少重渲染频率：滚动距离较小时，可以确保上一次的渲染内容仍会充满可视区域，不需要再触发 re-render
 ● 减少白屏时间：缓慢滚动的时候，部分元素已经提前渲染好了，减少白屏时间
 
-{{< image src="images/overscan.png" caption="" alt="" height="" width="" position="center" command="fill"  class="img-fluid" title="overscan"  webp="false" >}}
+{{< image src="images/blog/overscan.png" caption="" alt="" height="" width="" position="center" command="fill"  class="img-fluid" title="overscan"  webp="false" >}}
 
 
 ## 参考

@@ -34,7 +34,7 @@ description: 由于业务开发需要在低版本浏览器中使用，所以需�
 
  > 核心是使用padding的top与bottom来控制表格的显示区域，通过监听表格的scroll事件，来计算表格的scrollTop，从而控制表格的显示区域。流程如下：
 
-{{< image src="images/virtual01.png" caption="" alt="" height="" width="" position="center" command="fill"  class="img-fluid" title="实现1"  webp="false" >}}
+{{< image src="images/blog/virtual01.png" caption="" alt="" height="" width="" position="center" command="fill"  class="img-fluid" title="实现1"  webp="false" >}}
 
 > 核心需要根据当前下述状态中startIndex与endIndex乘以trHeight的去计算顶部padding与底部padding的高度，但是这种会导致渲染上存在一些渲染闪烁的问题，底层原因就是浏览器性能，在mac或者高性能电脑上就不是很明显
 
@@ -68,14 +68,14 @@ this.virtualState = {
 
 > 缓存表格的预估行高:
 
-{{< image src="images/virtual02.png" caption="" alt="" height="" width="" position="center" command="fill"  class="img-fluid" title="实现2"  webp="false" >}}
+{{< image src="images/blog/virtual02.png" caption="" alt="" height="" width="" position="center" command="fill"  class="img-fluid" title="实现2"  webp="false" >}}
 
 > 平滑滚动的要点
 > 平滑性也是虚拟滚动的要点之一，滚动过程中应当避免因 blank 或行高变化而产生的抖动。滚动分为两种：
 ● 缓慢滚动：上一次渲染的行 与 下一次渲染的行有交集
 ● 快速滚动：上一次渲染的行 与 下一次渲染的行没有交集，即两次渲染之间部分行被跳过了
 
-{{< image src="images/virtual04.png" caption="" alt="" height="" width="" position="center" command="fill"  class="img-fluid" title="实现4"  webp="false" >}}
+{{< image src="images/blog/virtual04.png" caption="" alt="" height="" width="" position="center" command="fill"  class="img-fluid" title="实现4"  webp="false" >}}
 
 ### 交叉表（new feature）
 

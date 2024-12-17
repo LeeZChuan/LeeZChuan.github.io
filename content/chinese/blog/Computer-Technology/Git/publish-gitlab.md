@@ -15,8 +15,9 @@ description: "自己开发的npm包如何发布到公网与内网"
 #### 1. 如何发布
 
 首先去gitlab平台对应你要发布的平台勾选对应的权限，然后创建你所需要的**token**，
-在这里我创建了本次项目所需要的**zcharts_token**,
-![gitlab-token](/assets/images/gitlab-token.png)
+在这里我创建了本次项目所需要的**zcharts_token**:
+
+{{< image src="images/blog/gitlab-token.png" caption="" alt="" height="" width="" position="center" command="fill"  class="img-fluid" title="gitlab-token"  webp="false" >}}
 
 然后在windows配置全局token：
 
@@ -54,7 +55,8 @@ sh echo $NPM_TOKEN # Unix/macOS echo %NPM_TOKEN% # Windows
 
 从下方安装依赖的路径可以看到是从ip内网安装的该依赖：
 
-![npm-register](/assets/images/npm-register.png)
+{{< image src="images/blog/npm-register.png" caption="" alt="" height="" width="" position="center" command="fill"  class="img-fluid" title="npm-register"  webp="false" >}}
+
 
 
 > 也可以使用该命令安装依赖：
