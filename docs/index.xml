@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>技术之心</title><link>https://leezchuan.github.io/</link><description>Recent content on 技术之心</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Mon, 16 Dec 2024 08:44:18 +0000</lastBuildDate><atom:link href="https://leezchuan.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>原生表格的虚拟滚动实践（上）</title><link>https://leezchuan.github.io/blog/computer-technology/computer/virtual-table-vertical/</link><pubDate>Mon, 16 Dec 2024 08:44:18 +0000</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/computer/virtual-table-vertical/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>技术之心</title><link>https://leezchuan.github.io/</link><description>Recent content on 技术之心</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Wed, 18 Dec 2024 11:59:15 +0000</lastBuildDate><atom:link href="https://leezchuan.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>前端开发中的流程自动化与提效实践</title><link>https://leezchuan.github.io/blog/computer-technology/web/platfrom-choose/</link><pubDate>Wed, 18 Dec 2024 11:59:15 +0000</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/platfrom-choose/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
+&lt;p>在开发过程中，我们常常需要处理各种平台，如Android、iOS、Web等。为了提高开发效率，我们需要选择合适的跨平台技术。本文将介绍几种常用的跨平台技术；&lt;/p></description></item><item><title>原生表格的虚拟滚动实践（上）</title><link>https://leezchuan.github.io/blog/computer-technology/computer/virtual-table-vertical/</link><pubDate>Mon, 16 Dec 2024 08:44:18 +0000</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/computer/virtual-table-vertical/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
 &lt;p>在前端开发中，表格一直都是最复杂的组件之一，由于公司业务，需要在低版本浏览器中使用，并且需要实现固定列，所以市面上使用（使用position:sticky 实现粘性布局）的方案就被pass掉了，因为该特性只能在浏览器56版本以上才能使用，需要使用原生表格实现虚拟滚动，本篇仅分享表格竖向的虚拟滚动。&lt;/p></description></item><item><title>原生表格的虚拟滚动实践（下）</title><link>https://leezchuan.github.io/blog/computer-technology/computer/virtual-table-horizontal/</link><pubDate>Mon, 16 Dec 2024 08:44:18 +0000</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/computer/virtual-table-horizontal/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
 &lt;p>本篇文章分享如何实现横向的虚拟滚动。&lt;/p>
 &lt;h2 id="原生表格的横向虚拟滚动">原生表格的横向虚拟滚动&lt;/h2>
@@ -100,7 +101,120 @@
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>投资策略</title><link>https://leezchuan.github.io/life/thinking/2025/</link><pubDate>Mon, 09 Dec 2024 03:24:42 +0000</pubDate><guid>https://leezchuan.github.io/life/thinking/2025/</guid><description>&lt;p>2024年目前的配置主要是：&lt;/p>
 &lt;ol>
 &lt;li>
-&lt;p>美股：纳斯达克100和标普500基金，美股已是全球资金市场，高溢价奈何全球资金没去处。&lt;/p></description></item><item><title>Web 前端性能优化：批量 DOM 操作 - FastDOM</title><link>https://leezchuan.github.io/blog/computer-technology/web/web-performance-fastdom/</link><pubDate>Mon, 02 Dec 2024 09:26:05 +0000</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/web-performance-fastdom/</guid><description>&lt;p>利用 JS 开发的原生应用与依赖于 React.js/Vue 开发的框架/库应用，性能孰高孰低？这两者最显著的区别在于原生应用需要手动操作 DOM 完成业务，而框架/库应用是基于数据变化响应式的应用，后者只需要关注数据如何变化，至于体现在 DOM 上的变化皆由框架/库内部自动完成。所以，要搞清楚两者的性能优劣，可能&lt;strong>批量&lt;/strong>的 DOM 操作是一个不可忽略的核心因素。从代码执行的角度分析，框架/库也是基于原生 API 进行的封装抽象，因此代码执行时的路径更长、堆栈更深，由此可见原生 API 的操作性能应该是最高的。但是，现实情况是业务通常来说是复杂的，代码实现中 DOM 操作的逻辑分散在各处，那么多个 DOM 操作之间是否会产生影响从而不利于性能？这个时候就要关注宿主浏览器的渲染机制是如何理解批量的 DOM 操作的，这里引入的概念就是&lt;strong>关键渲染路径（Critical rendering path）&lt;/strong>。&lt;/p></description></item><item><title>何为失业？何为工作</title><link>https://leezchuan.github.io/life/reading/unemployment/</link><pubDate>Mon, 02 Dec 2024 05:58:46 +0000</pubDate><guid>https://leezchuan.github.io/life/reading/unemployment/</guid><description>&lt;p>最近在看博客，翻阅到一个博主聊失业所提及的观点，觉得挺有道理，分享给大家。&lt;/p></description></item><item><title>useSignal() 是Web框架的未来</title><link>https://leezchuan.github.io/blog/computer-technology/web/react/usesign/</link><pubDate>Mon, 11 Nov 2024 06:19:51 +0000</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/react/usesign/</guid><description>&lt;p>Angular、Qwik的作者 MIŠKO HEVERY 在文章中盛赞了 useSignal() 这种数据流方案， 表示 useSignal() 是前端框架的未来，并考虑在Angular中实现它。我们在这里不评价文章的观点，我们来看看 useSignal 这个方案的前世今生。&lt;/p></description></item><item><title>那些年之电子产品</title><link>https://leezchuan.github.io/life/phone/</link><pubDate>Thu, 07 Nov 2024 05:53:42 +0000</pubDate><guid>https://leezchuan.github.io/life/phone/</guid><description>&lt;p>把这几年工作上学买过的电子产品整理下；&lt;/p>
+&lt;p>美股：纳斯达克100和标普500基金，美股已是全球资金市场，高溢价奈何全球资金没去处。&lt;/p></description></item><item><title>Web 前端性能优化：批量 DOM 操作 - FastDOM</title><link>https://leezchuan.github.io/blog/computer-technology/web/web-performance-fastdom/</link><pubDate>Mon, 02 Dec 2024 09:26:05 +0000</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/web-performance-fastdom/</guid><description>&lt;p>利用 JS 开发的原生应用与依赖于 React.js/Vue 开发的框架/库应用，性能孰高孰低？这两者最显著的区别在于原生应用需要手动操作 DOM 完成业务，而框架/库应用是基于数据变化响应式的应用，后者只需要关注数据如何变化，至于体现在 DOM 上的变化皆由框架/库内部自动完成。所以，要搞清楚两者的性能优劣，可能&lt;strong>批量&lt;/strong>的 DOM 操作是一个不可忽略的核心因素。从代码执行的角度分析，框架/库也是基于原生 API 进行的封装抽象，因此代码执行时的路径更长、堆栈更深，由此可见原生 API 的操作性能应该是最高的。但是，现实情况是业务通常来说是复杂的，代码实现中 DOM 操作的逻辑分散在各处，那么多个 DOM 操作之间是否会产生影响从而不利于性能？这个时候就要关注宿主浏览器的渲染机制是如何理解批量的 DOM 操作的，这里引入的概念就是&lt;strong>关键渲染路径（Critical rendering path）&lt;/strong>。&lt;/p></description></item><item><title>何为失业？何为工作</title><link>https://leezchuan.github.io/life/reading/unemployment/</link><pubDate>Mon, 02 Dec 2024 05:58:46 +0000</pubDate><guid>https://leezchuan.github.io/life/reading/unemployment/</guid><description>&lt;p>最近在看博客，翻阅到一个博主聊失业所提及的观点，觉得挺有道理，分享给大家。&lt;/p></description></item><item><title>useSignal() 是Web框架的未来</title><link>https://leezchuan.github.io/blog/computer-technology/web/react/usesign/</link><pubDate>Mon, 11 Nov 2024 06:19:51 +0000</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/react/usesign/</guid><description>&lt;h2 id="什么是-usesignal">什么是 useSignal&lt;/h2>
+&lt;p>一个简单的 react 组件是下面这样的：它使用了useState这个hooks钩子函数
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+ 
+ 
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+
+ 
+ 
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ &lt;img
+ title="useState"
+ loading="lazy"
+ decoding="async"
+ class="img img-fluid img-center"
+ width="705"
+ height="373"
+ src="https://leezchuan.github.io/images/blog/useState_hu4169875591101599477.png"
+ alt=""
+ onerror="this.onerror='null';this.src='\/images\/blog\/useState_hu4169875591101599477.png'" />
+ 
+ 
+
+ 
+ 
+
+
+
+
+
+
+ &lt;script>
+ window.addEventListener("load", (e) => {
+ const lightbox = GLightbox();
+ });
+ &lt;/script>
+
+&lt;/p></description></item><item><title>那些年之电子产品</title><link>https://leezchuan.github.io/life/phone/</link><pubDate>Thu, 07 Nov 2024 05:53:42 +0000</pubDate><guid>https://leezchuan.github.io/life/phone/</guid><description>&lt;p>把这几年工作上学买过的电子产品整理下；&lt;/p>
 &lt;p>大学开始至今年代久远，整理的时间不一定对的上，简单整理一下当手帐册供日后做纪念：&lt;/p></description></item><item><title>2022年至2023年徒步记录</title><link>https://leezchuan.github.io/life/travel/traveling/</link><pubDate>Wed, 06 Nov 2024 09:12:34 +0000</pubDate><guid>https://leezchuan.github.io/life/travel/traveling/</guid><description>&lt;p>我在22年的夏天来到北京，然后接触到北京的徒步团体非常多，所以参加了很多次徒步，记录一下走过的路。&lt;/p></description></item><item><title>git依赖包发布</title><link>https://leezchuan.github.io/blog/computer-technology/git/publish-gitlab/</link><pubDate>Sat, 26 Oct 2024 02:40:53 +0000</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/git/publish-gitlab/</guid><description>&lt;blockquote>
 &lt;p>最近在开发npm包，需要发布到内网或者公网，便于是乎调研有多少种方案&lt;/p></description></item><item><title>（转载）如何实现网站鼠标特效</title><link>https://leezchuan.github.io/blog/computer-technology/code/mouse-pointer/</link><pubDate>Thu, 24 Oct 2024 06:29:32 +0000</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/code/mouse-pointer/</guid><description>&lt;p>使用以下代码可以实现一个在画布上的鼠标特效&lt;/p></description></item><item><title>AI技术</title><link>https://leezchuan.github.io/blog/computer-technology/ai/</link><pubDate>Mon, 14 Oct 2024 15:58:55 +0800</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/ai/</guid><description>&lt;p>近几年ai发展历程 (2022-2024),以下使用表格进行详细展示&lt;/p></description></item><item><title>架构设计笔记</title><link>https://leezchuan.github.io/blog/notes/architecture-design/</link><pubDate>Fri, 01 Dec 2023 20:04:00 +0800</pubDate><guid>https://leezchuan.github.io/blog/notes/architecture-design/</guid><description>&lt;p>该文章将目前可能能用到的架构理念，概念统一汇总整理～&lt;/p></description></item><item><title>从贝塞尔曲线的计算感受数学建模的魅力</title><link>https://leezchuan.github.io/blog/tools/tools-animation-math/</link><pubDate>Thu, 01 Dec 2022 01:04:00 +0800</pubDate><guid>https://leezchuan.github.io/blog/tools/tools-animation-math/</guid><description>&lt;p>最近在做前端可视化相关的东西，在完成动画效果时，遇到一个不是很好处理的问题，需要让一个元素在画布上以曲线的轨迹进行运动。因为动画这块之前基本也没有怎么接触过，做的也都是简单的线性动画效果，所以碰到这个需求点的时候觉得是有点难度的。&lt;/p></description></item><item><title>主流小程序开发流程</title><link>https://leezchuan.github.io/blog/computer-technology/mobile-web/wx-dingding/</link><pubDate>Fri, 11 Nov 2022 11:52:00 +0800</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/mobile-web/wx-dingding/</guid><description>&lt;p>开发小程序有很多问题特此记录一下～～～&lt;/p>
 &lt;blockquote>

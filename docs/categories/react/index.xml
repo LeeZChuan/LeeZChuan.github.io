@@ -1,1 +1,114 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>React on 技术之心</title><link>https://leezchuan.github.io/categories/react/</link><description>Recent content in React on 技术之心</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Mon, 16 Dec 2024 06:37:21 +0000</lastBuildDate><atom:link href="https://leezchuan.github.io/categories/react/index.xml" rel="self" type="application/rss+xml"/><item><title>Electorn</title><link>https://leezchuan.github.io/blog/computer-technology/web/react/electorn/</link><pubDate>Mon, 16 Dec 2024 06:37:21 +0000</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/react/electorn/</guid><description>&lt;p>既然从头学习一门语言，最好的方式还是直接接触全流程的开发是最快的，调研了Electorn一下，目前比较流行的框架有如下几种：&lt;/p></description></item><item><title>useSignal() 是Web框架的未来</title><link>https://leezchuan.github.io/blog/computer-technology/web/react/usesign/</link><pubDate>Mon, 11 Nov 2024 06:19:51 +0000</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/react/usesign/</guid><description>&lt;p>Angular、Qwik的作者 MIŠKO HEVERY 在文章中盛赞了 useSignal() 这种数据流方案， 表示 useSignal() 是前端框架的未来，并考虑在Angular中实现它。我们在这里不评价文章的观点，我们来看看 useSignal 这个方案的前世今生。&lt;/p></description></item><item><title>Web 应用：轻量级状态管理工具 zustand</title><link>https://leezchuan.github.io/blog/computer-technology/web/web-app-model-zustand/</link><pubDate>Thu, 18 Nov 2021 00:14:00 +0800</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/web-app-model-zustand/</guid><description>&lt;p>基于 React.js 的 Web 应用如何完成状态管理？社区主流方案是 &lt;strong>react-redux&lt;/strong>，其本质上基于 React 的 &lt;code>Context&lt;/code> 特性实现，如果应用足够简单，实际上用 &lt;code>Context&lt;/code> 手写一个简单的状态管理工具倒也并不难。不过，考虑到工具的完善性、项目的健壮性，通常采用较好的、成熟的社区方案。在移动端场景下，&lt;strong>react-redux&lt;/strong> 略显臃肿，轻量级状态管理工具 &lt;strong>zustand&lt;/strong> 倒是一个不错的替代方案。&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>React on 技术之心</title><link>https://leezchuan.github.io/categories/react/</link><description>Recent content in React on 技术之心</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Mon, 16 Dec 2024 06:37:21 +0000</lastBuildDate><atom:link href="https://leezchuan.github.io/categories/react/index.xml" rel="self" type="application/rss+xml"/><item><title>Electorn</title><link>https://leezchuan.github.io/blog/computer-technology/web/react/electorn/</link><pubDate>Mon, 16 Dec 2024 06:37:21 +0000</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/react/electorn/</guid><description>&lt;p>既然从头学习一门语言，最好的方式还是直接接触全流程的开发是最快的，调研了Electorn一下，目前比较流行的框架有如下几种：&lt;/p></description></item><item><title>useSignal() 是Web框架的未来</title><link>https://leezchuan.github.io/blog/computer-technology/web/react/usesign/</link><pubDate>Mon, 11 Nov 2024 06:19:51 +0000</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/react/usesign/</guid><description>&lt;h2 id="什么是-usesignal">什么是 useSignal&lt;/h2>
+&lt;p>一个简单的 react 组件是下面这样的：它使用了useState这个hooks钩子函数
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+ 
+ 
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+
+ 
+ 
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ &lt;img
+ title="useState"
+ loading="lazy"
+ decoding="async"
+ class="img img-fluid img-center"
+ width="705"
+ height="373"
+ src="https://leezchuan.github.io/images/blog/useState_hu4169875591101599477.png"
+ alt=""
+ onerror="this.onerror='null';this.src='\/images\/blog\/useState_hu4169875591101599477.png'" />
+ 
+ 
+
+ 
+ 
+
+
+
+
+
+
+ &lt;script>
+ window.addEventListener("load", (e) => {
+ const lightbox = GLightbox();
+ });
+ &lt;/script>
+
+&lt;/p></description></item><item><title>Web 应用：轻量级状态管理工具 zustand</title><link>https://leezchuan.github.io/blog/computer-technology/web/web-app-model-zustand/</link><pubDate>Thu, 18 Nov 2021 00:14:00 +0800</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/web-app-model-zustand/</guid><description>&lt;p>基于 React.js 的 Web 应用如何完成状态管理？社区主流方案是 &lt;strong>react-redux&lt;/strong>，其本质上基于 React 的 &lt;code>Context&lt;/code> 特性实现，如果应用足够简单，实际上用 &lt;code>Context&lt;/code> 手写一个简单的状态管理工具倒也并不难。不过，考虑到工具的完善性、项目的健壮性，通常采用较好的、成熟的社区方案。在移动端场景下，&lt;strong>react-redux&lt;/strong> 略显臃肿，轻量级状态管理工具 &lt;strong>zustand&lt;/strong> 倒是一个不错的替代方案。&lt;/p></description></item></channel></rss>
