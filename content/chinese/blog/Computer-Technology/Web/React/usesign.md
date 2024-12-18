@@ -1,24 +1,27 @@
 ---
 title: useSignal() 是Web框架的未来
 date: 2024-11-11T06:19:51.214Z
-update: 2024-11-11T06:19:51.862Z
-author: "LeeZChuan"
-categories: ["计算机技术", "Web前端", "React", "JavaScript"]
-description: JavaScript 作为一门在 Web 开发中的主流语言，常常涉及到交互事件方面的应用，这不可避免的用到了异步编程的方法，而它本身则是单线程运行的。在以往的开发中，异步编程正变得越来越难管理，新的 Promise 标准 API 将使得异步编程更加方便、安全。
+update: 2024-12-18T12:20:48.954Z
+author: LeeZChuan
+categories:
+    - 计算机技术
+    - Web前端
+    - React
+    - JavaScript
+description: Angular、Qwik的作者 MIŠKO HEVERY 在文章中盛赞了 useSignal() 这种数据流方案， 表示 useSignal() 是前端框架的未来，并考虑在Angular中实现它。我们在这里不评价文章的观点，我们来看看 useSignal 这个方案的前世今生。
 keywords: 工具
 ---
 
-Angular、Qwik的作者 MIŠKO HEVERY 在文章中盛赞了 useSignal() 这种数据流方案， 表示 useSignal() 是前端框架的未来，并考虑在Angular中实现它。我们在这里不评价文章的观点，我们来看看 useSignal 这个方案的前世今生。
 
 ## 什么是 useSignal
 
 一个简单的 react 组件是下面这样的：它使用了useState这个hooks钩子函数
+{{< image src="images/blog/useState.png" caption="" alt="" height="" width="" position="center" command="fill"  class="img-fluid" title="useState"  webp="false" >}}
 
-![useState](./useState.png)
 
 useSignal()就是 state 和 setState 的改良版本，它写起来是这样的：
+{{< image src="images/blog/useSignal.png" caption="" alt="" height="" width="" position="center" command="fill"  class="img-fluid" title="useSignal"  webp="false" >}}
 
-![useSignal](./useSignal.png)
 
 虽然看起来没什么特别的，只是省略了一个 setState，但是两者的原理其实完全不同。Signals 和 State 之间的主要区别在于 Signals 返回一个 getter 和一个 setter ，而非响应式系统返回其值（和一个 setter ）。
 
