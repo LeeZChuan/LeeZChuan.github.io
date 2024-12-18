@@ -20,8 +20,7 @@ frontend:
         - npm run project-setup
         - npm run build
   artifacts:
-    # IMPORTANT - Please verify your build output directory
-    baseDirectory: /public
+    baseDirectory: docs  # 修改为 docs 文件夹
     files:
       - "**/*"
   cache:

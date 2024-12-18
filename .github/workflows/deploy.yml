@@ -1,0 +1,38 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # 触发部署的分支，通常是 main 或 master
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 检出代码
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # 设置 Node.js 环境
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'  # 根据您的项目需求选择版本
+
+      # 安装依赖
+      - name: Install dependencies
+        run: npm install
+
+      # 运行构建命令
+      - name: Build project
+        run: npm run build
+
+      # 部署到 GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs  # 指向生成的 docs 目录
+          # 如果要部署到 docs 文件夹，可以使用 destination_dir
+          # destination_dir: docs
