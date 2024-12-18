@@ -1,5 +1,5 @@
 ---
-title: useSignal() 是Web框架的未来
+title: 为什么说useSignal()是Web框架的未来
 date: 2024-11-11T06:19:51.214Z
 update: 2024-12-18T12:20:48.954Z
 author: LeeZChuan
