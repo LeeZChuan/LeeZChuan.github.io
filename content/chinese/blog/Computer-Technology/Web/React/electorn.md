@@ -1,14 +1,13 @@
 ---
-title: Electorn
+title: Electorn的相关脚手架
 date: 2024-12-16T06:37:21.610Z
 update: 2024-12-16T06:37:20.925Z
 author: LeeZChuan
 categories:
   - React
   - 计算机技术
-  - electorn
-description: 今年上半年需要开发一个管理后台使用到了React框架，于是便接触一下Electorn框架，用于开发app了解一下目前有哪些可以快速上手的框架代码
-keywords: 工具
+  - Electorn
+description: 今年上半年需要开发一个管理后台使用到了React框架，于是便接触一下Electorn框架，用于开发跨平台了解一下目前有哪些可以快速上手的框架代码
 ---
 
 既然从头学习一门语言，最好的方式还是直接接触全流程的开发是最快的，调研了Electorn一下，目前比较流行的框架有如下几种：

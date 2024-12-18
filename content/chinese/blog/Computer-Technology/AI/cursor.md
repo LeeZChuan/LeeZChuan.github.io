@@ -8,7 +8,6 @@ categories:
   - cursor
 description: 过去一年经常使用chatgpt作为ai工具，最近看到Cursor基于4.0所以便使用该技术作为日常开发工具
 author: LeeZChuan
-keywords: 工具
 ---
 
 # Cursor接触
