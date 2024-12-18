@@ -1,5 +1,5 @@
 ---
-title: 前端开发中的流程自动化与提效实践
+title: TODO:前端开发中的流程自动化与提效实践
 date: 2024-12-18T11:59:15.247Z
 update: 2024-12-18T11:59:14.616Z
 categories:
@@ -44,9 +44,11 @@ React Native 开发的应用只能在 iOS 15.1 和 Android 7.0 (API 24) 或更�
 Electron 是一款跨平台桌面应用开发框架，它允许开发者使用 JavaScript、HTML 和 CSS 来构建桌面应用。Electron 的优点是开发效率高，可以复用 Web 开发技能，但缺点是性能较差，需要处理更多的兼容性问题。Electron 的主要应用场景是桌面应用开发。
 
 {{< notice "tip" >}}
-‌Electron 22.0.0‌是最后一个支持Windows 7的版本。在这个版本中，Electron包括了新的实用进程API、对Windows 7/8/8.1支持的更新，以及对Chromium 108、V8 10.8和Node.js 16.17.1的升级。
-从Electron 23.0.0开始，Electron取消了对Windows 7/8.1的支持，这标志着Electron将不再支持这些旧版本的操作系统。
-此外，这一变化与Chromium的弃用政策相符，也呼应了Microsoft对Windows 7 ESU（扩展安全更新）和Windows 8.1扩展支持结束的政策‌。
+- ‌Electron 22.0.0‌是最后一个支持Windows 7的版本。
+- 在这个版本中，Electron包括了新的实用进程API、对Windows 7/8/8.1支持的更新，以及对Chromium 108、V8 10.8和Node.js 16.17.1的升级。
+- 从Electron 23.0.0开始，Electron取消了对Windows 7/8.1的支持，这标志着Electron将不再支持这些旧版本的操作系统。
+- 此外，这一变化与Chromium的弃用政策相符，也呼应了Microsoft对Windows 7 ESU（扩展安全更新）和Windows 8.1扩展支持结束的政策‌。
+- 具体的发行版本可以参考：https://www.electronjs.org/zh/docs/latest/tutorial/electron-timelines
 {{< /notice >}}
 
 #### 4. tauri--Star数：87.2k
@@ -64,5 +66,15 @@ Linux webkit2gtk 4.0 for Tauri v1 (for example Ubuntu 18.04). webkit2gtk 4.1 for
 {{< /notice >}}
 
 
-美团在最近也设计了自己的框架，
+美团在最近也设计了自己的框架：
+
 {{< image src="images/blog/web-design.png" caption="" alt="" height="" width="" position="center" command="fill"  class="img-fluid" title="美团框架选择"  webp="false" >}}
+
+
+## 其他资料-关于跨平台技术选型
+
+- https://www.v2ex.com/t/938959
+- https://www.v2ex.com/t/952400
+- https://www.v2ex.com/t/955166
+- https://zhuanlan.zhihu.com/p/520770477
+- https://medium.com/@maxel333/comparing-desktop-application-development-frameworks-electron-flutter-tauri-react-native-and-fd2712765377
