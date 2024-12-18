@@ -3,36 +3,37 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # 触发部署的分支，通常是 main 或 master
+      - main # 监听的分支为 main，你可以根据需要修改
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      # 检出代码
-      - name: Checkout repository
-        uses: actions/checkout@v3
+    - name: Checkout code
+      uses: actions/checkout@v3
 
-      # 设置 Node.js 环境
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16'  # 根据您的项目需求选择版本
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16' # 确保使用的 Node.js 版本
 
-      # 安装依赖
-      - name: Install dependencies
-        run: npm install
+    - name: Check commit message
+      id: check_commit
+      run: echo "contains_build=$(echo '${{ github.event.head_commit.message }}' | grep -qi 'build' && echo true || echo false)" >> $GITHUB_ENV
 
-      # 运行构建命令
-      - name: Build project
-        run: npm run build
+    - name: Install dependencies
+      if: env.contains_build == 'true'
+      run: npm install
 
-      # 部署到 GitHub Pages
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs  # 指向生成的 docs 目录
-          # 如果要部署到 docs 文件夹，可以使用 destination_dir
-          # destination_dir: docs
+    - name: Build project
+      if: env.contains_build == 'true'
+      run: npm run build
+
+    - name: Deploy to GitHub Pages
+      if: env.contains_build == 'true'
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_branch: gh-pages
+        publish_dir: ./docs # 修改为 docs 目录
