@@ -6,17 +6,18 @@
 # url = "/"
 # weight = 1
 
-[[main]]
-name = "About"
-url = "/about"
-weight = 2
 
 
 [[main]]
 name = "Project"
 url = "/projects"
-weight = 3
+weight = 1
 
+
+[[main]]
+name = "About Web"
+url = "/about"
+weight = 2
 
 # [[main]]
 # parent = "Other"
