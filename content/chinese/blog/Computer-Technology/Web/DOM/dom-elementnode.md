@@ -3,11 +3,9 @@ title: DOM-元素节点
 date: 2018-05-17 13:19:00
 update: 2018-05-17 13:19:00
 author: "LeeZChuan"
-categories: ["计算机技术", "Web", "Web 前端","DOM","Element Node"]
+categories: ["计算机技术", "Web", "Web 前端", "DOM", "Element Node"]
 description: 可以说，元素节点是 DOM 树中的核心部分，我们进行文档的操作通常都是建立在元素节点上的。
 ---
-
-
 
 可以说，元素节点是 DOM 树中的核心部分，我们进行文档的操作通常都是建立在元素节点上的。
 
@@ -15,7 +13,7 @@ description: 可以说，元素节点是 DOM 树中的核心部分，我们进�
 
 ### 元素节点
 
->元素节点（Element Node）是我们最常用的 DOM 节点，不同类型的节点都有其自己的构造方法，并且它们身上还有许多属性和方法（包括继承的）来帮助我们完成 DOM 操作。
+> 元素节点（Element Node）是我们最常用的 DOM 节点，不同类型的节点都有其自己的构造方法，并且它们身上还有许多属性和方法（包括继承的）来帮助我们完成 DOM 操作。
 
     <body>
         <div></div>

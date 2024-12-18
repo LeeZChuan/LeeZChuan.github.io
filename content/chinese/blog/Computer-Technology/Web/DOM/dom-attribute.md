@@ -3,11 +3,9 @@ title: DOM-元素节点属性
 date: 2018-05-21 21:00:00
 update: 2018-05-21 21:00:00
 author: LeeZChuan
-categories: ["计算机技术","Web","Web 前端","DOM","Attribute"]
+categories: ["计算机技术", "Web", "Web 前端", "DOM", "Attribute"]
 description: 元素节点上具有很多属性，这些属性我们通常可以很方便的获取，并进行简单的操作。
 ---
-
-
 
 元素节点上具有很多属性，这些属性我们通常可以很方便的获取，并进行简单的操作。
 

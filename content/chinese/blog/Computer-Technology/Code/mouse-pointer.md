@@ -7,13 +7,10 @@ categories:
   - 特效
   - 计算机技术
   - canvas
-tags: ["计算机技术", "Web前端",'特效','demo']
+tags: ["计算机技术", "Web前端", "特效", "demo"]
 ---
 
-
-
 使用以下代码可以实现一个在画布上的鼠标特效
-
 
 ```js
 "use strict";
@@ -34,7 +31,7 @@ function idleSplatsFunction() {
   multipleSplats(
     parseInt(Math.random() * config.RANDOM_AMOUNT) +
       config.RANDOM_AMOUNT / 2 +
-      1
+      1,
   );
 }
 
@@ -158,7 +155,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (properties.idle_random_splats.value) {
           idleSplats = setInterval(
             idleSplatsFunction,
-            config.RANDOM_INTERVAL * 1000
+            config.RANDOM_INTERVAL * 1000,
           );
         } else {
           clearInterval(idleSplats);
@@ -170,7 +167,7 @@ document.addEventListener("DOMContentLoaded", () => {
           clearInterval(idleSplats);
           idleSplats = setInterval(
             idleSplatsFunction,
-            config.RANDOM_INTERVAL * 1000
+            config.RANDOM_INTERVAL * 1000,
           );
         }
       }
@@ -180,7 +177,7 @@ document.addEventListener("DOMContentLoaded", () => {
           clearInterval(idleSplats);
           idleSplats = setInterval(
             idleSplatsFunction,
-            config.RANDOM_INTERVAL * 1000
+            config.RANDOM_INTERVAL * 1000,
           );
         }
       }
@@ -342,7 +339,7 @@ function supportRenderTextureFormat(gl, internalFormat, format, type) {
     gl.COLOR_ATTACHMENT0,
     gl.TEXTURE_2D,
     texture,
-    0
+    0,
   );
 
   const status = gl.checkFramebufferStatus(gl.FRAMEBUFFER);
@@ -368,13 +365,13 @@ class GLProgram {
 
     const uniformCount = gl.getProgramParameter(
       this.program,
-      gl.ACTIVE_UNIFORMS
+      gl.ACTIVE_UNIFORMS,
     );
     for (let i = 0; i < uniformCount; i++) {
       const uniformName = gl.getActiveUniform(this.program, i).name;
       this.uniforms[uniformName] = gl.getUniformLocation(
         this.program,
-        uniformName
+        uniformName,
       );
     }
   }
@@ -416,7 +413,7 @@ const baseVertexShader = compileShader(
         vB = vUv - vec2(0.0, texelSize.y);
         gl_Position = vec4(aPosition, 0.0, 1.0);
     }
-`
+`,
 );
 
 const clearShader = compileShader(
@@ -432,7 +429,7 @@ const clearShader = compileShader(
     void main () {
         gl_FragColor = value * texture2D(uTexture, vUv);
     }
-`
+`,
 );
 
 const colorShader = compileShader(
@@ -445,7 +442,7 @@ const colorShader = compileShader(
     void main () {
         gl_FragColor = color;
     }
-`
+`,
 );
 
 const backgroundShader = compileShader(
@@ -454,7 +451,7 @@ const backgroundShader = compileShader(
     void main () {
         gl_FragColor = vec4(0.0, 0.0, 0.0, 0.0);
     }
-`
+`,
 );
 
 const displayShader = compileShader(
@@ -471,7 +468,7 @@ const displayShader = compileShader(
         float a = max(C.r, max(C.g, C.b));
         gl_FragColor = vec4(C, a);
     }
-`
+`,
 );
 
 const displayBloomShader = compileShader(
@@ -494,7 +491,7 @@ const displayBloomShader = compileShader(
         float a = max(C.r, max(C.g, C.b));
         gl_FragColor = vec4(C, a);
     }
-`
+`,
 );
 
 const displayShadingShader = compileShader(
@@ -530,7 +527,7 @@ const displayShadingShader = compileShader(
         float a = max(C.r, max(C.g, C.b));
         gl_FragColor = vec4(C, a);
     }
-`
+`,
 );
 
 const displayBloomShadingShader = compileShader(
@@ -573,7 +570,7 @@ const displayBloomShadingShader = compileShader(
         float a = max(C.r, max(C.g, C.b));
         gl_FragColor = vec4(C, a);
     }
-`
+`,
 );
 
 const bloomPrefilterShader = compileShader(
@@ -595,7 +592,7 @@ const bloomPrefilterShader = compileShader(
         c *= max(rq, br - threshold) / max(br, 0.0001);
         gl_FragColor = vec4(c, 0.0);
     }
-`
+`,
 );
 
 const bloomBlurShader = compileShader(
@@ -619,7 +616,7 @@ const bloomBlurShader = compileShader(
         sum *= 0.25;
         gl_FragColor = sum;
     }
-`
+`,
 );
 
 const bloomFinalShader = compileShader(
@@ -644,7 +641,7 @@ const bloomFinalShader = compileShader(
         sum *= 0.25;
         gl_FragColor = sum * intensity;
     }
-`
+`,
 );
 
 const splatShader = compileShader(
@@ -667,7 +664,7 @@ const splatShader = compileShader(
         vec3 base = texture2D(uTarget, vUv).xyz;
         gl_FragColor = vec4(base + splat, 1.0);
     }
-`
+`,
 );
 
 const advectionManualFilteringShader = compileShader(
@@ -703,7 +700,7 @@ const advectionManualFilteringShader = compileShader(
         gl_FragColor = dissipation * bilerp(uSource, coord, dyeTexelSize);
         gl_FragColor.a = 1.0;
     }
-`
+`,
 );
 
 const advectionShader = compileShader(
@@ -724,7 +721,7 @@ const advectionShader = compileShader(
         gl_FragColor = dissipation * texture2D(uSource, coord);
         gl_FragColor.a = 1.0;
     }
-`
+`,
 );
 
 const divergenceShader = compileShader(
@@ -755,7 +752,7 @@ const divergenceShader = compileShader(
         float div = 0.5 * (R - L + T - B);
         gl_FragColor = vec4(div, 0.0, 0.0, 1.0);
     }
-`
+`,
 );
 
 const curlShader = compileShader(
@@ -779,7 +776,7 @@ const curlShader = compileShader(
         float vorticity = R - L - T + B;
         gl_FragColor = vec4(0.5 * vorticity, 0.0, 0.0, 1.0);
     }
-`
+`,
 );
 
 const vorticityShader = compileShader(
@@ -813,7 +810,7 @@ const vorticityShader = compileShader(
         vec2 vel = texture2D(uVelocity, vUv).xy;
         gl_FragColor = vec4(vel + force * dt, 0.0, 1.0);
     }
-`
+`,
 );
 
 const pressureShader = compileShader(
@@ -847,7 +844,7 @@ const pressureShader = compileShader(
         float pressure = (L + R + B + T - divergence) * 0.25;
         gl_FragColor = vec4(pressure, 0.0, 0.0, 1.0);
     }
-`
+`,
 );
 
 const gradientSubtractShader = compileShader(
@@ -879,7 +876,7 @@ const gradientSubtractShader = compileShader(
         velocity.xy -= vec2(R - L, T - B);
         gl_FragColor = vec4(velocity, 0.0, 1.0);
     }
-`
+`,
 );
 
 const blit = (() => {
@@ -887,13 +884,13 @@ const blit = (() => {
   gl.bufferData(
     gl.ARRAY_BUFFER,
     new Float32Array([-1, -1, -1, 1, 1, 1, 1, -1]),
-    gl.STATIC_DRAW
+    gl.STATIC_DRAW,
   );
   gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, gl.createBuffer());
   gl.bufferData(
     gl.ELEMENT_ARRAY_BUFFER,
     new Uint16Array([0, 1, 2, 0, 2, 3]),
-    gl.STATIC_DRAW
+    gl.STATIC_DRAW,
   );
   gl.vertexAttribPointer(0, 2, gl.FLOAT, false, 0, 0);
   gl.enableVertexAttribArray(0);
@@ -924,22 +921,22 @@ const displayProgram = new GLProgram(baseVertexShader, displayShader);
 const displayBloomProgram = new GLProgram(baseVertexShader, displayBloomShader);
 const displayShadingProgram = new GLProgram(
   baseVertexShader,
-  displayShadingShader
+  displayShadingShader,
 );
 const displayBloomShadingProgram = new GLProgram(
   baseVertexShader,
-  displayBloomShadingShader
+  displayBloomShadingShader,
 );
 const bloomPrefilterProgram = new GLProgram(
   baseVertexShader,
-  bloomPrefilterShader
+  bloomPrefilterShader,
 );
 const bloomBlurProgram = new GLProgram(baseVertexShader, bloomBlurShader);
 const bloomFinalProgram = new GLProgram(baseVertexShader, bloomFinalShader);
 const splatProgram = new GLProgram(baseVertexShader, splatShader);
 const advectionProgram = new GLProgram(
   baseVertexShader,
-  ext.supportLinearFiltering ? advectionShader : advectionManualFilteringShader
+  ext.supportLinearFiltering ? advectionShader : advectionManualFilteringShader,
 );
 const divergenceProgram = new GLProgram(baseVertexShader, divergenceShader);
 const curlProgram = new GLProgram(baseVertexShader, curlShader);
@@ -947,7 +944,7 @@ const vorticityProgram = new GLProgram(baseVertexShader, vorticityShader);
 const pressureProgram = new GLProgram(baseVertexShader, pressureShader);
 const gradienSubtractProgram = new GLProgram(
   baseVertexShader,
-  gradientSubtractShader
+  gradientSubtractShader,
 );
 
 function initFramebuffers() {
@@ -972,7 +969,7 @@ function initFramebuffers() {
       rgba.internalFormat,
       rgba.format,
       texType,
-      filtering
+      filtering,
     );
   else
     density = resizeDoubleFBO(
@@ -982,7 +979,7 @@ function initFramebuffers() {
       rgba.internalFormat,
       rgba.format,
       texType,
-      filtering
+      filtering,
     );
 
   if (velocity == null)
@@ -992,7 +989,7 @@ function initFramebuffers() {
       rg.internalFormat,
       rg.format,
       texType,
-      filtering
+      filtering,
     );
   else
     velocity = resizeDoubleFBO(
@@ -1002,7 +999,7 @@ function initFramebuffers() {
       rg.internalFormat,
       rg.format,
       texType,
-      filtering
+      filtering,
     );
 
   divergence = createFBO(
@@ -1011,7 +1008,7 @@ function initFramebuffers() {
     r.internalFormat,
     r.format,
     texType,
-    gl.NEAREST
+    gl.NEAREST,
   );
   curl = createFBO(
     simWidth,
@@ -1019,7 +1016,7 @@ function initFramebuffers() {
     r.internalFormat,
     r.format,
     texType,
-    gl.NEAREST
+    gl.NEAREST,
   );
   pressure = createDoubleFBO(
     simWidth,
@@ -1027,7 +1024,7 @@ function initFramebuffers() {
     r.internalFormat,
     r.format,
     texType,
-    gl.NEAREST
+    gl.NEAREST,
   );
 
   initBloomFramebuffers();
@@ -1046,7 +1043,7 @@ function initBloomFramebuffers() {
     rgba.internalFormat,
     rgba.format,
     texType,
-    filtering
+    filtering,
   );
 
   bloomFramebuffers.length = 0;
@@ -1062,7 +1059,7 @@ function initBloomFramebuffers() {
       rgba.internalFormat,
       rgba.format,
       texType,
-      filtering
+      filtering,
     );
     bloomFramebuffers.push(fbo);
   }
@@ -1085,7 +1082,7 @@ function createFBO(w, h, internalFormat, format, type, param) {
     gl.COLOR_ATTACHMENT0,
     gl.TEXTURE_2D,
     texture,
-    0
+    0,
   );
   gl.viewport(0, 0, w, h);
   gl.clear(gl.COLOR_BUFFER_BIT);
@@ -1145,7 +1142,7 @@ function resizeDoubleFBO(target, w, h, internalFormat, format, type, param) {
     internalFormat,
     format,
     type,
-    param
+    param,
   );
   target.write = createFBO(w, h, internalFormat, format, type, param);
   return target;
@@ -1167,7 +1164,7 @@ function createTextureAsync(url) {
     0,
     gl.RGB,
     gl.UNSIGNED_BYTE,
-    new Uint8Array([255, 255, 255])
+    new Uint8Array([255, 255, 255]),
   );
 
   let obj = {
@@ -1243,7 +1240,7 @@ function step(dt) {
   gl.uniform2f(
     vorticityProgram.uniforms.texelSize,
     1.0 / simWidth,
-    1.0 / simHeight
+    1.0 / simHeight,
   );
   gl.uniform1i(vorticityProgram.uniforms.uVelocity, velocity.read.attach(0));
   gl.uniform1i(vorticityProgram.uniforms.uCurl, curl.attach(1));
@@ -1256,7 +1253,7 @@ function step(dt) {
   gl.uniform2f(
     divergenceProgram.uniforms.texelSize,
     1.0 / simWidth,
-    1.0 / simHeight
+    1.0 / simHeight,
   );
   gl.uniform1i(divergenceProgram.uniforms.uVelocity, velocity.read.attach(0));
   blit(divergence.fbo);
@@ -1271,7 +1268,7 @@ function step(dt) {
   gl.uniform2f(
     pressureProgram.uniforms.texelSize,
     1.0 / simWidth,
-    1.0 / simHeight
+    1.0 / simHeight,
   );
   gl.uniform1i(pressureProgram.uniforms.uDivergence, divergence.attach(0));
   for (let i = 0; i < config.PRESSURE_ITERATIONS; i++) {
@@ -1284,15 +1281,15 @@ function step(dt) {
   gl.uniform2f(
     gradienSubtractProgram.uniforms.texelSize,
     1.0 / simWidth,
-    1.0 / simHeight
+    1.0 / simHeight,
   );
   gl.uniform1i(
     gradienSubtractProgram.uniforms.uPressure,
-    pressure.read.attach(0)
+    pressure.read.attach(0),
   );
   gl.uniform1i(
     gradienSubtractProgram.uniforms.uVelocity,
-    velocity.read.attach(1)
+    velocity.read.attach(1),
   );
   blit(velocity.write.fbo);
   velocity.swap();
@@ -1301,13 +1298,13 @@ function step(dt) {
   gl.uniform2f(
     advectionProgram.uniforms.texelSize,
     1.0 / simWidth,
-    1.0 / simHeight
+    1.0 / simHeight,
   );
   if (!ext.supportLinearFiltering)
     gl.uniform2f(
       advectionProgram.uniforms.dyeTexelSize,
       1.0 / simWidth,
-      1.0 / simHeight
+      1.0 / simHeight,
     );
   let velocityId = velocity.read.attach(0);
   gl.uniform1i(advectionProgram.uniforms.uVelocity, velocityId);
@@ -1315,7 +1312,7 @@ function step(dt) {
   gl.uniform1f(advectionProgram.uniforms.dt, dt);
   gl.uniform1f(
     advectionProgram.uniforms.dissipation,
-    config.VELOCITY_DISSIPATION
+    config.VELOCITY_DISSIPATION,
   );
   blit(velocity.write.fbo);
   velocity.swap();
@@ -1326,13 +1323,13 @@ function step(dt) {
     gl.uniform2f(
       advectionProgram.uniforms.dyeTexelSize,
       1.0 / dyeWidth,
-      1.0 / dyeHeight
+      1.0 / dyeHeight,
     );
   gl.uniform1i(advectionProgram.uniforms.uVelocity, velocity.read.attach(0));
   gl.uniform1i(advectionProgram.uniforms.uSource, density.read.attach(1));
   gl.uniform1f(
     advectionProgram.uniforms.dissipation,
-    config.DENSITY_DISSIPATION
+    config.DENSITY_DISSIPATION,
   );
   blit(density.write.fbo);
   density.swap();
@@ -1361,7 +1358,7 @@ function render(target) {
       bc.r / 255,
       bc.g / 255,
       bc.b / 255,
-      1
+      1,
     );
     blit(target);
   }
@@ -1370,7 +1367,7 @@ function render(target) {
     backgroundProgram.bind();
     gl.uniform1f(
       backgroundProgram.uniforms.aspectRatio,
-      canvas.width / canvas.height
+      canvas.width / canvas.height,
     );
     blit(null);
   }
@@ -1417,7 +1414,7 @@ function applyBloom(source, destination) {
   gl.uniform3f(bloomPrefilterProgram.uniforms.curve, curve0, curve1, curve2);
   gl.uniform1f(
     bloomPrefilterProgram.uniforms.threshold,
-    config.BLOOM_THRESHOLD
+    config.BLOOM_THRESHOLD,
   );
   gl.uniform1i(bloomPrefilterProgram.uniforms.uTexture, source.attach(0));
   gl.viewport(0, 0, last.width, last.height);
@@ -1429,7 +1426,7 @@ function applyBloom(source, destination) {
     gl.uniform2f(
       bloomBlurProgram.uniforms.texelSize,
       1.0 / last.width,
-      1.0 / last.height
+      1.0 / last.height,
     );
     gl.uniform1i(bloomBlurProgram.uniforms.uTexture, last.attach(0));
     gl.viewport(0, 0, dest.width, dest.height);
@@ -1445,7 +1442,7 @@ function applyBloom(source, destination) {
     gl.uniform2f(
       bloomBlurProgram.uniforms.texelSize,
       1.0 / last.width,
-      1.0 / last.height
+      1.0 / last.height,
     );
     gl.uniform1i(bloomBlurProgram.uniforms.uTexture, last.attach(0));
     gl.viewport(0, 0, baseTex.width, baseTex.height);
@@ -1458,7 +1455,7 @@ function applyBloom(source, destination) {
   gl.uniform2f(
     bloomFinalProgram.uniforms.texelSize,
     1.0 / last.width,
-    1.0 / last.height
+    1.0 / last.height,
   );
   gl.uniform1i(bloomFinalProgram.uniforms.uTexture, last.attach(0));
   gl.uniform1f(bloomFinalProgram.uniforms.intensity, config.BLOOM_INTENSITY);
@@ -1474,7 +1471,7 @@ function splat(x, y, dx, dy, color) {
   gl.uniform2f(
     splatProgram.uniforms.point,
     x / canvas.width,
-    1.0 - y / canvas.height
+    1.0 - y / canvas.height,
   );
   gl.uniform3f(splatProgram.uniforms.color, dx, -dy, 1.0);
   gl.uniform1f(splatProgram.uniforms.radius, config.SPLAT_RADIUS / 100.0);
@@ -1538,7 +1535,7 @@ canvas.addEventListener(
       pointer.y = touches[i].pageY;
     }
   },
-  false
+  false,
 );
 
 canvas.addEventListener("mouseenter", () => {

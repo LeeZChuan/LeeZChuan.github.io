@@ -7,8 +7,6 @@ categories: ["计算机技术", "Web", "Web 前端", "DOM", "Event"]
 description: JavaScript 的作用就是让 html 静态页面具备动态效果，而这些基本都是利用 DOM 事件来实现的。
 ---
 
-
-
 JavaScript 的作用就是让 html 静态页面具备动态效果，而这些基本都是利用 DOM 事件来实现的。
 
 <!-- truncate -->

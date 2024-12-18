@@ -2,13 +2,11 @@
 title: 解析基于 core-js 与 ESLint 的 Web 兼容方案
 date: 2021-12-07 01:13:00
 update: 2021-12-08 21:12:00
-categories: ["计算机技术", "Web前端",'工具','Polyfill']
+categories: ["计算机技术", "Web前端", "工具", "Polyfill"]
 author: "LeeZChuan"
-tags: ["计算机技术", "Web前端",'工具','Polyfill']
+tags: ["计算机技术", "Web前端", "工具", "Polyfill"]
 description: Web 网页为了保证在多个平台和低中高端设备上的体验稳定性和一致性，通常会做 Polyfill 以保证兼容性，当下社区的主流方案则是基于 core-js，而 ESLint 则可作为自动检测的辅助工具。
 ---
-
-
 
 Web 网页为了保证在多个平台和低中高端设备上的体验稳定性和一致性，通常会做 Polyfill 以保证兼容性。
 
@@ -26,26 +24,26 @@ Web 网页为了保证在多个平台和低中高端设备上的体验稳定性�
 
 ```javascript
 // polyfill all `core-js` features:
-import 'core-js';
+import "core-js";
 // polyfill only stable `core-js` features - ES and web standards:
-import 'core-js/stable';
+import "core-js/stable";
 // polyfill only stable ES features:
-import 'core-js/es';
+import "core-js/es";
 ```
 
 上面是将所有 API 的 polyfills 引入项目，为了构建包尺寸更小，可以选择性的对特定 API 做兼容：
 
 ```javascript
-import 'core-js/modules/es.array.unscopables.flat';
-import 'core-js/modules/es.array.unscopables.flat-map';
-import 'core-js/modules/es.object.from-entries';
-import 'core-js/modules/web.immediate';
+import "core-js/modules/es.array.unscopables.flat";
+import "core-js/modules/es.array.unscopables.flat-map";
+import "core-js/modules/es.object.from-entries";
+import "core-js/modules/web.immediate";
 ```
 
 这些方式引入的 polyfill 会污染全局作用域，开发 Web 应用项目时也许不存在太大问题，但若是开发第三方工具库，为了避免这个问题，官方提供了 `core-js-pure` 包：
 
 ```javascript
-import Set from 'core-js-pure/features/set';
+import Set from "core-js-pure/features/set";
 ```
 
 虽然说 `core-js` 只是针对 JavaScript API 的兼容方案，但为了方便，也提供了一些非常常用的 Web API 的 polyfills，例如 `setTimeout`、`URLSearchParams` 等。
@@ -80,8 +78,8 @@ import Set from 'core-js-pure/features/set';
 
 ```javascript
 // see docs: https://babeljs.io/docs/en/babel-polyfill/
-import 'core-js/stable';
-import 'regenerator-runtime/runtime';
+import "core-js/stable";
+import "regenerator-runtime/runtime";
 ```
 
 当然，现在（Babel 7.4.0+）这个方案已经被官方弃用了，这又是为什么呢？其实看上面的代码也能猜出个大概，这种方案不够灵活，把需要和不需要的 polyfills 全部添加到项目代码中，不利于加载性能优化；其次，对于开发者来说是个黑盒子，开发者不清楚干了哪些事，干到了什么程度，不受开发者控制。文档中也有所提及：

@@ -2,13 +2,12 @@
 title: Web 本地存储
 date: 2018-06-01 01:00:00
 update: 2018-05-27 17:27:00
-categories: ["计算机技术", "Web前端",'Cookie','LocalStorage','SessionStorage']
+categories:
+  ["计算机技术", "Web前端", "Cookie", "LocalStorage", "SessionStorage"]
 author: "LeeZChuan"
-tags: ["计算机技术", "Web前端",'Cookie','LocalStorage','SessionStorage']
+tags: ["计算机技术", "Web前端", "Cookie", "LocalStorage", "SessionStorage"]
 description: 为了达到某些需求，我们通常需要在本地存储一些数据，方便我们进行用户个性化定制服务。
 ---
-
-
 
 为了达到某些需求，我们通常需要在本地存储一些数据，方便我们进行用户个性化定制服务。
 

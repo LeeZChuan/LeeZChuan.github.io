@@ -1,6 +1,6 @@
 ---
 title: 兴趣
-meta_title: 
+meta_title:
 description: 感兴趣的内容
 image: /images/avatar.jpg
 draft: false

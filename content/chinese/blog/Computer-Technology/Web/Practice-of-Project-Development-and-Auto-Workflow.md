@@ -2,9 +2,9 @@
 title: 前端开发中的流程自动化与提效实践
 date: 2021-11-28 22:31:00
 update: 2022-05-07 21:57:00
-categories: ["计算机技术", "Web前端",'提效']
+categories: ["计算机技术", "Web前端", "提效"]
 author: "LeeZChuan"
-tags: ["计算机技术", "Web前端",'提效']
+tags: ["计算机技术", "Web前端", "提效"]
 description: 前端开发中的流程自动化与提效实践。
 ---
 
@@ -23,12 +23,12 @@ description: 前端开发中的流程自动化与提效实践。
 ```bash
 npx create-react-app project --template typescript
 ```
+
 但随着 CRA 的发展，官方脚手架也将原来暴露在模版中的越来越多细节封装到 react-scripts 包里，简单举个例子，比如你想修改项目 webpack 构建流程，用官方模版无法直接上手。
 
 官方模版提供了 npm run eject 命令，执行这个命令会将潜藏的一系列配置文件和一些依赖项都“弹出”到项目中，然后就可以由你自己完全控制增删，但是该操作是不可逆的。在配置文件被“弹出”后，你后续将无法跟随官方的脚步去升级项目所使用的 react-script 版本了。
 
 那么，如果你想要一个可以覆盖配置，但又与官方版本保持同步的方案，则可以试试 craco https://github.com/dilanx/craco
-
 
 ## 样式隔离方案：CSS Modules
 
@@ -40,14 +40,13 @@ module.exports = {
       loaderOptions: {
         modules: {
           auto: true,
-          exportLocalsConvention: 'camelCaseOnly',
+          exportLocalsConvention: "camelCaseOnly",
         },
       },
     },
   },
 };
 ```
-
 
 在ts环境中可以添加类型定义
 
@@ -57,17 +56,17 @@ module.exports = {
 /// <reference types="react-dom" />
 /// <reference types="react-scripts" />
 
-declare module '*.module.css' {
+declare module "*.module.css" {
   const classes: { readonly [key: string]: string };
   export default classes;
 }
 
-declare module '*.module.scss' {
+declare module "*.module.scss" {
   const classes: { readonly [key: string]: string };
   export default classes;
 }
 
-declare module '*.module.sass' {
+declare module "*.module.sass" {
   const classes: { readonly [key: string]: string };
   export default classes;
 }
@@ -75,17 +74,19 @@ declare module '*.module.sass' {
 
 ## ESLINT 代码检查：两个自定义 lint 场景分享
 
-
 ## 自动化环境配置：git hook 钩子定义
+
 husky 是一个为 git 客户端增加 hook 的工具，可以被用于我们配置本地自动化环境。我们可以安装 husky 并定制我们需要的 git 钩子及具体需要执行的任务，这样可以方便我们在对代码执行 git 操作时，在特定时机对代码进行特定的检查与处理，常见的钩子有如下两个：
 
 commit-msg - 提交信息钩子，在执行 git commit 或者 git merge 时触发
 pre-commit - 预先提交钩子，在执行 git commit 时触发
 如下为一段 husky 安装和初始化代码：
+
 ```bash
 npm install husky -D
-npx husky-init && npm install 
+npx husky-init && npm install
 ```
+
 // 添加任务一条 commit-msg 钩子
 npx husky add .husky/commit-msg './node_modules/.bin/commitlint --from=HEAD~1'
 举个例子，比如我们可以结合 commitlint 工具，在 commit-msg 阶段针对 commit 信息进行检查和处理（如上代码所示），又或者在 pre-commit 阶段对将要提交的代码进行格式化操作。
@@ -113,6 +114,7 @@ echo "module.exports = {extends: ['@commitlint/config-conventional']}" > commitl
 如果需要自定义规则，则需要我们更改 commitlint.config.js 文件，为其增添 rules，关于这一部分可以参考官方文档 https://commitlint.js.org/。
 
 此外，在添加了 commitlint 配置文件后，我们可能会看到 IDE 对这个文件的检查标红，由于在项目构建中我们并不关注该配置文件的格式等内容（因为他只是对 commitlint 的简单配置），所以我们可以在 eslint 配置文件中将其忽略掉。同样的，如果有其他的文件属于类似的定位，你也可以一并将其加入：
+
 ```js
 {
   "ignorePatterns": ["commitlint.config.js"]
@@ -122,6 +124,7 @@ echo "module.exports = {extends: ['@commitlint/config-conventional']}" > commitl
 说完 commit 规范，我们的代码格式本身也需要规范，比如针对 TypeScript 代码会有变量命名和排序的规则，针对 html 模版会有缩进、标签闭合等规则，这些也可以利用工具结合 git hook 来实现，此处，我们介绍下 linter 工具：lint-staged。
 
 lint-staged 是一个在 git 暂存文件上运行 linters 的工具，通过 lint-staged 定制各类文件格式化的操作（主要通过 eslint 和 prettier 保证执行）。结合 pre-commit git hook，我们在此钩子被触发时执行 lint-staged，便能完成对相应文件的格式化处理。如何让工具针对不同类型的文件区分处理呢？这里可以通过配置达到目的，即在 pakage.json 中对 lint-staged 字段进行声明：
+
 ```js
 {
   ...,
@@ -144,7 +147,6 @@ lint-staged 是一个在 git 暂存文件上运行 linters 的工具，通过 li
 
 如上代码表明，lint-staged 可以针对 JavaScript/TypeScript 类文件执行 eslint 处理，针对 json 类文件执行 jsonlint 处理，而对样式文件和 html 文件都用 prettier 处理。
 
-
 ## 本地开发代理环境
 
 从本地开发的场景来看，最需要完善的一个功能就是转发 API 请求了，用以规避可能存在的 CORS 错误，或者绕开一些请求限制，形式上可以是针对特定请求变更 header 信息，也可以是针对特定请求变更实际请求的域名与路径。但无外乎都需要在本地建立一个代理环境。前端项目在本地开发时，我们可以通过一个叫做 http-proxy-middleware 的库来增强本地 dev server 的能力。
@@ -152,17 +154,17 @@ lint-staged 是一个在 git 暂存文件上运行 linters 的工具，通过 li
 通过文档介绍，我们知道可以通过调用 createProxyMiddleware API 来构造一个中间件，以供 Node.js 项目使用，针对 express 应用可以通过如下配置完成代理服务器中间件的配置：
 
 ```js
-import * as express from 'express';
-import { createProxyMiddleware } from 'http-proxy-middleware';
+import * as express from "express";
+import { createProxyMiddleware } from "http-proxy-middleware";
 
 const app = express();
 
 app.use(
-  '/api',
+  "/api",
   createProxyMiddleware({
-    target: 'http://www.example.org/api',
+    target: "http://www.example.org/api",
     changeOrigin: true,
-  })
+  }),
 );
 
 app.listen(3000);
@@ -176,7 +178,7 @@ app.listen(3000);
 
 1. Code snippets 类代码片段
 2. 组件粒度的文件代码
-针对第一类场景，我们在 IDE 中安装的不少插件都替我们达到了这个目的。当我们在特定类型的文件中敲出几个字母，然后一回车，就能快速生成一段代码片段。举个例子，比如当我们使用 RxJS 时经常需要定义 BehaviorSubject 及其 getter & setter，要是输入 bgs 就能出现如下代码，便能提高我们在写一些初始化代码时的效率：
+   针对第一类场景，我们在 IDE 中安装的不少插件都替我们达到了这个目的。当我们在特定类型的文件中敲出几个字母，然后一回车，就能快速生成一段代码片段。举个例子，比如当我们使用 RxJS 时经常需要定义 BehaviorSubject 及其 getter & setter，要是输入 bgs 就能出现如下代码，便能提高我们在写一些初始化代码时的效率：
 
 ```js
 /* TODO: 数据流定义 */
@@ -193,7 +195,7 @@ set behaviorName(value: string) {
 
 而我们要做的事情就是将 bgs 和上述代码（及特定占位符）连接起来，实现方案可以是 VS Code 插件，比如我之前写过一个 https://marketplace.visualstudio.com/items?itemName=hijiangtao.tutor-code-snippets，也可以是 WebStorm 插件或者 live templates。
 
-针对第二类场景，我们需要的往往是指定路径下一套遵循我们命名规范的模版、样式和 TypeScript 逻辑代码。举个例子，在 Angular 项目中，当我们新建一个组件时，我们需要同时生成 HTML、JavaScript、CSS 文件并更新离其最近的 *.module.ts 文件：
+针对第二类场景，我们需要的往往是指定路径下一套遵循我们命名规范的模版、样式和 TypeScript 逻辑代码。举个例子，在 Angular 项目中，当我们新建一个组件时，我们需要同时生成 HTML、JavaScript、CSS 文件并更新离其最近的 \*.module.ts 文件：
 
 CREATE projects/src/app/demo/demo.component.css (0 bytes)
 CREATE projects/src/app/demo/demo.component.html (19 bytes)
@@ -212,14 +214,14 @@ UPDATE projects/src/app/app.module.ts (1723 bytes)
 通过配置，我们还可以重命名上文提到的 commit 信息中的 type 字段在 CHANGELOG 中的标题展示，如下为一个示例配置：
 
 module.exports = {
-    "types": [
-        { "type": "feat", "section": "Features" },
-        { "type": "fix", "section": "Bug Fixes" },
-        { "type": "test", "section": "Tests" },
-        { "type": "doc", "section": "Document" },
-        { "type": "build", "section": "Build System" },
-        { "type": "ci", "hidden": true }
-    ]
+"types": [
+{ "type": "feat", "section": "Features" },
+{ "type": "fix", "section": "Bug Fixes" },
+{ "type": "test", "section": "Tests" },
+{ "type": "doc", "section": "Document" },
+{ "type": "build", "section": "Build System" },
+{ "type": "ci", "hidden": true }
+]
 }
 如下为自动生成的 CHANGELOG 示例：
 
@@ -238,10 +240,10 @@ All notable changes to this project will be documented in this file. See [standa
 ### Bug Fixes
 
 - 修改 XXX，并新增 YYY (merge request !63) ([e3a01ce](https://git.woa.com/test/project/commit/yyy))
-在使用 standard-version 的时候，默认的配置可以满足绝大部分场景了，但更细粒度的控制仍需要我们修改命令或者配置。比如，当我们在 package.json 中指定了仓库 url 后，我们便可以在 commit 信息中通过 @ 符号指定对应用户、通过 # 引用对应 issue/PR，这些在生成 CHANGELOG 时都会被转成对应包含链接地址的超链接，如下列上一些我在开发中的版本自动生成所涉及的应用场景及注意事项：
+  在使用 standard-version 的时候，默认的配置可以满足绝大部分场景了，但更细粒度的控制仍需要我们修改命令或者配置。比如，当我们在 package.json 中指定了仓库 url 后，我们便可以在 commit 信息中通过 @ 符号指定对应用户、通过 # 引用对应 issue/PR，这些在生成 CHANGELOG 时都会被转成对应包含链接地址的超链接，如下列上一些我在开发中的版本自动生成所涉及的应用场景及注意事项：
 
 // 首次执行（不变更版本）
-standard-version -a -- --first-release 
+standard-version -a -- --first-release
 
 // 但是如果项目版本不符合规范，还是需要手动发布，因为需要保证项目从 v1.0.0 开始
 // https://github.com/conventional-changelog/standard-version/issues/131
@@ -250,8 +252,8 @@ standard-version -a -- --release-as 1.0.0
 // 在 package.json 中确保项目正确配置 repository 对象
 repository.url
 
-// 带通知具体 user 的 commit-msg 
-git commit -m "fix: bug produced by @timojiang" 
+// 带通知具体 user 的 commit-msg
+git commit -m "fix: bug produced by @timojiang"
 
 // 带 issue 的 commit-msg
 git commit -m "fix: implement functionality discussed in issue #2"
@@ -265,10 +267,9 @@ git commit -m "fix: implement functionality discussed in issue #2"
 1. 在脚手架的选择上，你可以使用 create-react-app 或者 umi 等社区方案，但如果想要更灵活的脚手架，当你使用 CRA 的时候，可以一并考虑 craco；
 2. CSS Modules 的作用无需多说，但同样需要注意 TypeScript 检查以及你在命名 CSS 变量写法上的兼容；
 3. ESLINT 现在已经是大部分项目的标配了，如果你的项目涉及多人协作，可以配置一些额外的 plugin 协助保持风格一致、减少代码合并冲突。当然，在统一代码风格上，还可以通过 husky 定制 git 钩子与具体需要执行的任务，比如：
-> commit-msg
-> pre-commit
+   > commit-msg
+   > pre-commit
 4. 其中通过 lint-staged 在 pre-commit 时机定制各类文件格式化的操作（主要用 eslint 和 prettier 保证执行），通过 commitlint 保证 commit msg 信息符合规范。
 5. 本地开发代理环境在很多团队是必须的，你可以选用一个中间件来增强你的 dev server。
 6. 我们同样可以考虑通过代码复用来提升我们的开发效率，这里的场景主要可以分为两类：code snippets 以及组件级别的文件修改。
 7. 每当项目上线，规范来说，都需要发版及记录日志变更，我们可以引入 standard-version 对自动打 tag 以及 CHANGELOG 生成进行规范。
-

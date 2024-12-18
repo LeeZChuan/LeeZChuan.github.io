@@ -5,7 +5,6 @@ description: "在多个项目中，我致力于为团队和客户提供高效、
 
 # Testimonials
 testimonials:
-
   - name: "李*鹏"
     designation: "后端开发工程师"
     avatar: "/images/avatar-sm2.png"

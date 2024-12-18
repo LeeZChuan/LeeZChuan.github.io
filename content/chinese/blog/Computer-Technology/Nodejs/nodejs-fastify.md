@@ -3,7 +3,7 @@ title: Fastify框架 - 专注于性能和低内存消耗
 date: 2021-06-27 16:28:00
 update: 2021-07-04 21:56:00
 author: "LeeZChuan"
-categories: ["计算机技术",'Node.js', "Fastify"]
+categories: ["计算机技术", "Node.js", "Fastify"]
 description: Fastify 作为一个 Node.js Web 框架，是如何实现高性能和低内存消耗的呢？?
 ---
 
@@ -50,7 +50,7 @@ Fastify 项目的历史故事背后是 `fast-json-stringify` 模块的诞生，�
 其中有两个细节我们值得注意。第一个便是项目 _README.md_ 文件中提到的安全方面需要注意的问题，是由于 **在初始化时利用 `Function` 构造函数预编译了函数体，以此达到优化性能的目的**。
 
 ```typescript
-result = new Function('schema', code)(root);
+result = new Function("schema", code)(root);
 ```
 
 而这个原理其实也是比较好理解的，通过把一个函数体内包含循环迭代的代码预先“编译”成字符串再交给函数来执行，在函数的“运行时”就不需要再做额外的“解释翻译”以及迭代工作，从而提高性能。下面有一篇相关的比较有趣的文章可以看看：
@@ -75,13 +75,13 @@ const code = [0, 1, 2].map((i) => `console.log(${i})`);
 // }
 const b = new Function(code);
 
-console.time('a');
+console.time("a");
 a();
-console.timeEnd('a'); // a: 0.136962890625 ms
+console.timeEnd("a"); // a: 0.136962890625 ms
 
-console.time('b');
+console.time("b");
 b();
-console.timeEnd('b'); // b: 0.05908203125 ms
+console.timeEnd("b"); // b: 0.05908203125 ms
 ```
 
 第二个细节便是 _README.md_ 文件中有提到可以和 `flatstr` 模块很好的配合使用，因为该模块会触发 V8 的优化机制，把字符串最终转换成了 `Buffer`。 其项目的 _README.md_ 文件中 **How does it work** 段落详细解释了底层机制，简单的来说，V8 会在某些情况下针对 `String` 数据做特定优化，而该模块的主要作用就是主动去触发这种 V8 的优化机制以达到提高性能的目的。
@@ -292,8 +292,8 @@ Fastify 依赖于 `avvio` 模块 **建立了一种基于可重入（reentrant �
 // express
 const app = express();
 
-app.get('/', function (req, res) {
-  res.send({ hello: 'world' });
+app.get("/", function (req, res) {
+  res.send({ hello: "world" });
 });
 
 app.listen(3002);
@@ -302,7 +302,7 @@ app.listen(3002);
 const app = new Koa();
 
 app.use(async (ctx) => {
-  ctx.body = { hello: 'world' };
+  ctx.body = { hello: "world" };
 });
 
 app.listen(3001);
@@ -312,9 +312,9 @@ const fastify = Fastify({
   // logger: true,
 });
 
-fastify.get('/', async (request, reply) => {
-  reply.type('application/json').code(200);
-  return { hello: 'world' };
+fastify.get("/", async (request, reply) => {
+  reply.type("application/json").code(200);
+  return { hello: "world" };
 });
 
 fastify.listen(3000, (err, address) => {

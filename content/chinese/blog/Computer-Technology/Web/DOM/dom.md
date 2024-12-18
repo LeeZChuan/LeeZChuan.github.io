@@ -3,11 +3,9 @@ title: 文档对象模型（DOM）
 date: 2018-05-16 14:04:00
 update: 2018-05-16 14:04:00
 author: "LeeZChuan"
-categories: ["计算机技术", "Web", "Web 前端","DOM"]
+categories: ["计算机技术", "Web", "Web 前端", "DOM"]
 description: 在网页设计中，有一个很重要的角色需要我们了解，DOM 帮助我们对页面元素进行增、删、改等全方位的操作，而且让 JavaScript 在客户端修改 HTML 文档成为一个很简单的事情，可以说 DOM 为我们操作 HTML 文档提供了强大的编程接口。
 ---
-
-
 
 在网页设计中，有一个很重要的角色需要我们了解，DOM 帮助我们对页面元素进行增、删、改等全方位的操作，而且让 JavaScript 在客户端修改 HTML 文档成为一个很简单的事情，可以说 DOM 为我们操作 HTML 文档提供了强大的编程接口。
 

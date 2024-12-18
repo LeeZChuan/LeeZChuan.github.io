@@ -34,12 +34,7 @@
           "title": "keywords",
           "name": "keywords",
           "type": "choice",
-          "choices": [
-            "计算机技术",
-            "工具",
-            "项目管理",
-            "开源"
-          ]
+          "choices": ["计算机技术", "工具", "项目管理", "开源"]
         },
         {
           "title": "description",

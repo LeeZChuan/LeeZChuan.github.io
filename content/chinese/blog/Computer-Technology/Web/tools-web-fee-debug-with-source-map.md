@@ -2,13 +2,11 @@
 title: Web 前端调试工具：SourceMap 文件
 date: 2021-11-28 22:31:00
 update: 2022-05-07 21:57:00
-categories: ["计算机技术", "Web前端",'工具','SourceMap']
+categories: ["计算机技术", "Web前端", "工具", "SourceMap"]
 author: "LeeZChuan"
-tags: ["计算机技术", "Web前端",'工具','SourceMap']
+tags: ["计算机技术", "Web前端", "工具", "SourceMap"]
 description: Web 前端项目在生产环境发布的代码是经过混淆和压缩的，如何调试则成为了一个难题，SourceMap 文件则是一个解决该问题时可以利用的很好的工具。
 ---
-
-
 
 Web 前端项目出于加载性能优化和安全考虑，在生产环境部署的代码是经过混淆和压缩的，对于利用生产环境收集到的错误堆栈信息要进行调试是非常具有挑战性的。理想情况下，应该在生产环境收集错误堆栈信息，然后映射到源码进行调试。恰好，**SourceMap 文件**提供了这个机制，可以将编译（压缩）后的代码映射到源代码中。
 
@@ -35,14 +33,14 @@ Web 前端项目出于加载性能优化和安全考虑，在生产环境部署�
  * 调试压缩代码（要保留 dist 文件夹）
  * ! 上线前请注意不要把 sourcemap 文件一同发布
  */
-import process from 'process';
-import path from 'path';
-import fs from 'fs';
-import sourceMap from 'source-map';
+import process from "process";
+import path from "path";
+import fs from "fs";
+import sourceMap from "source-map";
 
 // * 第一步：更改要调试的压缩代码文件对应 sourcemap 文件名称
 let sourcemap = fs.readFileSync(
-  path.join(process.cwd(), './dist/js/index.314d075b.js.map')
+  path.join(process.cwd(), "./dist/js/index.314d075b.js.map"),
 );
 sourcemap = JSON.parse(sourcemap);
 
@@ -54,7 +52,7 @@ async function parse() {
     s.originalPositionFor({
       line: 15,
       column: 69,
-    })
+    }),
   );
 
   s.destroy();
@@ -72,10 +70,10 @@ parse();
 一般来说，有两种方案。第一种方案是社区普遍采用的方式，为用户额外提供一个经过编译、打包但未压缩、混淆的单个 js 文件，在包的入口处根据环境导出不同的版本。以 React 的入口文件为示例：
 
 ```js
-if (process.env.NODE_ENV === 'production') {
-  module.exports = require('./cjs/react.production.min.js');
+if (process.env.NODE_ENV === "production") {
+  module.exports = require("./cjs/react.production.min.js");
 } else {
-  module.exports = require('./cjs/react.development.js');
+  module.exports = require("./cjs/react.development.js");
 }
 ```
 

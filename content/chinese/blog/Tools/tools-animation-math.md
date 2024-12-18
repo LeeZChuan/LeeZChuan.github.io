@@ -4,18 +4,17 @@ meta_title: ""
 description: 最近在做可视化相关的东西，需要计算贝塞尔曲线上一点的坐标位置，从这个解决过程中感受到了数学建模的魅力。
 date: 2022-12-01 01:04:00
 categories:
-    - 动画
-    - 数学
-    - 前端
+  - 动画
+  - 数学
+  - 前端
 author: LeeZChuan
 tags:
-    - 动画
-    - 数学
-    - 前端
+  - 动画
+  - 数学
+  - 前端
 draft: false
 update: 2024-12-02T09:28:30.042Z
 ---
-
 
 最近在做前端可视化相关的东西，在完成动画效果时，遇到一个不是很好处理的问题，需要让一个元素在画布上以曲线的轨迹进行运动。因为动画这块之前基本也没有怎么接触过，做的也都是简单的线性动画效果，所以碰到这个需求点的时候觉得是有点难度的。
 
@@ -28,7 +27,7 @@ update: 2024-12-02T09:28:30.042Z
 一段动画实际上是由多个静态帧组成的，当帧率达到人眼不可分辨的程度时（比如 60 FPS），就感觉像是一个无缝连续的视频在流畅的播放。而某一静态帧的状态用数学公式来表达如下：
 
 ```js
-y = F(t) (0 <= t <= 1)
+y = F(t)(0 <= t <= 1);
 ```
 
 那么对于一个物体从 **x0** 运动到 **x1**，如何计算 **t** 时刻的位置？按照我的思路来看，可以转化为以下数学公式：
@@ -49,7 +48,7 @@ F(t) = (x1 - x0)*t + x0 (0 <= t <= 1)
 
 贝塞尔曲线从概念上来看是很难理解的，如何转化为数学公式来计算贝塞尔曲线，而这个过程是什么样的，刚开始理解起来也是比较抽象的。先来看看其（二次贝塞尔曲线）数学定义：
 
-> ![Quadratic Bezier Curve Formula](https://raw.githubusercontent.com/LeeZChuan/static-resources/dd604c85291dcdcc1ac677e8ad4c85d0aebcde12/images/Quadratic-Bezier-Curve-Formula.svg 'Quadratic Bezier Curve Formula')
+> ![Quadratic Bezier Curve Formula](https://raw.githubusercontent.com/LeeZChuan/static-resources/dd604c85291dcdcc1ac677e8ad4c85d0aebcde12/images/Quadratic-Bezier-Curve-Formula.svg "Quadratic Bezier Curve Formula")
 
 其中 **P0**、**P1**、**P2** 分别为起点、控制点、终点。
 

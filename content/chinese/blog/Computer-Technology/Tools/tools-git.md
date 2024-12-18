@@ -3,11 +3,9 @@ title: 使用 Git
 date: 2018-12-31 13:49:00
 update: 2022-05-03 17:03:00
 author: "LeeZChuan"
-categories: ["计算机技术",'工具', "Git"]
+categories: ["计算机技术", "工具", "Git"]
 description: Git 是一个分布式的版本控制工具，类似的版本控制工具还有 SVN ；由于 GitHub 平台的盛行，也使得 git 更加受欢迎，在 Windows 平台使用 git 也是非常方便的。
 ---
-
-
 
 Git 是一个分布式的版本控制工具，类似的版本控制工具还有 SVN ；由于 GitHub 平台的盛行，也使得 git 更加受欢迎，在 Windows 平台使用 git 也是非常方便的。
 

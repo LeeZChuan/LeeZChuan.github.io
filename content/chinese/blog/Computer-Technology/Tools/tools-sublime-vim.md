@@ -4,15 +4,13 @@ date: 2018-05-18 12:55:00
 update: 2018-05-18 12:55:00
 author: LeeZChuan
 categories:
-    - Sublime Text
-    - Vim
-    - 工具
-    - 插件
-    - 编辑器
+  - Sublime Text
+  - Vim
+  - 工具
+  - 插件
+  - 编辑器
 description: Sumblime Text 是一个具有漂亮的界面和强大功能的文本编辑器，而且也支持许多丰富的插件。它是一个收费软件，但是允许开发人员无限期的免费试用。
 ---
-
-
 
 Sumblime Text 是一个具有漂亮的界面和强大功能的文本编辑器，而且也支持许多丰富的插件。它是一个收费软件，但是允许开发人员无限期的免费试用。
 

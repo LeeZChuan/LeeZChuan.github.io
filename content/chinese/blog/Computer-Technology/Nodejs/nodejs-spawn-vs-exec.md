@@ -1,9 +1,9 @@
 ---
-title: 'Child process API: spawn vs exec'
+title: "Child process API: spawn vs exec"
 date: 2021-08-25 00:21:00
 update: 2022-07-09 15:38:00
 author: "LeeZChuan"
-categories: ["计算机技术",'Node.js', "spawn","exec"]
+categories: ["计算机技术", "Node.js", "spawn", "exec"]
 description: 使用 Node.js 编写一些脚本工具是非常方便的，而常用的 spawn 与 exec API 有什么不同呢？
 ---
 
@@ -48,7 +48,7 @@ function fork(modulePath /* , args, options */) {
 可见，`exec` 和 `fork` 最终还是依赖于 `spawn` 的实现。而对于后者的实现：
 
 ```js
-const child_process = require('internal/child_process');
+const child_process = require("internal/child_process");
 const { ChildProcess } = child_process;
 
 function spawn(file, args, options) {
@@ -64,18 +64,18 @@ function spawn(file, args, options) {
 `spawn` 的主要功能是生成一个子进程，并执行给定的命令，父子进程之间通过管道（pipe）传递 `stdio` 信息，而且默认不生成 shell。根据示例：
 
 ```js
-const { spawn } = require('child_process');
-const ls = spawn('ls', ['-lh', '/usr']);
+const { spawn } = require("child_process");
+const ls = spawn("ls", ["-lh", "/usr"]);
 
-ls.stdout.on('data', (data) => {
+ls.stdout.on("data", (data) => {
   console.log(`stdout: ${data}`);
 });
 
-ls.stderr.on('data', (data) => {
+ls.stderr.on("data", (data) => {
   console.error(`stderr: ${data}`);
 });
 
-ls.on('close', (code) => {
+ls.on("close", (code) => {
   console.log(`child process exited with code ${code}`);
 });
 ```
@@ -87,8 +87,8 @@ ls.on('close', (code) => {
 前面根据源码可以看到 `exec` 的实现基于 `spawn`，但不同的是，前者在生成子进程的同时，会先生成一个 shell，然后在 shell 中执行给定的命令，子进程的输出信息会进行缓冲并最终传递给回调函数。根据示例：
 
 ```js
-const { exec } = require('child_process');
-exec('cat *.js missing_file | wc -l', (error, stdout, stderr) => {
+const { exec } = require("child_process");
+exec("cat *.js missing_file | wc -l", (error, stdout, stderr) => {
   if (error) {
     console.error(`exec error: ${error}`);
     return;
@@ -122,12 +122,12 @@ exec('cat *.js missing_file | wc -l', (error, stdout, stderr) => {
 分析完它们两者的区别之后，这里推荐一个 npm 工具包 `execa`，其对 child_process 的方法进行了扩展和抽象，在很多常见的使用场景中大大减少了模板代码，也为调试提供了一定的便利性。看看文档中一段示例代码：
 
 ```js
-const execa = require('execa');
+const execa = require("execa");
 
 (async () => {
   // Catching an error
   try {
-    await execa('unknown', ['command']);
+    await execa("unknown", ["command"]);
   } catch (error) {
     console.log(error);
     /*

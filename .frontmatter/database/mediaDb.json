@@ -1,1 +1,6 @@
-{"content":{"chinese":{"blog":{"computer-technology":{"web":{"react":{}}}}}},"assets":{"images":{}}}
+{
+  "content": {
+    "chinese": { "blog": { "computer-technology": { "web": { "react": {} } } } }
+  },
+  "assets": { "images": {} }
+}

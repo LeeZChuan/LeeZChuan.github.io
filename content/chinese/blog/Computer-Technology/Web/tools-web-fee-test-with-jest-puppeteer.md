@@ -2,13 +2,11 @@
 title: 使用 Jest 和 Puppeteer 构建 Web 自动化测试平台
 date: 2021-08-15 14:54:00
 update: 2021-08-15 14:54:00
-categories: ["计算机技术", "Web前端",'工具','测试','Jest','Puppeteer']
+categories: ["计算机技术", "Web前端", "工具", "测试", "Jest", "Puppeteer"]
 author: "LeeZChuan"
-tags: ["计算机技术", "Web前端",'工具','测试','Jest','Puppeteer']
+tags: ["计算机技术", "Web前端", "工具", "测试", "Jest", "Puppeteer"]
 description: 谷歌发布的 Puppeteer 工具和脸书发布的 Jest 测试工具为 Web 端到端测试提供了极大的便利，这里记录了如何使用它们构建一个 Web 自动化测试平台。
 ---
-
-
 
 测试为软件的稳定和完善提供了必要的支持，Web 前端开发领域相比于做单元测试，端到端测试更有意义和价值。谷歌发布的 Puppeteer 工具和脸书发布的 Jest 测试工具为 Web 端到端测试提供了极大的便利，这里记录了如何使用它们构建一个 Web 自动化测试平台。
 

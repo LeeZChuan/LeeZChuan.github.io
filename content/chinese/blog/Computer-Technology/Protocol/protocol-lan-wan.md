@@ -3,10 +3,9 @@ title: 局域网（LAN）与广域网（WAN）
 date: 2018-06-18 18:22:00
 update: 2018-06-18 18:22:00
 author: "LeeZChuan"
-categories: ["计算机技术",'协议', "LAN","WAN"]
+categories: ["计算机技术", "协议", "LAN", "WAN"]
 description: TCP/IP 的网络接口层包括物理层和数据链路层，既是局域网（LAN）技术起作用的分层，又是广域网（WAN）技术和连接管理协议发挥作用的层次。
 ---
-
 
 TCP/IP 的网络接口层包括物理层和数据链路层，既是局域网（LAN）技术起作用的分层，又是广域网（WAN）技术和连接管理协议发挥作用的层次。
 

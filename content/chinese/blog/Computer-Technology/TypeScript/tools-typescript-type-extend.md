@@ -12,8 +12,6 @@ keywords: *ref_0
 description: TypeScript 作为 JavaScript 的超集，为 Web 开发带来了强类型语言和类似代码智能提示这种良好的开发体验，如何对第三方依赖库的类型定义进行扩展呢？
 ---
 
-
-
 TypeScript 作为 JavaScript 的超集，为 Web 开发带来了强类型语言和类似代码智能提示这种良好的开发体验，而代码提示依赖于类型定义文件。类型定义文件的发展也经历了一个逐步演变的过程，从最初基于 JavaScript 编写的 npm 包，通过[社区方案](https://github.com/DefinitelyTyped/DefinitelyTyped)来引入类型定义包，再到目前多数模块基于 TypeScript 编写并在发布时带上类型定义文件这种最佳方案，开发者体验得到进一步的提升。
 
 不过，在使用类型定义文件的过程中我们通常需要和类型定义进行交互，大多数场景可以通过泛型来解决；而有一个典型场景就是需要我们扩展第三方库的类型定义，避免在多个文件中编码时都要引入类型定义的麻烦。可能不是很好理解，在这里通过一个实际的例子就可以解释清楚。
@@ -26,9 +24,9 @@ TypeScript 作为 JavaScript 的超集，为 Web 开发带来了强类型语言�
 
 ```ts
 // src/@types/index.d.ts
-import log4js from 'koa-log4';
+import log4js from "koa-log4";
 
-declare module 'koa' {
+declare module "koa" {
   interface DefaultContext {
     logger: log4js.Logger;
   }

@@ -3,11 +3,9 @@ title: Web 前端性能优化：解析函数节流与防抖的实现
 date: 2021-04-25 22:56:00
 update: 2021-04-26 22:48:00
 author: "LeeZChuan"
-categories: ["计算机技术", "Web前端",'JavaScript','性能优化','节流与防抖']
+categories: ["计算机技术", "Web前端", "JavaScript", "性能优化", "节流与防抖"]
 description: 前端开发中广泛采用的优化技巧，函数节流与防抖。
 ---
-
-
 
 前端开发中，有一个使用较为普遍的性能优化技巧，即函数节流（Throttle）和防抖（Debounce），其主要作用是根据时间对函数调用做以限制。最常见的业务场景是监听页面的 `scroll` 事件，浏览器可以在 1s 内触发该事件数次（甚至达数十次），如果事件处理程序在这 1s 内多次执行，必然会造成一定的性能问题，影响用户体验。
 
@@ -60,7 +58,7 @@ function debounce(func, wait, options) {
 
   // wait 没有指定时，默认利用 requestAnimationFrame API 做了性能优化
   const useRAF =
-    !wait && wait !== 0 && typeof root.requestAnimationFrame === 'function';
+    !wait && wait !== 0 && typeof root.requestAnimationFrame === "function";
 
   // 闭包结构
   function debounced(...args) {}
@@ -223,9 +221,9 @@ let trailing = true; // 默认是 true
 
 if (isObject(options)) {
   leading = !!options.leading;
-  maxing = 'maxWait' in options;
+  maxing = "maxWait" in options;
   maxWait = maxing ? Math.max(+options.maxWait || 0, wait) : maxWait; // 关键：取 maxWait 和 wait 最大值
-  trailing = 'trailing' in options ? !!options.trailing : trailing;
+  trailing = "trailing" in options ? !!options.trailing : trailing;
 }
 ```
 

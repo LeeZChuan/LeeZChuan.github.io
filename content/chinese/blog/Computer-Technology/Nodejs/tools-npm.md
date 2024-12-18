@@ -3,7 +3,7 @@ title: 使用 npm
 date: 2019-07-06 15:43:00
 update: 2022-10-24 01:51:00
 author: "LeeZChuan"
-categories: ["计算机技术",'Node.js', "npm"]
+categories: ["计算机技术", "Node.js", "npm"]
 description: npm 是 Node.js 的一个包管理器，Web 前端工程师也经常利用它构建前端工作流，来看看如何愉快的使用 npm。
 ---
 
@@ -13,7 +13,7 @@ npm 是 Node.js 的一个包管理器，Web 前端工程师也经常利用它来
 
 ### npm
 
-> **Node.js：**https://www.npmjs.com/ 
+> **Node.js：**https://www.npmjs.com/
 
 > **npm：**https://www.npmjs.com/
 
@@ -281,10 +281,10 @@ Node 包一般来说发布时是不需要压缩的，JavaScript 代码也不需�
 而用于 Web 的包在发布前通常需要进行编译和压缩，目的是解决兼容性问题和资源加载优化，而这些工作一般借助 **Babel**、**Rollup** 等工具配合使用即可。另一方面，用于 Web 的包在开发过程中为了便于调试，所以引入的应该是未经编译和压缩的源码版本，而打包时再引入经过编译和压缩的版本，实现这个目的社区有一个比较通用的做法就是在入口文件使用 `NODE_ENV` 进行判断并导出相应版本文件，以下是 React 的入口文件示例：
 
 ```js
-if (process.env.NODE_ENV === 'production') {
-  module.exports = require('./cjs/react.production.min.js');
+if (process.env.NODE_ENV === "production") {
+  module.exports = require("./cjs/react.production.min.js");
 } else {
-  module.exports = require('./cjs/react.development.js');
+  module.exports = require("./cjs/react.development.js");
 }
 ```
 

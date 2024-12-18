@@ -2,13 +2,11 @@
 title: Web 应用：单页面应用与路由
 date: 2017-10-25 00:51:00
 update: 2017-10-25 21:56:00
-categories: ["计算机技术", "Web前端",'SPA','路由']
+categories: ["计算机技术", "Web前端", "SPA", "路由"]
 author: "LeeZChuan"
-tags: ["计算机技术", "Web前端",'SPA','路由']
+tags: ["计算机技术", "Web前端", "SPA", "路由"]
 description: 现在，Web 技术不仅仅是局限于页面的开发技术，在应用的开发方面也是一种潮流，B/S 架构的技术是一种趋势。而像一般的管理型 Web 应用，不注重 SEO，非常适合单页面应用（SPA）的实现方式，而路由功能则是单页面应用的核心技术。
 ---
-
-
 
 现在，Web 技术不仅仅是局限于页面的开发技术，在应用的开发方面也是一种潮流，B/S 架构的技术是一种趋势。而像一般的管理型 Web 应用，不注重 SEO，非常适合单页面应用（SPA）的实现方式，而路由功能则是单页面应用的核心技术。
 
@@ -67,7 +65,7 @@ description: 现在，Web 技术不仅仅是局限于页面的开发技术，在
 // IE8 以下不支持的数组方法
 if (!Array.prototype.forEach) {
   Array.prototype.forEach = function (callback, self) {
-    if (Object.prototype.toString.call(callback) != '[object Function]') {
+    if (Object.prototype.toString.call(callback) != "[object Function]") {
       return this;
     }
 
@@ -83,7 +81,7 @@ if (!Array.prototype.forEach) {
 
 if (!Array.prototype.filter) {
   Array.prototype.filter = function (callback, self) {
-    if (Object.prototype.toString.call(callback) != '[object Function]') {
+    if (Object.prototype.toString.call(callback) != "[object Function]") {
       return this;
     }
 
@@ -127,7 +125,7 @@ if (!Array.prototype.filter) {
     fuzzy_match = [];
 
   // 容器（ID）
-  var content = document.getElementById('content');
+  var content = document.getElementById("content");
 
   /* rooting 注册方法  */
   function router(url, callback) {
@@ -137,7 +135,7 @@ if (!Array.prototype.filter) {
     }
 
     // url 是否是多个数组元素
-    if (Object.prototype.toString.call(url) == '[object Array]') {
+    if (Object.prototype.toString.call(url) == "[object Array]") {
       return url.forEach(function (sub_url) {
         // 递归
         router(sub_url, callback);
@@ -151,7 +149,7 @@ if (!Array.prototype.filter) {
     if (!routing) {
       routings[url] = callback ? [callback] : [];
       // 如果存在模糊匹配的话，例如 /index/*
-      url.match('\\*') && fuzzy_match.push(url);
+      url.match("\\*") && fuzzy_match.push(url);
     } else {
       // 已注册
       callback && routings[url].push(callback);
@@ -165,7 +163,7 @@ if (!Array.prototype.filter) {
     // 先遍历模糊匹配（可配置过滤器）
     fuzzy_match.forEach(function (fuzzy_url) {
       routing = routing.concat(
-        url.indexOf(fuzzy_url.slice(0, -1)) == 0 ? routings[fuzzy_url] : []
+        url.indexOf(fuzzy_url.slice(0, -1)) == 0 ? routings[fuzzy_url] : [],
       );
     });
     // 精确匹配 routing
@@ -193,7 +191,7 @@ if (!Array.prototype.filter) {
   /* 获取当前 hash_url  */
   function get_hash_url() {
     var hash_url = location.hash.slice(1),
-      query_index = hash_url.indexOf('?');
+      query_index = hash_url.indexOf("?");
 
     // 查询字符串存在的话
     hash_url = query_index == -1 ? hash_url : hash_url.slice(0, query_index);
@@ -221,7 +219,7 @@ if (!Array.prototype.filter) {
     var url = url || get_hash_url();
 
     // 去掉空字符元素
-    var url_array = url.split('/').filter(function (a) {
+    var url_array = url.split("/").filter(function (a) {
       return !!a;
     });
 

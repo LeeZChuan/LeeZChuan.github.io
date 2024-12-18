@@ -3,11 +3,9 @@ title: DOM-节点集合
 date: 2018-05-17 22:30:00
 update: 2018-05-17 22:30:00
 author: "LeeZChuan"
-categories: ["计算机技术", "Web", "Web 前端", "DOM","NodeList"]
+categories: ["计算机技术", "Web", "Web 前端", "DOM", "NodeList"]
 description: 当从文档树中选取成组的节点或者使用预定义的节点集合时，这些节点都是放在 NodeList 或者一个 HTMLCollecton 之中，而不是一个数组（Array）中。
 ---
-
-
 
 当从文档树中选取成组的节点或者使用预定义的节点集合时，这些节点都是放在 NodeList 或者一个 HTMLCollecton 之中，而不是一个数组（Array）中。
 

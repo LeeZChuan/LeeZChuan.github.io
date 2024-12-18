@@ -3,10 +3,9 @@ title: HTTP 协议
 date: 2018-06-24 14:59:00
 update: 2019-05-27 17:45:00
 author: "LeeZChuan"
-categories: ["计算机技术",'协议', "HTTP"]
+categories: ["计算机技术", "协议", "HTTP"]
 description: 随着 Internet 的发展，使用 Web 浏览器获取网络数据信息已经成为一种习惯标准，而 HTTP 协议也因此成为了网络体系中最重要的应用层协议。
 ---
-
 
 随着 Internet 的发展，使用 Web 浏览器获取网络数据信息已经成为一种习惯标准，而 HTTP 协议也因此成为了网络体系中最重要的应用层协议。
 

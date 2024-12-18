@@ -3,11 +3,9 @@ title: IDE：VS Code 配置同步
 date: 2018-08-15 16:42:00
 update: 2024-11-11T06:35:17.089Z
 author: "LeeZChuan"
-categories: ["计算机技术",'工具', "编辑器","IDE","配置同步"]
+categories: ["计算机技术", "工具", "编辑器", "IDE", "配置同步"]
 description: 利用一款插件来同步 VS Code 的配置到 GitHub 的 gist 上，实现多个设备间共享一套配置。
 ---
-
-
 
 利用一款插件来同步 VS Code 的配置到 GitHub 的 gist 上，实现多个设备间共享一套配置。
 
@@ -32,7 +30,6 @@ Setting Sync 插件恰好就是为了解决多个设备间编辑器和插件配�
 - **在 GitHub 上新建一个 Personal access tokens，保存 token id**
 - **在 VS Code 中安装 Setting Sync 插件，然后输入 token id，上传配置信息，得到 gist id**
 - **在另一台设备上的 VS Code 中安装 Setting Sync 插件，然后输入 token id 和 gist id 即可同步配置**
-
 
 ### 总结
 

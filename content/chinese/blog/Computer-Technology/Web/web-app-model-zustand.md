@@ -2,15 +2,13 @@
 title: Web 应用：轻量级状态管理工具 zustand
 date: 2021-11-18 00:14:00
 update: 2021-11-18 00:14:00
-categories: ["计算机技术", "Web前端",'应用状态管理','React']
+categories: ["计算机技术", "Web前端", "应用状态管理", "React"]
 author: "LeeZChuan"
-tags: ["计算机技术", "Web前端",'应用状态管理','React']
+tags: ["计算机技术", "Web前端", "应用状态管理", "React"]
 description:
   Web 网页向 Web 应用发展的过程中，势必会出现 Web 项目的复杂化问题，而在移动端场景，基于 React.js 的应用中如何管理状态？zustand
   也许值得一试。
 ---
-
-
 
 基于 React.js 的 Web 应用如何完成状态管理？社区主流方案是 **react-redux**，其本质上基于 React 的 `Context` 特性实现，如果应用足够简单，实际上用 `Context` 手写一个简单的状态管理工具倒也并不难。不过，考虑到工具的完善性、项目的健壮性，通常采用较好的、成熟的社区方案。在移动端场景下，**react-redux** 略显臃肿，轻量级状态管理工具 **zustand** 倒是一个不错的替代方案。
 
@@ -95,13 +93,13 @@ setState();
 const subscribe: Subscribe<TState> = <StateSlice>(
   listener: StateListener<TState> | StateSliceListener<StateSlice>,
   selector?: StateSelector<TState, StateSlice>,
-  equalityFn?: EqualityChecker<StateSlice>
+  equalityFn?: EqualityChecker<StateSlice>,
 ) => {
   if (selector || equalityFn) {
     return subscribeWithSelector(
       listener as StateSliceListener<StateSlice>,
       selector,
-      equalityFn
+      equalityFn,
     );
   }
   listeners.add(listener as StateListener<TState>);
@@ -113,9 +111,9 @@ const subscribe: Subscribe<TState> = <StateSlice>(
 const subscribeWithSelector = <StateSlice>(
   listener: StateSliceListener<StateSlice>,
   selector: StateSelector<TState, StateSlice> = getState as any,
-  equalityFn: EqualityChecker<StateSlice> = Object.is
+  equalityFn: EqualityChecker<StateSlice> = Object.is,
 ) => {
-  console.warn('[DEPRECATED] Please use `subscribeWithSelector` middleware');
+  console.warn("[DEPRECATED] Please use `subscribeWithSelector` middleware");
   let currentSlice: StateSlice = selector(state);
   function listenerToAdd() {
     const nextSlice = selector(state);
@@ -150,7 +148,7 @@ const setState: SetState<TState> = (partial, replace) => {
 function subscribe(listener) {
   // ...
   if (isDispatching) {
-    throw new Error('...');
+    throw new Error("...");
   }
 
   let isSubscribed = true;
@@ -164,7 +162,7 @@ function subscribe(listener) {
     }
 
     if (isDispatching) {
-      throw new Error('...');
+      throw new Error("...");
     }
 
     isSubscribed = false;
@@ -213,7 +211,7 @@ const setState: SetState<TState> = (partial, replace) => {
   // TODO: Remove type assertion once https://github.com/microsoft/TypeScript/issues/37663 is resolved
   // https://github.com/microsoft/TypeScript/issues/37663#issuecomment-759728342
   const nextState =
-    typeof partial === 'function'
+    typeof partial === "function"
       ? (partial as (state: TState) => TState)(state)
       : partial;
   if (nextState !== state) {
@@ -236,19 +234,19 @@ function dispatch(action) {
   if (!isPlainObject(action)) {
     throw new Error(
       `Actions must be plain objects. Instead, the actual type was: '${kindOf(
-        action
-      )}'. You may need to add middleware to your store setup to handle dispatching other values, such as 'redux-thunk' to handle dispatching functions. See https://redux.js.org/tutorials/fundamentals/part-4-store#middleware and https://redux.js.org/tutorials/fundamentals/part-6-async-logic#using-the-redux-thunk-middleware for examples.`
+        action,
+      )}'. You may need to add middleware to your store setup to handle dispatching other values, such as 'redux-thunk' to handle dispatching functions. See https://redux.js.org/tutorials/fundamentals/part-4-store#middleware and https://redux.js.org/tutorials/fundamentals/part-6-async-logic#using-the-redux-thunk-middleware for examples.`,
     );
   }
 
-  if (typeof action.type === 'undefined') {
+  if (typeof action.type === "undefined") {
     throw new Error(
-      'Actions may not have an undefined "type" property. You may have misspelled an action type string constant.'
+      'Actions may not have an undefined "type" property. You may have misspelled an action type string constant.',
     );
   }
 
   if (isDispatching) {
-    throw new Error('Reducers may not dispatch actions.');
+    throw new Error("Reducers may not dispatch actions.");
   }
 
   try {
@@ -286,16 +284,16 @@ function create<
   TState extends State,
   CustomSetState,
   CustomGetState,
-  CustomStoreApi extends StoreApi<TState>
+  CustomStoreApi extends StoreApi<TState>,
 >(
   createState:
     | StateCreator<TState, CustomSetState, CustomGetState, CustomStoreApi>
-    | CustomStoreApi
+    | CustomStoreApi,
 ): UseBoundStore<TState, CustomStoreApi> {
   // ...
   const useStore: any = <StateSlice>(
     selector: StateSelector<TState, StateSlice> = api.getState as any,
-    equalityFn: EqualityChecker<StateSlice> = Object.is
+    equalityFn: EqualityChecker<StateSlice> = Object.is,
   ) => {
     const [, forceUpdate] = useReducer((c) => c + 1, 0) as [never, () => void];
     // ...
@@ -308,7 +306,7 @@ function create<
           if (
             !equalityFnRef.current(
               currentSliceRef.current as StateSlice,
-              nextStateSlice
+              nextStateSlice,
             )
           ) {
             stateRef.current = nextState;
@@ -344,7 +342,7 @@ zustand 将 `createStore` 函数的返回值作为一个自定义 hook 来实现
 这里，看看如何在函数组件中使用 zustand：
 
 ```js
-import create from 'zustand';
+import create from "zustand";
 
 // Store
 const useStore = create((set) => ({
