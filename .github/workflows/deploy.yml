@@ -16,7 +16,7 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '16' # 确保使用的 Node.js 版本
+        node-version: '20' # 确保使用的 Node.js 版本
 
     - name: Check commit message
       id: check_commit
