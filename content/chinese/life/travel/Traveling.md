@@ -24,3 +24,14 @@ draft: false
 {{< image src="images/life/zhangjiakou.png" caption="" alt="张家口徒步" height="" width="" position="center" command="fill" option="q100" class="img-fluid" title="张家口徒步"  webp="false" >}}
 
 ### 2023年2月
+
+- 2023年2月19日，去了一趟北京颐和园的孔桥
+
+{{< image src="images/life/yiheyuan.png" caption="" alt="颐和园" height="" width="" position="center" command="fill" option="q100" class="img-fluid" title="颐和园"  webp="false" >}}
+
+
+### 2023年4月
+
+- 2023年4月，去了长城旧址
+
+{{< image src="images/life/changcheng.png" caption="" alt="长城旧址" height="" width="" position="center" command="fill" option="q100" class="img-fluid" title="长城旧址"  webp="false" >}}
