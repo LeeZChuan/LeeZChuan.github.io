@@ -58,6 +58,89 @@ this.virtualState = {
 };
 ```
 
+```vue
+<!-- 在上面拿到的virtualState.topFill与virtualState.bottomFill就可以填充到这里实现表格高度的变化 -->
+<template>
+  <table
+    ref="contentDiv"
+    class="table-content"
+    :cellspacing="0"
+    :class="tableStyle"
+    :cellpadding="0"
+    :border="0"
+    :style="[
+      { paddingTop: virtualState.topFill + 'px' },
+      { paddingBottom: virtualState.bottomFill + 'px' },
+    ]"
+    @mousedown="mouseSelectDown($event)"
+    @mouseup="mouseSelectUp"
+    @dblclick="handleRowDoubleClick($event)"
+  >
+  <!--这里是为了兼容低版本浏览器49表格所需要的配置-->
+    <caption style="padding: 0px"></caption>
+    <colgroup>
+      <col
+        v-for="(columnsItemCol, index) in props.columnsItem"
+        :key="index"
+        :name="`my_column_index_${index}`"
+        :width="columnsItemCol.width"
+        :style="{ width: `${columnsItemCol.width}px` }"
+      />
+    </colgroup>
+    <thead>
+      <tr
+        v-for="(dataItem, rowIndex) in virtualData"
+        :key="rowIndex"
+        :data-rowIndex="rowIndex"
+        :data-index="dataItem.index.value"
+        @click.right.prevent="removeHandler(dataItem, $event)"
+      >
+        <td
+          v-for="columnsItemTh in props.columnsItem"
+          :colspan="1"
+          :rowspan="1"
+          :data-index="dataItem.index.value"
+          :data-rowIndex="rowIndex"
+        >
+          <!-- 无论是否使用插槽都需要使用阴影 -->
+          <div class="item">
+            <div
+              v-show="selection.includes(dataItem.ONLY_ONE_KEY)"
+              :data-rowIndex="rowIndex"
+              :data-index="dataItem.index.value"
+              class="highlighted"
+            />
+            <slot
+              name="content"
+              :column-config="columnsItemTh"
+              :column-value="dataItem"
+              :index="dataItem.index.value"
+              :row-index="rowIndex"
+            >
+              <div
+                class="cell"
+                :data-rowIndex="rowIndex"
+                :data-index="dataItem.index.value"
+                :style="getTextAlign(columnsItemTh)"
+              >
+                <p
+                  class="text"
+                  :data-rowIndex="rowIndex"
+                  :data-index="dataItem.index.value"
+                  :style="[getStyle(dataItem, columnsItemTh)]"
+                >
+                  {{ getTdCellResult(dataItem, columnsItemTh) }}
+                </p>
+              </div>
+            </slot>
+          </div>
+        </td>
+      </tr>
+    </thead>
+  </table>
+</template>
+```
+
 ### 优化方案1:
 
 但是实际上这样会导致表格的滚动不流畅，因为每次滚动都会重新计算表格的scrollTop，所以需要使用requestAnimationFrame来优化，每次滚动都会将当前的scrollTop保存起来，然后在requestAnimationFrame中计算表格的scrollTop，从而实现表格的平滑滚动。
