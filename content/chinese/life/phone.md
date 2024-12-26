@@ -20,10 +20,14 @@ tags:
 
 2020年疫情过后，工作购入iphone 11 128g
 
-2021年 ipad pro 2021 11寸 128g 、 MacBookPro M1pro 14寸 2021款 16g
+2021年 ipad pro 2021 11寸 128g、airpods2代 、 MacBookPro M1pro 14寸 2021款 16g
 
 2022年 罗技Master3
 
 2023年 iphone14pro 256g、rog掌机
 
-2024年 罗技Master3s、联想4070tis整机
+2024年年初，购入了索尼zx706与森海塞尔ie600，大概一起一共小6k
+
+2024年年中 罗技Master3s、联想4070tis整机
+
+2024年年底 收到airpods4 降噪版
