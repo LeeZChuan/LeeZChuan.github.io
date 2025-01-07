@@ -30,4 +30,5 @@ tags:
 
 2024年年中 罗技Master3s、联想4070tis整机
 
-2024年年底 收到airpods4 降噪版
+2024年年底 收到airpods4 降噪版与罗技gpw3
+
