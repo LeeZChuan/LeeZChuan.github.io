@@ -1,87 +1,45 @@
 ---
-title: Nginx 配置
-date: 2018-03-15 12:38:00
-update: 2020-12-02 01:19:00
-author: "LeeZChuan"
-categories: ["计算机技术", "服务器", "Nginx"]
-description:
-  Nginx 作为一个轻量、高性能的服务器，近年来颇受欢迎，无论是生产环境还是开发环境都有其发挥作用的地方，其配置文件相对来说还是较为简单的。而且，现在
-  nginx 也支持 Windows 环境了，利用不同的配置可以满足我们不同的需求。
+title: 有用的nginx配置
+date: 2025-03-07T07:49:50.605Z
+update: 2025-03-07T07:49:51.583Z
+categories:
+    - 计算机技术
+    - 服务器
+    - Nginx
+description: 日常研发少不了上线部署工作,以下列出我工作期间常用的nginx配置
+authors: LeeZChuan
+keywords: 计算机技术
 ---
 
-**<u>建议主要参考官网英文文档。</u>**
 
-具体指令直接可以在官网文档的 Alphabetical index of directives（按字母顺序排列的指令索引）中搜索即可。
 
-> 官方文档：http://nginx.org/en/docs/
+### 一、跨域配置
 
-<!-- truncate -->
+由于浏览器的安全策略，前端处理跨域请求的概率极高，如下是开启跨域请求常规手段
 
-### Nginx
+```nginx
+if ($request_method = OPTIONS ) {
+    add_header "Access-Control-Allow-Origin"  *;
+    add_header "Access-Control-Allow-Methods" "GET, POST, OPTIONS, HEAD";
+    add_header "Access-Control-Allow-Headers" "Authorization, Origin, X-Requested-With, Content-Type, Accept";
+    add_header 'Access-Control-Max-Age' 600;
+    return 200;
+}
+```
 
-Nginx 是一位俄罗斯开发者（伊戈尔·赛索耶夫）开发的服务器，于 2004 年 10 月 4 日公开发布。Nginx 的优势在于轻量级和高性能，尤其是高并发的场景下，相对其它服务器来说表现比较好，因此现在颇受欢迎。Nginx 通常运行在 Unix/Linux 环境下，当然现在官方也发布了 Windows 环境下的应用，不过性能有所降低，这是受限于系统环境的影响。
+### 二、开启Gzip压缩
 
-Nginx 在生产环境下的应用场景通常作为负载均衡的前端服务器，对请求进行分发，实现极高的并发量。当然，在开发环境下，nginx 也可以作为一个工具来使用，提供给我们极大的便利，例如利用反向代理来实现前后端的完全分离开发。
+```nginx
+{
+  include       conf/mime.types;
+  gzip on;
+  gzip_min_length  1000;
+  gzip_buffers     4 8k;   
+  gzip_http_version 1.1; 
+  gzip_types       text/plain application/x-javascript text/css application/xml application/javascript application/json;
+}
+```
 
-Nginx 的架构被设计为模块化，从官方文档我们就可以明显的看出来，相应的配置需要在对应的模块中去查找。默认安装的情况下，官方文档中的所有模块并不会被全部安装，只会安装大部分满足常用需求的模块，至于一些特殊需求所要用到的模块，可以自己手动编译安装，当然模块化的好处就是可以自己开发模块来扩展 nginx 的功能。
-
-### Nginx 特定场景下的配置
-
-不管 nginx 基于什么场景发挥什么作用，都是基于特定的配置来实现，nginx 的配置文件也相对比较简单。
-
-#### 工作进程
-
-Nginx 是基于异步非阻塞 IO 模型的，同时也支持多进程，通常将其工作进程数目设置为 CPU 的核心数，以发挥其最大作用，实现高并发。
-
-    {
-        worker_processes  4;
-
-        ...
-    }
-
-这个配置是写在配置文件顶部的，其值也可以为 `auto`。
-
-> 官网文档：[Core functionality/worker_processes](http://nginx.org/en/docs/ngx_core_module.html#worker_processes)
-
-#### 隐藏 nginx 版本号
-
-隐藏掉版本号，可以降低被攻击的风险。
-
-    http {
-        ...
-
-        server_tokens off;
-    }
-
-> 官网文档：[ngx_http_core_module/server_tokens](http://nginx.org/en/docs/http/ngx_http_core_module.html#server_tokens)
-
-#### 设置编码
-
-通常来说，将编码设置为 `UTF-8` 是比较合适的。
-
-    server {
-        ...
-
-        charset utf-8;
-    }
-
-> 官网文档：[ngx_http_charset_module/charset](http://nginx.org/en/docs/http/ngx_http_charset_module.html#charset)
-
-#### 更改上传数据大小限制
-
-Nginx 默认的数据上传大小为 2M，某些情况下我们需要将其更改的大一些，以符合业务需求。
-
-    server {
-        ...
-
-        client_max_body_size 20m;
-    }
-
-> 官网文档：[ngx_http_core_module/client_max_body_size](http://nginx.org/en/docs/http/ngx_http_core_module.html#client_max_body_size)
-
-#### 开启 gzip
-
-开启 gzip 压缩可以在客户端请求文本文件时，将传输大小压缩至少**70%**左右，可以获得非常好的优化效果，通常都会开启 gzip 压缩配置。
 
 ```nginx
 http {
@@ -126,46 +84,182 @@ http {
 
 > 官网文档：[ngx_http_gzip_module](http://nginx.org/en/docs/http/ngx_http_gzip_module.html#gzip)
 
-#### 路由匹配规则
 
-nginx 像一个路由，客户端通过什么地址访问服务器，服务器则在配置文件中通过设置好的路由来匹配请求进行转发。
+#### 三、使用 $request_id 实现链路追踪
 
-nginx 的匹配规则分为 3 类：
 
-- 正则匹配：由 `~`（不忽略大小写） 和 `~*`（忽略大小写）开头
-- 精确匹配：由 `=` 开头
-- 前缀匹配：由 `^~` 开头或没有任何字符的规则
-
-匹配顺序：**首先检查精确匹配，匹配到则终止；其次，检查前缀字符串匹配，匹配到时，若是以 `^~` 开头的则终止，否则继续进行正则匹配；最后，检查正则匹配，顺序为配置文件中书写顺序（从上到下），匹配到第一条则终止，若没匹配到，则以匹配到的前缀匹配规则为最终结果。**
+Nginx在1.11.0版本中就提供了内置变量$request_id，其原理就是生成 32 位的随机字符串，虽不能比拟 UUID 的概率，但 32 位的随机字符串的重复概率也是微不足道了，所以一般可视为 UUID 来使用。
 
 ```nginx
-# 精确匹配，加速 / 请求的处理
-location = / {
-    # ...
-}
+location ^~ /habo/gid {
+        add_header Cache-Control no-store;
+        default_type application/javascript;
+        set $unionId $cookie_GID;
+        if ($unionId = "") {
+                set $unionId $request_id;
+                add_header Set-Cookie "GID=${unionId};path=/habo/;max-age=${GID_MAX_AGE}";
+        }
+        return 200 "document.cookie='GID=${unionId};path=/;max-age=${GID_MAX_AGE}'";
+    }
+```
 
-# 前缀匹配，处理一些需要缓存的静态资源
-location ^~ /static/ {
-    root    /Data/static/;
-    expires 7d;
-}
+#### 四、限流配置
 
-# 正则匹配，处理静态资源
-location ~* \.(html|js|css|png|jpg|jpeg|gif|json|ico|otf|eot|svg|ttf|woff|woff2|map)$ {
-    root /Data/webapps/;
-}
+其中，控制速率是指限制单位时间内的请求次数，而控制并发连接数是指限制同时处理的请求数量。
 
-# 前缀匹配，默认处理（可以做反向代理，处理动态资源请求）
-location / {
-    proxy_pass  http://127.0.0.1:8080;
+下面是一个简单的Nginx限流配置示例，使用leaky bucket算法进行限流：
+
+```nginx
+http {
+    limit_req_zone $binary_remote_addr zone=one:10m rate=1r/s;
+
+    server {
+        location / {
+            limit_req zone=one burst=5;
+            proxy_pass http://backend;
+        }
+    }
 }
 ```
 
-在非精确匹配的规则内部是可以嵌套 `location` 规则的。
+在上述配置中，limit_req_zone用于定义一个名为one的共享内存区域，并将其与客户端IP地址相关联。这个共享内存区域最大占用10MB空间，并且允许每秒钟通过 1 个请求。然后，在location块中使用了limit_req指令来启用限流功能。这里设置burst为 5，表示当客户端在短时间内发送超过 1 个请求时，可以暂时容忍一定数量的请求超出限制。
+需要注意的是，在实际应用中需要根据具体情况调整参数值以达到最佳效果。如下：
+```nginx
+map $http_baggage_flow  $plimit {
+ "ptest" $server_name;
+ default "";
+}
 
-> 官网文档：[ngx_http_core_module/location](http://nginx.org/en/docs/http/ngx_http_core_module.html#location)
 
-#### 调试技巧
+limit_req_zone $plimit zone=prelimit:10m rate=600r/s;
+ server {
+  listen       443 ssl;
+  server_name   www.jartto.com;
+  limit_req zone=prelimit  nodelay;
+  limit_req_status 530;
+
+  location = /530.html {
+      default_type application/json;
+      return 200 '{"status" : 530}';
+  }
+  ...
+}
+```
+
+#### 五、History 二级路由刷新问题
+
+vue-router+webpack项目线上部署时单页项目路由，刷新页面出现 404 问题，一般需要配置如下：
+
+```nginx
+location / {
+　　root html;
+　　try_files $uri $uri/ @router;
+　　index index.html index.htm;
+
+}
+location @router {
+　　rewrite ^.*$ /index.html last;
+}
+```
+
+完整的路由配置如下:
+```nginx
+ server {
+        listen       80;
+        server_name  192.168.86.152;
+        # server_name  localhost;
+        # 前端项目部署
+        location / {
+          root /data/MarketWeb/dist;   # 打包后的文件目录
+          index index.html index.htm;
+          try_files $uri $uri/ /index.html;  # 开启了browserRouter模式就写这个
+        }
+
+        location /market {
+           absolute_redirect on;
+           proxy_pass http://upstream_name;
+           proxy_set_header Host $host;
+           proxy_set_header X-Real-IP $remote_addr;
+           proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        }
+    
+        include /etc/nginx/default.d/*.conf;
+        error_page 404 /404.html;
+        location = /404.html {}
+        error_page 500 502 503 504 /50x.html;
+        location = /50x.html {}
+    }
+```
+
+#### 六、Cookie 路由识别
+
+最常见的场景就是灰度发布，Nginx 来识别来自前端的流量，从而进行转发
+
+```nginx
+map $http_cookie $m_upstream {
+    ~*baggage-version=isolute-feat-.*$ al-bj-sre-k8s-test-istio-gateway;
+    default test.jartto.com;
+}
+
+upstream al-bj-sre-k8s-test-istio-gateway {
+    server 47.95.128.11:80;
+}
+```
+
+
+
+#### 七、服务端开启图片转换
+
+这里主要是设置 WebP 格式图片:
+
+```nginx
+map $http_accept $webp_suffix {
+    default   "";
+    "~*webp"  ".webp";
+}
+```
+
+```nginx
+location  ~* ^/_nuxt/img/(.+\.png|jpe?g)$ {
+    rewrite ^/_nuxt/img/(.+\.png|jpe?g)$ /$1 break;
+    root /apps/srv/instance/test-webp.jartto.com/.nuxt/dist/client/img/;
+    add_header Vary Accept;
+    try_files $uri$webp_suffix $uri =404;
+    expires 30d;
+}
+```
+
+
+#### 八、负载均衡
+负载均衡通常有四种算法：
+
+* 轮询，默认方式，每个请求按时间顺序逐一分配到不同的后端服务器，如果后端服务挂了，能自动剔除；
+* weight，权重分配，指定轮询几率，权重越高，在被访问的概率越大，用于后端服务器性能不均的情况；
+* ip_hash，每个请求按访问 IP 的 hash 结果分配，这样每个访客固定访问一个后端服务器，可以解决动态网页 session 共享问题。负载均衡每次请求都会重新定位到服务器集群中的某一个，那么已经登录某一个服务器的用户再重新定位到另一个服务器，其登录信息将会丢失，这样显然是不妥的；
+* fair（第三方），按后端服务器的响应时间分配，响应时间短的优先分配，依赖第三方插件 nginx-upstream-fair，使用前请先安装；
+
+```nginx
+http {
+  upstream jartto-server {
+  	# ip_hash;  # ip_hash 方式
+    # fair;   # fair 方式
+    server 127.0.0.1:8081;  # 负载均衡目的服务地址
+    server 127.0.0.1:8080;
+    server 127.0.0.1:8082 weight=10;  # weight 方式，不写默认为 1
+  }
+ 
+  server {
+    location / {
+    	proxy_pass http://jartto-server;
+      proxy_connect_timeout 10;
+    }
+  }
+}
+```
+
+
+
+#### 九、调试技巧
 
 nginx 本身是比较难调试的，不过在配置 `location` 指令时，可以利用 `return` 指令来进行调试。
 
@@ -186,7 +280,7 @@ location /test/ {
 
 > 官网文档：[ngx_http_rewrite_module/return](http://nginx.org/en/docs/http/ngx_http_rewrite_module.html#return)
 
-#### 虚拟目录
+#### 十、虚拟目录
 
 虚拟目录解决了客户端请求资源的 **URL** 与服务器端对应资源存在位置不一致的问题。如下所示：
 
@@ -212,7 +306,7 @@ location /test/ {
 
 > 官网文档：[ngx_http_core_module/alias](http://nginx.org/en/docs/http/ngx_http_core_module.html#alias)
 
-#### 文件列表浏览
+#### 十一、文件列表浏览
 
 静态资源服务器一般允许用户查看服务器上的文件列表，例如 CDN、镜像站等。nginx 出于安全考虑，默认是不允许客户端浏览器查看服务器上的文件列表的，可以通过以下指令来进行配置：
 
@@ -226,7 +320,7 @@ location /static/ {
 
 > 官网文档：[ngx_http_autoindex_module](http://nginx.org/en/docs/http/ngx_http_autoindex_module.html)
 
-#### 允许跨域
+#### 十二、允许跨域
 
 有时候，比较大（几百兆以上）的静态资源需要在客户端使用异步方式加载（例如 Ajax），但是多个人合作开发时，拷贝这些静态资源到各自本地（如果不这么做，将会出现跨域问题）是最糟糕的解决方案，这个时候我们可以将静态资源放在一个服务器上，然后使用反向代理或者允许跨域的配置巧妙的解决这个问题。
 
@@ -248,7 +342,7 @@ location /static/ {
 
 > 官网文档：[ngx_http_headers_module/add_header](http://nginx.org/en/docs/http/ngx_http_headers_module.html#add_header)
 
-#### 反向代理
+#### 十三、反向代理
 
 Nginx 可以作为一个反向代理服务器，来为我们提供一些场景下的解决方案，例如负载均衡、跨域、前后端完全分离开发场景等等。
 
@@ -276,7 +370,7 @@ Nginx 可以作为一个反向代理服务器，来为我们提供一些场景�
 
   则是后端（被代理）服务器地址。
 
-#### 代理服务路径变化时
+#### 十四、代理服务路径变化时
 
 如果说在反向代理过程中，路径没有差异，一般来说不会出现什么问题，但是如果路径有变化时，会出现两个问题，一个是 **cookie 丢失**，另一个则是 **后端服务器重定向错误**。 第一个问题可以用 `proxy_cookie_path` 指令解决，第二个问题则使用 `proxy_redirect` 指令解决。具体如下：
 
@@ -296,7 +390,7 @@ location /test/ {
 
 > 官网文档：[ngx_http_proxy_module](http://nginx.org/en/docs/http/ngx_http_proxy_module.html)
 
-#### 重定向
+#### 十五、重定向
 
 重定向是一个比较常见的需求，nginx 的重定向指令（rewrite）还是相当简单的。例如，需要将所有 http 请求重定向到 https 下，官方推荐这么做：
 
@@ -317,7 +411,7 @@ location /test/ {
 
 > 官网文档：[ngx_http_rewrite_module](http://nginx.org/en/docs/http/ngx_http_rewrite_module.html)
 
-#### 项目首页重定向
+#### 十六、项目首页重定向
 
 大多数时候，我们在同一个域名下会部署多个 Web 应用，访问的话需要 **WebAppName** 来进行区分，例如 `localhost:80/App`，那么 `App` 其实就代表了一个 Web 应用，将会映射到相应的文件夹。这里有一个细节性问题，文件夹的路径必然以 `/` 结束，所以大多数服务器都会自动做一次重定向，将 `localhost:80/App` 重定向到 `localhost:80/App/`。如果 Nginx 没有配置，默认是不会做这个重定向的，为了用户访问方便，我们需要解决这个问题：
 
@@ -336,7 +430,7 @@ location /test/ {
         return 301 $scheme://$http_host$uri/;
     }
 
-#### 日志分割
+#### 十七、日志分割
 
 Nginx 的访问日志（access_log）默认是没有进行分割的，时间一长，日志文件就会有 GB 级别的大小，日志写入速度变慢，也会影响 nginx 的性能。我们可以通过很简单的方式，将访问日志设置为按天记录,将日志记录在不同的文件中。
 
