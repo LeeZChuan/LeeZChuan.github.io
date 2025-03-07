@@ -171,7 +171,7 @@ Promise 本质上是一种异步编程的形式，运用的还是回调函数，
 
 Promise 有几个基本的 API 用来简化我们的异步编程操作，而不需要每次都去使用构造函数创建新的 Promise 对象。
 
-######### resolve() 和 reject()
+###### resolve() 和 reject()
 
 如果仅仅是需要一个拒绝状态的 Promise，以下方式是等价的：
 
@@ -187,7 +187,7 @@ Promise 有几个基本的 API 用来简化我们的异步编程操作，而不�
 
 传入的 `value` 如果是一个 Promise 对象，则它什么也不会做，只是简单的返回该 Promise 的状态值；但是，如果 `value` 是一个值，它会自动创建一个 Promise 对象并根据值做出决议，然后返回决议值。
 
-######### then() 和 catch()
+###### then() 和 catch()
 
 前面我们说过，回调函数的嵌套是不利于代码维护的，那么 `Promise.then()` 则提供了链式的异步操作方式。
 
@@ -207,7 +207,7 @@ Promise 有几个基本的 API 用来简化我们的异步编程操作，而不�
 
 这样并非是没有接收完成状态的决议值，而是将其传入下层的 Promise 对象中。
 
-######### all() 和 race()
+###### all() 和 race()
 
 这两个 API 都是辅助性方法，它们都接受一个 Promise 对象数组作为参数。
 
@@ -328,7 +328,7 @@ Fetch 是基于 Promise 的，所以编码风格与其一致。来看看如何�
 
 在使用 Fetch API 的过程中仍然要注意一些问题。
 
-######### 默认不携带 Cookie
+###### 默认不携带 Cookie
 
 **fetch 发送请求默认是不携带 Cookie 信息的，不管是同域还是跨域请求；因此，在需要使用 Session-Cookie 机制进行权限验证的场景下，务必配置 `credentials` 项**：
 
@@ -343,7 +343,7 @@ exp：
     	.then(json => console.log(json) )
     	.catch(err => alert(err.message) );
 
-######### 仅在请求不能完成时 reject
+###### 仅在请求不能完成时 reject
 
 **因为 fetch 是基于 Promise 的，而服务器响应的 `Response` 对象中封装的信息（例如响应状态码 200、403 等）不会作为 reject 的条件，而是仅在客户端与服务器端发生网络错误不能顺利完成请求时才会 `reject`。**
 
@@ -361,7 +361,7 @@ exp：
     	.then(json => console.log(json) )
     	.catch(err => alert(err.message) );
 
-######### GET 请求
+###### GET 请求
 
 在发送 Get 请求时，参数一般就携带在 `url` 中。
 
@@ -370,7 +370,7 @@ exp：
     	.then(json => console.log(json) )
     	.catch(err => alert(err.message) );
 
-######### POST 请求
+###### POST 请求
 
 **在发送 Post 请求时，参数只能携带在 `body` 中，而且即便没有参数，`body` 也不能为空。**参数通常使用 `FormData` 对象来构建。
 

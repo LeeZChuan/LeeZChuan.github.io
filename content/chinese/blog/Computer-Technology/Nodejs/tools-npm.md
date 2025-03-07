@@ -194,7 +194,7 @@ npm unlink  // 测试完成后，在你将要发布的包根目录下执行该�
 
 > [4 reasons to avoid using `npm link`](https://hirok.io/posts/avoid-npm-link)
 
-####### 小技巧
+#### 小技巧
 
 这里有个小技巧可以不使用 `npm link` 命令就能在本地测试，而且是真的无污染：
 
@@ -310,7 +310,7 @@ if (process.env.NODE_ENV === "production") {
 
 > https://2ality.com/2017/04/setting-up-multi-platform-packages.html
 
-####### 新的方案
+#### 新的方案
 
 事实上，`main` 和 `browser` 字段在 npm 文档中有定义，查看文档：
 
