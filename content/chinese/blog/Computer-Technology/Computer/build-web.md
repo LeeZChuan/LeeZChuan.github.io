@@ -68,6 +68,11 @@ node -v      输出版本号 16.14.0 即为配置成功
 
 - 具体环境变量如何配置,请参考我的nginx那篇文章的讲解即可
 
+#### 如果无法使用yum安装nginx可以考虑使用
+
+- dnf -y install http://nginx.org/packages/centos/8/x86 _64/RPMS/nginx-1.18.0-1.el8.ngx.x86 _64.rpm
+
+
 ## 三、发布代码
 
 上述流程走完就该git拉代码,然后本地build代码,配置nginx路径就可以了,一切上述完成,你的网页就正式在公网可以访问了
