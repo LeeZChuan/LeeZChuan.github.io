@@ -1,7 +1,7 @@
 ---
 title: "工作中遇到的比较有意义的问题"
 meta_title: ""
-description: "阅读架构设计的笔记"
+description: "工作解决的bug记录"
 date: 2023-12-01 20:04:00
 update: 2025-11-18 20:01:00
 categories: ["架构设计", "前端"]
