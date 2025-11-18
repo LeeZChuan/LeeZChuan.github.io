@@ -1,26 +1,65 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Go on 技术之心</title>
-    <link>http://localhost:1313/categories/go/</link>
-    <description>Recent content in Go on 技术之心</description>
-    <generator>Hugo</generator>
-    <language>zh-cn</language>
-    <lastBuildDate>Wed, 16 Apr 2025 12:36:18 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/go/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Go 后端开发学习笔记</title>
-      <link>http://localhost:1313/blog/computer-technology/go/learning_go/</link>
-      <pubDate>Wed, 16 Apr 2025 12:36:18 +0000</pubDate>
-      <guid>http://localhost:1313/blog/computer-technology/go/learning_go/</guid>
-      <description>&lt;h1 id=&#34;go-后端开发学习笔记&#34;&gt;Go 后端开发学习笔记&lt;/h1&gt;&#xA;&lt;h2 id=&#34;目录&#34;&gt;目录&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#%e9%a1%b9%e7%9b%ae%e5%88%9d%e5%a7%8b%e5%8c%96&#34;&#xA;&#xA;&#xA;&#xA; &#xA;&#xA;&#xA;&gt;项目初始化&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#%e9%a1%b9%e7%9b%ae%e7%bb%93%e6%9e%84&#34;&#xA;&#xA;&#xA;&#xA; &#xA;&#xA;&#xA;&gt;项目结构&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#%e4%be%9d%e8%b5%96%e7%ae%a1%e7%90%86&#34;&#xA;&#xA;&#xA;&#xA; &#xA;&#xA;&#xA;&gt;依赖管理&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#api%e5%bc%80%e5%8f%91&#34;&#xA;&#xA;&#xA;&#xA; &#xA;&#xA;&#xA;&gt;API开发&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#%e6%95%b0%e6%8d%ae%e6%8c%81%e4%b9%85%e5%8c%96&#34;&#xA;&#xA;&#xA;&#xA; &#xA;&#xA;&#xA;&gt;数据持久化&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#%e5%b8%b8%e8%a7%81%e9%97%ae%e9%a2%98&#34;&#xA;&#xA;&#xA;&#xA; &#xA;&#xA;&#xA;&gt;常见问题&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;项目初始化&#34;&gt;项目初始化&lt;/h2&gt;&#xA;&lt;h3 id=&#34;1-创建项目目录结构&#34;&gt;1. 创建项目目录结构&lt;/h3&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mkdir -p backend/&lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;cmd/server,configs,internal/&lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;api,config&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;,pkg&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;2-初始化go模块&#34;&gt;2. 初始化Go模块&lt;/h3&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cd backend&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;go mod init front-page&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;3-创建主程序入口&#34;&gt;3. 创建主程序入口&lt;/h3&gt;&#xA;&lt;p&gt;在&lt;code&gt;cmd/server/main.go&lt;/code&gt;中创建主程序入口：&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Go 后端开发学习笔记-引入swagger</title>
-      <link>http://localhost:1313/blog/computer-technology/go/swagger-guide/</link>
-      <pubDate>Wed, 16 Apr 2025 12:36:08 +0000</pubDate>
-      <guid>http://localhost:1313/blog/computer-technology/go/swagger-guide/</guid>
-      <description>&lt;h1 id=&#34;swagger-api-文档集成指南&#34;&gt;Swagger API 文档集成指南&lt;/h1&gt;&#xA;&lt;h2 id=&#34;1-安装-swagger-工具&#34;&gt;1. 安装 Swagger 工具&lt;/h2&gt;&#xA;&lt;h3 id=&#34;方法一手动安装&#34;&gt;方法一：手动安装&lt;/h3&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;go install github.com/swaggo/swag/cmd/swag@latest&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;方法二使用-makefile推荐&#34;&gt;方法二：使用 Makefile（推荐）&lt;/h3&gt;&#xA;&lt;p&gt;项目已经集成了自动安装功能，只需要运行：&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Go on 技术之心</title><link>https://leezchuan.github.io/categories/go/</link><description>Recent content in Go on 技术之心</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Wed, 16 Apr 2025 12:36:18 +0000</lastBuildDate><atom:link href="https://leezchuan.github.io/categories/go/index.xml" rel="self" type="application/rss+xml"/><item><title>Go 后端开发学习笔记</title><link>https://leezchuan.github.io/blog/computer-technology/go/learning_go/</link><pubDate>Wed, 16 Apr 2025 12:36:18 +0000</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/go/learning_go/</guid><description>&lt;h1 id="go-后端开发学习笔记">Go 后端开发学习笔记&lt;/h1>
+&lt;h2 id="目录">目录&lt;/h2>
+&lt;ol>
+&lt;li>&lt;a href="#%e9%a1%b9%e7%9b%ae%e5%88%9d%e5%a7%8b%e5%8c%96"
+
+
+
+ 
+
+
+>项目初始化&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%e9%a1%b9%e7%9b%ae%e7%bb%93%e6%9e%84"
+
+
+
+ 
+
+
+>项目结构&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%e4%be%9d%e8%b5%96%e7%ae%a1%e7%90%86"
+
+
+
+ 
+
+
+>依赖管理&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#api%e5%bc%80%e5%8f%91"
+
+
+
+ 
+
+
+>API开发&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%e6%95%b0%e6%8d%ae%e6%8c%81%e4%b9%85%e5%8c%96"
+
+
+
+ 
+
+
+>数据持久化&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%e5%b8%b8%e8%a7%81%e9%97%ae%e9%a2%98"
+
+
+
+ 
+
+
+>常见问题&lt;/a>&lt;/li>
+&lt;/ol>
+&lt;h2 id="项目初始化">项目初始化&lt;/h2>
+&lt;h3 id="1-创建项目目录结构">1. 创建项目目录结构&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>mkdir -p backend/&lt;span style="color:#f92672">{&lt;/span>cmd/server,configs,internal/&lt;span style="color:#f92672">{&lt;/span>api,config&lt;span style="color:#f92672">}&lt;/span>,pkg&lt;span style="color:#f92672">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="2-初始化go模块">2. 初始化Go模块&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>cd backend
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>go mod init front-page
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="3-创建主程序入口">3. 创建主程序入口&lt;/h3>
+&lt;p>在&lt;code>cmd/server/main.go&lt;/code>中创建主程序入口：&lt;/p></description></item><item><title>Go 后端开发学习笔记-引入swagger</title><link>https://leezchuan.github.io/blog/computer-technology/go/swagger-guide/</link><pubDate>Wed, 16 Apr 2025 12:36:08 +0000</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/go/swagger-guide/</guid><description>&lt;h1 id="swagger-api-文档集成指南">Swagger API 文档集成指南&lt;/h1>
+&lt;h2 id="1-安装-swagger-工具">1. 安装 Swagger 工具&lt;/h2>
+&lt;h3 id="方法一手动安装">方法一：手动安装&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>go install github.com/swaggo/swag/cmd/swag@latest
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="方法二使用-makefile推荐">方法二：使用 Makefile（推荐）&lt;/h3>
+&lt;p>项目已经集成了自动安装功能，只需要运行：&lt;/p></description></item></channel></rss>

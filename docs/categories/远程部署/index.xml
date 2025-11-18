@@ -1,19 +1,8 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>远程部署 on 技术之心</title>
-    <link>http://localhost:1313/categories/%E8%BF%9C%E7%A8%8B%E9%83%A8%E7%BD%B2/</link>
-    <description>Recent content in 远程部署 on 技术之心</description>
-    <generator>Hugo</generator>
-    <language>zh-cn</language>
-    <lastBuildDate>Wed, 09 Apr 2025 05:45:35 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/%E8%BF%9C%E7%A8%8B%E9%83%A8%E7%BD%B2/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>如何在远程服务器上部署项目</title>
-      <link>http://localhost:1313/blog/computer-technology/computer/build-web/</link>
-      <pubDate>Wed, 09 Apr 2025 05:45:35 +0000</pubDate>
-      <guid>http://localhost:1313/blog/computer-technology/computer/build-web/</guid>
-      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;现在开发一个项目,从项目立项到开始开发,在github或者gitee上开发&lt;/li&gt;&#xA;&lt;li&gt;本地运行没问题,肯定要走发布流程,让客户进行验收,这时候就需要远程服务器发布了&lt;/li&gt;&#xA;&lt;li&gt;本次就聊聊,顺带记录一下如何发布&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;一申请远程服务器&#34;&gt;一、申请远程服务器&lt;/h2&gt;&#xA;&lt;p&gt;远程服务器现在市面上有很多供应商提供很多服务器,比如阿里、腾讯,我本次就购买了阿里的服务器《轻量应用服务器》&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>远程部署 on 技术之心</title><link>https://leezchuan.github.io/categories/%E8%BF%9C%E7%A8%8B%E9%83%A8%E7%BD%B2/</link><description>Recent content in 远程部署 on 技术之心</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Wed, 09 Apr 2025 05:45:35 +0000</lastBuildDate><atom:link href="https://leezchuan.github.io/categories/%E8%BF%9C%E7%A8%8B%E9%83%A8%E7%BD%B2/index.xml" rel="self" type="application/rss+xml"/><item><title>如何在远程服务器上部署项目</title><link>https://leezchuan.github.io/blog/computer-technology/computer/build-web/</link><pubDate>Wed, 09 Apr 2025 05:45:35 +0000</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/computer/build-web/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
+&lt;ul>
+&lt;li>现在开发一个项目,从项目立项到开始开发,在github或者gitee上开发&lt;/li>
+&lt;li>本地运行没问题,肯定要走发布流程,让客户进行验收,这时候就需要远程服务器发布了&lt;/li>
+&lt;li>本次就聊聊,顺带记录一下如何发布&lt;/li>
+&lt;/ul>
+&lt;h2 id="一申请远程服务器">一、申请远程服务器&lt;/h2>
+&lt;p>远程服务器现在市面上有很多供应商提供很多服务器,比如阿里、腾讯,我本次就购买了阿里的服务器《轻量应用服务器》&lt;/p></description></item></channel></rss>

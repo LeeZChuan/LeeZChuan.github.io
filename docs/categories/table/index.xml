@@ -1,26 +1,7 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Table on 技术之心</title>
-    <link>http://localhost:1313/categories/table/</link>
-    <description>Recent content in Table on 技术之心</description>
-    <generator>Hugo</generator>
-    <language>zh-cn</language>
-    <lastBuildDate>Mon, 16 Dec 2024 08:44:18 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/table/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>原生表格的虚拟滚动实践（上）</title>
-      <link>http://localhost:1313/blog/computer-technology/computer/virtual-table-vertical/</link>
-      <pubDate>Mon, 16 Dec 2024 08:44:18 +0000</pubDate>
-      <guid>http://localhost:1313/blog/computer-technology/computer/virtual-table-vertical/</guid>
-      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;&#xA;&lt;p&gt;在前端开发中，表格一直都是最复杂的组件之一，由于公司业务，需要在低版本浏览器中使用，并且需要实现固定列，所以市面上使用（使用position:sticky 实现粘性布局）的方案就被pass掉了，因为该特性只能在浏览器56版本以上才能使用，需要使用原生表格实现虚拟滚动，本篇仅分享表格竖向的虚拟滚动。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>原生表格的虚拟滚动实践（下）</title>
-      <link>http://localhost:1313/blog/computer-technology/computer/virtual-table-horizontal/</link>
-      <pubDate>Mon, 16 Dec 2024 08:44:18 +0000</pubDate>
-      <guid>http://localhost:1313/blog/computer-technology/computer/virtual-table-horizontal/</guid>
-      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;&#xA;&lt;p&gt;本篇文章分享如何实现横向的虚拟滚动。&lt;/p&gt;&#xA;&lt;h2 id=&#34;原生表格的横向虚拟滚动&#34;&gt;原生表格的横向虚拟滚动&lt;/h2&gt;&#xA;&lt;h3 id=&#34;原生表格-横向&#34;&gt;原生表格-横向&lt;/h3&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;在原文中提到这个方案：&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Table on 技术之心</title><link>https://leezchuan.github.io/categories/table/</link><description>Recent content in Table on 技术之心</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Mon, 16 Dec 2024 08:44:18 +0000</lastBuildDate><atom:link href="https://leezchuan.github.io/categories/table/index.xml" rel="self" type="application/rss+xml"/><item><title>原生表格的虚拟滚动实践（上）</title><link>https://leezchuan.github.io/blog/computer-technology/computer/virtual-table-vertical/</link><pubDate>Mon, 16 Dec 2024 08:44:18 +0000</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/computer/virtual-table-vertical/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
+&lt;p>在前端开发中，表格一直都是最复杂的组件之一，由于公司业务，需要在低版本浏览器中使用，并且需要实现固定列，所以市面上使用（使用position:sticky 实现粘性布局）的方案就被pass掉了，因为该特性只能在浏览器56版本以上才能使用，需要使用原生表格实现虚拟滚动，本篇仅分享表格竖向的虚拟滚动。&lt;/p></description></item><item><title>原生表格的虚拟滚动实践（下）</title><link>https://leezchuan.github.io/blog/computer-technology/computer/virtual-table-horizontal/</link><pubDate>Mon, 16 Dec 2024 08:44:18 +0000</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/computer/virtual-table-horizontal/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
+&lt;p>本篇文章分享如何实现横向的虚拟滚动。&lt;/p>
+&lt;h2 id="原生表格的横向虚拟滚动">原生表格的横向虚拟滚动&lt;/h2>
+&lt;h3 id="原生表格-横向">原生表格-横向&lt;/h3>
+&lt;blockquote>
+&lt;p>在原文中提到这个方案：&lt;/p></description></item></channel></rss>

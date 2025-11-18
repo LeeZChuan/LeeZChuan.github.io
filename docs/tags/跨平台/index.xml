@@ -1,19 +1,2 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>跨平台 on 技术之心</title>
-    <link>http://localhost:1313/tags/%E8%B7%A8%E5%B9%B3%E5%8F%B0/</link>
-    <description>Recent content in 跨平台 on 技术之心</description>
-    <generator>Hugo</generator>
-    <language>zh-cn</language>
-    <lastBuildDate>Wed, 18 Dec 2024 11:59:15 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%E8%B7%A8%E5%B9%B3%E5%8F%B0/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>TODO:前端开发中的流程自动化与提效实践</title>
-      <link>http://localhost:1313/blog/computer-technology/web/platfrom-choose/</link>
-      <pubDate>Wed, 18 Dec 2024 11:59:15 +0000</pubDate>
-      <guid>http://localhost:1313/blog/computer-technology/web/platfrom-choose/</guid>
-      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;&#xA;&lt;p&gt;在开发过程中，我们常常需要处理各种平台，如Android、iOS、Web等。为了提高开发效率，我们需要选择合适的跨平台技术。本文将介绍几种常用的跨平台技术；&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>跨平台 on 技术之心</title><link>https://leezchuan.github.io/tags/%E8%B7%A8%E5%B9%B3%E5%8F%B0/</link><description>Recent content in 跨平台 on 技术之心</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Wed, 18 Dec 2024 11:59:15 +0000</lastBuildDate><atom:link href="https://leezchuan.github.io/tags/%E8%B7%A8%E5%B9%B3%E5%8F%B0/index.xml" rel="self" type="application/rss+xml"/><item><title>TODO:前端开发中的流程自动化与提效实践</title><link>https://leezchuan.github.io/blog/computer-technology/web/platfrom-choose/</link><pubDate>Wed, 18 Dec 2024 11:59:15 +0000</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/web/platfrom-choose/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
+&lt;p>在开发过程中，我们常常需要处理各种平台，如Android、iOS、Web等。为了提高开发效率，我们需要选择合适的跨平台技术。本文将介绍几种常用的跨平台技术；&lt;/p></description></item></channel></rss>
