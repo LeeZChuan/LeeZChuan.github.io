@@ -1,119 +1,40 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>服务器 on 技术之心</title><link>https://leezchuan.github.io/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/</link><description>Recent content in 服务器 on 技术之心</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Mon, 14 Apr 2025 06:44:48 +0000</lastBuildDate><atom:link href="https://leezchuan.github.io/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/index.xml" rel="self" type="application/rss+xml"/><item><title>Nginx在微信中的实战经验总结</title><link>https://leezchuan.github.io/blog/computer-technology/nginx/nginx-wx/</link><pubDate>Mon, 14 Apr 2025 06:44:48 +0000</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/nginx/nginx-wx/</guid><description>&lt;h2 id="核心解决方案">核心解决方案&lt;/h2>
-&lt;ul>
-&lt;li>由于发布的时候是在正式环境开一个8080端口作为访问路径,但是三方服务对接的时候还是使用的正式环境80端口,所以这里需要nginx配置修改一下逻辑;&lt;/li>
-&lt;/ul>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
- 
- 
- 
-
-
- 
- 
- 
- 
- 
- 
-
- 
-
-
- 
- 
-
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
-
- 
- 
- 
- 
-
- 
- 
- 
- 
-
-
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
-
- 
- 
- 
- 
- &lt;img
- title="nginx-wx"
- loading="lazy"
- decoding="async"
- class="img img-fluid img-center"
- width="886"
- height="658"
- src="https://leezchuan.github.io/images/blog/nginx-wx_hu5425372659643988781.png"
- alt=""
- onerror="this.onerror='null';this.src='\/images\/blog\/nginx-wx_hu5425372659643988781.png'" />
- 
- 
-
- 
- 
-
-
-
-
-
-
- &lt;script>
- window.addEventListener("load", (e) => {
- const lightbox = GLightbox();
- });
- &lt;/script>
-
-
-&lt;p>看上述截图可以看到访问到正式环境并且链接中有&lt;code>/miniMarketAuth&lt;/code>和&lt;code>/qhfMarketAuth&lt;/code>的时候就带着后续参数重定向到8080端口,这样就可以在申请新服务器与域名的情况下使用原有域名模拟预发环境进行测试&lt;/p></description></item><item><title>有用的nginx配置</title><link>https://leezchuan.github.io/blog/computer-technology/nginx/userful-nginx/</link><pubDate>Fri, 07 Mar 2025 07:49:50 +0000</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/nginx/userful-nginx/</guid><description>&lt;h3 id="一跨域配置">一、跨域配置&lt;/h3>
-&lt;p>由于浏览器的安全策略，前端处理跨域请求的概率极高，如下是开启跨域请求常规手段&lt;/p></description></item><item><title>桥接模式：跨平台的事件机制设计</title><link>https://leezchuan.github.io/blog/computer-technology/program-architecture-design/bridge-mode-design-of-cross-platform-event-mechanism/</link><pubDate>Sun, 12 Jun 2022 22:22:00 +0800</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/program-architecture-design/bridge-mode-design-of-cross-platform-event-mechanism/</guid><description>&lt;p>对于 Web 的图表组件库来说，一些功能比较强大的开源库，渲染层可以支持 DOM、SVG、Canvas、WebGL 等多个平台的环境，而图表库的很多功能的实现都和渲染层紧密相关。&lt;/p></description></item><item><title>Nginx 配置</title><link>https://leezchuan.github.io/blog/computer-technology/nginx/nginx-config/</link><pubDate>Thu, 15 Mar 2018 12:38:00 +0800</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/nginx/nginx-config/</guid><description>&lt;p>&lt;strong>&lt;u>建议主要参考官网英文文档。&lt;/u>&lt;/strong>&lt;/p>
-&lt;p>具体指令直接可以在官网文档的 Alphabetical index of directives（按字母顺序排列的指令索引）中搜索即可。&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>服务器 on 技术之心</title>
+    <link>http://localhost:1313/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+    <description>Recent content in 服务器 on 技术之心</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 14 Apr 2025 06:44:48 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Nginx在微信中的实战经验总结</title>
+      <link>http://localhost:1313/blog/computer-technology/nginx/nginx-wx/</link>
+      <pubDate>Mon, 14 Apr 2025 06:44:48 +0000</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/nginx/nginx-wx/</guid>
+      <description>&lt;h2 id=&#34;核心解决方案&#34;&gt;核心解决方案&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;由于发布的时候是在正式环境开一个8080端口作为访问路径,但是三方服务对接的时候还是使用的正式环境80端口,所以这里需要nginx配置修改一下逻辑;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;  &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;  &#xD;&#xA;  &#xD;&#xA;  &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;  &#xD;&#xA;  &#xD;&#xA;    &#xD;&#xA;    &#xD;&#xA;      &#xD;&#xA;    &#xD;&#xA;&#xD;&#xA;    &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;    &#xD;&#xA;    &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;    &#xD;&#xA;    &#xD;&#xA;    &#xD;&#xA;    &#xD;&#xA;      &#xD;&#xA;      &#xD;&#xA;    &#xD;&#xA;    &#xD;&#xA;    &#xD;&#xA;    &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;    &#xD;&#xA;    &#xD;&#xA;      &#xD;&#xA;      &#xD;&#xA;&#xD;&#xA;      &#xD;&#xA;        &#xD;&#xA;        &#xD;&#xA;      &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;      &#xD;&#xA;&#xD;&#xA;      &#xD;&#xA;      &#xD;&#xA;        &#xD;&#xA;        &#xD;&#xA;        &#xD;&#xA;      &#xD;&#xA;      &#xD;&#xA;      &#xD;&#xA;      &#xD;&#xA;&#xD;&#xA;    &#xD;&#xA;    &#xD;&#xA;&#xD;&#xA;    &#xD;&#xA;    &#xD;&#xA;      &#xD;&#xA;      &#xD;&#xA;          &lt;img&#xD;&#xA;            title=&#34;nginx-wx&#34;&#xD;&#xA;            loading=&#34;lazy&#34;&#xD;&#xA;            decoding=&#34;async&#34;&#xD;&#xA;            class=&#34;img img-fluid img-center&#34;&#xD;&#xA;            width=&#34;886&#34;&#xD;&#xA;            height=&#34;658&#34;&#xD;&#xA;            src=&#34;http://localhost:1313/images/blog/nginx-wx_hu5425372659643988781.png&#34;&#xD;&#xA;            alt=&#34;&#34;&#xD;&#xA;            onerror=&#34;this.onerror=&#39;null&#39;;this.src=&#39;\/images\/blog\/nginx-wx_hu5425372659643988781.png&#39;&#34; /&gt;&#xD;&#xA;      &#xD;&#xA;    &#xD;&#xA;&#xD;&#xA;  &#xD;&#xA;  &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;  &lt;script&gt;&#xD;&#xA;    window.addEventListener(&#34;load&#34;, (e) =&gt; {&#xD;&#xA;      const lightbox = GLightbox();&#xD;&#xA;    });&#xD;&#xA;  &lt;/script&gt;&#xD;&#xA;&#xD;&#xA;&#xA;&lt;p&gt;看上述截图可以看到访问到正式环境并且链接中有&lt;code&gt;/miniMarketAuth&lt;/code&gt;和&lt;code&gt;/qhfMarketAuth&lt;/code&gt;的时候就带着后续参数重定向到8080端口,这样就可以在申请新服务器与域名的情况下使用原有域名模拟预发环境进行测试&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>有用的nginx配置</title>
+      <link>http://localhost:1313/blog/computer-technology/nginx/userful-nginx/</link>
+      <pubDate>Fri, 07 Mar 2025 07:49:50 +0000</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/nginx/userful-nginx/</guid>
+      <description>&lt;h3 id=&#34;一跨域配置&#34;&gt;一、跨域配置&lt;/h3&gt;&#xA;&lt;p&gt;由于浏览器的安全策略，前端处理跨域请求的概率极高，如下是开启跨域请求常规手段&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>桥接模式：跨平台的事件机制设计</title>
+      <link>http://localhost:1313/blog/computer-technology/program-architecture-design/bridge-mode-design-of-cross-platform-event-mechanism/</link>
+      <pubDate>Sun, 12 Jun 2022 22:22:00 +0800</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/program-architecture-design/bridge-mode-design-of-cross-platform-event-mechanism/</guid>
+      <description>&lt;p&gt;对于 Web 的图表组件库来说，一些功能比较强大的开源库，渲染层可以支持 DOM、SVG、Canvas、WebGL 等多个平台的环境，而图表库的很多功能的实现都和渲染层紧密相关。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Nginx 配置</title>
+      <link>http://localhost:1313/blog/computer-technology/nginx/nginx-config/</link>
+      <pubDate>Thu, 15 Mar 2018 12:38:00 +0800</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/nginx/nginx-config/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;&lt;u&gt;建议主要参考官网英文文档。&lt;/u&gt;&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;具体指令直接可以在官网文档的 Alphabetical index of directives（按字母顺序排列的指令索引）中搜索即可。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

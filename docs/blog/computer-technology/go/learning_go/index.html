@@ -1,0 +1,1905 @@
+<!doctype html>
+<html
+  itemscope
+  class=""
+  lang="zh-cn"
+  itemtype="http://schema.org/WebPage"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+    <meta charset="utf-8" />
+
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, maximum-scale=5"
+/>
+
+
+<meta name="theme-name" content="hugoplate" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="/images/favicon_hu533619655037541214.png" type="image/x-icon">
+<link rel="icon" href="/images/favicon_hu533619655037541214.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu10045982978932320562.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu533619655037541214.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu12879857052853119446.png">
+
+
+
+
+
+
+
+<link rel="manifest" href="/manifest.webmanifest" />
+<meta
+  name="msapplication-TileColor"
+  content="#ddd" />
+<meta
+  name="theme-color"
+  content="#ffffff" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<title>Go 后端开发学习笔记</title>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <meta
+    name="keywords"
+    content="LeeZChuan, Hugo, Blog" />
+
+
+
+
+<meta
+  name="description"
+  content="本文详细介绍了 Go 后端开发的基础知识，包括项目初始化、项目结构、依赖管理、API开发、数据持久化等内容，适合 Go 初学者学习和参考。" />
+
+
+
+  <meta name="author" content="LeeZChuan" />
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+      
+        <meta property="og:image" content="http://localhost:1313/images/og-image.png" />
+        <meta name="twitter:image" content="http://localhost:1313/images/og-image.png" />
+        <meta
+          name="twitter:card"
+          content="summary_large_image" />
+      
+      
+      <meta property="og:image:width" content="900" />
+      <meta property="og:image:height" content="600" />
+    
+
+
+    
+    <meta
+      property="og:image:type"
+      content="image/.png" />
+  
+
+
+  
+
+
+
+
+
+<meta property="og:title" content="Go 后端开发学习笔记" />
+<meta property="og:description" content="本文详细介绍了 Go 后端开发的基础知识，包括项目初始化、项目结构、依赖管理、API开发、数据持久化等内容，适合 Go 初学者学习和参考。" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://localhost:1313/blog/computer-technology/go/learning_go/" />
+
+
+<meta name="twitter:title" content="Go 后端开发学习笔记" />
+<meta name="twitter:description" content="本文详细介绍了 Go 后端开发的基础知识，包括项目初始化、项目结构、依赖管理、API开发、数据持久化等内容，适合 Go 初学者学习和参考。" />
+
+
+  <meta name="twitter:site" content="@LeeZChuan" />
+
+
+  <meta name="twitter:creator" content="@LeeZChuan" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  let indexURL = "http://localhost:1313/searchindex.json";
+  let includeSectionsInSearch = ["blog","life"];
+  let search_no_results = "暂无数据";
+  let search_initial_message = "标注某事物去搜索...";
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+<meta http-equiv="x-dns-prefetch-control" content="on" />
+<link rel="preconnect" href="https://use.fontawesome.com" crossorigin />
+<link rel="preconnect" href="//cdnjs.cloudflare.com" />
+<link rel="preconnect" href="//www.googletagmanager.com" />
+<link rel="preconnect" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="https://use.fontawesome.com" />
+<link rel="dns-prefetch" href="//ajax.googleapis.com" />
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+<link rel="dns-prefetch" href="//www.googletagmanager.com" />
+<link rel="dns-prefetch" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link rel="dns-prefetch" href="//connect.facebook.net" />
+<link rel="dns-prefetch" href="//platform.linkedin.com" />
+<link rel="dns-prefetch" href="//platform.twitter.com" />
+
+
+ 
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script>
+  (function () {
+    const googleFont = document.createElement("link");
+    googleFont.href =
+      "https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&family=Signika:wght@500;700&display=swap";
+    googleFont.type = "text/css";
+    googleFont.rel = "stylesheet";
+    document.head.appendChild(googleFont);
+  })();
+</script>
+
+
+                                           
+<link
+  href="/css/style.css"
+  integrity=""
+  rel="stylesheet"
+/>
+
+
+<link
+  defer
+  async
+  rel="stylesheet"
+  href="/css/style-lazy.css"
+  integrity=""
+  media="print"
+  onload="this.media='all'; this.onload=null;"
+/>
+
+  </head>
+
+  <body>
+    
+     
+
+
+
+
+    
+    <div
+  class="fixed left-0 top-0 z-50 flex w-[30px] items-center justify-center bg-gray-200 py-[2.5px] text-[12px] uppercase text-black sm:bg-red-200 md:bg-yellow-200 lg:bg-green-200 xl:bg-blue-200 2xl:bg-pink-200"
+>
+  <span class="block sm:hidden">all</span>
+  <span class="hidden sm:block md:hidden">sm</span>
+  <span class="hidden md:block lg:hidden">md</span>
+  <span class="hidden lg:block xl:hidden">lg</span>
+  <span class="hidden xl:block 2xl:hidden">xl</span>
+  <span class="hidden 2xl:block">2xl</span>
+</div>
+ 
+
+    
+    
+
+
+
+
+    
+    <header
+  class="header sticky top-0 z-30"
+>
+  <nav class="navbar container">
+    
+    <div class="order-0">
+      
+      <a class="navbar-brand block" href="/">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+    
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu4668213964747553556.webp"
+      alt="LeeZChuan"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu16137327364032044341.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu4521180468968039794.webp"
+      alt="LeeZChuan"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu12278668914502940210.png';" />
+  
+  
+
+
+      </a>
+    </div>
+    
+    <input id="nav-toggle" type="checkbox" class="hidden" />
+    <label
+      for="nav-toggle"
+      class="order-3 cursor-pointer flex items-center lg:hidden text-dark dark:text-white lg:order-1"
+    >
+      <svg id="show-button" class="h-6 fill-current block" viewBox="0 0 20 20">
+        <title>Menu Open</title>
+        <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z"></path>
+      </svg>
+      <svg id="hide-button" class="h-6 fill-current hidden" viewBox="0 0 20 20">
+        <title>Menu Close</title>
+        <polygon
+          points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
+          transform="rotate(45 10 10)"
+        ></polygon>
+      </svg>
+    </label>
+    
+
+    
+    <ul
+      id="nav-menu"
+      class="navbar-nav order-3 hidden lg:flex w-full pb-6 lg:order-1 lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8"
+    >
+           
+      <li class="nav-item">
+        <a
+          class="nav-link "
+          
+          target="_blank"
+          rel="noopener"
+          
+          href="https://leezchuan.github.io/EasyHomePage"
+          >关于我</a
+        >
+      </li>
+           
+      <li class="nav-item">
+        <a
+          class="nav-link "
+          
+          href="/blog"
+          >文章记录</a
+        >
+      </li>
+           
+      <li class="nav-item">
+        <a
+          class="nav-link "
+          
+          href="/life"
+          >生活记录</a
+        >
+      </li>
+           
+      <li class="nav-item">
+        <a
+          class="nav-link "
+          
+          href="/about"
+          >关于该站</a
+        >
+      </li>
+           
+      <li class="nav-item nav-dropdown group relative">
+        <span
+          class="nav-link 
+                
+                
+                
+              
+                
+                
+                
+               inline-flex items-center"
+        >
+          其他
+          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+            <path
+              d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+            />
+          </svg>
+        </span>
+        <ul
+          class="nav-dropdown-list lg:group-hover:visible lg:group-hover:opacity-100"
+        >
+            
+          <li class="nav-dropdown-item">
+            <a
+              class="nav-dropdown-link "
+              
+              href="/elements"
+            >
+              Md编写说明
+            </a>
+          </li>
+            
+          <li class="nav-dropdown-item">
+            <a
+              class="nav-dropdown-link "
+              
+              href="/categories"
+            >
+              文字分类汇总
+            </a>
+          </li>
+          
+        </ul>
+      </li>
+        
+    </ul>
+
+    <div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
+       
+      <button
+        aria-label="search"
+        
+        class="border-border text-dark hover:text-primary dark:border-darkmode-border mr-5 inline-block border-r pr-5 text-xl dark:text-white dark:hover:text-darkmode-primary"
+        
+        data-target="search-modal"
+      >
+        <i class="fa-solid fa-search"></i>
+      </button>
+        
+      
+ 
+ 
+<div class="theme-switcher mr-5 hidden">
+  <input id="theme-switcher" data-theme-switcher type="checkbox" />
+  <label for="theme-switcher">
+    <span class="sr-only">theme switcher</span>
+    <span>
+      
+      <svg
+        class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-100 dark:opacity-0"
+        viewBox="0 0 56 56"
+        fill="#fff"
+        height="16"
+        width="16"
+      >
+        <path
+          d="M30 4.6c0-1-.9-2-2-2a2 2 0 0 0-2 2v5c0 1 .9 2 2 2s2-1 2-2Zm9.6 9a2 2 0 0 0 0 2.8c.8.8 2 .8 2.9 0L46 13a2 2 0 0 0 0-2.9 2 2 0 0 0-3 0Zm-26 2.8c.7.8 2 .8 2.8 0 .8-.7.8-2 0-2.9L13 10c-.7-.7-2-.8-2.9 0-.7.8-.7 2.1 0 3ZM28 16a12 12 0 0 0-12 12 12 12 0 0 0 12 12 12 12 0 0 0 12-12 12 12 0 0 0-12-12Zm23.3 14c1.1 0 2-.9 2-2s-.9-2-2-2h-4.9a2 2 0 0 0-2 2c0 1.1 1 2 2 2ZM4.7 26a2 2 0 0 0-2 2c0 1.1.9 2 2 2h4.9c1 0 2-.9 2-2s-1-2-2-2Zm37.8 13.6a2 2 0 0 0-3 0 2 2 0 0 0 0 2.9l3.6 3.5a2 2 0 0 0 2.9 0c.8-.8.8-2.1 0-3ZM10 43.1a2 2 0 0 0 0 2.9c.8.7 2.1.8 3 0l3.4-3.5c.8-.8.8-2.1 0-2.9-.8-.8-2-.8-2.9 0Zm20 3.4c0-1.1-.9-2-2-2a2 2 0 0 0-2 2v4.9c0 1 .9 2 2 2s2-1 2-2Z"
+        />
+      </svg>
+      
+      <svg
+        class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-0 dark:opacity-100"
+        viewBox="0 0 24 24"
+        fill="none"
+        height="16"
+        width="16"
+      >
+        <path
+          fill="#000"
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M8.2 2.2c1-.4 2 .6 1.6 1.5-1 3-.4 6.4 1.8 8.7a8.4 8.4 0 0 0 8.7 1.8c1-.3 2 .5 1.5 1.5v.1a10.3 10.3 0 0 1-9.4 6.2A10.3 10.3 0 0 1 3.2 6.7c1-2 2.9-3.5 4.9-4.4Z"
+        />
+      </svg>
+    </span>
+  </label>
+</div>
+
+
+<script>
+  var darkMode = false;
+
+  
+  if (window.matchMedia("(prefers-color-scheme: dark)").matches){darkMode = true}
+  
+
+  if (localStorage.getItem("theme") === "dark"){darkMode = true}
+  else if (localStorage.getItem("theme") === "light"){darkMode = false}
+
+  if (darkMode){document.documentElement.classList.add("dark")}
+  else {document.documentElement.classList.remove("dark")}
+
+  
+  document.addEventListener("DOMContentLoaded", () => {
+    var themeSwitch = document.querySelectorAll("[data-theme-switcher]");
+    var themeSwitcherContainer = document.querySelector('.theme-switcher');
+
+    [].forEach.call(themeSwitch, function (ts) {
+      ts.checked = darkMode;
+      ts.addEventListener("click", () => {
+        document.documentElement.classList.toggle("dark");
+        localStorage.setItem(
+          "theme",
+          document.documentElement.classList.contains("dark") ? "dark" : "light"
+        );
+      });
+    });
+
+    
+    themeSwitcherContainer.classList.remove('hidden');
+  });
+</script>
+
+
+
+      
+      
+    </div>
+  </nav>
+</header>
+ 
+
+
+
+
+  
+    <div
+      class="search-modal "
+      aria-hidden="true"
+      style="--color-primary: #121212">
+      <div data-target="close-search-modal" class="search-modal-overlay"></div>
+      <div
+        class="search-wrapper"
+        data-image="true"
+        data-description="true"
+        data-tags="true"
+        data-categories="true">
+        <div class="search-wrapper-header">
+          <label for="search-modal-input" style="margin-top:-1px">
+            <span class="sr-only">search icon</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-icon"
+              data-type="search">
+              <path
+                fill="currentColor"
+                d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-reset"
+              data-type="reset">
+              <path
+                fill="currentColor"
+                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z" />
+            </svg>
+          </label>
+          <input
+            id="search-modal-input"
+            type="text"
+            data-search-input
+            autocomplete="off"
+            aria-label="Search"
+            placeholder="搜寻更多..." />
+        </div>
+        <div class="search-wrapper-body">
+          <div class="search-result" data-search-result></div>
+          <span class="search-result-empty">
+            标注某事物去搜索...
+          </span>
+        </div>
+        <div class="search-wrapper-footer">
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 11h9.592L8 5.519 3.204 11zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659z" />
+              </svg>
+            </kbd>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                style="margin-top:1px;"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z" />
+              </svg>
+            </kbd>
+            去导航
+          </span>
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="12"
+                fill="currentColor"
+                style="display:inline-block;"
+                viewBox="0 0 16 16">
+                <path
+                  fill-rule="evenodd"
+                  d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z" />
+              </svg>
+            </kbd>
+            去选择
+          </span>
+          <span class="search-result-info"></span>
+          <span data-target="close-search-modal">
+            <kbd>ESC</kbd> 去关闭
+          </span>
+        </div>
+      </div>
+    </div>
+  
+
+
+
+    <main>
+<section class="section pt-7">
+  <div class="container">
+    <div class="row justify-center">
+      <article class="lg:col-10">
+         
+        <h1 class="h2 mb-4">Go 后端开发学习笔记</h1>
+        <ul class="mb-4">
+          <li class="mr-4 inline-block">
+            <a
+              href="/authors/leezchuan/"
+            >
+              <i class="fa-regular fa-circle-user mr-2"></i>LeeZChuan
+            </a>
+          </li>
+           
+          <li class="mr-4 inline-block">
+            <i class="fa-regular fa-folder mr-2"></i>
+            
+            <a
+              href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/"
+              class=""
+              >计算机技术 , 
+            </a>
+            
+            <a
+              href="/categories/%e7%bc%96%e7%a8%8b%e8%af%ad%e8%a8%80/"
+              class=""
+              >编程语言 , 
+            </a>
+            
+            <a
+              href="/categories/go/"
+              class=""
+              >Go
+            </a>
+            
+          </li>
+          
+          <li class="mr-4 inline-block">
+            <i class="fa-regular fa-clock mr-2"></i>
+            April 16, 2025
+          </li>
+        </ul>
+        <div class="content mb-10">
+          
+
+ 
+  
+
+<details open class="table-of-content blog">
+  <summary>
+    
+      内容列表
+    
+  </summary>
+  <nav id="TableOfContents">
+  <ol>
+    <li><a href="#目录">目录</a></li>
+    <li><a href="#项目初始化">项目初始化</a>
+      <ol>
+        <li><a href="#1-创建项目目录结构">1. 创建项目目录结构</a></li>
+        <li><a href="#2-初始化go模块">2. 初始化Go模块</a></li>
+        <li><a href="#3-创建主程序入口">3. 创建主程序入口</a></li>
+        <li><a href="#4-创建配置文件">4. 创建配置文件</a></li>
+        <li><a href="#5-创建配置加载器">5. 创建配置加载器</a></li>
+        <li><a href="#6-创建api路由器">6. 创建API路由器</a></li>
+        <li><a href="#7-创建业务逻辑处理程序">7. 创建业务逻辑处理程序</a></li>
+        <li><a href="#8-运行项目">8. 运行项目</a></li>
+      </ol>
+    </li>
+    <li><a href="#项目结构">项目结构</a>
+      <ol>
+        <li><a href="#标准go项目布局">标准Go项目布局</a></li>
+        <li><a href="#重要目录说明">重要目录说明</a></li>
+      </ol>
+    </li>
+    <li><a href="#依赖管理">依赖管理</a>
+      <ol>
+        <li><a href="#go-modules">Go Modules</a></li>
+        <li><a href="#依赖代理设置">依赖代理设置</a></li>
+      </ol>
+    </li>
+    <li><a href="#api开发">API开发</a>
+      <ol>
+        <li><a href="#使用gin框架">使用Gin框架</a></li>
+        <li><a href="#api示例">API示例</a></li>
+      </ol>
+    </li>
+    <li><a href="#数据持久化">数据持久化</a>
+      <ol>
+        <li><a href="#sqlite数据库">SQLite数据库</a></li>
+      </ol>
+    </li>
+    <li><a href="#常见问题">常见问题</a>
+      <ol>
+        <li><a href="#1-依赖下载超时">1. 依赖下载超时</a></li>
+        <li><a href="#2-vendor目录问题">2. vendor目录问题</a></li>
+        <li><a href="#3-配置文件加载失败">3. 配置文件加载失败</a></li>
+        <li><a href="#4-ds_store文件">4. .DS_Store文件</a></li>
+      </ol>
+    </li>
+    <li><a href="#最佳实践">最佳实践</a></li>
+    <li><a href="#参考资料">参考资料</a></li>
+  </ol>
+</nav>
+</details>
+ <h1 id="go-后端开发学习笔记">Go 后端开发学习笔记</h1>
+<h2 id="目录">目录</h2>
+<ol>
+<li><a href="#%e9%a1%b9%e7%9b%ae%e5%88%9d%e5%a7%8b%e5%8c%96"
+
+
+
+ 
+
+
+>项目初始化</a></li>
+<li><a href="#%e9%a1%b9%e7%9b%ae%e7%bb%93%e6%9e%84"
+
+
+
+ 
+
+
+>项目结构</a></li>
+<li><a href="#%e4%be%9d%e8%b5%96%e7%ae%a1%e7%90%86"
+
+
+
+ 
+
+
+>依赖管理</a></li>
+<li><a href="#api%e5%bc%80%e5%8f%91"
+
+
+
+ 
+
+
+>API开发</a></li>
+<li><a href="#%e6%95%b0%e6%8d%ae%e6%8c%81%e4%b9%85%e5%8c%96"
+
+
+
+ 
+
+
+>数据持久化</a></li>
+<li><a href="#%e5%b8%b8%e8%a7%81%e9%97%ae%e9%a2%98"
+
+
+
+ 
+
+
+>常见问题</a></li>
+</ol>
+<h2 id="项目初始化">项目初始化</h2>
+<h3 id="1-创建项目目录结构">1. 创建项目目录结构</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir -p backend/<span style="color:#f92672">{</span>cmd/server,configs,internal/<span style="color:#f92672">{</span>api,config<span style="color:#f92672">}</span>,pkg<span style="color:#f92672">}</span>
+</span></span></code></pre></div><h3 id="2-初始化go模块">2. 初始化Go模块</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd backend
+</span></span><span style="display:flex;"><span>go mod init front-page
+</span></span></code></pre></div><h3 id="3-创建主程序入口">3. 创建主程序入口</h3>
+<p>在<code>cmd/server/main.go</code>中创建主程序入口：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;context&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;flag&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;log&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;net/http&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;os&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;os/signal&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;syscall&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;time&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;front-page/internal/api&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;front-page/internal/config&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 解析命令行参数
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">configPath</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">flag</span>.<span style="color:#a6e22e">String</span>(<span style="color:#e6db74">&#34;config&#34;</span>, <span style="color:#e6db74">&#34;configs/config.yaml&#34;</span>, <span style="color:#e6db74">&#34;配置文件路径&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">flag</span>.<span style="color:#a6e22e">Parse</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 加载配置
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">cfg</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">config</span>.<span style="color:#a6e22e">Load</span>(<span style="color:#f92672">*</span><span style="color:#a6e22e">configPath</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Fatalf</span>(<span style="color:#e6db74">&#34;加载配置文件失败: %v&#34;</span>, <span style="color:#a6e22e">err</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 创建API服务器
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">router</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">api</span>.<span style="color:#a6e22e">NewRouter</span>()
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">server</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">Server</span>{
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">Addr</span>:         <span style="color:#a6e22e">cfg</span>.<span style="color:#a6e22e">Server</span>.<span style="color:#a6e22e">Addr</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">Handler</span>:      <span style="color:#a6e22e">router</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">ReadTimeout</span>:  <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Duration</span>(<span style="color:#a6e22e">cfg</span>.<span style="color:#a6e22e">Server</span>.<span style="color:#a6e22e">ReadTimeout</span>) <span style="color:#f92672">*</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Second</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">WriteTimeout</span>: <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Duration</span>(<span style="color:#a6e22e">cfg</span>.<span style="color:#a6e22e">Server</span>.<span style="color:#a6e22e">WriteTimeout</span>) <span style="color:#f92672">*</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Second</span>,
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 启动服务器
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">go</span> <span style="color:#66d9ef">func</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;启动服务器在 %s\n&#34;</span>, <span style="color:#a6e22e">cfg</span>.<span style="color:#a6e22e">Server</span>.<span style="color:#a6e22e">Addr</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">server</span>.<span style="color:#a6e22e">ListenAndServe</span>(); <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">ErrServerClosed</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Fatalf</span>(<span style="color:#e6db74">&#34;监听失败: %v&#34;</span>, <span style="color:#a6e22e">err</span>)
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 等待中断信号优雅地关闭服务器
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">quit</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">chan</span> <span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">Signal</span>, <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">signal</span>.<span style="color:#a6e22e">Notify</span>(<span style="color:#a6e22e">quit</span>, <span style="color:#a6e22e">syscall</span>.<span style="color:#a6e22e">SIGINT</span>, <span style="color:#a6e22e">syscall</span>.<span style="color:#a6e22e">SIGTERM</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">quit</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;正在关闭服务器...&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ctx</span>, <span style="color:#a6e22e">cancel</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">context</span>.<span style="color:#a6e22e">WithTimeout</span>(<span style="color:#a6e22e">context</span>.<span style="color:#a6e22e">Background</span>(), <span style="color:#ae81ff">5</span><span style="color:#f92672">*</span><span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Second</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">defer</span> <span style="color:#a6e22e">cancel</span>()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">server</span>.<span style="color:#a6e22e">Shutdown</span>(<span style="color:#a6e22e">ctx</span>); <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Fatalf</span>(<span style="color:#e6db74">&#34;服务器强制关闭: %v&#34;</span>, <span style="color:#a6e22e">err</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;服务器优雅退出&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="4-创建配置文件">4. 创建配置文件</h3>
+<p>在<code>configs/config.yaml</code>中创建配置文件：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">server</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">addr</span>: <span style="color:#e6db74">&#34;:8080&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">read_timeout</span>: <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">write_timeout</span>: <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">db</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">driver</span>: <span style="color:#e6db74">&#34;sqlite3&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">dsn</span>: <span style="color:#e6db74">&#34;file:todos.db?cache=shared&amp;mode=rwc&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">max_idle</span>: <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">max_open</span>: <span style="color:#ae81ff">100</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">log_level</span>: <span style="color:#e6db74">&#34;info&#34;</span>
+</span></span></code></pre></div><h3 id="5-创建配置加载器">5. 创建配置加载器</h3>
+<p>在<code>internal/config/config.go</code>中创建配置加载器：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">config</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;os&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;gopkg.in/yaml.v3&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Config 应用程序配置
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Config</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">Server</span> <span style="color:#a6e22e">ServerConfig</span> <span style="color:#e6db74">`yaml:&#34;server&#34;`</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">DB</span>     <span style="color:#a6e22e">DBConfig</span>     <span style="color:#e6db74">`yaml:&#34;db&#34;`</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// ServerConfig 服务器配置
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">ServerConfig</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">Addr</span>         <span style="color:#66d9ef">string</span> <span style="color:#e6db74">`yaml:&#34;addr&#34;`</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ReadTimeout</span>  <span style="color:#66d9ef">int</span>    <span style="color:#e6db74">`yaml:&#34;read_timeout&#34;`</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">WriteTimeout</span> <span style="color:#66d9ef">int</span>    <span style="color:#e6db74">`yaml:&#34;write_timeout&#34;`</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// DBConfig 数据库配置
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">DBConfig</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">Driver</span>   <span style="color:#66d9ef">string</span> <span style="color:#e6db74">`yaml:&#34;driver&#34;`</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">DSN</span>      <span style="color:#66d9ef">string</span> <span style="color:#e6db74">`yaml:&#34;dsn&#34;`</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">MaxIdle</span>  <span style="color:#66d9ef">int</span>    <span style="color:#e6db74">`yaml:&#34;max_idle&#34;`</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">MaxOpen</span>  <span style="color:#66d9ef">int</span>    <span style="color:#e6db74">`yaml:&#34;max_open&#34;`</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">LogLevel</span> <span style="color:#66d9ef">string</span> <span style="color:#e6db74">`yaml:&#34;log_level&#34;`</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Load 从文件加载配置
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Load</span>(<span style="color:#a6e22e">file</span> <span style="color:#66d9ef">string</span>) (<span style="color:#f92672">*</span><span style="color:#a6e22e">Config</span>, <span style="color:#66d9ef">error</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">data</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">ReadFile</span>(<span style="color:#a6e22e">file</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>, <span style="color:#a6e22e">err</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">config</span> <span style="color:#a6e22e">Config</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">yaml</span>.<span style="color:#a6e22e">Unmarshal</span>(<span style="color:#a6e22e">data</span>, <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">config</span>); <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>, <span style="color:#a6e22e">err</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">config</span>, <span style="color:#66d9ef">nil</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="6-创建api路由器">6. 创建API路由器</h3>
+<p>在<code>internal/api/router.go</code>中创建API路由器：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">api</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;net/http&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;github.com/gin-contrib/cors&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;github.com/gin-gonic/gin&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// NewRouter 创建并配置一个新的路由器
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">NewRouter</span>() <span style="color:#f92672">*</span><span style="color:#a6e22e">gin</span>.<span style="color:#a6e22e">Engine</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">router</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">gin</span>.<span style="color:#a6e22e">Default</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 配置CORS
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">Use</span>(<span style="color:#a6e22e">cors</span>.<span style="color:#a6e22e">New</span>(<span style="color:#a6e22e">cors</span>.<span style="color:#a6e22e">Config</span>{
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">AllowOrigins</span>:     []<span style="color:#66d9ef">string</span>{<span style="color:#e6db74">&#34;*&#34;</span>},
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">AllowMethods</span>:     []<span style="color:#66d9ef">string</span>{<span style="color:#e6db74">&#34;GET&#34;</span>, <span style="color:#e6db74">&#34;POST&#34;</span>, <span style="color:#e6db74">&#34;PUT&#34;</span>, <span style="color:#e6db74">&#34;DELETE&#34;</span>, <span style="color:#e6db74">&#34;OPTIONS&#34;</span>},
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">AllowHeaders</span>:     []<span style="color:#66d9ef">string</span>{<span style="color:#e6db74">&#34;Origin&#34;</span>, <span style="color:#e6db74">&#34;Content-Type&#34;</span>, <span style="color:#e6db74">&#34;Authorization&#34;</span>},
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">ExposeHeaders</span>:    []<span style="color:#66d9ef">string</span>{<span style="color:#e6db74">&#34;Content-Length&#34;</span>},
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">AllowCredentials</span>: <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>    }))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 健康检查
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">GET</span>(<span style="color:#e6db74">&#34;/ping&#34;</span>, <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">c</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">gin</span>.<span style="color:#a6e22e">Context</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">JSON</span>(<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">StatusOK</span>, <span style="color:#a6e22e">gin</span>.<span style="color:#a6e22e">H</span>{
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;message&#34;</span>: <span style="color:#e6db74">&#34;pong&#34;</span>,
+</span></span><span style="display:flex;"><span>        })
+</span></span><span style="display:flex;"><span>    })
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// API v1 组
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">v1</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">Group</span>(<span style="color:#e6db74">&#34;/api/v1&#34;</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Todo API
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">todoRoutes</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">v1</span>.<span style="color:#a6e22e">Group</span>(<span style="color:#e6db74">&#34;/todos&#34;</span>)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">todoRoutes</span>.<span style="color:#a6e22e">GET</span>(<span style="color:#e6db74">&#34;&#34;</span>, <span style="color:#a6e22e">listTodos</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">todoRoutes</span>.<span style="color:#a6e22e">GET</span>(<span style="color:#e6db74">&#34;/:id&#34;</span>, <span style="color:#a6e22e">getTodo</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">todoRoutes</span>.<span style="color:#a6e22e">POST</span>(<span style="color:#e6db74">&#34;&#34;</span>, <span style="color:#a6e22e">createTodo</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">todoRoutes</span>.<span style="color:#a6e22e">PUT</span>(<span style="color:#e6db74">&#34;/:id&#34;</span>, <span style="color:#a6e22e">updateTodo</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">todoRoutes</span>.<span style="color:#a6e22e">DELETE</span>(<span style="color:#e6db74">&#34;/:id&#34;</span>, <span style="color:#a6e22e">deleteTodo</span>)
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">router</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="7-创建业务逻辑处理程序">7. 创建业务逻辑处理程序</h3>
+<p>在<code>internal/api/todo_handler.go</code>中创建业务逻辑处理程序：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">api</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;net/http&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;strconv&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;sync&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;github.com/gin-gonic/gin&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Todo 表示一个待办事项
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Todo</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ID</span>        <span style="color:#66d9ef">int</span>    <span style="color:#e6db74">`json:&#34;id&#34;`</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">Title</span>     <span style="color:#66d9ef">string</span> <span style="color:#e6db74">`json:&#34;title&#34; binding:&#34;required&#34;`</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">Completed</span> <span style="color:#66d9ef">bool</span>   <span style="color:#e6db74">`json:&#34;completed&#34;`</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 内存中存储Todo的简单实现
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">todos</span>     = make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">int</span>]<span style="color:#a6e22e">Todo</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">todoMutex</span> = <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">sync</span>.<span style="color:#a6e22e">Mutex</span>{}
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">lastID</span>    = <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// listTodos 获取所有Todo
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">listTodos</span>(<span style="color:#a6e22e">c</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">gin</span>.<span style="color:#a6e22e">Context</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">todoMutex</span>.<span style="color:#a6e22e">Lock</span>()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">defer</span> <span style="color:#a6e22e">todoMutex</span>.<span style="color:#a6e22e">Unlock</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">todoList</span> <span style="color:#f92672">:=</span> make([]<span style="color:#a6e22e">Todo</span>, <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">todos</span>))
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">todo</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">todos</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">todoList</span> = append(<span style="color:#a6e22e">todoList</span>, <span style="color:#a6e22e">todo</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">JSON</span>(<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">StatusOK</span>, <span style="color:#a6e22e">todoList</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// getTodo 获取单个Todo
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">getTodo</span>(<span style="color:#a6e22e">c</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">gin</span>.<span style="color:#a6e22e">Context</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">idParam</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">Param</span>(<span style="color:#e6db74">&#34;id&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">id</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">strconv</span>.<span style="color:#a6e22e">Atoi</span>(<span style="color:#a6e22e">idParam</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">JSON</span>(<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">StatusBadRequest</span>, <span style="color:#a6e22e">gin</span>.<span style="color:#a6e22e">H</span>{<span style="color:#e6db74">&#34;error&#34;</span>: <span style="color:#e6db74">&#34;无效的ID&#34;</span>})
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">todoMutex</span>.<span style="color:#a6e22e">Lock</span>()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">defer</span> <span style="color:#a6e22e">todoMutex</span>.<span style="color:#a6e22e">Unlock</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">todo</span>, <span style="color:#a6e22e">exists</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">todos</span>[<span style="color:#a6e22e">id</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> !<span style="color:#a6e22e">exists</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">JSON</span>(<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">StatusNotFound</span>, <span style="color:#a6e22e">gin</span>.<span style="color:#a6e22e">H</span>{<span style="color:#e6db74">&#34;error&#34;</span>: <span style="color:#e6db74">&#34;Todo不存在&#34;</span>})
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">JSON</span>(<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">StatusOK</span>, <span style="color:#a6e22e">todo</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// createTodo 创建新Todo
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">createTodo</span>(<span style="color:#a6e22e">c</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">gin</span>.<span style="color:#a6e22e">Context</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">newTodo</span> <span style="color:#a6e22e">Todo</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">ShouldBindJSON</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">newTodo</span>); <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">JSON</span>(<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">StatusBadRequest</span>, <span style="color:#a6e22e">gin</span>.<span style="color:#a6e22e">H</span>{<span style="color:#e6db74">&#34;error&#34;</span>: <span style="color:#a6e22e">err</span>.<span style="color:#a6e22e">Error</span>()})
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">todoMutex</span>.<span style="color:#a6e22e">Lock</span>()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">defer</span> <span style="color:#a6e22e">todoMutex</span>.<span style="color:#a6e22e">Unlock</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">lastID</span><span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">newTodo</span>.<span style="color:#a6e22e">ID</span> = <span style="color:#a6e22e">lastID</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">todos</span>[<span style="color:#a6e22e">newTodo</span>.<span style="color:#a6e22e">ID</span>] = <span style="color:#a6e22e">newTodo</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">JSON</span>(<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">StatusCreated</span>, <span style="color:#a6e22e">newTodo</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// updateTodo 更新Todo
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">updateTodo</span>(<span style="color:#a6e22e">c</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">gin</span>.<span style="color:#a6e22e">Context</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">idParam</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">Param</span>(<span style="color:#e6db74">&#34;id&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">id</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">strconv</span>.<span style="color:#a6e22e">Atoi</span>(<span style="color:#a6e22e">idParam</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">JSON</span>(<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">StatusBadRequest</span>, <span style="color:#a6e22e">gin</span>.<span style="color:#a6e22e">H</span>{<span style="color:#e6db74">&#34;error&#34;</span>: <span style="color:#e6db74">&#34;无效的ID&#34;</span>})
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">updateTodo</span> <span style="color:#a6e22e">Todo</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">ShouldBindJSON</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">updateTodo</span>); <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">JSON</span>(<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">StatusBadRequest</span>, <span style="color:#a6e22e">gin</span>.<span style="color:#a6e22e">H</span>{<span style="color:#e6db74">&#34;error&#34;</span>: <span style="color:#a6e22e">err</span>.<span style="color:#a6e22e">Error</span>()})
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">todoMutex</span>.<span style="color:#a6e22e">Lock</span>()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">defer</span> <span style="color:#a6e22e">todoMutex</span>.<span style="color:#a6e22e">Unlock</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">exists</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">todos</span>[<span style="color:#a6e22e">id</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> !<span style="color:#a6e22e">exists</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">JSON</span>(<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">StatusNotFound</span>, <span style="color:#a6e22e">gin</span>.<span style="color:#a6e22e">H</span>{<span style="color:#e6db74">&#34;error&#34;</span>: <span style="color:#e6db74">&#34;Todo不存在&#34;</span>})
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">updateTodo</span>.<span style="color:#a6e22e">ID</span> = <span style="color:#a6e22e">id</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">todos</span>[<span style="color:#a6e22e">id</span>] = <span style="color:#a6e22e">updateTodo</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">JSON</span>(<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">StatusOK</span>, <span style="color:#a6e22e">updateTodo</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// deleteTodo 删除Todo
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">deleteTodo</span>(<span style="color:#a6e22e">c</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">gin</span>.<span style="color:#a6e22e">Context</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">idParam</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">Param</span>(<span style="color:#e6db74">&#34;id&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">id</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">strconv</span>.<span style="color:#a6e22e">Atoi</span>(<span style="color:#a6e22e">idParam</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">JSON</span>(<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">StatusBadRequest</span>, <span style="color:#a6e22e">gin</span>.<span style="color:#a6e22e">H</span>{<span style="color:#e6db74">&#34;error&#34;</span>: <span style="color:#e6db74">&#34;无效的ID&#34;</span>})
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">todoMutex</span>.<span style="color:#a6e22e">Lock</span>()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">defer</span> <span style="color:#a6e22e">todoMutex</span>.<span style="color:#a6e22e">Unlock</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">exists</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">todos</span>[<span style="color:#a6e22e">id</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> !<span style="color:#a6e22e">exists</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">JSON</span>(<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">StatusNotFound</span>, <span style="color:#a6e22e">gin</span>.<span style="color:#a6e22e">H</span>{<span style="color:#e6db74">&#34;error&#34;</span>: <span style="color:#e6db74">&#34;Todo不存在&#34;</span>})
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    delete(<span style="color:#a6e22e">todos</span>, <span style="color:#a6e22e">id</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">JSON</span>(<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">StatusOK</span>, <span style="color:#a6e22e">gin</span>.<span style="color:#a6e22e">H</span>{<span style="color:#e6db74">&#34;message&#34;</span>: <span style="color:#e6db74">&#34;Todo已删除&#34;</span>})
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="8-运行项目">8. 运行项目</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 安装依赖</span>
+</span></span><span style="display:flex;"><span>go mod download
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 运行项目</span>
+</span></span><span style="display:flex;"><span>go run ./cmd/server/main.go
+</span></span></code></pre></div><h2 id="项目结构">项目结构</h2>
+<h3 id="标准go项目布局">标准Go项目布局</h3>
+<pre tabindex="0"><code>backend/
+├── cmd/           # 主应用程序入口
+├── configs/       # 配置文件
+├── internal/      # 私有应用程序和库代码
+│   ├── api/       # API处理程序
+│   └── config/    # 配置加载
+├── pkg/           # 公共库代码
+├── vendor/        # 依赖管理
+└── go.mod         # Go模块定义
+</code></pre><h3 id="重要目录说明">重要目录说明</h3>
+<ul>
+<li><code>/cmd</code>: 应用程序入口点</li>
+<li><code>/internal</code>: 私有代码，不允许外部导入</li>
+<li><code>/pkg</code>: 可被外部项目导入的公共代码</li>
+<li><code>/configs</code>: 配置文件目录</li>
+<li><code>/vendor</code>: 依赖管理（可选）</li>
+</ul>
+<h2 id="依赖管理">依赖管理</h2>
+<h3 id="go-modules">Go Modules</h3>
+<ul>
+<li>使用<code>go.mod</code>文件管理依赖</li>
+<li>常用命令：
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>go mod init      <span style="color:#75715e"># 初始化模块</span>
+</span></span><span style="display:flex;"><span>go mod download  <span style="color:#75715e"># 下载依赖</span>
+</span></span><span style="display:flex;"><span>go mod tidy      <span style="color:#75715e"># 清理依赖</span>
+</span></span><span style="display:flex;"><span>go mod vendor    <span style="color:#75715e"># 创建vendor目录</span>
+</span></span></code></pre></div></li>
+</ul>
+<h3 id="依赖代理设置">依赖代理设置</h3>
+<p>在中国大陆地区，建议设置国内代理：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>go env -w GOPROXY<span style="color:#f92672">=</span>https://goproxy.cn,direct
+</span></span></code></pre></div><h2 id="api开发">API开发</h2>
+<h3 id="使用gin框架">使用Gin框架</h3>
+<ul>
+<li>创建路由</li>
+<li>处理请求</li>
+<li>返回响应</li>
+</ul>
+<h3 id="api示例">API示例</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#75715e">// 健康检查
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">GET</span>(<span style="color:#e6db74">&#34;/ping&#34;</span>, <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">c</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">gin</span>.<span style="color:#a6e22e">Context</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">JSON</span>(<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">StatusOK</span>, <span style="color:#a6e22e">gin</span>.<span style="color:#a6e22e">H</span>{
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;message&#34;</span>: <span style="color:#e6db74">&#34;pong&#34;</span>,
+</span></span><span style="display:flex;"><span>    })
+</span></span><span style="display:flex;"><span>})
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Todo API
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">todoRoutes</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">v1</span>.<span style="color:#a6e22e">Group</span>(<span style="color:#e6db74">&#34;/todos&#34;</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">todoRoutes</span>.<span style="color:#a6e22e">GET</span>(<span style="color:#e6db74">&#34;&#34;</span>, <span style="color:#a6e22e">listTodos</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">todoRoutes</span>.<span style="color:#a6e22e">GET</span>(<span style="color:#e6db74">&#34;/:id&#34;</span>, <span style="color:#a6e22e">getTodo</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">todoRoutes</span>.<span style="color:#a6e22e">POST</span>(<span style="color:#e6db74">&#34;&#34;</span>, <span style="color:#a6e22e">createTodo</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">todoRoutes</span>.<span style="color:#a6e22e">PUT</span>(<span style="color:#e6db74">&#34;/:id&#34;</span>, <span style="color:#a6e22e">updateTodo</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">todoRoutes</span>.<span style="color:#a6e22e">DELETE</span>(<span style="color:#e6db74">&#34;/:id&#34;</span>, <span style="color:#a6e22e">deleteTodo</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="数据持久化">数据持久化</h2>
+<h3 id="sqlite数据库">SQLite数据库</h3>
+<ol>
+<li>
+<p>安装SQLite：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>brew install sqlite3
+</span></span></code></pre></div></li>
+<li>
+<p>安装Go SQLite驱动：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>go get github.com/mattn/go-sqlite3
+</span></span></code></pre></div></li>
+<li>
+<p>数据库配置示例：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">db</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">driver</span>: <span style="color:#e6db74">&#34;sqlite3&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">dsn</span>: <span style="color:#e6db74">&#34;file:todos.db?cache=shared&amp;mode=rwc&#34;</span>
+</span></span></code></pre></div></li>
+</ol>
+<h2 id="常见问题">常见问题</h2>
+<h3 id="1-依赖下载超时">1. 依赖下载超时</h3>
+<p>解决方案：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>go env -w GOPROXY<span style="color:#f92672">=</span>https://goproxy.cn,direct
+</span></span></code></pre></div><h3 id="2-vendor目录问题">2. vendor目录问题</h3>
+<ul>
+<li>忽略vendor目录运行：
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>go run -mod<span style="color:#f92672">=</span>mod ./cmd/server/main.go
+</span></span></code></pre></div></li>
+<li>重新生成vendor：
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>go mod vendor
+</span></span></code></pre></div></li>
+</ul>
+<h3 id="3-配置文件加载失败">3. 配置文件加载失败</h3>
+<p>解决方案：</p>
+<ul>
+<li>在正确目录下运行：
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd backend
+</span></span><span style="display:flex;"><span>go run ./cmd/server/main.go
+</span></span></code></pre></div></li>
+<li>或指定配置文件路径：
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>go run ./cmd/server/main.go -config<span style="color:#f92672">=</span>./backend/configs/config.yaml
+</span></span></code></pre></div></li>
+</ul>
+<h3 id="4-ds_store文件">4. .DS_Store文件</h3>
+<ul>
+<li>在<code>.gitignore</code>中添加：
+<pre tabindex="0"><code>.DS_Store
+</code></pre></li>
+<li>删除已跟踪的.DS_Store文件：
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git rm --cached .DS_Store
+</span></span></code></pre></div></li>
+</ul>
+<h2 id="最佳实践">最佳实践</h2>
+<ol>
+<li><strong>项目结构</strong>：遵循标准Go项目布局</li>
+<li><strong>依赖管理</strong>：使用Go Modules</li>
+<li><strong>代码组织</strong>：将公共代码放在<code>pkg</code>，私有代码放在<code>internal</code></li>
+<li><strong>配置管理</strong>：使用YAML或JSON格式的配置文件</li>
+<li><strong>错误处理</strong>：使用适当的错误处理机制</li>
+<li><strong>测试</strong>：编写单元测试和集成测试</li>
+</ol>
+<h2 id="参考资料">参考资料</h2>
+<ul>
+<li><a href="https://go.dev/wiki/Modules"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Go Modules</a></li>
+<li><a href="https://gin-gonic.com/"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Gin Web Framework</a></li>
+<li><a href="https://github.com/golang-standards/project-layout"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Go Project Layout</a></li>
+</ul>
+
+        </div>
+        <div class="row items-start justify-between">
+           
+          <div class="lg:col-4 flex items-center">
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="share-icons">
+  <h5 class="share-title">分享 :</h5>
+
+
+  
+  
+    <a
+      class="share-link share-facebook"
+      href="https://facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fblog%2fcomputer-technology%2fgo%2flearning_go%2f"
+      target="_blank"
+      rel="noopener"
+      aria-label="share facebook">
+      <span class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-twitter"
+      href="https://twitter.com/intent/tweet/?text=%e5%88%86%e4%ba%ab&amp;url=http%3a%2f%2flocalhost%3a1313%2fblog%2fcomputer-technology%2fgo%2flearning_go%2f"
+      target="_blank"
+      rel="noopener"
+      aria-label="share twitter">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path 
+            d="M8 2H1l8.26 11.015L1.45 22H4.1l6.388-7.349L16 22h7l-8.608-11.478L21.8 2h-2.65l-5.986 6.886zm9 18L5 4h2l12 16z"/>
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-email"
+      href="mailto:?subject=%e5%88%86%e4%ba%ab&amp;body=http%3a%2f%2flocalhost%3a1313%2fblog%2fcomputer-technology%2fgo%2flearning_go%2f"
+      target="_self"
+      rel="noopener"
+      aria-label="share email">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M22 4H2C.9 4 0 4.9 0 6v12c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7.25 14.43l-3.5 2c-.08.05-.17.07-.25.07-.17 0-.34-.1-.43-.25-.14-.24-.06-.55.18-.68l3.5-2c.24-.14.55-.06.68.18.14.24.06.55-.18.68zm4.75.07c-.1 0-.2-.03-.27-.08l-8.5-5.5c-.23-.15-.3-.46-.15-.7.15-.22.46-.3.7-.14L12 13.4l8.23-5.32c.23-.15.54-.08.7.15.14.23.07.54-.16.7l-8.5 5.5c-.08.04-.17.07-.27.07zm8.93 1.75c-.1.16-.26.25-.43.25-.08 0-.17-.02-.25-.07l-3.5-2c-.24-.13-.32-.44-.18-.68s.44-.32.68-.18l3.5 2c.24.13.32.44.18.68z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-reddit"
+      href="https://reddit.com/submit/?url=http%3a%2f%2flocalhost%3a1313%2fblog%2fcomputer-technology%2fgo%2flearning_go%2f&amp;resubmit=true&amp;title=%e5%88%86%e4%ba%ab"
+      target="_blank"
+      rel="noopener"
+      aria-label="share reddit">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M24 11.5c0-1.65-1.35-3-3-3-.96 0-1.86.48-2.42 1.24-1.64-1-3.75-1.64-6.07-1.72.08-1.1.4-3.05 1.52-3.7.72-.4 1.73-.24 3 .5C17.2 6.3 18.46 7.5 20 7.5c1.65 0 3-1.35 3-3s-1.35-3-3-3c-1.38 0-2.54.94-2.88 2.22-1.43-.72-2.64-.8-3.6-.25-1.64.94-1.95 3.47-2 4.55-2.33.08-4.45.7-6.1 1.72C4.86 8.98 3.96 8.5 3 8.5c-1.65 0-3 1.35-3 3 0 1.32.84 2.44 2.05 2.84-.03.22-.05.44-.05.66 0 3.86 4.5 7 10 7s10-3.14 10-7c0-.22-.02-.44-.05-.66 1.2-.4 2.05-1.54 2.05-2.84zM2.3 13.37C1.5 13.07 1 12.35 1 11.5c0-1.1.9-2 2-2 .64 0 1.22.32 1.6.82-1.1.85-1.92 1.9-2.3 3.05zm3.7.13c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9.8 4.8c-1.08.63-2.42.96-3.8.96-1.4 0-2.74-.34-3.8-.95-.24-.13-.32-.44-.2-.68.15-.24.46-.32.7-.18 1.83 1.06 4.76 1.06 6.6 0 .23-.13.53-.05.67.2.14.23.06.54-.18.67zm.2-2.8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm5.7-2.13c-.38-1.16-1.2-2.2-2.3-3.05.38-.5.97-.82 1.6-.82 1.1 0 2 .9 2 2 0 .84-.53 1.57-1.3 1.87z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+</div>
+
+          </div>
+        </div>
+        
+        
+      </article>
+    </div>
+
+    
+      
+    <div class="section pb-0">
+      <h2 class="h3 mb-12">相关</h2>
+      <div class="row">
+        
+        <div class="lg:col-4 md:col-6 mb-14">
+          <div class="bg-body dark:bg-darkmode-body">
+   
+  <h4 class="mb-3">
+    <a href="/blog/computer-technology/web/tools-web-fee-toolchain/">前端工程化：对于构建工具链的简单思考</a>
+  </h4>
+  
+  <p class="text-sm text-muted">
+    <i class="fa-regular fa-calendar-alt mr-2"></i>2022-08-01
+    
+  </p>
+   
+  <ul class="mb-4">
+    <li class="mr-4 inline-block">
+      <a href="/authors/leezchuan/">
+        <i class="fa-regular fa-circle-user mr-2"></i>LeeZChuan
+      </a>
+    </li>
+    <li class="mr-4 inline-block">
+      <i class="fa-regular fa-folder mr-1"></i>
+      
+      <a
+        href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/"
+        class="ms-1"
+        >计算机技术 , 
+      </a>
+      
+      <a
+        href="/categories/web%e5%89%8d%e7%ab%af/"
+        class="ms-1"
+        >Web前端 , 
+      </a>
+      
+      <a
+        href="/categories/%e5%b7%a5%e5%85%b7/"
+        class="ms-1"
+        >工具 , 
+      </a>
+      
+      <a
+        href="/categories/%e6%9e%84%e5%bb%ba%e5%b7%a5%e5%85%b7%e9%93%be/"
+        class="ms-1"
+        >构建工具链
+      </a>
+      
+    </li>
+  </ul>
+  
+  
+  <p class="mb-6">
+     前端工程化是一个值得了解的方向，从软件开发、测试到部署上线整个环节的深入，可以对软件工程有一个更深刻的理解，对于前端来说，构建工具链是工程化中重要的一环，这里对这么多年接触过得工具做一个简单的总结思考。 
+  </p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/tools-web-fee-toolchain/">
+    了解更多
+  </a>
+</div>
+
+        </div>
+        
+        <div class="lg:col-4 md:col-6 mb-14">
+          <div class="bg-body dark:bg-darkmode-body">
+   
+  <h4 class="mb-3">
+    <a href="/blog/computer-technology/web/css/css-bfc/">块级格式化上下文（BFC）</a>
+  </h4>
+  
+  <p class="text-sm text-muted">
+    <i class="fa-regular fa-calendar-alt mr-2"></i>2018-07-22
+    
+  </p>
+   
+  <ul class="mb-4">
+    <li class="mr-4 inline-block">
+      <a href="/authors/leezchuan/">
+        <i class="fa-regular fa-circle-user mr-2"></i>LeeZChuan
+      </a>
+    </li>
+    <li class="mr-4 inline-block">
+      <i class="fa-regular fa-folder mr-1"></i>
+      
+      <a
+        href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/"
+        class="ms-1"
+        >计算机技术 , 
+      </a>
+      
+      <a
+        href="/categories/web/"
+        class="ms-1"
+        >Web , 
+      </a>
+      
+      <a
+        href="/categories/web-%e5%89%8d%e7%ab%af/"
+        class="ms-1"
+        >Web 前端 , 
+      </a>
+      
+      <a
+        href="/categories/css/"
+        class="ms-1"
+        >Css , 
+      </a>
+      
+      <a
+        href="/categories/bfc/"
+        class="ms-1"
+        >Bfc
+      </a>
+      
+    </li>
+  </ul>
+  
+  
+  <p class="mb-6">
+     在进行页面布局时，通常有流式布局、定位布局、浮动布局这三种形式。而在布局过程中，各元素之间的影响却是一个很关键的问题。 
+  </p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/css/css-bfc/">
+    了解更多
+  </a>
+</div>
+
+        </div>
+        
+        <div class="lg:col-4 md:col-6 mb-14">
+          <div class="bg-body dark:bg-darkmode-body">
+   
+  <h4 class="mb-3">
+    <a href="/blog/computer-technology/web/dom/dom/">文档对象模型（DOM）</a>
+  </h4>
+  
+  <p class="text-sm text-muted">
+    <i class="fa-regular fa-calendar-alt mr-2"></i>2018-05-16
+    
+  </p>
+   
+  <ul class="mb-4">
+    <li class="mr-4 inline-block">
+      <a href="/authors/leezchuan/">
+        <i class="fa-regular fa-circle-user mr-2"></i>LeeZChuan
+      </a>
+    </li>
+    <li class="mr-4 inline-block">
+      <i class="fa-regular fa-folder mr-1"></i>
+      
+      <a
+        href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/"
+        class="ms-1"
+        >计算机技术 , 
+      </a>
+      
+      <a
+        href="/categories/web/"
+        class="ms-1"
+        >Web , 
+      </a>
+      
+      <a
+        href="/categories/web-%e5%89%8d%e7%ab%af/"
+        class="ms-1"
+        >Web 前端 , 
+      </a>
+      
+      <a
+        href="/categories/dom/"
+        class="ms-1"
+        >Dom
+      </a>
+      
+    </li>
+  </ul>
+  
+  
+  <p class="mb-6">
+     在网页设计中，有一个很重要的角色需要我们了解，DOM 帮助我们对页面元素进行增、删、改等全方位的操作，而且让 JavaScript 在客户端修改 HTML 文档成为一个很简单的事情，可以说 DOM 为我们操作 HTML 文档提供了强大的编程接口。 
+  </p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/dom/dom/">
+    了解更多
+  </a>
+</div>
+
+        </div>
+        
+      </div>
+    </div>
+    
+  </div>
+</section>
+</main>
+
+    
+    <footer class="bg-theme-light dark:bg-darkmode-theme-light">
+  <div class="container">
+    <div class="row items-center py-10">
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:text-left">
+        
+        <a
+          class="navbar-brand inline-block"
+          href="/"
+        >
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+    
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu4668213964747553556.webp"
+      alt="LeeZChuan"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu16137327364032044341.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu4521180468968039794.webp"
+      alt="LeeZChuan"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu12278668914502940210.png';" />
+  
+  
+
+
+        </a>
+      </div>
+      <div class="lg:col-6 mb-8 text-center lg:mb-0">
+        <ul>
+          
+          <li class="m-3 inline-block">
+            <a
+              
+              href="
+                  /
+                "
+              ></a
+            >
+          </li>
+          
+        </ul>
+      </div>
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:mt-0 lg:text-right">
+        <ul class="social-icons">
+          
+          <li>
+            <a
+              target="_blank"
+              aria-label="facebook"
+              rel="nofollow noopener"
+              href="https://www.facebook.com/profile.php?id=100083154937436"
+            >
+              <i class="fab fa-facebook"></i>
+            </a>
+          </li>
+          
+          <li>
+            <a
+              target="_blank"
+              aria-label="github"
+              rel="nofollow noopener"
+              href="https://github.com/LeeZChuan"
+            >
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+          
+          <li>
+            <a
+              target="_blank"
+              aria-label="linkedin"
+              rel="nofollow noopener"
+              href="https://www.linkedin.com/in/zchuan-lee-89214a1a3/"
+            >
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="border-border dark:border-darkmode-border border-t py-7">
+    <div class="text-light dark:text-darkmode-light container text-center">
+      <p></p>
+    </div>
+  </div>
+</footer>
+
+
+    
+    
+                                                        
+
+
+    
+<script
+  crossorigin="anonymous"
+  integrity=""
+  src="/js/script.js"
+></script>
+
+
+<script
+  defer
+  async
+  crossorigin="anonymous"
+  integrity=""
+  src="/js/script-lazy.js"
+></script>
+
+
+
+<script>
+  if ('serviceWorker' in navigator){navigator.serviceWorker.register("/service-worker.js");}
+</script>
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  </body>
+</html>

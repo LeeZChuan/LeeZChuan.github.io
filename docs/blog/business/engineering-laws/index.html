@@ -1,0 +1,1832 @@
+<!doctype html>
+<html
+  itemscope
+  class=""
+  lang="zh-cn"
+  itemtype="http://schema.org/WebPage"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+    <meta charset="utf-8" />
+
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, maximum-scale=5"
+/>
+
+
+<meta name="theme-name" content="hugoplate" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="/images/favicon_hu533619655037541214.png" type="image/x-icon">
+<link rel="icon" href="/images/favicon_hu533619655037541214.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu10045982978932320562.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu533619655037541214.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu12879857052853119446.png">
+
+
+
+
+
+
+
+<link rel="manifest" href="/manifest.webmanifest" />
+<meta
+  name="msapplication-TileColor"
+  content="#ddd" />
+<meta
+  name="theme-color"
+  content="#ffffff" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<title>13个软件工程定律</title>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <meta
+    name="keywords"
+    content="LeeZChuan, Hugo, Blog" />
+
+
+
+
+<meta
+  name="description"
+  content="在开发过程中有很多可能常见的开发定律" />
+
+
+
+  <meta name="author" content="LeeZChuan" />
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+      
+        <meta property="og:image" content="http://localhost:1313/images/og-image.png" />
+        <meta name="twitter:image" content="http://localhost:1313/images/og-image.png" />
+        <meta
+          name="twitter:card"
+          content="summary_large_image" />
+      
+      
+      <meta property="og:image:width" content="900" />
+      <meta property="og:image:height" content="600" />
+    
+
+
+    
+    <meta
+      property="og:image:type"
+      content="image/.png" />
+  
+
+
+  
+
+
+
+
+
+<meta property="og:title" content="13个软件工程定律" />
+<meta property="og:description" content="在开发过程中有很多可能常见的开发定律" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://localhost:1313/blog/business/engineering-laws/" />
+
+
+<meta name="twitter:title" content="13个软件工程定律" />
+<meta name="twitter:description" content="在开发过程中有很多可能常见的开发定律" />
+
+
+  <meta name="twitter:site" content="@LeeZChuan" />
+
+
+  <meta name="twitter:creator" content="@LeeZChuan" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  let indexURL = "http://localhost:1313/searchindex.json";
+  let includeSectionsInSearch = ["blog","life"];
+  let search_no_results = "暂无数据";
+  let search_initial_message = "标注某事物去搜索...";
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+<meta http-equiv="x-dns-prefetch-control" content="on" />
+<link rel="preconnect" href="https://use.fontawesome.com" crossorigin />
+<link rel="preconnect" href="//cdnjs.cloudflare.com" />
+<link rel="preconnect" href="//www.googletagmanager.com" />
+<link rel="preconnect" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="https://use.fontawesome.com" />
+<link rel="dns-prefetch" href="//ajax.googleapis.com" />
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+<link rel="dns-prefetch" href="//www.googletagmanager.com" />
+<link rel="dns-prefetch" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link rel="dns-prefetch" href="//connect.facebook.net" />
+<link rel="dns-prefetch" href="//platform.linkedin.com" />
+<link rel="dns-prefetch" href="//platform.twitter.com" />
+
+
+ 
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script>
+  (function () {
+    const googleFont = document.createElement("link");
+    googleFont.href =
+      "https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&family=Signika:wght@500;700&display=swap";
+    googleFont.type = "text/css";
+    googleFont.rel = "stylesheet";
+    document.head.appendChild(googleFont);
+  })();
+</script>
+
+
+                                           
+<link
+  href="/css/style.css"
+  integrity=""
+  rel="stylesheet"
+/>
+
+
+<link
+  defer
+  async
+  rel="stylesheet"
+  href="/css/style-lazy.css"
+  integrity=""
+  media="print"
+  onload="this.media='all'; this.onload=null;"
+/>
+
+  </head>
+
+  <body>
+    
+     
+
+
+
+
+    
+    <div
+  class="fixed left-0 top-0 z-50 flex w-[30px] items-center justify-center bg-gray-200 py-[2.5px] text-[12px] uppercase text-black sm:bg-red-200 md:bg-yellow-200 lg:bg-green-200 xl:bg-blue-200 2xl:bg-pink-200"
+>
+  <span class="block sm:hidden">all</span>
+  <span class="hidden sm:block md:hidden">sm</span>
+  <span class="hidden md:block lg:hidden">md</span>
+  <span class="hidden lg:block xl:hidden">lg</span>
+  <span class="hidden xl:block 2xl:hidden">xl</span>
+  <span class="hidden 2xl:block">2xl</span>
+</div>
+ 
+
+    
+    
+
+
+
+
+    
+    <header
+  class="header sticky top-0 z-30"
+>
+  <nav class="navbar container">
+    
+    <div class="order-0">
+      
+      <a class="navbar-brand block" href="/">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+    
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu4668213964747553556.webp"
+      alt="LeeZChuan"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu16137327364032044341.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu4521180468968039794.webp"
+      alt="LeeZChuan"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu12278668914502940210.png';" />
+  
+  
+
+
+      </a>
+    </div>
+    
+    <input id="nav-toggle" type="checkbox" class="hidden" />
+    <label
+      for="nav-toggle"
+      class="order-3 cursor-pointer flex items-center lg:hidden text-dark dark:text-white lg:order-1"
+    >
+      <svg id="show-button" class="h-6 fill-current block" viewBox="0 0 20 20">
+        <title>Menu Open</title>
+        <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z"></path>
+      </svg>
+      <svg id="hide-button" class="h-6 fill-current hidden" viewBox="0 0 20 20">
+        <title>Menu Close</title>
+        <polygon
+          points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
+          transform="rotate(45 10 10)"
+        ></polygon>
+      </svg>
+    </label>
+    
+
+    
+    <ul
+      id="nav-menu"
+      class="navbar-nav order-3 hidden lg:flex w-full pb-6 lg:order-1 lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8"
+    >
+           
+      <li class="nav-item">
+        <a
+          class="nav-link "
+          
+          target="_blank"
+          rel="noopener"
+          
+          href="https://leezchuan.github.io/EasyHomePage"
+          >关于我</a
+        >
+      </li>
+           
+      <li class="nav-item">
+        <a
+          class="nav-link "
+          
+          href="/blog"
+          >文章记录</a
+        >
+      </li>
+           
+      <li class="nav-item">
+        <a
+          class="nav-link "
+          
+          href="/life"
+          >生活记录</a
+        >
+      </li>
+           
+      <li class="nav-item">
+        <a
+          class="nav-link "
+          
+          href="/about"
+          >关于该站</a
+        >
+      </li>
+           
+      <li class="nav-item nav-dropdown group relative">
+        <span
+          class="nav-link 
+                
+                
+                
+              
+                
+                
+                
+               inline-flex items-center"
+        >
+          其他
+          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+            <path
+              d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+            />
+          </svg>
+        </span>
+        <ul
+          class="nav-dropdown-list lg:group-hover:visible lg:group-hover:opacity-100"
+        >
+            
+          <li class="nav-dropdown-item">
+            <a
+              class="nav-dropdown-link "
+              
+              href="/elements"
+            >
+              Md编写说明
+            </a>
+          </li>
+            
+          <li class="nav-dropdown-item">
+            <a
+              class="nav-dropdown-link "
+              
+              href="/categories"
+            >
+              文字分类汇总
+            </a>
+          </li>
+          
+        </ul>
+      </li>
+        
+    </ul>
+
+    <div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
+       
+      <button
+        aria-label="search"
+        
+        class="border-border text-dark hover:text-primary dark:border-darkmode-border mr-5 inline-block border-r pr-5 text-xl dark:text-white dark:hover:text-darkmode-primary"
+        
+        data-target="search-modal"
+      >
+        <i class="fa-solid fa-search"></i>
+      </button>
+        
+      
+ 
+ 
+<div class="theme-switcher mr-5 hidden">
+  <input id="theme-switcher" data-theme-switcher type="checkbox" />
+  <label for="theme-switcher">
+    <span class="sr-only">theme switcher</span>
+    <span>
+      
+      <svg
+        class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-100 dark:opacity-0"
+        viewBox="0 0 56 56"
+        fill="#fff"
+        height="16"
+        width="16"
+      >
+        <path
+          d="M30 4.6c0-1-.9-2-2-2a2 2 0 0 0-2 2v5c0 1 .9 2 2 2s2-1 2-2Zm9.6 9a2 2 0 0 0 0 2.8c.8.8 2 .8 2.9 0L46 13a2 2 0 0 0 0-2.9 2 2 0 0 0-3 0Zm-26 2.8c.7.8 2 .8 2.8 0 .8-.7.8-2 0-2.9L13 10c-.7-.7-2-.8-2.9 0-.7.8-.7 2.1 0 3ZM28 16a12 12 0 0 0-12 12 12 12 0 0 0 12 12 12 12 0 0 0 12-12 12 12 0 0 0-12-12Zm23.3 14c1.1 0 2-.9 2-2s-.9-2-2-2h-4.9a2 2 0 0 0-2 2c0 1.1 1 2 2 2ZM4.7 26a2 2 0 0 0-2 2c0 1.1.9 2 2 2h4.9c1 0 2-.9 2-2s-1-2-2-2Zm37.8 13.6a2 2 0 0 0-3 0 2 2 0 0 0 0 2.9l3.6 3.5a2 2 0 0 0 2.9 0c.8-.8.8-2.1 0-3ZM10 43.1a2 2 0 0 0 0 2.9c.8.7 2.1.8 3 0l3.4-3.5c.8-.8.8-2.1 0-2.9-.8-.8-2-.8-2.9 0Zm20 3.4c0-1.1-.9-2-2-2a2 2 0 0 0-2 2v4.9c0 1 .9 2 2 2s2-1 2-2Z"
+        />
+      </svg>
+      
+      <svg
+        class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-0 dark:opacity-100"
+        viewBox="0 0 24 24"
+        fill="none"
+        height="16"
+        width="16"
+      >
+        <path
+          fill="#000"
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M8.2 2.2c1-.4 2 .6 1.6 1.5-1 3-.4 6.4 1.8 8.7a8.4 8.4 0 0 0 8.7 1.8c1-.3 2 .5 1.5 1.5v.1a10.3 10.3 0 0 1-9.4 6.2A10.3 10.3 0 0 1 3.2 6.7c1-2 2.9-3.5 4.9-4.4Z"
+        />
+      </svg>
+    </span>
+  </label>
+</div>
+
+
+<script>
+  var darkMode = false;
+
+  
+  if (window.matchMedia("(prefers-color-scheme: dark)").matches){darkMode = true}
+  
+
+  if (localStorage.getItem("theme") === "dark"){darkMode = true}
+  else if (localStorage.getItem("theme") === "light"){darkMode = false}
+
+  if (darkMode){document.documentElement.classList.add("dark")}
+  else {document.documentElement.classList.remove("dark")}
+
+  
+  document.addEventListener("DOMContentLoaded", () => {
+    var themeSwitch = document.querySelectorAll("[data-theme-switcher]");
+    var themeSwitcherContainer = document.querySelector('.theme-switcher');
+
+    [].forEach.call(themeSwitch, function (ts) {
+      ts.checked = darkMode;
+      ts.addEventListener("click", () => {
+        document.documentElement.classList.toggle("dark");
+        localStorage.setItem(
+          "theme",
+          document.documentElement.classList.contains("dark") ? "dark" : "light"
+        );
+      });
+    });
+
+    
+    themeSwitcherContainer.classList.remove('hidden');
+  });
+</script>
+
+
+
+      
+      
+    </div>
+  </nav>
+</header>
+ 
+
+
+
+
+  
+    <div
+      class="search-modal "
+      aria-hidden="true"
+      style="--color-primary: #121212">
+      <div data-target="close-search-modal" class="search-modal-overlay"></div>
+      <div
+        class="search-wrapper"
+        data-image="true"
+        data-description="true"
+        data-tags="true"
+        data-categories="true">
+        <div class="search-wrapper-header">
+          <label for="search-modal-input" style="margin-top:-1px">
+            <span class="sr-only">search icon</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-icon"
+              data-type="search">
+              <path
+                fill="currentColor"
+                d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-reset"
+              data-type="reset">
+              <path
+                fill="currentColor"
+                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z" />
+            </svg>
+          </label>
+          <input
+            id="search-modal-input"
+            type="text"
+            data-search-input
+            autocomplete="off"
+            aria-label="Search"
+            placeholder="搜寻更多..." />
+        </div>
+        <div class="search-wrapper-body">
+          <div class="search-result" data-search-result></div>
+          <span class="search-result-empty">
+            标注某事物去搜索...
+          </span>
+        </div>
+        <div class="search-wrapper-footer">
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 11h9.592L8 5.519 3.204 11zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659z" />
+              </svg>
+            </kbd>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                style="margin-top:1px;"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z" />
+              </svg>
+            </kbd>
+            去导航
+          </span>
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="12"
+                fill="currentColor"
+                style="display:inline-block;"
+                viewBox="0 0 16 16">
+                <path
+                  fill-rule="evenodd"
+                  d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z" />
+              </svg>
+            </kbd>
+            去选择
+          </span>
+          <span class="search-result-info"></span>
+          <span data-target="close-search-modal">
+            <kbd>ESC</kbd> 去关闭
+          </span>
+        </div>
+      </div>
+    </div>
+  
+
+
+
+    <main>
+<section class="section pt-7">
+  <div class="container">
+    <div class="row justify-center">
+      <article class="lg:col-10">
+         
+        <h1 class="h2 mb-4">13个软件工程定律</h1>
+        <ul class="mb-4">
+          <li class="mr-4 inline-block">
+            <a
+              href="/authors/leezchuan/"
+            >
+              <i class="fa-regular fa-circle-user mr-2"></i>LeeZChuan
+            </a>
+          </li>
+           
+          <li class="mr-4 inline-block">
+            <i class="fa-regular fa-folder mr-2"></i>
+            
+            <a
+              href="/categories/%e4%ba%92%e8%81%94%e7%bd%91%e5%90%8d%e8%af%8d/"
+              class=""
+              >互联网名词 , 
+            </a>
+            
+            <a
+              href="/categories/%e8%bd%af%e4%bb%b6%e5%b7%a5%e7%a8%8b/"
+              class=""
+              >软件工程
+            </a>
+            
+          </li>
+          
+          <li class="mr-4 inline-block">
+            <i class="fa-regular fa-clock mr-2"></i>
+            April 16, 2025
+          </li>
+        </ul>
+        <div class="content mb-10">
+          
+
+ 
+  
+
+<details open class="table-of-content blog">
+  <summary>
+    
+      内容列表
+    
+  </summary>
+  <nav id="TableOfContents">
+  <ol>
+    <li><a href="#一些有趣的开发定律">一些有趣的开发定律</a>
+      <ol>
+        <li><a href="#1parkinsons-law--帕金森定律">1.Parkinson’s law  帕金森定律</a></li>
+        <li><a href="#2hofstadters-law--霍夫施塔特定律">2.Hofstadter’s law  霍夫施塔特定律</a></li>
+        <li><a href="#3-brooks-law--布鲁克斯定律">3. Brooks’ law  布鲁克斯定律</a></li>
+        <li><a href="#4conways-law-and-the-inverse-conways-law-康威定律和逆康威定律">4.Conway’s law (and the Inverse Conway&rsquo;s law) 康威定律（和逆康威定律）</a></li>
+        <li><a href="#5cunninghams-law--坎宁安定律">5.Cunningham’s law  坎宁安定律</a></li>
+        <li><a href="#6sturgeons-law--斯特金定律">6.Sturgeon’s law  斯特金定律</a></li>
+        <li><a href="#7zawinskis-law--zawinski-定律">7.Zawinski’s law  Zawinski 定律</a></li>
+        <li><a href="#8hyrums-law--海仑律法">8.Hyrum’s law  海仑律法</a></li>
+      </ol>
+    </li>
+    <li><a href="#9prices-law--普莱斯定律">9.Price’s law  普莱斯定律</a>
+      <ol>
+        <li><a href="#10the-ringelmann-effect--林格尔曼效应">10.The Ringelmann effect  林格尔曼效应</a></li>
+        <li><a href="#11goodharts-law--古德哈特定律">11.Goodhart’s law  古德哈特定律</a></li>
+        <li><a href="#12gilbs-law--吉尔布定律">12.Gilb’s law  吉尔布定律</a></li>
+        <li><a href="#13murphys-law--墨菲定律">13.Murphy’s law  墨菲定律</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+</details>
+ <h2 id="一些有趣的开发定律">一些有趣的开发定律</h2>
+<h3 id="1parkinsons-law--帕金森定律">1.Parkinson’s law  帕金森定律</h3>
+
+
+
+  
+
+
+
+<div class="notice tip">
+  <div class="notice-head"><svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <path
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12C0 5.37258 5.37258 0 12 0ZM12 2.4C6.69807 2.4 2.4 6.69807 2.4 12C2.4 17.3019 6.69807 21.6 12 21.6C17.3019 21.6 21.6 17.3019 21.6 12C21.6 6.69807 17.3019 2.4 12 2.4ZM15.9515 7.55147L9.6 13.9029L8.04853 12.3515C7.5799 11.8828 6.8201 11.8828 6.35147 12.3515C5.88284 12.8201 5.88284 13.5799 6.35147 14.0485L8.75147 16.4485C9.2201 16.9172 9.9799 16.9172 10.4485 16.4485L17.6485 9.24853C18.1172 8.7799 18.1172 8.0201 17.6485 7.55147C17.1799 7.08284 16.4201 7.08284 15.9515 7.55147Z"
+          fill="currentColor" />
+      </svg><p>Tip</p>
+  </div>
+  <div class="notice-body"><p>Work expands to fill the available time.
+工作范围扩大以填补可用时间。</p></div>
+</div>
+
+<ul>
+<li>通过设置截止日期，您可能会获得更好的开发结果。</li>
+<li>这一切都是为了应对范围、资源和时间的铁三角。</li>
+</ul>
+<h3 id="2hofstadters-law--霍夫施塔特定律">2.Hofstadter’s law  霍夫施塔特定律</h3>
+
+
+
+  
+
+
+
+<div class="notice tip">
+  <div class="notice-head"><svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <path
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12C0 5.37258 5.37258 0 12 0ZM12 2.4C6.69807 2.4 2.4 6.69807 2.4 12C2.4 17.3019 6.69807 21.6 12 21.6C17.3019 21.6 21.6 17.3019 21.6 12C21.6 6.69807 17.3019 2.4 12 2.4ZM15.9515 7.55147L9.6 13.9029L8.04853 12.3515C7.5799 11.8828 6.8201 11.8828 6.35147 12.3515C5.88284 12.8201 5.88284 13.5799 6.35147 14.0485L8.75147 16.4485C9.2201 16.9172 9.9799 16.9172 10.4485 16.4485L17.6485 9.24853C18.1172 8.7799 18.1172 8.0201 17.6485 7.55147C17.1799 7.08284 16.4201 7.08284 15.9515 7.55147Z"
+          fill="currentColor" />
+      </svg><p>Tip</p>
+  </div>
+  <div class="notice-body"><p>It always takes longer than you expect, even when you take into account Hofstadter’s Law.
+它总是比您预期的要长，即使您考虑到霍夫施塔特定律也是如此。</p></div>
+</div>
+
+<ul>
+<li>
+<p>就是在评估项目代码开发周期的时候如果总是使用<code>Parkinson’s law </code>就会出现项目周期总是被延期</p>
+</li>
+<li>
+<p>这个问题没有很好的解决方案,只能通过同事之间,大量的对齐和沟通,出具可协商的范围</p>
+</li>
+<li>
+<p>不要把开发周期浪费在不必要的事情上,您需要了解的有关为什么软件中的估算如此困难的所有信息。如果频繁将时间浪费在无意义的事情上,开发周期必定会推迟。</p>
+</li>
+</ul>
+<h3 id="3-brooks-law--布鲁克斯定律">3. Brooks’ law  布鲁克斯定律</h3>
+
+
+
+  
+
+
+
+<div class="notice tip">
+  <div class="notice-head"><svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <path
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12C0 5.37258 5.37258 0 12 0ZM12 2.4C6.69807 2.4 2.4 6.69807 2.4 12C2.4 17.3019 6.69807 21.6 12 21.6C17.3019 21.6 21.6 17.3019 21.6 12C21.6 6.69807 17.3019 2.4 12 2.4ZM15.9515 7.55147L9.6 13.9029L8.04853 12.3515C7.5799 11.8828 6.8201 11.8828 6.35147 12.3515C5.88284 12.8201 5.88284 13.5799 6.35147 14.0485L8.75147 16.4485C9.2201 16.9172 9.9799 16.9172 10.4485 16.4485L17.6485 9.24853C18.1172 8.7799 18.1172 8.0201 17.6485 7.55147C17.1799 7.08284 16.4201 7.08284 15.9515 7.55147Z"
+          fill="currentColor" />
+      </svg><p>Tip</p>
+  </div>
+  <div class="notice-body"><p>Adding manpower to a late software project makes it later.
+为后期软件项目增加人力会让它更晚。</p></div>
+</div>
+
+<ul>
+<li>
+<p>大多数新开发的软件或者项目并不完全掌握这项定律。他们认为现实更类似于林格尔曼效应 （我们稍后会介绍）。 假设您有 4 个人参与一个后期项目，并且为您提供了另外 2 名高级工程师。您知道它不会增加 50% 的生产力，但您认为您肯定会至少提高 5-10%。</p>
+</li>
+<li>
+<p>很多时候，现实是开发周期并不一定会缩短!</p>
+</li>
+<li>
+<p>（当然，这取决于许多变量。就像这里的每条法律一样，它有其局限性）。</p>
+</li>
+</ul>
+<h3 id="4conways-law-and-the-inverse-conways-law-康威定律和逆康威定律">4.Conway’s law (and the Inverse Conway&rsquo;s law) 康威定律（和逆康威定律）</h3>
+
+
+
+  
+
+
+
+<div class="notice tip">
+  <div class="notice-head"><svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <path
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12C0 5.37258 5.37258 0 12 0ZM12 2.4C6.69807 2.4 2.4 6.69807 2.4 12C2.4 17.3019 6.69807 21.6 12 21.6C17.3019 21.6 21.6 17.3019 21.6 12C21.6 6.69807 17.3019 2.4 12 2.4ZM15.9515 7.55147L9.6 13.9029L8.04853 12.3515C7.5799 11.8828 6.8201 11.8828 6.35147 12.3515C5.88284 12.8201 5.88284 13.5799 6.35147 14.0485L8.75147 16.4485C9.2201 16.9172 9.9799 16.9172 10.4485 16.4485L17.6485 9.24853C18.1172 8.7799 18.1172 8.0201 17.6485 7.55147C17.1799 7.08284 16.4201 7.08284 15.9515 7.55147Z"
+          fill="currentColor" />
+      </svg><p>Tip</p>
+  </div>
+  <div class="notice-body"><p>Organizations produce designs which are copies of the communication structures of these organizations.
+组织生成的设计是这些组织的通信结构的副本。</p></div>
+</div>
+
+<ul>
+<li>
+<p>比如一个saas项目,拥有单独的前端和后端团队。由于这些团队单独运作，因此他们的沟通流程会影响产品最后的交付</p>
+</li>
+<li>
+<p>前端团队构建一个 UI，该 UI 需要特定格式的数据</p>
+</li>
+<li>
+<p>后端团队根据自己的假设构建 API</p>
+</li>
+<li>
+<p>API 响应与前端预期的不完全匹配，需要额外的转换。</p>
+</li>
+<li>
+<p>随着时间的推移，SaaS 应用程序最终会带来额外的胶水代码层和效率低下 ，因为团队没有密切合作</p>
+</li>
+</ul>
+<h3 id="5cunninghams-law--坎宁安定律">5.Cunningham’s law  坎宁安定律</h3>
+
+
+
+  
+
+
+
+<div class="notice tip">
+  <div class="notice-head"><svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <path
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12C0 5.37258 5.37258 0 12 0ZM12 2.4C6.69807 2.4 2.4 6.69807 2.4 12C2.4 17.3019 6.69807 21.6 12 21.6C17.3019 21.6 21.6 17.3019 21.6 12C21.6 6.69807 17.3019 2.4 12 2.4ZM15.9515 7.55147L9.6 13.9029L8.04853 12.3515C7.5799 11.8828 6.8201 11.8828 6.35147 12.3515C5.88284 12.8201 5.88284 13.5799 6.35147 14.0485L8.75147 16.4485C9.2201 16.9172 9.9799 16.9172 10.4485 16.4485L17.6485 9.24853C18.1172 8.7799 18.1172 8.0201 17.6485 7.55147C17.1799 7.08284 16.4201 7.08284 15.9515 7.55147Z"
+          fill="currentColor" />
+      </svg><p>Tip</p>
+  </div>
+  <div class="notice-body"><p>The best way to get the right answer on the internet is not to ask a question, but to post the wrong answer.
+在互联网上获得正确答案的最佳方法不是提出问题，而是发布错误的答案。</p></div>
+</div>
+
+<ul>
+<li>
+<p>原文提到一个提交流程:</p>
+</li>
+<li>
+<p>无需向 DevOps 团队提交请求，等待他们确定优先级，并最终完成它，只需打开一个 Pull-Request 即可自己完成。 即使你不知道自己在做什么。 查看合并的 PR，找到一个类似的 PR，然后尽力而为。</p>
+</li>
+</ul>
+<ol>
+<li>
+<p>The DevOps team will see your PR and say “wtf is this?”
+DevOps 团队会看到你的 PR 并说“这是什么鬼？</p>
+</li>
+<li>
+<p>They’ll reply quickly on the PR with what needs to be fixed
+他们会在 PR 上快速回复需要修复的内容</p>
+</li>
+<li>
+<p>You’ll have better knowledge of what to do next time
+您将更好地了解下次该做什么</p>
+</li>
+<li>
+<p>The DevOps team will gradually standardize this process with automation and policies
+DevOps 团队将通过自动化和策略逐步标准化此流程</p>
+</li>
+</ol>
+<h3 id="6sturgeons-law--斯特金定律">6.Sturgeon’s law  斯特金定律</h3>
+
+
+
+  
+
+
+
+<div class="notice tip">
+  <div class="notice-head"><svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <path
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12C0 5.37258 5.37258 0 12 0ZM12 2.4C6.69807 2.4 2.4 6.69807 2.4 12C2.4 17.3019 6.69807 21.6 12 21.6C17.3019 21.6 21.6 17.3019 21.6 12C21.6 6.69807 17.3019 2.4 12 2.4ZM15.9515 7.55147L9.6 13.9029L8.04853 12.3515C7.5799 11.8828 6.8201 11.8828 6.35147 12.3515C5.88284 12.8201 5.88284 13.5799 6.35147 14.0485L8.75147 16.4485C9.2201 16.9172 9.9799 16.9172 10.4485 16.4485L17.6485 9.24853C18.1172 8.7799 18.1172 8.0201 17.6485 7.55147C17.1799 7.08284 16.4201 7.08284 15.9515 7.55147Z"
+          fill="currentColor" />
+      </svg><p>Tip</p>
+  </div>
+  <div class="notice-body"><p>90% of everything is crap.
+90% 的东西都是废话。</p></div>
+</div>
+
+<p>你发布的大部分功能都会没用，一小部分会是你公司的核心产品。 当人们谈论 10 倍（或 100 倍）工程师时 ，不是工程师创造了 10 倍以上的代码，而是那些为公司创造了 10 倍价值的工程师。</p>
+<h3 id="7zawinskis-law--zawinski-定律">7.Zawinski’s law  Zawinski 定律</h3>
+
+
+
+  
+
+
+
+<div class="notice tip">
+  <div class="notice-head"><svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <path
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12C0 5.37258 5.37258 0 12 0ZM12 2.4C6.69807 2.4 2.4 6.69807 2.4 12C2.4 17.3019 6.69807 21.6 12 21.6C17.3019 21.6 21.6 17.3019 21.6 12C21.6 6.69807 17.3019 2.4 12 2.4ZM15.9515 7.55147L9.6 13.9029L8.04853 12.3515C7.5799 11.8828 6.8201 11.8828 6.35147 12.3515C5.88284 12.8201 5.88284 13.5799 6.35147 14.0485L8.75147 16.4485C9.2201 16.9172 9.9799 16.9172 10.4485 16.4485L17.6485 9.24853C18.1172 8.7799 18.1172 8.0201 17.6485 7.55147C17.1799 7.08284 16.4201 7.08284 15.9515 7.55147Z"
+          fill="currentColor" />
+      </svg><p>Tip</p>
+  </div>
+  <div class="notice-body"><p>Every program attempts to expand until it can read mail. Those programs which cannot so expand are replaced by ones that can.
+每个程序都会尝试扩展，直到它可以读取邮件。那些不能如此扩展的程序被那些可以扩展的程序所取代。</p></div>
+</div>
+
+<ul>
+<li>
+<p>不要给自己的app加过多没有用的功能</p>
+</li>
+<li>
+<p>这就是功能蠕变的发生方式 - 不断添加功能，以至于它们破坏了产品的价值。用户抱怨产品变得过于复杂或令人困惑，或者找不到他们需要的功能。尤其是新鲜的完全丢失了！</p>
+</li>
+</ul>
+<h3 id="8hyrums-law--海仑律法">8.Hyrum’s law  海仑律法</h3>
+
+
+
+  
+
+
+
+<div class="notice tip">
+  <div class="notice-head"><svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <path
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12C0 5.37258 5.37258 0 12 0ZM12 2.4C6.69807 2.4 2.4 6.69807 2.4 12C2.4 17.3019 6.69807 21.6 12 21.6C17.3019 21.6 21.6 17.3019 21.6 12C21.6 6.69807 17.3019 2.4 12 2.4ZM15.9515 7.55147L9.6 13.9029L8.04853 12.3515C7.5799 11.8828 6.8201 11.8828 6.35147 12.3515C5.88284 12.8201 5.88284 13.5799 6.35147 14.0485L8.75147 16.4485C9.2201 16.9172 9.9799 16.9172 10.4485 16.4485L17.6485 9.24853C18.1172 8.7799 18.1172 8.0201 17.6485 7.55147C17.1799 7.08284 16.4201 7.08284 15.9515 7.55147Z"
+          fill="currentColor" />
+      </svg><p>Tip</p>
+  </div>
+  <div class="notice-body"><p>With a sufficient number of users of an API, it does not matter what you promise in the contract: all observable behaviors of your system will be depended on by somebody.
+如果 API 的用户数量足够多，您在合同中承诺什么并不重要：您系统的所有可观察行为都将由某人依赖。</p></div>
+</div>
+
+<ul>
+<li>
+<p>当软件上线后,根据<code>Zawinski’s law  Zawinski 定律</code>来说,90% 的东西都是废话.</p>
+</li>
+<li>
+<p>但是，您仍然会花费大量时间来维护 100% 的功能 - 因为一旦你发布了某些东西，至少会有一个客户会使用它。当你试图删除它时，他们当然会抱怨&hellip;&hellip;一些业务利益相关者会向您施压，要求您继续支持该功能。</p>
+</li>
+<li>
+<p>我已经在 功能标志正在破坏你的代码库 中讨论了这个问题 。功能标志是一个很好的工具，但它们可能会被“滥用”，让 PM 有借口不做出艰难的决定 ，例如从代码库中完全删除功能。</p>
+</li>
+</ul>
+<h2 id="9prices-law--普莱斯定律">9.Price’s law  普莱斯定律</h2>
+
+
+
+  
+
+
+
+<div class="notice tip">
+  <div class="notice-head"><svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <path
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12C0 5.37258 5.37258 0 12 0ZM12 2.4C6.69807 2.4 2.4 6.69807 2.4 12C2.4 17.3019 6.69807 21.6 12 21.6C17.3019 21.6 21.6 17.3019 21.6 12C21.6 6.69807 17.3019 2.4 12 2.4ZM15.9515 7.55147L9.6 13.9029L8.04853 12.3515C7.5799 11.8828 6.8201 11.8828 6.35147 12.3515C5.88284 12.8201 5.88284 13.5799 6.35147 14.0485L8.75147 16.4485C9.2201 16.9172 9.9799 16.9172 10.4485 16.4485L17.6485 9.24853C18.1172 8.7799 18.1172 8.0201 17.6485 7.55147C17.1799 7.08284 16.4201 7.08284 15.9515 7.55147Z"
+          fill="currentColor" />
+      </svg><p>Tip</p>
+  </div>
+  <div class="notice-body"><p>In any group, 50% of the work is done by the square root number of people.
+在任何组中，50% 的工作是由平方根人数完成的。</p></div>
+</div>
+
+<ul>
+<li>
+<p>如果您有 10 名工程师，则一半的产出可以归属于其中的 3 名工程师。</p>
+</li>
+<li>
+<p>在 100 名工程师中，有 10 名将产生与其他 90 名工程师相似的输出。</p>
+</li>
+<li>
+<p>扩大团队规模是困难的。如果你想让你的产出增加 2 倍，普莱斯定律意味着你需要多雇佣 4 倍的人。该定律的一种解释是<code>林格尔曼效应</code>：</p>
+</li>
+</ul>
+<h3 id="10the-ringelmann-effect--林格尔曼效应">10.The Ringelmann effect  林格尔曼效应</h3>
+
+
+
+  
+
+
+
+<div class="notice tip">
+  <div class="notice-head"><svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <path
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12C0 5.37258 5.37258 0 12 0ZM12 2.4C6.69807 2.4 2.4 6.69807 2.4 12C2.4 17.3019 6.69807 21.6 12 21.6C17.3019 21.6 21.6 17.3019 21.6 12C21.6 6.69807 17.3019 2.4 12 2.4ZM15.9515 7.55147L9.6 13.9029L8.04853 12.3515C7.5799 11.8828 6.8201 11.8828 6.35147 12.3515C5.88284 12.8201 5.88284 13.5799 6.35147 14.0485L8.75147 16.4485C9.2201 16.9172 9.9799 16.9172 10.4485 16.4485L17.6485 9.24853C18.1172 8.7799 18.1172 8.0201 17.6485 7.55147C17.1799 7.08284 16.4201 7.08284 15.9515 7.55147Z"
+          fill="currentColor" />
+      </svg><p>Tip</p>
+  </div>
+  <div class="notice-body"><p>The tendency for individual members of a group to become increasingly less productive as the size of their group increases.
+随着群体规模的增加，群体中的个体成员的工作效率越来越低的趋势。</p></div>
+</div>
+
+<ul>
+<li>PostHog 写了一篇关于(小型工程团队的魔力)[https://newsletter.posthog.com/p/the-magic-of-small-engineering-teams]的文章 （他们有 47 人组织了 15 个团队）。</li>
+</ul>
+<h3 id="11goodharts-law--古德哈特定律">11.Goodhart’s law  古德哈特定律</h3>
+
+
+
+  
+
+
+
+<div class="notice tip">
+  <div class="notice-head"><svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <path
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12C0 5.37258 5.37258 0 12 0ZM12 2.4C6.69807 2.4 2.4 6.69807 2.4 12C2.4 17.3019 6.69807 21.6 12 21.6C17.3019 21.6 21.6 17.3019 21.6 12C21.6 6.69807 17.3019 2.4 12 2.4ZM15.9515 7.55147L9.6 13.9029L8.04853 12.3515C7.5799 11.8828 6.8201 11.8828 6.35147 12.3515C5.88284 12.8201 5.88284 13.5799 6.35147 14.0485L8.75147 16.4485C9.2201 16.9172 9.9799 16.9172 10.4485 16.4485L17.6485 9.24853C18.1172 8.7799 18.1172 8.0201 17.6485 7.55147C17.1799 7.08284 16.4201 7.08284 15.9515 7.55147Z"
+          fill="currentColor" />
+      </svg><p>Tip</p>
+  </div>
+  <div class="notice-body"><p>When a measure becomes a target, it ceases to be a good measure.
+当度量值成为目标时，它就不再是一个好的度量值。</p></div>
+</div>
+
+<ul>
+<li>这个很有名。它在技术领域不断被抛出，说你不应该测量代码行或 PR，因为人们会（理所当然地）玩弄它。</li>
+</ul>
+<h3 id="12gilbs-law--吉尔布定律">12.Gilb’s law  吉尔布定律</h3>
+
+
+
+  
+
+
+
+<div class="notice tip">
+  <div class="notice-head"><svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <path
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12C0 5.37258 5.37258 0 12 0ZM12 2.4C6.69807 2.4 2.4 6.69807 2.4 12C2.4 17.3019 6.69807 21.6 12 21.6C17.3019 21.6 21.6 17.3019 21.6 12C21.6 6.69807 17.3019 2.4 12 2.4ZM15.9515 7.55147L9.6 13.9029L8.04853 12.3515C7.5799 11.8828 6.8201 11.8828 6.35147 12.3515C5.88284 12.8201 5.88284 13.5799 6.35147 14.0485L8.75147 16.4485C9.2201 16.9172 9.9799 16.9172 10.4485 16.4485L17.6485 9.24853C18.1172 8.7799 18.1172 8.0201 17.6485 7.55147C17.1799 7.08284 16.4201 7.08284 15.9515 7.55147Z"
+          fill="currentColor" />
+      </svg><p>Tip</p>
+  </div>
+  <div class="notice-body"><p>Anything you need to quantify can be measured in some way that is superior to not measuring it at all.
+你需要量化的任何东西都可以以某种方式进行测量，这比根本不测量它要好。</p></div>
+</div>
+
+<ul>
+<li>这是对古德哈特定律的一个很好的平衡。与其“放弃”测量，不如从某事开始并努力改进它。</li>
+</ul>
+<h3 id="13murphys-law--墨菲定律">13.Murphy’s law  墨菲定律</h3>
+
+
+
+  
+
+
+
+<div class="notice tip">
+  <div class="notice-head"><svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <path
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12C0 5.37258 5.37258 0 12 0ZM12 2.4C6.69807 2.4 2.4 6.69807 2.4 12C2.4 17.3019 6.69807 21.6 12 21.6C17.3019 21.6 21.6 17.3019 21.6 12C21.6 6.69807 17.3019 2.4 12 2.4ZM15.9515 7.55147L9.6 13.9029L8.04853 12.3515C7.5799 11.8828 6.8201 11.8828 6.35147 12.3515C5.88284 12.8201 5.88284 13.5799 6.35147 14.0485L8.75147 16.4485C9.2201 16.9172 9.9799 16.9172 10.4485 16.4485L17.6485 9.24853C18.1172 8.7799 18.1172 8.0201 17.6485 7.55147C17.1799 7.08284 16.4201 7.08284 15.9515 7.55147Z"
+          fill="currentColor" />
+      </svg><p>Tip</p>
+  </div>
+  <div class="notice-body"><p>Anything that can go wrong will go wrong.
+任何可能出错的事情都会出错。</p></div>
+</div>
+
+<ul>
+<li>我相信你也经历过这样的事情：</li>
+<li>您承受着发布功能的压力。只有一个边缘情况，测试起来非常复杂，你确定它永远不会发生。所以你决定偷工减料。</li>
+<li>但是未来总有一次会在线上复现这个问题</li>
+</ul>
+
+        </div>
+        <div class="row items-start justify-between">
+           
+          <div class="lg:col-5 mb-10 flex items-center lg:mb-0">
+            <h5 class="mr-3">标签 :</h5>
+            <ul>
+              
+              <li class="inline-block">
+                <a
+                  class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                  href="/tags/%e4%ba%92%e8%81%94%e7%bd%91%e5%90%8d%e8%af%8d/"
+                >
+                  互联网名词
+                </a>
+              </li>
+              
+              <li class="inline-block">
+                <a
+                  class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                  href="/tags/%e8%bd%af%e4%bb%b6%e5%b7%a5%e7%a8%8b/"
+                >
+                  软件工程
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+          <div class="lg:col-4 flex items-center">
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="share-icons">
+  <h5 class="share-title">分享 :</h5>
+
+
+  
+  
+    <a
+      class="share-link share-facebook"
+      href="https://facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fblog%2fbusiness%2fengineering-laws%2f"
+      target="_blank"
+      rel="noopener"
+      aria-label="share facebook">
+      <span class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-twitter"
+      href="https://twitter.com/intent/tweet/?text=%e5%88%86%e4%ba%ab&amp;url=http%3a%2f%2flocalhost%3a1313%2fblog%2fbusiness%2fengineering-laws%2f"
+      target="_blank"
+      rel="noopener"
+      aria-label="share twitter">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path 
+            d="M8 2H1l8.26 11.015L1.45 22H4.1l6.388-7.349L16 22h7l-8.608-11.478L21.8 2h-2.65l-5.986 6.886zm9 18L5 4h2l12 16z"/>
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-email"
+      href="mailto:?subject=%e5%88%86%e4%ba%ab&amp;body=http%3a%2f%2flocalhost%3a1313%2fblog%2fbusiness%2fengineering-laws%2f"
+      target="_self"
+      rel="noopener"
+      aria-label="share email">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M22 4H2C.9 4 0 4.9 0 6v12c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7.25 14.43l-3.5 2c-.08.05-.17.07-.25.07-.17 0-.34-.1-.43-.25-.14-.24-.06-.55.18-.68l3.5-2c.24-.14.55-.06.68.18.14.24.06.55-.18.68zm4.75.07c-.1 0-.2-.03-.27-.08l-8.5-5.5c-.23-.15-.3-.46-.15-.7.15-.22.46-.3.7-.14L12 13.4l8.23-5.32c.23-.15.54-.08.7.15.14.23.07.54-.16.7l-8.5 5.5c-.08.04-.17.07-.27.07zm8.93 1.75c-.1.16-.26.25-.43.25-.08 0-.17-.02-.25-.07l-3.5-2c-.24-.13-.32-.44-.18-.68s.44-.32.68-.18l3.5 2c.24.13.32.44.18.68z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-reddit"
+      href="https://reddit.com/submit/?url=http%3a%2f%2flocalhost%3a1313%2fblog%2fbusiness%2fengineering-laws%2f&amp;resubmit=true&amp;title=%e5%88%86%e4%ba%ab"
+      target="_blank"
+      rel="noopener"
+      aria-label="share reddit">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M24 11.5c0-1.65-1.35-3-3-3-.96 0-1.86.48-2.42 1.24-1.64-1-3.75-1.64-6.07-1.72.08-1.1.4-3.05 1.52-3.7.72-.4 1.73-.24 3 .5C17.2 6.3 18.46 7.5 20 7.5c1.65 0 3-1.35 3-3s-1.35-3-3-3c-1.38 0-2.54.94-2.88 2.22-1.43-.72-2.64-.8-3.6-.25-1.64.94-1.95 3.47-2 4.55-2.33.08-4.45.7-6.1 1.72C4.86 8.98 3.96 8.5 3 8.5c-1.65 0-3 1.35-3 3 0 1.32.84 2.44 2.05 2.84-.03.22-.05.44-.05.66 0 3.86 4.5 7 10 7s10-3.14 10-7c0-.22-.02-.44-.05-.66 1.2-.4 2.05-1.54 2.05-2.84zM2.3 13.37C1.5 13.07 1 12.35 1 11.5c0-1.1.9-2 2-2 .64 0 1.22.32 1.6.82-1.1.85-1.92 1.9-2.3 3.05zm3.7.13c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9.8 4.8c-1.08.63-2.42.96-3.8.96-1.4 0-2.74-.34-3.8-.95-.24-.13-.32-.44-.2-.68.15-.24.46-.32.7-.18 1.83 1.06 4.76 1.06 6.6 0 .23-.13.53-.05.67.2.14.23.06.54-.18.67zm.2-2.8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm5.7-2.13c-.38-1.16-1.2-2.2-2.3-3.05.38-.5.97-.82 1.6-.82 1.1 0 2 .9 2 2 0 .84-.53 1.57-1.3 1.87z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+</div>
+
+          </div>
+        </div>
+        
+        
+      </article>
+    </div>
+
+    
+      
+    <div class="section pb-0">
+      <h2 class="h3 mb-12">相关</h2>
+      <div class="row">
+        
+        <div class="lg:col-4 md:col-6 mb-14">
+          <div class="bg-body dark:bg-darkmode-body">
+   
+  <h4 class="mb-3">
+    <a href="/blog/computer-technology/protocol/protocol-base/">网络通信关键概念</a>
+  </h4>
+  
+  <p class="text-sm text-muted">
+    <i class="fa-regular fa-calendar-alt mr-2"></i>2018-06-18
+    
+  </p>
+   
+  <ul class="mb-4">
+    <li class="mr-4 inline-block">
+      <a href="/authors/leezchuan/">
+        <i class="fa-regular fa-circle-user mr-2"></i>LeeZChuan
+      </a>
+    </li>
+    <li class="mr-4 inline-block">
+      <i class="fa-regular fa-folder mr-1"></i>
+      
+      <a
+        href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/"
+        class="ms-1"
+        >计算机技术 , 
+      </a>
+      
+      <a
+        href="/categories/%e5%8d%8f%e8%ae%ae/"
+        class="ms-1"
+        >协议 , 
+      </a>
+      
+      <a
+        href="/categories/%e5%85%b3%e9%94%ae%e6%a6%82%e5%bf%b5/"
+        class="ms-1"
+        >关键概念
+      </a>
+      
+    </li>
+  </ul>
+  
+  
+  <p class="mb-6">
+     计算机网络是通过通信设备与线路将地理上分散并且具有独立功能的计算机系统连接在一起，并由功能完善的软件来控制，进而实现资源共享的系统。从物理组成上来看，计算机网络包括硬件、软件和协议三大部分。计算机网络中结点间相互通信是由控制信息传送的网络协议及其他相应的网络软件共同实现的。在计算机网络通信中，有部分关键性概念需要理解透彻，在此做一总结。 
+  </p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/protocol/protocol-base/">
+    了解更多
+  </a>
+</div>
+
+        </div>
+        
+        <div class="lg:col-4 md:col-6 mb-14">
+          <div class="bg-body dark:bg-darkmode-body">
+   
+  <h4 class="mb-3">
+    <a href="/blog/computer-technology/web/web-performance-core-concepts/">Web 前端性能优化：核心概念与指标</a>
+  </h4>
+  
+  <p class="text-sm text-muted">
+    <i class="fa-regular fa-calendar-alt mr-2"></i>2021-07-19
+    
+  </p>
+   
+  <ul class="mb-4">
+    <li class="mr-4 inline-block">
+      <a href="/authors/leezchuan/">
+        <i class="fa-regular fa-circle-user mr-2"></i>LeeZChuan
+      </a>
+    </li>
+    <li class="mr-4 inline-block">
+      <i class="fa-regular fa-folder mr-1"></i>
+      
+      <a
+        href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/"
+        class="ms-1"
+        >计算机技术 , 
+      </a>
+      
+      <a
+        href="/categories/web%e5%89%8d%e7%ab%af/"
+        class="ms-1"
+        >Web前端 , 
+      </a>
+      
+      <a
+        href="/categories/%e6%80%a7%e8%83%bd%e4%bc%98%e5%8c%96/"
+        class="ms-1"
+        >性能优化 , 
+      </a>
+      
+      <a
+        href="/categories/%e6%a0%b8%e5%bf%83%e6%a6%82%e5%bf%b5/"
+        class="ms-1"
+        >核心概念
+      </a>
+      
+    </li>
+  </ul>
+  
+  
+  <p class="mb-6">
+     在一些较为复杂的 Web 应用中可能会出现性能瓶颈，导致用户体验急剧下降，做优化之前更应该了解一下相关的核心概念，从而在出问题时确定优化路径。 
+  </p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/web-performance-core-concepts/">
+    了解更多
+  </a>
+</div>
+
+        </div>
+        
+        <div class="lg:col-4 md:col-6 mb-14">
+          <div class="bg-body dark:bg-darkmode-body">
+   
+  <h4 class="mb-3">
+    <a href="/blog/computer-technology/web/web-performance-fastdom/">Web 前端性能优化：批量 DOM 操作 - FastDOM</a>
+  </h4>
+  
+  <p class="text-sm text-muted">
+    <i class="fa-regular fa-calendar-alt mr-2"></i>2024-12-02
+    
+  </p>
+   
+  <ul class="mb-4">
+    <li class="mr-4 inline-block">
+      <a href="/authors/leezchuan/">
+        <i class="fa-regular fa-circle-user mr-2"></i>LeeZChuan
+      </a>
+    </li>
+    <li class="mr-4 inline-block">
+      <i class="fa-regular fa-folder mr-1"></i>
+      
+      <a
+        href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%8a%80%e6%9c%af/"
+        class="ms-1"
+        >计算机技术 , 
+      </a>
+      
+      <a
+        href="/categories/web%e5%89%8d%e7%ab%af/"
+        class="ms-1"
+        >Web前端 , 
+      </a>
+      
+      <a
+        href="/categories/%e6%80%a7%e8%83%bd%e4%bc%98%e5%8c%96/"
+        class="ms-1"
+        >性能优化 , 
+      </a>
+      
+      <a
+        href="/categories/dom/"
+        class="ms-1"
+        >Dom
+      </a>
+      
+    </li>
+  </ul>
+  
+  
+  <p class="mb-6">
+     原生应用时代，DOM 操作一般借助类似 jQuery 的工具库手动完成，而在框架/库应用时代 DOM 操作退居幕后自动完成，原生应用与框架应用性能孰高孰低？DOM 批量操作对于性能有何影响？利用 FastDOM 库来解决这些性能问题。 
+  </p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/computer-technology/web/web-performance-fastdom/">
+    了解更多
+  </a>
+</div>
+
+        </div>
+        
+      </div>
+    </div>
+    
+  </div>
+</section>
+</main>
+
+    
+    <footer class="bg-theme-light dark:bg-darkmode-theme-light">
+  <div class="container">
+    <div class="row items-center py-10">
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:text-left">
+        
+        <a
+          class="navbar-brand inline-block"
+          href="/"
+        >
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+    
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu4668213964747553556.webp"
+      alt="LeeZChuan"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu16137327364032044341.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu4521180468968039794.webp"
+      alt="LeeZChuan"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu12278668914502940210.png';" />
+  
+  
+
+
+        </a>
+      </div>
+      <div class="lg:col-6 mb-8 text-center lg:mb-0">
+        <ul>
+          
+          <li class="m-3 inline-block">
+            <a
+              
+              href="
+                  /
+                "
+              ></a
+            >
+          </li>
+          
+        </ul>
+      </div>
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:mt-0 lg:text-right">
+        <ul class="social-icons">
+          
+          <li>
+            <a
+              target="_blank"
+              aria-label="facebook"
+              rel="nofollow noopener"
+              href="https://www.facebook.com/profile.php?id=100083154937436"
+            >
+              <i class="fab fa-facebook"></i>
+            </a>
+          </li>
+          
+          <li>
+            <a
+              target="_blank"
+              aria-label="github"
+              rel="nofollow noopener"
+              href="https://github.com/LeeZChuan"
+            >
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+          
+          <li>
+            <a
+              target="_blank"
+              aria-label="linkedin"
+              rel="nofollow noopener"
+              href="https://www.linkedin.com/in/zchuan-lee-89214a1a3/"
+            >
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="border-border dark:border-darkmode-border border-t py-7">
+    <div class="text-light dark:text-darkmode-light container text-center">
+      <p></p>
+    </div>
+  </div>
+</footer>
+
+
+    
+    
+                                                        
+
+
+    
+<script
+  crossorigin="anonymous"
+  integrity=""
+  src="/js/script.js"
+></script>
+
+
+<script
+  defer
+  async
+  crossorigin="anonymous"
+  integrity=""
+  src="/js/script-lazy.js"
+></script>
+
+
+
+<script>
+  if ('serviceWorker' in navigator){navigator.serviceWorker.register("/service-worker.js");}
+</script>
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  </body>
+</html>

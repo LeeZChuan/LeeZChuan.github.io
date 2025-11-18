@@ -1,1 +1,26 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>互联网名词 on 技术之心</title><link>https://leezchuan.github.io/categories/%E4%BA%92%E8%81%94%E7%BD%91%E5%90%8D%E8%AF%8D/</link><description>Recent content in 互联网名词 on 技术之心</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Sun, 27 Mar 2022 01:04:00 +0800</lastBuildDate><atom:link href="https://leezchuan.github.io/categories/%E4%BA%92%E8%81%94%E7%BD%91%E5%90%8D%E8%AF%8D/index.xml" rel="self" type="application/rss+xml"/><item><title>一些互联网名词</title><link>https://leezchuan.github.io/blog/business/business-noun/</link><pubDate>Sun, 27 Mar 2022 01:04:00 +0800</pubDate><guid>https://leezchuan.github.io/blog/business/business-noun/</guid><description>&lt;p>互联网时代是个新概念频出的时代，每年有相当多的新名词诞生，而诸多与商业活动紧密相关的词汇了解一下有助于我们熟悉日常工作中接触的东西。&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>互联网名词 on 技术之心</title>
+    <link>http://localhost:1313/categories/%E4%BA%92%E8%81%94%E7%BD%91%E5%90%8D%E8%AF%8D/</link>
+    <description>Recent content in 互联网名词 on 技术之心</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 16 Apr 2025 05:58:41 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/%E4%BA%92%E8%81%94%E7%BD%91%E5%90%8D%E8%AF%8D/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>13个软件工程定律</title>
+      <link>http://localhost:1313/blog/business/engineering-laws/</link>
+      <pubDate>Wed, 16 Apr 2025 05:58:41 +0000</pubDate>
+      <guid>http://localhost:1313/blog/business/engineering-laws/</guid>
+      <description>&lt;h2 id=&#34;一些有趣的开发定律&#34;&gt;一些有趣的开发定律&lt;/h2&gt;&#xA;&lt;h3 id=&#34;1parkinsons-law--帕金森定律&#34;&gt;1.Parkinson’s law  帕金森定律&lt;/h3&gt;&#xA;&#xA;&#xA;&#xA;  &#xA;&#xA;&#xA;&#xA;&lt;div class=&#34;notice tip&#34;&gt;&#xA;  &lt;div class=&#34;notice-head&#34;&gt;&lt;svg&#xA;        width=&#34;20&#34;&#xA;        height=&#34;20&#34;&#xA;        viewBox=&#34;0 0 24 24&#34;&#xA;        fill=&#34;none&#34;&#xA;        xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&#xA;        &lt;path&#xA;          fillRule=&#34;evenodd&#34;&#xA;          clipRule=&#34;evenodd&#34;&#xA;          d=&#34;M12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12C0 5.37258 5.37258 0 12 0ZM12 2.4C6.69807 2.4 2.4 6.69807 2.4 12C2.4 17.3019 6.69807 21.6 12 21.6C17.3019 21.6 21.6 17.3019 21.6 12C21.6 6.69807 17.3019 2.4 12 2.4ZM15.9515 7.55147L9.6 13.9029L8.04853 12.3515C7.5799 11.8828 6.8201 11.8828 6.35147 12.3515C5.88284 12.8201 5.88284 13.5799 6.35147 14.0485L8.75147 16.4485C9.2201 16.9172 9.9799 16.9172 10.4485 16.4485L17.6485 9.24853C18.1172 8.7799 18.1172 8.0201 17.6485 7.55147C17.1799 7.08284 16.4201 7.08284 15.9515 7.55147Z&#34;&#xA;          fill=&#34;currentColor&#34; /&gt;&#xA;      &lt;/svg&gt;&lt;p&gt;Tip&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>一些互联网名词</title>
+      <link>http://localhost:1313/blog/business/business-noun/</link>
+      <pubDate>Sun, 27 Mar 2022 01:04:00 +0800</pubDate>
+      <guid>http://localhost:1313/blog/business/business-noun/</guid>
+      <description>&lt;p&gt;互联网时代是个新概念频出的时代，每年有相当多的新名词诞生，而诸多与商业活动紧密相关的词汇了解一下有助于我们熟悉日常工作中接触的东西。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

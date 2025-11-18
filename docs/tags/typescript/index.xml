@@ -1,10 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>TypeScript on 技术之心</title><link>https://leezchuan.github.io/tags/typescript/</link><description>Recent content in TypeScript on 技术之心</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Sun, 09 Jan 2022 17:36:00 +0800</lastBuildDate><atom:link href="https://leezchuan.github.io/tags/typescript/index.xml" rel="self" type="application/rss+xml"/><item><title>TypeScript：扩展第三方库的类型定义</title><link>https://leezchuan.github.io/blog/computer-technology/typescript/tools-typescript-type-extend/</link><pubDate>Sun, 09 Jan 2022 17:36:00 +0800</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/typescript/tools-typescript-type-extend/</guid><description>&lt;p>TypeScript 作为 JavaScript 的超集，为 Web 开发带来了强类型语言和类似代码智能提示这种良好的开发体验，而代码提示依赖于类型定义文件。类型定义文件的发展也经历了一个逐步演变的过程，从最初基于 JavaScript 编写的 npm 包，通过&lt;a href="https://github.com/DefinitelyTyped/DefinitelyTyped"
-
-
-
-
- target="_blank"
- 
-
-
->社区方案&lt;/a>来引入类型定义包，再到目前多数模块基于 TypeScript 编写并在发布时带上类型定义文件这种最佳方案，开发者体验得到进一步的提升。&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>TypeScript on 技术之心</title>
+    <link>http://localhost:1313/tags/typescript/</link>
+    <description>Recent content in TypeScript on 技术之心</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 09 Jan 2022 17:36:00 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/typescript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TypeScript：扩展第三方库的类型定义</title>
+      <link>http://localhost:1313/blog/computer-technology/typescript/tools-typescript-type-extend/</link>
+      <pubDate>Sun, 09 Jan 2022 17:36:00 +0800</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/typescript/tools-typescript-type-extend/</guid>
+      <description>&lt;p&gt;TypeScript 作为 JavaScript 的超集，为 Web 开发带来了强类型语言和类似代码智能提示这种良好的开发体验，而代码提示依赖于类型定义文件。类型定义文件的发展也经历了一个逐步演变的过程，从最初基于 JavaScript 编写的 npm 包，通过&lt;a href=&#34;https://github.com/DefinitelyTyped/DefinitelyTyped&#34;&#xA;&#xA;&#xA;&#xA;&#xA; target=&#34;_blank&#34;&#xA; &#xA;&#xA;&#xA;&gt;社区方案&lt;/a&gt;来引入类型定义包，再到目前多数模块基于 TypeScript 编写并在发布时带上类型定义文件这种最佳方案，开发者体验得到进一步的提升。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

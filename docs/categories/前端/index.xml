@@ -1,3 +1,40 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>前端 on 技术之心</title><link>https://leezchuan.github.io/categories/%E5%89%8D%E7%AB%AF/</link><description>Recent content in 前端 on 技术之心</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Fri, 01 Dec 2023 20:04:00 +0800</lastBuildDate><atom:link href="https://leezchuan.github.io/categories/%E5%89%8D%E7%AB%AF/index.xml" rel="self" type="application/rss+xml"/><item><title>架构设计笔记</title><link>https://leezchuan.github.io/blog/notes/architecture-design/</link><pubDate>Fri, 01 Dec 2023 20:04:00 +0800</pubDate><guid>https://leezchuan.github.io/blog/notes/architecture-design/</guid><description>&lt;p>该文章将目前可能能用到的架构理念，概念统一汇总整理～&lt;/p></description></item><item><title>从贝塞尔曲线的计算感受数学建模的魅力</title><link>https://leezchuan.github.io/blog/tools/tools-animation-math/</link><pubDate>Thu, 01 Dec 2022 01:04:00 +0800</pubDate><guid>https://leezchuan.github.io/blog/tools/tools-animation-math/</guid><description>&lt;p>最近在做前端可视化相关的东西，在完成动画效果时，遇到一个不是很好处理的问题，需要让一个元素在画布上以曲线的轨迹进行运动。因为动画这块之前基本也没有怎么接触过，做的也都是简单的线性动画效果，所以碰到这个需求点的时候觉得是有点难度的。&lt;/p></description></item><item><title>主流小程序开发流程</title><link>https://leezchuan.github.io/blog/computer-technology/mobile-web/wx-dingding/</link><pubDate>Fri, 11 Nov 2022 11:52:00 +0800</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/mobile-web/wx-dingding/</guid><description>&lt;p>开发小程序有很多问题特此记录一下～～～&lt;/p>
-&lt;blockquote>
-&lt;p>小程序开发（移动端开发）兼容注意事项：&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>前端 on 技术之心</title>
+    <link>http://localhost:1313/categories/%E5%89%8D%E7%AB%AF/</link>
+    <description>Recent content in 前端 on 技术之心</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 20 Jun 2025 02:50:05 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/%E5%89%8D%E7%AB%AF/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>开发web中遇到的一些兼容问题汇总</title>
+      <link>http://localhost:1313/blog/computer-technology/web/web-bug/</link>
+      <pubDate>Fri, 20 Jun 2025 02:50:05 +0000</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/web/web-bug/</guid>
+      <description>&lt;ol&gt;&#xA;&lt;li&gt;因为ios对-webkit-text-security支持不是很好&lt;/li&gt;&#xA;&lt;li&gt;在使用伪元素的时候会存在高度不够导致的问题&lt;/li&gt;&#xA;&lt;/ol&gt;</description>
+    </item>
+    <item>
+      <title>架构设计笔记</title>
+      <link>http://localhost:1313/blog/notes/architecture-design/</link>
+      <pubDate>Fri, 01 Dec 2023 20:04:00 +0800</pubDate>
+      <guid>http://localhost:1313/blog/notes/architecture-design/</guid>
+      <description>&lt;p&gt;该文章将目前可能能用到的架构理念，概念统一汇总整理～&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>从贝塞尔曲线的计算感受数学建模的魅力</title>
+      <link>http://localhost:1313/blog/tools/tools-animation-math/</link>
+      <pubDate>Thu, 01 Dec 2022 01:04:00 +0800</pubDate>
+      <guid>http://localhost:1313/blog/tools/tools-animation-math/</guid>
+      <description>&lt;p&gt;最近在做前端可视化相关的东西，在完成动画效果时，遇到一个不是很好处理的问题，需要让一个元素在画布上以曲线的轨迹进行运动。因为动画这块之前基本也没有怎么接触过，做的也都是简单的线性动画效果，所以碰到这个需求点的时候觉得是有点难度的。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>主流小程序开发流程</title>
+      <link>http://localhost:1313/blog/computer-technology/mobile-web/wx-dingding/</link>
+      <pubDate>Fri, 11 Nov 2022 11:52:00 +0800</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/mobile-web/wx-dingding/</guid>
+      <description>&lt;p&gt;开发小程序有很多问题特此记录一下～～～&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;小程序开发（移动端开发）兼容注意事项：&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

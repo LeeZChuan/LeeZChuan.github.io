@@ -1,1 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>UDP on 技术之心</title><link>https://leezchuan.github.io/categories/udp/</link><description>Recent content in UDP on 技术之心</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Wed, 20 Jun 2018 17:21:00 +0800</lastBuildDate><atom:link href="https://leezchuan.github.io/categories/udp/index.xml" rel="self" type="application/rss+xml"/><item><title>TCP 与 UDP 协议</title><link>https://leezchuan.github.io/blog/computer-technology/protocol/protocol-tcp-udp/</link><pubDate>Wed, 20 Jun 2018 17:21:00 +0800</pubDate><guid>https://leezchuan.github.io/blog/computer-technology/protocol/protocol-tcp-udp/</guid><description>&lt;p>传输层是网络分层模型中举足轻重的层，它是底层通信子网与高层资源子网的接口与桥梁，提供了面向连接的传输控制协议（Transmission Control Protocol，TCP）和无连接的用户数据报协议（User Datagram Protocol，UDP），负责提供端到端的数据传输服务。&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>UDP on 技术之心</title>
+    <link>http://localhost:1313/categories/udp/</link>
+    <description>Recent content in UDP on 技术之心</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 20 Jun 2018 17:21:00 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/udp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TCP 与 UDP 协议</title>
+      <link>http://localhost:1313/blog/computer-technology/protocol/protocol-tcp-udp/</link>
+      <pubDate>Wed, 20 Jun 2018 17:21:00 +0800</pubDate>
+      <guid>http://localhost:1313/blog/computer-technology/protocol/protocol-tcp-udp/</guid>
+      <description>&lt;p&gt;传输层是网络分层模型中举足轻重的层，它是底层通信子网与高层资源子网的接口与桥梁，提供了面向连接的传输控制协议（Transmission Control Protocol，TCP）和无连接的用户数据报协议（User Datagram Protocol，UDP），负责提供端到端的数据传输服务。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
