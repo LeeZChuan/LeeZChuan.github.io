@@ -34,7 +34,7 @@ draft: false
 
 具体问题截图效果如下:
 
-{{< image src="images/blog/work-note/01.jpg" caption="" alt="问题截图1" height="" width="" position="center" command="fill" option="q100" class="img-fluid" title="问题截图1"  webp="false" >}}
+{{< image src="images/blog/work-note/01.jpg" caption="" alt="问题截图1" height="" width="" position="center" command="fill" option="q50" class="img-fluid" title="问题截图1"  webp="false" >}}
 
 这个问题在移动端会导致用户点击textarea元素键盘会让页面整体被顶起来
 
@@ -101,4 +101,4 @@ draft: false
 ```
 
 修改后的效果:
-{{< image src="images/blog/work-note/02.jpg" caption="" alt="问题截图2" height="" width="" position="center" command="fill" option="q100" class="img-fluid" title="问题截图2"  webp="false" >}}
+{{< image src="images/blog/work-note/02.jpg" caption="" alt="问题截图2" height="" width="" position="center" command="fill" option="q50" class="img-fluid" title="问题截图2"  webp="false" >}}
