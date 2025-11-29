@@ -11,3 +11,4 @@ description: 在使用vue或者react新时代框架开发前端页面的时候�
 
 1. 因为ios对-webkit-text-security支持不是很好
 2. 在使用伪元素的时候会存在高度不够导致的问题
+3. 在ios设备上会存在input标签和textarea标签唤起的键盘让页面会整体向上移动,具体问题可以见:[bug](/content/chinese/blog/Notes/work-note.md)
