@@ -92,13 +92,19 @@
   }
 
   .notice-note {
-    background-color: rgba(59, 130, 246, 0.05);
-    border-color: rgba(59, 130, 246, 0.45);
+    border-radius: 10px;
+    padding: 8px;
+    background-color: rgba(59, 130, 246, 0.07);
+    border-color: rgba(59, 130, 246, 0.30);
   }
-  .notice-note .notice-header {
-    color: rgb(37, 99, 235);
-    background-color: rgba(59, 130, 246, 0.10);
+ .notice-note .notice-header {
+  display: flex;
+  background-color: rgba(59, 130, 246, 0.14);
+  flex-direction: row;
+  align-content: center;
+  justify-content: flex-start;
   }
+
   .notice-note .notice-body { color: rgba(0, 0, 0, 0.72); }
 
   .notice-warning {
