@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --text-high: rgba(0, 0, 0, 0.87);
+    --text-med: rgba(0, 0, 0, 0.60);
+    --text-low: rgba(0, 0, 0, 0.38);
+    --text-divider: rgba(0, 0, 0, 0.12);
+  }
+
+  .dark {
+    --text-high: rgba(255, 255, 255, 0.87);
+    --text-med: rgba(255, 255, 255, 0.60);
+    --text-low: rgba(255, 255, 255, 0.38);
+    --text-divider: rgba(255, 255, 255, 0.12);
+  }
+
+  html {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    color: var(--text-high);
+  }
+
+  ::selection {
+    background-color: #dbeafe;
+    color: #1e3a5f;
+  }
+
+  .dark ::selection {
+    background-color: rgba(30, 58, 95, 0.5);
+    color: rgba(255, 255, 255, 0.87);
+  }
+}
+
+@layer utilities {
+  .text-high { color: var(--text-high); }
+  .text-med  { color: var(--text-med); }
+  .text-low  { color: var(--text-low); }
+  .border-divider { border-color: var(--text-divider); }
+
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  pre code,
+  pre code * {
+    color: rgba(0, 0, 0, 0.80) !important;
+  }
+
+  .dark pre code,
+  .dark pre code * {
+    color: rgba(255, 255, 255, 0.80) !important;
+  }
+}
