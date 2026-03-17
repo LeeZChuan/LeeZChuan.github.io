@@ -76,7 +76,7 @@ export default async function PostPage({ params }: Props) {
           className="prose prose-gray dark:prose-invert max-w-none
             prose-headings:scroll-mt-20
             prose-code:before:content-none prose-code:after:content-none
-            prose-img:rounded-lg
+            prose-img:rounded-lg prose-img:w-full prose-img:h-auto prose-img:block prose-img:my-6
           "
           dangerouslySetInnerHTML={{ __html: post.contentHtml }}
         />

@@ -12,8 +12,9 @@ const postsDir = path.join(process.cwd(), 'src/content/blog');
 
 export const CATEGORIES: Record<string, { label: string; description: string }> = {
   tech: { label: '技术', description: '前端、后端、框架与语言' },
-  tools: { label: '工具', description: '工作流、效率工具与配置' },
-  journal: { label: '随想', description: '思考、感悟与博客日志' },
+  business: { label: '商业', description: '互联网商业与产品思维' },
+  notes: { label: '笔记', description: '工作记录与架构设计' },
+  life: { label: '生活', description: '阅读、旅行与日常思考' },
 };
 
 export interface PostMeta {
@@ -34,15 +35,16 @@ function scanPostFiles(): Array<{ slug: string; filePath: string; category: stri
   if (!fs.existsSync(postsDir)) return [];
   const results: Array<{ slug: string; filePath: string; category: string }> = [];
 
-  function walk(dir: string, category: string) {
+  function walk(dir: string, topCategory: string) {
     const entries = fs.readdirSync(dir, { withFileTypes: true });
     for (const entry of entries) {
       const fullPath = path.join(dir, entry.name);
       if (entry.isDirectory()) {
-        walk(fullPath, entry.name);
+        const nextTop = topCategory === '' ? entry.name : topCategory;
+        walk(fullPath, nextTop);
       } else if (entry.isFile() && entry.name.endsWith('.md')) {
         const slug = entry.name.replace(/\.md$/, '');
-        results.push({ slug, filePath: fullPath, category });
+        results.push({ slug, filePath: fullPath, category: topCategory });
       }
     }
   }
