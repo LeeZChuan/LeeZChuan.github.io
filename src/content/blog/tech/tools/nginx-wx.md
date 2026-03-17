@@ -9,7 +9,7 @@ tags: ["计算机技术服务器Nginx"]
 
 - 由于发布的时候是在正式环境开一个8080端口作为访问路径,但是三方服务对接的时候还是使用的正式环境80端口,所以这里需要nginx配置修改一下逻辑;
 
-{{< image src="images/blog/nginx-wx.png" caption="" alt="" height="" width="" position="center" command="fill"  class="img-fluid" title="nginx-wx"  webp="false" >}}
+![nginx-wx](/images/blog/nginx-wx.png)
 
 看上述截图可以看到访问到正式环境并且链接中有`/miniMarketAuth`和`/qhfMarketAuth`的时候就带着后续参数重定向到8080端口,这样就可以在申请新服务器与域名的情况下使用原有域名模拟预发环境进行测试
 

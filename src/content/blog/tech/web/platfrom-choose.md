@@ -57,7 +57,7 @@ Linux webkit2gtk 4.0 for Tauri v1 (for example Ubuntu 18.04). webkit2gtk 4.1 for
 
 美团在最近也设计了自己的框架：
 
-{{< image src="images/blog/web-design.png" caption="" alt="" height="" width="" position="center" command="fill"  class="img-fluid" title="美团框架选择"  webp="false" >}}
+![美团框架选择](/images/blog/web-design.png)
 
 
 ## 其他资料-关于跨平台技术选型

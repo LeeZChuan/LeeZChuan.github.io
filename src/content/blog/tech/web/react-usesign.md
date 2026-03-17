@@ -8,11 +8,11 @@ tags: ["计算机技术Web前端ReactJavaScript"]
 ## 什么是 useSignal
 
 一个简单的 react 组件是下面这样的：它使用了useState这个hooks钩子函数
-{{< image src="images/blog/useState.png" caption="" alt="" height="" width="" position="center" command="fill"  class="img-fluid" title="useState"  webp="false" >}}
+![useState](/images/blog/useState.png)
 
 
 useSignal()就是 state 和 setState 的改良版本，它写起来是这样的：
-{{< image src="images/blog/useSignal.png" caption="" alt="" height="" width="" position="center" command="fill"  class="img-fluid" title="useSignal"  webp="false" >}}
+![useSignal](/images/blog/useSignal.png)
 
 
 虽然看起来没什么特别的，只是省略了一个 setState，但是两者的原理其实完全不同。Signals 和 State 之间的主要区别在于 Signals 返回一个 getter 和一个 setter ，而非响应式系统返回其值（和一个 setter ）。

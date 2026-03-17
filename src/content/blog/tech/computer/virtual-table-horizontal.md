@@ -18,7 +18,7 @@ tags: ["虚拟滚动table"]
 横向虚拟滚动
 当表格的列非常多时，也会导致表格渲染卡顿，所以如何在原生组件下实现了横向的虚拟滚动。横向虚拟滚动的开启前提是所有列的宽度都已知，这使横向的实现更加直截了当。根据当前的偏移量和最大渲染宽度，就可以精确地算出渲染范围，不再需要缓存来记录每一列的实际/预估宽度了。
 
-{{< image src="images/blog/virtual03.png" caption="" alt="" height="" width="" position="center" command="fill"  class="img-fluid" title="实现3"  webp="false" >}}
+![实现3](/images/blog/virtual03.png)
 
 不过左右两侧锁列的存在给实现带来了一定的麻烦：锁定的列不需要进行虚拟滚动。为了使横向虚拟滚动与锁列兼容，组件将所有列分为五个部分，从左至右依次为：left-lock, left-blank, center, right-blank, right-lock。根据 offset / maxRenderWidth 计算渲染范围时，组件要先根据锁列部分对输入进行调整，从而计算出非锁列部分的渲染范围（即算出 center 部分对应的下标）。在实际渲染时，组件会用一个宽度很大的单元格来替代 left-blank 所对应的多个单元格（right-blank 同理）。
 
@@ -40,7 +40,7 @@ tags: ["虚拟滚动table"]
 - 减少重渲染频率：滚动距离较小时，可以确保上一次的渲染内容仍会充满可视区域，不需要再触发 re-render
 - 减少白屏时间：缓慢滚动的时候，部分元素已经提前渲染好了，减少白屏时间
 
-{{< image src="images/blog/overscan.png" caption="" alt="" height="" width="" position="center" command="fill"  class="img-fluid" title="overscan"  webp="false" >}}
+![overscan](/images/blog/overscan.png)
 
 根据上述逻辑：ali-react-table 目前的延伸距离为 100px，在算出虚拟滚动的渲染范围（startIndex / endIndex）之后，组件会再根据 100px 去渲染额外的行或列。4 个方向都需要根据 overscan 调整渲染范围，其中向上的代码如下（其他方向的代码类似）：
 
@@ -103,11 +103,11 @@ ali-react-table/pivot 提供的交叉表（CrossTable）也是一个较为底层
 
 #### 虚拟滚动与单元格合并（解决方案）
 
-{{< image src="images/blog/col-rowspan01.png" caption="" alt="" height="" width="" position="center" command="fill"  class="img-fluid" title="row01"  webp="false" >}}
+![row01](/images/blog/col-rowspan01.png)
 
 虚拟滚动的一个问题是会导致单元格合并失效。如上图，左上角的单元格设置了 colSpan=3 和 rowSpan=3，当页面向上滚动时，因虚拟滚动该单元格未被渲染，导致其余单元格合并失效。
 
-{{< image src="images/blog/col-rowspan02.png" caption="" alt="" height="" width="" position="center" command="fill"  class="img-fluid" title="row01"  webp="false" >}}
+![row01](/images/blog/col-rowspan02.png)
 
 一种解法是为各个单元格平滑地设置 colSpan/rowSpan，这样不论实际渲染时左上角是哪一个单元格，所有渲染的单元格都能正确地进行合并。不过这种方式对于上层开发者来说心智负担太大，使用成本过高。
 

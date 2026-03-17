@@ -17,11 +17,11 @@ tags: ["远程部署web"]
 
 一系列操作之后就可以进入平台,我选择的都是默认的配置,然后点击`远程连接`,就可以进入到阿里提供的服务器上
 
-{{< image src="images/blog/build-web/1.png" caption="" alt="" height="" width="" position="center" command="fill"  class="img-fluid" title="1"  webp="false" >}}
+![1](/images/blog/build-web/1.png)
 
 阿里远程提供了一个简易版的ai助手,如果一时想不起linux命令就可以问问他,还是有点方便的
 
-{{< image src="images/blog/build-web/2.png" caption="" alt="" height="" width="" position="center" command="fill"  class="img-fluid" title="2"  webp="false" >}}
+![2](/images/blog/build-web/2.png)
 
 
 ## 二、远程服务器环境搭建
@@ -55,7 +55,7 @@ node -v      输出版本号 16.14.0 即为配置成功
 
 由于我的项目是大于18的所以我配置了20的环境变量
 
-{{< image src="images/blog/build-web/3.png" caption="" alt="" height="" width="" position="center" command="fill"  class="img-fluid" title="3"  webp="false" >}}
+![3](/images/blog/build-web/3.png)
 
 
 ### 3.sudo yum -y install nginx
