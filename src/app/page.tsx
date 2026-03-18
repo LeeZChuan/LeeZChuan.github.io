@@ -8,22 +8,21 @@ export default function HomePage() {
     <div className="max-w-2xl mx-auto px-6 py-20">
       <div className="mb-14">
         <h1 className="text-3xl font-bold text-gray-900 dark:text-[rgba(255,255,255,0.87)] mb-4">
-          YourName
+          LeeZChuan
         </h1>
 
         <p className="text-base text-gray-600 dark:text-[rgba(255,255,255,0.60)] leading-relaxed mb-4">
-          全栈开发者，热爱开源与构建。
+          作为一名全栈开发者，我精通 Vue 3、React、Node.js 和 Java。在编码之外，我同样热衷于滑雪、骑行、徒步以及摄影，在技术与自然中寻找平衡与灵感。
         </p>
 
         <p className="text-base text-gray-600 dark:text-[rgba(255,255,255,0.60)] leading-relaxed mb-4">
-          专注于 Web 技术，喜欢研究性能优化与开发者体验。
-          业余时间维护一些开源项目，偶尔写写技术文章与随想。
+          加入我的旅程，一起探索技术的力量、户外生活的魅力，以及镜头背后的世界。
         </p>
 
         <p className="text-base text-gray-600 dark:text-[rgba(255,255,255,0.60)] leading-relaxed">
           在{' '}
           <a
-            href="https://github.com/yourname"
+            href="https://github.com/LeeZChuan"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-800 dark:text-[rgba(255,255,255,0.80)] underline underline-offset-2 decoration-gray-300 dark:decoration-white/20 hover:decoration-gray-500 dark:hover:decoration-white/50 transition-colors"
@@ -32,7 +31,7 @@ export default function HomePage() {
           </a>{' '}
           可以看到我维护的项目。欢迎通过{' '}
           <a
-            href="mailto:hello@example.com"
+            href="mailto:cdutlzc@gmail.com"
             className="text-gray-800 dark:text-[rgba(255,255,255,0.80)] underline underline-offset-2 decoration-gray-300 dark:decoration-white/20 hover:decoration-gray-500 dark:hover:decoration-white/50 transition-colors"
           >
             Email

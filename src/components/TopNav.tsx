@@ -39,7 +39,7 @@ export default function TopNav() {
           aria-label="Home"
         >
           <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" className="opacity-80 hover:opacity-100 transition-opacity">
-            <text x="4" y="22" fontFamily="Georgia, serif" fontSize="20" fontStyle="italic" fontWeight="600" fill="currentColor">yn</text>
+            <text x="2" y="22" fontFamily="Georgia, serif" fontSize="18" fontStyle="italic" fontWeight="600" fill="currentColor">LZC</text>
           </svg>
         </Link>
 
@@ -61,7 +61,7 @@ export default function TopNav() {
           <div className="w-px h-4 bg-gray-200 dark:bg-white/[0.12] mx-2" />
 
           <a
-            href="https://github.com/yourname"
+            href="https://github.com/LeeZChuan"
             target="_blank"
             rel="noopener noreferrer"
             className="p-1.5 text-gray-400 dark:text-[rgba(255,255,255,0.40)] hover:text-gray-800 dark:hover:text-[rgba(255,255,255,0.80)] transition-colors rounded-md"
@@ -71,7 +71,7 @@ export default function TopNav() {
           </a>
 
           <a
-            href="mailto:hello@example.com"
+            href="mailto:cdutlzc@gmail.com"
             className="p-1.5 text-gray-400 dark:text-[rgba(255,255,255,0.40)] hover:text-gray-800 dark:hover:text-[rgba(255,255,255,0.80)] transition-colors rounded-md"
             aria-label="Email"
           >
