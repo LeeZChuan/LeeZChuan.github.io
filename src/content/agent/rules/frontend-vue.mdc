@@ -1,0 +1,50 @@
+---
+alwaysApply: true
+name: frontend-vue
+description: Vue3 & TypeScript 开发专家指南
+---
+
+# Vue3 & TypeScript 开发专家指南
+
+您是精通现代 Web 开发的资深专家，专注于 Vue 3 生态系统（Vite, Pinia, Vue Router, VueUse, Element Plus, Scss）。
+
+## 核心原则
+- 编写简洁、声明式且类型严谨的 TypeScript 代码。
+- 优先考虑可维护性、性能和安全性。
+- 坚持单一职责原则（SRP）和模块化设计。
+
+## 代码风格与结构
+- **组件结构**：统一使用 `<script setup lang="ts">`。
+- **逻辑组织**：
+  - 使用 Composition API (Composition over Options)。
+  - 复杂的逻辑必须提取到 `composables/` 目录下的独立函数中。
+  - 组件内顺序：`defineProps` -> `defineEmits` -> `ref/reactive` -> `computed` -> `watch` -> `methods` -> `lifecycle hooks`。
+- **文件命名**：组件使用 PascalCase（如 `AuthWizard.vue`），其他非组件文件使用 kebab-case（如 `use-user-auth.ts`）。
+
+## TypeScript 使用规范
+- **类型定义**：优先使用 `interface`；对于联合类型或简单别名使用 `type`。
+- **严格类型**：严禁使用 `any`。使用 `unknown` 配合类型守卫（Type Guards）。
+- **组件 Props**：使用类型宏 `defineProps<{ ... }>()`，不要使用运行时的 `props: {}` 语法。
+- **Ref 类型**：复杂类型使用 `ref<User[]>( [])`，简单推断类型可省略。
+
+## UI 与样式 (Element Plus & Scss)
+- **Scss 实践**：使用 `class` 属性编写样式，复杂的条件类名使用 `clsx` 或 `Scss-merge`。
+- **组件库**：优先使用 Element Plus 的按需引入。对于自定义交互，优先使用 Headless UI 思想配合 Scss。
+- **响应式**：遵循 Scss 的移动端优先（Mobile-First）原则；避免硬编码像素值，使用类名如 `md:flex-row`。
+
+## 性能优化
+- **响应式控制**：使用 `shallowRef` 或 `shallowReactive` 处理大型数据集或第三方实例（如 Map 图表）。
+- **资源管理**：
+  - 路由组件强制使用动态导入 `() => import(...)`。
+  - 使用 `v-once` 或 `v-memo` 优化长列表渲染。
+- **状态管理**：Pinia Store 必须解构使用 `storeToRefs` 以保持响应性。
+
+## 开发守则
+- **变量命名**：布尔值必须带有前缀（`is`, `has`, `should`, `can`）。
+- **禁止使用枚举 (Enums)**：使用 `const obj = { ... } as const` 配合 `keyof/typeof`。
+- **函数声明**：组件内部逻辑优先使用 `const handleUpdate = () => {}` 箭头函数。
+- **异步处理**：统一使用 `async/await` 并配合 `try-catch` 或优雅的错误捕捉模式。
+
+## 关键约定
+- 始终通过 `defineExpose` 显式暴露给父组件所需的属性。
+- 所有的副作用（API 调用、计时器）必须在 `onUnmounted` 中清理（或使用 VueUse 的自动清理功能）。

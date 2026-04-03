@@ -4,6 +4,7 @@ export const translations = {
       blog: '文章',
       projects: '项目',
       about: '关于',
+      agent: '智能体',
     },
     home: {
       bio1: '作为一名全栈开发者，我精通 Vue 3、React、Node.js 和 Java。在编码之外，我同样热衷于滑雪、骑行、徒步以及摄影，在技术与自然中寻找平衡与灵感。',
@@ -43,6 +44,9 @@ export const translations = {
       prompt: 'Prompt',
       skill: 'Skill',
       rules: 'Rules',
+      empty: '该分类暂无内容',
+      copy: '复制',
+      copied: '已复制',
     },
   },
   en: {
@@ -50,6 +54,7 @@ export const translations = {
       blog: 'Blog',
       projects: 'Projects',
       about: 'About',
+      agent: 'Agent',
     },
     home: {
       bio1: "A full-stack developer proficient in Vue 3, React, Node.js, and Java. Beyond coding, I'm passionate about skiing, cycling, hiking, and photography — finding balance between technology and the outdoors.",
@@ -89,6 +94,9 @@ export const translations = {
       prompt: 'Prompt',
       skill: 'Skill',
       rules: 'Rules',
+      empty: 'No content in this category yet.',
+      copy: 'Copy',
+      copied: 'Copied',
     },
   },
 } as const;

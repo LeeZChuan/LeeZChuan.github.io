@@ -28,6 +28,7 @@ export default function TopNav() {
     { href: '/blog', label: t.blog },
     { href: '/projects', label: t.projects },
     { href: '/about', label: t.about },
+    { href: '/agent', label: t.agent },
   ];
 
   function isActive(href: string) {
