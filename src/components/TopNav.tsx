@@ -3,12 +3,8 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import ThemeToggle from './ThemeToggle';
-
-const navLinks = [
-  { href: '/blog', label: 'Blog' },
-  { href: '/projects', label: 'Projects' },
-  { href: '/about', label: 'About' },
-];
+import { useLang } from '@/contexts/LangContext';
+import { translations } from '@/lib/i18n';
 
 const GitHubIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
@@ -25,6 +21,14 @@ const EmailIcon = () => (
 
 export default function TopNav() {
   const pathname = usePathname();
+  const { lang, toggleLang } = useLang();
+  const t = translations[lang].nav;
+
+  const navLinks = [
+    { href: '/blog', label: t.blog },
+    { href: '/projects', label: t.projects },
+    { href: '/about', label: t.about },
+  ];
 
   function isActive(href: string) {
     return pathname.startsWith(href);
@@ -39,7 +43,7 @@ export default function TopNav() {
           aria-label="Home"
         >
           <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" className="opacity-80 hover:opacity-100 transition-opacity">
-            <text x="4" y="22" fontFamily="Georgia, serif" fontSize="20" fontStyle="italic" fontWeight="600" fill="currentColor">yn</text>
+            <text x="2" y="22" fontFamily="Georgia, serif" fontSize="18" fontStyle="italic" fontWeight="600" fill="currentColor">LZC</text>
           </svg>
         </Link>
 
@@ -61,7 +65,7 @@ export default function TopNav() {
           <div className="w-px h-4 bg-gray-200 dark:bg-white/[0.12] mx-2" />
 
           <a
-            href="https://github.com/yourname"
+            href="https://github.com/LeeZChuan"
             target="_blank"
             rel="noopener noreferrer"
             className="p-1.5 text-gray-400 dark:text-[rgba(255,255,255,0.40)] hover:text-gray-800 dark:hover:text-[rgba(255,255,255,0.80)] transition-colors rounded-md"
@@ -71,12 +75,20 @@ export default function TopNav() {
           </a>
 
           <a
-            href="mailto:hello@example.com"
+            href="mailto:cdutlzc@gmail.com"
             className="p-1.5 text-gray-400 dark:text-[rgba(255,255,255,0.40)] hover:text-gray-800 dark:hover:text-[rgba(255,255,255,0.80)] transition-colors rounded-md"
             aria-label="Email"
           >
             <EmailIcon />
           </a>
+
+          <button
+            onClick={toggleLang}
+            className="p-1.5 rounded-md text-gray-400 dark:text-[rgba(255,255,255,0.40)] hover:text-gray-800 dark:hover:text-[rgba(255,255,255,0.80)] transition-colors text-xs font-medium tracking-wide min-w-[28px]"
+            aria-label="Switch language"
+          >
+            {lang === 'zh' ? 'EN' : '中'}
+          </button>
 
           <ThemeToggle />
         </div>

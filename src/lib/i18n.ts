@@ -1,0 +1,84 @@
+export const translations = {
+  zh: {
+    nav: {
+      blog: '文章',
+      projects: '项目',
+      about: '关于',
+    },
+    home: {
+      bio1: '作为一名全栈开发者，我精通 Vue 3、React、Node.js 和 Java。在编码之外，我同样热衷于滑雪、骑行、徒步以及摄影，在技术与自然中寻找平衡与灵感。',
+      bio2: '加入我的旅程，一起探索技术的力量、户外生活的魅力，以及镜头背后的世界。',
+      bio3Pre: '在',
+      bio3Mid: '可以看到我维护的项目。欢迎通过',
+      bio3Post: '交流。',
+      recentPosts: '最近文章',
+      allPosts: '全部 →',
+    },
+    about: {
+      techStack: '技术栈',
+      frontend: '前端：',
+      backend: '后端：',
+      tools: '工具：',
+      interests: '兴趣爱好',
+      interestItems: ['滑雪 · 骑行 · 徒步', '摄影', 'Vibe Coding · AI Agents'],
+      contact: '联系',
+      bio: '作为一名全栈开发者，我精通 Vue 3、React、Node.js 和 Java。在编码之外，我同样热衷于滑雪、骑行、徒步以及摄影，在技术与自然中寻找平衡与灵感。加入我的旅程，一起探索技术的力量、户外生活的魅力，以及镜头背后的世界。',
+    },
+    projects: {
+      title: 'Projects',
+      subtitle: '参与构建或独立负责的项目与开源作品',
+      featured: '代表项目',
+      others: '涉猎并参与的项目',
+      visitProject: '访问项目',
+    },
+    blog: {
+      title: 'Blog',
+      totalPosts: (n: number) => `共 ${n} 篇文章`,
+      all: '全部',
+      prevPage: '上一页',
+      nextPage: '下一页',
+    },
+  },
+  en: {
+    nav: {
+      blog: 'Blog',
+      projects: 'Projects',
+      about: 'About',
+    },
+    home: {
+      bio1: "A full-stack developer proficient in Vue 3, React, Node.js, and Java. Beyond coding, I'm passionate about skiing, cycling, hiking, and photography — finding balance between technology and the outdoors.",
+      bio2: 'Join my journey as we explore the power of technology, the beauty of outdoor life, and the world behind the lens.',
+      bio3Pre: 'Find my maintained projects on',
+      bio3Mid: '. Feel free to reach out via',
+      bio3Post: '.',
+      recentPosts: 'Recent Posts',
+      allPosts: 'All →',
+    },
+    about: {
+      techStack: 'Tech Stack',
+      frontend: 'Frontend: ',
+      backend: 'Backend: ',
+      tools: 'Tools: ',
+      interests: 'Interests',
+      interestItems: ['Skiing · Cycling · Hiking', 'Photography', 'Vibe Coding · AI Agents'],
+      contact: 'Contact',
+      bio: "A full-stack developer proficient in Vue 3, React, Node.js, and Java. Beyond coding, I'm passionate about skiing, cycling, hiking, and photography — finding balance between technology and the outdoors. Join my journey as we explore the power of technology, the beauty of outdoor life, and the world behind the lens.",
+    },
+    projects: {
+      title: 'Projects',
+      subtitle: "Projects and open-source work I've built or contributed to",
+      featured: 'Featured',
+      others: 'Other Projects',
+      visitProject: 'Visit Project',
+    },
+    blog: {
+      title: 'Blog',
+      totalPosts: (n: number) => `${n} posts`,
+      all: 'All',
+      prevPage: 'Previous',
+      nextPage: 'Next',
+    },
+  },
+} as const;
+
+export type Translations = typeof translations;

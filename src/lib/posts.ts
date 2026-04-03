@@ -12,8 +12,9 @@ const postsDir = path.join(process.cwd(), 'src/content/blog');
 
 export const CATEGORIES: Record<string, { label: string; description: string }> = {
   tech: { label: '技术', description: '前端、后端、框架与语言' },
-  tools: { label: '工具', description: '工作流、效率工具与配置' },
-  journal: { label: '随想', description: '思考、感悟与博客日志' },
+  business: { label: '商业', description: '互联网商业与产品思维' },
+  notes: { label: '笔记', description: '工作记录与架构设计' },
+  life: { label: '生活', description: '阅读、旅行与日常思考' },
 };
 
 export interface PostMeta {
@@ -34,15 +35,16 @@ function scanPostFiles(): Array<{ slug: string; filePath: string; category: stri
   if (!fs.existsSync(postsDir)) return [];
   const results: Array<{ slug: string; filePath: string; category: string }> = [];
 
-  function walk(dir: string, category: string) {
+  function walk(dir: string, topCategory: string) {
     const entries = fs.readdirSync(dir, { withFileTypes: true });
     for (const entry of entries) {
       const fullPath = path.join(dir, entry.name);
       if (entry.isDirectory()) {
-        walk(fullPath, entry.name);
+        const nextTop = topCategory === '' ? entry.name : topCategory;
+        walk(fullPath, nextTop);
       } else if (entry.isFile() && entry.name.endsWith('.md')) {
         const slug = entry.name.replace(/\.md$/, '');
-        results.push({ slug, filePath: fullPath, category });
+        results.push({ slug, filePath: fullPath, category: topCategory });
       }
     }
   }
@@ -74,6 +76,33 @@ export function getAllPosts(): PostMeta[] {
     .sort((a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf());
 }
 
+const NOTICE_ICONS: Record<string, string> = {
+  note: '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>',
+  warning: '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>',
+  tip: '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>',
+  danger: '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>',
+};
+
+const NOTICE_LABELS: Record<string, string> = {
+  note: '备注',
+  warning: '注意',
+  tip: '提示',
+  danger: '警告',
+};
+
+function transformNoticeShortcodes(content: string): string {
+  return content.replace(
+    /\{\{<\s*notice\s+"(\w+)"\s*>\}\}([\s\S]*?)\{\{<\s*\/notice\s*>\}\}/g,
+    (_, type: string, inner: string) => {
+      const t = type.toLowerCase();
+      const icon = NOTICE_ICONS[t] ?? NOTICE_ICONS.note;
+      const label = NOTICE_LABELS[t] ?? type;
+      const body = inner.trim();
+      return `<div class="notice notice-${t}"><div class="notice-header">${icon}<span>${label}</span></div><div class="notice-body">\n\n${body}\n\n</div></div>`;
+    }
+  );
+}
+
 export async function getPostBySlug(slug: string): Promise<Post | null> {
   const files = scanPostFiles();
   const found = files.find((f) => f.slug === slug);
@@ -82,13 +111,15 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
   const fileContents = fs.readFileSync(found.filePath, 'utf8');
   const { data, content } = matter(fileContents);
 
+  const transformedContent = transformNoticeShortcodes(content);
+
   const processed = await unified()
     .use(remarkParse)
     .use(remarkGfm)
     .use(remarkRehype, { allowDangerousHtml: true })
     .use(rehypeSlug)
     .use(rehypeStringify, { allowDangerousHtml: true })
-    .process(content);
+    .process(transformedContent);
 
   return {
     slug,
