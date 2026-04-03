@@ -38,6 +38,12 @@ export const translations = {
       prevPage: '上一页',
       nextPage: '下一页',
     },
+    agent: {
+      title: 'Agent',
+      prompt: 'Prompt',
+      skill: 'Skill',
+      rules: 'Rules',
+    },
   },
   en: {
     nav: {
@@ -77,6 +83,12 @@ export const translations = {
       all: 'All',
       prevPage: 'Previous',
       nextPage: 'Next',
+    },
+    agent: {
+      title: 'Agent',
+      prompt: 'Prompt',
+      skill: 'Skill',
+      rules: 'Rules',
     },
   },
 } as const;
