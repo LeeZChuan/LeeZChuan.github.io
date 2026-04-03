@@ -2,7 +2,7 @@
 title: Claude Code 官方文章重要整理
 description: 阅读cc官方文章
 date: 2026-04-03
-tags: [cc, ai, AI辅助编程]
+tags: [Claude Code, ai, AI辅助编程]
 ---
 
 文章链接:https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents
