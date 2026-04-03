@@ -3,29 +3,20 @@
 import { useLang } from '@/contexts/LangContext';
 import { translations } from '@/lib/i18n';
 
-type FeaturedProject = {
-  name: string;
-  descriptionZh: string;
-  descriptionEn: string;
-  github?: string;
-  url?: string;
-  agentUrl?: string;
-  tags: string[];
-  date?: string;
-};
-
-type OtherProject = {
+type Project = {
   name: string;
   nameEn?: string;
   descriptionZh: string;
   descriptionEn: string;
   github?: string;
   url?: string;
+  agentUrl?: string;
   tags: string[];
   date: string;
+  isAgent?: boolean;
 };
 
-const featured: FeaturedProject[] = [
+const projects: Project[] = [
   {
     name: 'aimarket-analysis-platform',
     descriptionZh: '基于 React 18 + TypeScript + Vite 的 AI 股票分析交易平台。用户可与图表交互提取范围数据，组装成结构化内容传给 LLM 进行对话，同时设计了 RAG 方案提升对话质量。后端基于 Node.js + Express + Prisma，数据来源为 yfinance 海外股票历史数据。',
@@ -33,41 +24,39 @@ const featured: FeaturedProject[] = [
     github: 'https://github.com/LeeZChuan/aimarket-analysis-platform',
     agentUrl: 'http://39.106.35.58/',
     tags: ['React 18', 'TypeScript', 'Vite', 'Node.js', 'Prisma', 'RAG', 'LLM'],
-    date: '2024-12',
+    date: '2025-10',
+    isAgent: true,
   },
   {
     name: 'znz-ui',
     descriptionZh: '基于 Element Plus 封装的企业级业务组件库，包含 Table、Date 等高频业务组件，使用 BEM 语法与组件抽象定义。集成虚拟滚动技术，支持超过 100k 个单元格的大数据表格，发布至内网 npm 仓库，开箱即用。',
     descriptionEn: 'An enterprise-grade component library built on top of Element Plus, featuring high-frequency business components like Table and Date pickers with BEM conventions. Integrated virtual scrolling supports large tables with 100k+ cells. Published to internal npm registry.',
     tags: ['Vue 3', 'Element Plus', 'TypeScript', 'Virtual Scroll', 'BEM', 'Monorepo'],
-    date: '2023-06',
+    date: '2024-12',
   },
   {
-    name: 'ZRender 矩形树图',
+    name: 'znz-ui 组件库',
+    nameEn: 'znz-ui Components',
+    descriptionZh: '为支持 Win7/XP 低版本浏览器，使用 OOP 模式在 Vue 中封装带虚拟滚动、分页、子列展开的原生表格，支持左侧固定列。',
+    descriptionEn: 'A native table component for legacy browsers (Win7/XP) built with OOP patterns in Vue, featuring virtual scrolling, pagination, expandable sub-rows, and fixed left columns.',
+    tags: ['Vue', 'JavaScript', 'OOP'],
+    date: '2024-10',
+  },
+  {
+    name: 'ZCharts',
     descriptionZh: '基于 ZRender 底层渲染引擎从零实现的矩形树图（Treemap）组件，用于板块数据可视化展示。支持缩放、拖拽交互，参考主流图表平台设计理念，采用合理的功能划分与封装架构，使用 Rollup 打包发布。',
     descriptionEn: 'A Treemap component built from scratch using the ZRender rendering engine for sector data visualization. Supports zoom and drag interactions, inspired by leading charting platforms. Packaged and distributed via Rollup.',
     tags: ['TypeScript', 'ZRender', 'Visualization', 'Rollup'],
-    date: '2022-09',
+    date: '2024-08',
   },
-];
-
-const others: OtherProject[] = [
   {
-    name: '行情 K 线图表库',
+    name: '基于开源klinechart定制化修改的业务行情图表库',
     nameEn: 'KLineCharts',
     descriptionZh: '基于开源 klinecharts 定制化修改的业务行情组件，已应用于 App 引导学习等页面。',
     descriptionEn: 'Customized financial charting component based on open-source klinecharts, used in app onboarding and learning pages.',
     url: 'https://klinecharts.com/',
     tags: ['TypeScript', 'pnpm', 'Rollup'],
     date: '2025-01',
-  },
-  {
-    name: '原生多场景表格组件',
-    nameEn: 'Native Table',
-    descriptionZh: '为支持 Win7/XP 低版本浏览器，使用 OOP 模式在 Vue 中封装带虚拟滚动、分页、子列展开的原生表格，支持左侧固定列。',
-    descriptionEn: 'A native table component for legacy browsers (Win7/XP) built with OOP patterns in Vue, featuring virtual scrolling, pagination, expandable sub-rows, and fixed left columns.',
-    tags: ['Vue', 'JavaScript', 'OOP'],
-    date: '2024',
   },
   {
     name: '易盘点 SaaS 平台',
@@ -139,6 +128,17 @@ const GitHubIcon = () => (
   </svg>
 );
 
+const AgentIcon = () => (
+  <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 22" fill="currentColor">
+    <g fill="currentColor">
+      <path d="M3.34 15.12c-.4-.3-.71-.66-.97-1.06-.22-.33-.48-.64-.7-.97C.64 11.53.54 9.9 1.36 8.22c.24-.49.51-.96.86-1.36.33-.38.54-.82.8-1.24.9-1.44 2.2-2.35 3.83-2.73.85-.2 1.64-.56 2.45-.84 1.32-.46 2.68-.75 4.08-.77 2.4-.03 4.56.72 6.5 2.13 1.25.91 2.32 2.02 3.3 3.22.4.48.85.92 1.15 1.48.81 1.51.76 2.96-.22 4.37-.14.2-.15.32-.02.53.59.92.51 1.87.05 2.81-.6 1.22-1.6 2.02-2.8 2.6-.49.23-1 .39-1.55.52.06.28.12.54.18.8.12.52-.21.97-.74.99s-1.06.01-1.6 0c-.25 0-.46-.12-.63-.32-.67-.75-1.35-1.5-2.02-2.25a.56.56 0 0 0-.42-.2c-.85-.03-1.66-.21-2.28-.86-.08-.08-.16-.07-.26-.05-.77.15-1.55.21-2.33.05-1.05-.21-1.84-.79-2.39-1.7-.1-.17-.19-.19-.37-.12-.83.33-1.69.51-2.59.29-.35-.09-.68-.23-.99-.45m6.78-11.69c-.13.06-.05.11 0 .18.12.16.24.31.35.47.13.19.19.4.13.62-.09.33-.29.55-.64.6-.33.05-.61-.06-.78-.35-.38-.63-.89-.82-1.61-.65-1.55.37-2.77 1.16-3.48 2.63-.26.53-.28 1.07-.09 1.62.28.82.88 1.22 1.73 1.27.48.03.74.36.71.84-.02.41-.35.7-.79.7-1.28-.01-2.22-.59-2.87-1.68-.06-.1-.11-.2-.19-.34-.25.65-.29 1.28-.1 1.9.35 1.1 1.12 1.92 1.94 2.69.22.21.53.21.82.19.55-.04 1.05-.24 1.54-.47.45-.21.9-.44 1.25-.81.27-.27.41-.58.28-.98-.13-.43.09-.84.5-.97.42-.13.84.08.99.52.31.92.06 1.72-.55 2.43-.21.24-.46.44-.72.65l.07.14c.42.67 1.05.98 1.82 1.03.63.04 1.24-.1 1.85-.25.45-.11.81.02.97.39.15.35.43.5.77.57.36.07.73.08 1.1.09.25 0 .46.09.62.28.64.72 1.29 1.43 1.93 2.14.08.09.16.17.24.26.05.06.13.07.2.04.09-.04.06-.12.04-.18-.03-.15-.08-.3-.11-.45-.11-.53.17-.93.72-.99.98-.12 1.91-.42 2.72-1 .57-.4 1.06-.88 1.32-1.55.25-.63.1-1.1-.45-1.49a.8.8 0 0 1-.32-.39c-.13-.35-.04-.65.23-.89.44-.41.82-.87.97-1.47.22-.87-.04-1.64-.6-2.31-.36-.44-.73-.88-1.11-1.31-.29-.33-.59-.65-.89-.97-.04-.04-.07-.11-.16-.09-.05.08-.11.16-.16.25-.28.42-.65.74-1.1.96-.59.29-1.17-.1-1.14-.75.01-.32.19-.52.45-.66.3-.16.52-.4.64-.72.07-.17.03-.27-.11-.37-.44-.31-.89-.6-1.37-.86-.88-.46-1.09-.42-1.71.37-.02.02-.04.05-.06.08-.58.76-.65 1.64-.56 2.55.04.45-.24.84-.7.9-.4.05-.8-.28-.85-.7-.05-.37-.07-.75-.04-1.12.08-1.02.38-1.96 1.06-2.75.05-.06.13-.11.12-.24-1.65-.27-3.24-.05-4.84.47Z"/>
+      <path d="M18.86 20.74c-.31 0-.62 0-.92-.01-.21 0-.39-.1-.56-.29l-2.05-2.27a.65.65 0 0 0-.5-.24c-.7-.02-1.58-.14-2.24-.84a.33.33 0 0 0-.23-.1c-.04 0-.08 0-.13.02-.5.09-.94.14-1.35.14-.34 0-.65-.03-.96-.09-1.02-.21-1.81-.77-2.35-1.67-.06-.1-.15-.21-.3-.21a.4.4 0 0 0-.2.05c-.66.26-1.22.39-1.76.39-.27 0-.54-.03-.79-.1-.35-.09-.67-.23-.97-.44-.36-.26-.67-.6-.96-1.04-.11-.17-.24-.34-.36-.5s-.24-.31-.34-.48C.87 11.52.77 9.9 1.58 8.24c.28-.57.55-1 .86-1.36.24-.28.42-.59.59-.89.07-.12.14-.25.22-.37.88-1.41 2.16-2.33 3.81-2.72.59-.14 1.16-.36 1.71-.57.26-.1.52-.2.78-.29 1.45-.51 2.78-.76 4.09-.77h.12c2.29 0 4.45.72 6.39 2.13 1.12.81 2.17 1.84 3.32 3.23.11.13.22.25.33.38.3.34.6.69.82 1.1.81 1.5.73 2.95-.22 4.31-.17.24-.17.41-.02.65.53.82.54 1.72.04 2.74-.53 1.1-1.44 1.94-2.78 2.58-.52.25-1.08.4-1.55.52l-.09.02.2.91c.05.23 0 .45-.12.62-.12.16-.31.25-.54.26-.23 0-.46.01-.69.01Zm-6.01-5.25c.28 0 .49.13.59.37.15.35.42.55.86.63.37.07.75.08 1.13.09.23 0 .41.08.56.25L17.94 19c.08.09.16.18.24.26.05.05.12.08.19.08h.02l.09-.02c.16-.07.12-.22.11-.28l-.12-.48c-.05-.24-.02-.44.1-.6.11-.16.3-.26.54-.29 1.1-.14 2.02-.48 2.8-1.03.71-.51 1.14-1.01 1.37-1.61.26-.68.11-1.21-.49-1.63a.7.7 0 0 1-.29-.35c-.11-.3-.05-.56.21-.79.56-.52.87-.99 1.01-1.53.22-.85 0-1.66-.62-2.43-.37-.45-.74-.89-1.12-1.32-.24-.28-.49-.54-.74-.81L21.08 6c-.05-.06-.1-.13-.21-.13h-.04l-.07.05-.16.25c-.26.4-.62.71-1.07.93q-.18.09-.36.09c-.18 0-.34-.07-.46-.19a.77.77 0 0 1-.19-.56c.01-.26.14-.44.41-.58.33-.17.56-.43.7-.78.08-.21.04-.37-.15-.5-.54-.38-.97-.65-1.4-.87-.37-.19-.65-.31-.89-.31-.35 0-.59.23-.97.71-.72.95-.72 1.95-.65 2.72.04.41-.22.74-.62.8-.39 0-.69-.28-.74-.62-.05-.4-.07-.76-.04-1.11.08-1.11.42-2 1.05-2.72.08-.08.16-.17.15-.31v-.08l-.08-.01q-.72-.12-1.47-.12c-1.1 0-2.24.19-3.48.6l-.05.02-.08.12c-.02.08.03.14.06.18l.08.11c.1.13.19.25.28.39.13.19.16.37.12.55-.08.31-.27.49-.56.54-.05 0-.09.01-.14.01-.24 0-.43-.11-.55-.32-.31-.52-.72-.77-1.24-.77-.15 0-.32.02-.49.06-1.72.41-2.9 1.3-3.59 2.72-.27.54-.3 1.12-.1 1.71.29.84.9 1.29 1.84 1.35.42.02.65.3.63.74-.02.36-.3.61-.69.61-1.24-.01-2.18-.57-2.82-1.65l-.29-.53-.08.2c-.27.7-.3 1.35-.1 1.99.38 1.17 1.22 2.04 1.99 2.76.22.21.5.23.69.23h.22c.6-.05 1.14-.27 1.59-.48s.92-.46 1.3-.84c.33-.35.43-.69.31-1.09-.12-.38.07-.74.44-.86a.8.8 0 0 1 .22-.03c.3 0 .55.19.65.49.28.83.11 1.61-.54 2.36-.2.23-.44.42-.69.62l-.07.05v.09c.06.09.07.12.09.15.42.67 1.07 1.03 1.92 1.09h.22c.57 0 1.12-.12 1.68-.26.1-.02.19-.04.28-.04Z"/>
+      <path d="M15.48 11.27c.36.03.7.05 1.03.15.12.03.18 0 .21-.11.11-.41.18-.82.07-1.24-.08-.31-.25-.55-.53-.73-.42-.26-.55-.74-.31-1.12.23-.37.7-.48 1.13-.24.82.47 1.22 1.21 1.33 2.12.07.61 0 1.21-.2 1.8-.06.17 0 .26.13.35.6.42 1.09.93 1.4 1.6.21.45.27.92.23 1.41-.04.48-.45.83-.88.76-.47-.07-.76-.48-.69-.96.06-.39-.12-.71-.37-.99-.51-.57-1.15-.93-1.89-1.12-.23-.06-.46-.1-.7-.1-.52 0-.94.16-1.22.63-.17.29-.45.4-.77.36-.33-.05-.56-.24-.65-.58a.79.79 0 0 1 .07-.6c.45-.81 1.16-1.22 2.05-1.36.18-.03.36-.03.56-.04ZM7.79 8.81c-.19-.14-.34-.28-.45-.47-.21-.35-.16-.76.13-1.01.3-.26.76-.3 1.04 0 .29.31.62.34.99.28.43-.07.81-.25 1.13-.56a.58.58 0 0 0 .2-.53c-.08-.58.17-.98.65-1.04s.87.3.93.86c.05.47-.02.93-.28 1.34-.07.11-.07.2.02.29.13.15.27.29.45.38.13.06.25.06.39.01.49-.16.92.04 1.07.47.15.45-.08.87-.57 1.04-.84.29-1.76.03-2.43-.74-.19-.22-.33-.26-.61-.16-.7.27-1.42.34-2.15.09-.17-.06-.33-.14-.5-.25Zm13.86 2.01c-.38.07-.73.14-1.09.2-.41.07-.82-.18-.91-.57-.1-.41.11-.83.51-.94.46-.12.94-.22 1.41-.28.42-.06.77.26.84.7.05.35-.21.73-.58.84-.05.02-.11.03-.18.04"/>
+      <path d="M19.09 15.93c-.41-.06-.67-.42-.61-.85.07-.49-.19-.84-.39-1.07-.49-.56-1.13-.94-1.94-1.15-.26-.07-.5-.1-.73-.1-.61 0-1.03.22-1.3.68-.12.21-.31.32-.55.32h-.12a.64.64 0 0 1-.57-.5.68.68 0 0 1 .06-.52c.41-.74 1.06-1.17 1.98-1.31.12-.02.24-.02.37-.03h.19c.39.02.7.05.99.13l.11.02c.11 0 .19-.07.22-.2.11-.41.19-.84.07-1.29-.09-.35-.28-.61-.57-.79-.37-.23-.49-.64-.28-.99.12-.2.33-.32.57-.32.14 0 .28.04.42.11.75.42 1.16 1.09 1.28 2.05.07.56 0 1.15-.19 1.75-.08.25.03.37.17.46.64.44 1.08.95 1.37 1.56.19.41.26.86.22 1.36-.03.38-.33.68-.68.68zm1.33-5c-.32 0-.6-.21-.67-.51-.09-.38.1-.73.44-.82.48-.13.95-.22 1.4-.28h.01c.4 0 .66.25.71.62.04.3-.19.64-.51.73-.05.01-.1.03-.17.04l-1.09.2s-.08.01-.12.01ZM12.8 9.89c-.62 0-1.21-.29-1.67-.82-.11-.13-.24-.25-.44-.25-.08 0-.17.02-.29.06-.41.16-.81.24-1.19.24-.3 0-.6-.05-.89-.15-.16-.05-.31-.13-.47-.24-.2-.15-.33-.28-.43-.44-.19-.31-.14-.66.11-.89.13-.12.31-.19.48-.19.11 0 .28.03.42.18.22.22.47.33.78.33q.15 0 .3-.03c.46-.08.86-.28 1.18-.59.19-.19.27-.39.23-.62-.04-.28 0-.52.13-.69.1-.13.25-.21.44-.24h.01c.47 0 .76.32.8.77.05.51-.04.93-.27 1.28-.1.15-.09.28.03.41.12.14.28.3.49.4q.12.06.24.06c.07 0 .14-.01.22-.04.1-.03.2-.05.29-.05.31 0 .55.17.64.45.13.39-.07.76-.51.91-.21.07-.43.11-.65.11Z"/>
+    </g>
+  </svg>
+);
+
 export default function ProjectsContent() {
   const { lang } = useLang();
   const t = translations[lang].projects;
@@ -150,66 +150,12 @@ export default function ProjectsContent() {
         <p className="text-sm text-gray-500 dark:text-gray-400">{t.subtitle}</p>
       </div>
 
-      <section className="mb-12">
+      <section>
         <h2 className="text-xs font-medium text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-6">
           {t.featured}
         </h2>
         <div className="space-y-4">
-          {featured.map((project) => (
-            <div
-              key={project.name}
-              className="p-5 rounded-xl border border-gray-100 dark:border-gray-800 hover:border-gray-200 dark:hover:border-gray-700 transition-colors"
-            >
-              <div className="flex items-start justify-between gap-4 mb-2">
-                <div className="flex items-center gap-3 min-w-0">
-                  <h3 className="font-medium text-gray-900 dark:text-gray-100 font-mono text-sm">
-                    {project.name}
-                  </h3>
-                  {project.date && (
-                    <span className="text-xs text-gray-300 dark:text-gray-600 tabular-nums flex-shrink-0">
-                      {project.date}
-                    </span>
-                  )}
-                </div>
-                <div className="flex items-center gap-3 flex-shrink-0">
-                  {project.agentUrl && (
-                    <a href={project.agentUrl} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 transition-colors" aria-label="Demo" title="在线演示">
-                      <WebIcon />
-                    </a>
-                  )}
-                  {project.url && (
-                    <a href={project.url} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 transition-colors" aria-label={t.visitProject}>
-                      <WebIcon />
-                    </a>
-                  )}
-                  {project.github && (
-                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 transition-colors" aria-label="GitHub">
-                      <GitHubIcon />
-                    </a>
-                  )}
-                </div>
-              </div>
-              <p className="text-sm text-gray-500 dark:text-gray-400 mb-3 leading-relaxed">
-                {lang === 'zh' ? project.descriptionZh : project.descriptionEn}
-              </p>
-              <div className="flex flex-wrap gap-1.5">
-                {project.tags.map((tag) => (
-                  <span key={tag} className="text-xs text-gray-400 dark:text-gray-500 bg-gray-50 dark:bg-gray-800/60 px-2 py-0.5 rounded">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section>
-        <h2 className="text-xs font-medium text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-6">
-          {t.others}
-        </h2>
-        <div className="space-y-4">
-          {others.map((project) => (
+          {projects.map((project) => (
             <div
               key={project.name}
               className="p-5 rounded-xl border border-gray-100 dark:border-gray-800 hover:border-gray-200 dark:hover:border-gray-700 transition-colors"
@@ -224,14 +170,19 @@ export default function ProjectsContent() {
                   </span>
                 </div>
                 <div className="flex items-center gap-3 flex-shrink-0">
-                  {project.github && (
-                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 transition-colors" aria-label="GitHub">
-                      <GitHubIcon />
+                  {project.isAgent && project.agentUrl && (
+                    <a href={project.agentUrl} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 transition-colors" aria-label="AI Agent Demo" title="AI Agent 演示">
+                      <AgentIcon />
                     </a>
                   )}
                   {project.url && (
                     <a href={project.url} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 transition-colors" aria-label={t.visitProject}>
                       <WebIcon />
+                    </a>
+                  )}
+                  {project.github && (
+                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 transition-colors" aria-label="GitHub">
+                      <GitHubIcon />
                     </a>
                   )}
                 </div>
