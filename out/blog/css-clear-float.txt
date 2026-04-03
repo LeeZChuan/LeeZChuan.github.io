@@ -1,0 +1,190 @@
+3:I[4707,[],""]
+5:I[6423,[],""]
+6:I[2060,["972","static/chunks/972-12c2a745f65e530e.js","185","static/chunks/app/layout-6d295785c0ea2d7c.js"],"ThemeProvider"]
+7:I[5386,["972","static/chunks/972-12c2a745f65e530e.js","185","static/chunks/app/layout-6d295785c0ea2d7c.js"],"LangProvider"]
+8:I[7753,["972","static/chunks/972-12c2a745f65e530e.js","185","static/chunks/app/layout-6d295785c0ea2d7c.js"],"default"]
+4:["slug","css-clear-float","d"]
+0:["V5oDiuOcD730mDJlDNtfs",[[["",{"children":["blog",{"children":[["slug","css-clear-float","d"],{"children":["__PAGE__?{\"slug\":\"css-clear-float\"}",{}]}]}]},"$undefined","$undefined",true],["",{"children":["blog",{"children":[["slug","css-clear-float","d"],{"children":["__PAGE__",{},[["$L1","$L2",null],null],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","blog","children","$4","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","blog","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/47fa5dcb7f1f7e4f.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"zh-CN","suppressHydrationWarning":true,"children":["$","body",null,{"className":"bg-white dark:bg-[#0f0f0f] min-h-screen","children":["$","$L6",null,{"children":["$","$L7",null,{"children":[["$","$L8",null,{}],["$","main",null,{"className":"pt-14","children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[]}]}]]}]}]}]}]],null],null],["$L9",null]]]]
+a:I[3362,["972","static/chunks/972-12c2a745f65e530e.js","308","static/chunks/app/blog/%5Bslug%5D/page-94533f6285c1d477.js"],"default"]
+c:I[2972,["972","static/chunks/972-12c2a745f65e530e.js","308","static/chunks/app/blog/%5Bslug%5D/page-94533f6285c1d477.js"],""]
+b:T13ef,<p>在浮动布局中，有时候会因为父元素没有设置高度而子元素浮动导致父元素坍塌，我们就需要清除浮动撑起父元素的高度，在这里总结一下常用方法。</p>
+<!-- truncate -->
+<h3 id="浮动">浮动</h3>
+<p>我们通常为了将块级（block）子元素水平排列，就将其浮动（<code>float: left|right</code>）起来而达到我们的目的，当然这会带来一些问题。所以，我们应尽可能清除浮动所带来的副作用，以免影响其它元素的布局。</p>
+<pre><code>&#x3C;style>
+	#container{
+		background-color: grey;
+	}
+	.inner {
+		margin: 15px;
+		width: 200px;
+		height: 200px;
+		background-color: blue;
+		float: left;
+	}
+&#x3C;/style>
+&#x3C;body>
+	&#x3C;div id="container">
+		&#x3C;div class="inner">1&#x3C;/div>
+		&#x3C;div class="inner">2&#x3C;/div>
+		&#x3C;div class="inner">3&#x3C;/div>
+	&#x3C;/div>
+&#x3C;/body>
+</code></pre>
+<p>此时，我们并看不到外层 div 的灰色背景，打开调试工具会发现外层 div 的 <code>height: 0</code>。当我们没有设置父元素高度，恰巧所有子元素浮动时，父元素的高度会成为 <code>0</code>，而没有被子元素撑起来。这是因为，子元素浮动之后脱离了文档流。</p>
+<h3 id="清除浮动">清除浮动</h3>
+<p>清除浮动的方法很多，灵活性很大，通常我们只用一两种，但是都了解一下还是应该的。</p>
+<h4 id="添加块级子元素">添加块级子元素</h4>
+<p>我们知道，当所有子元素浮动之后，我们继续在后面添加一个不浮动的块级（block）子元素，浮动的子元素会漂浮在该元素上方。</p>
+<pre><code>&#x3C;div id="container">
+		...
+	&#x3C;div class="inner">3&#x3C;/div>
+	&#x3C;div style="clear:both;">&#x3C;/div>
+&#x3C;/div>
+</code></pre>
+<p>在所有浮动子元素尾部添加一个<strong>块级元素</strong>并<strong>清除浮动</strong>，我们会发现父元素被撑高了，而且此元素也没有影响页面布局的副作用。该方法的原理是：该元素由于设置了清除浮动，不允许有浮动元素漂浮在自己上方，所以该元素自然就排在了所有浮动元素之后，而该元素高为 0 相当于隐藏，因此也不会产生影响其它元素。</p>
+<p>但是，该方法是不推荐的，因为添加一个没有表现内容的标签会显得页面代码复杂化，所以我们应该选择更好的方法。</p>
+<h4 id="父元素-overflow-auto">父元素 overflow: auto</h4>
+<p>我们也可以从父元素着手来解决浮动问题，当然这也不是个最佳方法。</p>
+<pre><code>&#x3C;style>
+	#container {
+		overflow: auto;
+		zoom: 1;  /* IE兼容 */
+	}
+&#x3C;/style>
+</code></pre>
+<p>**我们可以通过给父元素设置 <code>overflow: atuo;zoom: 1;</code> 来达到清除浮动的目的。**后者是为了低版本的 IE 兼容性而设置的。</p>
+<p>此方法实际上也是不推荐的，简单的来说我们并不能确保父元素不会产生滚动条从而影响页面美观性。</p>
+<h4 id="伪元素-after">伪元素 :after</h4>
+<p>接下来要说的就是一种推荐的做法了，这个方法被大多数人采用。</p>
+<pre><code>&#x3C;style>
+	#container {
+		zoom: 1;  /* IE兼容 */
+	}
+	#container:after {
+		clear: both;  /* 清除浮动 */
+		content: '';  /* 伪元素默认属性 */
+		height: 0;  /* 保证不显示 */
+		display: block;  /* 确保为块元素 */
+		visibility: hidden;  /* 确保渲染但不显示 */
+	}
+&#x3C;/style>
+</code></pre>
+<p>该方法事实上是对上面两个方法的综合，伪元素不是实际的 DOM 元素，这是其优势。<strong>该方法是最为优雅的清除浮动的方法，我们应该尽可能的采用该方法来清除浮动，不过还是应该视情况而定。</strong></p>
+<h4 id="双伪元素">双伪元素</h4>
+<p>随着浏览器的更新，标准的统一和兼容，可以使用更简洁的双伪元素法清除浮动，它与上面的原理相同。</p>
+<pre><code>&#x3C;style>
+	#container:before, #container:after {
+		content:"";
+		display:table;
+	}
+	#container:after {
+		clear:both;
+	}
+	#container {
+		zoom:1;
+	}
+&#x3C;/style>
+</code></pre>
+<p>这里的 <code>:before</code> 伪元素并不是用来清除浮动的，而是解决垂直方向上 <code>margin</code> 重叠问题。</p>
+<h4 id="其他方法">其他方法</h4>
+<p>在实际开发过程中，我们发现并不是只有以上三种方法会产生清除浮动的效果，而其他某些时候也会产生该效果，下面就简单的列举一下。</p>
+<ul>
+<li>父元素也浮动时；</li>
+<li>父元素为 <code>position: absolute</code> 时；</li>
+<li>父元素为 <code>display: table</code> 时。</li>
+</ul>
+<p>以上这些均是一些副作用产生了清除浮动的效果，不应该作为清除浮动的目的来使用，因为这样会产生一些其他问题。</p>
+<h3 id="结语">结语</h3>
+<p>也许，CSS 清除浮动的方法不止这些，不过我们只是单纯的为了清除浮动，采取最优雅的方法即可。其实，直接定义父元素的高度也相当于清除了浮动的副作用。</p>d:T13ef,<p>在浮动布局中，有时候会因为父元素没有设置高度而子元素浮动导致父元素坍塌，我们就需要清除浮动撑起父元素的高度，在这里总结一下常用方法。</p>
+<!-- truncate -->
+<h3 id="浮动">浮动</h3>
+<p>我们通常为了将块级（block）子元素水平排列，就将其浮动（<code>float: left|right</code>）起来而达到我们的目的，当然这会带来一些问题。所以，我们应尽可能清除浮动所带来的副作用，以免影响其它元素的布局。</p>
+<pre><code>&#x3C;style>
+	#container{
+		background-color: grey;
+	}
+	.inner {
+		margin: 15px;
+		width: 200px;
+		height: 200px;
+		background-color: blue;
+		float: left;
+	}
+&#x3C;/style>
+&#x3C;body>
+	&#x3C;div id="container">
+		&#x3C;div class="inner">1&#x3C;/div>
+		&#x3C;div class="inner">2&#x3C;/div>
+		&#x3C;div class="inner">3&#x3C;/div>
+	&#x3C;/div>
+&#x3C;/body>
+</code></pre>
+<p>此时，我们并看不到外层 div 的灰色背景，打开调试工具会发现外层 div 的 <code>height: 0</code>。当我们没有设置父元素高度，恰巧所有子元素浮动时，父元素的高度会成为 <code>0</code>，而没有被子元素撑起来。这是因为，子元素浮动之后脱离了文档流。</p>
+<h3 id="清除浮动">清除浮动</h3>
+<p>清除浮动的方法很多，灵活性很大，通常我们只用一两种，但是都了解一下还是应该的。</p>
+<h4 id="添加块级子元素">添加块级子元素</h4>
+<p>我们知道，当所有子元素浮动之后，我们继续在后面添加一个不浮动的块级（block）子元素，浮动的子元素会漂浮在该元素上方。</p>
+<pre><code>&#x3C;div id="container">
+		...
+	&#x3C;div class="inner">3&#x3C;/div>
+	&#x3C;div style="clear:both;">&#x3C;/div>
+&#x3C;/div>
+</code></pre>
+<p>在所有浮动子元素尾部添加一个<strong>块级元素</strong>并<strong>清除浮动</strong>，我们会发现父元素被撑高了，而且此元素也没有影响页面布局的副作用。该方法的原理是：该元素由于设置了清除浮动，不允许有浮动元素漂浮在自己上方，所以该元素自然就排在了所有浮动元素之后，而该元素高为 0 相当于隐藏，因此也不会产生影响其它元素。</p>
+<p>但是，该方法是不推荐的，因为添加一个没有表现内容的标签会显得页面代码复杂化，所以我们应该选择更好的方法。</p>
+<h4 id="父元素-overflow-auto">父元素 overflow: auto</h4>
+<p>我们也可以从父元素着手来解决浮动问题，当然这也不是个最佳方法。</p>
+<pre><code>&#x3C;style>
+	#container {
+		overflow: auto;
+		zoom: 1;  /* IE兼容 */
+	}
+&#x3C;/style>
+</code></pre>
+<p>**我们可以通过给父元素设置 <code>overflow: atuo;zoom: 1;</code> 来达到清除浮动的目的。**后者是为了低版本的 IE 兼容性而设置的。</p>
+<p>此方法实际上也是不推荐的，简单的来说我们并不能确保父元素不会产生滚动条从而影响页面美观性。</p>
+<h4 id="伪元素-after">伪元素 :after</h4>
+<p>接下来要说的就是一种推荐的做法了，这个方法被大多数人采用。</p>
+<pre><code>&#x3C;style>
+	#container {
+		zoom: 1;  /* IE兼容 */
+	}
+	#container:after {
+		clear: both;  /* 清除浮动 */
+		content: '';  /* 伪元素默认属性 */
+		height: 0;  /* 保证不显示 */
+		display: block;  /* 确保为块元素 */
+		visibility: hidden;  /* 确保渲染但不显示 */
+	}
+&#x3C;/style>
+</code></pre>
+<p>该方法事实上是对上面两个方法的综合，伪元素不是实际的 DOM 元素，这是其优势。<strong>该方法是最为优雅的清除浮动的方法，我们应该尽可能的采用该方法来清除浮动，不过还是应该视情况而定。</strong></p>
+<h4 id="双伪元素">双伪元素</h4>
+<p>随着浏览器的更新，标准的统一和兼容，可以使用更简洁的双伪元素法清除浮动，它与上面的原理相同。</p>
+<pre><code>&#x3C;style>
+	#container:before, #container:after {
+		content:"";
+		display:table;
+	}
+	#container:after {
+		clear:both;
+	}
+	#container {
+		zoom:1;
+	}
+&#x3C;/style>
+</code></pre>
+<p>这里的 <code>:before</code> 伪元素并不是用来清除浮动的，而是解决垂直方向上 <code>margin</code> 重叠问题。</p>
+<h4 id="其他方法">其他方法</h4>
+<p>在实际开发过程中，我们发现并不是只有以上三种方法会产生清除浮动的效果，而其他某些时候也会产生该效果，下面就简单的列举一下。</p>
+<ul>
+<li>父元素也浮动时；</li>
+<li>父元素为 <code>position: absolute</code> 时；</li>
+<li>父元素为 <code>display: table</code> 时。</li>
+</ul>
+<p>以上这些均是一些副作用产生了清除浮动的效果，不应该作为清除浮动的目的来使用，因为这样会产生一些其他问题。</p>
+<h3 id="结语">结语</h3>
+<p>也许，CSS 清除浮动的方法不止这些，不过我们只是单纯的为了清除浮动，采取最优雅的方法即可。其实，直接定义父元素的高度也相当于清除了浮动的副作用。</p>2:["$","div",null,{"className":"max-w-5xl mx-auto px-6 flex gap-0 min-h-full","children":[["$","$La",null,{"html":"$b"}],["$","article",null,{"className":"flex-1 min-w-0 max-w-2xl mx-auto px-0 lg:px-10 py-12","children":[["$","div",null,{"className":"mb-8","children":["$","$Lc",null,{"href":"/blog","className":"inline-flex items-center gap-1.5 text-sm text-gray-400 dark:text-[rgba(255,255,255,0.38)] hover:text-gray-700 dark:hover:text-[rgba(255,255,255,0.60)] transition-colors","children":[["$","svg",null,{"xmlns":"http://www.w3.org/2000/svg","width":"13","height":"13","viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","children":["$","path",null,{"d":"M19 12H5M12 5l-7 7 7 7"}]}],"返回"]}]}],["$","header",null,{"className":"mb-10","children":[["$","div",null,{"className":"flex flex-wrap items-center gap-1.5 mb-4","children":[["$","span",null,{"className":"inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400/80","children":"技术"}],[["$","span","计算机技术",{"className":"inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 dark:bg-white/[0.06] text-gray-600 dark:text-[rgba(255,255,255,0.60)]","children":"计算机技术"}],["$","span","Web",{"className":"inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 dark:bg-white/[0.06] text-gray-600 dark:text-[rgba(255,255,255,0.60)]","children":"Web"}],["$","span","Web 前端",{"className":"inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 dark:bg-white/[0.06] text-gray-600 dark:text-[rgba(255,255,255,0.60)]","children":"Web 前端"}],["$","span","CSS",{"className":"inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 dark:bg-white/[0.06] text-gray-600 dark:text-[rgba(255,255,255,0.60)]","children":"CSS"}],["$","span"," Float",{"className":"inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 dark:bg-white/[0.06] text-gray-600 dark:text-[rgba(255,255,255,0.60)]","children":" Float"}]]]}],["$","h1",null,{"className":"text-2xl sm:text-3xl font-bold text-gray-900 dark:text-[rgba(255,255,255,0.87)] leading-tight mb-3","children":"CSS 清除浮动"}],["$","p",null,{"className":"text-gray-500 dark:text-[rgba(255,255,255,0.60)] text-base leading-relaxed mb-4","children":"在浮动布局中，有时候会因为父元素没有设置高度而子元素浮动导致父元素坍塌，我们就需要清除浮动撑起父元素的高度，在这里总结一下常用方法。"}],["$","time",null,{"dateTime":"2018-05-21T18:25:00.000Z","className":"text-xs text-gray-400 dark:text-[rgba(255,255,255,0.38)]","children":"2018年5月21日"}]]}],["$","div",null,{"className":"prose prose-gray dark:prose-invert max-w-none prose-headings:scroll-mt-20 prose-code:before:content-none prose-code:after:content-none prose-img:rounded-lg prose-img:w-full prose-img:h-auto prose-img:block prose-img:my-6 ","dangerouslySetInnerHTML":{"__html":"$d"}}],["$","div",null,{"className":"mt-14 pt-8 border-t border-gray-100 dark:border-white/[0.12]","children":["$","$Lc",null,{"href":"/blog","className":"inline-flex items-center gap-1.5 text-sm text-gray-500 dark:text-[rgba(255,255,255,0.60)] hover:text-gray-900 dark:hover:text-[rgba(255,255,255,0.87)] transition-colors","children":[["$","svg",null,{"xmlns":"http://www.w3.org/2000/svg","width":"13","height":"13","viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","children":["$","path",null,{"d":"M19 12H5M12 5l-7 7 7 7"}]}],"返回文章列表"]}]}]]}]]}]
+9:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"CSS 清除浮动 — LeeZChuan"}],["$","meta","3",{"name":"description","content":"在浮动布局中，有时候会因为父元素没有设置高度而子元素浮动导致父元素坍塌，我们就需要清除浮动撑起父元素的高度，在这里总结一下常用方法。"}]]
+1:null

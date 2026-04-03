@@ -1,0 +1,260 @@
+3:I[4707,[],""]
+5:I[6423,[],""]
+6:I[2060,["972","static/chunks/972-12c2a745f65e530e.js","185","static/chunks/app/layout-6d295785c0ea2d7c.js"],"ThemeProvider"]
+7:I[5386,["972","static/chunks/972-12c2a745f65e530e.js","185","static/chunks/app/layout-6d295785c0ea2d7c.js"],"LangProvider"]
+8:I[7753,["972","static/chunks/972-12c2a745f65e530e.js","185","static/chunks/app/layout-6d295785c0ea2d7c.js"],"default"]
+4:["slug","linux-cmd-vim","d"]
+0:["V5oDiuOcD730mDJlDNtfs",[[["",{"children":["blog",{"children":[["slug","linux-cmd-vim","d"],{"children":["__PAGE__?{\"slug\":\"linux-cmd-vim\"}",{}]}]}]},"$undefined","$undefined",true],["",{"children":["blog",{"children":[["slug","linux-cmd-vim","d"],{"children":["__PAGE__",{},[["$L1","$L2",null],null],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","blog","children","$4","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","blog","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/47fa5dcb7f1f7e4f.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"zh-CN","suppressHydrationWarning":true,"children":["$","body",null,{"className":"bg-white dark:bg-[#0f0f0f] min-h-screen","children":["$","$L6",null,{"children":["$","$L7",null,{"children":[["$","$L8",null,{}],["$","main",null,{"className":"pt-14","children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[]}]}]]}]}]}]}]],null],null],["$L9",null]]]]
+a:I[3362,["972","static/chunks/972-12c2a745f65e530e.js","308","static/chunks/app/blog/%5Bslug%5D/page-94533f6285c1d477.js"],"default"]
+c:I[2972,["972","static/chunks/972-12c2a745f65e530e.js","308","static/chunks/app/blog/%5Bslug%5D/page-94533f6285c1d477.js"],""]
+b:T187b,<p>在 Linux 这样的命令行操作系统中，必须有一款功能强大的编辑器支持我们快速完成文本编辑，这就是 Vi 编辑器；通过对其加强和升级，Vim 编辑器比前者更为强大，拥有更多的功能和颜色高亮的特性，是程序员在 Linux 下编码的利器。</p>
+<!-- truncate -->
+<h3 id="vim">Vim</h3>
+<p>Vim 是基于 Linux 下 Vi 编辑器的升级版，经过多年来的不断更新，功能也越来越强大，Vim 除过具备常用文本编辑器的编辑操作以及颜色高亮特性外，还支持自动补全、多行批量操作、指定跳转等等功能，其中代码颜色高亮特性更利于我们在命令行中进行信息的阅览和查看。而且，Vim 支持大多数操作系统，只是我们经常在 Linux 下使用它而已。当然，在 Linux 下还有一款很著名的编辑器 Emacs 。</p>
+<p>Vim 太过强大，导致学习曲线也是非常陡峭的，不过作为一个工具，我们首先只要掌握它的基本操作就行了，至于其他功能待我们在使用过程中去发掘就行了。首先，我们应该知道 Vim 有三种模式，即<strong>命令模式</strong>、<strong>插入模式</strong>、<strong>EX 模式</strong>。</p>
+<ul>
+<li>
+<p>命令模式</p>
+<p>此模式是 Vim 的默认模式，我们可以做一些非输入操作，例如删除、复制等等，在此模式下可以进入插入模式和 EX 模式。</p>
+</li>
+<li>
+<p>插入模式</p>
+<p>此模式就是编辑模式，我们主要进行输入操作。</p>
+</li>
+<li>
+<p>EX 模式</p>
+<p>此模式则是当我们完成编辑后，可以进行退出、保存等操作。</p>
+</li>
+</ul>
+<h3 id="常用命令">常用命令</h3>
+<p>接下来，就介绍一些常用的命令，通过这些命令我们可以很方便的快速完成大多数常用操作。</p>
+<h4 id="模式切换">模式切换</h4>
+<pre><code># 命令模式进入插入模式
+i  // 在当前字符前开始编辑
+a  // 在当前字符后开始编辑
+I  // 在当前行首开始编辑（Shift + I ，或者开启大写）
+A  // 在当前行尾开始编辑（Shift + A ，或者开启大写）
+o  // 在当前行下添加新行开始编辑
+O  // 在当前行上添加新行开始编辑（Shift + O ，或者开启大写）
+
+# 命令模式进入EX模式
+:  // （Shift + ;）
+
+# 插入模式或EX模式返回到命令模式
+Esc  // 至少按一次 Esc 即可返回命令模式
+</code></pre>
+<h4 id="命令模式">命令模式</h4>
+<p>命令模式是 Vim 的核心模式，大多数强大的功能命令都需要在此模式下完成，常用的命令则有复制、删除、粘贴、移动等等。<strong>而且，只有在命令模式下才能进入插入模式或者 EX 模式。</strong></p>
+<h4 id="移动光标">移动光标</h4>
+<pre><code>h  // 光标左移
+j  // 光标下移
+k  // 光标上移
+l  // 光标右移
+
+fx  // 移动光标到当前行的下一个 x（任意字母）处（; 重复上一个f命令）
+Fx  // 移动光标到当前行的上一个 x（任意字母）处（; 重复上一个F命令）
+tx  // 移动光标到当前行的下一个 x（任意字母）左边（; 重复上一个t命令）
+Tx  // 移动光标到当前行的上一个 x（任意字母）左边（; 重复上一个T命令）
+
+
+w  // 光标后移一个单词到词首（W 也行）
+e  // 光标后移一个单词到词尾（E 也行）
+b  // 光标前移一个单词到词首（B 也行）
+
+*  // 向下匹配当前光标所在字符串
+#  // 向上匹配当前光标所在字符串
+
+^  // 光标移动到行首（数字 0 也行）
+$  // 光标移动到行尾
+
+gg  // 光标移动到文件首行行首（ngg 第n行行首）
+G   // 光标移动到文件末行行首（nG 第n行行首）（Shift + G ，或者开启大写）
+
+`.  // 光标返回到上次编辑的位置
+`a  // 光标移动到书签a处
+
+%  // 光标在 ()、[]、{} 等符号之间左右移动
+
+H  // 光标移动到当前屏顶端行首
+M  // 光标移动到当前屏中部行首
+L  // 光标移动到当前屏底部行首
+
+Ctrl + F  // 向下移动一屏
+Ctrl + D  // 向下滚动半屏
+Ctrl + B  // 向上滚动一屏
+Ctrl + U  // 向上滚动半屏
+</code></pre>
+<h4 id="复制粘贴剪切删除">复制、粘贴、剪切/删除</h4>
+<pre><code># 复制
+yy  // 复制光标所在整行
+nyy // 复制光标所在行开始向下 n 行，例如 2yy
+
+# 粘贴
+p   // 光标所在行下方添加一行并粘贴剪贴板或该行
+np  // 光标所在行下方添加 n 行并粘贴剪贴板或该行，例如 2p
+P   // 光标所在行上方添加一行并粘贴剪贴板或该行
+nP  // 光标所在行上方添加 n 行并粘贴剪贴板或该行，例如 2P
+
+# 删除/剪切
+dd  // 删除/剪切光标所在整行，D 亦可
+ndd // 删除/剪切光标所在行开始向下 n 行，nD 亦可，例如 2dd
+
+dgg // 光标所在行到文档开头之间全部删除/剪切
+dG  // 光标所在行到文档结尾之间全部删除/剪切
+
+dngg    // 光标所在行到第 n 行之间全部删除/剪切，dnG 亦可，例如 d2gg
+
+d+^ // 光标所在字符到行首之间全部删除/剪切
+d+$ // 光标所在字符到行尾之间全部删除/剪切，D 亦可
+
+dw  // 删除光标所在处一个单词、符号
+
+x   // 删除光标所在字符
+nx  // 删除光标所在字符开始向后 n 个字符，例如 2x
+nX  // 删除光标所在字符开始向前 n 个字符，例如 2X
+</code></pre>
+<h4 id="撤销恢复">撤销、恢复</h4>
+<pre><code>u   // 撤销
+
+Ctrl+r   // 恢复
+</code></pre>
+<h4 id="插入模式">插入模式</h4>
+<p>插入模式其实就是我们所说的编辑模式，输入模式，进行字符输入操作。在该模式下，可以按 <kbd>Esc</kbd> 即可退回到命令模式。</p>
+<h4 id="ex-模式">EX 模式</h4>
+<p>EX 模式可以在我们编辑完之后，进行一些保存、退出操作；也可以在我们编辑中途进行一些额外的操作。</p>
+<pre><code>:w  // 保存当前修改
+:q  // 退出
+:q!  // 强制退出，不保存修改
+:x  // 保存并退出（等价 :wq）
+:set nu // 显示行号（全写 :set_number）
+:set nonu // 隐藏行号（全写 :set_nonumber）
+:! [命令]  // 执行一个命令并显示结果
+:sh  // 切换到命令行，使用 Ctrl+D 切换回 vim
+</code></pre>
+<h3 id="配置">配置</h3>d:T187b,<p>在 Linux 这样的命令行操作系统中，必须有一款功能强大的编辑器支持我们快速完成文本编辑，这就是 Vi 编辑器；通过对其加强和升级，Vim 编辑器比前者更为强大，拥有更多的功能和颜色高亮的特性，是程序员在 Linux 下编码的利器。</p>
+<!-- truncate -->
+<h3 id="vim">Vim</h3>
+<p>Vim 是基于 Linux 下 Vi 编辑器的升级版，经过多年来的不断更新，功能也越来越强大，Vim 除过具备常用文本编辑器的编辑操作以及颜色高亮特性外，还支持自动补全、多行批量操作、指定跳转等等功能，其中代码颜色高亮特性更利于我们在命令行中进行信息的阅览和查看。而且，Vim 支持大多数操作系统，只是我们经常在 Linux 下使用它而已。当然，在 Linux 下还有一款很著名的编辑器 Emacs 。</p>
+<p>Vim 太过强大，导致学习曲线也是非常陡峭的，不过作为一个工具，我们首先只要掌握它的基本操作就行了，至于其他功能待我们在使用过程中去发掘就行了。首先，我们应该知道 Vim 有三种模式，即<strong>命令模式</strong>、<strong>插入模式</strong>、<strong>EX 模式</strong>。</p>
+<ul>
+<li>
+<p>命令模式</p>
+<p>此模式是 Vim 的默认模式，我们可以做一些非输入操作，例如删除、复制等等，在此模式下可以进入插入模式和 EX 模式。</p>
+</li>
+<li>
+<p>插入模式</p>
+<p>此模式就是编辑模式，我们主要进行输入操作。</p>
+</li>
+<li>
+<p>EX 模式</p>
+<p>此模式则是当我们完成编辑后，可以进行退出、保存等操作。</p>
+</li>
+</ul>
+<h3 id="常用命令">常用命令</h3>
+<p>接下来，就介绍一些常用的命令，通过这些命令我们可以很方便的快速完成大多数常用操作。</p>
+<h4 id="模式切换">模式切换</h4>
+<pre><code># 命令模式进入插入模式
+i  // 在当前字符前开始编辑
+a  // 在当前字符后开始编辑
+I  // 在当前行首开始编辑（Shift + I ，或者开启大写）
+A  // 在当前行尾开始编辑（Shift + A ，或者开启大写）
+o  // 在当前行下添加新行开始编辑
+O  // 在当前行上添加新行开始编辑（Shift + O ，或者开启大写）
+
+# 命令模式进入EX模式
+:  // （Shift + ;）
+
+# 插入模式或EX模式返回到命令模式
+Esc  // 至少按一次 Esc 即可返回命令模式
+</code></pre>
+<h4 id="命令模式">命令模式</h4>
+<p>命令模式是 Vim 的核心模式，大多数强大的功能命令都需要在此模式下完成，常用的命令则有复制、删除、粘贴、移动等等。<strong>而且，只有在命令模式下才能进入插入模式或者 EX 模式。</strong></p>
+<h4 id="移动光标">移动光标</h4>
+<pre><code>h  // 光标左移
+j  // 光标下移
+k  // 光标上移
+l  // 光标右移
+
+fx  // 移动光标到当前行的下一个 x（任意字母）处（; 重复上一个f命令）
+Fx  // 移动光标到当前行的上一个 x（任意字母）处（; 重复上一个F命令）
+tx  // 移动光标到当前行的下一个 x（任意字母）左边（; 重复上一个t命令）
+Tx  // 移动光标到当前行的上一个 x（任意字母）左边（; 重复上一个T命令）
+
+
+w  // 光标后移一个单词到词首（W 也行）
+e  // 光标后移一个单词到词尾（E 也行）
+b  // 光标前移一个单词到词首（B 也行）
+
+*  // 向下匹配当前光标所在字符串
+#  // 向上匹配当前光标所在字符串
+
+^  // 光标移动到行首（数字 0 也行）
+$  // 光标移动到行尾
+
+gg  // 光标移动到文件首行行首（ngg 第n行行首）
+G   // 光标移动到文件末行行首（nG 第n行行首）（Shift + G ，或者开启大写）
+
+`.  // 光标返回到上次编辑的位置
+`a  // 光标移动到书签a处
+
+%  // 光标在 ()、[]、{} 等符号之间左右移动
+
+H  // 光标移动到当前屏顶端行首
+M  // 光标移动到当前屏中部行首
+L  // 光标移动到当前屏底部行首
+
+Ctrl + F  // 向下移动一屏
+Ctrl + D  // 向下滚动半屏
+Ctrl + B  // 向上滚动一屏
+Ctrl + U  // 向上滚动半屏
+</code></pre>
+<h4 id="复制粘贴剪切删除">复制、粘贴、剪切/删除</h4>
+<pre><code># 复制
+yy  // 复制光标所在整行
+nyy // 复制光标所在行开始向下 n 行，例如 2yy
+
+# 粘贴
+p   // 光标所在行下方添加一行并粘贴剪贴板或该行
+np  // 光标所在行下方添加 n 行并粘贴剪贴板或该行，例如 2p
+P   // 光标所在行上方添加一行并粘贴剪贴板或该行
+nP  // 光标所在行上方添加 n 行并粘贴剪贴板或该行，例如 2P
+
+# 删除/剪切
+dd  // 删除/剪切光标所在整行，D 亦可
+ndd // 删除/剪切光标所在行开始向下 n 行，nD 亦可，例如 2dd
+
+dgg // 光标所在行到文档开头之间全部删除/剪切
+dG  // 光标所在行到文档结尾之间全部删除/剪切
+
+dngg    // 光标所在行到第 n 行之间全部删除/剪切，dnG 亦可，例如 d2gg
+
+d+^ // 光标所在字符到行首之间全部删除/剪切
+d+$ // 光标所在字符到行尾之间全部删除/剪切，D 亦可
+
+dw  // 删除光标所在处一个单词、符号
+
+x   // 删除光标所在字符
+nx  // 删除光标所在字符开始向后 n 个字符，例如 2x
+nX  // 删除光标所在字符开始向前 n 个字符，例如 2X
+</code></pre>
+<h4 id="撤销恢复">撤销、恢复</h4>
+<pre><code>u   // 撤销
+
+Ctrl+r   // 恢复
+</code></pre>
+<h4 id="插入模式">插入模式</h4>
+<p>插入模式其实就是我们所说的编辑模式，输入模式，进行字符输入操作。在该模式下，可以按 <kbd>Esc</kbd> 即可退回到命令模式。</p>
+<h4 id="ex-模式">EX 模式</h4>
+<p>EX 模式可以在我们编辑完之后，进行一些保存、退出操作；也可以在我们编辑中途进行一些额外的操作。</p>
+<pre><code>:w  // 保存当前修改
+:q  // 退出
+:q!  // 强制退出，不保存修改
+:x  // 保存并退出（等价 :wq）
+:set nu // 显示行号（全写 :set_number）
+:set nonu // 隐藏行号（全写 :set_nonumber）
+:! [命令]  // 执行一个命令并显示结果
+:sh  // 切换到命令行，使用 Ctrl+D 切换回 vim
+</code></pre>
+<h3 id="配置">配置</h3>2:["$","div",null,{"className":"max-w-5xl mx-auto px-6 flex gap-0 min-h-full","children":[["$","$La",null,{"html":"$b"}],["$","article",null,{"className":"flex-1 min-w-0 max-w-2xl mx-auto px-0 lg:px-10 py-12","children":[["$","div",null,{"className":"mb-8","children":["$","$Lc",null,{"href":"/blog","className":"inline-flex items-center gap-1.5 text-sm text-gray-400 dark:text-[rgba(255,255,255,0.38)] hover:text-gray-700 dark:hover:text-[rgba(255,255,255,0.60)] transition-colors","children":[["$","svg",null,{"xmlns":"http://www.w3.org/2000/svg","width":"13","height":"13","viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","children":["$","path",null,{"d":"M19 12H5M12 5l-7 7 7 7"}]}],"返回"]}]}],["$","header",null,{"className":"mb-10","children":[["$","div",null,{"className":"flex flex-wrap items-center gap-1.5 mb-4","children":[["$","span",null,{"className":"inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400/80","children":"技术"}],[["$","span","计算机技术计算机Linux",{"className":"inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 dark:bg-white/[0.06] text-gray-600 dark:text-[rgba(255,255,255,0.60)]","children":"计算机技术计算机Linux"}]]]}],["$","h1",null,{"className":"text-2xl sm:text-3xl font-bold text-gray-900 dark:text-[rgba(255,255,255,0.87)] leading-tight mb-3","children":"Linux-Vim 编辑器"}],["$","p",null,{"className":"text-gray-500 dark:text-[rgba(255,255,255,0.60)] text-base leading-relaxed mb-4","children":"在 Linux 这样的命令行操作系统中，必须有一款功能强大的编辑器支持我们快速完成文本编辑，这就是 Vi 编辑器；通过对其加强和升级，Vim 编辑器比前者更为强大，拥有更多的功能和颜色高亮的特性，是程序员在 Linux 下编码的利器。"}],["$","time",null,{"dateTime":"2018-04-27T21:02:00.000Z","className":"text-xs text-gray-400 dark:text-[rgba(255,255,255,0.38)]","children":"2018年4月27日"}]]}],["$","div",null,{"className":"prose prose-gray dark:prose-invert max-w-none prose-headings:scroll-mt-20 prose-code:before:content-none prose-code:after:content-none prose-img:rounded-lg prose-img:w-full prose-img:h-auto prose-img:block prose-img:my-6 ","dangerouslySetInnerHTML":{"__html":"$d"}}],["$","div",null,{"className":"mt-14 pt-8 border-t border-gray-100 dark:border-white/[0.12]","children":["$","$Lc",null,{"href":"/blog","className":"inline-flex items-center gap-1.5 text-sm text-gray-500 dark:text-[rgba(255,255,255,0.60)] hover:text-gray-900 dark:hover:text-[rgba(255,255,255,0.87)] transition-colors","children":[["$","svg",null,{"xmlns":"http://www.w3.org/2000/svg","width":"13","height":"13","viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","children":["$","path",null,{"d":"M19 12H5M12 5l-7 7 7 7"}]}],"返回文章列表"]}]}]]}]]}]
+9:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"Linux-Vim 编辑器 — LeeZChuan"}],["$","meta","3",{"name":"description","content":"在 Linux 这样的命令行操作系统中，必须有一款功能强大的编辑器支持我们快速完成文本编辑，这就是 Vi 编辑器；通过对其加强和升级，Vim 编辑器比前者更为强大，拥有更多的功能和颜色高亮的特性，是程序员在 Linux 下编码的利器。"}]]
+1:null

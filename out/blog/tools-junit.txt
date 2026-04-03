@@ -1,0 +1,264 @@
+3:I[4707,[],""]
+5:I[6423,[],""]
+6:I[2060,["972","static/chunks/972-12c2a745f65e530e.js","185","static/chunks/app/layout-6d295785c0ea2d7c.js"],"ThemeProvider"]
+7:I[5386,["972","static/chunks/972-12c2a745f65e530e.js","185","static/chunks/app/layout-6d295785c0ea2d7c.js"],"LangProvider"]
+8:I[7753,["972","static/chunks/972-12c2a745f65e530e.js","185","static/chunks/app/layout-6d295785c0ea2d7c.js"],"default"]
+4:["slug","tools-junit","d"]
+0:["V5oDiuOcD730mDJlDNtfs",[[["",{"children":["blog",{"children":[["slug","tools-junit","d"],{"children":["__PAGE__?{\"slug\":\"tools-junit\"}",{}]}]}]},"$undefined","$undefined",true],["",{"children":["blog",{"children":[["slug","tools-junit","d"],{"children":["__PAGE__",{},[["$L1","$L2",null],null],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","blog","children","$4","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","blog","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/47fa5dcb7f1f7e4f.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"zh-CN","suppressHydrationWarning":true,"children":["$","body",null,{"className":"bg-white dark:bg-[#0f0f0f] min-h-screen","children":["$","$L6",null,{"children":["$","$L7",null,{"children":[["$","$L8",null,{}],["$","main",null,{"className":"pt-14","children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[]}]}]]}]}]}]}]],null],null],["$L9",null]]]]
+a:I[3362,["972","static/chunks/972-12c2a745f65e530e.js","308","static/chunks/app/blog/%5Bslug%5D/page-94533f6285c1d477.js"],"default"]
+c:I[2972,["972","static/chunks/972-12c2a745f65e530e.js","308","static/chunks/app/blog/%5Bslug%5D/page-94533f6285c1d477.js"],""]
+b:T1fb9,<p>通常一个项目的代码量是比较大的，而且其中逻辑也较为复杂，在开发完成后再进行项目测试其实是比较耗费时间和精力的，因此边开发边测试是个很好的选择，而 JUnit 则为我们提供了这样的便利。</p>
+<!-- truncate -->
+<h3 id="junit">JUnit</h3>
+<p>JUnit 是一个用来对 Java 代码进行单元测试的框架，是 XUnit （一套基于测试驱动开发的测试框架）的一个子集，类似的还有 PythonUnit、CppUnit。</p>
+<p>JUnit 可以帮助我们进行自动化的单元测试，而不需要我们去编写 <code>main</code> 方法逐一测试，同时其使用断言（assert）机制可以将我们预期的结果和程序运行得到结果进行比对，确保对结果的可预知性。</p>
+<h3 id="使用-junit4">使用 JUnit4</h3>
+<p>JUnit 目前已经更新到第 4 个版本，也就是 JUnit4，当然第 5 版也在筹备之中，这里我们使用 Junit4 即可。其实 eclipse 已经集成了 Junit 单元测试框架，我们可以直接使用，而不需要去下载 jar 包导入。</p>
+<h6 id="导入-junit4">导入 JUnit4</h6>
+<p>在 eclipse 中新建一个 Java 项目，然后<kbd>右键</kbd>项目，选择 <strong>Build Path -> Add Libraries</strong> ,然后选择 Junit 即可将其添加到项目中。接下来我们创建一个被测试的类，然后再创建一个测试类用来使用 JUnit4 对被测试类进行单元测试。</p>
+<h6 id="进行测试">进行测试</h6>
+<p>Junit4 相对于第 3 个版本来说使用起来更为方便了，只需在测试类的测试方法前面加一个 <code>@Test</code> 注解即可。这里有一个 <code>assertEquals()</code> 方法很有用，其可以帮助我们对程序的期望结果和运行结果进行比对。</p>
+<pre><code>@Test
+public void testXXX(){
+    /**
+     * obj1 : 期望值（我们指定）
+     * obj2 : 运行值（调用被测试类）
+     */
+    assertEquals(Object obj1, Object obj2);
+}
+</code></pre>
+<p>测试代码编写完成后，<strong>Run As -> JUnit Test</strong> 即可，只要出现绿色的状态条则代表我们的测试全部成功，如果为红色说明我们有部分测试失败，在状态条下方的测试结果列表中，每一项前面都会标记出来，测试成功的则为对号，失败的为叉。</p>
+<h6 id="代码规范">代码规范</h6>
+<p>需要注意的是，我们应该将测试类和项目被测试类代码分开放置，通常会在项目下 <strong>New -> Source Floder</strong> 命名为 <strong>test</strong> 将测试类代码放入其中，测试类和被测试类的包名应一致，在项目部署时删除这个目录即可。</p>
+<p>另外，测试类的命名应遵循被测试类名加 Test 后缀的规则；而测试类的方法命名应遵循以 test 为前缀加被测试方法名的规则，比如 <code>testXXX()</code>，这样更为规范一些。还有就是，测试方法是公有（public）、无返回值（void）的，并且测试方法之间是相互独立的。</p>
+<p>这里有一个小技巧，通常被测试类的方法会很多，手动编写测试方法耗费时间，我们可以<kbd>右键</kbd>测试类，<strong>New -> Other</strong> 然后选择 <strong>JUnit Test Case</strong>，选中要测试的方法，设置好文件路径即可自动生成一个包含指定测试方法的测试类。</p>
+<h6 id="测试失败分析">测试失败分析</h6>
+<p>JUnit 的测试结果是非常直观的，红色状态条代表我们测试失败，其中又分为两种失败类型，分别为 <code>Errors</code> 和 <code>Failures</code>。导致测试失败的原因我们可以在下方的消息栈中看到，其说明了引起测试失败的具体原因。</p>
+<ul>
+<li>
+<p>Errors</p>
+<p>是由于代码异常引起的，可能是测试代码本身的错误，也可能是被测试代码中的错误。</p>
+</li>
+<li>
+<p>Failures</p>
+<p>一般由单元测试的断言方法判断失败所引起的，也就是说程序的运行结果和我们的预期不一样。</p>
+</li>
+</ul>
+<h3 id="junit-运行过程">JUnit 运行过程</h3>
+<p>要使用好 JUnit4 这个测试工具，我们应该了解清楚其运行的过程。在 <strong>New -> Other</strong> 新建一个 <strong>JUnit Test Case</strong> 类时，可以勾选四个自动生成的方法：</p>
+<ul>
+<li>
+<p>setUpBeforeClass()</p>
+<p><code>@BeforeClass</code> 标注的静态方法，测试类加载时运行一次，适合加载配置文件。</p>
+</li>
+<li>
+<p>tearDownAfterClass()</p>
+<p><code>@AfterClass</code> 标注的静态方法，所有测试方法执行完成时运行一次，适合清理资源，例如关闭数据库连接。</p>
+</li>
+<li>
+<p>setUp()</p>
+<p><code>@Before</code> 标注的实例方法，每个测试方法执行前运行一次。</p>
+</li>
+<li>
+<p>tearDown()</p>
+<p><code>@After</code> 标注的实例方法，每个测试方法执行后运行一次。</p>
+</li>
+</ul>
+<p>以上四个方法可以帮助我们更好的进行单元测试，当然前提是这些方法运行的时机和作用我们应该知道。</p>
+<h3 id="junit-常用注解">JUnit 常用注解</h3>
+<ul>
+<li>@Test</li>
+<li>@BeforeClass</li>
+<li>@AfterClass</li>
+<li>@Before</li>
+<li>@After</li>
+<li>@Ignore</li>
+<li>@RunWith</li>
+</ul>
+<p><code>@Test</code> 注解标注一个方法为测试方法，除此之外我们还可以设置要捕获的异常和测试时间。</p>
+<pre><code>/**
+ * expected : 表明我们预期会发生的异常，使其不影响测试结果，类似于 throws 关键字
+ * timeout : 指定测试的时间（ms），可以用来测试程序性能
+ */
+@Test(expected=ArithmeticException.class, timeout=2000)
+</code></pre>
+<p><code>@Ignore</code> 注解标注一个测试方法被运行器忽略，同时可以标识一些忽略信息。<code>@RunWith</code> 注解用来更改测试运行器。</p>
+<h3 id="junit-深入使用">JUnit 深入使用</h3>
+<p>会利用 JUnit 进行基本的单元测试或许已经满足了我们的需求，然而 JUnit 为我们提供了更加便利的工具。</p>
+<h6 id="测试套件">测试套件</h6>
+<p>测试套件是用来同时测试一整套测试类的，<strong>New -> Other</strong> 然后 <strong>JUnit Test Suite</strong> 即可创建一个测试套件。</p>
+<pre><code>// 测试套件类
+@RunWith(Suite.class)
+@SuiteClasses({ taskTest1.class, taskTest2.class })
+public class AllTests { }
+</code></pre>
+<p>在创建测试套件时可以勾选需要包含进来的测试类或者测试套件，当然也可以在 <code>@SuiteClasses</code> 注解中手动添加。要注意的是测试套件类必须是一个空类，不能包含任何方法；其次要使用 <code>@RunWith</code> 注解将运行器修改为 <code>Suite.class</code>。</p>
+<h6 id="参数化设置">参数化设置</h6>
+<p>参数化设置可以帮助我们提高代码的重用度，减少类似的代码编写工作量。</p>
+<pre><code>//被测试类
+public class Calculate {
+    // 除法
+    public int divide(int a, int b){
+        return a/b;
+    }
+}
+
+// 参数化设置的测试类
+@RunWith(Parameterized.class)
+public class ParameterTest {
+    // 参数
+    int expected, input1, input2;
+
+    // 用来返回一组参数
+    @Parameters
+    public static Collection&#x3C;Object[]> params(){
+        return Arrays.asList(new Object[][]{
+            {1,2,2},
+            {3,9,3},
+            {25, 625, 25}
+        });
+    }
+
+    // 构造器
+    public ParameterTest(int expected, int input1, int input2) {
+        this.expected = expected;
+        this.input1 = input1;
+        this.input2 = input2;
+    }
+
+    // 测试方法
+    @Test
+    public void testDivide() {
+        assertEquals(expected, new Calculate().divide(input1, input2));
+    }
+}
+</code></pre>
+<p>参数化设置的测试类要使用 <code>@RunWith</code> 注解将运行器修改为 <strong>Parameterized.class</strong>。该类中要声明变量来存放预期值和结果值，声明一个 <code>@Parameters</code> 注解标注的返回值为 <code>Collection</code> 的公共静态方法来返回一组参数值，其次还要声明一个带参数的构造方法。</p>d:T1fb9,<p>通常一个项目的代码量是比较大的，而且其中逻辑也较为复杂，在开发完成后再进行项目测试其实是比较耗费时间和精力的，因此边开发边测试是个很好的选择，而 JUnit 则为我们提供了这样的便利。</p>
+<!-- truncate -->
+<h3 id="junit">JUnit</h3>
+<p>JUnit 是一个用来对 Java 代码进行单元测试的框架，是 XUnit （一套基于测试驱动开发的测试框架）的一个子集，类似的还有 PythonUnit、CppUnit。</p>
+<p>JUnit 可以帮助我们进行自动化的单元测试，而不需要我们去编写 <code>main</code> 方法逐一测试，同时其使用断言（assert）机制可以将我们预期的结果和程序运行得到结果进行比对，确保对结果的可预知性。</p>
+<h3 id="使用-junit4">使用 JUnit4</h3>
+<p>JUnit 目前已经更新到第 4 个版本，也就是 JUnit4，当然第 5 版也在筹备之中，这里我们使用 Junit4 即可。其实 eclipse 已经集成了 Junit 单元测试框架，我们可以直接使用，而不需要去下载 jar 包导入。</p>
+<h6 id="导入-junit4">导入 JUnit4</h6>
+<p>在 eclipse 中新建一个 Java 项目，然后<kbd>右键</kbd>项目，选择 <strong>Build Path -> Add Libraries</strong> ,然后选择 Junit 即可将其添加到项目中。接下来我们创建一个被测试的类，然后再创建一个测试类用来使用 JUnit4 对被测试类进行单元测试。</p>
+<h6 id="进行测试">进行测试</h6>
+<p>Junit4 相对于第 3 个版本来说使用起来更为方便了，只需在测试类的测试方法前面加一个 <code>@Test</code> 注解即可。这里有一个 <code>assertEquals()</code> 方法很有用，其可以帮助我们对程序的期望结果和运行结果进行比对。</p>
+<pre><code>@Test
+public void testXXX(){
+    /**
+     * obj1 : 期望值（我们指定）
+     * obj2 : 运行值（调用被测试类）
+     */
+    assertEquals(Object obj1, Object obj2);
+}
+</code></pre>
+<p>测试代码编写完成后，<strong>Run As -> JUnit Test</strong> 即可，只要出现绿色的状态条则代表我们的测试全部成功，如果为红色说明我们有部分测试失败，在状态条下方的测试结果列表中，每一项前面都会标记出来，测试成功的则为对号，失败的为叉。</p>
+<h6 id="代码规范">代码规范</h6>
+<p>需要注意的是，我们应该将测试类和项目被测试类代码分开放置，通常会在项目下 <strong>New -> Source Floder</strong> 命名为 <strong>test</strong> 将测试类代码放入其中，测试类和被测试类的包名应一致，在项目部署时删除这个目录即可。</p>
+<p>另外，测试类的命名应遵循被测试类名加 Test 后缀的规则；而测试类的方法命名应遵循以 test 为前缀加被测试方法名的规则，比如 <code>testXXX()</code>，这样更为规范一些。还有就是，测试方法是公有（public）、无返回值（void）的，并且测试方法之间是相互独立的。</p>
+<p>这里有一个小技巧，通常被测试类的方法会很多，手动编写测试方法耗费时间，我们可以<kbd>右键</kbd>测试类，<strong>New -> Other</strong> 然后选择 <strong>JUnit Test Case</strong>，选中要测试的方法，设置好文件路径即可自动生成一个包含指定测试方法的测试类。</p>
+<h6 id="测试失败分析">测试失败分析</h6>
+<p>JUnit 的测试结果是非常直观的，红色状态条代表我们测试失败，其中又分为两种失败类型，分别为 <code>Errors</code> 和 <code>Failures</code>。导致测试失败的原因我们可以在下方的消息栈中看到，其说明了引起测试失败的具体原因。</p>
+<ul>
+<li>
+<p>Errors</p>
+<p>是由于代码异常引起的，可能是测试代码本身的错误，也可能是被测试代码中的错误。</p>
+</li>
+<li>
+<p>Failures</p>
+<p>一般由单元测试的断言方法判断失败所引起的，也就是说程序的运行结果和我们的预期不一样。</p>
+</li>
+</ul>
+<h3 id="junit-运行过程">JUnit 运行过程</h3>
+<p>要使用好 JUnit4 这个测试工具，我们应该了解清楚其运行的过程。在 <strong>New -> Other</strong> 新建一个 <strong>JUnit Test Case</strong> 类时，可以勾选四个自动生成的方法：</p>
+<ul>
+<li>
+<p>setUpBeforeClass()</p>
+<p><code>@BeforeClass</code> 标注的静态方法，测试类加载时运行一次，适合加载配置文件。</p>
+</li>
+<li>
+<p>tearDownAfterClass()</p>
+<p><code>@AfterClass</code> 标注的静态方法，所有测试方法执行完成时运行一次，适合清理资源，例如关闭数据库连接。</p>
+</li>
+<li>
+<p>setUp()</p>
+<p><code>@Before</code> 标注的实例方法，每个测试方法执行前运行一次。</p>
+</li>
+<li>
+<p>tearDown()</p>
+<p><code>@After</code> 标注的实例方法，每个测试方法执行后运行一次。</p>
+</li>
+</ul>
+<p>以上四个方法可以帮助我们更好的进行单元测试，当然前提是这些方法运行的时机和作用我们应该知道。</p>
+<h3 id="junit-常用注解">JUnit 常用注解</h3>
+<ul>
+<li>@Test</li>
+<li>@BeforeClass</li>
+<li>@AfterClass</li>
+<li>@Before</li>
+<li>@After</li>
+<li>@Ignore</li>
+<li>@RunWith</li>
+</ul>
+<p><code>@Test</code> 注解标注一个方法为测试方法，除此之外我们还可以设置要捕获的异常和测试时间。</p>
+<pre><code>/**
+ * expected : 表明我们预期会发生的异常，使其不影响测试结果，类似于 throws 关键字
+ * timeout : 指定测试的时间（ms），可以用来测试程序性能
+ */
+@Test(expected=ArithmeticException.class, timeout=2000)
+</code></pre>
+<p><code>@Ignore</code> 注解标注一个测试方法被运行器忽略，同时可以标识一些忽略信息。<code>@RunWith</code> 注解用来更改测试运行器。</p>
+<h3 id="junit-深入使用">JUnit 深入使用</h3>
+<p>会利用 JUnit 进行基本的单元测试或许已经满足了我们的需求，然而 JUnit 为我们提供了更加便利的工具。</p>
+<h6 id="测试套件">测试套件</h6>
+<p>测试套件是用来同时测试一整套测试类的，<strong>New -> Other</strong> 然后 <strong>JUnit Test Suite</strong> 即可创建一个测试套件。</p>
+<pre><code>// 测试套件类
+@RunWith(Suite.class)
+@SuiteClasses({ taskTest1.class, taskTest2.class })
+public class AllTests { }
+</code></pre>
+<p>在创建测试套件时可以勾选需要包含进来的测试类或者测试套件，当然也可以在 <code>@SuiteClasses</code> 注解中手动添加。要注意的是测试套件类必须是一个空类，不能包含任何方法；其次要使用 <code>@RunWith</code> 注解将运行器修改为 <code>Suite.class</code>。</p>
+<h6 id="参数化设置">参数化设置</h6>
+<p>参数化设置可以帮助我们提高代码的重用度，减少类似的代码编写工作量。</p>
+<pre><code>//被测试类
+public class Calculate {
+    // 除法
+    public int divide(int a, int b){
+        return a/b;
+    }
+}
+
+// 参数化设置的测试类
+@RunWith(Parameterized.class)
+public class ParameterTest {
+    // 参数
+    int expected, input1, input2;
+
+    // 用来返回一组参数
+    @Parameters
+    public static Collection&#x3C;Object[]> params(){
+        return Arrays.asList(new Object[][]{
+            {1,2,2},
+            {3,9,3},
+            {25, 625, 25}
+        });
+    }
+
+    // 构造器
+    public ParameterTest(int expected, int input1, int input2) {
+        this.expected = expected;
+        this.input1 = input1;
+        this.input2 = input2;
+    }
+
+    // 测试方法
+    @Test
+    public void testDivide() {
+        assertEquals(expected, new Calculate().divide(input1, input2));
+    }
+}
+</code></pre>
+<p>参数化设置的测试类要使用 <code>@RunWith</code> 注解将运行器修改为 <strong>Parameterized.class</strong>。该类中要声明变量来存放预期值和结果值，声明一个 <code>@Parameters</code> 注解标注的返回值为 <code>Collection</code> 的公共静态方法来返回一组参数值，其次还要声明一个带参数的构造方法。</p>2:["$","div",null,{"className":"max-w-5xl mx-auto px-6 flex gap-0 min-h-full","children":[["$","$La",null,{"html":"$b"}],["$","article",null,{"className":"flex-1 min-w-0 max-w-2xl mx-auto px-0 lg:px-10 py-12","children":[["$","div",null,{"className":"mb-8","children":["$","$Lc",null,{"href":"/blog","className":"inline-flex items-center gap-1.5 text-sm text-gray-400 dark:text-[rgba(255,255,255,0.38)] hover:text-gray-700 dark:hover:text-[rgba(255,255,255,0.60)] transition-colors","children":[["$","svg",null,{"xmlns":"http://www.w3.org/2000/svg","width":"13","height":"13","viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","children":["$","path",null,{"d":"M19 12H5M12 5l-7 7 7 7"}]}],"返回"]}]}],["$","header",null,{"className":"mb-10","children":[["$","div",null,{"className":"flex flex-wrap items-center gap-1.5 mb-4","children":[["$","span",null,{"className":"inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400/80","children":"技术"}],[["$","span","计算机技术",{"className":"inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 dark:bg-white/[0.06] text-gray-600 dark:text-[rgba(255,255,255,0.60)]","children":"计算机技术"}],["$","span","工具",{"className":"inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 dark:bg-white/[0.06] text-gray-600 dark:text-[rgba(255,255,255,0.60)]","children":"工具"}],["$","span","测试",{"className":"inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 dark:bg-white/[0.06] text-gray-600 dark:text-[rgba(255,255,255,0.60)]","children":"测试"}]]]}],["$","h1",null,{"className":"text-2xl sm:text-3xl font-bold text-gray-900 dark:text-[rgba(255,255,255,0.87)] leading-tight mb-3","children":"单元测试工具：Junit"}],["$","p",null,{"className":"text-gray-500 dark:text-[rgba(255,255,255,0.60)] text-base leading-relaxed mb-4","children":"通常一个项目的代码量是比较大的，而且其中逻辑也较为复杂，在开发完成后再进行项目测试其实是比较耗费时间和精力的，因此边开发边测试是个很好的选择，而 JUnit 则为我们提供了这样的便利。"}],["$","time",null,{"dateTime":"2017-08-30T23:42:00.000Z","className":"text-xs text-gray-400 dark:text-[rgba(255,255,255,0.38)]","children":"2017年8月30日"}]]}],["$","div",null,{"className":"prose prose-gray dark:prose-invert max-w-none prose-headings:scroll-mt-20 prose-code:before:content-none prose-code:after:content-none prose-img:rounded-lg prose-img:w-full prose-img:h-auto prose-img:block prose-img:my-6 ","dangerouslySetInnerHTML":{"__html":"$d"}}],["$","div",null,{"className":"mt-14 pt-8 border-t border-gray-100 dark:border-white/[0.12]","children":["$","$Lc",null,{"href":"/blog","className":"inline-flex items-center gap-1.5 text-sm text-gray-500 dark:text-[rgba(255,255,255,0.60)] hover:text-gray-900 dark:hover:text-[rgba(255,255,255,0.87)] transition-colors","children":[["$","svg",null,{"xmlns":"http://www.w3.org/2000/svg","width":"13","height":"13","viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","children":["$","path",null,{"d":"M19 12H5M12 5l-7 7 7 7"}]}],"返回文章列表"]}]}]]}]]}]
+9:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"单元测试工具：Junit — LeeZChuan"}],["$","meta","3",{"name":"description","content":"通常一个项目的代码量是比较大的，而且其中逻辑也较为复杂，在开发完成后再进行项目测试其实是比较耗费时间和精力的，因此边开发边测试是个很好的选择，而 JUnit 则为我们提供了这样的便利。"}]]
+1:null

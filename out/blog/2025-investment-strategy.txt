@@ -1,0 +1,200 @@
+3:I[4707,[],""]
+5:I[6423,[],""]
+6:I[2060,["972","static/chunks/972-12c2a745f65e530e.js","185","static/chunks/app/layout-6d295785c0ea2d7c.js"],"ThemeProvider"]
+7:I[5386,["972","static/chunks/972-12c2a745f65e530e.js","185","static/chunks/app/layout-6d295785c0ea2d7c.js"],"LangProvider"]
+8:I[7753,["972","static/chunks/972-12c2a745f65e530e.js","185","static/chunks/app/layout-6d295785c0ea2d7c.js"],"default"]
+4:["slug","2025-investment-strategy","d"]
+0:["V5oDiuOcD730mDJlDNtfs",[[["",{"children":["blog",{"children":[["slug","2025-investment-strategy","d"],{"children":["__PAGE__?{\"slug\":\"2025-investment-strategy\"}",{}]}]}]},"$undefined","$undefined",true],["",{"children":["blog",{"children":[["slug","2025-investment-strategy","d"],{"children":["__PAGE__",{},[["$L1","$L2",null],null],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","blog","children","$4","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","blog","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/47fa5dcb7f1f7e4f.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"zh-CN","suppressHydrationWarning":true,"children":["$","body",null,{"className":"bg-white dark:bg-[#0f0f0f] min-h-screen","children":["$","$L6",null,{"children":["$","$L7",null,{"children":[["$","$L8",null,{}],["$","main",null,{"className":"pt-14","children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[]}]}]]}]}]}]}]],null],null],["$L9",null]]]]
+a:I[3362,["972","static/chunks/972-12c2a745f65e530e.js","308","static/chunks/app/blog/%5Bslug%5D/page-94533f6285c1d477.js"],"default"]
+c:I[2972,["972","static/chunks/972-12c2a745f65e530e.js","308","static/chunks/app/blog/%5Bslug%5D/page-94533f6285c1d477.js"],""]
+b:Td01,<p>记录个人投资配置思路和市场观察，供未来回顾参考。</p>
+<h2 id="2024-年配置策略">2024 年配置策略</h2>
+<p>当前投资组合主要集中在以下几个方向：</p>
+<h3 id="1-美股市场">1. 美股市场</h3>
+<p><strong>配置标的</strong>：纳斯达克 100 和标普 500 指数基金</p>
+<p><strong>逻辑</strong>：</p>
+<ul>
+<li>美股已是全球资金市场</li>
+<li>尽管高溢价，但全球资金缺乏其他好的去处</li>
+<li>科技股长期向好</li>
+<li>美元资产配置的必要性</li>
+</ul>
+<h3 id="2-黄金">2. 黄金</h3>
+<p><strong>配置标的</strong>：黄金 ETF / 实物黄金</p>
+<p><strong>逻辑</strong>：</p>
+<ul>
+<li>黄金周期通常 5-10 年</li>
+<li>当前可能处于周期中期</li>
+<li>长线看好，作为避险资产配置</li>
+</ul>
+<h3 id="3-比特币">3. 比特币</h3>
+<p><strong>配置标的</strong>：BTC</p>
+<p><strong>逻辑</strong>：</p>
+<ul>
+<li>特朗普上台，政策环境改善</li>
+<li>机构资金持续入场</li>
+<li>长期看好数字资产</li>
+</ul>
+<h3 id="4-a-股观望">4. A 股观望</h3>
+<p><strong>策略</strong>：</p>
+<ul>
+<li>如果 2025 年大 A 跌到 3000 点以内</li>
+<li>2800-2900 点区间考虑买入被动指数基金</li>
+<li>否则保持观望</li>
+</ul>
+<h2 id="2025-04-09-更新关税风波">2025-04-09 更新：关税风波</h2>
+<h3 id="事件回顾">事件回顾</h3>
+<p>前段时间特朗普对全球加征关税，导致全球股市暴跌：</p>
+<ul>
+<li>我的基金 80% 在美股</li>
+<li>两天亏损 1 万元</li>
+<li>心态波动较大</li>
+</ul>
+<h3 id="市场反转">市场反转</h3>
+<p>今天特朗普宣布暂停关税：</p>
+<ul>
+<li>美股直接反弹 12 个点</li>
+<li>账户直接回本</li>
+<li>真的离谱</li>
+</ul>
+<h3 id="反思">反思</h3>
+<p>这次波动给我几点启示：</p>
+<ol>
+<li>
+<p><strong>仓位管理很重要</strong>
+80% 集中在单一市场风险过高，应该分散</p>
+</li>
+<li>
+<p><strong>长期主义</strong>
+短期波动不应影响长期策略，最近加仓加少了</p>
+</li>
+<li>
+<p><strong>政策风险</strong>
+政治因素对市场影响越来越大，需要关注地缘政治</p>
+</li>
+<li>
+<p><strong>情绪管理</strong>
+两天 1 万的浮亏考验心态，要克服追涨杀跌的冲动</p>
+</li>
+</ol>
+<h2 id="后续调整方向">后续调整方向</h2>
+<p>基于这次经历，计划做以下调整：</p>
+<h3 id="分散化">分散化</h3>
+<ul>
+<li>降低美股占比到 60-70%</li>
+<li>增加黄金和比特币配置</li>
+<li>适当配置债券类资产</li>
+</ul>
+<h3 id="定投策略">定投策略</h3>
+<ul>
+<li>不要试图择时</li>
+<li>坚持定期定额投入</li>
+<li>市场恐慌时加大投入</li>
+</ul>
+<h3 id="学习提升">学习提升</h3>
+<ul>
+<li>多研究宏观经济</li>
+<li>关注地缘政治</li>
+<li>理解资产配置逻辑</li>
+</ul>
+<h2 id="风险提示">风险提示</h2>
+<p>以上仅为个人投资记录和思考，不构成任何投资建议。投资有风险，决策需谨慎。</p>
+<p>每个人的风险承受能力、投资目标、时间跨度都不同，应该根据自身情况制定适合自己的策略。</p>
+<h2 id="持续更新">持续更新</h2>
+<p>投资是长期的事，策略会随着市场变化和认知提升不断调整。保持记录，定期回顾，避免重复犯错。</p>d:Td01,<p>记录个人投资配置思路和市场观察，供未来回顾参考。</p>
+<h2 id="2024-年配置策略">2024 年配置策略</h2>
+<p>当前投资组合主要集中在以下几个方向：</p>
+<h3 id="1-美股市场">1. 美股市场</h3>
+<p><strong>配置标的</strong>：纳斯达克 100 和标普 500 指数基金</p>
+<p><strong>逻辑</strong>：</p>
+<ul>
+<li>美股已是全球资金市场</li>
+<li>尽管高溢价，但全球资金缺乏其他好的去处</li>
+<li>科技股长期向好</li>
+<li>美元资产配置的必要性</li>
+</ul>
+<h3 id="2-黄金">2. 黄金</h3>
+<p><strong>配置标的</strong>：黄金 ETF / 实物黄金</p>
+<p><strong>逻辑</strong>：</p>
+<ul>
+<li>黄金周期通常 5-10 年</li>
+<li>当前可能处于周期中期</li>
+<li>长线看好，作为避险资产配置</li>
+</ul>
+<h3 id="3-比特币">3. 比特币</h3>
+<p><strong>配置标的</strong>：BTC</p>
+<p><strong>逻辑</strong>：</p>
+<ul>
+<li>特朗普上台，政策环境改善</li>
+<li>机构资金持续入场</li>
+<li>长期看好数字资产</li>
+</ul>
+<h3 id="4-a-股观望">4. A 股观望</h3>
+<p><strong>策略</strong>：</p>
+<ul>
+<li>如果 2025 年大 A 跌到 3000 点以内</li>
+<li>2800-2900 点区间考虑买入被动指数基金</li>
+<li>否则保持观望</li>
+</ul>
+<h2 id="2025-04-09-更新关税风波">2025-04-09 更新：关税风波</h2>
+<h3 id="事件回顾">事件回顾</h3>
+<p>前段时间特朗普对全球加征关税，导致全球股市暴跌：</p>
+<ul>
+<li>我的基金 80% 在美股</li>
+<li>两天亏损 1 万元</li>
+<li>心态波动较大</li>
+</ul>
+<h3 id="市场反转">市场反转</h3>
+<p>今天特朗普宣布暂停关税：</p>
+<ul>
+<li>美股直接反弹 12 个点</li>
+<li>账户直接回本</li>
+<li>真的离谱</li>
+</ul>
+<h3 id="反思">反思</h3>
+<p>这次波动给我几点启示：</p>
+<ol>
+<li>
+<p><strong>仓位管理很重要</strong>
+80% 集中在单一市场风险过高，应该分散</p>
+</li>
+<li>
+<p><strong>长期主义</strong>
+短期波动不应影响长期策略，最近加仓加少了</p>
+</li>
+<li>
+<p><strong>政策风险</strong>
+政治因素对市场影响越来越大，需要关注地缘政治</p>
+</li>
+<li>
+<p><strong>情绪管理</strong>
+两天 1 万的浮亏考验心态，要克服追涨杀跌的冲动</p>
+</li>
+</ol>
+<h2 id="后续调整方向">后续调整方向</h2>
+<p>基于这次经历，计划做以下调整：</p>
+<h3 id="分散化">分散化</h3>
+<ul>
+<li>降低美股占比到 60-70%</li>
+<li>增加黄金和比特币配置</li>
+<li>适当配置债券类资产</li>
+</ul>
+<h3 id="定投策略">定投策略</h3>
+<ul>
+<li>不要试图择时</li>
+<li>坚持定期定额投入</li>
+<li>市场恐慌时加大投入</li>
+</ul>
+<h3 id="学习提升">学习提升</h3>
+<ul>
+<li>多研究宏观经济</li>
+<li>关注地缘政治</li>
+<li>理解资产配置逻辑</li>
+</ul>
+<h2 id="风险提示">风险提示</h2>
+<p>以上仅为个人投资记录和思考，不构成任何投资建议。投资有风险，决策需谨慎。</p>
+<p>每个人的风险承受能力、投资目标、时间跨度都不同，应该根据自身情况制定适合自己的策略。</p>
+<h2 id="持续更新">持续更新</h2>
+<p>投资是长期的事，策略会随着市场变化和认知提升不断调整。保持记录，定期回顾，避免重复犯错。</p>2:["$","div",null,{"className":"max-w-5xl mx-auto px-6 flex gap-0 min-h-full","children":[["$","$La",null,{"html":"$b"}],["$","article",null,{"className":"flex-1 min-w-0 max-w-2xl mx-auto px-0 lg:px-10 py-12","children":[["$","div",null,{"className":"mb-8","children":["$","$Lc",null,{"href":"/blog","className":"inline-flex items-center gap-1.5 text-sm text-gray-400 dark:text-[rgba(255,255,255,0.38)] hover:text-gray-700 dark:hover:text-[rgba(255,255,255,0.60)] transition-colors","children":[["$","svg",null,{"xmlns":"http://www.w3.org/2000/svg","width":"13","height":"13","viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","children":["$","path",null,{"d":"M19 12H5M12 5l-7 7 7 7"}]}],"返回"]}]}],["$","header",null,{"className":"mb-10","children":[["$","div",null,{"className":"flex flex-wrap items-center gap-1.5 mb-4","children":[["$","span",null,{"className":"inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400/80","children":"生活"}],[["$","span","投资",{"className":"inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 dark:bg-white/[0.06] text-gray-600 dark:text-[rgba(255,255,255,0.60)]","children":"投资"}],["$","span","理财",{"className":"inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 dark:bg-white/[0.06] text-gray-600 dark:text-[rgba(255,255,255,0.60)]","children":"理财"}],["$","span","思考",{"className":"inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 dark:bg-white/[0.06] text-gray-600 dark:text-[rgba(255,255,255,0.60)]","children":"思考"}]]]}],["$","h1",null,{"className":"text-2xl sm:text-3xl font-bold text-gray-900 dark:text-[rgba(255,255,255,0.87)] leading-tight mb-3","children":"2025 投资策略思考"}],["$","p",null,{"className":"text-gray-500 dark:text-[rgba(255,255,255,0.60)] text-base leading-relaxed mb-4","children":"个人投资配置策略与市场观察记录"}],["$","time",null,{"dateTime":"2024-12-09T00:00:00.000Z","className":"text-xs text-gray-400 dark:text-[rgba(255,255,255,0.38)]","children":"2024年12月9日"}]]}],["$","div",null,{"className":"prose prose-gray dark:prose-invert max-w-none prose-headings:scroll-mt-20 prose-code:before:content-none prose-code:after:content-none prose-img:rounded-lg prose-img:w-full prose-img:h-auto prose-img:block prose-img:my-6 ","dangerouslySetInnerHTML":{"__html":"$d"}}],["$","div",null,{"className":"mt-14 pt-8 border-t border-gray-100 dark:border-white/[0.12]","children":["$","$Lc",null,{"href":"/blog","className":"inline-flex items-center gap-1.5 text-sm text-gray-500 dark:text-[rgba(255,255,255,0.60)] hover:text-gray-900 dark:hover:text-[rgba(255,255,255,0.87)] transition-colors","children":[["$","svg",null,{"xmlns":"http://www.w3.org/2000/svg","width":"13","height":"13","viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","children":["$","path",null,{"d":"M19 12H5M12 5l-7 7 7 7"}]}],"返回文章列表"]}]}]]}]]}]
+9:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"2025 投资策略思考 — LeeZChuan"}],["$","meta","3",{"name":"description","content":"个人投资配置策略与市场观察记录"}]]
+1:null

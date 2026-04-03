@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Suspense } from 'react';
 import { getAllPosts } from '@/lib/posts';
 import BlogContent from './BlogContent';
 
@@ -11,21 +12,11 @@ const CATEGORIES = {
   life: { label: '生活', labelEn: 'Life', description: '阅读、旅行与日常思考' },
 };
 
-interface Props {
-  searchParams: { page?: string; cat?: string };
-}
-
-export default function BlogPage({ searchParams }: Props) {
+export default function BlogPage() {
   const posts = getAllPosts();
-  const activeCat = searchParams.cat ?? 'all';
-  const currentPage = Math.max(1, parseInt(searchParams.page ?? '1', 10));
-
   return (
-    <BlogContent
-      posts={posts}
-      categories={CATEGORIES}
-      activeCat={activeCat}
-      currentPage={currentPage}
-    />
+    <Suspense>
+      <BlogContent posts={posts} categories={CATEGORIES} />
+    </Suspense>
   );
 }

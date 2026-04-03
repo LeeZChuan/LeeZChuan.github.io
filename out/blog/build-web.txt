@@ -1,0 +1,132 @@
+3:I[4707,[],""]
+5:I[6423,[],""]
+6:I[2060,["972","static/chunks/972-12c2a745f65e530e.js","185","static/chunks/app/layout-6d295785c0ea2d7c.js"],"ThemeProvider"]
+7:I[5386,["972","static/chunks/972-12c2a745f65e530e.js","185","static/chunks/app/layout-6d295785c0ea2d7c.js"],"LangProvider"]
+8:I[7753,["972","static/chunks/972-12c2a745f65e530e.js","185","static/chunks/app/layout-6d295785c0ea2d7c.js"],"default"]
+4:["slug","build-web","d"]
+0:["V5oDiuOcD730mDJlDNtfs",[[["",{"children":["blog",{"children":[["slug","build-web","d"],{"children":["__PAGE__?{\"slug\":\"build-web\"}",{}]}]}]},"$undefined","$undefined",true],["",{"children":["blog",{"children":[["slug","build-web","d"],{"children":["__PAGE__",{},[["$L1","$L2",null],null],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","blog","children","$4","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","blog","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/47fa5dcb7f1f7e4f.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"zh-CN","suppressHydrationWarning":true,"children":["$","body",null,{"className":"bg-white dark:bg-[#0f0f0f] min-h-screen","children":["$","$L6",null,{"children":["$","$L7",null,{"children":[["$","$L8",null,{}],["$","main",null,{"className":"pt-14","children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[]}]}]]}]}]}]}]],null],null],["$L9",null]]]]
+a:I[3362,["972","static/chunks/972-12c2a745f65e530e.js","308","static/chunks/app/blog/%5Bslug%5D/page-94533f6285c1d477.js"],"default"]
+c:I[2972,["972","static/chunks/972-12c2a745f65e530e.js","308","static/chunks/app/blog/%5Bslug%5D/page-94533f6285c1d477.js"],""]
+b:Tc07,<h2 id="前言">前言</h2>
+<ul>
+<li>现在开发一个项目,从项目立项到开始开发,在github或者gitee上开发</li>
+<li>本地运行没问题,肯定要走发布流程,让客户进行验收,这时候就需要远程服务器发布了</li>
+<li>本次就聊聊,顺带记录一下如何发布</li>
+</ul>
+<h2 id="一申请远程服务器">一、申请远程服务器</h2>
+<p>远程服务器现在市面上有很多供应商提供很多服务器,比如阿里、腾讯,我本次就购买了阿里的服务器《轻量应用服务器》</p>
+<p>一系列操作之后就可以进入平台,我选择的都是默认的配置,然后点击<code>远程连接</code>,就可以进入到阿里提供的服务器上</p>
+<p><img src="/images/blog/build-web/1.png" alt="1"></p>
+<p>阿里远程提供了一个简易版的ai助手,如果一时想不起linux命令就可以问问他,还是有点方便的</p>
+<p><img src="/images/blog/build-web/2.png" alt="2"></p>
+<h2 id="二远程服务器环境搭建">二、远程服务器环境搭建</h2>
+<ul>
+<li>接下来就是常规的环境配置了,包含node、git、nginx环境配置:</li>
+</ul>
+<h3 id="1yum--y-install-git">1.yum -y install git</h3>
+<h3 id="2yum-install-nodejs">2.yum install nodejs</h3>
+<ul>
+<li>
+<p>这里也可以使用wget下载:
+wget <a href="https://nodejs.org/dist/v16.14.0/node-v16.14.0-linux-x64.tar.xz">https://nodejs.org/dist/v16.14.0/node-v16.14.0-linux-x64.tar.xz</a></p>
+</li>
+<li>
+<p>解压文件的 bin 目录底下包含了 node、npm 等命令
+tar xf node-v16.14.0-linux-x64.tar.xz</p>
+</li>
+<li>
+<p>把nodejs bin目录添加到环境变量</p>
+</li>
+</ul>
+<pre><code class="language-md">1、备份老文件，防止改错弄坏服务器
+cp /etc/profile /etc/profile_old
+
+2、修改环境变量
+vi /etc/profile     在文件尾部添加 export PATH=$PATH:/opt/node-v16.14.0-linux-x64/bin
+
+3、刷新环境变量
+source /etc/profile
+
+node -v      输出版本号 16.14.0 即为配置成功
+</code></pre>
+<p>由于我的项目是大于18的所以我配置了20的环境变量</p>
+<p><img src="/images/blog/build-web/3.png" alt="3"></p>
+<h3 id="3sudo-yum--y-install-nginx">3.sudo yum -y install nginx</h3>
+<ul>
+<li>
+<p>安装好了可以访问nginx配置文件使用：vim /etc/nginx/nginx.conf</p>
+</li>
+<li>
+<p>具体环境变量如何配置,请参考我的nginx那篇文章的讲解即可</p>
+</li>
+</ul>
+<h4 id="如果无法使用yum安装nginx可以考虑使用">如果无法使用yum安装nginx可以考虑使用</h4>
+<ul>
+<li>dnf -y install <a href="http://nginx.org/packages/centos/8/x86">http://nginx.org/packages/centos/8/x86</a> _64/RPMS/nginx-1.18.0-1.el8.ngx.x86 _64.rpm</li>
+</ul>
+<h2 id="三发布代码">三、发布代码</h2>
+<p>上述流程走完就该git拉代码,然后本地build代码,配置nginx路径就可以了,一切上述完成,你的网页就正式在公网可以访问了</p>
+<h2 id="四公网域名处理">四、公网域名处理</h2>
+<p>官方也提供了域名申请服务,按照自己的需求申请域名即可,一般常规的域名价格不会太高,一年100块钱左右</p>d:Tc07,<h2 id="前言">前言</h2>
+<ul>
+<li>现在开发一个项目,从项目立项到开始开发,在github或者gitee上开发</li>
+<li>本地运行没问题,肯定要走发布流程,让客户进行验收,这时候就需要远程服务器发布了</li>
+<li>本次就聊聊,顺带记录一下如何发布</li>
+</ul>
+<h2 id="一申请远程服务器">一、申请远程服务器</h2>
+<p>远程服务器现在市面上有很多供应商提供很多服务器,比如阿里、腾讯,我本次就购买了阿里的服务器《轻量应用服务器》</p>
+<p>一系列操作之后就可以进入平台,我选择的都是默认的配置,然后点击<code>远程连接</code>,就可以进入到阿里提供的服务器上</p>
+<p><img src="/images/blog/build-web/1.png" alt="1"></p>
+<p>阿里远程提供了一个简易版的ai助手,如果一时想不起linux命令就可以问问他,还是有点方便的</p>
+<p><img src="/images/blog/build-web/2.png" alt="2"></p>
+<h2 id="二远程服务器环境搭建">二、远程服务器环境搭建</h2>
+<ul>
+<li>接下来就是常规的环境配置了,包含node、git、nginx环境配置:</li>
+</ul>
+<h3 id="1yum--y-install-git">1.yum -y install git</h3>
+<h3 id="2yum-install-nodejs">2.yum install nodejs</h3>
+<ul>
+<li>
+<p>这里也可以使用wget下载:
+wget <a href="https://nodejs.org/dist/v16.14.0/node-v16.14.0-linux-x64.tar.xz">https://nodejs.org/dist/v16.14.0/node-v16.14.0-linux-x64.tar.xz</a></p>
+</li>
+<li>
+<p>解压文件的 bin 目录底下包含了 node、npm 等命令
+tar xf node-v16.14.0-linux-x64.tar.xz</p>
+</li>
+<li>
+<p>把nodejs bin目录添加到环境变量</p>
+</li>
+</ul>
+<pre><code class="language-md">1、备份老文件，防止改错弄坏服务器
+cp /etc/profile /etc/profile_old
+
+2、修改环境变量
+vi /etc/profile     在文件尾部添加 export PATH=$PATH:/opt/node-v16.14.0-linux-x64/bin
+
+3、刷新环境变量
+source /etc/profile
+
+node -v      输出版本号 16.14.0 即为配置成功
+</code></pre>
+<p>由于我的项目是大于18的所以我配置了20的环境变量</p>
+<p><img src="/images/blog/build-web/3.png" alt="3"></p>
+<h3 id="3sudo-yum--y-install-nginx">3.sudo yum -y install nginx</h3>
+<ul>
+<li>
+<p>安装好了可以访问nginx配置文件使用：vim /etc/nginx/nginx.conf</p>
+</li>
+<li>
+<p>具体环境变量如何配置,请参考我的nginx那篇文章的讲解即可</p>
+</li>
+</ul>
+<h4 id="如果无法使用yum安装nginx可以考虑使用">如果无法使用yum安装nginx可以考虑使用</h4>
+<ul>
+<li>dnf -y install <a href="http://nginx.org/packages/centos/8/x86">http://nginx.org/packages/centos/8/x86</a> _64/RPMS/nginx-1.18.0-1.el8.ngx.x86 _64.rpm</li>
+</ul>
+<h2 id="三发布代码">三、发布代码</h2>
+<p>上述流程走完就该git拉代码,然后本地build代码,配置nginx路径就可以了,一切上述完成,你的网页就正式在公网可以访问了</p>
+<h2 id="四公网域名处理">四、公网域名处理</h2>
+<p>官方也提供了域名申请服务,按照自己的需求申请域名即可,一般常规的域名价格不会太高,一年100块钱左右</p>2:["$","div",null,{"className":"max-w-5xl mx-auto px-6 flex gap-0 min-h-full","children":[["$","$La",null,{"html":"$b"}],["$","article",null,{"className":"flex-1 min-w-0 max-w-2xl mx-auto px-0 lg:px-10 py-12","children":[["$","div",null,{"className":"mb-8","children":["$","$Lc",null,{"href":"/blog","className":"inline-flex items-center gap-1.5 text-sm text-gray-400 dark:text-[rgba(255,255,255,0.38)] hover:text-gray-700 dark:hover:text-[rgba(255,255,255,0.60)] transition-colors","children":[["$","svg",null,{"xmlns":"http://www.w3.org/2000/svg","width":"13","height":"13","viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","children":["$","path",null,{"d":"M19 12H5M12 5l-7 7 7 7"}]}],"返回"]}]}],["$","header",null,{"className":"mb-10","children":[["$","div",null,{"className":"flex flex-wrap items-center gap-1.5 mb-4","children":[["$","span",null,{"className":"inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400/80","children":"技术"}],[["$","span","远程部署web",{"className":"inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 dark:bg-white/[0.06] text-gray-600 dark:text-[rgba(255,255,255,0.60)]","children":"远程部署web"}]]]}],["$","h1",null,{"className":"text-2xl sm:text-3xl font-bold text-gray-900 dark:text-[rgba(255,255,255,0.87)] leading-tight mb-3","children":"如何在远程服务器上部署项目"}],["$","p",null,{"className":"text-gray-500 dark:text-[rgba(255,255,255,0.60)] text-base leading-relaxed mb-4","children":"如何将本地开发的代码部署到远程服务器上"}],["$","time",null,{"dateTime":"2025-04-09T05:45:35.966Z","className":"text-xs text-gray-400 dark:text-[rgba(255,255,255,0.38)]","children":"2025年4月9日"}]]}],["$","div",null,{"className":"prose prose-gray dark:prose-invert max-w-none prose-headings:scroll-mt-20 prose-code:before:content-none prose-code:after:content-none prose-img:rounded-lg prose-img:w-full prose-img:h-auto prose-img:block prose-img:my-6 ","dangerouslySetInnerHTML":{"__html":"$d"}}],["$","div",null,{"className":"mt-14 pt-8 border-t border-gray-100 dark:border-white/[0.12]","children":["$","$Lc",null,{"href":"/blog","className":"inline-flex items-center gap-1.5 text-sm text-gray-500 dark:text-[rgba(255,255,255,0.60)] hover:text-gray-900 dark:hover:text-[rgba(255,255,255,0.87)] transition-colors","children":[["$","svg",null,{"xmlns":"http://www.w3.org/2000/svg","width":"13","height":"13","viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","children":["$","path",null,{"d":"M19 12H5M12 5l-7 7 7 7"}]}],"返回文章列表"]}]}]]}]]}]
+9:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"如何在远程服务器上部署项目 — LeeZChuan"}],["$","meta","3",{"name":"description","content":"如何将本地开发的代码部署到远程服务器上"}]]
+1:null

@@ -1,0 +1,54 @@
+3:I[4707,[],""]
+5:I[6423,[],""]
+6:I[2060,["972","static/chunks/972-12c2a745f65e530e.js","185","static/chunks/app/layout-6d295785c0ea2d7c.js"],"ThemeProvider"]
+7:I[5386,["972","static/chunks/972-12c2a745f65e530e.js","185","static/chunks/app/layout-6d295785c0ea2d7c.js"],"LangProvider"]
+8:I[7753,["972","static/chunks/972-12c2a745f65e530e.js","185","static/chunks/app/layout-6d295785c0ea2d7c.js"],"default"]
+4:["slug","css-bfc","d"]
+0:["V5oDiuOcD730mDJlDNtfs",[[["",{"children":["blog",{"children":[["slug","css-bfc","d"],{"children":["__PAGE__?{\"slug\":\"css-bfc\"}",{}]}]}]},"$undefined","$undefined",true],["",{"children":["blog",{"children":[["slug","css-bfc","d"],{"children":["__PAGE__",{},[["$L1","$L2",null],null],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","blog","children","$4","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","blog","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/47fa5dcb7f1f7e4f.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"zh-CN","suppressHydrationWarning":true,"children":["$","body",null,{"className":"bg-white dark:bg-[#0f0f0f] min-h-screen","children":["$","$L6",null,{"children":["$","$L7",null,{"children":[["$","$L8",null,{}],["$","main",null,{"className":"pt-14","children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[]}]}]]}]}]}]}]],null],null],["$L9",null]]]]
+a:I[3362,["972","static/chunks/972-12c2a745f65e530e.js","308","static/chunks/app/blog/%5Bslug%5D/page-94533f6285c1d477.js"],"default"]
+c:I[2972,["972","static/chunks/972-12c2a745f65e530e.js","308","static/chunks/app/blog/%5Bslug%5D/page-94533f6285c1d477.js"],""]
+b:Td1a,<p>在进行页面布局时，通常有流式布局、定位布局、浮动布局这三种形式。而在布局过程中，各元素之间的影响却是一个很关键的问题。</p>
+<h3 id="bfc">BFC</h3>
+<p>BFC（Block Formatting Context，块级格式化上下文）是 CSS 2.1 中的一个规范，在 CSS 3 中也称为 Flow Root。首先，BFC 是<strong>块级元素</strong>身上的一个特性，通常它是隐藏不生效的，但某些情况下它会显现出来：</p>
+<ol>
+<li><code>float</code> 不为 <code>none</code></li>
+<li><code>position</code> 不为 <code>static</code>、<code>relative</code></li>
+<li><code>overflow</code> 不为 <code>visible</code></li>
+<li><code>display</code> 不为 <code>table-cell</code>、<code>table-caption</code>、<code>inline-block</code>、<code>flex</code>、<code>inline-flex</code></li>
+</ol>
+<p>只要满足上述任一条件，该块级元素身上的 BFC 特性即会显现出来。</p>
+<h3 id="bfc-特性">BFC 特性</h3>
+<p>BFC 特性所展现出来的效果可以通俗的总结为，**BFC 特性导致块级元素成为一个容器盒子，将会把容器内的元素与容器外的元素相互隔离（也就是说容器内外的元素之间不再发生相互作用）。**于是乎，我们就可以说该容器内的所有元素都处在了同一个块级格式化上下文中，只有它们之间才会发生相互作用。</p>
+<h4 id="清除-margin-重叠">清除 margin 重叠</h4>
+<p>最典型的相互作用就是两个相邻的块级元素垂直方向上的 <code>margin</code> 值会发生重叠并取最大值。当我们为其中一个元素包裹一个 div 元素并使该元素的 BFC 显现（例如 <code>overflow:hidden</code>）时，我们会发现原先两个元素在垂直方向上的 <code>margin</code> 值已不再重叠，这也就是说明它们之间已不存在相互作用。</p>
+<h4 id="清除-float-覆盖">清除 float 覆盖</h4>
+<p>当一个元素 <code>float</code> 设置不为 <code>none</code> 时，该元素将会浮动起来脱离文档流，导致它后面的非浮动元素前移，从而自己覆盖在前移的元素上。这时候，当我们使它后面的非浮动元素 BFC 特性显现（例如 <code>overflow:auto</code>）时，我们就会发现这些元素不会前移了。</p>
+<h4 id="float-包含">float 包含</h4>
+<p>同样地，当父元素的高度没有设置，子元素浮动起来后，父元素的 <code>height</code> 依然为 <code>0</code>。这时候，我们使父元素的 BFC 特性显现（例如 <code>float:left</code>）时，我们会发现父元素的高度被浮动的子元素撑起来了，也就是父元素将浮动子元素包含了起来。</p>
+<h4 id="清除文字环绕">清除文字环绕</h4>
+<p>当一个浮动元素后面跟了个 <code>&#x3C;p></code> 元素且内部有大量文字，这些文字会产生环绕效果，也就是环绕在浮动元素周围。我们可以使该 p 元素的 BFC 特性显现（例如 <code>overflow:hidden</code>），然后我们就可以看到文字全部显示在了侧边，而不会再环绕在该浮动元素上下方，也就是类似评论功能中头像与评论文字两侧布局的效果。</p>
+<h3 id="结语">结语</h3>
+<p>事实上，BFC 特性还有许多其它的妙用，我们在开发过程中可以多尝试，挖掘它新的技巧。</p>d:Td1a,<p>在进行页面布局时，通常有流式布局、定位布局、浮动布局这三种形式。而在布局过程中，各元素之间的影响却是一个很关键的问题。</p>
+<h3 id="bfc">BFC</h3>
+<p>BFC（Block Formatting Context，块级格式化上下文）是 CSS 2.1 中的一个规范，在 CSS 3 中也称为 Flow Root。首先，BFC 是<strong>块级元素</strong>身上的一个特性，通常它是隐藏不生效的，但某些情况下它会显现出来：</p>
+<ol>
+<li><code>float</code> 不为 <code>none</code></li>
+<li><code>position</code> 不为 <code>static</code>、<code>relative</code></li>
+<li><code>overflow</code> 不为 <code>visible</code></li>
+<li><code>display</code> 不为 <code>table-cell</code>、<code>table-caption</code>、<code>inline-block</code>、<code>flex</code>、<code>inline-flex</code></li>
+</ol>
+<p>只要满足上述任一条件，该块级元素身上的 BFC 特性即会显现出来。</p>
+<h3 id="bfc-特性">BFC 特性</h3>
+<p>BFC 特性所展现出来的效果可以通俗的总结为，**BFC 特性导致块级元素成为一个容器盒子，将会把容器内的元素与容器外的元素相互隔离（也就是说容器内外的元素之间不再发生相互作用）。**于是乎，我们就可以说该容器内的所有元素都处在了同一个块级格式化上下文中，只有它们之间才会发生相互作用。</p>
+<h4 id="清除-margin-重叠">清除 margin 重叠</h4>
+<p>最典型的相互作用就是两个相邻的块级元素垂直方向上的 <code>margin</code> 值会发生重叠并取最大值。当我们为其中一个元素包裹一个 div 元素并使该元素的 BFC 显现（例如 <code>overflow:hidden</code>）时，我们会发现原先两个元素在垂直方向上的 <code>margin</code> 值已不再重叠，这也就是说明它们之间已不存在相互作用。</p>
+<h4 id="清除-float-覆盖">清除 float 覆盖</h4>
+<p>当一个元素 <code>float</code> 设置不为 <code>none</code> 时，该元素将会浮动起来脱离文档流，导致它后面的非浮动元素前移，从而自己覆盖在前移的元素上。这时候，当我们使它后面的非浮动元素 BFC 特性显现（例如 <code>overflow:auto</code>）时，我们就会发现这些元素不会前移了。</p>
+<h4 id="float-包含">float 包含</h4>
+<p>同样地，当父元素的高度没有设置，子元素浮动起来后，父元素的 <code>height</code> 依然为 <code>0</code>。这时候，我们使父元素的 BFC 特性显现（例如 <code>float:left</code>）时，我们会发现父元素的高度被浮动的子元素撑起来了，也就是父元素将浮动子元素包含了起来。</p>
+<h4 id="清除文字环绕">清除文字环绕</h4>
+<p>当一个浮动元素后面跟了个 <code>&#x3C;p></code> 元素且内部有大量文字，这些文字会产生环绕效果，也就是环绕在浮动元素周围。我们可以使该 p 元素的 BFC 特性显现（例如 <code>overflow:hidden</code>），然后我们就可以看到文字全部显示在了侧边，而不会再环绕在该浮动元素上下方，也就是类似评论功能中头像与评论文字两侧布局的效果。</p>
+<h3 id="结语">结语</h3>
+<p>事实上，BFC 特性还有许多其它的妙用，我们在开发过程中可以多尝试，挖掘它新的技巧。</p>2:["$","div",null,{"className":"max-w-5xl mx-auto px-6 flex gap-0 min-h-full","children":[["$","$La",null,{"html":"$b"}],["$","article",null,{"className":"flex-1 min-w-0 max-w-2xl mx-auto px-0 lg:px-10 py-12","children":[["$","div",null,{"className":"mb-8","children":["$","$Lc",null,{"href":"/blog","className":"inline-flex items-center gap-1.5 text-sm text-gray-400 dark:text-[rgba(255,255,255,0.38)] hover:text-gray-700 dark:hover:text-[rgba(255,255,255,0.60)] transition-colors","children":[["$","svg",null,{"xmlns":"http://www.w3.org/2000/svg","width":"13","height":"13","viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","children":["$","path",null,{"d":"M19 12H5M12 5l-7 7 7 7"}]}],"返回"]}]}],["$","header",null,{"className":"mb-10","children":[["$","div",null,{"className":"flex flex-wrap items-center gap-1.5 mb-4","children":[["$","span",null,{"className":"inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400/80","children":"技术"}],[["$","span","计算机技术",{"className":"inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 dark:bg-white/[0.06] text-gray-600 dark:text-[rgba(255,255,255,0.60)]","children":"计算机技术"}],["$","span","Web",{"className":"inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 dark:bg-white/[0.06] text-gray-600 dark:text-[rgba(255,255,255,0.60)]","children":"Web"}],["$","span","Web 前端",{"className":"inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 dark:bg-white/[0.06] text-gray-600 dark:text-[rgba(255,255,255,0.60)]","children":"Web 前端"}],["$","span","CSS",{"className":"inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 dark:bg-white/[0.06] text-gray-600 dark:text-[rgba(255,255,255,0.60)]","children":"CSS"}],["$","span","BFC",{"className":"inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 dark:bg-white/[0.06] text-gray-600 dark:text-[rgba(255,255,255,0.60)]","children":"BFC"}]]]}],["$","h1",null,{"className":"text-2xl sm:text-3xl font-bold text-gray-900 dark:text-[rgba(255,255,255,0.87)] leading-tight mb-3","children":"块级格式化上下文（BFC）"}],["$","p",null,{"className":"text-gray-500 dark:text-[rgba(255,255,255,0.60)] text-base leading-relaxed mb-4","children":"在进行页面布局时，通常有流式布局、定位布局、浮动布局这三种形式。而在布局过程中，各元素之间的影响却是一个很关键的问题。"}],["$","time",null,{"dateTime":"2018-07-22T16:35:00.000Z","className":"text-xs text-gray-400 dark:text-[rgba(255,255,255,0.38)]","children":"2018年7月22日"}]]}],["$","div",null,{"className":"prose prose-gray dark:prose-invert max-w-none prose-headings:scroll-mt-20 prose-code:before:content-none prose-code:after:content-none prose-img:rounded-lg prose-img:w-full prose-img:h-auto prose-img:block prose-img:my-6 ","dangerouslySetInnerHTML":{"__html":"$d"}}],["$","div",null,{"className":"mt-14 pt-8 border-t border-gray-100 dark:border-white/[0.12]","children":["$","$Lc",null,{"href":"/blog","className":"inline-flex items-center gap-1.5 text-sm text-gray-500 dark:text-[rgba(255,255,255,0.60)] hover:text-gray-900 dark:hover:text-[rgba(255,255,255,0.87)] transition-colors","children":[["$","svg",null,{"xmlns":"http://www.w3.org/2000/svg","width":"13","height":"13","viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","children":["$","path",null,{"d":"M19 12H5M12 5l-7 7 7 7"}]}],"返回文章列表"]}]}]]}]]}]
+9:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"块级格式化上下文（BFC） — LeeZChuan"}],["$","meta","3",{"name":"description","content":"在进行页面布局时，通常有流式布局、定位布局、浮动布局这三种形式。而在布局过程中，各元素之间的影响却是一个很关键的问题。"}]]
+1:null

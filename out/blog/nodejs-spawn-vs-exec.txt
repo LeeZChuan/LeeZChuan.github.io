@@ -1,0 +1,268 @@
+3:I[4707,[],""]
+5:I[6423,[],""]
+6:I[2060,["972","static/chunks/972-12c2a745f65e530e.js","185","static/chunks/app/layout-6d295785c0ea2d7c.js"],"ThemeProvider"]
+7:I[5386,["972","static/chunks/972-12c2a745f65e530e.js","185","static/chunks/app/layout-6d295785c0ea2d7c.js"],"LangProvider"]
+8:I[7753,["972","static/chunks/972-12c2a745f65e530e.js","185","static/chunks/app/layout-6d295785c0ea2d7c.js"],"default"]
+4:["slug","nodejs-spawn-vs-exec","d"]
+0:["V5oDiuOcD730mDJlDNtfs",[[["",{"children":["blog",{"children":[["slug","nodejs-spawn-vs-exec","d"],{"children":["__PAGE__?{\"slug\":\"nodejs-spawn-vs-exec\"}",{}]}]}]},"$undefined","$undefined",true],["",{"children":["blog",{"children":[["slug","nodejs-spawn-vs-exec","d"],{"children":["__PAGE__",{},[["$L1","$L2",null],null],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","blog","children","$4","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","blog","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/47fa5dcb7f1f7e4f.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"zh-CN","suppressHydrationWarning":true,"children":["$","body",null,{"className":"bg-white dark:bg-[#0f0f0f] min-h-screen","children":["$","$L6",null,{"children":["$","$L7",null,{"children":[["$","$L8",null,{}],["$","main",null,{"className":"pt-14","children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[]}]}]]}]}]}]}]],null],null],["$L9",null]]]]
+a:I[3362,["972","static/chunks/972-12c2a745f65e530e.js","308","static/chunks/app/blog/%5Bslug%5D/page-94533f6285c1d477.js"],"default"]
+c:I[2972,["972","static/chunks/972-12c2a745f65e530e.js","308","static/chunks/app/blog/%5Bslug%5D/page-94533f6285c1d477.js"],""]
+b:T1fa1,<p>利用 Node.js 编写一些命令行工具、一次性脚本是很方便的，而在这类场景下 child_process API 的 <code>spawn</code> 和 <code>exec</code> 方法的应用则非常常见。在我使用它们时，却不知道该如何进行选择，遂对此进行了探究。</p>
+<!-- truncate -->
+<h3 id="child-process-api">Child process API</h3>
+<p>先来看看 <code>child_process</code> API，根据官方文档描述：</p>
+<blockquote>
+<p>The <code>child_process</code> module provides the ability to spawn subprocesses in a manner that is similar, but not identical, to <a href="http://man7.org/linux/man-pages/man3/popen.3.html"><code>popen(3)</code></a>. <strong>This capability is primarily provided by the <a href="https://nodejs.org/dist/latest/docs/api/child_process.html#child_process_child_process_spawn_command_args_options"><code>child_process.spawn()</code></a> function:</strong></p>
+</blockquote>
+<p>其类似于 Linux 的 <code>popen</code> 命令行为，<code>spawn</code> 是其核心方法，通过创建一个管道（pipe），调用 fork 生成一个子进程，并执行 shell 命令。例如，通过该 API 就可以以编程的方式生成子进程并执行二进制文件，这在编写脚本工具时是一个非常常见的场景。</p>
+<p>在这里，主要讨论的是异步版本，当然 Node.js 为它们提供了相应的同步版本，例如 <code>spawnSync</code> 和 <code>execSync</code>。</p>
+<h4 id="spawn"><code>spawn</code></h4>
+<p>前面说到 <code>spawn</code> 是 Child process API 的核心方法，其实从源码可以一窥究竟：</p>
+<pre><code class="language-js">// https://github.com/nodejs/node/blob/v16.8.0/lib/child_process.js
+function exec(command, options, callback) {
+  const opts = normalizeExecArgs(command, options, callback);
+  return module.exports.execFile(opts.file, opts.options, opts.callback);
+}
+
+function execFile(file /* , args, options, callback */) {
+  // ...
+  const child = spawn();
+  // ...
+}
+
+// ---
+function fork(modulePath /* , args, options */) {
+  // ...
+  return spawn(options.execPath, args, options);
+}
+</code></pre>
+<p>可见，<code>exec</code> 和 <code>fork</code> 最终还是依赖于 <code>spawn</code> 的实现。而对于后者的实现：</p>
+<pre><code class="language-js">const child_process = require("internal/child_process");
+const { ChildProcess } = child_process;
+
+function spawn(file, args, options) {
+  // ...
+  const child = new ChildProcess();
+  child.spawn(options);
+  // ...
+}
+</code></pre>
+<p>依赖于底层的内部模块 <em>internal/child_process</em> 。</p>
+<p><code>spawn</code> 的主要功能是生成一个子进程，并执行给定的命令，父子进程之间通过管道（pipe）传递 <code>stdio</code> 信息，而且默认不生成 shell。根据示例：</p>
+<pre><code class="language-js">const { spawn } = require("child_process");
+const ls = spawn("ls", ["-lh", "/usr"]);
+
+ls.stdout.on("data", (data) => {
+  console.log(`stdout: ${data}`);
+});
+
+ls.stderr.on("data", (data) => {
+  console.error(`stderr: ${data}`);
+});
+
+ls.on("close", (code) => {
+  console.log(`child process exited with code ${code}`);
+});
+</code></pre>
+<p>父进程通过监听子进程相应的 <code>stdio</code> 事件进行通信。</p>
+<h4 id="exec"><code>exec</code></h4>
+<p>前面根据源码可以看到 <code>exec</code> 的实现基于 <code>spawn</code>，但不同的是，前者在生成子进程的同时，会先生成一个 shell，然后在 shell 中执行给定的命令，子进程的输出信息会进行缓冲并最终传递给回调函数。根据示例：</p>
+<pre><code class="language-js">const { exec } = require("child_process");
+exec("cat *.js missing_file | wc -l", (error, stdout, stderr) => {
+  if (error) {
+    console.error(`exec error: ${error}`);
+    return;
+  }
+  console.log(`stdout: ${stdout}`);
+  console.error(`stderr: ${stderr}`);
+});
+</code></pre>
+<p>父进程并非通过监听子进程的 <code>stdio</code> 事件，而是给子进程传递一个回调函数来获取子进程的输出信息。</p>
+<p>这里有一个显著的区别，<code>exec</code> 会先生成一个 shell 在执行命令，而 <code>spawn</code> 则会直接执行命令，但考虑到前者基于后者实现，事实上后者可以通过传递 <code>options.shell</code> 选项来选择是否生成 shell。</p>
+<p>官方文档有一句话也值得留意：</p>
+<blockquote>
+<p>Unlike the <a href="http://man7.org/linux/man-pages/man3/exec.3.html"><code>exec(3)</code></a> POSIX system call, <code>child_process.exec()</code> does not replace the existing process and uses a shell to execute the command.</p>
+</blockquote>
+<p><code>exec</code> 的 POSIX 系统调用的行为是，在当前进程中用新的进程映像（程序）替换旧的进程映像并执行，本质上并没有生成新的进程，也就不存在父子进程的概念。而在这里，Node.js 的 <code>exec</code> 方法的行为并不是替换进程映射，而是生成 shell 去执行命令。</p>
+<h4 id="spawn-vs-exec"><code>spawn</code> vs <code>exec</code></h4>
+<p>现在可以总结一下两者的显著区别：</p>
+<ul>
+<li><code>spawn</code> 默认不生成 shell，而 <code>exec</code> 必然会生成一个 shell</li>
+<li><code>spawn</code> 通过 stdio 事件流和父进程通信，而 <code>exec</code> 会对输出信息进行缓冲并通过回调函数将其传递给父进程，且后者默认有 1024 * 1024 字节的缓冲区限制</li>
+</ul>
+<p>对于第一点，如果要执行的命令依赖于 shell 的一些功能，比如管道、I/O 重定向则选择 <code>exec</code> 会更便捷。对于第二点，对比示例代码，可以很明显的看出来，<code>spawn</code> 适合长时间执行的命令，且有持续的输出信息；而后者更适合执行短时的命令，且在命令执行完后一次性获取输出结果。</p>
+<h3 id="工具库-execa">工具库 <code>execa</code></h3>
+<p>分析完它们两者的区别之后，这里推荐一个 npm 工具包 <code>execa</code>，其对 child_process 的方法进行了扩展和抽象，在很多常见的使用场景中大大减少了模板代码，也为调试提供了一定的便利性。看看文档中一段示例代码：</p>
+<pre><code class="language-js">const execa = require("execa");
+
+(async () => {
+  // Catching an error
+  try {
+    await execa("unknown", ["command"]);
+  } catch (error) {
+    console.log(error);
+    /*
+		{
+			message: 'Command failed with ENOENT: unknown command spawn unknown ENOENT',
+			errno: -2,
+			code: 'ENOENT',
+			syscall: 'spawn unknown',
+			path: 'unknown',
+			spawnargs: ['command'],
+			originalMessage: 'spawn unknown ENOENT',
+			shortMessage: 'Command failed with ENOENT: unknown command spawn unknown ENOENT',
+			command: 'unknown command',
+			escapedCommand: 'unknown command',
+			stdout: '',
+			stderr: '',
+			all: '',
+			failed: true,
+			timedOut: false,
+			isCanceled: false,
+			killed: false
+		}
+		*/
+  }
+})();
+</code></pre>
+<p>上面的代码中，错误信息对于开发者来说是易读的，调试起来难度要小很多。</p>
+<p>更多的东西，建议直接看该 npm 包的文档进行详细了解。</p>
+<h3 id="参考资源">参考资源</h3>
+<ul>
+<li><a href="https://nodejs.org/dist/latest/docs/api/child_process.html">https://nodejs.org/dist/latest/docs/api/child_process.html</a></li>
+<li><a href="https://stackoverflow.com/questions/48698234/node-js-spawn-vs-execute">https://stackoverflow.com/questions/48698234/node-js-spawn-vs-execute</a></li>
+<li><a href="https://www.hacksparrow.com/nodejs/difference-between-spawn-and-exec-of-node-js-child-rocess.html">https://www.hacksparrow.com/nodejs/difference-between-spawn-and-exec-of-node-js-child-rocess.html</a></li>
+<li><a href="https://linuxhint.com/linux-exec-system-call/">https://linuxhint.com/linux-exec-system-call/</a></li>
+<li><a href="https://2ality.com/2022/07/nodejs-child-process.html">https://2ality.com/2022/07/nodejs-child-process.html</a></li>
+<li><a href="https://github.com/sindresorhus/execa">https://github.com/sindresorhus/execa</a></li>
+</ul>d:T1fa1,<p>利用 Node.js 编写一些命令行工具、一次性脚本是很方便的，而在这类场景下 child_process API 的 <code>spawn</code> 和 <code>exec</code> 方法的应用则非常常见。在我使用它们时，却不知道该如何进行选择，遂对此进行了探究。</p>
+<!-- truncate -->
+<h3 id="child-process-api">Child process API</h3>
+<p>先来看看 <code>child_process</code> API，根据官方文档描述：</p>
+<blockquote>
+<p>The <code>child_process</code> module provides the ability to spawn subprocesses in a manner that is similar, but not identical, to <a href="http://man7.org/linux/man-pages/man3/popen.3.html"><code>popen(3)</code></a>. <strong>This capability is primarily provided by the <a href="https://nodejs.org/dist/latest/docs/api/child_process.html#child_process_child_process_spawn_command_args_options"><code>child_process.spawn()</code></a> function:</strong></p>
+</blockquote>
+<p>其类似于 Linux 的 <code>popen</code> 命令行为，<code>spawn</code> 是其核心方法，通过创建一个管道（pipe），调用 fork 生成一个子进程，并执行 shell 命令。例如，通过该 API 就可以以编程的方式生成子进程并执行二进制文件，这在编写脚本工具时是一个非常常见的场景。</p>
+<p>在这里，主要讨论的是异步版本，当然 Node.js 为它们提供了相应的同步版本，例如 <code>spawnSync</code> 和 <code>execSync</code>。</p>
+<h4 id="spawn"><code>spawn</code></h4>
+<p>前面说到 <code>spawn</code> 是 Child process API 的核心方法，其实从源码可以一窥究竟：</p>
+<pre><code class="language-js">// https://github.com/nodejs/node/blob/v16.8.0/lib/child_process.js
+function exec(command, options, callback) {
+  const opts = normalizeExecArgs(command, options, callback);
+  return module.exports.execFile(opts.file, opts.options, opts.callback);
+}
+
+function execFile(file /* , args, options, callback */) {
+  // ...
+  const child = spawn();
+  // ...
+}
+
+// ---
+function fork(modulePath /* , args, options */) {
+  // ...
+  return spawn(options.execPath, args, options);
+}
+</code></pre>
+<p>可见，<code>exec</code> 和 <code>fork</code> 最终还是依赖于 <code>spawn</code> 的实现。而对于后者的实现：</p>
+<pre><code class="language-js">const child_process = require("internal/child_process");
+const { ChildProcess } = child_process;
+
+function spawn(file, args, options) {
+  // ...
+  const child = new ChildProcess();
+  child.spawn(options);
+  // ...
+}
+</code></pre>
+<p>依赖于底层的内部模块 <em>internal/child_process</em> 。</p>
+<p><code>spawn</code> 的主要功能是生成一个子进程，并执行给定的命令，父子进程之间通过管道（pipe）传递 <code>stdio</code> 信息，而且默认不生成 shell。根据示例：</p>
+<pre><code class="language-js">const { spawn } = require("child_process");
+const ls = spawn("ls", ["-lh", "/usr"]);
+
+ls.stdout.on("data", (data) => {
+  console.log(`stdout: ${data}`);
+});
+
+ls.stderr.on("data", (data) => {
+  console.error(`stderr: ${data}`);
+});
+
+ls.on("close", (code) => {
+  console.log(`child process exited with code ${code}`);
+});
+</code></pre>
+<p>父进程通过监听子进程相应的 <code>stdio</code> 事件进行通信。</p>
+<h4 id="exec"><code>exec</code></h4>
+<p>前面根据源码可以看到 <code>exec</code> 的实现基于 <code>spawn</code>，但不同的是，前者在生成子进程的同时，会先生成一个 shell，然后在 shell 中执行给定的命令，子进程的输出信息会进行缓冲并最终传递给回调函数。根据示例：</p>
+<pre><code class="language-js">const { exec } = require("child_process");
+exec("cat *.js missing_file | wc -l", (error, stdout, stderr) => {
+  if (error) {
+    console.error(`exec error: ${error}`);
+    return;
+  }
+  console.log(`stdout: ${stdout}`);
+  console.error(`stderr: ${stderr}`);
+});
+</code></pre>
+<p>父进程并非通过监听子进程的 <code>stdio</code> 事件，而是给子进程传递一个回调函数来获取子进程的输出信息。</p>
+<p>这里有一个显著的区别，<code>exec</code> 会先生成一个 shell 在执行命令，而 <code>spawn</code> 则会直接执行命令，但考虑到前者基于后者实现，事实上后者可以通过传递 <code>options.shell</code> 选项来选择是否生成 shell。</p>
+<p>官方文档有一句话也值得留意：</p>
+<blockquote>
+<p>Unlike the <a href="http://man7.org/linux/man-pages/man3/exec.3.html"><code>exec(3)</code></a> POSIX system call, <code>child_process.exec()</code> does not replace the existing process and uses a shell to execute the command.</p>
+</blockquote>
+<p><code>exec</code> 的 POSIX 系统调用的行为是，在当前进程中用新的进程映像（程序）替换旧的进程映像并执行，本质上并没有生成新的进程，也就不存在父子进程的概念。而在这里，Node.js 的 <code>exec</code> 方法的行为并不是替换进程映射，而是生成 shell 去执行命令。</p>
+<h4 id="spawn-vs-exec"><code>spawn</code> vs <code>exec</code></h4>
+<p>现在可以总结一下两者的显著区别：</p>
+<ul>
+<li><code>spawn</code> 默认不生成 shell，而 <code>exec</code> 必然会生成一个 shell</li>
+<li><code>spawn</code> 通过 stdio 事件流和父进程通信，而 <code>exec</code> 会对输出信息进行缓冲并通过回调函数将其传递给父进程，且后者默认有 1024 * 1024 字节的缓冲区限制</li>
+</ul>
+<p>对于第一点，如果要执行的命令依赖于 shell 的一些功能，比如管道、I/O 重定向则选择 <code>exec</code> 会更便捷。对于第二点，对比示例代码，可以很明显的看出来，<code>spawn</code> 适合长时间执行的命令，且有持续的输出信息；而后者更适合执行短时的命令，且在命令执行完后一次性获取输出结果。</p>
+<h3 id="工具库-execa">工具库 <code>execa</code></h3>
+<p>分析完它们两者的区别之后，这里推荐一个 npm 工具包 <code>execa</code>，其对 child_process 的方法进行了扩展和抽象，在很多常见的使用场景中大大减少了模板代码，也为调试提供了一定的便利性。看看文档中一段示例代码：</p>
+<pre><code class="language-js">const execa = require("execa");
+
+(async () => {
+  // Catching an error
+  try {
+    await execa("unknown", ["command"]);
+  } catch (error) {
+    console.log(error);
+    /*
+		{
+			message: 'Command failed with ENOENT: unknown command spawn unknown ENOENT',
+			errno: -2,
+			code: 'ENOENT',
+			syscall: 'spawn unknown',
+			path: 'unknown',
+			spawnargs: ['command'],
+			originalMessage: 'spawn unknown ENOENT',
+			shortMessage: 'Command failed with ENOENT: unknown command spawn unknown ENOENT',
+			command: 'unknown command',
+			escapedCommand: 'unknown command',
+			stdout: '',
+			stderr: '',
+			all: '',
+			failed: true,
+			timedOut: false,
+			isCanceled: false,
+			killed: false
+		}
+		*/
+  }
+})();
+</code></pre>
+<p>上面的代码中，错误信息对于开发者来说是易读的，调试起来难度要小很多。</p>
+<p>更多的东西，建议直接看该 npm 包的文档进行详细了解。</p>
+<h3 id="参考资源">参考资源</h3>
+<ul>
+<li><a href="https://nodejs.org/dist/latest/docs/api/child_process.html">https://nodejs.org/dist/latest/docs/api/child_process.html</a></li>
+<li><a href="https://stackoverflow.com/questions/48698234/node-js-spawn-vs-execute">https://stackoverflow.com/questions/48698234/node-js-spawn-vs-execute</a></li>
+<li><a href="https://www.hacksparrow.com/nodejs/difference-between-spawn-and-exec-of-node-js-child-rocess.html">https://www.hacksparrow.com/nodejs/difference-between-spawn-and-exec-of-node-js-child-rocess.html</a></li>
+<li><a href="https://linuxhint.com/linux-exec-system-call/">https://linuxhint.com/linux-exec-system-call/</a></li>
+<li><a href="https://2ality.com/2022/07/nodejs-child-process.html">https://2ality.com/2022/07/nodejs-child-process.html</a></li>
+<li><a href="https://github.com/sindresorhus/execa">https://github.com/sindresorhus/execa</a></li>
+</ul>2:["$","div",null,{"className":"max-w-5xl mx-auto px-6 flex gap-0 min-h-full","children":[["$","$La",null,{"html":"$b"}],["$","article",null,{"className":"flex-1 min-w-0 max-w-2xl mx-auto px-0 lg:px-10 py-12","children":[["$","div",null,{"className":"mb-8","children":["$","$Lc",null,{"href":"/blog","className":"inline-flex items-center gap-1.5 text-sm text-gray-400 dark:text-[rgba(255,255,255,0.38)] hover:text-gray-700 dark:hover:text-[rgba(255,255,255,0.60)] transition-colors","children":[["$","svg",null,{"xmlns":"http://www.w3.org/2000/svg","width":"13","height":"13","viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","children":["$","path",null,{"d":"M19 12H5M12 5l-7 7 7 7"}]}],"返回"]}]}],["$","header",null,{"className":"mb-10","children":[["$","div",null,{"className":"flex flex-wrap items-center gap-1.5 mb-4","children":[["$","span",null,{"className":"inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400/80","children":"技术"}],[["$","span","计算机技术",{"className":"inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 dark:bg-white/[0.06] text-gray-600 dark:text-[rgba(255,255,255,0.60)]","children":"计算机技术"}],["$","span","Node.js",{"className":"inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 dark:bg-white/[0.06] text-gray-600 dark:text-[rgba(255,255,255,0.60)]","children":"Node.js"}],["$","span","spawn",{"className":"inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 dark:bg-white/[0.06] text-gray-600 dark:text-[rgba(255,255,255,0.60)]","children":"spawn"}],["$","span","exec",{"className":"inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 dark:bg-white/[0.06] text-gray-600 dark:text-[rgba(255,255,255,0.60)]","children":"exec"}]]]}],["$","h1",null,{"className":"text-2xl sm:text-3xl font-bold text-gray-900 dark:text-[rgba(255,255,255,0.87)] leading-tight mb-3","children":"Child process API: spawn vs exec"}],["$","p",null,{"className":"text-gray-500 dark:text-[rgba(255,255,255,0.60)] text-base leading-relaxed mb-4","children":"使用 Node.js 编写一些脚本工具是非常方便的，而常用的 spawn 与 exec API 有什么不同呢？"}],["$","time",null,{"dateTime":"2021-08-25T00:21:00.000Z","className":"text-xs text-gray-400 dark:text-[rgba(255,255,255,0.38)]","children":"2021年8月25日"}]]}],["$","div",null,{"className":"prose prose-gray dark:prose-invert max-w-none prose-headings:scroll-mt-20 prose-code:before:content-none prose-code:after:content-none prose-img:rounded-lg prose-img:w-full prose-img:h-auto prose-img:block prose-img:my-6 ","dangerouslySetInnerHTML":{"__html":"$d"}}],["$","div",null,{"className":"mt-14 pt-8 border-t border-gray-100 dark:border-white/[0.12]","children":["$","$Lc",null,{"href":"/blog","className":"inline-flex items-center gap-1.5 text-sm text-gray-500 dark:text-[rgba(255,255,255,0.60)] hover:text-gray-900 dark:hover:text-[rgba(255,255,255,0.87)] transition-colors","children":[["$","svg",null,{"xmlns":"http://www.w3.org/2000/svg","width":"13","height":"13","viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","children":["$","path",null,{"d":"M19 12H5M12 5l-7 7 7 7"}]}],"返回文章列表"]}]}]]}]]}]
+9:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"Child process API: spawn vs exec — LeeZChuan"}],["$","meta","3",{"name":"description","content":"使用 Node.js 编写一些脚本工具是非常方便的，而常用的 spawn 与 exec API 有什么不同呢？"}]]
+1:null

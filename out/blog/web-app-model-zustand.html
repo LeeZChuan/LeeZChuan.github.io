@@ -1,0 +1,366 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/_next/static/css/47fa5dcb7f1f7e4f.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-616e068a201ad621.js"/><script src="/_next/static/chunks/fd9d1056-ae97a97996823271.js" async=""></script><script src="/_next/static/chunks/117-89e3dbf112dcc05c.js" async=""></script><script src="/_next/static/chunks/main-app-a699fb3ef07afd17.js" async=""></script><script src="/_next/static/chunks/972-12c2a745f65e530e.js" async=""></script><script src="/_next/static/chunks/app/layout-6d295785c0ea2d7c.js" async=""></script><script src="/_next/static/chunks/app/blog/%5Bslug%5D/page-94533f6285c1d477.js" async=""></script><title>Web 应用：轻量级状态管理工具 zustand — LeeZChuan</title><meta name="description" content="Web 网页向 Web 应用发展的过程中，势必会出现 Web 项目的复杂化问题，而在移动端场景，基于 React.js 的应用中如何管理状态？zustand也许值得一试。"/><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body class="bg-white dark:bg-[#0f0f0f] min-h-screen"><header class="fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-[#0f0f0f]/90 backdrop-blur-md border-b border-gray-100 dark:border-white/[0.08]"><nav class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between"><a class="text-gray-800 dark:text-[rgba(255,255,255,0.80)] hover:text-gray-900 dark:hover:text-[rgba(255,255,255,0.87)] transition-colors" aria-label="Home" href="/"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" class="opacity-80 hover:opacity-100 transition-opacity"><text x="2" y="22" font-family="Georgia, serif" font-size="18" font-style="italic" font-weight="600" fill="currentColor">LZC</text></svg></a><div class="flex items-center gap-1"><a class="px-3 py-1.5 text-sm transition-colors duration-150 rounded-md text-gray-900 dark:text-[rgba(255,255,255,0.87)]" href="/blog">文章</a><a class="px-3 py-1.5 text-sm transition-colors duration-150 rounded-md text-gray-500 dark:text-[rgba(255,255,255,0.50)] hover:text-gray-900 dark:hover:text-[rgba(255,255,255,0.87)]" href="/projects">项目</a><a class="px-3 py-1.5 text-sm transition-colors duration-150 rounded-md text-gray-500 dark:text-[rgba(255,255,255,0.50)] hover:text-gray-900 dark:hover:text-[rgba(255,255,255,0.87)]" href="/about">关于</a><div class="w-px h-4 bg-gray-200 dark:bg-white/[0.12] mx-2"></div><a href="https://github.com/LeeZChuan" target="_blank" rel="noopener noreferrer" class="p-1.5 text-gray-400 dark:text-[rgba(255,255,255,0.40)] hover:text-gray-800 dark:hover:text-[rgba(255,255,255,0.80)] transition-colors rounded-md" aria-label="GitHub"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"></path></svg></a><a href="mailto:cdutlzc@gmail.com" class="p-1.5 text-gray-400 dark:text-[rgba(255,255,255,0.40)] hover:text-gray-800 dark:hover:text-[rgba(255,255,255,0.80)] transition-colors rounded-md" aria-label="Email"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg></a><button class="p-1.5 rounded-md text-gray-400 dark:text-[rgba(255,255,255,0.40)] hover:text-gray-800 dark:hover:text-[rgba(255,255,255,0.80)] transition-colors text-xs font-medium tracking-wide min-w-[28px]" aria-label="Switch language">EN</button><button class="p-1.5 rounded-md text-gray-400 dark:text-[rgba(255,255,255,0.40)] hover:text-gray-800 dark:hover:text-[rgba(255,255,255,0.80)] transition-colors" aria-label="切换主题"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></button></div></nav></header><main class="pt-14"><div class="max-w-5xl mx-auto px-6 flex gap-0 min-h-full"><aside class="hidden lg:block w-56 shrink-0"><div class="sticky top-20 pt-12 pr-6"><p class="text-xs font-medium text-gray-400 dark:text-[rgba(255,255,255,0.38)] uppercase tracking-widest mb-4">目录</p><nav class="space-y-1"><a href="#轻量级状态管理方案" class="block text-xs leading-relaxed transition-colors duration-150 pl-3 text-gray-400 dark:text-[rgba(255,255,255,0.38)] hover:text-gray-700 dark:hover:text-[rgba(255,255,255,0.60)]">轻量级状态管理方案</a><a href="#redux-vs-zustand" class="block text-xs leading-relaxed transition-colors duration-150 pl-3 text-gray-400 dark:text-[rgba(255,255,255,0.38)] hover:text-gray-700 dark:hover:text-[rgba(255,255,255,0.60)]">redux vs zustand</a><a href="#结语" class="block text-xs leading-relaxed transition-colors duration-150 pl-3 text-gray-400 dark:text-[rgba(255,255,255,0.38)] hover:text-gray-700 dark:hover:text-[rgba(255,255,255,0.60)]">结语</a><a href="#参考" class="block text-xs leading-relaxed transition-colors duration-150 pl-3 text-gray-400 dark:text-[rgba(255,255,255,0.38)] hover:text-gray-700 dark:hover:text-[rgba(255,255,255,0.60)]">参考</a></nav></div></aside><article class="flex-1 min-w-0 max-w-2xl mx-auto px-0 lg:px-10 py-12"><div class="mb-8"><a class="inline-flex items-center gap-1.5 text-sm text-gray-400 dark:text-[rgba(255,255,255,0.38)] hover:text-gray-700 dark:hover:text-[rgba(255,255,255,0.60)] transition-colors" href="/blog"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"></path></svg>返回</a></div><header class="mb-10"><div class="flex flex-wrap items-center gap-1.5 mb-4"><span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400/80">技术</span><span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 dark:bg-white/[0.06] text-gray-600 dark:text-[rgba(255,255,255,0.60)]">计算机技术</span><span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 dark:bg-white/[0.06] text-gray-600 dark:text-[rgba(255,255,255,0.60)]">Web前端</span><span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 dark:bg-white/[0.06] text-gray-600 dark:text-[rgba(255,255,255,0.60)]">应用状态管理</span><span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 dark:bg-white/[0.06] text-gray-600 dark:text-[rgba(255,255,255,0.60)]">React</span></div><h1 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-[rgba(255,255,255,0.87)] leading-tight mb-3">Web 应用：轻量级状态管理工具 zustand</h1><p class="text-gray-500 dark:text-[rgba(255,255,255,0.60)] text-base leading-relaxed mb-4">Web 网页向 Web 应用发展的过程中，势必会出现 Web 项目的复杂化问题，而在移动端场景，基于 React.js 的应用中如何管理状态？zustand也许值得一试。</p><time dateTime="2021-11-18T00:14:00.000Z" class="text-xs text-gray-400 dark:text-[rgba(255,255,255,0.38)]">2021年11月18日</time></header><div class="prose prose-gray dark:prose-invert max-w-none prose-headings:scroll-mt-20 prose-code:before:content-none prose-code:after:content-none prose-img:rounded-lg prose-img:w-full prose-img:h-auto prose-img:block prose-img:my-6 "><p>基于 React.js 的 Web 应用如何完成状态管理？社区主流方案是 <strong>react-redux</strong>，其本质上基于 React 的 <code>Context</code> 特性实现，如果应用足够简单，实际上用 <code>Context</code> 手写一个简单的状态管理工具倒也并不难。不过，考虑到工具的完善性、项目的健壮性，通常采用较好的、成熟的社区方案。在移动端场景下，<strong>react-redux</strong> 略显臃肿，轻量级状态管理工具 <strong>zustand</strong> 倒是一个不错的替代方案。</p>
+<!-- truncate -->
+<h3 id="轻量级状态管理方案">轻量级状态管理方案</h3>
+<p>Web 优化中，资源大小的优化是重中之重，而且也是成本最低，收益最高的优化方式，在移动端场景下尤为突出。每在项目中引入一个工具库，都要考虑是否有更轻量级的替代品。众所周知，<strong>moment</strong> 就是一个典型的例子，我通常采用 <strong>dayjs</strong> 作为替代方案。而在应用状态管理工具的选择中，可以利用 Bundlephobia 首先评估一下社区主流方案 <strong>react-redux</strong>。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="right">MINIFIED</th>
+<th align="right">MINIFIED + GZIPPED</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://bundlephobia.com/package/redux@4.1.2">redux@4.1.2</a></td>
+<td align="right">4.3kB</td>
+<td align="right">1.6kB</td>
+</tr>
+<tr>
+<td><a href="https://bundlephobia.com/package/react-redux@7.2.6">react-redux@7.2.6</a></td>
+<td align="right">16.2kB</td>
+<td align="right">5.4kB</td>
+</tr>
+<tr>
+<td></td>
+<td align="right">20.5kB</td>
+<td align="right">7kB</td>
+</tr>
+</tbody>
+</table>
+<p>仅必须的依赖就需要 <strong>7kb</strong> 之多，而我们也知道，redux 不仅是一个状态管理工具，其同时也提倡一种优秀的模式，即我们熟知的：</p>
+<blockquote>
+<p>Store -> Dispatch -> Action -> Reducer -> Store</p>
+</blockquote>
+<p>而这种模式需要我们手写大量的模板代码，于是就有了官方解决方案 <strong>@reduxjs/toolkit</strong> 和社区方案 <strong>@rematch/core</strong>，这进一步加剧了资源大小所带来的影响。</p>
+<table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="right">MINIFIED</th>
+<th align="right">MINIFIED + GZIPPED</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="https://bundlephobia.com/package/@reduxjs/toolkit@1.6.2">@reduxjs/toolkit@1.6.2</a></td>
+<td align="right">32.1kB</td>
+<td align="right">10.5kB</td>
+</tr>
+<tr>
+<td align="left"><a href="https://bundlephobia.com/package/@rematch/core@2.2.0">@rematch/core@2.2.0</a></td>
+<td align="right">4.7kB</td>
+<td align="right">1.7kB</td>
+</tr>
+</tbody>
+</table>
+<p>经过分析，事实上我们可以看到 redux 的核心代码库仅有 <strong>1.6kb</strong> 的大小，但为了适配 React.js 和解决模板代码的问题，至少也要增加 <strong>7.1kb</strong> 的资源大小。换句话说，状态管理工具的核心实现其实是比较简单的，这也是核心库较小的原因，而在移动端场景下，项目一般较为简单、规模较小，对于工具的核心需求其实也仅仅是满足应用状态管理即可。于是，<strong>zustand</strong> 社区方案成为了我的一个选择。</p>
+<table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="right">MINIFIED</th>
+<th align="right">MINIFIED + GZIPPED</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="https://bundlephobia.com/package/zustand@3.6.5">zustand@3.6.5</a></td>
+<td align="right">2kB</td>
+<td align="right">954B</td>
+</tr>
+<tr>
+<td align="left"><a href="https://bundlephobia.com/package/jotai@1.4.3">jotai@1.4.3</a></td>
+<td align="right">6.1kB</td>
+<td align="right">2.5kB</td>
+</tr>
+</tbody>
+</table>
+<p>上表中，还列出了 jotai，它与 zustand 出自同一个开发者群体之手，前者仅适用于 React.js 组件内的状态管理，而后者还适用于组件之外的状态操作。<strong>zustand</strong> 足够简单，且无需太多模板代码，仅 <strong>954B</strong> 大小即可满足应用状态管理的核心需求。</p>
+<p>至此，移动端场景下，要替代 react-redux 这种主流方案，考虑以下几点：</p>
+<ul>
+<li>满足应用状态管理的核心需求</li>
+<li>具备资源大小优势</li>
+<li>用法足够简单</li>
+<li>方案成熟（较多人采用、有配套的调试工具等）</li>
+<li>可在组件外操作状态</li>
+</ul>
+<p>其中，可在组件外操作状态这一点其实是为了满足方案的灵活性，有时候业务需求的实现可能会涉及到在组件之外进行状态操作的场景，这个时候就很方便了。</p>
+<h3 id="redux-vs-zustand">redux vs zustand</h3>
+<p>接下来，分析一下两者的源码实现，即可了解是否 zustand 可作为一个较好的替代方案。分两步进行，第一步首先来看看两者的核心实现，即状态管理的机制。</p>
+<p>首先，我们要明白状态管理做的是什么事情。状态即数据，对于一个原生的 Web 应用来说，某一时刻页面展示的结构和样式取决于此时的状态，状态可能会由于用户交互动作发生变化。Web 应用有很多状态，比如表单的勾选按钮状态，我们可以将这种状态视为局部状态，该状态的变化不会导致页面其它部分发生变化；当然，如果我们将用户体验设计更进一步，勾选按钮的状态会同步影响表单提交按钮是否处于可点击的状态，此时一个状态在页面两个部分都有影响，对于更复杂的 Web 应用来说，一个状态可能影响到页面数十个部分，我们就需要对状态的维护更新机制进行设计，将状态的维护从页面进行解耦，独立到全局来进行，则将这种状态称之为全局状态。显然，对于局部状态来说，页面局部可以完成自治，而对于全局状态来说，则需要一个全局中心化的“数据库”来进行管理。</p>
+<p>现在，我们可以知道，状态管理需要提供一个类似中心化的“数据库”，同时对于状态要提供更新机制，而状态可以被多个部分依赖，状态更新的同时依赖方可以及时获取到最新状态。这不就是软件架构中典型的发布/订阅模式吗？所以，先来看看 redux 和 zustand 两者提供的 API，大致就能理解其核心实现的模型。</p>
+<pre><code class="language-typescript">// Redux (https://redux.js.org/api/api-reference)
+createStore(reducer, [preloadedState], [enhancer]);
+// Store
+getState();
+subscribe(listener);
+dispatch(action);
+
+// zustand (https://github.com/pmndrs/zustand)
+createStore();
+// Store
+getState();
+subscribe();
+setState();
+</code></pre>
+<p>由此可见，两者提供的核心 API 是非常相近的，从 API 命名的角度来看，其核心实现无疑是基于发布/订阅模式。</p>
+<p>两者都有一个 <code>createStore()</code> API 来创建一个中心化的数据存储区，同时创建的 store 实例均会暴露出主动获取状态的 API <code>getState()</code>，订阅状态更新的 API <code>subscribe()</code>，以及更新状态的 API <code>dispatch()</code> 和 <code>setState()</code>，当然 redux 还引入了一个 <code>reducer</code> 的概念和 API。</p>
+<p>两者的核心库均只有 1kb 大小，而 zustand 更小，这是因为 zustand 实现更为简单一些，其差异主要集中在状态更新机制上，其次是状态订阅机制。</p>
+<h4 id="subscribe"><code>subscribe()</code></h4>
+<p>在状态订阅的 <code>subscribe()</code> API 实现中，zustand 仅是简单的直接将订阅函数添加到订阅列表中，同时提供了一个 <code>selector</code> 机制来过滤状态：</p>
+<pre><code class="language-typescript">// see https://github.com/pmndrs/zustand/blob/v3.6.5/src/vanilla.ts#L126
+const subscribe: Subscribe&#x3C;TState> = &#x3C;StateSlice>(
+  listener: StateListener&#x3C;TState> | StateSliceListener&#x3C;StateSlice>,
+  selector?: StateSelector&#x3C;TState, StateSlice>,
+  equalityFn?: EqualityChecker&#x3C;StateSlice>,
+) => {
+  if (selector || equalityFn) {
+    return subscribeWithSelector(
+      listener as StateSliceListener&#x3C;StateSlice>,
+      selector,
+      equalityFn,
+    );
+  }
+  listeners.add(listener as StateListener&#x3C;TState>);
+  // Unsubscribe
+  return () => listeners.delete(listener as StateListener&#x3C;TState>);
+};
+
+// see https://github.com/pmndrs/zustand/blob/v3.6.5/src/vanilla.ts#L107
+const subscribeWithSelector = &#x3C;StateSlice>(
+  listener: StateSliceListener&#x3C;StateSlice>,
+  selector: StateSelector&#x3C;TState, StateSlice> = getState as any,
+  equalityFn: EqualityChecker&#x3C;StateSlice> = Object.is,
+) => {
+  console.warn("[DEPRECATED] Please use `subscribeWithSelector` middleware");
+  let currentSlice: StateSlice = selector(state);
+  function listenerToAdd() {
+    const nextSlice = selector(state);
+    if (!equalityFn(currentSlice, nextSlice)) {
+      const previousSlice = currentSlice;
+      listener((currentSlice = nextSlice), previousSlice);
+    }
+  }
+  listeners.add(listenerToAdd);
+  // Unsubscribe
+  return () => listeners.delete(listenerToAdd);
+};
+</code></pre>
+<p>通过上面 <code>listenerToAdd()</code> 函数可以看到，在订阅状态时提供了 <code>selector</code> 的话，状态更新时会首先将状态过滤一遍再通知给订阅者。</p>
+<pre><code class="language-typescript">// see https://github.com/pmndrs/zustand/blob/v3.6.5/src/vanilla.ts#L89
+const setState: SetState&#x3C;TState> = (partial, replace) => {
+  // ...
+  listeners.forEach((listener) => listener(state, previousState));
+  // ...
+};
+</code></pre>
+<p>通过 <code>setState()</code> 更新状态时，所有订阅函数将会调用，同时会将新的状态和旧的状态传递给订阅函数。</p>
+<p>接下来，看看 redux 的实现，redux 在添加订阅函数时做了一些特殊的判断，以及特殊处理：</p>
+<pre><code class="language-js">// see https://github.com/reduxjs/redux/blob/v4.1.2/src/createStore.js#L128
+function subscribe(listener) {
+  // ...
+  if (isDispatching) {
+    throw new Error("...");
+  }
+
+  let isSubscribed = true;
+
+  ensureCanMutateNextListeners();
+  nextListeners.push(listener);
+
+  return function unsubscribe() {
+    if (!isSubscribed) {
+      return;
+    }
+
+    if (isDispatching) {
+      throw new Error("...");
+    }
+
+    isSubscribed = false;
+
+    ensureCanMutateNextListeners();
+    const index = nextListeners.indexOf(listener);
+    nextListeners.splice(index, 1);
+    currentListeners = null;
+  };
+}
+
+// see https://github.com/reduxjs/redux/blob/v4.1.2/src/createStore.js#L82
+function ensureCanMutateNextListeners() {
+  if (nextListeners === currentListeners) {
+    nextListeners = currentListeners.slice();
+  }
+}
+</code></pre>
+<p>根据实现，redux 通过 <code>isDispatching</code> 标志位避免在状态更新期间添加订阅函数，以及通过 <code>ensureCanMutateNextListeners()</code> 函数将订阅函数列表做了浅拷贝再进行添加和删除操作，这都是对潜在的问题的规避。</p>
+<pre><code class="language-js">// see https://github.com/reduxjs/redux/blob/v4.1.2/src/createStore.js#L197
+function dispatch(action) {
+  // ...
+
+  const listeners = (currentListeners = nextListeners);
+  for (let i = 0; i &#x3C; listeners.length; i++) {
+    const listener = listeners[i];
+    listener();
+  }
+
+  return action;
+}
+</code></pre>
+<p>redux 通过 <code>dispatch()</code> 更新状态时，由于在订阅时没有默认提供 <code>selector</code> 机制，所以会无差别的通知所有订阅者，同时也不会将新旧状态传递给订阅函数，当然在官方示例代码中可以看到，官方推荐在订阅函数中主动通过 <code>getState()</code> 获取新的状态以及完成 selector 操作。可以说，由于 redux 和 zustand 设计理念不同，订阅的实现方式也略有差别，前者控制的更细致，而灵活性很高，而后者在保持简单性的同时也没有牺牲灵活性。</p>
+<h4 id="setstate--dispatch"><code>setState()</code> &#x26;&#x26; <code>dispatch()</code></h4>
+<p>状态更新机制是两者实现最大的不同，zustand 提供一个 <code>setState()</code> 函数来更新状态：</p>
+<pre><code class="language-typescript">// see https://github.com/pmndrs/zustand/blob/v3.6.5/src/vanilla.ts#L89
+const setState: SetState&#x3C;TState> = (partial, replace) => {
+  // TODO: Remove type assertion once https://github.com/microsoft/TypeScript/issues/37663 is resolved
+  // https://github.com/microsoft/TypeScript/issues/37663#issuecomment-759728342
+  const nextState =
+    typeof partial === "function"
+      ? (partial as (state: TState) => TState)(state)
+      : partial;
+  if (nextState !== state) {
+    const previousState = state;
+    state = replace
+      ? (nextState as TState)
+      : Object.assign({}, state, nextState);
+    listeners.forEach((listener) => listener(state, previousState));
+  }
+};
+</code></pre>
+<p>根据源码实现来看，zustand 通过 <code>Object.assign</code> 函数合并更新状态，同时提供 <code>replace</code> 标志位直接将旧状态完全替换。</p>
+<p>而 redux 的状态更新则要复杂一些，主要是官方推荐的编程模式将状态更新拆分为多个步骤，<code>dispatch()</code> 函数触发一个 <code>Action</code>，而具体处理 Action 以及状态合并的操作均由 <code>Reducer</code> 函数完成，该函数是一个纯函数。至于为什么要这么设计，官方有说明，纯函数对于状态变化来说是可预测的，而且利于测试，更是实现时间旅行类似功能的基础。</p>
+<pre><code class="language-js">// see https://github.com/reduxjs/redux/blob/v4.1.2/src/createStore.js#L197
+function dispatch(action) {
+  if (!isPlainObject(action)) {
+    throw new Error(
+      `Actions must be plain objects. Instead, the actual type was: '${kindOf(
+        action,
+      )}'. You may need to add middleware to your store setup to handle dispatching other values, such as 'redux-thunk' to handle dispatching functions. See https://redux.js.org/tutorials/fundamentals/part-4-store#middleware and https://redux.js.org/tutorials/fundamentals/part-6-async-logic#using-the-redux-thunk-middleware for examples.`,
+    );
+  }
+
+  if (typeof action.type === "undefined") {
+    throw new Error(
+      'Actions may not have an undefined "type" property. You may have misspelled an action type string constant.',
+    );
+  }
+
+  if (isDispatching) {
+    throw new Error("Reducers may not dispatch actions.");
+  }
+
+  try {
+    isDispatching = true;
+    currentState = currentReducer(currentState, action);
+  } finally {
+    isDispatching = false;
+  }
+
+  const listeners = (currentListeners = nextListeners);
+  for (let i = 0; i &#x3C; listeners.length; i++) {
+    const listener = listeners[i];
+    listener();
+  }
+
+  return action;
+}
+</code></pre>
+<p>根据源码实现来看，这里出现了 <code>isDispatching</code> 标志位，主要是用来限制状态更新过程中不能再次发起状态更新操作，避免出现错误。</p>
+<p>不过，有一点值得提一下，redux 默认不支持异步更新状态，需要借助 redux-thunk 库来支持；而 zustand 本身则是支持异步更新状态的。</p>
+<p>根据以上分析来看，实际上核心实现是相似的，而且 zustand 作为后来者，对 redux 有借鉴也有简化的地方，满足状态管理的核心简单需求是没有多大问题的，可作为 redux 的一个替代方案。</p>
+<h4 id="reactjs-适配">React.js 适配</h4>
+<p>如果说，核心库差异较小，而且包尺寸相近的话，那么最大的差异则出现在对 React.js 库的适配上面。</p>
+<p>zustand 出现的较晚，目前 Hook API 已经成为 React.js 社区的主流，所以 zustand 在对其适配的时候也是以 Hook API 的方式实现，没有提供类组件的适配。</p>
+<pre><code class="language-typescript">// see https://github.com/pmndrs/zustand/blob/v3.6.5/src/index.ts#L64
+function create&#x3C;
+  TState extends State,
+  CustomSetState,
+  CustomGetState,
+  CustomStoreApi extends StoreApi&#x3C;TState>,
+>(
+  createState:
+    | StateCreator&#x3C;TState, CustomSetState, CustomGetState, CustomStoreApi>
+    | CustomStoreApi,
+): UseBoundStore&#x3C;TState, CustomStoreApi> {
+  // ...
+  const useStore: any = &#x3C;StateSlice>(
+    selector: StateSelector&#x3C;TState, StateSlice> = api.getState as any,
+    equalityFn: EqualityChecker&#x3C;StateSlice> = Object.is,
+  ) => {
+    const [, forceUpdate] = useReducer((c) => c + 1, 0) as [never, () => void];
+    // ...
+    const stateBeforeSubscriptionRef = useRef(state);
+    useIsomorphicLayoutEffect(() => {
+      const listener = () => {
+        try {
+          const nextState = api.getState();
+          const nextStateSlice = selectorRef.current(nextState);
+          if (
+            !equalityFnRef.current(
+              currentSliceRef.current as StateSlice,
+              nextStateSlice,
+            )
+          ) {
+            stateRef.current = nextState;
+            currentSliceRef.current = nextStateSlice;
+            forceUpdate();
+          }
+        } catch (error) {
+          erroredRef.current = true;
+          forceUpdate();
+        }
+      };
+      const unsubscribe = api.subscribe(listener);
+      if (api.getState() !== stateBeforeSubscriptionRef.current) {
+        listener(); // state has changed before subscription
+      }
+      return unsubscribe;
+    }, []);
+
+    const sliceToReturn = hasNewStateSlice
+      ? (newStateSlice as StateSlice)
+      : currentSliceRef.current;
+    useDebugValue(sliceToReturn);
+    return sliceToReturn;
+  };
+
+  // ...
+  return useStore;
+}
+</code></pre>
+<p>zustand 将 <code>createStore</code> 函数的返回值作为一个自定义 hook 来实现，其中为了让 React.js 组件能感知到状态更新，是利用 <code>useEffect</code> 来完成订阅操作，而状态更新发布后，则通过 <code>forceUpdate()</code> 来强制组件进行 rerender 以获取最新的状态。</p>
+<p>这里，看看如何在函数组件中使用 zustand：</p>
+<pre><code class="language-js">import create from "zustand";
+
+// Store
+const useStore = create((set) => ({
+  bears: 0,
+  increasePopulation: () => set((state) => ({ bears: state.bears + 1 })),
+  removeAllBears: () => set({ bears: 0 }),
+}));
+
+// Component
+function BearCounter() {
+  const bears = useStore((state) => state.bears);
+  return &#x3C;h1>{bears} around here ...&#x3C;/h1>;
+}
+
+function Controls() {
+  const increasePopulation = useStore((state) => state.increasePopulation);
+  return &#x3C;button onClick={increasePopulation}>one up&#x3C;/button>;
+}
+</code></pre>
+<p>实际上，用法和 react-redux 非常相似，但获取状态与更新状态均只需要使用 <code>useStore</code> 一个 API 即可完成业务。</p>
+<p>然而，react-redux 的实现则要复杂的多。由于其出现的较早，所以同时适配了类组件和函数组件。这里不再细究 react-redux 的具体实现，但其与 zustand 最大的差异则在于把状态放在了 <code>Context</code> 中存储，所以需要使用 <code>Provider</code> 将页面的根组件包裹起来才能使用。redux 的 <code>useSelector()</code> Hook API 与 zustand 上面提到的 <code>useStore()</code> 的实现逻辑也非常相似。</p>
+<h4 id="调式工具">调式工具</h4>
+<p>一个核心工具库好不好用，不仅要能解决业务问题，同时也要能提供良好的开发体验，redux 之所以能成为 React.js 社区普遍采用的状态管理方案，不仅在于其实现的优雅，倡导的优秀的模式，更在于其配套的调试工具、中间件也非常好用。所以，zustand 作为后来者并没有重复造轮子，而是尽最大的可能重用 redux 社区的开源方案，这一点也是比较好的，至少从 redux 迁移到 zustand 不会有太大的困难，开发体验上来说还是不错的。</p>
+<h3 id="结语">结语</h3>
+<p>至此，完成了对 zustand 这个轻量级的状态管理方案的探索，至少在满足状态管理简单的核心需求、使用简单、具备良好的调式工具等几方面来说还是不错的，作为 redux 的轻量级替代方案，完全值得一试。</p>
+<h3 id="参考">参考</h3>
+<ul>
+<li><a href="https://redux.js.org/">redux</a></li>
+<li><a href="https://react-redux.js.org/">react-redux</a></li>
+<li><a href="https://zustand.surge.sh/">zustand</a></li>
+<li><a href="https://javascript.plainenglish.io/lets-build-our-own-redux-9384b283529c">Let’s build our own Redux</a></li>
+</ul></div><div class="mt-14 pt-8 border-t border-gray-100 dark:border-white/[0.12]"><a class="inline-flex items-center gap-1.5 text-sm text-gray-500 dark:text-[rgba(255,255,255,0.60)] hover:text-gray-900 dark:hover:text-[rgba(255,255,255,0.87)] transition-colors" href="/blog"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"></path></svg>返回文章列表</a></div></article></div></main><script src="/_next/static/chunks/webpack-616e068a201ad621.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0]);self.__next_f.push([2,null])</script><script>self.__next_f.push([1,"1:HL[\"/_next/static/css/47fa5dcb7f1f7e4f.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"2:I[2846,[],\"\"]\n5:I[4707,[],\"\"]\n7:I[6423,[],\"\"]\n8:I[2060,[\"972\",\"static/chunks/972-12c2a745f65e530e.js\",\"185\",\"static/chunks/app/layout-6d295785c0ea2d7c.js\"],\"ThemeProvider\"]\n9:I[5386,[\"972\",\"static/chunks/972-12c2a745f65e530e.js\",\"185\",\"static/chunks/app/layout-6d295785c0ea2d7c.js\"],\"LangProvider\"]\na:I[7753,[\"972\",\"static/chunks/972-12c2a745f65e530e.js\",\"185\",\"static/chunks/app/layout-6d295785c0ea2d7c.js\"],\"default\"]\nc:I[1060,[],\"\"]\n6:[\"slug\",\"web-app-model-zustand\",\"d\"]\nd:[]\n"])</script><script>self.__next_f.push([1,"0:[\"$\",\"$L2\",null,{\"buildId\":\"V5oDiuOcD730mDJlDNtfs\",\"assetPrefix\":\"\",\"urlParts\":[\"\",\"blog\",\"web-app-model-zustand\"],\"initialTree\":[\"\",{\"children\":[\"blog\",{\"children\":[[\"slug\",\"web-app-model-zustand\",\"d\"],{\"children\":[\"__PAGE__?{\\\"slug\\\":\\\"web-app-model-zustand\\\"}\",{}]}]}]},\"$undefined\",\"$undefined\",true],\"initialSeedData\":[\"\",{\"children\":[\"blog\",{\"children\":[[\"slug\",\"web-app-model-zustand\",\"d\"],{\"children\":[\"__PAGE__\",{},[[\"$L3\",\"$L4\",null],null],null]},[null,[\"$\",\"$L5\",null,{\"parallelRouterKey\":\"children\",\"segmentPath\":[\"children\",\"blog\",\"children\",\"$6\",\"children\"],\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L7\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"notFoundStyles\":\"$undefined\"}]],null]},[null,[\"$\",\"$L5\",null,{\"parallelRouterKey\":\"children\",\"segmentPath\":[\"children\",\"blog\",\"children\"],\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L7\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"notFoundStyles\":\"$undefined\"}]],null]},[[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/47fa5dcb7f1f7e4f.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"zh-CN\",\"suppressHydrationWarning\":true,\"children\":[\"$\",\"body\",null,{\"className\":\"bg-white dark:bg-[#0f0f0f] min-h-screen\",\"children\":[\"$\",\"$L8\",null,{\"children\":[\"$\",\"$L9\",null,{\"children\":[[\"$\",\"$La\",null,{}],[\"$\",\"main\",null,{\"className\":\"pt-14\",\"children\":[\"$\",\"$L5\",null,{\"parallelRouterKey\":\"children\",\"segmentPath\":[\"children\"],\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L7\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":\"404\"}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],\"notFoundStyles\":[]}]}]]}]}]}]}]],null],null],\"couldBeIntercepted\":false,\"initialHead\":[null,\"$Lb\"],\"globalErrorComponent\":\"$c\",\"missingSlots\":\"$Wd\"}]\n"])</script><script>self.__next_f.push([1,"e:I[3362,[\"972\",\"static/chunks/972-12c2a745f65e530e.js\",\"308\",\"static/chunks/app/blog/%5Bslug%5D/page-94533f6285c1d477.js\"],\"default\"]\n10:I[2972,[\"972\",\"static/chunks/972-12c2a745f65e530e.js\",\"308\",\"static/chunks/app/blog/%5Bslug%5D/page-94533f6285c1d477.js\"],\"\"]\nf:T507e,"])</script><script>self.__next_f.push([1,"\u003cp\u003e基于 React.js 的 Web 应用如何完成状态管理？社区主流方案是 \u003cstrong\u003ereact-redux\u003c/strong\u003e，其本质上基于 React 的 \u003ccode\u003eContext\u003c/code\u003e 特性实现，如果应用足够简单，实际上用 \u003ccode\u003eContext\u003c/code\u003e 手写一个简单的状态管理工具倒也并不难。不过，考虑到工具的完善性、项目的健壮性，通常采用较好的、成熟的社区方案。在移动端场景下，\u003cstrong\u003ereact-redux\u003c/strong\u003e 略显臃肿，轻量级状态管理工具 \u003cstrong\u003ezustand\u003c/strong\u003e 倒是一个不错的替代方案。\u003c/p\u003e\n\u003c!-- truncate --\u003e\n\u003ch3 id=\"轻量级状态管理方案\"\u003e轻量级状态管理方案\u003c/h3\u003e\n\u003cp\u003eWeb 优化中，资源大小的优化是重中之重，而且也是成本最低，收益最高的优化方式，在移动端场景下尤为突出。每在项目中引入一个工具库，都要考虑是否有更轻量级的替代品。众所周知，\u003cstrong\u003emoment\u003c/strong\u003e 就是一个典型的例子，我通常采用 \u003cstrong\u003edayjs\u003c/strong\u003e 作为替代方案。而在应用状态管理工具的选择中，可以利用 Bundlephobia 首先评估一下社区主流方案 \u003cstrong\u003ereact-redux\u003c/strong\u003e。\u003c/p\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003e\u003c/th\u003e\n\u003cth align=\"right\"\u003eMINIFIED\u003c/th\u003e\n\u003cth align=\"right\"\u003eMINIFIED + GZIPPED\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"https://bundlephobia.com/package/redux@4.1.2\"\u003eredux@4.1.2\u003c/a\u003e\u003c/td\u003e\n\u003ctd align=\"right\"\u003e4.3kB\u003c/td\u003e\n\u003ctd align=\"right\"\u003e1.6kB\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"https://bundlephobia.com/package/react-redux@7.2.6\"\u003ereact-redux@7.2.6\u003c/a\u003e\u003c/td\u003e\n\u003ctd align=\"right\"\u003e16.2kB\u003c/td\u003e\n\u003ctd align=\"right\"\u003e5.4kB\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003ctd align=\"right\"\u003e20.5kB\u003c/td\u003e\n\u003ctd align=\"right\"\u003e7kB\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e仅必须的依赖就需要 \u003cstrong\u003e7kb\u003c/strong\u003e 之多，而我们也知道，redux 不仅是一个状态管理工具，其同时也提倡一种优秀的模式，即我们熟知的：\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003eStore -\u003e Dispatch -\u003e Action -\u003e Reducer -\u003e Store\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cp\u003e而这种模式需要我们手写大量的模板代码，于是就有了官方解决方案 \u003cstrong\u003e@reduxjs/toolkit\u003c/strong\u003e 和社区方案 \u003cstrong\u003e@rematch/core\u003c/strong\u003e，这进一步加剧了资源大小所带来的影响。\u003c/p\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth align=\"left\"\u003e\u003c/th\u003e\n\u003cth align=\"right\"\u003eMINIFIED\u003c/th\u003e\n\u003cth align=\"right\"\u003eMINIFIED + GZIPPED\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd align=\"left\"\u003e\u003ca href=\"https://bundlephobia.com/package/@reduxjs/toolkit@1.6.2\"\u003e@reduxjs/toolkit@1.6.2\u003c/a\u003e\u003c/td\u003e\n\u003ctd align=\"right\"\u003e32.1kB\u003c/td\u003e\n\u003ctd align=\"right\"\u003e10.5kB\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd align=\"left\"\u003e\u003ca href=\"https://bundlephobia.com/package/@rematch/core@2.2.0\"\u003e@rematch/core@2.2.0\u003c/a\u003e\u003c/td\u003e\n\u003ctd align=\"right\"\u003e4.7kB\u003c/td\u003e\n\u003ctd align=\"right\"\u003e1.7kB\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e经过分析，事实上我们可以看到 redux 的核心代码库仅有 \u003cstrong\u003e1.6kb\u003c/strong\u003e 的大小，但为了适配 React.js 和解决模板代码的问题，至少也要增加 \u003cstrong\u003e7.1kb\u003c/strong\u003e 的资源大小。换句话说，状态管理工具的核心实现其实是比较简单的，这也是核心库较小的原因，而在移动端场景下，项目一般较为简单、规模较小，对于工具的核心需求其实也仅仅是满足应用状态管理即可。于是，\u003cstrong\u003ezustand\u003c/strong\u003e 社区方案成为了我的一个选择。\u003c/p\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth align=\"left\"\u003e\u003c/th\u003e\n\u003cth align=\"right\"\u003eMINIFIED\u003c/th\u003e\n\u003cth align=\"right\"\u003eMINIFIED + GZIPPED\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd align=\"left\"\u003e\u003ca href=\"https://bundlephobia.com/package/zustand@3.6.5\"\u003ezustand@3.6.5\u003c/a\u003e\u003c/td\u003e\n\u003ctd align=\"right\"\u003e2kB\u003c/td\u003e\n\u003ctd align=\"right\"\u003e954B\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd align=\"left\"\u003e\u003ca href=\"https://bundlephobia.com/package/jotai@1.4.3\"\u003ejotai@1.4.3\u003c/a\u003e\u003c/td\u003e\n\u003ctd align=\"right\"\u003e6.1kB\u003c/td\u003e\n\u003ctd align=\"right\"\u003e2.5kB\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e上表中，还列出了 jotai，它与 zustand 出自同一个开发者群体之手，前者仅适用于 React.js 组件内的状态管理，而后者还适用于组件之外的状态操作。\u003cstrong\u003ezustand\u003c/strong\u003e 足够简单，且无需太多模板代码，仅 \u003cstrong\u003e954B\u003c/strong\u003e 大小即可满足应用状态管理的核心需求。\u003c/p\u003e\n\u003cp\u003e至此，移动端场景下，要替代 react-redux 这种主流方案，考虑以下几点：\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e满足应用状态管理的核心需求\u003c/li\u003e\n\u003cli\u003e具备资源大小优势\u003c/li\u003e\n\u003cli\u003e用法足够简单\u003c/li\u003e\n\u003cli\u003e方案成熟（较多人采用、有配套的调试工具等）\u003c/li\u003e\n\u003cli\u003e可在组件外操作状态\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e其中，可在组件外操作状态这一点其实是为了满足方案的灵活性，有时候业务需求的实现可能会涉及到在组件之外进行状态操作的场景，这个时候就很方便了。\u003c/p\u003e\n\u003ch3 id=\"redux-vs-zustand\"\u003eredux vs zustand\u003c/h3\u003e\n\u003cp\u003e接下来，分析一下两者的源码实现，即可了解是否 zustand 可作为一个较好的替代方案。分两步进行，第一步首先来看看两者的核心实现，即状态管理的机制。\u003c/p\u003e\n\u003cp\u003e首先，我们要明白状态管理做的是什么事情。状态即数据，对于一个原生的 Web 应用来说，某一时刻页面展示的结构和样式取决于此时的状态，状态可能会由于用户交互动作发生变化。Web 应用有很多状态，比如表单的勾选按钮状态，我们可以将这种状态视为局部状态，该状态的变化不会导致页面其它部分发生变化；当然，如果我们将用户体验设计更进一步，勾选按钮的状态会同步影响表单提交按钮是否处于可点击的状态，此时一个状态在页面两个部分都有影响，对于更复杂的 Web 应用来说，一个状态可能影响到页面数十个部分，我们就需要对状态的维护更新机制进行设计，将状态的维护从页面进行解耦，独立到全局来进行，则将这种状态称之为全局状态。显然，对于局部状态来说，页面局部可以完成自治，而对于全局状态来说，则需要一个全局中心化的“数据库”来进行管理。\u003c/p\u003e\n\u003cp\u003e现在，我们可以知道，状态管理需要提供一个类似中心化的“数据库”，同时对于状态要提供更新机制，而状态可以被多个部分依赖，状态更新的同时依赖方可以及时获取到最新状态。这不就是软件架构中典型的发布/订阅模式吗？所以，先来看看 redux 和 zustand 两者提供的 API，大致就能理解其核心实现的模型。\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-typescript\"\u003e// Redux (https://redux.js.org/api/api-reference)\ncreateStore(reducer, [preloadedState], [enhancer]);\n// Store\ngetState();\nsubscribe(listener);\ndispatch(action);\n\n// zustand (https://github.com/pmndrs/zustand)\ncreateStore();\n// Store\ngetState();\nsubscribe();\nsetState();\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003e由此可见，两者提供的核心 API 是非常相近的，从 API 命名的角度来看，其核心实现无疑是基于发布/订阅模式。\u003c/p\u003e\n\u003cp\u003e两者都有一个 \u003ccode\u003ecreateStore()\u003c/code\u003e API 来创建一个中心化的数据存储区，同时创建的 store 实例均会暴露出主动获取状态的 API \u003ccode\u003egetState()\u003c/code\u003e，订阅状态更新的 API \u003ccode\u003esubscribe()\u003c/code\u003e，以及更新状态的 API \u003ccode\u003edispatch()\u003c/code\u003e 和 \u003ccode\u003esetState()\u003c/code\u003e，当然 redux 还引入了一个 \u003ccode\u003ereducer\u003c/code\u003e 的概念和 API。\u003c/p\u003e\n\u003cp\u003e两者的核心库均只有 1kb 大小，而 zustand 更小，这是因为 zustand 实现更为简单一些，其差异主要集中在状态更新机制上，其次是状态订阅机制。\u003c/p\u003e\n\u003ch4 id=\"subscribe\"\u003e\u003ccode\u003esubscribe()\u003c/code\u003e\u003c/h4\u003e\n\u003cp\u003e在状态订阅的 \u003ccode\u003esubscribe()\u003c/code\u003e API 实现中，zustand 仅是简单的直接将订阅函数添加到订阅列表中，同时提供了一个 \u003ccode\u003eselector\u003c/code\u003e 机制来过滤状态：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-typescript\"\u003e// see https://github.com/pmndrs/zustand/blob/v3.6.5/src/vanilla.ts#L126\nconst subscribe: Subscribe\u0026#x3C;TState\u003e = \u0026#x3C;StateSlice\u003e(\n  listener: StateListener\u0026#x3C;TState\u003e | StateSliceListener\u0026#x3C;StateSlice\u003e,\n  selector?: StateSelector\u0026#x3C;TState, StateSlice\u003e,\n  equalityFn?: EqualityChecker\u0026#x3C;StateSlice\u003e,\n) =\u003e {\n  if (selector || equalityFn) {\n    return subscribeWithSelector(\n      listener as StateSliceListener\u0026#x3C;StateSlice\u003e,\n      selector,\n      equalityFn,\n    );\n  }\n  listeners.add(listener as StateListener\u0026#x3C;TState\u003e);\n  // Unsubscribe\n  return () =\u003e listeners.delete(listener as StateListener\u0026#x3C;TState\u003e);\n};\n\n// see https://github.com/pmndrs/zustand/blob/v3.6.5/src/vanilla.ts#L107\nconst subscribeWithSelector = \u0026#x3C;StateSlice\u003e(\n  listener: StateSliceListener\u0026#x3C;StateSlice\u003e,\n  selector: StateSelector\u0026#x3C;TState, StateSlice\u003e = getState as any,\n  equalityFn: EqualityChecker\u0026#x3C;StateSlice\u003e = Object.is,\n) =\u003e {\n  console.warn(\"[DEPRECATED] Please use `subscribeWithSelector` middleware\");\n  let currentSlice: StateSlice = selector(state);\n  function listenerToAdd() {\n    const nextSlice = selector(state);\n    if (!equalityFn(currentSlice, nextSlice)) {\n      const previousSlice = currentSlice;\n      listener((currentSlice = nextSlice), previousSlice);\n    }\n  }\n  listeners.add(listenerToAdd);\n  // Unsubscribe\n  return () =\u003e listeners.delete(listenerToAdd);\n};\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003e通过上面 \u003ccode\u003elistenerToAdd()\u003c/code\u003e 函数可以看到，在订阅状态时提供了 \u003ccode\u003eselector\u003c/code\u003e 的话，状态更新时会首先将状态过滤一遍再通知给订阅者。\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-typescript\"\u003e// see https://github.com/pmndrs/zustand/blob/v3.6.5/src/vanilla.ts#L89\nconst setState: SetState\u0026#x3C;TState\u003e = (partial, replace) =\u003e {\n  // ...\n  listeners.forEach((listener) =\u003e listener(state, previousState));\n  // ...\n};\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003e通过 \u003ccode\u003esetState()\u003c/code\u003e 更新状态时，所有订阅函数将会调用，同时会将新的状态和旧的状态传递给订阅函数。\u003c/p\u003e\n\u003cp\u003e接下来，看看 redux 的实现，redux 在添加订阅函数时做了一些特殊的判断，以及特殊处理：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-js\"\u003e// see https://github.com/reduxjs/redux/blob/v4.1.2/src/createStore.js#L128\nfunction subscribe(listener) {\n  // ...\n  if (isDispatching) {\n    throw new Error(\"...\");\n  }\n\n  let isSubscribed = true;\n\n  ensureCanMutateNextListeners();\n  nextListeners.push(listener);\n\n  return function unsubscribe() {\n    if (!isSubscribed) {\n      return;\n    }\n\n    if (isDispatching) {\n      throw new Error(\"...\");\n    }\n\n    isSubscribed = false;\n\n    ensureCanMutateNextListeners();\n    const index = nextListeners.indexOf(listener);\n    nextListeners.splice(index, 1);\n    currentListeners = null;\n  };\n}\n\n// see https://github.com/reduxjs/redux/blob/v4.1.2/src/createStore.js#L82\nfunction ensureCanMutateNextListeners() {\n  if (nextListeners === currentListeners) {\n    nextListeners = currentListeners.slice();\n  }\n}\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003e根据实现，redux 通过 \u003ccode\u003eisDispatching\u003c/code\u003e 标志位避免在状态更新期间添加订阅函数，以及通过 \u003ccode\u003eensureCanMutateNextListeners()\u003c/code\u003e 函数将订阅函数列表做了浅拷贝再进行添加和删除操作，这都是对潜在的问题的规避。\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-js\"\u003e// see https://github.com/reduxjs/redux/blob/v4.1.2/src/createStore.js#L197\nfunction dispatch(action) {\n  // ...\n\n  const listeners = (currentListeners = nextListeners);\n  for (let i = 0; i \u0026#x3C; listeners.length; i++) {\n    const listener = listeners[i];\n    listener();\n  }\n\n  return action;\n}\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eredux 通过 \u003ccode\u003edispatch()\u003c/code\u003e 更新状态时，由于在订阅时没有默认提供 \u003ccode\u003eselector\u003c/code\u003e 机制，所以会无差别的通知所有订阅者，同时也不会将新旧状态传递给订阅函数，当然在官方示例代码中可以看到，官方推荐在订阅函数中主动通过 \u003ccode\u003egetState()\u003c/code\u003e 获取新的状态以及完成 selector 操作。可以说，由于 redux 和 zustand 设计理念不同，订阅的实现方式也略有差别，前者控制的更细致，而灵活性很高，而后者在保持简单性的同时也没有牺牲灵活性。\u003c/p\u003e\n\u003ch4 id=\"setstate--dispatch\"\u003e\u003ccode\u003esetState()\u003c/code\u003e \u0026#x26;\u0026#x26; \u003ccode\u003edispatch()\u003c/code\u003e\u003c/h4\u003e\n\u003cp\u003e状态更新机制是两者实现最大的不同，zustand 提供一个 \u003ccode\u003esetState()\u003c/code\u003e 函数来更新状态：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-typescript\"\u003e// see https://github.com/pmndrs/zustand/blob/v3.6.5/src/vanilla.ts#L89\nconst setState: SetState\u0026#x3C;TState\u003e = (partial, replace) =\u003e {\n  // TODO: Remove type assertion once https://github.com/microsoft/TypeScript/issues/37663 is resolved\n  // https://github.com/microsoft/TypeScript/issues/37663#issuecomment-759728342\n  const nextState =\n    typeof partial === \"function\"\n      ? (partial as (state: TState) =\u003e TState)(state)\n      : partial;\n  if (nextState !== state) {\n    const previousState = state;\n    state = replace\n      ? (nextState as TState)\n      : Object.assign({}, state, nextState);\n    listeners.forEach((listener) =\u003e listener(state, previousState));\n  }\n};\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003e根据源码实现来看，zustand 通过 \u003ccode\u003eObject.assign\u003c/code\u003e 函数合并更新状态，同时提供 \u003ccode\u003ereplace\u003c/code\u003e 标志位直接将旧状态完全替换。\u003c/p\u003e\n\u003cp\u003e而 redux 的状态更新则要复杂一些，主要是官方推荐的编程模式将状态更新拆分为多个步骤，\u003ccode\u003edispatch()\u003c/code\u003e 函数触发一个 \u003ccode\u003eAction\u003c/code\u003e，而具体处理 Action 以及状态合并的操作均由 \u003ccode\u003eReducer\u003c/code\u003e 函数完成，该函数是一个纯函数。至于为什么要这么设计，官方有说明，纯函数对于状态变化来说是可预测的，而且利于测试，更是实现时间旅行类似功能的基础。\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-js\"\u003e// see https://github.com/reduxjs/redux/blob/v4.1.2/src/createStore.js#L197\nfunction dispatch(action) {\n  if (!isPlainObject(action)) {\n    throw new Error(\n      `Actions must be plain objects. Instead, the actual type was: '${kindOf(\n        action,\n      )}'. You may need to add middleware to your store setup to handle dispatching other values, such as 'redux-thunk' to handle dispatching functions. See https://redux.js.org/tutorials/fundamentals/part-4-store#middleware and https://redux.js.org/tutorials/fundamentals/part-6-async-logic#using-the-redux-thunk-middleware for examples.`,\n    );\n  }\n\n  if (typeof action.type === \"undefined\") {\n    throw new Error(\n      'Actions may not have an undefined \"type\" property. You may have misspelled an action type string constant.',\n    );\n  }\n\n  if (isDispatching) {\n    throw new Error(\"Reducers may not dispatch actions.\");\n  }\n\n  try {\n    isDispatching = true;\n    currentState = currentReducer(currentState, action);\n  } finally {\n    isDispatching = false;\n  }\n\n  const listeners = (currentListeners = nextListeners);\n  for (let i = 0; i \u0026#x3C; listeners.length; i++) {\n    const listener = listeners[i];\n    listener();\n  }\n\n  return action;\n}\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003e根据源码实现来看，这里出现了 \u003ccode\u003eisDispatching\u003c/code\u003e 标志位，主要是用来限制状态更新过程中不能再次发起状态更新操作，避免出现错误。\u003c/p\u003e\n\u003cp\u003e不过，有一点值得提一下，redux 默认不支持异步更新状态，需要借助 redux-thunk 库来支持；而 zustand 本身则是支持异步更新状态的。\u003c/p\u003e\n\u003cp\u003e根据以上分析来看，实际上核心实现是相似的，而且 zustand 作为后来者，对 redux 有借鉴也有简化的地方，满足状态管理的核心简单需求是没有多大问题的，可作为 redux 的一个替代方案。\u003c/p\u003e\n\u003ch4 id=\"reactjs-适配\"\u003eReact.js 适配\u003c/h4\u003e\n\u003cp\u003e如果说，核心库差异较小，而且包尺寸相近的话，那么最大的差异则出现在对 React.js 库的适配上面。\u003c/p\u003e\n\u003cp\u003ezustand 出现的较晚，目前 Hook API 已经成为 React.js 社区的主流，所以 zustand 在对其适配的时候也是以 Hook API 的方式实现，没有提供类组件的适配。\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-typescript\"\u003e// see https://github.com/pmndrs/zustand/blob/v3.6.5/src/index.ts#L64\nfunction create\u0026#x3C;\n  TState extends State,\n  CustomSetState,\n  CustomGetState,\n  CustomStoreApi extends StoreApi\u0026#x3C;TState\u003e,\n\u003e(\n  createState:\n    | StateCreator\u0026#x3C;TState, CustomSetState, CustomGetState, CustomStoreApi\u003e\n    | CustomStoreApi,\n): UseBoundStore\u0026#x3C;TState, CustomStoreApi\u003e {\n  // ...\n  const useStore: any = \u0026#x3C;StateSlice\u003e(\n    selector: StateSelector\u0026#x3C;TState, StateSlice\u003e = api.getState as any,\n    equalityFn: EqualityChecker\u0026#x3C;StateSlice\u003e = Object.is,\n  ) =\u003e {\n    const [, forceUpdate] = useReducer((c) =\u003e c + 1, 0) as [never, () =\u003e void];\n    // ...\n    const stateBeforeSubscriptionRef = useRef(state);\n    useIsomorphicLayoutEffect(() =\u003e {\n      const listener = () =\u003e {\n        try {\n          const nextState = api.getState();\n          const nextStateSlice = selectorRef.current(nextState);\n          if (\n            !equalityFnRef.current(\n              currentSliceRef.current as StateSlice,\n              nextStateSlice,\n            )\n          ) {\n            stateRef.current = nextState;\n            currentSliceRef.current = nextStateSlice;\n            forceUpdate();\n          }\n        } catch (error) {\n          erroredRef.current = true;\n          forceUpdate();\n        }\n      };\n      const unsubscribe = api.subscribe(listener);\n      if (api.getState() !== stateBeforeSubscriptionRef.current) {\n        listener(); // state has changed before subscription\n      }\n      return unsubscribe;\n    }, []);\n\n    const sliceToReturn = hasNewStateSlice\n      ? (newStateSlice as StateSlice)\n      : currentSliceRef.current;\n    useDebugValue(sliceToReturn);\n    return sliceToReturn;\n  };\n\n  // ...\n  return useStore;\n}\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003ezustand 将 \u003ccode\u003ecreateStore\u003c/code\u003e 函数的返回值作为一个自定义 hook 来实现，其中为了让 React.js 组件能感知到状态更新，是利用 \u003ccode\u003euseEffect\u003c/code\u003e 来完成订阅操作，而状态更新发布后，则通过 \u003ccode\u003eforceUpdate()\u003c/code\u003e 来强制组件进行 rerender 以获取最新的状态。\u003c/p\u003e\n\u003cp\u003e这里，看看如何在函数组件中使用 zustand：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-js\"\u003eimport create from \"zustand\";\n\n// Store\nconst useStore = create((set) =\u003e ({\n  bears: 0,\n  increasePopulation: () =\u003e set((state) =\u003e ({ bears: state.bears + 1 })),\n  removeAllBears: () =\u003e set({ bears: 0 }),\n}));\n\n// Component\nfunction BearCounter() {\n  const bears = useStore((state) =\u003e state.bears);\n  return \u0026#x3C;h1\u003e{bears} around here ...\u0026#x3C;/h1\u003e;\n}\n\nfunction Controls() {\n  const increasePopulation = useStore((state) =\u003e state.increasePopulation);\n  return \u0026#x3C;button onClick={increasePopulation}\u003eone up\u0026#x3C;/button\u003e;\n}\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003e实际上，用法和 react-redux 非常相似，但获取状态与更新状态均只需要使用 \u003ccode\u003euseStore\u003c/code\u003e 一个 API 即可完成业务。\u003c/p\u003e\n\u003cp\u003e然而，react-redux 的实现则要复杂的多。由于其出现的较早，所以同时适配了类组件和函数组件。这里不再细究 react-redux 的具体实现，但其与 zustand 最大的差异则在于把状态放在了 \u003ccode\u003eContext\u003c/code\u003e 中存储，所以需要使用 \u003ccode\u003eProvider\u003c/code\u003e 将页面的根组件包裹起来才能使用。redux 的 \u003ccode\u003euseSelector()\u003c/code\u003e Hook API 与 zustand 上面提到的 \u003ccode\u003euseStore()\u003c/code\u003e 的实现逻辑也非常相似。\u003c/p\u003e\n\u003ch4 id=\"调式工具\"\u003e调式工具\u003c/h4\u003e\n\u003cp\u003e一个核心工具库好不好用，不仅要能解决业务问题，同时也要能提供良好的开发体验，redux 之所以能成为 React.js 社区普遍采用的状态管理方案，不仅在于其实现的优雅，倡导的优秀的模式，更在于其配套的调试工具、中间件也非常好用。所以，zustand 作为后来者并没有重复造轮子，而是尽最大的可能重用 redux 社区的开源方案，这一点也是比较好的，至少从 redux 迁移到 zustand 不会有太大的困难，开发体验上来说还是不错的。\u003c/p\u003e\n\u003ch3 id=\"结语\"\u003e结语\u003c/h3\u003e\n\u003cp\u003e至此，完成了对 zustand 这个轻量级的状态管理方案的探索，至少在满足状态管理简单的核心需求、使用简单、具备良好的调式工具等几方面来说还是不错的，作为 redux 的轻量级替代方案，完全值得一试。\u003c/p\u003e\n\u003ch3 id=\"参考\"\u003e参考\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"https://redux.js.org/\"\u003eredux\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://react-redux.js.org/\"\u003ereact-redux\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://zustand.surge.sh/\"\u003ezustand\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://javascript.plainenglish.io/lets-build-our-own-redux-9384b283529c\"\u003eLet’s build our own Redux\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e"])</script><script>self.__next_f.push([1,"11:T507e,"])</script><script>self.__next_f.push([1,"\u003cp\u003e基于 React.js 的 Web 应用如何完成状态管理？社区主流方案是 \u003cstrong\u003ereact-redux\u003c/strong\u003e，其本质上基于 React 的 \u003ccode\u003eContext\u003c/code\u003e 特性实现，如果应用足够简单，实际上用 \u003ccode\u003eContext\u003c/code\u003e 手写一个简单的状态管理工具倒也并不难。不过，考虑到工具的完善性、项目的健壮性，通常采用较好的、成熟的社区方案。在移动端场景下，\u003cstrong\u003ereact-redux\u003c/strong\u003e 略显臃肿，轻量级状态管理工具 \u003cstrong\u003ezustand\u003c/strong\u003e 倒是一个不错的替代方案。\u003c/p\u003e\n\u003c!-- truncate --\u003e\n\u003ch3 id=\"轻量级状态管理方案\"\u003e轻量级状态管理方案\u003c/h3\u003e\n\u003cp\u003eWeb 优化中，资源大小的优化是重中之重，而且也是成本最低，收益最高的优化方式，在移动端场景下尤为突出。每在项目中引入一个工具库，都要考虑是否有更轻量级的替代品。众所周知，\u003cstrong\u003emoment\u003c/strong\u003e 就是一个典型的例子，我通常采用 \u003cstrong\u003edayjs\u003c/strong\u003e 作为替代方案。而在应用状态管理工具的选择中，可以利用 Bundlephobia 首先评估一下社区主流方案 \u003cstrong\u003ereact-redux\u003c/strong\u003e。\u003c/p\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003e\u003c/th\u003e\n\u003cth align=\"right\"\u003eMINIFIED\u003c/th\u003e\n\u003cth align=\"right\"\u003eMINIFIED + GZIPPED\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"https://bundlephobia.com/package/redux@4.1.2\"\u003eredux@4.1.2\u003c/a\u003e\u003c/td\u003e\n\u003ctd align=\"right\"\u003e4.3kB\u003c/td\u003e\n\u003ctd align=\"right\"\u003e1.6kB\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"https://bundlephobia.com/package/react-redux@7.2.6\"\u003ereact-redux@7.2.6\u003c/a\u003e\u003c/td\u003e\n\u003ctd align=\"right\"\u003e16.2kB\u003c/td\u003e\n\u003ctd align=\"right\"\u003e5.4kB\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003ctd align=\"right\"\u003e20.5kB\u003c/td\u003e\n\u003ctd align=\"right\"\u003e7kB\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e仅必须的依赖就需要 \u003cstrong\u003e7kb\u003c/strong\u003e 之多，而我们也知道，redux 不仅是一个状态管理工具，其同时也提倡一种优秀的模式，即我们熟知的：\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003eStore -\u003e Dispatch -\u003e Action -\u003e Reducer -\u003e Store\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cp\u003e而这种模式需要我们手写大量的模板代码，于是就有了官方解决方案 \u003cstrong\u003e@reduxjs/toolkit\u003c/strong\u003e 和社区方案 \u003cstrong\u003e@rematch/core\u003c/strong\u003e，这进一步加剧了资源大小所带来的影响。\u003c/p\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth align=\"left\"\u003e\u003c/th\u003e\n\u003cth align=\"right\"\u003eMINIFIED\u003c/th\u003e\n\u003cth align=\"right\"\u003eMINIFIED + GZIPPED\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd align=\"left\"\u003e\u003ca href=\"https://bundlephobia.com/package/@reduxjs/toolkit@1.6.2\"\u003e@reduxjs/toolkit@1.6.2\u003c/a\u003e\u003c/td\u003e\n\u003ctd align=\"right\"\u003e32.1kB\u003c/td\u003e\n\u003ctd align=\"right\"\u003e10.5kB\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd align=\"left\"\u003e\u003ca href=\"https://bundlephobia.com/package/@rematch/core@2.2.0\"\u003e@rematch/core@2.2.0\u003c/a\u003e\u003c/td\u003e\n\u003ctd align=\"right\"\u003e4.7kB\u003c/td\u003e\n\u003ctd align=\"right\"\u003e1.7kB\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e经过分析，事实上我们可以看到 redux 的核心代码库仅有 \u003cstrong\u003e1.6kb\u003c/strong\u003e 的大小，但为了适配 React.js 和解决模板代码的问题，至少也要增加 \u003cstrong\u003e7.1kb\u003c/strong\u003e 的资源大小。换句话说，状态管理工具的核心实现其实是比较简单的，这也是核心库较小的原因，而在移动端场景下，项目一般较为简单、规模较小，对于工具的核心需求其实也仅仅是满足应用状态管理即可。于是，\u003cstrong\u003ezustand\u003c/strong\u003e 社区方案成为了我的一个选择。\u003c/p\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth align=\"left\"\u003e\u003c/th\u003e\n\u003cth align=\"right\"\u003eMINIFIED\u003c/th\u003e\n\u003cth align=\"right\"\u003eMINIFIED + GZIPPED\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd align=\"left\"\u003e\u003ca href=\"https://bundlephobia.com/package/zustand@3.6.5\"\u003ezustand@3.6.5\u003c/a\u003e\u003c/td\u003e\n\u003ctd align=\"right\"\u003e2kB\u003c/td\u003e\n\u003ctd align=\"right\"\u003e954B\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd align=\"left\"\u003e\u003ca href=\"https://bundlephobia.com/package/jotai@1.4.3\"\u003ejotai@1.4.3\u003c/a\u003e\u003c/td\u003e\n\u003ctd align=\"right\"\u003e6.1kB\u003c/td\u003e\n\u003ctd align=\"right\"\u003e2.5kB\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e上表中，还列出了 jotai，它与 zustand 出自同一个开发者群体之手，前者仅适用于 React.js 组件内的状态管理，而后者还适用于组件之外的状态操作。\u003cstrong\u003ezustand\u003c/strong\u003e 足够简单，且无需太多模板代码，仅 \u003cstrong\u003e954B\u003c/strong\u003e 大小即可满足应用状态管理的核心需求。\u003c/p\u003e\n\u003cp\u003e至此，移动端场景下，要替代 react-redux 这种主流方案，考虑以下几点：\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e满足应用状态管理的核心需求\u003c/li\u003e\n\u003cli\u003e具备资源大小优势\u003c/li\u003e\n\u003cli\u003e用法足够简单\u003c/li\u003e\n\u003cli\u003e方案成熟（较多人采用、有配套的调试工具等）\u003c/li\u003e\n\u003cli\u003e可在组件外操作状态\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e其中，可在组件外操作状态这一点其实是为了满足方案的灵活性，有时候业务需求的实现可能会涉及到在组件之外进行状态操作的场景，这个时候就很方便了。\u003c/p\u003e\n\u003ch3 id=\"redux-vs-zustand\"\u003eredux vs zustand\u003c/h3\u003e\n\u003cp\u003e接下来，分析一下两者的源码实现，即可了解是否 zustand 可作为一个较好的替代方案。分两步进行，第一步首先来看看两者的核心实现，即状态管理的机制。\u003c/p\u003e\n\u003cp\u003e首先，我们要明白状态管理做的是什么事情。状态即数据，对于一个原生的 Web 应用来说，某一时刻页面展示的结构和样式取决于此时的状态，状态可能会由于用户交互动作发生变化。Web 应用有很多状态，比如表单的勾选按钮状态，我们可以将这种状态视为局部状态，该状态的变化不会导致页面其它部分发生变化；当然，如果我们将用户体验设计更进一步，勾选按钮的状态会同步影响表单提交按钮是否处于可点击的状态，此时一个状态在页面两个部分都有影响，对于更复杂的 Web 应用来说，一个状态可能影响到页面数十个部分，我们就需要对状态的维护更新机制进行设计，将状态的维护从页面进行解耦，独立到全局来进行，则将这种状态称之为全局状态。显然，对于局部状态来说，页面局部可以完成自治，而对于全局状态来说，则需要一个全局中心化的“数据库”来进行管理。\u003c/p\u003e\n\u003cp\u003e现在，我们可以知道，状态管理需要提供一个类似中心化的“数据库”，同时对于状态要提供更新机制，而状态可以被多个部分依赖，状态更新的同时依赖方可以及时获取到最新状态。这不就是软件架构中典型的发布/订阅模式吗？所以，先来看看 redux 和 zustand 两者提供的 API，大致就能理解其核心实现的模型。\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-typescript\"\u003e// Redux (https://redux.js.org/api/api-reference)\ncreateStore(reducer, [preloadedState], [enhancer]);\n// Store\ngetState();\nsubscribe(listener);\ndispatch(action);\n\n// zustand (https://github.com/pmndrs/zustand)\ncreateStore();\n// Store\ngetState();\nsubscribe();\nsetState();\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003e由此可见，两者提供的核心 API 是非常相近的，从 API 命名的角度来看，其核心实现无疑是基于发布/订阅模式。\u003c/p\u003e\n\u003cp\u003e两者都有一个 \u003ccode\u003ecreateStore()\u003c/code\u003e API 来创建一个中心化的数据存储区，同时创建的 store 实例均会暴露出主动获取状态的 API \u003ccode\u003egetState()\u003c/code\u003e，订阅状态更新的 API \u003ccode\u003esubscribe()\u003c/code\u003e，以及更新状态的 API \u003ccode\u003edispatch()\u003c/code\u003e 和 \u003ccode\u003esetState()\u003c/code\u003e，当然 redux 还引入了一个 \u003ccode\u003ereducer\u003c/code\u003e 的概念和 API。\u003c/p\u003e\n\u003cp\u003e两者的核心库均只有 1kb 大小，而 zustand 更小，这是因为 zustand 实现更为简单一些，其差异主要集中在状态更新机制上，其次是状态订阅机制。\u003c/p\u003e\n\u003ch4 id=\"subscribe\"\u003e\u003ccode\u003esubscribe()\u003c/code\u003e\u003c/h4\u003e\n\u003cp\u003e在状态订阅的 \u003ccode\u003esubscribe()\u003c/code\u003e API 实现中，zustand 仅是简单的直接将订阅函数添加到订阅列表中，同时提供了一个 \u003ccode\u003eselector\u003c/code\u003e 机制来过滤状态：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-typescript\"\u003e// see https://github.com/pmndrs/zustand/blob/v3.6.5/src/vanilla.ts#L126\nconst subscribe: Subscribe\u0026#x3C;TState\u003e = \u0026#x3C;StateSlice\u003e(\n  listener: StateListener\u0026#x3C;TState\u003e | StateSliceListener\u0026#x3C;StateSlice\u003e,\n  selector?: StateSelector\u0026#x3C;TState, StateSlice\u003e,\n  equalityFn?: EqualityChecker\u0026#x3C;StateSlice\u003e,\n) =\u003e {\n  if (selector || equalityFn) {\n    return subscribeWithSelector(\n      listener as StateSliceListener\u0026#x3C;StateSlice\u003e,\n      selector,\n      equalityFn,\n    );\n  }\n  listeners.add(listener as StateListener\u0026#x3C;TState\u003e);\n  // Unsubscribe\n  return () =\u003e listeners.delete(listener as StateListener\u0026#x3C;TState\u003e);\n};\n\n// see https://github.com/pmndrs/zustand/blob/v3.6.5/src/vanilla.ts#L107\nconst subscribeWithSelector = \u0026#x3C;StateSlice\u003e(\n  listener: StateSliceListener\u0026#x3C;StateSlice\u003e,\n  selector: StateSelector\u0026#x3C;TState, StateSlice\u003e = getState as any,\n  equalityFn: EqualityChecker\u0026#x3C;StateSlice\u003e = Object.is,\n) =\u003e {\n  console.warn(\"[DEPRECATED] Please use `subscribeWithSelector` middleware\");\n  let currentSlice: StateSlice = selector(state);\n  function listenerToAdd() {\n    const nextSlice = selector(state);\n    if (!equalityFn(currentSlice, nextSlice)) {\n      const previousSlice = currentSlice;\n      listener((currentSlice = nextSlice), previousSlice);\n    }\n  }\n  listeners.add(listenerToAdd);\n  // Unsubscribe\n  return () =\u003e listeners.delete(listenerToAdd);\n};\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003e通过上面 \u003ccode\u003elistenerToAdd()\u003c/code\u003e 函数可以看到，在订阅状态时提供了 \u003ccode\u003eselector\u003c/code\u003e 的话，状态更新时会首先将状态过滤一遍再通知给订阅者。\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-typescript\"\u003e// see https://github.com/pmndrs/zustand/blob/v3.6.5/src/vanilla.ts#L89\nconst setState: SetState\u0026#x3C;TState\u003e = (partial, replace) =\u003e {\n  // ...\n  listeners.forEach((listener) =\u003e listener(state, previousState));\n  // ...\n};\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003e通过 \u003ccode\u003esetState()\u003c/code\u003e 更新状态时，所有订阅函数将会调用，同时会将新的状态和旧的状态传递给订阅函数。\u003c/p\u003e\n\u003cp\u003e接下来，看看 redux 的实现，redux 在添加订阅函数时做了一些特殊的判断，以及特殊处理：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-js\"\u003e// see https://github.com/reduxjs/redux/blob/v4.1.2/src/createStore.js#L128\nfunction subscribe(listener) {\n  // ...\n  if (isDispatching) {\n    throw new Error(\"...\");\n  }\n\n  let isSubscribed = true;\n\n  ensureCanMutateNextListeners();\n  nextListeners.push(listener);\n\n  return function unsubscribe() {\n    if (!isSubscribed) {\n      return;\n    }\n\n    if (isDispatching) {\n      throw new Error(\"...\");\n    }\n\n    isSubscribed = false;\n\n    ensureCanMutateNextListeners();\n    const index = nextListeners.indexOf(listener);\n    nextListeners.splice(index, 1);\n    currentListeners = null;\n  };\n}\n\n// see https://github.com/reduxjs/redux/blob/v4.1.2/src/createStore.js#L82\nfunction ensureCanMutateNextListeners() {\n  if (nextListeners === currentListeners) {\n    nextListeners = currentListeners.slice();\n  }\n}\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003e根据实现，redux 通过 \u003ccode\u003eisDispatching\u003c/code\u003e 标志位避免在状态更新期间添加订阅函数，以及通过 \u003ccode\u003eensureCanMutateNextListeners()\u003c/code\u003e 函数将订阅函数列表做了浅拷贝再进行添加和删除操作，这都是对潜在的问题的规避。\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-js\"\u003e// see https://github.com/reduxjs/redux/blob/v4.1.2/src/createStore.js#L197\nfunction dispatch(action) {\n  // ...\n\n  const listeners = (currentListeners = nextListeners);\n  for (let i = 0; i \u0026#x3C; listeners.length; i++) {\n    const listener = listeners[i];\n    listener();\n  }\n\n  return action;\n}\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eredux 通过 \u003ccode\u003edispatch()\u003c/code\u003e 更新状态时，由于在订阅时没有默认提供 \u003ccode\u003eselector\u003c/code\u003e 机制，所以会无差别的通知所有订阅者，同时也不会将新旧状态传递给订阅函数，当然在官方示例代码中可以看到，官方推荐在订阅函数中主动通过 \u003ccode\u003egetState()\u003c/code\u003e 获取新的状态以及完成 selector 操作。可以说，由于 redux 和 zustand 设计理念不同，订阅的实现方式也略有差别，前者控制的更细致，而灵活性很高，而后者在保持简单性的同时也没有牺牲灵活性。\u003c/p\u003e\n\u003ch4 id=\"setstate--dispatch\"\u003e\u003ccode\u003esetState()\u003c/code\u003e \u0026#x26;\u0026#x26; \u003ccode\u003edispatch()\u003c/code\u003e\u003c/h4\u003e\n\u003cp\u003e状态更新机制是两者实现最大的不同，zustand 提供一个 \u003ccode\u003esetState()\u003c/code\u003e 函数来更新状态：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-typescript\"\u003e// see https://github.com/pmndrs/zustand/blob/v3.6.5/src/vanilla.ts#L89\nconst setState: SetState\u0026#x3C;TState\u003e = (partial, replace) =\u003e {\n  // TODO: Remove type assertion once https://github.com/microsoft/TypeScript/issues/37663 is resolved\n  // https://github.com/microsoft/TypeScript/issues/37663#issuecomment-759728342\n  const nextState =\n    typeof partial === \"function\"\n      ? (partial as (state: TState) =\u003e TState)(state)\n      : partial;\n  if (nextState !== state) {\n    const previousState = state;\n    state = replace\n      ? (nextState as TState)\n      : Object.assign({}, state, nextState);\n    listeners.forEach((listener) =\u003e listener(state, previousState));\n  }\n};\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003e根据源码实现来看，zustand 通过 \u003ccode\u003eObject.assign\u003c/code\u003e 函数合并更新状态，同时提供 \u003ccode\u003ereplace\u003c/code\u003e 标志位直接将旧状态完全替换。\u003c/p\u003e\n\u003cp\u003e而 redux 的状态更新则要复杂一些，主要是官方推荐的编程模式将状态更新拆分为多个步骤，\u003ccode\u003edispatch()\u003c/code\u003e 函数触发一个 \u003ccode\u003eAction\u003c/code\u003e，而具体处理 Action 以及状态合并的操作均由 \u003ccode\u003eReducer\u003c/code\u003e 函数完成，该函数是一个纯函数。至于为什么要这么设计，官方有说明，纯函数对于状态变化来说是可预测的，而且利于测试，更是实现时间旅行类似功能的基础。\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-js\"\u003e// see https://github.com/reduxjs/redux/blob/v4.1.2/src/createStore.js#L197\nfunction dispatch(action) {\n  if (!isPlainObject(action)) {\n    throw new Error(\n      `Actions must be plain objects. Instead, the actual type was: '${kindOf(\n        action,\n      )}'. You may need to add middleware to your store setup to handle dispatching other values, such as 'redux-thunk' to handle dispatching functions. See https://redux.js.org/tutorials/fundamentals/part-4-store#middleware and https://redux.js.org/tutorials/fundamentals/part-6-async-logic#using-the-redux-thunk-middleware for examples.`,\n    );\n  }\n\n  if (typeof action.type === \"undefined\") {\n    throw new Error(\n      'Actions may not have an undefined \"type\" property. You may have misspelled an action type string constant.',\n    );\n  }\n\n  if (isDispatching) {\n    throw new Error(\"Reducers may not dispatch actions.\");\n  }\n\n  try {\n    isDispatching = true;\n    currentState = currentReducer(currentState, action);\n  } finally {\n    isDispatching = false;\n  }\n\n  const listeners = (currentListeners = nextListeners);\n  for (let i = 0; i \u0026#x3C; listeners.length; i++) {\n    const listener = listeners[i];\n    listener();\n  }\n\n  return action;\n}\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003e根据源码实现来看，这里出现了 \u003ccode\u003eisDispatching\u003c/code\u003e 标志位，主要是用来限制状态更新过程中不能再次发起状态更新操作，避免出现错误。\u003c/p\u003e\n\u003cp\u003e不过，有一点值得提一下，redux 默认不支持异步更新状态，需要借助 redux-thunk 库来支持；而 zustand 本身则是支持异步更新状态的。\u003c/p\u003e\n\u003cp\u003e根据以上分析来看，实际上核心实现是相似的，而且 zustand 作为后来者，对 redux 有借鉴也有简化的地方，满足状态管理的核心简单需求是没有多大问题的，可作为 redux 的一个替代方案。\u003c/p\u003e\n\u003ch4 id=\"reactjs-适配\"\u003eReact.js 适配\u003c/h4\u003e\n\u003cp\u003e如果说，核心库差异较小，而且包尺寸相近的话，那么最大的差异则出现在对 React.js 库的适配上面。\u003c/p\u003e\n\u003cp\u003ezustand 出现的较晚，目前 Hook API 已经成为 React.js 社区的主流，所以 zustand 在对其适配的时候也是以 Hook API 的方式实现，没有提供类组件的适配。\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-typescript\"\u003e// see https://github.com/pmndrs/zustand/blob/v3.6.5/src/index.ts#L64\nfunction create\u0026#x3C;\n  TState extends State,\n  CustomSetState,\n  CustomGetState,\n  CustomStoreApi extends StoreApi\u0026#x3C;TState\u003e,\n\u003e(\n  createState:\n    | StateCreator\u0026#x3C;TState, CustomSetState, CustomGetState, CustomStoreApi\u003e\n    | CustomStoreApi,\n): UseBoundStore\u0026#x3C;TState, CustomStoreApi\u003e {\n  // ...\n  const useStore: any = \u0026#x3C;StateSlice\u003e(\n    selector: StateSelector\u0026#x3C;TState, StateSlice\u003e = api.getState as any,\n    equalityFn: EqualityChecker\u0026#x3C;StateSlice\u003e = Object.is,\n  ) =\u003e {\n    const [, forceUpdate] = useReducer((c) =\u003e c + 1, 0) as [never, () =\u003e void];\n    // ...\n    const stateBeforeSubscriptionRef = useRef(state);\n    useIsomorphicLayoutEffect(() =\u003e {\n      const listener = () =\u003e {\n        try {\n          const nextState = api.getState();\n          const nextStateSlice = selectorRef.current(nextState);\n          if (\n            !equalityFnRef.current(\n              currentSliceRef.current as StateSlice,\n              nextStateSlice,\n            )\n          ) {\n            stateRef.current = nextState;\n            currentSliceRef.current = nextStateSlice;\n            forceUpdate();\n          }\n        } catch (error) {\n          erroredRef.current = true;\n          forceUpdate();\n        }\n      };\n      const unsubscribe = api.subscribe(listener);\n      if (api.getState() !== stateBeforeSubscriptionRef.current) {\n        listener(); // state has changed before subscription\n      }\n      return unsubscribe;\n    }, []);\n\n    const sliceToReturn = hasNewStateSlice\n      ? (newStateSlice as StateSlice)\n      : currentSliceRef.current;\n    useDebugValue(sliceToReturn);\n    return sliceToReturn;\n  };\n\n  // ...\n  return useStore;\n}\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003ezustand 将 \u003ccode\u003ecreateStore\u003c/code\u003e 函数的返回值作为一个自定义 hook 来实现，其中为了让 React.js 组件能感知到状态更新，是利用 \u003ccode\u003euseEffect\u003c/code\u003e 来完成订阅操作，而状态更新发布后，则通过 \u003ccode\u003eforceUpdate()\u003c/code\u003e 来强制组件进行 rerender 以获取最新的状态。\u003c/p\u003e\n\u003cp\u003e这里，看看如何在函数组件中使用 zustand：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-js\"\u003eimport create from \"zustand\";\n\n// Store\nconst useStore = create((set) =\u003e ({\n  bears: 0,\n  increasePopulation: () =\u003e set((state) =\u003e ({ bears: state.bears + 1 })),\n  removeAllBears: () =\u003e set({ bears: 0 }),\n}));\n\n// Component\nfunction BearCounter() {\n  const bears = useStore((state) =\u003e state.bears);\n  return \u0026#x3C;h1\u003e{bears} around here ...\u0026#x3C;/h1\u003e;\n}\n\nfunction Controls() {\n  const increasePopulation = useStore((state) =\u003e state.increasePopulation);\n  return \u0026#x3C;button onClick={increasePopulation}\u003eone up\u0026#x3C;/button\u003e;\n}\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003e实际上，用法和 react-redux 非常相似，但获取状态与更新状态均只需要使用 \u003ccode\u003euseStore\u003c/code\u003e 一个 API 即可完成业务。\u003c/p\u003e\n\u003cp\u003e然而，react-redux 的实现则要复杂的多。由于其出现的较早，所以同时适配了类组件和函数组件。这里不再细究 react-redux 的具体实现，但其与 zustand 最大的差异则在于把状态放在了 \u003ccode\u003eContext\u003c/code\u003e 中存储，所以需要使用 \u003ccode\u003eProvider\u003c/code\u003e 将页面的根组件包裹起来才能使用。redux 的 \u003ccode\u003euseSelector()\u003c/code\u003e Hook API 与 zustand 上面提到的 \u003ccode\u003euseStore()\u003c/code\u003e 的实现逻辑也非常相似。\u003c/p\u003e\n\u003ch4 id=\"调式工具\"\u003e调式工具\u003c/h4\u003e\n\u003cp\u003e一个核心工具库好不好用，不仅要能解决业务问题，同时也要能提供良好的开发体验，redux 之所以能成为 React.js 社区普遍采用的状态管理方案，不仅在于其实现的优雅，倡导的优秀的模式，更在于其配套的调试工具、中间件也非常好用。所以，zustand 作为后来者并没有重复造轮子，而是尽最大的可能重用 redux 社区的开源方案，这一点也是比较好的，至少从 redux 迁移到 zustand 不会有太大的困难，开发体验上来说还是不错的。\u003c/p\u003e\n\u003ch3 id=\"结语\"\u003e结语\u003c/h3\u003e\n\u003cp\u003e至此，完成了对 zustand 这个轻量级的状态管理方案的探索，至少在满足状态管理简单的核心需求、使用简单、具备良好的调式工具等几方面来说还是不错的，作为 redux 的轻量级替代方案，完全值得一试。\u003c/p\u003e\n\u003ch3 id=\"参考\"\u003e参考\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"https://redux.js.org/\"\u003eredux\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://react-redux.js.org/\"\u003ereact-redux\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://zustand.surge.sh/\"\u003ezustand\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://javascript.plainenglish.io/lets-build-our-own-redux-9384b283529c\"\u003eLet’s build our own Redux\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e"])</script><script>self.__next_f.push([1,"4:[\"$\",\"div\",null,{\"className\":\"max-w-5xl mx-auto px-6 flex gap-0 min-h-full\",\"children\":[[\"$\",\"$Le\",null,{\"html\":\"$f\"}],[\"$\",\"article\",null,{\"className\":\"flex-1 min-w-0 max-w-2xl mx-auto px-0 lg:px-10 py-12\",\"children\":[[\"$\",\"div\",null,{\"className\":\"mb-8\",\"children\":[\"$\",\"$L10\",null,{\"href\":\"/blog\",\"className\":\"inline-flex items-center gap-1.5 text-sm text-gray-400 dark:text-[rgba(255,255,255,0.38)] hover:text-gray-700 dark:hover:text-[rgba(255,255,255,0.60)] transition-colors\",\"children\":[[\"$\",\"svg\",null,{\"xmlns\":\"http://www.w3.org/2000/svg\",\"width\":\"13\",\"height\":\"13\",\"viewBox\":\"0 0 24 24\",\"fill\":\"none\",\"stroke\":\"currentColor\",\"strokeWidth\":\"2\",\"children\":[\"$\",\"path\",null,{\"d\":\"M19 12H5M12 5l-7 7 7 7\"}]}],\"返回\"]}]}],[\"$\",\"header\",null,{\"className\":\"mb-10\",\"children\":[[\"$\",\"div\",null,{\"className\":\"flex flex-wrap items-center gap-1.5 mb-4\",\"children\":[[\"$\",\"span\",null,{\"className\":\"inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400/80\",\"children\":\"技术\"}],[[\"$\",\"span\",\"计算机技术\",{\"className\":\"inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 dark:bg-white/[0.06] text-gray-600 dark:text-[rgba(255,255,255,0.60)]\",\"children\":\"计算机技术\"}],[\"$\",\"span\",\"Web前端\",{\"className\":\"inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 dark:bg-white/[0.06] text-gray-600 dark:text-[rgba(255,255,255,0.60)]\",\"children\":\"Web前端\"}],[\"$\",\"span\",\"应用状态管理\",{\"className\":\"inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 dark:bg-white/[0.06] text-gray-600 dark:text-[rgba(255,255,255,0.60)]\",\"children\":\"应用状态管理\"}],[\"$\",\"span\",\"React\",{\"className\":\"inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 dark:bg-white/[0.06] text-gray-600 dark:text-[rgba(255,255,255,0.60)]\",\"children\":\"React\"}]]]}],[\"$\",\"h1\",null,{\"className\":\"text-2xl sm:text-3xl font-bold text-gray-900 dark:text-[rgba(255,255,255,0.87)] leading-tight mb-3\",\"children\":\"Web 应用：轻量级状态管理工具 zustand\"}],[\"$\",\"p\",null,{\"className\":\"text-gray-500 dark:text-[rgba(255,255,255,0.60)] text-base leading-relaxed mb-4\",\"children\":\"Web 网页向 Web 应用发展的过程中，势必会出现 Web 项目的复杂化问题，而在移动端场景，基于 React.js 的应用中如何管理状态？zustand也许值得一试。\"}],[\"$\",\"time\",null,{\"dateTime\":\"2021-11-18T00:14:00.000Z\",\"className\":\"text-xs text-gray-400 dark:text-[rgba(255,255,255,0.38)]\",\"children\":\"2021年11月18日\"}]]}],[\"$\",\"div\",null,{\"className\":\"prose prose-gray dark:prose-invert max-w-none prose-headings:scroll-mt-20 prose-code:before:content-none prose-code:after:content-none prose-img:rounded-lg prose-img:w-full prose-img:h-auto prose-img:block prose-img:my-6 \",\"dangerouslySetInnerHTML\":{\"__html\":\"$11\"}}],[\"$\",\"div\",null,{\"className\":\"mt-14 pt-8 border-t border-gray-100 dark:border-white/[0.12]\",\"children\":[\"$\",\"$L10\",null,{\"href\":\"/blog\",\"className\":\"inline-flex items-center gap-1.5 text-sm text-gray-500 dark:text-[rgba(255,255,255,0.60)] hover:text-gray-900 dark:hover:text-[rgba(255,255,255,0.87)] transition-colors\",\"children\":[[\"$\",\"svg\",null,{\"xmlns\":\"http://www.w3.org/2000/svg\",\"width\":\"13\",\"height\":\"13\",\"viewBox\":\"0 0 24 24\",\"fill\":\"none\",\"stroke\":\"currentColor\",\"strokeWidth\":\"2\",\"children\":[\"$\",\"path\",null,{\"d\":\"M19 12H5M12 5l-7 7 7 7\"}]}],\"返回文章列表\"]}]}]]}]]}]\n"])</script><script>self.__next_f.push([1,"b:[[\"$\",\"meta\",\"0\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}],[\"$\",\"meta\",\"1\",{\"charSet\":\"utf-8\"}],[\"$\",\"title\",\"2\",{\"children\":\"Web 应用：轻量级状态管理工具 zustand — LeeZChuan\"}],[\"$\",\"meta\",\"3\",{\"name\":\"description\",\"content\":\"Web 网页向 Web 应用发展的过程中，势必会出现 Web 项目的复杂化问题，而在移动端场景，基于 React.js 的应用中如何管理状态？zustand也许值得一试。\"}]]\n3:null\n"])</script></body></html>

@@ -1,0 +1,112 @@
+3:I[4707,[],""]
+5:I[6423,[],""]
+6:I[2060,["972","static/chunks/972-12c2a745f65e530e.js","185","static/chunks/app/layout-6d295785c0ea2d7c.js"],"ThemeProvider"]
+7:I[5386,["972","static/chunks/972-12c2a745f65e530e.js","185","static/chunks/app/layout-6d295785c0ea2d7c.js"],"LangProvider"]
+8:I[7753,["972","static/chunks/972-12c2a745f65e530e.js","185","static/chunks/app/layout-6d295785c0ea2d7c.js"],"default"]
+4:["slug","tools-typescript-use-script-to-ts-types","d"]
+0:["V5oDiuOcD730mDJlDNtfs",[[["",{"children":["blog",{"children":[["slug","tools-typescript-use-script-to-ts-types","d"],{"children":["__PAGE__?{\"slug\":\"tools-typescript-use-script-to-ts-types\"}",{}]}]}]},"$undefined","$undefined",true],["",{"children":["blog",{"children":[["slug","tools-typescript-use-script-to-ts-types","d"],{"children":["__PAGE__",{},[["$L1","$L2",null],null],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","blog","children","$4","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","blog","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/47fa5dcb7f1f7e4f.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"zh-CN","suppressHydrationWarning":true,"children":["$","body",null,{"className":"bg-white dark:bg-[#0f0f0f] min-h-screen","children":["$","$L6",null,{"children":["$","$L7",null,{"children":[["$","$L8",null,{}],["$","main",null,{"className":"pt-14","children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[]}]}]]}]}]}]}]],null],null],["$L9",null]]]]
+a:I[3362,["972","static/chunks/972-12c2a745f65e530e.js","308","static/chunks/app/blog/%5Bslug%5D/page-94533f6285c1d477.js"],"default"]
+c:I[2972,["972","static/chunks/972-12c2a745f65e530e.js","308","static/chunks/app/blog/%5Bslug%5D/page-94533f6285c1d477.js"],""]
+b:Te2f,<p>在发布 npm 包时添加对 TypeScript 类型定义文件的支持会让用户的使用体验增色不少，TypeScript 官方提供了 <code>tsc --emitDeclarationOnly</code> 命令用来生成类型定义文件（<code>.d.ts</code>）。但是，该命令会同时执行类型检查，遇到错误时会报错中断命令行进程，这就使其无法直接集成在 CI 环节在发布 npm 包时自动执行生成类型定义文件的操作。当然，一个解决办法就是解决掉代码中所有的类型检查错误即可，既然讨论到这个问题，必然不会花费额外精力去解决一些历史遗留问题。</p>
+<!-- truncate -->
+<pre><code class="language-bash">tsc --emitDeclarationOnly
+</code></pre>
+<p>怎么能让以上脚本在执行时不做类型检查（或者说忽略错误，例如类似 <code>silent</code> 标志位），在查阅了很多资料之后，显然 TypeScript 官方没有对其支持（因为他们认为忽略类型检查错误就失去了使用 TypeScript 的意义），但另一方面前端生态的很多工具链却都一致的推荐使用类 Babel 这种编译方案（不做类型检查），而且有很多开发者是有这样的需求的。在查阅很多资料无果后，突然想到前段时间学习了 Nodejs 的 <code>child_process</code> API，可以用其来写一些工具脚本，最终有了一个待实践的方案：利用 JS 脚本执行该命令，但忽略类型检查错误不让进程中断，这样就可以安全的集成到 CI 环节中。经过实践，确实能达到预期效果，贴出代码：</p>
+<pre><code class="language-js">const { execSync } = require("node:child_process");
+
+try {
+  const args = process.argv.slice(2);
+  let isSilent = args.findIndex((item) => item.trim() === "--silent");
+  if (isSilent > -1) {
+    args.splice(isSilent, 1);
+    isSilent = true;
+  } else {
+    isSilent = false;
+  }
+
+  if (isSilent) {
+    console.log("[generate-types] silent mode");
+  } // see https://nodejs.org/dist/latest-v16.x/docs/api/child_process.html#optionsstdio
+
+  const result = execSync(`npx tsc --emitDeclarationOnly ${args.join(" ")}`, {
+    cwd: WORKING_DIRECTORY,
+    encoding: "utf8",
+    stdio: isSilent ? "ignore" : ["inherit", "inherit", "ignore"],
+  });
+} catch (error) {
+  // console.error(error.message);
+}
+</code></pre>
+<p>这里实际上是利用 <code>try ... catch</code> 将错误捕获，防止其导致进程异常中断；另外，使用了 <code>stdio</code> 配置项去控制子进程的执行结果信息怎么交由父进程来处理，利用 <code>silent</code> 标志位将所有的输出信息忽略，或者仅忽略掉错误信息，类型检查的结果信息依然可以打印到控制台以做参考。</p>
+<pre><code class="language-bash">node generate-types.cjs --silent
+
+node generate-types.cjs
+
+node generate-types.cjs --watch # 等同于 tsc --emitDeclarationOnly --watch
+</code></pre>
+<p>在实际使用的过程中，发现 CI 环节的 Node 环境中会报错（<code>npx</code> 不存在），解决方案就是将要执行的命令写成 npm 脚本，在 js 脚本中运行 npm 脚本即可，例如：</p>
+<pre><code class="language-js">// npm 脚本
+{
+    "tsc:types": "tsc --emitDeclarationOnly"
+}
+
+// js 脚本
+execSync(`npm run tsc:types`);
+</code></pre>
+<p>至此，利用脚本执行命令可以轻松解决无法控制程序命令行为的问题。</p>
+<h3 id="参考资源">参考资源</h3>
+<ul>
+<li><a href="https://www.typescriptlang.org/docs/handbook/declaration-files/dts-from-js.html">https://www.typescriptlang.org/docs/handbook/declaration-files/dts-from-js.html</a></li>
+</ul>d:Te2f,<p>在发布 npm 包时添加对 TypeScript 类型定义文件的支持会让用户的使用体验增色不少，TypeScript 官方提供了 <code>tsc --emitDeclarationOnly</code> 命令用来生成类型定义文件（<code>.d.ts</code>）。但是，该命令会同时执行类型检查，遇到错误时会报错中断命令行进程，这就使其无法直接集成在 CI 环节在发布 npm 包时自动执行生成类型定义文件的操作。当然，一个解决办法就是解决掉代码中所有的类型检查错误即可，既然讨论到这个问题，必然不会花费额外精力去解决一些历史遗留问题。</p>
+<!-- truncate -->
+<pre><code class="language-bash">tsc --emitDeclarationOnly
+</code></pre>
+<p>怎么能让以上脚本在执行时不做类型检查（或者说忽略错误，例如类似 <code>silent</code> 标志位），在查阅了很多资料之后，显然 TypeScript 官方没有对其支持（因为他们认为忽略类型检查错误就失去了使用 TypeScript 的意义），但另一方面前端生态的很多工具链却都一致的推荐使用类 Babel 这种编译方案（不做类型检查），而且有很多开发者是有这样的需求的。在查阅很多资料无果后，突然想到前段时间学习了 Nodejs 的 <code>child_process</code> API，可以用其来写一些工具脚本，最终有了一个待实践的方案：利用 JS 脚本执行该命令，但忽略类型检查错误不让进程中断，这样就可以安全的集成到 CI 环节中。经过实践，确实能达到预期效果，贴出代码：</p>
+<pre><code class="language-js">const { execSync } = require("node:child_process");
+
+try {
+  const args = process.argv.slice(2);
+  let isSilent = args.findIndex((item) => item.trim() === "--silent");
+  if (isSilent > -1) {
+    args.splice(isSilent, 1);
+    isSilent = true;
+  } else {
+    isSilent = false;
+  }
+
+  if (isSilent) {
+    console.log("[generate-types] silent mode");
+  } // see https://nodejs.org/dist/latest-v16.x/docs/api/child_process.html#optionsstdio
+
+  const result = execSync(`npx tsc --emitDeclarationOnly ${args.join(" ")}`, {
+    cwd: WORKING_DIRECTORY,
+    encoding: "utf8",
+    stdio: isSilent ? "ignore" : ["inherit", "inherit", "ignore"],
+  });
+} catch (error) {
+  // console.error(error.message);
+}
+</code></pre>
+<p>这里实际上是利用 <code>try ... catch</code> 将错误捕获，防止其导致进程异常中断；另外，使用了 <code>stdio</code> 配置项去控制子进程的执行结果信息怎么交由父进程来处理，利用 <code>silent</code> 标志位将所有的输出信息忽略，或者仅忽略掉错误信息，类型检查的结果信息依然可以打印到控制台以做参考。</p>
+<pre><code class="language-bash">node generate-types.cjs --silent
+
+node generate-types.cjs
+
+node generate-types.cjs --watch # 等同于 tsc --emitDeclarationOnly --watch
+</code></pre>
+<p>在实际使用的过程中，发现 CI 环节的 Node 环境中会报错（<code>npx</code> 不存在），解决方案就是将要执行的命令写成 npm 脚本，在 js 脚本中运行 npm 脚本即可，例如：</p>
+<pre><code class="language-js">// npm 脚本
+{
+    "tsc:types": "tsc --emitDeclarationOnly"
+}
+
+// js 脚本
+execSync(`npm run tsc:types`);
+</code></pre>
+<p>至此，利用脚本执行命令可以轻松解决无法控制程序命令行为的问题。</p>
+<h3 id="参考资源">参考资源</h3>
+<ul>
+<li><a href="https://www.typescriptlang.org/docs/handbook/declaration-files/dts-from-js.html">https://www.typescriptlang.org/docs/handbook/declaration-files/dts-from-js.html</a></li>
+</ul>2:["$","div",null,{"className":"max-w-5xl mx-auto px-6 flex gap-0 min-h-full","children":[["$","$La",null,{"html":"$b"}],["$","article",null,{"className":"flex-1 min-w-0 max-w-2xl mx-auto px-0 lg:px-10 py-12","children":[["$","div",null,{"className":"mb-8","children":["$","$Lc",null,{"href":"/blog","className":"inline-flex items-center gap-1.5 text-sm text-gray-400 dark:text-[rgba(255,255,255,0.38)] hover:text-gray-700 dark:hover:text-[rgba(255,255,255,0.60)] transition-colors","children":[["$","svg",null,{"xmlns":"http://www.w3.org/2000/svg","width":"13","height":"13","viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","children":["$","path",null,{"d":"M19 12H5M12 5l-7 7 7 7"}]}],"返回"]}]}],["$","header",null,{"className":"mb-10","children":[["$","div",null,{"className":"flex flex-wrap items-center gap-1.5 mb-4","children":[["$","span",null,{"className":"inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400/80","children":"技术"}],[["$","span","&ref_0计算机技术工具TypeScript类型定义",{"className":"inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 dark:bg-white/[0.06] text-gray-600 dark:text-[rgba(255,255,255,0.60)]","children":"&ref_0计算机技术工具TypeScript类型定义"}]]]}],["$","h1",null,{"className":"text-2xl sm:text-3xl font-bold text-gray-900 dark:text-[rgba(255,255,255,0.87)] leading-tight mb-3","children":"利用脚本执行 `tsc` 忽略类型检查错误"}],["$","p",null,{"className":"text-gray-500 dark:text-[rgba(255,255,255,0.60)] text-base leading-relaxed mb-4","children":"TypeScript 作为一个强类型的语言，增强了 JavaScript 编程开发体验，类型定义文件为一个第三方模块的使用体验增色不少，现如今很多 npm 包的发布都内置了对类型定义文件的支持。"}],["$","time",null,{"dateTime":"2022-08-06T17:33:00.000Z","className":"text-xs text-gray-400 dark:text-[rgba(255,255,255,0.38)]","children":"2022年8月6日"}]]}],["$","div",null,{"className":"prose prose-gray dark:prose-invert max-w-none prose-headings:scroll-mt-20 prose-code:before:content-none prose-code:after:content-none prose-img:rounded-lg prose-img:w-full prose-img:h-auto prose-img:block prose-img:my-6 ","dangerouslySetInnerHTML":{"__html":"$d"}}],["$","div",null,{"className":"mt-14 pt-8 border-t border-gray-100 dark:border-white/[0.12]","children":["$","$Lc",null,{"href":"/blog","className":"inline-flex items-center gap-1.5 text-sm text-gray-500 dark:text-[rgba(255,255,255,0.60)] hover:text-gray-900 dark:hover:text-[rgba(255,255,255,0.87)] transition-colors","children":[["$","svg",null,{"xmlns":"http://www.w3.org/2000/svg","width":"13","height":"13","viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","children":["$","path",null,{"d":"M19 12H5M12 5l-7 7 7 7"}]}],"返回文章列表"]}]}]]}]]}]
+9:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"利用脚本执行 `tsc` 忽略类型检查错误 — LeeZChuan"}],["$","meta","3",{"name":"description","content":"TypeScript 作为一个强类型的语言，增强了 JavaScript 编程开发体验，类型定义文件为一个第三方模块的使用体验增色不少，现如今很多 npm 包的发布都内置了对类型定义文件的支持。"}]]
+1:null

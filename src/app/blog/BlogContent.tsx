@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
 import { formatDateShort } from '@/lib/dateUtils';
 import type { PostMeta } from '@/lib/posts';
 import { useLang } from '@/contexts/LangContext';
@@ -17,13 +18,15 @@ interface CategoryInfo {
 interface Props {
   posts: PostMeta[];
   categories: Record<string, CategoryInfo>;
-  activeCat: string;
-  currentPage: number;
 }
 
-export default function BlogContent({ posts, categories, activeCat, currentPage }: Props) {
+export default function BlogContent({ posts, categories }: Props) {
   const { lang } = useLang();
   const t = translations[lang].blog;
+  const searchParams = useSearchParams();
+
+  const activeCat = searchParams.get('cat') ?? 'all';
+  const currentPage = Math.max(1, parseInt(searchParams.get('page') ?? '1', 10));
 
   const filtered = activeCat === 'all' ? posts : posts.filter((p) => p.category === activeCat);
   const totalPages = Math.ceil(filtered.length / PAGE_SIZE);
