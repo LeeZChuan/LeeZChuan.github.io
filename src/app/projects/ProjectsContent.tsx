@@ -177,7 +177,7 @@ export default function ProjectsContent() {
                     </a>
                   )}
                   {project.agentUrl && (
-                    <a href={project.agentUrl} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-600 dark:hover:text-blue-300 transition-colors" aria-label="AI Agent Demo" title="AI Agent 演示">
+                    <a href={project.agentUrl} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gray-700 dark:hover:text-blue-300 transition-colors" aria-label="AI Agent Demo" title="AI Agent 演示">
                       <AgentIcon />
                     </a>
                   )}
