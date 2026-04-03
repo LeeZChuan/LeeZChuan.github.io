@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import TopNav from '@/components/TopNav';
+import { LangProvider } from '@/contexts/LangContext';
 
 export const metadata: Metadata = {
   title: {
@@ -16,10 +17,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="zh-CN" suppressHydrationWarning>
       <body className="bg-white dark:bg-[#0f0f0f] min-h-screen">
         <ThemeProvider>
-          <TopNav />
-          <main className="pt-14">
-            {children}
-          </main>
+          <LangProvider>
+            <TopNav />
+            <main className="pt-14">
+              {children}
+            </main>
+          </LangProvider>
         </ThemeProvider>
       </body>
     </html>
