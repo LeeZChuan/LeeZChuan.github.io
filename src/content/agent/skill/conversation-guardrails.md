@@ -1,6 +1,6 @@
 ---
-name: conversation-guardrails
-description: Enforces concise, intent-first conversations and minimal, scoped code changes in this repository. Use when the user asks to implement, change, refactor, optimize, debug, or otherwise modify code (TypeScript/Vue/Vite/Node). Prioritize clarifying unclear intent, avoid unrequested scope, preview touched files, and verify with relevant lint/tests after edits.
+name: 对话护栏
+description: 在此存储库中强制实施简洁、意图优先的对话以及最小范围的代码更改。当用户要求实现、更改、重构、优化、调试或以其他方式修改代码（TypeScript/Vue/Vite/Node）时使用。优先澄清不明确的意图，避免未请求的范围，预览触及的文件，并在编辑后使用相关的 lint/测试进行验证。
 ---
 
 # Conversation Guardrails（对话与执行护栏）

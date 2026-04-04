@@ -1,3 +1,8 @@
+---
+name: 基于claude code分析出的埋点skill
+description: 埋点通用prompt
+---
+
 # 通用埋点方案复用 Prompt 模板
 
 > 用法：把下面模板直接交给 AI/工程师，按你的项目填充 `[]` 占位符。

@@ -47,6 +47,7 @@ export const translations = {
       empty: '该分类暂无内容',
       copy: '复制',
       copied: '已复制',
+      selectHint: '先从上面的列表选择一个文档，再查看内容。',
     },
   },
   en: {
@@ -97,6 +98,7 @@ export const translations = {
       empty: 'No content in this category yet.',
       copy: 'Copy',
       copied: 'Copied',
+      selectHint: 'Select a document from the list above to view details.',
     },
   },
 } as const;
