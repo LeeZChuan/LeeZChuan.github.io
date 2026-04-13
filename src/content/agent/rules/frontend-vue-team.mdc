@@ -1,0 +1,50 @@
+---
+alwaysApply: true
+name: frontend-vue-team
+description: Vue3 & TypeScript 团队协作规范（可直接用于 Rules）
+---
+
+# Vue3 & TypeScript 团队协作规范
+
+面向团队协作与长期维护，目标是让代码在可读性、一致性、可测试性、可回滚性上都可控。
+
+## 核心原则
+- 先保证正确性，再追求技巧与复杂优化。
+- 默认选择团队成员最容易理解和维护的实现。
+- 单个模块只做一件事，跨层逻辑必须显式拆分。
+
+## 组件与目录规范
+- 统一使用 `<script setup lang="ts">` 与 Composition API。
+- 复杂业务逻辑必须放入 `composables/`，组件只保留编排与视图逻辑。
+- 组件内部顺序固定：`defineProps` -> `defineEmits` -> `ref/reactive` -> `computed` -> `watch` -> `methods` -> `lifecycle hooks`。
+- 命名统一：组件 PascalCase；非组件文件 kebab-case。
+
+## TypeScript 约束
+- 禁止 `any`，使用 `unknown` + 类型守卫。
+- 类型定义优先 `interface`，联合和简单别名可用 `type`。
+- Props 使用 `defineProps<{ ... }>()`，禁止运行时 `props: {}` 作为主写法。
+- 禁用 `enum`，统一使用 `as const` + `keyof typeof`。
+
+## 状态与副作用管理
+- Pinia 解构必须使用 `storeToRefs` 以保持响应性。
+- 大型对象或第三方实例使用 `shallowRef/shallowReactive`。
+- 所有副作用（请求、订阅、定时器、Observer）必须在 `onUnmounted` 清理。
+- 暴露给父组件的能力必须显式 `defineExpose`。
+
+## UI 与性能约定
+- 样式以 class 驱动，避免内联样式堆叠；响应式遵循 Mobile-First。
+- 路由组件默认动态导入 `() => import(...)`。
+- 长列表优先考虑 `v-memo`/`v-once`、虚拟列表或拆分渲染。
+- 与可见性/尺寸/DOM变更相关监听，优先使用 Observer API，而非轮询。
+
+## 可读性与可评审性
+- 布尔变量必须使用 `is/has/should/can` 前缀。
+- 函数命名用“动词 + 对象”（如 `fetchUserProfile`、`handleSubmit`）。
+- 异步逻辑统一 `async/await`，必须有明确错误处理策略。
+- 单个函数保持短小；超过 60 行或嵌套超过 3 层需主动重构。
+
+## 提交前检查清单
+- 变更是否有明确边界，是否避免顺手重构无关代码。
+- 是否补充了关键路径的错误处理与空值处理。
+- 是否清理副作用并避免潜在内存泄漏。
+- 是否保证命名、目录、类型、状态管理符合本规范。
