@@ -9,7 +9,7 @@ export default function ThemeToggle() {
     setIsDark(document.documentElement.classList.contains('dark'));
   }, []);
 
-  function toggle() {
+  function toggle() {  
     const next = !isDark;
     setIsDark(next);
     if (next) {
