@@ -12,7 +12,7 @@ interface Props {
 }
 
 function isAgentDocType(type: string): type is AgentDocType {
-  return type === 'prompt' || type === 'skill' || type === 'rules';
+  return type === 'prompt' || type === 'skill' || type === 'rules' || type === 'links';
 }
 
 function decodeSegments(segments: string[]) {

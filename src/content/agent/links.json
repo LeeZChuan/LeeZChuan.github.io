@@ -1,0 +1,12 @@
+{
+  "links": [
+    {
+      "slug": "awesome-design-md-structured-design-output",
+      "title": "awesome-design-md：把审美经验转成 AI 可执行规范",
+      "name": "awesome-design-md 结构化设计输出",
+      "description": "将设计经验结构化为可执行约束（DESIGN.md），解决 AI 生成场景中“生成能力强、约束能力弱”的问题，适合作为 vibe coding 的设计资源入口。",
+      "url": "https://ricoui.com/blog/awesome-design-md/",
+      "summary": "这篇文章强调：在 AI 参与产品生产后，团队更需要可复制的设计约束，而不只是生成能力。awesome-design-md 的价值在于将成熟品牌样本与规则文档结合，让用户可以快速复制并落地。核心可借鉴点包括：清晰入口、高密度案例、明确场景；以及将经验描述升级为执行说明、以固定维度和章节结构保证复用性与一致性。"
+    }
+  ]
+}

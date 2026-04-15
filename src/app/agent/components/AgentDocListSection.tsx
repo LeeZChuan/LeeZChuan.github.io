@@ -31,6 +31,9 @@ export default function AgentDocListSection({
               .split('/')
               .map((part) => encodeURIComponent(part))
               .join('/')}`;
+            const secondaryText = doc.type === 'links' && doc.entryUrl
+              ? doc.entryUrl
+              : `${doc.type}/${doc.relativePath}`;
             return (
               <li key={doc.id}>
                 <Link
@@ -44,7 +47,7 @@ export default function AgentDocListSection({
                     {doc.description}
                   </div>
                   <div className="text-xs text-gray-400 dark:text-[rgba(255,255,255,0.45)] mt-1">
-                    {doc.type}/{doc.relativePath}
+                    {secondaryText}
                   </div>
                 </Link>
               </li>

@@ -17,6 +17,7 @@ export default function AgentContent({ sections }: Props) {
     { id: 'prompt', label: t.prompt },
     { id: 'skill', label: t.skill },
     { id: 'rules', label: t.rules },
+    { id: 'links', label: t.links },
   ] as const;
 
   return (

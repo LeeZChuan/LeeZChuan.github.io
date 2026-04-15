@@ -67,6 +67,19 @@ export default function AgentDocViewer({ doc }: Props) {
             <p className="text-gray-400 dark:text-[rgba(255,255,255,0.45)]">{labels.path}</p>
             <p className="text-gray-800 dark:text-[rgba(255,255,255,0.85)] mt-1 break-all">{doc.type}/{doc.relativePath}</p>
           </div>
+          {doc.entryUrl ? (
+            <div className="sm:col-span-2">
+              <p className="text-gray-400 dark:text-[rgba(255,255,255,0.45)]">Entry</p>
+              <a
+                href={doc.entryUrl}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="text-gray-800 dark:text-[rgba(255,255,255,0.85)] mt-1 break-all underline decoration-gray-300 dark:decoration-white/[0.24] hover:decoration-gray-500 dark:hover:decoration-white/[0.40]"
+              >
+                {doc.entryUrl}
+              </a>
+            </div>
+          ) : null}
           <div className="sm:col-span-2">
             <p className="text-gray-400 dark:text-[rgba(255,255,255,0.45)]">{labels.description}</p>
             <p className="text-gray-700 dark:text-[rgba(255,255,255,0.75)] mt-1 leading-relaxed">{doc.description}</p>
