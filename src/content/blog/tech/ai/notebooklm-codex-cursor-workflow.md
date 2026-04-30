@@ -1,105 +1,78 @@
 ---
 title: NotebookLM、Codex 与 Cursor 的研究整理工作流
-description: 面向 AI 新手的 NotebookLM 入门与实战：用 NotebookLM 整理资料，用 Codex 和 Cursor 写成可发布的技术文章
+description: 从官方文档和社区实践出发，整理 NotebookLM 如何配合 Codex、Cursor 完成资料研究、文章写作和本地项目更新
 date: 2026-04-30
 tags: [NotebookLM, Codex, Cursor, AI工具, 信息整理]
 ---
 
-这篇文章整理自一个实际问题：看到 Substack 文章 [Claude Code + NotebookLM + Obsidian: The Research Stack Nobody's Using](https://substack.com/home/post/p-189067354) 后，我想把它背后的思路迁移到自己的写作和开发流程里。
+最近看到一篇 Substack 文章：[Claude Code + NotebookLM + Obsidian: The Research Stack Nobody's Using](https://substack.com/home/post/p-189067354)。文章标题很直接：把 Claude Code、NotebookLM 和 Obsidian 组合成一套研究工作流。
 
-原文的核心方向可以概括为一句话：**不要只把 AI 当聊天窗口，而要把它变成一套“资料收集、理解、整理、输出”的工作流。**
+我这次没有照搬 Obsidian 这条线，而是按自己的博客和代码仓库习惯重新整理了一版：
 
-如果你还不熟悉 LLM 或 NotebookLM，可以先记住这三个角色：
+- 用 NotebookLM 做资料阅读、归纳和展示；
+- 用 Codex 把研究结果落到本地仓库；
+- 用 Cursor 做人工参与更强的编辑、润色和局部修改。
 
-- **NotebookLM**：帮你读资料、做总结、生成问答和展示材料。
-- **Codex**：帮你在本地项目里读文件、改 Markdown、跑命令、检查 diff。
-- **Cursor**：帮你在编辑器里边看代码边修改文章，适合人工参与更多的写作和调整。
+这篇文章不是 NotebookLM 百科，也不是“AI 工具清单”。更准确地说，它是我查官方文档、看最近半年社区讨论之后，对这套工作流的一次整理和实践设计。
 
-这三个工具不是互相替代，而是分工协作。
+## 我的结论
 
-## 基础概念
+先说结论。
 
-### 什么是 LLM
+NotebookLM 不应该被理解成“另一个 ChatGPT”。它更像一个资料研究台：你把 PDF、网页、YouTube、Markdown、Google Docs 放进去，它围绕这些资料回答问题，并尽量给出引用依据。
 
-LLM 是 Large Language Model，也就是“大语言模型”。ChatGPT、Claude、Gemini 都属于这一类。
+Codex 和 Cursor 也不是 NotebookLM 的替代品。它们更适合处理本地项目：
 
-你可以把 LLM 理解成一个很强的文字和代码助手：
+- 读取仓库文件；
+- 修改 Markdown 或代码；
+- 执行命令；
+- 检查 diff；
+- 做 review。
 
-- 它可以读懂一段文字或代码。
-- 它可以根据你的要求生成新内容。
-- 它可以帮你整理结构、解释概念、写命令。
-- 但它也可能犯错，尤其是资料不完整或问题问得太泛的时候。
+所以我认为比较合理的分工是：
 
-所以在资料整理场景里，一个重要原则是：**让 AI 尽量基于明确资料回答，而不是凭空发挥。**
-
-### 什么是 NotebookLM
-
-NotebookLM 是 Google 的 AI 研究助手。官方帮助文档把它描述为一个能帮助你整理想法的 AI-powered research assistant。
-
-它和普通聊天机器人的区别在于：你先给它资料，它再围绕这些资料回答。
-
-这里有三个关键词：
-
-| 概念 | 含义 | 例子 |
-| --- | --- | --- |
-| Notebook | 一个专题资料库 | `NotebookLM + Codex + Cursor 研究` |
-| Source | 你上传或导入的资料 | PDF、网页、YouTube、Google Docs、Markdown |
-| Citation | 回答里的引用依据 | NotebookLM 告诉你答案来自哪份 source |
-
-因此，NotebookLM 更适合做“基于资料的研究”，不适合直接拿来做“没有依据的脑暴”。
-
-### 什么是 Codex 和 Cursor
-
-Codex 是 OpenAI 的 coding agent。它可以在本地仓库里读文件、改代码、跑测试、做 code review。
-
-Cursor 是 AI code editor。它本质上是一个带 AI 能力的编辑器，也提供 Cursor Agent CLI，可以在终端里运行 agent。
-
-简单区分：
-
-| 工具 | 更适合做什么 |
-| --- | --- |
-| NotebookLM | 读资料、总结资料、生成报告、思维导图、音频/视频/幻灯片 |
-| Codex | 在项目里自动修改文件、跑命令、检查构建、review 改动 |
-| Cursor | 在编辑器里人工参与修改，边看上下文边调整文字和代码 |
-
-## 为什么需要这个组合
-
-如果只用 ChatGPT 或 Claude，你经常会遇到两个问题：
-
-1. 资料太多，复制粘贴很麻烦。
-2. AI 回答很像真的，但你不知道它到底依据哪份资料。
-
-如果只用 NotebookLM，也会遇到问题：
-
-1. 它擅长研究，但不擅长直接修改你的本地项目。
-2. 个人版 NotebookLM 主要是网页产品，不是给开发者直接写脚本调用的工具。
-3. 资料和输出如果只留在浏览器里，后续很难版本管理。
-
-所以更稳的方案是：
-
-```mermaid
-flowchart TD
-    A["网页、PDF、YouTube、Markdown、官方文档"] --> B["NotebookLM：理解资料并生成带引用的结论"]
-    B --> C["导出或复制报告、表格、提纲"]
-    C --> D["Codex：写入本地 Markdown、跑构建、做 review"]
-    C --> E["Cursor：人工润色、局部重写、补充解释"]
-    D --> F["博客文章、README、技术方案、演示材料"]
-    E --> F
+```text
+NotebookLM：理解资料、提炼结论、生成展示材料
+Codex：把结论写进本地项目，并做构建和 review
+Cursor：人工参与式编辑，适合边看上下文边改文章
 ```
 
-这个流程的关键不是“全自动”，而是让每一步都有明确职责。
+这套流程的核心不是全自动，而是把“资料研究”和“项目落地”分开。
 
-## 近半年值得关注的变化
+## 为什么我会关注 NotebookLM
 
-我重新查了官方资料和最近半年技术讨论，NotebookLM 的用法已经从“上传 PDF 后总结”变成了更完整的研究和内容生产工具。
+以前写技术文章，我经常用 ChatGPT 或 Claude 做辅助。但这类通用聊天工具有一个问题：资料一多，就要不断复制粘贴，而且模型回答时不一定清楚告诉你依据来自哪里。
 
-### 1. Deep Research 变重要了
+NotebookLM 的价值在于，它让资料先进入一个 notebook。之后你提问时，回答会围绕这些 sources 展开。
 
-Google 在 2025 年 11 月发布 NotebookLM Deep Research，官方说它可以根据问题生成研究计划、浏览大量网页、整理成有来源的报告，并把报告和 sources 加入 notebook。
+这里有几个基础概念：
 
-这改变了 NotebookLM 的定位：它不只是读你上传的资料，也可以帮你先找资料。
+| 概念 | 我的理解 |
+| --- | --- |
+| Notebook | 一个研究主题，例如“NotebookLM + Codex + Cursor 工作流” |
+| Source | 放进 notebook 的资料，例如官方文档、网页、PDF、Markdown |
+| Citation | 回答中的引用依据，用来追溯结论来自哪份 source |
+| Studio | NotebookLM 里生成报告、思维导图、音频、视频、幻灯片等内容的区域 |
 
-适合这样用：
+对不熟悉 LLM 的人来说，可以先把 NotebookLM 想成一个“带 AI 的资料文件夹”。区别是它不仅能存资料，还能帮你问答、总结和生成结构化输出。
+
+## 最近半年我看到的变化
+
+我重新查了一遍官方资料和社区讨论，NotebookLM 这半年比较明显的变化有三点。
+
+### Deep Research 开始进入 NotebookLM
+
+Google 在 2025 年 11 月发布 NotebookLM Deep Research。官方描述里，它可以根据你的问题制定研究计划、浏览大量网页、整理成带来源的报告，并把报告和 sources 加入 notebook。
+
+这点很关键。以前 NotebookLM 更像“读你给它的资料”，现在它开始接近“先帮你找资料，再帮你整理资料”。
+
+适合的用法不是直接问：
+
+```text
+帮我总结 NotebookLM。
+```
+
+而是这样问：
 
 ```text
 请研究最近半年 NotebookLM 与 AI coding agent 的结合方式。
@@ -110,63 +83,70 @@ Google 在 2025 年 11 月发布 NotebookLM Deep Research，官方说它可以�
 4. 每条结论附上来源
 ```
 
-### 2. 不要只问“帮我总结”
+### 社区开始重视结构化提问
 
-最近社区里很火的一个经验是：不要一上传资料就问“总结一下”。这样得到的往往是浅层摘要。
+最近 NotebookLM 社区里有一个很常见的提醒：不要只问“帮我总结这些资料”。这种问法往往会得到很浅的摘要。
 
-更好的做法是先让 NotebookLM 建索引：
+我更推荐先让 NotebookLM 建一个主题索引：
 
 ```text
 请只基于当前 sources，列出这批资料覆盖的主要主题。
 要求：
-1. 只输出主题标题
-2. 不要写长段总结
-3. 合并重复主题
-4. 标出哪些主题适合展开成博客小节
+1. 每个主题用一句话解释
+2. 合并重复主题
+3. 标出哪些主题适合展开成博客小节
+4. 不要引入 sources 之外的信息
 ```
 
 然后再追问某个主题：
 
 ```text
 请展开“NotebookLM 和 coding agent 如何协作”这个主题。
+目标读者：没有使用过 NotebookLM，也不了解 LLM。
 要求：
-1. 解释给没有 LLM 经验的人听
-2. 给出具体操作步骤
-3. 列出可以复制的命令
+1. 先解释概念
+2. 再给具体步骤
+3. 命令放进 bash 代码块
 4. 区分官方功能和第三方非官方方案
 ```
 
-### 3. MCP 和 CLI 自动化很热，但不适合新手第一步
+这类提问方式比“总结一下”更适合写文章，因为它能先得到结构，再逐段补充内容。
 
-最近很多帖子在讲 NotebookLM MCP、Claude Code/Cursor 直连 NotebookLM、用浏览器自动化批量上传资料。
+### MCP 和自动化很热，但不适合第一步
 
-这些方向有价值，但要先分清楚：
+最近不少技术帖子在讨论 NotebookLM MCP、Claude Code/Cursor 直连 NotebookLM、浏览器自动化批量上传资料。
 
-- **官方个人版 NotebookLM**：主要是网页使用，没有面向普通个人用户的稳定公开 API。
-- **NotebookLM Enterprise API**：Google Cloud 文档已经提供 notebook、source、audio overview 等 API，但它属于 Enterprise/Cloud 场景，并且文档标注为 Pre-GA。
-- **第三方 MCP/CLI**：多半通过浏览器自动化或非官方方式连接 NotebookLM，适合个人实验，不建议一开始就用于敏感资料。
+我查完后的判断是：这些方向有价值，但不适合作为新手第一步。
 
-所以对初学者来说，最稳的第一版工作流仍然是“文件流”：
+原因很简单：
+
+- 个人版 NotebookLM 主要是网页产品，并不是一个可以直接拿 API key 调用的消费级 API；
+- NotebookLM Enterprise API 已经出现在 Google Cloud 文档里，但它面向企业和 Cloud 场景，而且文档标注为 Pre-GA；
+- 第三方 MCP/CLI 往往依赖浏览器会话、cookie 或页面结构，稳定性和安全性都需要自己承担。
+
+所以我现在更倾向于先用“文件流”：
 
 ```text
-本地资料 -> NotebookLM -> 复制/导出报告 -> Codex/Cursor 写入项目
+本地资料 -> NotebookLM 研究 -> 导出/复制结果 -> Codex/Cursor 写回本地项目
 ```
+
+等这个流程稳定之后，再考虑 MCP 或 API 自动化。
 
 ## 安装和会员选择
 
 ### NotebookLM
 
-NotebookLM 不需要安装桌面软件，直接使用网页：
+NotebookLM 不需要安装桌面软件，直接访问：
 
 ```text
 https://notebooklm.google.com/
 ```
 
-你需要一个 Google 账号。中国大陆个人账号访问和可用性可能受地区和网络环境影响；如果是 Workspace 账号，还要看组织管理员是否开启 NotebookLM。
+需要 Google 账号。如果使用的是 Workspace 账号，还要看组织管理员是否开启 NotebookLM。中国大陆访问情况也会受到网络和地区可用性的影响。
 
-官方额度会变化，以下是 2026-04-30 查到的官方帮助页信息：
+官方额度会变，下面是我在 2026-04-30 查阅官方帮助页时整理的信息：
 
-| 版本 | 适合谁 | 关键额度 |
+| 版本 | 更适合谁 | 关键额度 |
 | --- | --- | --- |
 | Standard | 个人轻量使用 | 100 个 notebooks、每个 50 个 sources、每天 50 次 chat |
 | Google AI Plus | 入门付费用户 | 200 个 notebooks、每个 100 个 sources、每天 200 次 chat |
@@ -174,19 +154,19 @@ https://notebooklm.google.com/
 | Google AI Ultra | 重度生成展示材料 | 500 个 notebooks、每个 600 个 sources、每天 5K 次 chat |
 | Google Cloud / Workspace | 公司、学校、企业资料 | 更强调权限、数据保护、审计和企业合规 |
 
-普通个人写博客，建议先从 Standard 或 Google AI Pro 开始。只有当你每天都在生成报告、音频、视频、slide deck，或者一个主题需要大量 sources 时，再考虑更高版本。
+如果只是个人博客写作，我会先从 Standard 或 Google AI Pro 开始。只有当一个主题需要大量 sources，或者频繁生成 audio overview、video overview、slide deck、infographic 时，再考虑更高版本。
 
 ### Codex
 
-OpenAI 官方帮助页说明，Codex 包含在 ChatGPT Plus、Pro、Business、Enterprise/Edu 计划中；Free 和 Go 计划可能有阶段性额度，具体以账号页面为准。
+Codex 是 OpenAI 的 coding agent。OpenAI 官方帮助页说明，Codex 包含在 ChatGPT Plus、Pro、Business、Enterprise/Edu 计划中；Free 和 Go 计划可能有阶段性额度，具体以账号页面为准。
 
-安装命令：
+安装：
 
 ```bash
-# 方式 1：npm 安装
+# npm 安装
 npm install -g @openai/codex
 
-# 方式 2：macOS 用 Homebrew
+# macOS 也可以用 Homebrew
 brew install --cask codex
 
 # 登录
@@ -197,20 +177,32 @@ cd /path/to/your/repo
 codex
 ```
 
+我在这个博客仓库里更常用的是非交互模式：
+
+```bash
+codex exec -C . "读取某个 Markdown 文件，按当前博客格式修改文章"
+```
+
+以及 review：
+
+```bash
+codex review --uncommitted "检查事实、命令、链接和文章结构"
+```
+
 ### Cursor
 
-Cursor 桌面端从官网下载：
+Cursor 桌面端从官网下载安装：
 
 ```text
 https://cursor.com/
 ```
 
-Cursor CLI 安装命令：
+Cursor Agent CLI 安装：
 
 ```bash
 curl https://cursor.com/install -fsS | bash
 
-# zsh 用户如果命令找不到，可以把本地 bin 加到 PATH
+# 如果 zsh 找不到 cursor-agent，把本地 bin 加到 PATH
 echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.zshrc
 source ~/.zshrc
 
@@ -220,7 +212,7 @@ cursor-agent login
 
 Cursor 官方价格页当前显示：
 
-| 版本 | 适合谁 |
+| 版本 | 更适合谁 |
 | --- | --- |
 | Hobby | 免费试用，少量 Agent 和 Tab 使用 |
 | Pro | 日常个人开发，官方价格页显示 $20/月 |
@@ -228,117 +220,117 @@ Cursor 官方价格页当前显示：
 | Ultra | 高频 Agent 用户，官方价格页显示 $200/月 |
 | Teams / Enterprise | 团队账单、权限、隐私模式、SSO、审计 |
 
-## NotebookLM 基础使用流程
+我的使用习惯是：大段自动修改交给 Codex，编辑器内的局部重写和人工判断交给 Cursor。
 
-### 第一步：创建 notebook
+## NotebookLM 的实际使用方式
 
-进入 NotebookLM 后，点击 `Create new notebook`。
+### 第一步：一个主题一个 notebook
 
-建议一个主题建一个 notebook，例如：
+我不建议把所有资料都放进一个 notebook。NotebookLM 的回答依赖当前 notebook 的 sources，主题越混杂，回答越容易变浅。
 
-- `NotebookLM + Codex + Cursor 工作流`
-- `AI 编程工具资料库`
-- `某个项目的产品文档`
-- `某个技术专题研究`
-
-不要把所有资料都塞到一个 notebook。官方帮助页也说明，每个 notebook 是独立的，NotebookLM 不能同时访问多个 notebooks 的内容。
-
-### 第二步：添加 sources
-
-NotebookLM 支持的常见 sources 包括：
-
-- PDF
-- Markdown
-- 文本
-- Google Docs
-- Google Slides
-- Google Sheets
-- 网站 URL
-- YouTube 视频
-- 音频文件
-- 图片
-- Microsoft Word 等文档
-
-对技术写作来说，推荐优先上传这些资料：
-
-| Source 类型 | 适合放什么 |
-| --- | --- |
-| 官方文档 URL | API、安装命令、价格页、限制说明 |
-| Markdown | 自己的笔记、项目 README、博客草稿 |
-| PDF | 白皮书、论文、报告 |
-| YouTube | 产品发布会、教程视频 |
-| Google Docs | 经常变化、需要多人协作的资料 |
-
-注意一个容易踩坑的点：**导入到 NotebookLM 的资料不是永远自动同步的。**官方文档也提示，导出到 Docs 或 Sheets 后再修改，不会同步回 NotebookLM。
-
-我的建议是：
-
-1. 原始资料保存在本地 Git 或 Google Drive。
-2. NotebookLM 只作为研究和生成输出的中间层。
-3. 重要结论最终回写到 Markdown。
-
-### 第三步：先建索引，再问问题
-
-新手常见问法：
+例如这篇文章对应的 notebook 可以叫：
 
 ```text
-帮我总结这些资料。
+NotebookLM + Codex + Cursor 工作流
 ```
 
-更好的问法：
+里面只放和这个主题有关的资料：
+
+- NotebookLM 官方帮助页；
+- Google Cloud NotebookLM Enterprise API 文档；
+- OpenAI Codex 文档；
+- Cursor CLI 和 pricing 页面；
+- Substack 原文链接；
+- 最近半年社区讨论；
+- 自己从博客仓库里导出的文章风格说明。
+
+### 第二步：先放官方资料，再放社区讨论
+
+NotebookLM 支持多种 sources，包括：
+
+- PDF；
+- Markdown；
+- 文本；
+- Google Docs；
+- Google Slides；
+- Google Sheets；
+- 网站 URL；
+- YouTube 视频；
+- 音频文件；
+- 图片；
+- Microsoft Word 等文档。
+
+我的顺序是：
+
+1. 先加官方文档，因为安装命令、会员额度、API 状态必须以官方为准。
+2. 再加社区帖子，用来观察真实使用方式和近期热点。
+3. 最后加自己的项目资料，让 NotebookLM 知道文章最终要写成什么风格。
+
+这里有一个重要边界：NotebookLM 导入资料后，不等于本地文件会自动同步。官方文档也提醒，导出到 Docs 或 Sheets 后再修改，不会同步回 NotebookLM。
+
+所以长期资料最好仍然保存在 Git 或 Google Drive 里，NotebookLM 只是研究层。
+
+### 第三步：不要从“总结”开始
+
+我现在更倾向于这样问：
 
 ```text
-请只基于当前 sources，帮我建立一个主题索引。
+请只基于当前 sources，整理这批资料里最值得写进技术博客的 8 个主题。
+每个主题包含：
+1. 一句话说明
+2. 对新手读者的价值
+3. 需要引用的 source
+4. 是否适合展开为独立章节
+```
+
+得到主题后，再让它生成文章结构：
+
+```text
+请把上面的主题整理成一篇中文技术博客大纲。
 要求：
-1. 用中文输出
-2. 每个主题一句话解释
-3. 标出适合写成博客小节的主题
-4. 不要引入 sources 之外的信息
+1. 读者是不熟悉 LLM 和 NotebookLM 的开发者
+2. 先解释概念，再进入命令
+3. 不要写成 FAQ
+4. 文章要像个人实践复盘，而不是产品说明书
 ```
 
-拿到主题索引后，再针对其中一个主题继续问：
-
-```text
-请展开“安装和会员选择”这个主题。
-目标读者：没有使用过 NotebookLM，也不了解 LLM。
-要求：
-1. 先解释概念
-2. 再给具体步骤
-3. 命令放进 bash 代码块
-4. 明确哪些信息可能随时间变化
-```
+这一步很关键。NotebookLM 生成的内容很容易变成“问答式说明”，所以 prompt 里要提前告诉它不要写成 FAQ。
 
 ### 第四步：生成展示材料
 
-NotebookLM 的 Studio 面板可以生成：
+NotebookLM 的 Studio 可以生成：
 
-- Notes
-- Audio Overviews
-- Video Overviews
-- Mind maps
-- Reports
-- Data Tables
-- Flashcards / Quizzes
-- Slide Decks
-- Infographics
+- Notes；
+- Audio Overviews；
+- Video Overviews；
+- Mind maps；
+- Reports；
+- Data Tables；
+- Flashcards / Quizzes；
+- Slide Decks；
+- Infographics。
 
-实际写博客时，我推荐顺序是：
+对博客写作来说，我会按这个顺序用：
 
-1. 先生成 `Briefing Document`。
-2. 再生成 `Mind Map` 看结构是否合理。
-3. 对重点问题继续追问。
-4. 把稳定答案保存成 note。
-5. 最后再生成 slide deck、infographic 或 data table。
+1. 先生成 briefing document；
+2. 再生成 mind map 看结构；
+3. 对关键问题继续追问；
+4. 把稳定答案保存成 note；
+5. 需要分享时再生成 slide deck 或 infographic。
 
-## Codex 如何接入这个流程
+也就是说，我不会直接把 NotebookLM 的报告当最终稿。它更适合做“研究底稿”。
 
-Codex 负责本地项目里的执行工作。比如这篇文章最终要放到：
+## Codex 在这套流程里的位置
+
+NotebookLM 负责研究，Codex 负责落地。
+
+比如这个博客仓库的 AI 文章都在：
 
 ```text
 src/content/blog/tech/ai/
 ```
 
-可以先建一个研究目录：
+我会先建一个研究目录：
 
 ```bash
 mkdir -p research/notebooklm/sources
@@ -346,110 +338,132 @@ mkdir -p research/notebooklm/outputs
 mkdir -p research/notebooklm/prompts
 ```
 
-### 生成给 NotebookLM 上传的资料包
+这个目录不一定要提交到 Git，它只是中间资料。
+
+### 生成给 NotebookLM 上传的本地资料包
+
+先让 Codex 读已有文章，整理出写作风格：
 
 ```bash
-codex exec -C . -o research/notebooklm/sources/project-map.md "请阅读当前仓库，梳理 src/content/blog/tech/ai 下已有文章的主题、写作风格、frontmatter 结构，并输出给 NotebookLM 使用的 Markdown 资料包。不要修改文件。"
+codex exec -C . -o research/notebooklm/sources/blog-style.md "请阅读 src/content/blog/tech/ai 下已有文章，整理这些文章的 frontmatter、标题层级、写作语气、常见结构，输出成给 NotebookLM 使用的 Markdown 资料包。不要修改文件。"
 ```
 
-再生成一份研究问题清单：
+再生成研究问题：
 
 ```bash
-codex exec -C . -o research/notebooklm/sources/research-questions.md "请为 NotebookLM + Codex + Cursor 这个主题生成研究问题。要求覆盖：基础概念、安装、会员、官方 API、第三方 MCP、具体命令、风险和最佳实践。"
+codex exec -C . -o research/notebooklm/sources/research-questions.md "请为 NotebookLM + Codex + Cursor 这个主题生成研究问题。要求覆盖基础概念、安装、会员、官方 API、第三方 MCP、具体命令、风险和最佳实践。"
 ```
 
-然后把这两个 Markdown 上传到 NotebookLM。
+然后把这两个 Markdown 上传到 NotebookLM。这样 NotebookLM 不只知道外部资料，也知道这篇文章应该写成当前博客的风格。
 
-### 把 NotebookLM 输出写回博客
+### 把 NotebookLM 输出写回文章
 
-假设你把 NotebookLM 的报告复制到了：
+假设从 NotebookLM 复制出的报告放在：
 
 ```text
 research/notebooklm/outputs/notebooklm-report.md
 ```
 
-让 Codex 写文章：
+可以让 Codex 写入正式文章：
 
 ```bash
-codex exec -C . "读取 research/notebooklm/outputs/notebooklm-report.md，更新 src/content/blog/tech/ai/notebooklm-codex-cursor-workflow.md。要求：面向 LLM 新手；保留 frontmatter；所有命令放进 bash 代码块；区分官方 API 和第三方工具；不要加入没有来源的结论。"
+codex exec -C . "读取 research/notebooklm/outputs/notebooklm-report.md，更新 src/content/blog/tech/ai/notebooklm-codex-cursor-workflow.md。要求：写成个人技术实践复盘，不要写成 AI 问答话术；保留 frontmatter；所有命令放进 bash 代码块；区分官方 API 和第三方工具。"
 ```
 
-检查改动：
+改完后检查：
 
 ```bash
 git diff -- src/content/blog/tech/ai/notebooklm-codex-cursor-workflow.md
-codex review --uncommitted "检查文章是否存在事实错误、命令错误、链接错误，以及对新手不友好的跳跃解释。"
+npm run build
+codex review --uncommitted "检查文章是否存在事实错误、命令错误、链接错误，以及是否仍然像 AI 问答话术。"
 ```
 
-## Cursor 如何接入这个流程
+这里的 `codex review` 很适合做第二遍检查，尤其是看命令是否可复制、引用是否合理、文章有没有明显跳跃。
 
-Cursor 更适合做人工参与的编辑。
+## Cursor 在这套流程里的位置
 
-### 在编辑器里修改
+Cursor 更适合人工编辑，而不是完全自动生成。
+
+我会在这些场景用 Cursor：
+
+- 选中一段 NotebookLM 输出，让它改成自己的博客语气；
+- 对某一节做局部重写；
+- 检查一段命令前后的解释是否清楚；
+- 调整标题层级；
+- 删除像 AI 生成内容的重复句式。
+
+打开项目：
 
 ```bash
 cursor .
 ```
 
-打开文章后，可以让 Cursor 参考 NotebookLM 输出：
+在 Cursor 里可以这样引用文件：
 
 ```text
 @research/notebooklm/outputs/notebooklm-report.md
 @src/content/blog/tech/ai/notebooklm-codex-cursor-workflow.md
 
-请只修改“NotebookLM 基础使用流程”这一节。
-目标读者是不熟悉 LLM 的开发者。
+请只修改“NotebookLM 的实际使用方式”这一节。
 要求：
-1. 每个新概念先解释再使用
-2. 保留命令块
-3. 不要改 frontmatter
-4. 删除重复表达
+1. 写成个人实践复盘
+2. 删除像 FAQ 或客服说明的话术
+3. 保留命令和官方边界
+4. 不要修改 frontmatter
 ```
 
-### 用 Cursor Agent CLI 修改
-
-先只输出建议：
+如果用 Cursor Agent CLI，可以先只让它给建议：
 
 ```bash
-cursor-agent -p "读取 research/notebooklm/outputs/notebooklm-report.md，给出 src/content/blog/tech/ai/notebooklm-codex-cursor-workflow.md 的修改建议。重点检查新手是否能看懂。" --output-format text
+cursor-agent -p "读取 src/content/blog/tech/ai/notebooklm-codex-cursor-workflow.md，指出哪些段落像 AI 问答话术，并给出修改建议，不要直接改文件。" --output-format text
 ```
 
-确认工作区状态后，再允许它直接改文件：
+需要直接修改时，先看工作区状态：
 
 ```bash
 git status --short
-cursor-agent -p --force "读取 research/notebooklm/outputs/notebooklm-report.md，修订 src/content/blog/tech/ai/notebooklm-codex-cursor-workflow.md。要求保留 frontmatter，重点优化标题层级和新手解释。" --output-format text
+cursor-agent "请把 src/content/blog/tech/ai/notebooklm-codex-cursor-workflow.md 改成个人技术实践复盘风格，保留命令和来源链接。"
 ```
 
-## 官方 API 怎么看
+我更推荐在交互模式里确认它的修改，而不是一开始就让脚本模式强制写文件。
 
-这是旧版文章里最容易误导的地方，需要单独说明。
+## 官方 API 的边界
 
-### 个人版 NotebookLM
+这部分容易混淆，所以单独写清楚。
 
-对普通个人用户来说，NotebookLM 主要是网页产品。你可以上传文件、粘贴文字、导入 URL、生成报告和展示材料，但它不是一个可以直接用 API key 调用的消费级 API 产品。
+### 个人版 NotebookLM 不是普通 API 产品
 
-所以个人使用时，不建议一开始就追求“全自动 API 化”。更稳的方式是：
+对个人用户来说，NotebookLM 主要是网页产品。你可以上传资料、导入 URL、生成报告和展示材料，但它不是一个像 OpenAI API 那样直接拿 key 调用的消费级 API。
+
+所以个人写作场景里，我不建议一上来就追求“全自动 API 化”。稳定方案仍然是：
 
 ```text
-Codex/Cursor 整理资料包 -> 手动上传 NotebookLM -> 复制/导出结果 -> Codex/Cursor 写回本地
+Codex/Cursor 整理资料包
+        ↓
+手动上传 NotebookLM
+        ↓
+NotebookLM 生成报告
+        ↓
+复制/导出到本地 Markdown
+        ↓
+Codex/Cursor 写回文章
 ```
 
-### NotebookLM Enterprise API
+### NotebookLM Enterprise API 面向企业场景
 
-Google Cloud 文档已经有 NotebookLM Enterprise API，可以做这些事：
+Google Cloud 文档已经提供 NotebookLM Enterprise API，可以做：
 
-- 创建 notebook
-- 获取 notebook
-- 列出最近访问的 notebooks
-- 批量删除 notebook
-- 分享 notebook
-- 批量添加 sources
-- 上传文件 source
-- 获取或删除 source
-- 生成 audio overview
+- 创建 notebook；
+- 获取 notebook；
+- 列出最近访问的 notebooks；
+- 批量删除 notebook；
+- 分享 notebook；
+- 批量添加 sources；
+- 上传文件 source；
+- 获取或删除 source；
+- 生成 audio overview。
 
-但它面向 Google Cloud / Gemini Enterprise / NotebookLM Enterprise 场景，并且文档标注为 Pre-GA。也就是说，它适合企业或高级用户，不是普通个人入门的第一步。
+但它属于 Google Cloud / Gemini Enterprise / NotebookLM Enterprise 场景，而且文档标注为 Pre-GA。对个人博客写作来说，这不是第一优先级。
 
 示例：创建 notebook。
 
@@ -472,8 +486,8 @@ curl -X POST \
 
 ```bash
 export NOTEBOOK_ID="你的 notebook id"
-export FILE_PATH="research/notebooklm/sources/project-map.md"
-export FILE_DISPLAY_NAME="project-map.md"
+export FILE_PATH="research/notebooklm/sources/blog-style.md"
+export FILE_DISPLAY_NAME="blog-style.md"
 
 curl -X POST --data-binary "@${FILE_PATH}" \
   -H "Authorization:Bearer $(gcloud auth print-access-token)" \
@@ -483,154 +497,137 @@ curl -X POST --data-binary "@${FILE_PATH}" \
   "https://${ENDPOINT_LOCATION}-discoveryengine.googleapis.com/upload/v1alpha/projects/${PROJECT_NUMBER}/locations/${LOCATION}/notebooks/${NOTEBOOK_ID}/sources:uploadFile"
 ```
 
-如果 source 来自 Google Docs 或 Google Slides，还需要给 `gcloud` 授权 Google Drive 访问：
+如果 source 来自 Google Docs 或 Google Slides，还需要：
 
 ```bash
 gcloud auth login --enable-gdrive-access
 ```
 
-## 第三方 MCP 和自动化工具
+## 第三方 MCP 和自动化的取舍
 
-最近半年，很多开发者在尝试把 NotebookLM 接到 Claude Code、Cursor、Codex 等 agent 里。常见做法包括：
+社区里已经有人在做 NotebookLM MCP、Claude Code/Cursor 插件、浏览器自动化工具。这类工具的目标是减少手动上传和复制。
 
-- 用 MCP server 让 agent 查询 NotebookLM。
-- 用 Chrome 自动化复用登录状态。
-- 用脚本批量上传资料、批量生成报告。
-- 把 NotebookLM 回答保存到本地 Markdown，形成可复用研究档案。
-
-这类方案的价值是减少复制粘贴，但风险也很明确：
+但我现在不会把它作为主流程，原因有四个：
 
 | 风险 | 说明 |
 | --- | --- |
-| 非官方稳定性 | 可能依赖页面结构、浏览器会话或第三方包 |
-| 数据安全 | cookie、Google 账号、公司资料都需要谨慎 |
+| 稳定性 | 可能依赖页面结构、浏览器会话或第三方包 |
+| 安全性 | Google 账号、cookie、公司资料都需要谨慎 |
 | 维护成本 | NotebookLM 页面或权限变化后，工具可能失效 |
-| 新手成本 | 还没理解 NotebookLM，就先调 MCP，容易排错困难 |
+| 新手成本 | 还没理解 NotebookLM，就先调 MCP，排错会很困难 |
 
-因此我的建议是：
+所以我的顺序是：
 
-1. 先掌握手动文件流。
-2. 再用 Codex/Cursor 固化本地 Markdown 输出。
-3. 最后再尝试 MCP 或浏览器自动化。
+1. 先掌握手动文件流；
+2. 再用 Codex/Cursor 固化本地 Markdown 输出；
+3. 最后再研究 MCP 或 Enterprise API。
 
-实验命令示例：
+这个顺序看起来不够酷，但更稳定。
 
-```bash
-# 示例：第三方 NotebookLM MCP，实际以项目 README 为准
-uv tool install notebooklm-mcp-2026
-notebooklm-mcp-2026 setup
-```
+## 我会采用的完整流程
 
-如果只是写个人博客，这一步不是必须的。
+如果我要长期用这套方法写技术文章，我会这样做。
 
-## 推荐工作流
+### 轻量写作流程
 
-### 轻量写作
-
-适合每周写一两篇技术博客。
+适合个人博客。
 
 ```bash
 mkdir -p research/notebooklm/sources research/notebooklm/outputs
 
-codex exec -C . -o research/notebooklm/sources/project-map.md "梳理当前仓库 AI 博客文章结构，输出给 NotebookLM 使用的资料包。不要修改文件。"
+codex exec -C . -o research/notebooklm/sources/blog-style.md "梳理当前仓库 AI 博客文章结构和写作风格，输出给 NotebookLM 使用的资料包。不要修改文件。"
 ```
 
-然后在 NotebookLM 中：
+然后在 NotebookLM 里：
 
-1. 新建 notebook。
-2. 上传 `project-map.md`。
-3. 添加官方文档 URL。
-4. 用 Deep Research 补充最近资料。
-5. 生成 briefing document。
+1. 新建 notebook；
+2. 上传 `blog-style.md`；
+3. 添加官方文档 URL；
+4. 用 Deep Research 补充最近资料；
+5. 生成 briefing document；
 6. 复制到 `research/notebooklm/outputs/notebooklm-report.md`。
 
-最后执行：
+最后回到本地：
 
 ```bash
-codex exec -C . "根据 research/notebooklm/outputs/notebooklm-report.md 写成一篇中文技术博客，放到 src/content/blog/tech/ai/。要求面向新手，保留来源链接。"
+codex exec -C . "根据 research/notebooklm/outputs/notebooklm-report.md 写成一篇中文技术博客，放到 src/content/blog/tech/ai/。要求写成个人实践复盘，不要写成 FAQ。"
 npm run build
 ```
 
-### 技术资料库
+### 长期资料库流程
 
-适合长期维护某个主题。
+适合持续维护某个主题。
 
 ```text
 原始资料：Git / Google Drive / PDF / 网页
 研究层：NotebookLM
 归档层：research/notebooklm/outputs/*.md
 发布层：src/content/blog/tech/ai/*.md
-检查层：git diff + codex review
+检查层：git diff + npm run build + codex review
 ```
 
-对应命令：
+检查命令：
 
 ```bash
 git status --short
 git diff -- src/content/blog/tech/ai/
-codex review --uncommitted "检查文章事实、命令、链接和对新手的解释是否充分。"
+npm run build
+codex review --uncommitted "检查文章事实、命令、链接和表达是否像个人实践复盘。"
 ```
 
-### 团队或企业资料
+### 团队或企业资料流程
 
-适合公司内部知识库、客户资料、合规要求较高的场景。
+如果资料涉及公司内部知识库、客户资料或合规要求，我不会用个人账号加第三方自动化工具硬做。
 
-优先考虑：
+更合理的是：
 
-- Google Workspace 管理权限
-- Google Cloud / NotebookLM Enterprise
-- 明确的数据处理政策
-- 不把敏感资料交给第三方浏览器自动化工具
+- 使用 Google Workspace 管理权限；
+- 评估 Google Cloud / NotebookLM Enterprise；
+- 明确数据处理政策；
+- 避免把敏感资料交给第三方浏览器自动化工具。
 
-## 常见误区
+## 写作上的取舍
 
-### 误区 1：NotebookLM 会自动帮我判断资料真假
+整理这类工具文章时，很容易写成产品说明书：先解释概念，再列功能，再放命令，最后总结一句“建议使用”。信息是全的，但读起来没有实践感。
 
-不会。NotebookLM 可以基于 sources 回答，但 source 本身可能过期、错误或有偏见。
+所以这篇文章我刻意避开几个写法：
 
-发布文章前，会员价格、额度、API 状态必须回到官方页面重新确认。
+1. 不把 NotebookLM 写成完整百科；
+2. 不把 Codex 和 Cursor 写成命令清单；
+3. 不把社区 MCP 玩法包装成成熟方案；
+4. 不用“你应该这样做”的口吻替代实际判断；
+5. 不把官方 API 和个人网页产品混在一起讲。
 
-### 误区 2：NotebookLM 可以替代 Codex/Cursor
+我更关心的是这几个问题：
 
-不适合。NotebookLM 擅长研究和总结，不擅长直接修改本地 Git 仓库。
+- 为什么 NotebookLM 适合做研究层；
+- 为什么 Codex/Cursor 更适合做落地层；
+- 个人用户先跑通哪条最稳定的流程；
+- 哪些自动化方案看起来很酷，但暂时不适合新手；
+- 最后如何把研究结果变成可维护的本地文章。
 
-真正落地到文章或代码，还是要靠 Codex/Cursor。
-
-### 误区 3：MCP 一定比手动复制更高级
-
-不一定。对新手来说，手动流程更容易理解，也更容易排错。
-
-只有当你已经稳定重复同一套流程，再考虑自动化。
-
-### 误区 4：把资料全部丢进一个 notebook 最省事
-
-短期省事，长期会乱。主题越混杂，回答越容易变浅。
-
-更好的方式是：
-
-- 一个项目一个 notebook。
-- 一个研究主题一个 notebook。
-- 输出结果回写到本地 Markdown。
+这比简单罗列功能更接近我想要的技术博客。
 
 ## 结论
 
-NotebookLM 最值得用的地方，不是“让 AI 替你写文章”，而是把资料变成可追问、可引用、可展示的知识库。
+NotebookLM 对我来说不是写作替代品，而是研究层。它负责把资料变成可以追问、可以引用、可以展示的研究底稿。
 
-Codex 和 Cursor 的价值，是把 NotebookLM 生成的研究结果真正落到本地项目里：
+Codex 和 Cursor 则负责把研究底稿变成真正可维护的项目内容：
 
-- 变成博客文章。
-- 变成 README。
-- 变成技术方案。
-- 变成可 review、可构建、可版本管理的内容。
+- 写进 Markdown；
+- 保留 frontmatter；
+- 运行构建；
+- 检查 diff；
+- 做 review；
+- 最终发布到博客。
 
-对刚接触 LLM 和 NotebookLM 的人，推荐从这个顺序开始：
+如果刚开始接触 LLM 和 NotebookLM，我建议不要一上来研究 MCP 或 Enterprise API。先把最朴素的文件流跑通：
 
-1. 先用 NotebookLM 手动上传资料并提问。
-2. 再用 Codex 生成本地资料包和文章初稿。
-3. 用 Cursor 做人工编辑和局部润色。
-4. 最后再研究 NotebookLM Enterprise API 或第三方 MCP。
+```text
+资料 -> NotebookLM -> Markdown 输出 -> Codex/Cursor -> 本地文章
+```
 
-这个顺序最稳，也最容易形成长期可复用的写作和研究系统。
+这个流程跑顺之后，再考虑自动化，才不会被工具本身拖住。
 
 ## 资料来源
 
