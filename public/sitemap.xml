@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+  <loc>https://leezchuan.github.io/</loc>
+  <lastmod>2026-05-09T00:00:00.000Z</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>1</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog</loc>
+  <lastmod>2026-05-09T00:00:00.000Z</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.9</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/projects</loc>
+  <lastmod>2026-05-09T00:00:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/about</loc>
+  <lastmod>2026-05-09T00:00:00.000Z</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/agent</loc>
+  <lastmod>2026-05-09T00:00:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/ai-native-engineering-large-codebase</loc>
+  <lastmod>2026-05-09T00:00:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/web-bug</loc>
+  <lastmod>2026-04-30T02:50:05.321Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/notebooklm-codex-cursor-workflow</loc>
+  <lastmod>2026-04-30T00:00:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/web-observer-apis-2026</loc>
+  <lastmod>2026-04-13T10:00:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/claude-code</loc>
+  <lastmod>2026-04-03T00:00:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/agentic-loop-01</loc>
+  <lastmod>2026-04-01T00:00:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/learning-go</loc>
+  <lastmod>2025-04-16T12:36:18.456Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/swagger-guide</loc>
+  <lastmod>2025-04-16T12:36:08.501Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/engineering-laws</loc>
+  <lastmod>2025-04-16T05:58:41.024Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/nginx-wx</loc>
+  <lastmod>2025-04-14T06:44:48.023Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/build-web</loc>
+  <lastmod>2025-04-09T05:45:35.966Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/userful-nginx</loc>
+  <lastmod>2025-03-07T07:49:50.605Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/platfrom-choose</loc>
+  <lastmod>2024-12-18T11:59:15.247Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/virtual-table-horizontal</loc>
+  <lastmod>2024-12-16T08:44:18.020Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/virtual-table-vertical</loc>
+  <lastmod>2024-12-16T08:44:18.020Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/electorn-choose</loc>
+  <lastmod>2024-12-16T06:37:21.610Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/ts-exe</loc>
+  <lastmod>2024-12-10T07:31:23.312Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/2025-investment-strategy</loc>
+  <lastmod>2024-12-09T00:00:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/canvas-image-rendering-issue</loc>
+  <lastmod>2024-12-03T00:00:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/web-performance-fastdom</loc>
+  <lastmod>2024-12-02T09:26:05.248Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/the-chinese-sorcery-scare-of-1768</loc>
+  <lastmod>2024-12-02T05:58:46.400Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/unemployment</loc>
+  <lastmod>2024-12-02T05:58:46.400Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/react-usesign</loc>
+  <lastmod>2024-11-11T06:19:51.214Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/phone</loc>
+  <lastmod>2024-11-07T05:53:42.707Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/traveling</loc>
+  <lastmod>2024-11-06T09:12:34.842Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/publish-gitlab</loc>
+  <lastmod>2024-10-26T02:40:53.341Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/mouse-pointer</loc>
+  <lastmod>2024-10-24T06:29:32.966Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/cursor-first-experience</loc>
+  <lastmod>2024-10-22T00:00:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/generative-ai-landscape-2024</loc>
+  <lastmod>2024-10-14T00:00:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/architecture-design</loc>
+  <lastmod>2023-12-01T20:04:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/work-note</loc>
+  <lastmod>2023-12-01T20:04:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/tools-animation-math</loc>
+  <lastmod>2022-12-01T01:04:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/wx-dingding</loc>
+  <lastmod>2022-11-11T11:52:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/web-tips-fonts</loc>
+  <lastmod>2022-10-16T23:49:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/tools-typescript-use-script-to-ts-types</loc>
+  <lastmod>2022-08-06T17:33:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/tools-web-fee-toolchain</loc>
+  <lastmod>2022-08-01T21:07:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/bridge-mode-design-of-cross-platform-event-mechani</loc>
+  <lastmod>2022-06-12T22:22:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/tools-maintain-open-source-projects-with-tools</loc>
+  <lastmod>2022-04-22T22:53:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/internet-business-terms</loc>
+  <lastmod>2022-03-27T00:00:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/tools-typescript-type-extend</loc>
+  <lastmod>2022-01-09T17:36:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/tools-web-fee-polyfill-corejs-eslint</loc>
+  <lastmod>2021-12-07T01:13:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/practice-of-project-development-and-auto-workflow</loc>
+  <lastmod>2021-11-28T22:31:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/tools-web-fee-debug-with-source-map</loc>
+  <lastmod>2021-11-28T22:31:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/web-app-model-zustand</loc>
+  <lastmod>2021-11-18T00:14:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/web-performance-case-1</loc>
+  <lastmod>2021-09-24T00:51:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/nodejs-spawn-vs-exec</loc>
+  <lastmod>2021-08-25T00:21:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/tools-web-fee-test-with-jest-puppeteer</loc>
+  <lastmod>2021-08-15T14:54:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/web-performance-core-concepts</loc>
+  <lastmod>2021-07-19T00:51:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/nodejs-fastify</loc>
+  <lastmod>2021-06-27T16:28:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/tools-programming-language</loc>
+  <lastmod>2021-05-02T17:03:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/debouncing-and-throttling</loc>
+  <lastmod>2021-04-25T22:56:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/tools-npm</loc>
+  <lastmod>2019-07-06T15:43:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/tools-git</loc>
+  <lastmod>2018-12-31T13:49:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/linux-base</loc>
+  <lastmod>2018-10-28T15:34:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/web-performance-optimize-skill</loc>
+  <lastmod>2018-08-20T19:06:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/tools-vscode-sync</loc>
+  <lastmod>2018-08-15T16:42:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/web-cross-domain</loc>
+  <lastmod>2018-08-10T15:18:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/css-bfc</loc>
+  <lastmod>2018-07-22T16:35:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/protocol-http</loc>
+  <lastmod>2018-06-24T14:59:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/protocol-ip</loc>
+  <lastmod>2018-06-23T18:02:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/protocol-tcp-udp</loc>
+  <lastmod>2018-06-20T17:21:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/protocol-lan-wan</loc>
+  <lastmod>2018-06-18T18:22:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/protocol-base</loc>
+  <lastmod>2018-06-18T16:17:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/protocol-osi</loc>
+  <lastmod>2018-06-17T17:39:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/web-local-storage</loc>
+  <lastmod>2018-06-01T01:00:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/dom-js</loc>
+  <lastmod>2018-05-24T22:49:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/dom-textnode</loc>
+  <lastmod>2018-05-24T21:50:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/dom-fragment</loc>
+  <lastmod>2018-05-23T13:10:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/dom-event</loc>
+  <lastmod>2018-05-23T12:18:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/dom-attribute</loc>
+  <lastmod>2018-05-21T21:00:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/css-clear-float</loc>
+  <lastmod>2018-05-21T18:25:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/dom-rule</loc>
+  <lastmod>2018-05-19T14:54:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/tools-sublime</loc>
+  <lastmod>2018-05-19T13:38:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/tools-sublime-vim</loc>
+  <lastmod>2018-05-18T12:55:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/dom-nodelist</loc>
+  <lastmod>2018-05-17T22:30:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/dom-select</loc>
+  <lastmod>2018-05-17T22:10:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/dom-elementnode</loc>
+  <lastmod>2018-05-17T13:19:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/dom</loc>
+  <lastmod>2018-05-16T14:04:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/dom-bom</loc>
+  <lastmod>2018-05-15T12:02:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/computer-cpu-addressing-mode</loc>
+  <lastmod>2018-05-05T01:53:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/computer-memory-refresh</loc>
+  <lastmod>2018-05-03T01:59:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/computer-microprocessor-addressing-range</loc>
+  <lastmod>2018-04-28T01:42:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/linux-cmd-vim</loc>
+  <lastmod>2018-04-27T21:02:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/web-front-end-architecture</loc>
+  <lastmod>2018-03-28T14:01:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/nginx-config</loc>
+  <lastmod>2018-03-15T12:38:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/linux-cmd-shell</loc>
+  <lastmod>2018-02-21T21:02:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/web-routing</loc>
+  <lastmod>2017-10-25T00:51:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/tools-junit</loc>
+  <lastmod>2017-08-30T23:42:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/web-js-async</loc>
+  <lastmod>2017-03-22T15:48:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+</urlset>

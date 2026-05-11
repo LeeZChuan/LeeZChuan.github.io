@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+
+Host: https://leezchuan.github.io
+Sitemap: https://leezchuan.github.io/sitemap.xml

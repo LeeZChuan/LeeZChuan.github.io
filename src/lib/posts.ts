@@ -54,7 +54,7 @@ function scanPostFiles(): Array<{ slug: string; filePath: string; category: stri
 }
 
 export function getAllPostSlugs(): string[] {
-  return scanPostFiles().map(({ slug }) => slug);
+  return getAllPosts().map(({ slug }) => slug);
 }
 
 export function getAllPosts(): PostMeta[] {

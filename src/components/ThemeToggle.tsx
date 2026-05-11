@@ -1,5 +1,6 @@
 'use client';
 
+import type { MouseEvent } from 'react';
 import { useEffect, useState } from 'react';
 
 export default function ThemeToggle() {
@@ -9,8 +10,7 @@ export default function ThemeToggle() {
     setIsDark(document.documentElement.classList.contains('dark'));
   }, []);
 
-  function toggle() {  
-    const next = !isDark;
+  function applyTheme(next: boolean) {
     setIsDark(next);
     if (next) {
       document.documentElement.classList.add('dark');
@@ -19,6 +19,51 @@ export default function ThemeToggle() {
       document.documentElement.classList.remove('dark');
       localStorage.setItem('theme', 'light');
     }
+  }
+
+  function toggle(event: MouseEvent<HTMLButtonElement>) {
+    const next = !isDark;
+    const startViewTransition = document.startViewTransition?.bind(document);
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (!startViewTransition || prefersReducedMotion) {
+      applyTheme(next);
+      return;
+    }
+
+    const x = event.clientX;
+    const y = event.clientY;
+    const endRadius = Math.hypot(
+      Math.max(x, window.innerWidth - x),
+      Math.max(y, window.innerHeight - y)
+    );
+
+    document.documentElement.classList.add('theme-transitioning');
+    const transition = startViewTransition(() => {
+      applyTheme(next);
+    });
+
+    transition.ready
+      .then(() => {
+        document.documentElement.animate(
+          {
+            clipPath: [
+              `circle(0px at ${x}px ${y}px)`,
+              `circle(${endRadius}px at ${x}px ${y}px)`,
+            ],
+          },
+          {
+            duration: 560,
+            easing: 'cubic-bezier(0.22, 1, 0.36, 1)',
+            pseudoElement: '::view-transition-new(root)',
+          }
+        );
+      })
+      .catch(() => undefined);
+
+    transition.finished.finally(() => {
+      document.documentElement.classList.remove('theme-transitioning');
+    });
   }
 
   return (

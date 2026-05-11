@@ -3,13 +3,82 @@ import './globals.css';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import TopNav from '@/components/TopNav';
 import { LangProvider } from '@/contexts/LangContext';
+import { siteConfig } from '@/lib/site';
+
+const structuredData = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: siteConfig.name,
+    url: siteConfig.url,
+    description: siteConfig.description,
+    inLanguage: 'zh-CN',
+    publisher: {
+      '@type': 'Person',
+      name: siteConfig.author.name,
+      url: siteConfig.author.url,
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: siteConfig.author.name,
+    url: siteConfig.url,
+    email: `mailto:${siteConfig.author.email}`,
+    sameAs: [siteConfig.links.github],
+  },
+];
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
   title: {
-    default: 'LeeZChuan',
-    template: '%s — LeeZChuan',
+    default: siteConfig.title,
+    template: `%s — ${siteConfig.name}`,
   },
-  description: '作为一名全栈开发者，我精通 Vue 3、React、Node.js 和 Java。在编码之外，我同样热衷于滑雪、骑行、徒步以及摄影，在技术与自然中寻找平衡与灵感。',
+  description: siteConfig.description,
+  applicationName: siteConfig.name,
+  authors: [{ name: siteConfig.author.name, url: siteConfig.author.url }],
+  creator: siteConfig.author.name,
+  publisher: siteConfig.author.name,
+  alternates: {
+    canonical: '/',
+  },
+  icons: {
+    icon: '/images/favicon.png',
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'zh_CN',
+    url: '/',
+    siteName: siteConfig.name,
+    title: siteConfig.title,
+    description: siteConfig.description,
+    images: [
+      {
+        url: siteConfig.ogImage,
+        width: 1200,
+        height: 630,
+        alt: siteConfig.name,
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: siteConfig.title,
+    description: siteConfig.description,
+    images: [siteConfig.ogImage],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -22,6 +91,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <main className="pt-14">
               {children}
             </main>
+            <script
+              type="application/ld+json"
+              suppressHydrationWarning
+              dangerouslySetInnerHTML={{
+                __html: JSON.stringify(structuredData).replace(/</g, '\\u003c'),
+              }}
+            />
           </LangProvider>
         </ThemeProvider>
       </body>

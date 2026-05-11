@@ -1,9 +1,24 @@
 import type { Metadata } from 'next';
 import { Suspense } from 'react';
 import { getAllPosts } from '@/lib/posts';
+import { siteConfig } from '@/lib/site';
 import BlogContent from './BlogContent';
 
-export const metadata: Metadata = { title: 'Blog' };
+const description = 'LeeZChuan 的技术、商业、笔记与生活文章归档。';
+
+export const metadata: Metadata = {
+  title: 'Blog',
+  description,
+  alternates: {
+    canonical: '/blog',
+  },
+  openGraph: {
+    title: `Blog — ${siteConfig.name}`,
+    description,
+    url: '/blog',
+    type: 'website',
+  },
+};
 
 const CATEGORIES = {
   tech: { label: '技术', labelEn: 'Tech', description: '前端、后端、框架与语言' },

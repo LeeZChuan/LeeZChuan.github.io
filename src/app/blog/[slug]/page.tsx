@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getAllPostSlugs, getPostBySlug, formatDate, CATEGORIES } from '@/lib/posts';
 import TableOfContents from '@/components/TableOfContents';
+import { absoluteUrl, siteConfig } from '@/lib/site';
 
 interface Props {
   params: { slug: string };
@@ -15,7 +16,40 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = await getPostBySlug(params.slug);
   if (!post) return {};
-  return { title: post.title, description: post.description };
+  const url = `/blog/${post.slug}`;
+  const title = post.title || 'Blog Post';
+  const description = post.description || siteConfig.description;
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: url,
+    },
+    openGraph: {
+      title,
+      description,
+      url,
+      type: 'article',
+      publishedTime: post.date,
+      authors: [siteConfig.author.name],
+      tags: post.tags,
+      images: [
+        {
+          url: siteConfig.ogImage,
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [siteConfig.ogImage],
+    },
+  };
 }
 
 export default async function PostPage({ params }: Props) {
@@ -25,9 +59,43 @@ export default async function PostPage({ params }: Props) {
   const categoryLabel = post.category && CATEGORIES[post.category]
     ? CATEGORIES[post.category].label
     : null;
+  const postUrl = absoluteUrl(`/blog/${post.slug}`);
+  const articleJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.title,
+    description: post.description,
+    datePublished: post.date,
+    dateModified: post.date,
+    inLanguage: 'zh-CN',
+    url: postUrl,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': postUrl,
+    },
+    image: absoluteUrl(siteConfig.ogImage),
+    keywords: post.tags.join(', '),
+    author: {
+      '@type': 'Person',
+      name: siteConfig.author.name,
+      url: siteConfig.author.url,
+    },
+    publisher: {
+      '@type': 'Person',
+      name: siteConfig.author.name,
+      url: siteConfig.url,
+    },
+  };
 
   return (
     <div className="max-w-5xl mx-auto px-6 flex gap-0 min-h-full">
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(articleJsonLd).replace(/</g, '\\u003c'),
+        }}
+      />
       <TableOfContents html={post.contentHtml} />
       <article className="flex-1 min-w-0 max-w-2xl mx-auto px-0 lg:px-10 py-12">
         <div className="mb-8">
