@@ -2,33 +2,45 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
   <loc>https://leezchuan.github.io/</loc>
-  <lastmod>2026-05-11T00:00:00.000Z</lastmod>
+  <lastmod>2026-05-30T00:00:00.000Z</lastmod>
   <changefreq>weekly</changefreq>
   <priority>1</priority>
 </url>
 <url>
   <loc>https://leezchuan.github.io/blog</loc>
-  <lastmod>2026-05-11T00:00:00.000Z</lastmod>
+  <lastmod>2026-05-30T00:00:00.000Z</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.9</priority>
 </url>
 <url>
   <loc>https://leezchuan.github.io/projects</loc>
-  <lastmod>2026-05-11T00:00:00.000Z</lastmod>
+  <lastmod>2026-05-30T00:00:00.000Z</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.7</priority>
 </url>
 <url>
   <loc>https://leezchuan.github.io/about</loc>
-  <lastmod>2026-05-11T00:00:00.000Z</lastmod>
+  <lastmod>2026-05-30T00:00:00.000Z</lastmod>
   <changefreq>yearly</changefreq>
   <priority>0.6</priority>
 </url>
 <url>
   <loc>https://leezchuan.github.io/agent</loc>
-  <lastmod>2026-05-11T00:00:00.000Z</lastmod>
+  <lastmod>2026-05-30T00:00:00.000Z</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/claude-code</loc>
+  <lastmod>2026-05-30T00:00:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://leezchuan.github.io/blog/notification-service-sse-design</loc>
+  <lastmod>2026-05-20T00:00:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
 </url>
 <url>
   <loc>https://leezchuan.github.io/blog/wiki-index-code-truth-ai-engineering</loc>
@@ -57,12 +69,6 @@
 <url>
   <loc>https://leezchuan.github.io/blog/web-observer-apis-2026</loc>
   <lastmod>2026-04-13T10:00:00.000Z</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-</url>
-<url>
-  <loc>https://leezchuan.github.io/blog/claude-code</loc>
-  <lastmod>2026-04-03T00:00:00.000Z</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
 </url>

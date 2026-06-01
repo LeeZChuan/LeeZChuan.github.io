@@ -1,10 +1,13 @@
 'use client';
 
 import Link from 'next/link';
+import { useEffect, useRef, useState } from 'react';
 import { formatDateShort } from '@/lib/dateUtils';
 import type { PostMeta } from '@/lib/posts';
 import { useLang } from '@/contexts/LangContext';
 import { translations } from '@/lib/i18n';
+
+const MIN_RECENT_POSTS = 5;
 
 interface Props {
   recentPosts: PostMeta[];
@@ -13,9 +16,68 @@ interface Props {
 export default function HomeContent({ recentPosts }: Props) {
   const { lang } = useLang();
   const t = translations[lang].home;
+  const containerRef = useRef<HTMLDivElement>(null);
+  const listRef = useRef<HTMLUListElement>(null);
+  const [visiblePostCount, setVisiblePostCount] = useState(MIN_RECENT_POSTS);
+
+  useEffect(() => {
+    let frameId = 0;
+
+    const updateVisiblePostCount = () => {
+      if (frameId) {
+        cancelAnimationFrame(frameId);
+      }
+
+      frameId = requestAnimationFrame(() => {
+        const container = containerRef.current;
+        const list = listRef.current;
+        const firstItem = list?.querySelector('li');
+
+        if (!container || !list || !firstItem) return;
+
+        const containerStyle = window.getComputedStyle(container);
+        const bottomPadding = Number.parseFloat(containerStyle.paddingBottom) || 0;
+        const listTop = list.getBoundingClientRect().top;
+        const itemHeight = firstItem.getBoundingClientRect().height;
+
+        if (itemHeight <= 0) return;
+
+        const availableHeight = window.innerHeight - listTop - bottomPadding;
+        const fittingCount = Math.floor(availableHeight / itemHeight);
+        const nextCount = Math.min(
+          recentPosts.length,
+          Math.max(MIN_RECENT_POSTS, fittingCount)
+        );
+
+        setVisiblePostCount(nextCount);
+      });
+    };
+
+    updateVisiblePostCount();
+    window.addEventListener('resize', updateVisiblePostCount);
+
+    const resizeObserver =
+      typeof ResizeObserver === 'undefined'
+        ? null
+        : new ResizeObserver(updateVisiblePostCount);
+
+    if (containerRef.current) {
+      resizeObserver?.observe(containerRef.current);
+    }
+
+    return () => {
+      if (frameId) {
+        cancelAnimationFrame(frameId);
+      }
+      window.removeEventListener('resize', updateVisiblePostCount);
+      resizeObserver?.disconnect();
+    };
+  }, [lang, recentPosts.length]);
+
+  const visiblePosts = recentPosts.slice(0, visiblePostCount);
 
   return (
-    <div className="max-w-2xl mx-auto px-6 py-20">
+    <div ref={containerRef} className="max-w-2xl mx-auto px-6 py-20">
       <div className="mb-14">
         <h1 className="text-3xl font-bold text-gray-900 dark:text-[rgba(255,255,255,0.87)] mb-4">
           LeeZChuan
@@ -63,8 +125,8 @@ export default function HomeContent({ recentPosts }: Props) {
           </Link>
         </div>
 
-        <ul className="-mx-2">
-          {recentPosts.map((post) => (
+        <ul ref={listRef} className="-mx-2">
+          {visiblePosts.map((post) => (
             <li key={post.slug}>
               <Link
                 href={`/blog/${post.slug}`}

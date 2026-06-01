@@ -2,6 +2,6 @@ import { getAllPosts } from '@/lib/posts';
 import HomeContent from './HomeContent';
 
 export default function HomePage() {
-  const recentPosts = getAllPosts().slice(0, 5);
+  const recentPosts = getAllPosts();
   return <HomeContent recentPosts={recentPosts} />;
 }
