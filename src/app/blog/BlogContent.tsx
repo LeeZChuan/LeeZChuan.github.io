@@ -27,6 +27,8 @@ export default function BlogContent({ posts, categories }: Props) {
 
   const activeCat = searchParams.get('cat') ?? 'all';
   const currentPage = Math.max(1, parseInt(searchParams.get('page') ?? '1', 10));
+  const currentQuery = searchParams.toString();
+  const returnPath = currentQuery ? `/blog?${currentQuery}` : '/blog';
 
   const filtered = activeCat === 'all' ? posts : posts.filter((p) => p.category === activeCat);
   const totalPages = Math.ceil(filtered.length / PAGE_SIZE);
@@ -85,7 +87,7 @@ export default function BlogContent({ posts, categories }: Props) {
         {paginated.map((post) => (
           <li key={post.slug}>
             <Link
-              href={`/blog/${post.slug}`}
+              href={`/blog/${post.slug}?from=${encodeURIComponent(returnPath)}`}
               className="group flex items-baseline justify-between px-2 py-2.5 rounded-lg hover:bg-gray-50 dark:hover:bg-white/[0.04] transition-colors duration-150"
             >
               <span className="flex items-baseline gap-2 min-w-0 mr-4">

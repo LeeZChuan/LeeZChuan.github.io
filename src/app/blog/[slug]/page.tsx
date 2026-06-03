@@ -1,9 +1,11 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { Suspense } from 'react';
 import { notFound } from 'next/navigation';
 import { getAllPostSlugs, getPostBySlug, formatDate, CATEGORIES } from '@/lib/posts';
 import TableOfContents from '@/components/TableOfContents';
 import { absoluteUrl, siteConfig } from '@/lib/site';
+import BlogBackLink from './BlogBackLink';
 
 interface Props {
   params: { slug: string };
@@ -99,15 +101,22 @@ export default async function PostPage({ params }: Props) {
       <TableOfContents html={post.contentHtml} />
       <article className="flex-1 min-w-0 max-w-2xl mx-auto px-0 lg:px-10 py-12">
         <div className="mb-8">
-          <Link
-            href="/blog"
-            className="inline-flex items-center gap-1.5 text-sm text-gray-400 dark:text-[rgba(255,255,255,0.38)] hover:text-gray-700 dark:hover:text-[rgba(255,255,255,0.60)] transition-colors"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M19 12H5M12 5l-7 7 7 7"/>
-            </svg>
-            返回
-          </Link>
+          <Suspense fallback={
+            <Link
+              href="/blog"
+              className="inline-flex items-center gap-1.5 text-sm text-gray-400 dark:text-[rgba(255,255,255,0.38)] hover:text-gray-700 dark:hover:text-[rgba(255,255,255,0.60)] transition-colors"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M19 12H5M12 5l-7 7 7 7"/>
+              </svg>
+              返回
+            </Link>
+          }>
+            <BlogBackLink
+              label="返回"
+              className="inline-flex items-center gap-1.5 text-sm text-gray-400 dark:text-[rgba(255,255,255,0.38)] hover:text-gray-700 dark:hover:text-[rgba(255,255,255,0.60)] transition-colors"
+            />
+          </Suspense>
         </div>
 
         <header className="mb-10">
@@ -150,15 +159,22 @@ export default async function PostPage({ params }: Props) {
         />
 
         <div className="mt-14 pt-8 border-t border-gray-100 dark:border-white/[0.12]">
-          <Link
-            href="/blog"
-            className="inline-flex items-center gap-1.5 text-sm text-gray-500 dark:text-[rgba(255,255,255,0.60)] hover:text-gray-900 dark:hover:text-[rgba(255,255,255,0.87)] transition-colors"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M19 12H5M12 5l-7 7 7 7"/>
-            </svg>
-            返回文章列表
-          </Link>
+          <Suspense fallback={
+            <Link
+              href="/blog"
+              className="inline-flex items-center gap-1.5 text-sm text-gray-500 dark:text-[rgba(255,255,255,0.60)] hover:text-gray-900 dark:hover:text-[rgba(255,255,255,0.87)] transition-colors"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M19 12H5M12 5l-7 7 7 7"/>
+              </svg>
+              返回文章列表
+            </Link>
+          }>
+            <BlogBackLink
+              label="返回文章列表"
+              className="inline-flex items-center gap-1.5 text-sm text-gray-500 dark:text-[rgba(255,255,255,0.60)] hover:text-gray-900 dark:hover:text-[rgba(255,255,255,0.87)] transition-colors"
+            />
+          </Suspense>
         </div>
       </article>
     </div>

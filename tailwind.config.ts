@@ -6,6 +6,15 @@ const config: Config = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  safelist: [
+    'notice',
+    'notice-header',
+    'notice-body',
+    'notice-note',
+    'notice-warning',
+    'notice-tip',
+    'notice-danger',
+  ],
   darkMode: 'class',
   theme: {
     extend: {
