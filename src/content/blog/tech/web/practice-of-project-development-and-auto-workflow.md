@@ -11,6 +11,14 @@ tags: ["计算机技术", "Web前端", "提效"]
 
 接下来，我来分享下在项目开发中尝试的一些自动化和提效实践。本文在撰写中涉及的 UI 框架主要以 create-react-app 所产生的 React 项目为主，会辅以部分其他框架的解决方案以说明。
 
+{{< notice "tip" >}}
+2026-06-04 补充：这篇文章保留的是 2021 年前后我在项目中的一轮实践记录，其中 create-react-app、craco、standard-version 等工具在当时很常见。现在 React 官方已经在 2025-02-14 宣布不再建议新项目使用 Create React App，新项目更适合从框架、Vite、Parcel、Rsbuild 等方案里选择。我另外整理了三篇更新版阅读材料：
+
+- [前端流程自动化提效实践：2026 方案地图](/blog/front-end-workflow-automation-2026-map)
+- [前端流程自动化提效实践：本地反馈回路](/blog/front-end-workflow-automation-2026-local-feedback)
+- [前端流程自动化提效实践：CI、发布与依赖治理](/blog/front-end-workflow-automation-2026-ci-release)
+{{< /notice >}}
+
 ## 新建项目第一步：脚手架
 
 如果你的项目选型是 Angular 的话，那么选择不多可以直接上 Angular CLI；如果是 React 或 Vue 的话，那么会有不少脚手架可以选择，国内很多开发者都有开源不同方案。其中，大多方案会有一些组件库、开源库的绑定，如果你希望一个更加自由的框架搭建，官方脚手架 create-create-app (CRA) 肯定会是第一选择。
