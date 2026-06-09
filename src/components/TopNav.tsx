@@ -25,10 +25,10 @@ export default function TopNav() {
   const t = translations[lang].nav;
 
   const navLinks = [
-    { href: '/blog', label: t.blog },
-    { href: '/projects', label: t.projects },
-    { href: '/about', label: t.about },
-    { href: '/agent', label: t.agent },
+    { href: '/blog', label: t.blog, shortLabel: t.blogShort },
+    { href: '/projects', label: t.projects, shortLabel: t.projectsShort },
+    { href: '/about', label: t.about, shortLabel: t.aboutShort },
+    { href: '/agent', label: t.agent, shortLabel: t.agentShort },
   ];
 
   function isActive(href: string) {
@@ -37,10 +37,10 @@ export default function TopNav() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-[#0f0f0f]/90 backdrop-blur-md border-b border-gray-100 dark:border-white/[0.08]">
-      <nav className="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
+      <nav className="max-w-5xl mx-auto px-3 sm:px-6 h-14 flex items-center justify-between">
         <Link
           href="/"
-          className="text-gray-800 dark:text-[rgba(255,255,255,0.80)] hover:text-gray-900 dark:hover:text-[rgba(255,255,255,0.87)] transition-colors"
+          className="flex-shrink-0 text-gray-800 dark:text-[rgba(255,255,255,0.80)] hover:text-gray-900 dark:hover:text-[rgba(255,255,255,0.87)] transition-colors"
           aria-label="Home"
         >
           <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" className="opacity-80 hover:opacity-100 transition-opacity">
@@ -48,22 +48,24 @@ export default function TopNav() {
           </svg>
         </Link>
 
-        <div className="flex items-center gap-1">
-          {navLinks.map(({ href, label }) => (
+        <div className="flex min-w-0 items-center gap-0.5 sm:gap-1">
+          {navLinks.map(({ href, label, shortLabel }) => (
             <Link
               key={href}
               href={href}
-              className={`px-3 py-1.5 text-sm transition-colors duration-150 rounded-md ${
+              title={label}
+              className={`whitespace-nowrap px-1.5 sm:px-3 py-1.5 text-sm transition-colors duration-150 rounded-md ${
                 isActive(href)
                   ? 'text-gray-900 dark:text-[rgba(255,255,255,0.87)]'
                   : 'text-gray-500 dark:text-[rgba(255,255,255,0.50)] hover:text-gray-900 dark:hover:text-[rgba(255,255,255,0.87)]'
               }`}
             >
-              {label}
+              <span className="sm:hidden">{shortLabel}</span>
+              <span className="hidden sm:inline">{label}</span>
             </Link>
           ))}
 
-          <div className="w-px h-4 bg-gray-200 dark:bg-white/[0.12] mx-2" />
+          <div className="w-px h-4 bg-gray-200 dark:bg-white/[0.12] mx-1 sm:mx-2" />
 
           <a
             href="https://github.com/LeeZChuan"

@@ -5,6 +5,10 @@ export const translations = {
       projects: '项目',
       about: '关于',
       agent: '智能体',
+      blogShort: '文',
+      projectsShort: '项目',
+      aboutShort: '关于',
+      agentShort: 'AI',
     },
     home: {
       bio1: '作为一名全栈开发者，我精通 Vue 3、React、Node.js 和 Java。在编码之外，我同样热衷于滑雪、骑行、徒步以及摄影，在技术与自然中寻找平衡与灵感。',
@@ -57,6 +61,10 @@ export const translations = {
       projects: 'Projects',
       about: 'About',
       agent: 'Agent',
+      blogShort: 'Blog',
+      projectsShort: 'Work',
+      aboutShort: 'Me',
+      agentShort: 'AI',
     },
     home: {
       bio1: "A full-stack developer proficient in Vue 3, React, Node.js, and Java. Beyond coding, I'm passionate about skiing, cycling, hiking, and photography — finding balance between technology and the outdoors.",
