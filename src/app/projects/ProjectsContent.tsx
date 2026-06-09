@@ -29,18 +29,10 @@ const projects: Project[] = [
   },
   {
     name: 'znz-ui',
-    descriptionZh: '基于 Element Plus 封装的企业级业务组件库，包含 Table、Date 等高频业务组件，使用 BEM 语法与组件抽象定义。集成虚拟滚动技术，支持超过 100k 个单元格的大数据表格，发布至内网 npm 仓库，开箱即用。',
-    descriptionEn: 'An enterprise-grade component library built on top of Element Plus, featuring high-frequency business components like Table and Date pickers with BEM conventions. Integrated virtual scrolling supports large tables with 100k+ cells. Published to internal npm registry.',
-    tags: ['Vue 3', 'Element Plus', 'TypeScript', 'Virtual Scroll', 'BEM', 'Monorepo'],
+    descriptionZh: '基于 Vue 与 Element Plus 封装的企业级业务组件库，包含 Table、Date 等高频业务组件，使用 BEM 语法与组件抽象定义。针对 Win7/XP 低版本浏览器，采用 OOP 模式封装原生表格，支持虚拟滚动、分页、子列展开与左侧固定列，可承载超过 100k 个单元格的大数据表格。组件库发布至内网 npm 仓库，开箱即用。',
+    descriptionEn: 'An enterprise-grade business component library built with Vue and Element Plus, featuring frequently used components such as tables and date pickers with BEM conventions and reusable abstractions. For legacy Win7/XP browsers, it provides an OOP-based native table with virtual scrolling, pagination, expandable sub-rows, fixed left columns, and support for datasets exceeding 100k cells. Published to an internal npm registry.',
+    tags: ['Vue 3', 'Element Plus', 'TypeScript', 'JavaScript', 'Virtual Scroll', 'BEM', 'OOP', 'Monorepo'],
     date: '2024-12',
-  },
-  {
-    name: 'znz-ui 组件库',
-    nameEn: 'znz-ui Components',
-    descriptionZh: '为支持 Win7/XP 低版本浏览器，使用 OOP 模式在 Vue 中封装带虚拟滚动、分页、子列展开的原生表格，支持左侧固定列。',
-    descriptionEn: 'A native table component for legacy browsers (Win7/XP) built with OOP patterns in Vue, featuring virtual scrolling, pagination, expandable sub-rows, and fixed left columns.',
-    tags: ['Vue', 'JavaScript', 'OOP'],
-    date: '2024-10',
   },
   {
     name: 'ZCharts',
