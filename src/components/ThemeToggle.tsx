@@ -2,23 +2,32 @@
 
 import type { MouseEvent } from 'react';
 import { useEffect, useState } from 'react';
+import {
+  applyTheme as applyDocumentTheme,
+  saveThemeOverride,
+  THEME_CHANGE_EVENT,
+  type Theme,
+} from '@/lib/theme';
 
 export default function ThemeToggle() {
   const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
-    setIsDark(document.documentElement.classList.contains('dark'));
+    function syncIcon(event?: Event) {
+      const theme = (event as CustomEvent<Theme> | undefined)?.detail;
+      setIsDark(theme ? theme === 'dark' : document.documentElement.classList.contains('dark'));
+    }
+
+    syncIcon();
+    window.addEventListener(THEME_CHANGE_EVENT, syncIcon);
+
+    return () => window.removeEventListener(THEME_CHANGE_EVENT, syncIcon);
   }, []);
 
   function applyTheme(next: boolean) {
-    setIsDark(next);
-    if (next) {
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
-    }
+    const theme = next ? 'dark' : 'light';
+    saveThemeOverride(theme);
+    applyDocumentTheme(theme);
   }
 
   function toggle(event: MouseEvent<HTMLButtonElement>) {
@@ -53,7 +62,7 @@ export default function ThemeToggle() {
             ],
           },
           {
-            duration: 560,
+            duration: 900,
             easing: 'cubic-bezier(0.22, 1, 0.36, 1)',
             pseudoElement: '::view-transition-new(root)',
           }

@@ -1,17 +1,36 @@
 'use client';
 
 import { useEffect } from 'react';
+import {
+  applyTheme,
+  getNextThemeBoundary,
+  removeLegacyThemePreference,
+  resolveTheme,
+} from '@/lib/theme';
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
-    const saved = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const theme = saved ?? (prefersDark ? 'dark' : 'light');
-    if (theme === 'dark') {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
+    let timeoutId: ReturnType<typeof setTimeout>;
+
+    function syncTheme() {
+      applyTheme(resolveTheme());
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(syncTheme, getNextThemeBoundary().getTime() - Date.now() + 100);
     }
+
+    removeLegacyThemePreference();
+    syncTheme();
+
+    window.addEventListener('focus', syncTheme);
+    document.addEventListener('visibilitychange', syncTheme);
+    window.addEventListener('storage', syncTheme);
+
+    return () => {
+      clearTimeout(timeoutId);
+      window.removeEventListener('focus', syncTheme);
+      document.removeEventListener('visibilitychange', syncTheme);
+      window.removeEventListener('storage', syncTheme);
+    };
   }, []);
 
   return <>{children}</>;
