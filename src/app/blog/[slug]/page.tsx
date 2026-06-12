@@ -141,12 +141,17 @@ export default async function PostPage({ params }: Props) {
           <p className="text-gray-500 dark:text-[rgba(255,255,255,0.60)] text-base leading-relaxed mb-4">
             {post.description}
           </p>
-          <time
-            dateTime={post.date}
-            className="text-xs text-gray-400 dark:text-[rgba(255,255,255,0.38)]"
-          >
-            {formatDate(post.date)}
-          </time>
+          <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-gray-400 dark:text-[rgba(255,255,255,0.38)]">
+            <time dateTime={post.date}>
+              {formatDate(post.date)}
+            </time>
+            {post.model && (
+              <>
+                <span aria-hidden="true">·</span>
+                <span>由 {post.model} 模型整理</span>
+              </>
+            )}
+          </div>
         </header>
 
         <div

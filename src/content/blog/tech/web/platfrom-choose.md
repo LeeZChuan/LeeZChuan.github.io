@@ -2,6 +2,7 @@
 title: "跨平台应用开发技术选型整理"
 description: "整理 React Native、Flutter、Electron、Tauri、Capacitor、Kotlin Multiplatform、.NET MAUI、Qt 等跨平台应用开发方案的定位、优缺点和选型逻辑。"
 date: 2026-06-04 22:00:00
+model: GPT-5.5 Codex
 tags: ["计算机技术", "Web前端", "跨平台", "技术选型"]
 ---
 
@@ -235,4 +236,3 @@ Qt 是跨平台 GUI 领域非常成熟的方案，覆盖桌面、移动、嵌入
 - Kotlin 官方文档：[Compose Multiplatform](https://kotlinlang.org/docs/multiplatform/compose-multiplatform.html)
 - .NET 官方：[.NET MAUI](https://dotnet.microsoft.com/en-us/apps/maui)
 - Qt 官方：[Qt Framework](https://www.qt.io/development/qt-framework)
-

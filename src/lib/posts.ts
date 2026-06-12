@@ -22,6 +22,7 @@ export interface PostMeta {
   title: string;
   description: string;
   date: string;
+  model?: string;
   tags: string[];
   category: string;
   draft: boolean;
@@ -67,6 +68,7 @@ export function getAllPosts(): PostMeta[] {
         title: data.title ?? '',
         description: data.description ?? '',
         date: data.date ? new Date(data.date).toISOString() : '',
+        model: data.model ?? '',
         tags: Array.isArray(data.tags) ? data.tags : [],
         category,
         draft: data.draft ?? false,
@@ -126,6 +128,7 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
     title: data.title ?? '',
     description: data.description ?? '',
     date: data.date ? new Date(data.date).toISOString() : '',
+    model: data.model ?? '',
     tags: Array.isArray(data.tags) ? data.tags : [],
     category: found.category,
     draft: data.draft ?? false,
