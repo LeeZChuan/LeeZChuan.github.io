@@ -2,6 +2,7 @@
 title: 智能体编程的新范式基于Claude Code v2.1.88 - 01
 description: 基于Claude解析出的:智能体编程的新范式
 date: 2026-04-01
+model: Claude Opus 4.6
 tags: [Claude Code, ai, agents]
 ---
 
@@ -229,4 +230,21 @@ Claude Code 的状态管理借鉴了 Redux/Zustand 的不可变状态模式。�
 **如果不这样设计会怎样？** 如果使用可变状态（直接修改对象的字段），在并发场景下会出现经典的竞态条件：工具 A 的执行修改了状态，但工具 B 在读取状态时看到的是修改了一半的不一致数据。在子智能体场景下更危险——子智能体可能意外修改父智能体的状态，导致主循环的行为变得不可预测。这类 bug 极难复现和调试，因为它取决于异步操作的具体调度顺序。
 
 ---
+
+## 系列导航
+
+本系列基于《御舆：解码 Agent Harness》([lintsinghua/claude-code-book](https://github.com/lintsinghua/claude-code-book)) 整理，共 7 篇：
+
+| 篇目 | 覆盖章节 | 核心内容 |
+|------|---------|---------|
+| **本篇 (01)** | Ch01 智能体编程的新范式 | 五大设计原则、技术栈、架构全景 |
+| [02 对话循环](./agentic-loop-02) | Ch02 对话循环 | AsyncGenerator 主循环、十种终止原因、QueryDeps |
+| [03 工具系统](./agentic-loop-03) | Ch03 工具系统 | Tool 五要素协议、并发分区、StreamingToolExecutor |
+| [04 权限管线](./agentic-loop-04) | Ch04 权限管线 | 四阶段管线、五种权限模式、BashTool 精细控制 |
+| [05 核心子系统](./agentic-loop-05) | Ch05-08 核心系统篇 | 配置、记忆、上下文压缩、钩子系统 |
+| [06 高级模式](./agentic-loop-06) | Ch09-12 高级模式篇 | 子智能体 Fork、协调器编排、技能系统、MCP 集成 |
+| [07 工程实践](./agentic-loop-07) | Ch13-15 工程实践篇 | 性能优化、Plan 模式、构建你自己的 Agent Harness |
+
+- [在线阅读原书](https://lintsinghua.github.io/)
+- [GitHub 仓库](https://github.com/lintsinghua/claude-code-book)
 
