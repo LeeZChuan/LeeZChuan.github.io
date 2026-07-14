@@ -19,11 +19,18 @@ tags: ["徒步旅行"]
 
 - 2023年2月19日，去了一趟北京颐和园的孔桥
 
-![颐和园](/images/life/yiheyuan.png)
+![颐和园](/images/life/yiheyuan.jpg)
 
 
 ### 2023年4月
 
 - 2023年4月，去了长城旧址
 
-![长城旧址](/images/life/changcheng.png)
+![长城旧址](/images/life/changcheng.jpg)
+
+
+### 2024年夏天
+
+- 2024年夏天去张家口避暑了
+
+![太舞小镇](/images/life/IMG_2260.png)
